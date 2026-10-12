@@ -12,6 +12,8 @@ _MODEL_REGISTRY: dict[str, tuple[str, str]] = {
     "cnn_baseline": ("models.cnn_baseline", "MultiSensorFusionCNN"),
     "cnn_lstm": ("models.cnn_lstm", "DeepConvLSTM"),
     "multitask": ("models.multitask", "MultiTaskNet"),
+    "se_convnet": ("models.attention", "SEConvNet"),
+    "gait_vit": ("models.vit", "GaitViT"),
 }
 
 
