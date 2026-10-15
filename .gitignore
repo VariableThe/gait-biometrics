@@ -7,3 +7,5 @@ __pycache__/
 *.pth
 *.pt
 *.onnx
+*.onnx.data
+*.pdf
