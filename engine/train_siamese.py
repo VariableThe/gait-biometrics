@@ -165,7 +165,12 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
                 model,
                 optimizer,
                 epoch,
-                {"loss": epoch_loss},
+                {
+                    "loss": epoch_loss,
+                    # Selected on the mean training pair/triplet loss only; no
+                    # validation split exists yet (see engine/train.py).
+                    "selection_metric": "train_loss",
+                },
             )
 
     metrics = {
@@ -178,6 +183,9 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
         "per_epoch": per_epoch,
         "final_loss": per_epoch[-1]["loss"],
         "best_epoch": best_epoch,
+        # best.pt is selected on the mean training loss, not on validation
+        # performance: no validation split protocol exists yet.
+        "selection_metric": "train_loss",
         "n_params": sum(p.numel() for p in model.parameters()),
         "margin": margin,
         "seed": seed,
