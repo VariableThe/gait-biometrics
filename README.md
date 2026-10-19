@@ -31,13 +31,14 @@ minor-specialization-project/
 │   ├── student_b/               # 7 papers for Student B (B1–B7)
 │   └── common/                  # 5 common papers (C1–C5)
 │
-├── gait-biometrics-student-b/   # Student B's model repo (submodule or separate clone)
+├── gait-biometrics-student-b/   # Student B's model repo — separate clone inside this
+│   │                            # directory (not a submodule, not tracked here)
 │   ├── configs/                 # YAML configs for each model track
 │   ├── data/                    # Frozen adapter interface (Student A owns this)
 │   ├── engine/                  # Training, evaluation, Siamese training
 │   ├── models/                  # Model implementations (B1–B7 tracks)
 │   ├── scripts/                 # Setup, export, smoke test scripts
-│   ├── tests/                   # Unit tests (51 passing)
+│   ├── tests/                   # Unit tests (67 passing; synthetic, not dataset-backed results)
 │   ├── reading_notes/           # Paper notes (UNVERIFIED)
 │   ├── gait_biometrics_summary.md
 │   ├── requirements.txt
@@ -50,9 +51,9 @@ minor-specialization-project/
 
 ### Prerequisites
 
-- Python 3.10+
+- Python: no floor pinned in the repo (the measured runs used Python 3.14.8)
 - `git lfs` (for dataset)
-- PyTorch 2.12+ (see `gait-biometrics-student-b/requirements.txt`)
+- PyTorch 2.14.1, the pin in `gait-biometrics-student-b/requirements.txt` (the measured runs used torch 2.12.1+cu130)
 
 ### Clone & Setup
 
@@ -61,7 +62,7 @@ minor-specialization-project/
 git clone https://github.com/VariableThe/minor-specialization-project.git
 cd minor-specialization-project
 
-# Clone Student B's model repo (sibling directory)
+# Clone Student B's model repo (inside this directory)
 git clone https://github.com/VariableThe/gait-biometrics-student-b.git
 cd gait-biometrics-student-b
 
@@ -110,9 +111,10 @@ class WindowData:
     X: torch.Tensor              # (N, C, T) float32 — sensor windows
     y_activity: torch.Tensor     # (N,) int64 — activity labels
     y_subject: Optional[torch.Tensor]  # (N,) int64 or None — subject IDs
-    activity_names: list[str]    # e.g. ["walking", "jogging", ...]
+    activity_names: list[str]    # HAR: display names read from activity_labels.txt;
+                                 # WISDM: ["activity_0", ..., "activity_5"]
     subject_ids: list[int]       # e.g. [1, 2, 3, ...]
-    sampling_rate: int           # Hz
+    sampling_rate: float         # Hz (50.0 for HAR, 20.0 for WISDM)
 
 def load_windows(source: str, split: str, window_size: int, stride: int, data_root: str) -> WindowData:
     """Load preprocessed windows for HAR or WISDM."""
@@ -146,7 +148,7 @@ def build_loader(data: WindowData, batch_size: int, shuffle: bool, num_workers: 
 - HAR uses **pre-windowed** Inertial Signals (128 samples, fixed)
 - WISDM requires **session-aware windowing** (your implementation)
 - WISDM **has no subject IDs** in the raw data — `y_subject=None` is correct
-- Activity labels: HAR uses 1–6; WISDM uses 1–6 (verify encoding in your preprocessing)
+- Activity labels: the HAR source labels are 1–6, but the adapter applies `- 1`, so `y_activity` is 0-indexed 0–5; WISDM labels are 0-indexed 0–5
 
 ### Testing Your Adapter
 
@@ -213,6 +215,30 @@ python -m scripts.export_onnx \
 
 ---
 
+## Measured Results
+
+These are dataset-backed numbers (UCI HAR / WISDM test splits), not unit-test output. Full provenance, per-class precision/recall and confusion matrices are in `STUDENT_B_RESULTS.md` in the Student B repo.
+
+**HAR activity classification** (UCI HAR test split, 2947 windows):
+
+| Model | Registry key | Test accuracy | Macro-F1 |
+|-------|--------------|---------------|----------|
+| B3 DeepConvLSTM | `cnn_lstm` | 0.930098 | 0.931380 |
+| B5 SE-DeepConvNet | `se_convnet` | 0.929420 | 0.929386 |
+| B7 SEGait-ConViT | `gait_vit` | 0.923651 | 0.924022 |
+| B2 Multi-task | `multitask` | 0.908381 | 0.910602 |
+| B1 Fusion CNN | `cnn_baseline` | 0.895487 | 0.892737 |
+
+**WISDM activity classification** (WISDM test split, 2958 windows): B3 DeepConvLSTM `cnn_lstm` accuracy **0.866802** (macro-F1 0.859304).
+
+**HAR verification (Siamese, goal metric)**: EER **0.4162**, ROC AUC **0.6244** (10000 pairs, 9 test subjects, 128-d embeddings). This is close to chance and **not usable for authentication yet**.
+
+**Negative sweep**: six configs varying the optimiser budget (`triplets_per_epoch`) and embedding width (`embed_dim`); the best test EER was **0.4174**, so neither lever is the bottleneck.
+
+**Blocker (Student A)**: WISDM ships without a subject/user column, so `y_subject=None` and no verification metric is computable on that source. Restoring subject ids from the raw WISDM v1.1 files is Student A's deliverable and is what unblocks the goal metric.
+
+---
+
 ## Student C — Evaluation Framework
 
 ### Your Interface
@@ -222,21 +248,27 @@ File: `gait-biometrics-student-b/engine/evaluate.py`
 Key functions you own/define:
 
 ```python
-def verification_metrics(embeddings, labels) -> dict:
-    """Compute EER, FAR, FRR, ROC-AUC from pairwise distances."""
+def verification_metrics(embeddings, subject_ids, n_pairs: int = 10000,
+                         seed: int = 42) -> dict:
+    """EER, FAR, FRR, ROC-AUC from genuine/impostor pairs.
+
+    Requires `subject_ids` (one per embedding row) to form the pairs; L2-normalizes
+    `embeddings` internally, so pass raw embeddings.
+    """
     ...
 
-def _eer_operating_point(far, frr, thresholds) -> float:
-    """Find equal-error rate. Current: linear interpolation with tie handling."""
+def _eer_operating_point(labels, scores) -> tuple[float, float, float]:
+    """Return `(eer, far, frr)` at the single interpolated FAR/FRR crossing.
+    `labels`: 1 = genuine, 0 = impostor; higher `scores` = more similar."""
     ...
 ```
 
 ### Current Status
 
 - EER computation uses linear interpolation between FAR/FRR operating points
-- **Known issue**: Tie handling can produce order-dependent EER (Student B noted this)
+- **Known issue**: FAR, FRR and EER are all reported from one interpolated FAR/FRR crossing point, so `FAR == FRR == EER` — they are not three independent measurements
 - Checkpoint loading uses `weights_only=True` (safe)
-- No validation split exists yet (selection on train loss)
+- The classification trainer has no validation split (selection on train loss); the Siamese trainer carves a subject-disjoint `val_subjects` split and selects `best.pt` on validation EER
 
 ---
 
@@ -261,9 +293,9 @@ Student A (adapter.py)
 |----------|-------|----------|
 | Window size (T) | 128 | `configs/*.yaml` `window_size` |
 | HAR channels | 9 | `configs/*.yaml` `n_channels` |
-| WISDM channels | 3 | `configs/*.yaml` `n_channels` |
-| HAR activities | 6 | `data/adapter.py` `HAR_ACTIVITY_NAMES` |
-| WISDM activities | 6 | `data/adapter.py` `WISDM_ACTIVITY_NAMES` |
+| WISDM channels | 3 | no shipped config — all `configs/*.yaml` set `n_channels: 9` (HAR); a WISDM run needs a derived config with `source: wisdm` and `n_channels: 3` |
+| HAR activities | 6 | `datasets/uci_har/UCI HAR Dataset/activity_labels.txt` (read at runtime by `data/adapter.py`) |
+| WISDM activities | 6 | `data/adapter.py` `WISDM_ACTIVITY_NAMES` (`activity_0`..`activity_5`) |
 | Sampling rate (HAR) | 50 Hz | `data/adapter.py` |
 | Sampling rate (WISDM) | 20 Hz | `data/adapter.py` |
 
@@ -337,11 +369,11 @@ python scripts/setup_datasets.py
 
 | Issue | Owner | Status |
 |-------|-------|--------|
-| No validation split (checkpoint on train loss) | A/B/C | Deferred — needs protocol |
+| Classification trainer has no validation split (checkpoint on train loss); the Siamese trainer selects `best.pt` on validation EER via `val_subjects` | A/B/C | Partially addressed — classification protocol still needs agreeing |
 | WISDM label encoding unverified | A | Blocked on Student A's preprocessing |
-| EER tie-handling order-dependent | C | Documented, not fixed |
+| FAR, FRR and EER all come from one interpolated crossing point, so `FAR == FRR == EER` | C | Reported as measured; not three independent metrics |
 | Structured pruning only for DeepConvLSTM (B3) | B | Others fail closed (use unstructured) |
-| No validation split for early stopping | A/B/C | Deferred |
+| No early stopping in either trainer (both run the configured epochs; `best.pt` is selected post hoc) | A/B/C | Deferred |
 | Dataset not in repo (68 MiB LFS) | All | Run `git lfs pull` |
 
 ---
