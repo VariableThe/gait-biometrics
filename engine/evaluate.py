@@ -27,7 +27,7 @@ from torch.nn import functional as F
 
 from data.adapter import load_windows
 from engine.train import _git_commit, _stratified_subset
-from models.common import seed_everything
+from models.common import load_checkpoint, seed_everything
 from models.registry import build_model
 from models.siamese import EmbeddingNet
 
@@ -172,13 +172,12 @@ def verification_metrics(embeddings, subject_ids, n_pairs: int = 10000,
 
 
 def _load_checkpoint(path: str) -> dict:
-    """Load a checkpoint written by `save_checkpoint` or a bare state_dict."""
-    checkpoint = torch.load(path, map_location="cpu", weights_only=False)
-    if isinstance(checkpoint, dict) and "model_state_dict" in checkpoint:
-        return checkpoint["model_state_dict"]
-    if isinstance(checkpoint, dict):
-        return checkpoint
-    raise ValueError(f"unrecognized checkpoint format in {path!r}")
+    """Load a checkpoint written by `save_checkpoint` or a bare state_dict.
+
+    Delegates to `models.common.load_checkpoint`, which always unpickles with
+    ``weights_only=True`` so a checkpoint cannot execute arbitrary code on load.
+    """
+    return load_checkpoint(path)
 
 
 def _strip_embedding_prefix(state: dict) -> dict:

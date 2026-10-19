@@ -13,8 +13,8 @@ seed: 42
 num_workers: 0
 torch_threads: 4
 out_dir: runs/smoke_verification/lightweight
-prune: 0.3                 # structured pruning amount (consumed by a compress script)
-quantize: true             # dynamic quantization after training
+prune: 0.3                 # structured pruning amount; default for scripts/export_onnx.py --prune
+quantize: true             # dynamic quantization; default for scripts/export_onnx.py --quantize
 model_args:
   n_channels: 9
   n_classes: 6

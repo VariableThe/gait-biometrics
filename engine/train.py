@@ -214,7 +214,14 @@ def train(config: dict, epochs: int, subset: int | None, out_dir: str) -> dict:
                 model,
                 optimizer,
                 epoch,
-                {"train_loss": train_loss, "train_acc": train_acc},
+                {
+                    "train_loss": train_loss,
+                    "train_acc": train_acc,
+                    # There is no validation split (and no data protocol yet), so
+                    # the checkpoint is chosen on training loss only. Recorded
+                    # explicitly so the checkpoint's provenance is unambiguous.
+                    "selection_metric": "train_loss",
+                },
             )
 
     metrics = {
@@ -224,6 +231,10 @@ def train(config: dict, epochs: int, subset: int | None, out_dir: str) -> dict:
         "subset": subset,
         "per_epoch": per_epoch,
         "best_epoch": best_epoch,
+        # best.pt is selected on training loss, NOT on validation performance:
+        # no validation split exists yet (the held-out test split is evaluated
+        # separately by engine/evaluate.py and is never used for selection).
+        "selection_metric": "train_loss",
         "final_train_loss": per_epoch[-1]["train_loss"],
         "final_train_acc": per_epoch[-1]["train_acc"],
         "n_params": sum(p.numel() for p in model.parameters()),

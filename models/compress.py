@@ -8,6 +8,30 @@ Structured pruning (`mode="structured"`) physically removes whole output
 channels/filters by L1 norm so `count_parameters` genuinely drops — it does
 not return an L1-masked model. Unstructured pruning uses
 `torch.nn.utils.prune` and reports achieved sparsity.
+
+Structured pruning is topology-specific. It is implemented for exactly one
+topology — the ``DeepConvLSTM`` chain (B3, ``models/cnn_lstm.py``, used by
+``configs/lightweight.yaml``)::
+
+    Conv1d -> BatchNorm1d -> ... -> nn.LSTM -> Linear head
+
+One channel keep-set is propagated along that chain and every consumer is
+sliced by the producer's *exact* indices: conv input columns, BatchNorm
+``weight``/``bias``/``running_mean``/``running_var``, LSTM gate rows and
+``weight_hh``/``weight_ih`` columns and both biases, and the head Linear's input
+columns. See `_structured_prune` for the rules and
+``tests/test_compress_deepconvlstm_alignment.py`` for the index-exact and
+mask-equivalent regression tests.
+
+Every other Student B topology raises `NotImplementedError` before the model is
+copied or mutated (see `structured_prune_support`). ``SEConvNet`` (B5) and
+``EmbeddingNet`` (B4) were previously accepted by a generic cascade that sliced
+downstream tensors by *prefix* rather than by the producer's channel indices,
+which silently attached affine/running statistics and classifier columns to the
+wrong channels. Until each gets topology-specific slicing (SE bottleneck,
+depthwise reconstruction, projection head) with exact-index tests, they are
+fail-closed like ``MultiSensorFusionCNN`` (B1), ``MultiTaskNet`` (B2) and
+``GaitViT`` (B7). Use ``mode="unstructured"`` for those.
 """
 
 from __future__ import annotations
@@ -104,66 +128,107 @@ def _select_channels(norms: torch.Tensor, amount: float) -> torch.Tensor:
     return keep_idx
 
 
-def _prune_conv1d_out(conv: nn.Conv1d, keep_idx: torch.Tensor) -> nn.Conv1d:
-    """Create a new Conv1d with only the kept output channels."""
-    g = conv.groups
-    max_keep = (len(keep_idx) // g) * g
-    if max_keep < len(keep_idx):
-        keep_idx = keep_idx[:max_keep] if max_keep > 0 else keep_idx[:1]
+def _conv1d_select(conv: nn.Conv1d, keep_out: torch.Tensor,
+                   keep_in: torch.Tensor | None) -> nn.Conv1d:
+    """New Conv1d keeping output channels `keep_out` and input channels `keep_in`.
+
+    `keep_out`/`keep_in` are explicit index tensors into the original weight, so
+    the retained filters and input columns are exactly the selected ones (never a
+    prefix). Only `groups == 1` convolutions exist here (preflight-enforced).
+    """
+    in_ch = conv.in_channels if keep_in is None else int(keep_in.numel())
     new = nn.Conv1d(
-        conv.in_channels, len(keep_idx), conv.kernel_size,
-        conv.stride, conv.padding, conv.dilation, conv.groups,
+        in_ch, int(keep_out.numel()), conv.kernel_size, conv.stride,
+        conv.padding, conv.dilation, conv.groups,
         conv.bias is not None, conv.padding_mode,
     )
     with torch.no_grad():
-        new.weight.copy_(conv.weight[keep_idx])
+        weight = conv.weight[keep_out]
+        if keep_in is not None:
+            weight = weight[:, keep_in]
+        new.weight.copy_(weight)
         if conv.bias is not None:
-            new.bias.copy_(conv.bias[keep_idx])
+            new.bias.copy_(conv.bias[keep_out])
     return new
 
 
-def _prune_conv1d_in(conv: nn.Conv1d, keep_idx: torch.Tensor) -> nn.Conv1d:
-    """Create a new Conv1d with only the kept input channels."""
-    groups = conv.groups
-    if groups > 1:
-        in_per_group = conv.in_channels // groups
-        new_in = len(keep_idx)
-        new_groups = new_in // in_per_group
-        if new_groups == 0:
-            new_groups = 1
-    else:
-        new_groups = 1
+def _batchnorm1d_select(bn: nn.BatchNorm1d, keep: torch.Tensor) -> nn.BatchNorm1d:
+    """New BatchNorm1d over exactly the channels in `keep`.
 
-    new = nn.Conv1d(
-        len(keep_idx), conv.out_channels, conv.kernel_size,
-        conv.stride, conv.padding, conv.dilation,
-        new_groups if groups > 1 else 1,
-        conv.bias is not None, conv.padding_mode,
+    `weight`, `bias`, `running_mean` and `running_var` are all indexed by `keep`,
+    so each statistic stays attached to the filter it was learned for. Indexing
+    by a prefix (`arange`) instead would silently mis-pair affine values and
+    running statistics with the wrong channels.
+    """
+    new = nn.BatchNorm1d(
+        int(keep.numel()), bn.eps, bn.momentum, bn.affine, bn.track_running_stats
     )
     with torch.no_grad():
-        new.weight.copy_(conv.weight[:, keep_idx])
-        if conv.bias is not None:
-            new.bias.copy_(conv.bias)
+        if bn.affine:
+            new.weight.copy_(bn.weight[keep])
+            new.bias.copy_(bn.bias[keep])
+        if bn.track_running_stats:
+            new.running_mean.copy_(bn.running_mean[keep])
+            new.running_var.copy_(bn.running_var[keep])
     return new
 
 
-def _prune_linear_out(linear: nn.Linear, keep_idx: torch.Tensor) -> nn.Linear:
-    """Create a new Linear with only the kept output features."""
-    new = nn.Linear(linear.in_features, len(keep_idx), bias=linear.bias is not None)
+def _linear_select_in(linear: nn.Linear, keep: torch.Tensor) -> nn.Linear:
+    """New Linear taking exactly the input features in `keep`."""
+    new = nn.Linear(int(keep.numel()), linear.out_features,
+                    bias=linear.bias is not None)
     with torch.no_grad():
-        new.weight.copy_(linear.weight[keep_idx])
-        if linear.bias is not None:
-            new.bias.copy_(linear.bias[keep_idx])
-    return new
-
-
-def _prune_linear_in(linear: nn.Linear, keep_idx: torch.Tensor) -> nn.Linear:
-    """Create a new Linear with only the kept input features."""
-    new = nn.Linear(len(keep_idx), linear.out_features, bias=linear.bias is not None)
-    with torch.no_grad():
-        new.weight.copy_(linear.weight[:, keep_idx])
+        new.weight.copy_(linear.weight[:, keep])
         if linear.bias is not None:
             new.bias.copy_(linear.bias)
+    return new
+
+
+def _lstm_hidden_importance(lstm: nn.LSTM) -> torch.Tensor:
+    """Per-hidden-unit L1 importance: the sum of that unit's outgoing weights."""
+    hidden = lstm.hidden_size
+    importance = torch.zeros(hidden)
+    for layer in range(lstm.num_layers):
+        weight_hh = getattr(lstm, f"weight_hh_l{layer}").detach()
+        importance += weight_hh.abs().view(4, hidden, hidden).sum(dim=(0, 2))
+    return importance
+
+
+def _lstm_select(lstm: nn.LSTM, hidden_keep: torch.Tensor,
+                 input_keep: torch.Tensor | None) -> nn.LSTM:
+    """New LSTM over exactly the hidden units in `hidden_keep`.
+
+    Gate rows are expanded from `hidden_keep` in PyTorch's ``i, f, g, o`` weight
+    order; `weight_hh` columns and both biases follow the same set. Each layer's
+    `weight_ih` columns follow that layer's *input* set: the producer's kept
+    feature channels for layer 0, the previous layer's kept hidden units after
+    that. Nothing is copied by prefix.
+    """
+    hidden = lstm.hidden_size
+    hidden_prime = int(hidden_keep.numel())
+    in_size = lstm.input_size if input_keep is None else int(input_keep.numel())
+    new = nn.LSTM(
+        in_size, hidden_prime, lstm.num_layers, batch_first=lstm.batch_first,
+        dropout=lstm.dropout if lstm.num_layers > 1 else 0.0,
+        bidirectional=False,
+    )
+    rows = torch.cat([hidden_keep + gate * hidden for gate in range(4)])
+    with torch.no_grad():
+        for layer in range(lstm.num_layers):
+            layer_keep = input_keep if layer == 0 else hidden_keep
+            weight_ih = getattr(lstm, f"weight_ih_l{layer}")[rows]
+            if layer_keep is not None:
+                weight_ih = weight_ih[:, layer_keep]
+            getattr(new, f"weight_ih_l{layer}").copy_(weight_ih)
+            getattr(new, f"weight_hh_l{layer}").copy_(
+                getattr(lstm, f"weight_hh_l{layer}")[rows][:, hidden_keep]
+            )
+            getattr(new, f"bias_ih_l{layer}").copy_(
+                getattr(lstm, f"bias_ih_l{layer}")[rows]
+            )
+            getattr(new, f"bias_hh_l{layer}").copy_(
+                getattr(lstm, f"bias_hh_l{layer}")[rows]
+            )
     return new
 
 
@@ -176,322 +241,308 @@ def _set_module(model: nn.Module, full_name: str, new_module: nn.Module) -> None
     setattr(parent, parts[-1], new_module)
 
 
-def _set_seblock_fc(seblock: nn.Module, fc_name: str, new_fc: nn.Linear) -> None:
-    """Replace an SEBlock's fc layer (fc1 or fc2)."""
-    setattr(seblock, fc_name, new_fc)
+# ---------------------------------------------------------------------------
+# Structured-pruning preflight
+# ---------------------------------------------------------------------------
+
+#: Model classes whose topology `_structured_prune` implements and that are
+#: covered by exact-index / mask-equivalent regression tests
+#: (``tests/test_compress_deepconvlstm_alignment.py``). DeepConvLSTM (B3) is the
+#: only one whose downstream tensors are sliced index-for-index end to end;
+#: everything else fails closed.
+STRUCTURED_PRUNE_SUPPORTED: tuple[str, ...] = (
+    "DeepConvLSTM",   # B3 — Conv1d/BN/ReLU/pool stack -> LSTM -> Sequential head
+)
+
+#: Why each other Student B topology is deliberately rejected. Kept concrete so
+#: the error tells the caller what the index propagation cannot cover.
+_STRUCTURED_PRUNE_UNSUPPORTED_REASONS: dict[str, str] = {
+    "SEConvNet": (
+        "the depthwise-separable reconstruction and the SE `fc1`/`fc2` slices "
+        "were selected by prefix/independently instead of by the producer's "
+        "channel indices, so surviving features could be attached to the wrong "
+        "channels; needs topology-specific slicing plus exact-index tests (B5)"
+    ),
+    "EmbeddingNet": (
+        "its conv/BN stack, projection head and pooled input width are not yet "
+        "covered by verified index-exact slicing (B4)"
+    ),
+    "MultiSensorFusionCNN": (
+        "one independent Conv1d branch per sensor channel (nn.ModuleList) has no "
+        "single feature-width flow to cascade, and the fused width is fixed at "
+        "construction (B1)"
+    ),
+    "MultiTaskNet": (
+        "two parallel Linear heads (activity + subject) read the same trunk "
+        "feature vector, so a single-pass index propagation cannot re-slice both "
+        "heads (B2)"
+    ),
+    "GaitViT": (
+        "the patch-embedding Conv1d output width must equal embed_dim because "
+        "the learned CLS token and positional embeddings are added to it; pruning "
+        "the projection width breaks that addition (B7)"
+    ),
+}
+
+
+def structured_prune_support(model: nn.Module) -> tuple[bool, str]:
+    """Whether `mode="structured"` supports `model`'s topology: ``(ok, reason)``.
+
+    Pure inspection — never touches parameters, buffers or module structure, so
+    it is safe to call before any mutation.
+    """
+    name = type(model).__name__
+    if name in STRUCTURED_PRUNE_SUPPORTED:
+        return True, ""
+    reason = _STRUCTURED_PRUNE_UNSUPPORTED_REASONS.get(
+        name,
+        "its topology is not the DeepConvLSTM chain (Conv1d/BatchNorm1d stack -> "
+        "nn.LSTM -> Linear head) that this pruner slices with exact indices",
+    )
+    return False, reason
+
+
+def _check_structured_prune_supported(model: nn.Module) -> None:
+    """Raise `NotImplementedError` before any mutation for unsupported topologies."""
+    ok, reason = structured_prune_support(model)
+    if ok:
+        return
+    raise NotImplementedError(
+        f"structured pruning is not implemented for {type(model).__name__}: "
+        f"{reason}. Supported topologies: {sorted(STRUCTURED_PRUNE_SUPPORTED)}. "
+        "Use mode='unstructured', or add topology-aware, index-exact slicing "
+        "together with regression tests before enabling it."
+    )
 
 
 # ---------------------------------------------------------------------------
 # Structured pruning
 # ---------------------------------------------------------------------------
 
-def _structured_prune(model: nn.Module, amount: float) -> nn.Module:
-    """Physically remove output channels/features from Conv1d/Linear layers by L1 norm.
+def _check_prunable_structure(model: nn.Module) -> None:
+    """Fail closed unless `model` contains only modules `_structured_prune` slices.
 
-    For every prunable layer (Conv1d with groups==1, and Linear) compute the
-    indices of OUTPUT channels/features to KEEP (top-(1-amount) by L1 norm, at
-    least 1 kept). Apply that keep-set to the layer's own output dimension, and
-    the PRODUCER's keep-set to its input dimension, where the producer is found
-    STRUCTURALLY (in an `nn.Sequential`, module i's producer is module i-1),
-    NOT via a flat scan.
-
-    Depthwise Conv1d (`groups == in_channels == out_channels`) must stay
-    consistent with its input channel count: either prune it jointly with its
-    producer's channel set, or skip pruning it AND skip the corresponding
-    producer channels. No half-applied state.
-
-    Resize every `nn.BatchNorm1d` whose input channels changed, using
-    `torch.index_select` on `weight`, `bias`, `running_mean`,
-    `running_var`. Each BN's `num_features` must equal the channel count it
-    actually receives.
-
-    Fix `SEBlock`'s `fc1`/`fc2` when the block's channel count changes, and
-    rebuild the classifier `Linear` if its `in_features` (preceding channels x
-    pooled length) changes.
-
-    If an architecture genuinely cannot be pruned safely, raise a clear
-    `NotImplementedError` naming the layer instead of returning a broken model.
+    The pruner carries one channel index set along a linear module order, so
+    anything whose channel semantics it cannot follow is rejected rather than
+    silently mis-sliced: grouped/depthwise convs, SE bottlenecks, multi-branch or
+    multi-head trunks, and LSTMs whose weight layout differs (bidirectional,
+    projections, no biases).
     """
+    has_lstm = False
+    for name, module in model.named_modules():
+        if isinstance(module, nn.Conv1d) and module.groups != 1:
+            raise NotImplementedError(
+                f"structured pruning does not support grouped/depthwise Conv1d "
+                f"{name!r} (groups={module.groups})"
+            )
+        if hasattr(module, "fc1") and hasattr(module, "fc2"):
+            raise NotImplementedError(
+                f"structured pruning does not support the SE attention block "
+                f"{name!r}: its channel indices are not propagated"
+            )
+        if isinstance(module, nn.BatchNorm1d) and not (
+            module.affine and module.track_running_stats
+        ):
+            raise NotImplementedError(
+                f"structured pruning requires affine BatchNorm1d with running "
+                f"statistics, but {name!r} has affine={module.affine}, "
+                f"track_running_stats={module.track_running_stats}"
+            )
+        if isinstance(module, nn.LSTM):
+            has_lstm = True
+            if module.bidirectional or getattr(module, "proj_size", 0):
+                raise NotImplementedError(
+                    f"structured pruning supports only unidirectional LSTMs "
+                    f"without projections, but {name!r} is bidirectional="
+                    f"{module.bidirectional} with proj_size="
+                    f"{getattr(module, 'proj_size', 0)}"
+                )
+            if not getattr(module, "bias", True):
+                raise NotImplementedError(
+                    f"structured pruning requires an LSTM with biases, but "
+                    f"{name!r} has bias=False"
+                )
+    if not has_lstm:
+        raise NotImplementedError(
+            "structured pruning is implemented for the DeepConvLSTM chain only "
+            "(Conv1d/BatchNorm1d feature stack -> nn.LSTM -> Linear head); no "
+            "nn.LSTM was found, so the head-input slicing rule does not apply"
+        )
+
+
+def _structured_prune(model: nn.Module, amount: float) -> nn.Module:
+    """Physically remove Conv1d channels and LSTM hidden units by L1 norm.
+
+    Supported topology: the DeepConvLSTM chain (B3 / `configs/lightweight.yaml`)
+    — a Conv1d -> BatchNorm1d feature stack, one `nn.LSTM` consuming the last
+    conv's channels, and a Linear head consuming the LSTM's last hidden state.
+
+    Index propagation: one explicit index set is carried along the chain, and
+    every hop asserts that the consumer's declared width matches the pending
+    producer before anything is rebuilt.
+
+    * **Conv1d** keeps its top-(1-amount) output channels by L1 norm and takes
+      its input columns from the *producer's* kept indices, i.e.
+      ``weight[keep_out][:, keep_in]``; the bias follows ``keep_out``.
+    * **BatchNorm1d** is rebuilt over the same indices, indexing ``weight``,
+      ``bias``, ``running_mean`` and ``running_var`` by ``keep`` — never by a
+      prefix — so each statistic stays with the filter it was learned for.
+      BatchNorm preserves channel order, so the pending index set is unchanged.
+    * **nn.LSTM** keeps hidden units by recurrent-weight L1 importance; gate rows
+      are expanded from ``hidden_keep`` in PyTorch's ``i, f, g, o`` weight order,
+      and ``weight_hh`` columns, ``bias_ih``/``bias_hh`` rows and every layer's
+      ``weight_ih`` columns (layer 0: the conv's kept channels; later layers: the
+      previous layer's kept hidden units) are sliced by those indices.
+    * **Linear** consumes the LSTM's last hidden state, so its weight takes
+      exactly the kept hidden-unit columns; later head layers are left untouched
+      because their input is the previous Linear's output.
+
+    An unsupported topology raises `NotImplementedError` from
+    `_check_structured_prune_supported` / `_check_prunable_structure` *before*
+    the model is copied or mutated, instead of returning a model whose logits are
+    computed from mismatched weights.
+    """
+    # Fail before any work: an unsupported topology must never be deep-copied,
+    # mutated, or returned half-pruned.
+    _check_structured_prune_supported(model)
+    _check_prunable_structure(model)
+
     model = copy.deepcopy(model).cpu()
 
-    # Collect all modules in named_modules order, which matches execution order
-    # for nn.Sequential and most torch module hierarchies. We process each module
-    # type in forward pass order, cascading feature widths through the model.
-    all_modules = list(model.named_modules())
-
-    # Flow tracks the current output channel count as we cascade through the model.
-    # producer_keep tracks the keep indices flowing from the preceding prunable layer.
-    flow: int | None = None
-    producer_keep: torch.Tensor | None = None
+    # `pending_keep` is the kept-channel index set (into the *original* width
+    # `pending_width`) that the tensor entering the next consumer corresponds to.
+    # None means "not produced by a pruned layer" or "already consumed".
+    pending_keep: torch.Tensor | None = None
+    pending_width: int | None = None
 
     # Store (name, new_module) replacements to apply after the loop.
     replacements: list[tuple[str, nn.Module]] = []
 
-    # Track which layers have been processed, to avoid double-processing
-    processed: set[str] = set()
+    def _expect_consumer(module_name: str, width: int) -> None:
+        if pending_width != width:
+            raise NotImplementedError(
+                f"structured pruning cannot follow {module_name!r}: it consumes "
+                f"{width} channels but the preceding pruned layer produced "
+                f"{pending_width}"
+            )
 
-    for name, module in all_modules:
-        # Skip if already processed (e.g., SEBlock fc1/fc2 are handled with the block)
-        if name in processed:
-            continue
+    for name, module in model.named_modules():
+        if isinstance(module, nn.Conv1d):
+            if pending_keep is not None:
+                _expect_consumer(name, module.in_channels)
+            keep = _select_channels(
+                _l1_channel_norms(module.weight, is_conv=True), amount
+            )
+            replacements.append((name, _conv1d_select(module, keep, pending_keep)))
+            pending_keep, pending_width = keep, module.out_channels
 
-        is_depthwise = isinstance(module, nn.Conv1d) and module.groups > 1 and module.in_channels == module.out_channels
-
-        # --- Depthwise Conv1d (groups > 1, in_channels == out_channels) ---
-        if is_depthwise:
-            # Depthwise Conv1d: preserves channel count; its output feeds the
-            # following pointwise Conv1d. Set flow from its in_channels.
-            if flow is None:
-                # First depthwise conv in the model - initialize flow
-                flow = module.in_channels
-            # If flow changed (e.g., from a preceding pointwise pruning),
-            # we need to recreate this depthwise conv to match
-            if flow is not None and module.in_channels != flow:
-                new_dw = nn.Conv1d(
-                    flow, flow, module.kernel_size,
-                    module.stride, module.padding, module.dilation,
-                    flow,  # groups = in_channels = out_channels for depthwise
-                    module.bias is not None,
-                    module.padding_mode,
+        elif isinstance(module, nn.BatchNorm1d):
+            if pending_keep is None:
+                continue
+            _expect_consumer(name, module.num_features)
+            if len(pending_keep) != module.num_features:
+                replacements.append(
+                    (name, _batchnorm1d_select(module, pending_keep))
                 )
-                with torch.no_grad():
-                    n = min(module.in_channels, flow)
-                    if module.weight.dim() == 3:
-                        new_dw.weight.copy_(module.weight[:n, :n, :])
-                    else:
-                        new_dw.weight.copy_(module.weight[:n, :n])
-                replacements.append((name, new_dw))
-                # After recreating depthwise conv, update flow based on its kept channels
-                norms = _l1_channel_norms(module.weight.data, is_conv=True)
-                keeper = _select_channels(norms, amount)
-                flow = len(keeper)
-                producer_keep = keeper
-            # else: flow matches or is first depthwise - producer_keep flows from
-            # preceding module (e.g., model input or preceding pointwise conv). Keep as-is.
-            processed.add(name)
-            continue
+            # BatchNorm preserves the channel order, so `pending_*` is unchanged.
 
-        # --- Conv1d pointwise (groups == 1) ---
-        if isinstance(module, nn.Conv1d) and module.groups == 1 and 'classifier' not in name and 'projection' not in name:
-            norms = _l1_channel_norms(module.weight, is_conv=True)
-            keep = _select_channels(norms, amount)
+        elif isinstance(module, nn.LSTM):
+            if pending_keep is not None:
+                _expect_consumer(name, module.input_size)
+            hidden_keep = _select_channels(
+                _lstm_hidden_importance(module), amount
+            )
+            replacements.append(
+                (name, _lstm_select(module, hidden_keep, pending_keep))
+            )
+            pending_keep, pending_width = hidden_keep, module.hidden_size
 
-            new_conv = _prune_conv1d_out(module, keep)
-
-            if producer_keep is not None:
-                new_conv = _prune_conv1d_in(new_conv, producer_keep)
-
-            replacements.append((name, new_conv))
-            flow = len(keep)
-            producer_keep = keep
-            processed.add(name)
-            continue
-
-        # --- BatchNorm1d ---
-        elif isinstance(module, nn.BatchNorm1d) and name not in processed:
-            if flow is not None and module.num_features != flow:
-                new_bn = nn.BatchNorm1d(
-                    flow, module.eps, module.momentum,
-                    module.affine, module.track_running_stats,
-                )
-                with torch.no_grad():
-                    new_bn.weight.copy_(module.weight[torch.arange(flow)])
-                    new_bn.bias.copy_(module.bias[torch.arange(flow)])
-                    new_bn.running_mean.copy_(module.running_mean[torch.arange(flow)])
-                    new_bn.running_var.copy_(module.running_var[torch.arange(flow)])
-                replacements.append((name, new_bn))
-                processed.add(name)
-
-        # --- SEBlock ---
-        elif hasattr(module, 'fc1') and hasattr(module, 'fc2') and name not in processed:
-            current_channels = module.fc1.weight.shape[1]
-            if current_channels > 0:
-                reduction = current_channels // module.fc1.weight.shape[0]
-            else:
-                reduction = 16
-
-            if flow is not None and current_channels != flow:
-                new_reduced = max(1, flow // reduction)
-
-                # New fc1: Linear(flow, new_reduced)   weight shape: (new_reduced, flow)
-                new_fc1 = nn.Linear(flow, new_reduced)
-                with torch.no_grad():
-                    old_reduced = module.fc1.weight.shape[0]
-                    n_rows = min(old_reduced, new_reduced)
-                    n_cols = min(current_channels, flow)
-                    new_fc1.weight[:n_rows, :n_cols] = module.fc1.weight[:n_rows, :n_cols]
-                    if new_fc1.weight.shape[0] > old_reduced:
-                        new_fc1.weight.fill_(0)
-                    if new_fc1.weight.shape[1] > current_channels:
-                        new_fc1.weight[:, current_channels:].fill_(0)
-                _set_seblock_fc(module, 'fc1', new_fc1)
-
-                # New fc2: Linear(new_reduced, flow)   weight shape: (flow, new_reduced)
-                new_fc2 = nn.Linear(new_reduced, flow)
-                with torch.no_grad():
-                    n_rows = min(flow, current_channels)
-                    n_cols = min(new_reduced, old_reduced)
-                    new_fc2.weight[:n_rows, :n_cols] = module.fc2.weight[:n_rows, :n_cols]
-                    if new_fc2.weight.shape[0] > flow:
-                        new_fc2.weight.fill_(0)
-                    if new_fc2.weight.shape[1] > new_reduced:
-                        new_fc2.weight[:, new_reduced:].fill_(0)
-                _set_seblock_fc(module, 'fc2', new_fc2)
-                processed.add(name)
-
-        # --- LSTM ---
-        elif isinstance(module, nn.LSTM) and name not in processed:
-            if flow is not None:
-                H = module.hidden_size
-                # Compute importance for hidden units based on weight_hh magnitude
-                importance_hidden = torch.zeros(H)
-                for layer in range(module.num_layers):
-                    weight_hh = getattr(module, f'weight_hh_l{layer}')
-                    whh_abs = weight_hh.abs().view(4, H, H)
-                    importance_hidden += whh_abs.sum(dim=(0, 2))
-
-                hkeep = _select_channels(importance_hidden, amount)
-                hprime = len(hkeep)
-
-                # Expand gate rows for LSTM (i, f, g, o order)
-                rows = torch.cat([hkeep + g * H for g in range(4)])
-
-                # Create new LSTM with input_size=flow and hidden_size=hprime
-                in0 = flow
-                new_lstm = nn.LSTM(
-                    in0, hprime, module.num_layers,
-                    batch_first=module.batch_first,
-                    dropout=module.dropout if module.num_layers > 1 else 0.0,
-                    bidirectional=module.bidirectional,
-                )
-
-                # Prune LSTM weights and biases
-                for layer in range(module.num_layers):
-                    wih = getattr(module, f'weight_ih_l{layer}')
-                    whh = getattr(module, f'weight_hh_l{layer}')
-                    bias_ih = getattr(module, f'bias_ih_l{layer}')
-                    bias_hh = getattr(module, f'bias_hh_l{layer}')
-
-                    if layer == 0:
-                        in_keep = producer_keep if producer_keep is not None else torch.arange(in0)
-                        new_wih = wih[rows][:, in_keep]
-                    else:
-                        new_wih = wih[rows][:, hkeep]
-
-                    new_whh = whh[rows][:, hkeep]
-                    new_bias_ih = bias_ih[rows].clone()
-                    new_bias_hh = bias_hh[rows].clone()
-
-                    getattr(new_lstm, f'weight_ih_l{layer}').data.copy_(new_wih.clone())
-                    getattr(new_lstm, f'weight_hh_l{layer}').data.copy_(new_whh.clone())
-                    getattr(new_lstm, f'bias_ih_l{layer}').data.copy_(new_bias_ih)
-                    getattr(new_lstm, f'bias_hh_l{layer}').data.copy_(new_bias_hh)
-
-                replacements.append((name, new_lstm))
-                flow = hprime
-                producer_keep = hkeep
-                processed.add(name)
+        elif isinstance(module, nn.Linear):
+            if pending_keep is None:
+                # Head-internal layer: its input is the previous Linear's output.
+                continue
+            _expect_consumer(name, module.in_features)
+            replacements.append((name, _linear_select_in(module, pending_keep)))
+            pending_keep, pending_width = None, None
 
     # --- Apply all replacements ---
     for name, new_module in replacements:
         _set_module(model, name, new_module)
 
-    # --- Fix classifier in_features ---
-    # Determine the classifier's expected in_features based on the model architecture.
-    # Case 1: Model has an LSTM (e.g., DeepConvLSTM): classifier takes LSTM's last
-    #   timestep output, so in_features = LSTM's hidden_size.
-    # Case 2: Model has a conv stack followed by pooling (e.g., SEConvNet,
-    #   EmbeddingNet): classifier in_features = last_conv_out_channels * t_after_pooling.
-
-    lstm_mod = None
-    for name, mod in model.named_modules():
-        if isinstance(mod, nn.LSTM):
-            lstm_mod = mod
-            break
-
-    if lstm_mod is not None:
-        # Case 1: LSTM-based model
-        for cls_name, cls_mod in model.named_modules():
-            if 'classifier' in cls_name and isinstance(cls_mod, nn.Sequential):
-                for i, submod in enumerate(cls_mod):
-                    if isinstance(submod, nn.Linear):
-                        new_in = lstm_mod.hidden_size
-                        if submod.in_features != new_in:
-                            with torch.no_grad():
-                                new_weight = torch.zeros(
-                                    submod.out_features, new_in,
-                                    dtype=submod.weight.dtype,
-                                    device=submod.weight.device,
-                                )
-                                copy_in = min(submod.in_features, new_in)
-                                new_weight[:, :copy_in] = submod.weight[:, :copy_in]
-                                submod.weight = nn.Parameter(new_weight)
-                        submod.in_features = new_in
-                        break
-                break
-    else:
-        # Case 2: Conv-based model without LSTM
-        # Find the last Conv1d's output channels (excluding classifier sub-modules)
-        last_conv_out_channels = None
-        for name, mod in model.named_modules():
-            if isinstance(mod, nn.Conv1d) and 'classifier' not in name and 'projection' not in name:
-                last_conv_out_channels = mod.out_channels
-
-        # Determine t_after (pooled temporal dimension) based on architecture
-        model_name = type(model).__name__
-        if 'SEConvNet' in model_name:
-            t_after = 128 // (2 ** 3)  # 3 max_pool1d(2) on T=128 -> 16
-        elif 'EmbeddingNet' in model_name:
-            t_after = 1  # AdaptiveAvgPool1d(1)
-        else:
-            t_after = 16  # default assumption
-
-        if last_conv_out_channels is not None and t_after is not None:
-            for cls_name, cls_mod in model.named_modules():
-                if ('classifier' in cls_name or 'projection' in cls_name) and isinstance(cls_mod, nn.Sequential):
-                    # Fix in_features for each Linear layer in the Sequential.
-                    # The first Linear takes input from the conv stack (last_conv_out_channels * t_after).
-                    # Subsequent Linear layers take input from the previous layer's out_features.
-                    prev_out = last_conv_out_channels * t_after
-                    for i, submod in enumerate(cls_mod):
-                        if isinstance(submod, nn.Linear):
-                            new_in = prev_out
-                            if submod.in_features != new_in:
-                                with torch.no_grad():
-                                    new_weight = torch.zeros(
-                                        submod.out_features, new_in,
-                                        dtype=submod.weight.dtype,
-                                        device=submod.weight.device,
-                                    )
-                                    copy_in = min(submod.in_features, new_in)
-                                    new_weight[:, :copy_in] = submod.weight[:, :copy_in]
-                                    submod.weight = nn.Parameter(new_weight)
-                            submod.in_features = new_in
-                            prev_out = submod.out_features  # next layer takes this as input
-                    break
-
     return model
 
 
+def effective_weight(module: nn.Module) -> torch.Tensor | None:
+    """The weight tensor a Conv1d/Linear actually computes with, or None.
+
+    Under a live `torch.nn.utils.prune` reparametrization the effective weight
+    is ``weight_orig * weight_mask``; after `torch.nn.utils.prune.remove` it is
+    the plain ``weight`` parameter. Reading `weight_orig` alone reports the
+    un-pruned tensor and therefore measures the wrong sparsity.
+    """
+    if hasattr(module, "weight_orig") and hasattr(module, "weight_mask"):
+        return module.weight_orig.detach() * module.weight_mask
+    weight = getattr(module, "weight", None)
+    if isinstance(weight, torch.Tensor):
+        return weight.detach()
+    return None
+
+
+def pruned_weight_sparsity(model: nn.Module) -> dict:
+    """Actual mask-induced sparsity of the Conv1d/Linear weights.
+
+    Returns ``{"zeros", "total", "sparsity"}`` where ``sparsity`` is the
+    fraction of the pruned layers' weight elements that are zero. This is the
+    number `_unstructured_prune` reports; summing ``model.parameters()`` would
+    instead count ``weight_orig`` and report ~0%.
+    """
+    zeros = 0
+    total = 0
+    for module in model.modules():
+        if not isinstance(module, (nn.Conv1d, nn.Linear)):
+            continue
+        weight = effective_weight(module)
+        if weight is None:
+            continue
+        zeros += int((weight == 0).sum().item())
+        total += int(weight.numel())
+    return {
+        "zeros": zeros,
+        "total": total,
+        "sparsity": (zeros / total) if total else 0.0,
+    }
+
+
 def _unstructured_prune(model: nn.Module, amount: float) -> nn.Module:
-    """Apply L1 unstructured pruning to all Conv1d/Linear layers."""
+    """Apply L1 unstructured pruning to all Conv1d/Linear weights (in place).
+
+    The reparametrization is materialised with `prune.remove` so the zeros are
+    real ``weight`` values: the result deep-copies, dynamically quantizes and
+    exports like an ordinarily-trained model, and `pruned_weight_sparsity`
+    reports the sparsity the mask actually induced. LSTM weights are left
+    untouched (their parameters are not named ``weight``).
+    """
     from torch.nn.utils import prune
 
     for _, module in model.named_modules():
         if isinstance(module, (nn.Conv1d, nn.Linear)):
             prune.l1_unstructured(module, name="weight", amount=amount)
+            prune.remove(module, "weight")
 
-    total = sum(p.numel() for p in model.parameters())
-    zeros = sum((p == 0).sum().item() for p in model.parameters())
-    sparsity = zeros / total if total > 0 else 0.0
-    print(f"unstructured pruning: {sparsity:.2%} sparsity achieved "
-          f"({zeros}/{total} parameters zeroed)")
+    report = pruned_weight_sparsity(model)
+    print(f"unstructured pruning: {report['sparsity']:.2%} sparsity achieved "
+          f"({report['zeros']}/{report['total']} pruned weight elements zeroed)")
     return model
 
 
 def apply_pruning(model: nn.Module, amount: float = 0.3,
                   mode: str = "structured") -> nn.Module:
-    """Prune `model` by `amount` (fraction of channels/weights to remove)."""
+    """Prune `model` by `amount` (fraction of channels/weights to remove).
+
+    ``mode="structured"`` raises `NotImplementedError` before touching the model
+    when the topology is unsupported (see `structured_prune_support`);
+    ``mode="unstructured"`` works on any topology containing Conv1d/Linear.
+    """
     if mode not in ("structured", "unstructured"):
         raise ValueError(
             f"mode must be 'structured' or 'unstructured', got {mode!r}"
