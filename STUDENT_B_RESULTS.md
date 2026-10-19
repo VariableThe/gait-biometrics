@@ -299,6 +299,154 @@ python -m engine.evaluate --checkpoint runs/real/siamese/best.pt \
 the eval JSONs land next to `best.pt` as listed above. `--subset` must be
 omitted to reproduce these numbers (all artifacts record `subset: null`).
 
+## Verification investigation (negative result)
+
+**What was tested and why.** The committed verification baseline
+(`runs/real/siamese/eval_verification.json`) is EER 0.4162 / ROC AUC 0.62435346
+— unusable for authentication. That run had no validation split, was trained
+with a single triplet-sampler pass per epoch (20 epochs = 1880 Adam steps), and
+selected `best.pt` on the **training** loss (`selection_metric: "train_loss"`,
+`best_epoch: 20`), so the checkpoint was never selected on anything that
+measures the goal. The diagnosis was therefore undertraining + train-loss-based
+selection + a low effective rank (participation ratio 5.4/128, 17 components for
+99% of test variance). Two levers were added to `engine/train_siamese.py`:
+`triplets_per_epoch` (raise the optimiser budget) and `val_subjects` (carve a
+subject-disjoint validation split and select the checkpoint on validation EER
+instead of training loss). This section records whether they worked. **They did
+not.**
+
+**Diagnosis evidence.** Measured with a read-only throwaway script
+(`/tmp/opencode/diag_siamese.py`), re-run for this section, with every row
+scored by the same `engine.evaluate.verification_metrics` call
+(`n_pairs=10000`, `seed=42`) so the rows are directly comparable:
+
+| score source | EER | ROC AUC |
+|---|---|---|
+| trained net (committed baseline, 128-d) | 0.4162 | 0.62435346 |
+| raw flattened windows (1152-d) | 0.4894 | 0.51319638 |
+| per-channel mean / std / energy (27-d) | 0.4822 | 0.52972028 |
+| randomly-initialised net, same architecture, seed 42 | 0.4744 | 0.53649116 |
+| activity one-hot control (6-d) | 0.1698 | 0.5003 |
+
+The one-hot row is a **trap, not a result**. Its EER 0.1698 comes from a
+two-valued score set (1 when the two windows share an activity label, 0
+otherwise): the FAR and FRR curves are step functions and their linear
+interpolation lands on the same-activity collision rate of the sampled impostor
+pairs — measured 849/5000 = 0.1698 under the identical seed-42 pair sampling.
+Its ROC AUC is 0.5003, i.e. chance. Quoting 0.1698 as a verification result
+would be quoting an interpolation artefact.
+
+The trained embedding is neither collapsed nor activity-driven: 0 of 128
+dimensions have variance below 1e-6 (test), and nearest-centroid identity
+decodability on the test split (0.3627) exceeds activity decodability (0.3549)
+by 0.0078, so there is no activity leakage. The low effective rank is real, but
+the representation is not degenerate.
+
+**Sweep.** Six runs; `triplets_per_epoch` and `model_args.embed_dim` vary per
+run, `epochs` came from the `--epochs` CLI override (read from each
+`metrics.json` `epochs` field), and all six used a subject-disjoint validation
+carve (`val_subjects: 4`, 1383 validation windows, `n_train_windows = 5969`).
+Optimiser steps are derived arithmetically, once:
+
+```
+steps = epochs × ceil(triplets_per_epoch × n_train_windows / batch_size)
+      = epochs × ceil(triplets_per_epoch × 5969 / 64)
+```
+
+with `n_train_windows = 5969` (7352 HAR train windows minus the 1383-window
+validation carve) and `batch_size = 64` (one Adam step per 64-triplet chunk,
+`engine/train_siamese.py:239`).
+
+| run | triplets/epoch | embed_dim | epochs | optimiser steps | best_epoch | val_eer | val_roc_auc | test EER | test ROC AUC |
+|---|---|---|---|---|---|---|---|---|---|
+| A | 1 | 128 | 20 | 1880 | 14 | 0.4048 | 0.6500 | 0.4184 | 0.6234 |
+| **B** | 5 | 128 | 20 | 9340 | 16 | 0.3676 | 0.6688 | 0.4258 | 0.6079 |
+| C | 5 | 32 | 20 | 9340 | 9 | 0.4138 | 0.6196 | 0.4272 | 0.5989 |
+| D | 2 | 32 | 20 | 3740 | 10 | 0.3892 | 0.6374 | 0.4174 | 0.6089 |
+| E | 5 | 32 | 40 | 18680 | 40 | 0.4040 | 0.6329 | 0.4318 | 0.5953 |
+| F | 10 | 64 | 30 | 27990 | 3 | 0.4190 | 0.6212 | 0.4178 | 0.6126 |
+
+`best_epoch`, `val_eer` and `val_roc_auc` are the selected epoch's recorded
+validation values (`metrics.json`); `test EER` / `test ROC AUC` are the
+`eval_verification.json` fields. **Run B is the validation-selected winner**
+(lowest `val_eer`, 0.3676) — and the test columns played no part in the
+selection, because `best.pt` was written whenever the per-epoch validation EER
+improved and the test split is never loaded during training. All six artifacts
+record `git_commit: d73e095cfc4a4fbbbae01462ce066bffc6390112`, which is the
+current branch head.
+
+**The result.** No run met the success bar (EER < 0.35 **and** ROC AUC > 0.70).
+The best test EER across the sweep is **0.4174** (run D, 3740 steps, dim 32) and
+the best test ROC AUC is **0.6234** (0.62340680, run A, 1880 steps, dim 128) —
+neither beats the committed baseline (0.4162 EER / 0.62435346 ROC AUC). The
+validation-selected winner (run B)
+was **worse** on test than the committed baseline: test EER **0.4258** vs
+**0.4162** (+0.0096) and test ROC AUC **0.6079** vs **0.62435346**
+(−0.01642910).
+
+**What it refutes.**
+
+* More optimiser steps did not help, and at fixed `embed_dim` made test EER
+  monotonically worse. Dim 32: 3740 steps → 0.4174, 9340 → 0.4272, 18680 →
+  0.4318. Dim 128: 1880 → 0.4184, 9340 → 0.4258.
+* Lower `embed_dim` did not help: at equal budget (9340 steps) dim 128 gave
+  0.4258 and dim 32 gave 0.4272.
+* Training loss and the goal metric are decoupled: run F's training loss fell
+  from 0.6036 (epoch 1) to 0.1668 (epoch 30) while its validation EER oscillated
+  in 0.4190–0.4620 with no downward trend.
+* Across a 14.9× span in optimiser steps (1880 → 27990) the test EER moved only
+  within 0.4174–0.4318, with no trend.
+
+**What this implies.** Neither the optimiser budget nor the embedding width is
+the binding constraint, and the sweep provides no evidence for which lever
+would be. **Hypothesis, explicitly not measured:** UCI HAR is a daily-activity
+dataset recorded from a waist-mounted phone, not a gait-walking protocol, so
+the identity signal in the windows may be too weak for cross-subject
+verification regardless of training budget or capacity. The measured genuine-vs-
+impostor cosine margin of the baseline embedding — 0.1869 on test versus 0.5899
+on train, a 3.16× collapse — is consistent with fitting the training identities
+rather than learning a transferable gait embedding. That is a hypothesis to
+test, not a finding: this sweep varied optimiser steps and width only, and does
+not isolate data quality from model capacity.
+
+**Blocker for the data owner (Student A).** Verification requires
+subject-labelled walking data, and the WISDM data delivered here is not
+subject-labelled. The CSV pair `datasets/wisdm/{train,test}.csv` has columns
+`acc_x,acc_y,acc_z,timestamp,Activity` and no subject/user column, so
+`data/adapter.py` returns `y_subject=None` for WISDM
+(`data/adapter.py:119`) and no verification metric (EER/FAR/FRR) is computable
+on that source. The public WISDM v1.1 raw data carries a `user` column, so the
+subject ids can be restored by re-deriving these CSVs from the raw files; that
+re-derivation is Student A's deliverable, and until it lands the goal metric is
+unmeasurable on WISDM — this blocks Student B's verification work and Student
+C's dependent work. WISDM activity labels likewise arrive as anonymous
+`activity_0..activity_5` (`WISDM_ACTIVITY_NAMES` in `data/adapter.py`), so the
+activity semantics are Student A's to supply as well.
+
+**Reproduce the sweep.** The six derived configs live under the gitignored
+`runs/sweep_configs/`; each sets `val_subjects: 4`, `triplets_per_epoch` and
+`model_args.embed_dim` per the table above, and `out_dir: runs/sweep/<letter>`.
+
+```bash
+python -m engine.train_siamese --config runs/sweep_configs/siamese_A.yaml --epochs 20 --out-dir runs/sweep/A
+python -m engine.evaluate --checkpoint runs/sweep/A/best.pt --config runs/sweep_configs/siamese_A.yaml --task verification --out-dir runs/sweep/A
+python -m engine.train_siamese --config runs/sweep_configs/siamese_B.yaml --epochs 20 --out-dir runs/sweep/B
+python -m engine.evaluate --checkpoint runs/sweep/B/best.pt --config runs/sweep_configs/siamese_B.yaml --task verification --out-dir runs/sweep/B
+python -m engine.train_siamese --config runs/sweep_configs/siamese_C.yaml --epochs 20 --out-dir runs/sweep/C
+python -m engine.evaluate --checkpoint runs/sweep/C/best.pt --config runs/sweep_configs/siamese_C.yaml --task verification --out-dir runs/sweep/C
+python -m engine.train_siamese --config runs/sweep_configs/siamese_D.yaml --epochs 20 --out-dir runs/sweep/D
+python -m engine.evaluate --checkpoint runs/sweep/D/best.pt --config runs/sweep_configs/siamese_D.yaml --task verification --out-dir runs/sweep/D
+python -m engine.train_siamese --config runs/sweep_configs/siamese_E.yaml --epochs 40 --out-dir runs/sweep/E
+python -m engine.evaluate --checkpoint runs/sweep/E/best.pt --config runs/sweep_configs/siamese_E.yaml --task verification --out-dir runs/sweep/E
+python -m engine.train_siamese --config runs/sweep_configs/siamese_F.yaml --epochs 30 --out-dir runs/sweep/F
+python -m engine.evaluate --checkpoint runs/sweep/F/best.pt --config runs/sweep_configs/siamese_F.yaml --task verification --out-dir runs/sweep/F
+```
+
+`--subset` must be omitted (all twelve artifacts record `subset: null`), and
+`runs/sweep_configs/` is gitignored: the config files are not in the repository
+and must be re-derived from the table's `triplets_per_epoch` / `embed_dim`
+values plus `val_subjects: 4` before these commands are reproducible.
+
 ## Appendix — measured per-class precision / recall, and F1 derived from them
 
 F1 = `2PR/(P+R)`, computed by the extraction script from the artifact

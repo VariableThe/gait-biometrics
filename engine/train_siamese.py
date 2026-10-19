@@ -8,6 +8,18 @@ Reads a YAML config; CLI flags override `epochs`, `subset`, `out_dir`, and
 `loss` (CLI `--loss` wins over config `loss_type`). Trains an `EmbeddingNet`
 wrapped in `SiameseNet` with Adam, writing `<out_dir>/best.pt` (via
 `save_checkpoint`) and `<out_dir>/metrics.json`.
+
+Two optional config keys tune the training protocol; both default to the
+previous behaviour:
+
+  - `triplets_per_epoch` (int, default 1): triplet sampler passes per epoch.
+    The sampler draws `triplets_per_epoch * n_train_windows` triplets, so the
+    optimiser budget scales with this key rather than being capped at one
+    dataset pass per epoch. Applies to the triplet loss only.
+  - `val_subjects` (int, default 0 = disabled): number of distinct subjects
+    carved out of the TRAIN split as a subject-disjoint validation set. When
+    > 0, `best.pt` is selected on validation EER (lower is better) computed by
+    `engine.evaluate.verification_metrics` instead of the training loss.
 """
 
 from __future__ import annotations
@@ -17,11 +29,13 @@ import json
 import os
 import random
 
+import numpy as np
 import torch
 import yaml
 from torch.utils.data import default_collate
 
-from data.adapter import load_windows
+from data.adapter import WindowData, build_loader, load_windows
+from engine.evaluate import verification_metrics
 from engine.train import _git_commit, _stratified_subset
 from models.common import save_checkpoint, seed_everything
 from models.siamese import (
@@ -72,6 +86,90 @@ def _contrastive_pairs(data, n_pairs: int, seed: int):
             yield X[i], X[j], 0.0
 
 
+def _n_triplets(config: dict, n_samples: int) -> int:
+    """Number of triplets to draw per epoch.
+
+    `triplets_per_epoch` (default 1) multiplies one dataset pass, so the
+    default reproduces the historical budget exactly.
+    """
+    return int(config.get("triplets_per_epoch", 1)) * int(n_samples)
+
+
+def _selection(val_data) -> tuple[str, str]:
+    """Checkpoint selection ``(metric_name, per_epoch_key)``.
+
+    With a validation split, selection minimises validation EER; without one
+    (`val_subjects` = 0) the historical training-loss selection is preserved
+    verbatim. The report name is "train_loss" while the per-epoch record field
+    is "loss", so both are returned from this single source.
+    """
+    if val_data is None:
+        return "train_loss", "loss"
+    return "val_eer", "val_eer"
+
+
+def _select_best_epoch(per_epoch: list[dict], metric: str) -> int:
+    """Epoch with the lowest `metric` so far (ties resolve to the earliest).
+
+    Both selectable metrics (training loss, validation EER) are error measures,
+    so lower is better. This reproduces the historical ``value < best`` rule:
+    an epoch is a new best exactly when it is the running minimum, and equal
+    values keep the earlier epoch.
+    """
+    return min(per_epoch, key=lambda record: record[metric])["epoch"]
+
+
+def _split_validation(data: WindowData, val_subjects: int, seed: int):
+    """Carve a subject-disjoint validation split out of `data`.
+
+    Rule: the distinct subject ids present in `data` are sorted ascending,
+    shuffled with ``random.Random(seed)``, and the first `val_subjects` become
+    the validation subjects. The split is deterministic for a fixed seed and
+    no subject appears in both portions. Returns
+    ``(train_data, val_data, val_subject_ids)`` as `WindowData` objects so
+    `build_loader` keeps working.
+    """
+    subjects = sorted(int(s) for s in torch.unique(data.y_subject).tolist())
+    if not 1 <= val_subjects < len(subjects):
+        raise ValueError(
+            f"val_subjects must satisfy 1 <= val_subjects < {len(subjects)} "
+            f"(the distinct subjects in the training split); got {val_subjects}"
+        )
+    val_subject_ids = sorted(random.Random(seed).sample(subjects, val_subjects))
+    val_set = set(val_subject_ids)
+
+    val_mask = torch.tensor(
+        [int(s) in val_set for s in data.y_subject], dtype=torch.bool
+    )
+
+    def _take(idx: torch.Tensor) -> WindowData:
+        return WindowData(
+            X=data.X[idx],
+            y_activity=data.y_activity[idx],
+            y_subject=data.y_subject[idx],
+            activity_names=data.activity_names,
+            subject_ids=data.subject_ids,
+            sampling_rate=data.sampling_rate,
+        )
+
+    train_idx = torch.nonzero(~val_mask, as_tuple=False).flatten()
+    val_idx = torch.nonzero(val_mask, as_tuple=False).flatten()
+    return _take(train_idx), _take(val_idx), val_subject_ids
+
+
+def _embed_windows(embedding_net: EmbeddingNet, data: WindowData, batch_size: int,
+                   num_workers: int):
+    """Embed every window in `data`; returns an (N, embed_dim) numpy array."""
+    embedding_net.eval()
+    loader = build_loader(data, batch_size=batch_size, shuffle=False,
+                          num_workers=num_workers)
+    embs = []
+    with torch.no_grad():
+        for batch in loader:
+            embs.append(embedding_net(batch[0]).numpy())
+    return np.concatenate(embs)
+
+
 def train_siamese(config: dict, epochs: int, subset: int | None,
                   loss_type: str, out_dir: str) -> dict:
     """Train the siamese embedding net per `config`; returns the metrics dict."""
@@ -99,6 +197,16 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
     if subset is not None:
         data = _stratified_subset(data, int(subset), seed)
 
+    # Optional subject-disjoint validation carve (default 0 = disabled).
+    val_subjects = int(config.get("val_subjects", 0))
+    val_data = None
+    n_train_subjects_total = n_val_subjects = n_val_windows = 0
+    if val_subjects > 0:
+        n_train_subjects_total = int(torch.unique(data.y_subject).numel())
+        data, val_data, val_subject_ids = _split_validation(data, val_subjects, seed)
+        n_val_subjects = len(val_subject_ids)
+        n_val_windows = int(len(val_data.X))
+
     model_args = dict(config.get("model_args", {}))
     embed_dim = int(model_args.get("embed_dim", 128))
     dropout = float(model_args.get("dropout", 0.3))
@@ -116,8 +224,8 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
     n_samples = int(subset) if subset is not None else len(data.X)
 
     per_epoch: list[dict] = []
-    best_loss = float("inf")
     best_epoch = 0
+    selection_metric, selection_key = _selection(val_data)
 
     for epoch in range(1, epochs + 1):
         model.train()
@@ -125,7 +233,9 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
         n_seen = 0
         # seed + epoch - 1: deterministic per epoch, different across epochs.
         if loss_type == "triplet":
-            sampler = TripletWindowSampler(data, n_triplets=n_samples, seed=seed + epoch - 1)
+            sampler = TripletWindowSampler(
+                data, n_triplets=_n_triplets(config, n_samples), seed=seed + epoch - 1
+            )
             pair_iter = _batched(sampler, batch_size)
             for chunk in pair_iter:
                 a, p, neg = default_collate(chunk)
@@ -153,24 +263,50 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
                 n_seen += bs
 
         epoch_loss = loss_sum / max(n_seen, 1)
-        per_epoch.append({"epoch": epoch, "loss": epoch_loss})
-        print(f"epoch {epoch}/{epochs} loss={epoch_loss:.4f}")
+        record = {"epoch": epoch, "loss": epoch_loss}
+        val_metrics = None
+        if val_data is not None:
+            val_metrics = verification_metrics(
+                _embed_windows(
+                    model.embedding, val_data, batch_size,
+                    int(config.get("num_workers", 0)),
+                ),
+                val_data.y_subject.numpy(),
+                n_pairs=10000,
+                seed=seed,
+            )
+            record["val_eer"] = val_metrics["eer"]
+            record["val_roc_auc"] = val_metrics["roc_auc"]
+        per_epoch.append(record)
 
-        if epoch_loss < best_loss:
-            best_loss = epoch_loss
+        if val_metrics is None:
+            print(f"epoch {epoch}/{epochs} loss={epoch_loss:.4f}")
+        else:
+            print(
+                f"epoch {epoch}/{epochs} loss={epoch_loss:.4f} "
+                f"val_eer={val_metrics['eer']:.4f} "
+                f"val_roc_auc={val_metrics['roc_auc']:.4f}"
+            )
+
+        if _select_best_epoch(per_epoch, selection_key) == epoch:
             best_epoch = epoch
             os.makedirs(out_dir, exist_ok=True)
+            checkpoint_metrics = {
+                "loss": epoch_loss,
+                # Lowest mean validation EER when a subject-disjoint
+                # validation split exists, else the mean training pair/triplet
+                # loss (the default `val_subjects: 0`).
+                "selection_metric": selection_metric,
+            }
+            if val_metrics is not None:
+                checkpoint_metrics["val_eer"] = val_metrics["eer"]
+                checkpoint_metrics["val_roc_auc"] = val_metrics["roc_auc"]
             save_checkpoint(
                 os.path.join(out_dir, "best.pt"),
                 model,
                 optimizer,
                 epoch,
-                {
-                    "loss": epoch_loss,
-                    # Selected on the mean training pair/triplet loss only; no
-                    # validation split exists yet (see engine/train.py).
-                    "selection_metric": "train_loss",
-                },
+                checkpoint_metrics,
             )
 
     metrics = {
@@ -183,14 +319,22 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
         "per_epoch": per_epoch,
         "final_loss": per_epoch[-1]["loss"],
         "best_epoch": best_epoch,
-        # best.pt is selected on the mean training loss, not on validation
-        # performance: no validation split protocol exists yet.
-        "selection_metric": "train_loss",
+        # Selected on the lowest validation EER when `val_subjects` > 0, else
+        # on the mean training loss (the default, no validation split).
+        "selection_metric": selection_metric,
         "n_params": sum(p.numel() for p in model.parameters()),
         "margin": margin,
         "seed": seed,
         "git_commit": _git_commit(),
     }
+    if val_data is not None:
+        n_train_windows = int(len(data.X))
+        metrics["n_val_subjects"] = n_val_subjects
+        metrics["n_val_windows"] = n_val_windows
+        metrics["val_subject_fraction"] = n_val_subjects / n_train_subjects_total
+        metrics["val_window_fraction"] = n_val_windows / (
+            n_train_windows + n_val_windows
+        )
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "metrics.json"), "w") as f:
         json.dump(metrics, f, indent=2)
