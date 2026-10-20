@@ -22,8 +22,10 @@ The work is divided across three students:
 
 ## Repository Structure
 
+The Student B implementation (`data/`, `models/`, `engine/`, `configs/`, `scripts/`, `tests/`) is at this repo's root.
+
 ```
-minor-specialization-project/
+gait-biometrics/
 ├── README.md                    # This file
 ├── Research_Reading_Plan_Gait.docx   # Reading plan (7 Student-B papers + 5 common)
 ├── link.md                      # OneDrive link to datasets (CI-2026)
@@ -31,19 +33,25 @@ minor-specialization-project/
 │   ├── student_b/               # 7 papers for Student B (B1–B7)
 │   └── common/                  # 5 common papers (C1–C5)
 │
-├── gait-biometrics-student-b/   # Student B's model repo — separate clone inside this
-│   │                            # directory (not a submodule, not tracked here)
-│   ├── configs/                 # YAML configs for each model track
-│   ├── data/                    # Frozen adapter interface (Student A owns this)
-│   ├── engine/                  # Training, evaluation, Siamese training
-│   ├── models/                  # Model implementations (B1–B7 tracks)
-│   ├── scripts/                 # Setup, export, smoke test scripts
-│   ├── tests/                   # Unit tests (67 passing; synthetic, not dataset-backed results)
-│   ├── reading_notes/           # Paper notes (UNVERIFIED)
-│   ├── gait_biometrics_summary.md
-│   ├── requirements.txt
-│   └── STUDENT_B_SCOPE.md       # Detailed scope & integration notes
+├── configs/                     # YAML configs for each model track
+├── data/                        # Frozen adapter interface (Student A owns this)
+├── engine/                      # Training, evaluation, Siamese training
+├── models/                      # Model implementations (B1–B7 tracks)
+├── scripts/                     # Setup, export, smoke test scripts
+├── tests/                       # Unit tests (67 passing; synthetic, not dataset-backed results)
+├── reading_notes/               # Paper notes (UNVERIFIED)
+├── student_a/                   # Student A's original pipeline (gait_pipeline.py + its README)
+├── gait_biometrics_summary.md
+├── requirements.txt
+└── STUDENT_B_SCOPE.md           # Detailed scope & integration notes
 ```
+
+### `student_a/`
+
+Student A's original data pipeline — `gait_pipeline.py` and Student A's own `README.md` —
+imported unmodified from [`128Amaan/minor_specialisation_studentA`](https://github.com/128Amaan/minor_specialisation_studentA)
+at commit `8f7ab53`. Its datasets and processed artifacts are regenerated locally rather than
+committed.
 
 ---
 
@@ -52,30 +60,24 @@ minor-specialization-project/
 ### Prerequisites
 
 - Python: no floor pinned in the repo (the measured runs used Python 3.14.8)
-- `git lfs` (for dataset)
-- PyTorch 2.14.1, the pin in `gait-biometrics-student-b/requirements.txt` (the measured runs used torch 2.12.1+cu130)
+- PyTorch 2.14.1, the pin in `requirements.txt` (the measured runs used torch 2.12.1+cu130)
 
 ### Clone & Setup
 
 ```bash
-# Clone the main project
-git clone https://github.com/VariableThe/minor-specialization-project.git
-cd minor-specialization-project
-
-# Clone Student B's model repo (inside this directory)
-git clone https://github.com/VariableThe/gait-biometrics-student-b.git
-cd gait-biometrics-student-b
+# Clone the project
+git clone https://github.com/VariableThe/gait-biometrics.git
+cd gait-biometrics
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Install git-lfs and pull the dataset (~68 MiB)
-git lfs install
-git lfs pull
-
-# Extract datasets
+# Extract datasets (expects CI-2026.zip at the repo root)
 python scripts/setup_datasets.py
 ```
+
+The `CI-2026.zip` dataset archive is not tracked in this repo: download it from the OneDrive
+link in `link.md` and place it at the repo root before running `scripts/setup_datasets.py`.
 
 This creates:
 ```
@@ -93,7 +95,7 @@ datasets/
 
 ### What You Own
 
-**File**: `gait-biometrics-student-b/data/adapter.py`
+**File**: `data/adapter.py`
 
 This is the **frozen shared contract**. Student B's and C's code imports `load_windows` and `build_loader` from here. **Do not change the function signatures or return types.**
 
@@ -153,8 +155,6 @@ def build_loader(data: WindowData, batch_size: int, shuffle: bool, num_workers: 
 ### Testing Your Adapter
 
 ```bash
-cd gait-biometrics-student-b
-
 # Quick sanity check
 python -c "
 from data.adapter import load_windows, build_loader
@@ -197,8 +197,6 @@ print('Loader batches:', len(loader))
 ### Training
 
 ```bash
-cd gait-biometrics-student-b
-
 # Classification (e.g., DeepConvLSTM on HAR)
 python -m engine.train --config configs/cnn_lstm.yaml
 
@@ -217,7 +215,7 @@ python -m scripts.export_onnx \
 
 ## Measured Results
 
-These are dataset-backed numbers (UCI HAR / WISDM test splits), not unit-test output. Full provenance, per-class precision/recall and confusion matrices are in `STUDENT_B_RESULTS.md` in the Student B repo.
+These are dataset-backed numbers (UCI HAR / WISDM test splits), not unit-test output. Full provenance, per-class precision/recall and confusion matrices are in `STUDENT_B_RESULTS.md`.
 
 **HAR activity classification** (UCI HAR test split, 2947 windows):
 
@@ -243,7 +241,7 @@ These are dataset-backed numbers (UCI HAR / WISDM test splits), not unit-test ou
 
 ### Your Interface
 
-File: `gait-biometrics-student-b/engine/evaluate.py`
+File: `engine/evaluate.py`
 
 Key functions you own/define:
 
@@ -308,14 +306,14 @@ Student A (adapter.py)
 The raw dataset is stored in the mentor's OneDrive. Link: see `link.md`
 
 ```
-CI-2026.zip (68 MiB, Git LFS)
+CI-2026.zip (68 MiB; from `link.md`, placed at the repo root)
 ├── CI-2026/Dataset/
 │   ├── WISDM_Dataset.zip
 │   └── human+activity+recognition+using+smartphones.zip
 │       └── UCI HAR Dataset.zip
 ```
 
-Run `python scripts/setup_datasets.py` to extract to `datasets/`.
+Download the archive from `link.md`, place it at the repo root, then run `python scripts/setup_datasets.py` to extract to `datasets/`.
 
 ---
 
@@ -374,7 +372,7 @@ python scripts/setup_datasets.py
 | FAR, FRR and EER all come from one interpolated crossing point, so `FAR == FRR == EER` | C | Reported as measured; not three independent metrics |
 | Structured pruning only for DeepConvLSTM (B3) | B | Others fail closed (use unstructured) |
 | No early stopping in either trainer (both run the configured epochs; `best.pt` is selected post hoc) | A/B/C | Deferred |
-| Dataset not in repo (68 MiB LFS) | All | Run `git lfs pull` |
+| Dataset not in repo | All | Download from `link.md`, place at repo root |
 
 ---
 
@@ -397,7 +395,7 @@ Common papers (C1–C5) cover surveys, edge computing, implicit authentication, 
 ## Getting Help
 
 - **Slack/Teams**: Project channel (ask mentor to add you)
-- **Issues**: Open GitHub issues in respective repos
+- **Issues**: Open GitHub issues in this repo
 - **Mentor**: Manjunath Hegde (MAHE) — `manjunath_hegde@manipal.edu`
 
 ---
