@@ -1,0 +1,23 @@
+model: cnn_lstm            # registry key
+source: har                # har | wisdm
+window_size: 128
+stride: 64
+batch_size: 64
+epochs: 2
+subset: 2000
+optimizer: adam
+lr: 0.001
+weight_decay: 0.0
+class_weight: balanced     # or null
+seed: 42
+num_workers: 0
+torch_threads: 4
+out_dir: runs/smoke_verification/lightweight
+prune: 0.3                 # structured pruning amount; default for scripts/export_onnx.py --prune
+quantize: true             # dynamic quantization; default for scripts/export_onnx.py --quantize
+model_args:
+  n_channels: 9
+  n_classes: 6
+  hidden_dim: 128
+  n_lstm_layers: 2
+  dropout: 0.3
