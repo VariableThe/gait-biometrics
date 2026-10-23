@@ -95,6 +95,33 @@ def metrics(embeddings, data, threshold=None):
     )
 
 
+def validate_training_run(expected, checkpoint_config, protocol, completed):
+    """A sidecar alone cannot certify the seed or completed optimizer budget."""
+    if any(checkpoint_config.get(key) != value for key, value in expected.items()):
+        raise ValueError("actual checkpoint configuration differs from registered run")
+    for key in ("epochs", "seed", "split_seed", "val_seed"):
+        if completed.get(key) != expected[key]:
+            raise ValueError("completed training metadata differs from registered run")
+    if [row["epoch"] for row in completed.get("per_epoch", [])] != list(
+        range(1, expected["epochs"] + 1)
+    ):
+        raise ValueError(
+            "completed training history does not cover the registered epoch budget"
+        )
+    for key, expected_key in (
+        ("train_seed", "seed"),
+        ("split_seed", "split_seed"),
+        ("val_seed", "val_seed"),
+    ):
+        if protocol.get(key) != expected[expected_key]:
+            raise ValueError("actual checkpoint seed differs from registered run")
+    if (
+        protocol.get("config") != checkpoint_config
+        or completed.get("protocol") != protocol
+    ):
+        raise ValueError("checkpoint and completed training protocols differ")
+
+
 def train_stage(args, source):
     from engine.train_metric import load_metric_encoder, train_metric
 
@@ -232,9 +259,10 @@ def train_stage(args, source):
                 write(config_path, config)
                 training_result = train_metric(config, str(path))
             elapsed += float(training_result.get("elapsed_seconds", 0))
-            model, protocol, _ = load_metric_encoder(
+            model, protocol, checkpoint_config = load_metric_encoder(
                 str(path / "best.pt"), device=args.device
             )
+            validate_training_run(config, checkpoint_config, protocol, training_result)
             if set(protocol["train_subject_ids"]) != set(train.subject_ids) or set(
                 protocol["val_subject_ids"]
             ) != set(val.subject_ids):
@@ -280,6 +308,8 @@ def train_stage(args, source):
 
 
 def lock_stage(args, source):
+    from engine.train_metric import load_metric_encoder
+
     folder = args.out_root / source
     registry_path = folder / "validation_registry.json"
     registry = json.loads(registry_path.read_text())
@@ -322,6 +352,32 @@ def lock_stage(args, source):
         for row in candidates
     ):
         raise ValueError("validation EER must be finite and in [0,1]")
+    for name, *_ in METHODS:
+        for seed in registry["seeds"]:
+            run = folder / name / f"seed_{seed}"
+            expected = json.loads((run / "effective_config.json").read_text())
+            if (
+                expected["epochs"] != 40
+                or expected["seed"] != seed
+                or expected["split_seed"] != 42
+                or expected["val_seed"] != 42
+            ):
+                raise ValueError("run sidecar differs from registered budget or seeds")
+            encoder, protocol, actual = load_metric_encoder(str(run / "best.pt"))
+            validate_training_run(
+                expected,
+                actual,
+                protocol,
+                json.loads((run / "metrics.json").read_text()),
+            )
+            if (
+                protocol["development_data_sha256"]
+                != registry["development_data_sha256"]
+            ):
+                raise ValueError(
+                    "checkpoint development data differs from pre-training registry"
+                )
+            del encoder
     train, val, _ = _split_validation(data_for(source, "train", args.data_root), 4, 42)
     if development_fingerprint(train, val) != registry.get("development_data_sha256"):
         raise ValueError("development data differs from the pre-training registry")

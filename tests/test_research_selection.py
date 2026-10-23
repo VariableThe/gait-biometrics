@@ -1,5 +1,6 @@
 """The holdout stage must reject incomplete or changed development evidence."""
 
+import copy
 import json
 from types import SimpleNamespace
 
@@ -79,6 +80,34 @@ def registered_study(tmp_path, monkeypatch):
         ],
     }
     study.write(folder / "validation_registry.json", registry)
+
+    def fake_encoder(checkpoint, device="cpu"):
+        run = study.Path(checkpoint).parent
+        config = json.loads((run / "effective_config.json").read_text())
+        protocol = {
+            "config": config,
+            "train_seed": config["seed"],
+            "split_seed": 42,
+            "val_seed": 42,
+            "development_data_sha256": registry["development_data_sha256"],
+        }
+        return object(), protocol, config
+
+    for name, *_ in study.METHODS:
+        for seed in registry["seeds"]:
+            run = folder / name / f"seed_{seed}"
+            config = {"epochs": 40, "seed": seed, "split_seed": 42, "val_seed": 42}
+            study.write(run / "effective_config.json", config)
+            _, protocol, _ = fake_encoder(run / "best.pt")
+            study.write(
+                run / "metrics.json",
+                {
+                    **config,
+                    "protocol": protocol,
+                    "per_epoch": [{"epoch": epoch} for epoch in range(1, 41)],
+                },
+            )
+    monkeypatch.setattr("engine.train_metric.load_metric_encoder", fake_encoder)
     calls = []
 
     def data(source, split, root):
@@ -152,3 +181,23 @@ def test_changed_evidence_rejected_before_test_load(registered_study, change):
     with pytest.raises(ValueError, match="changed|differs"):
         study.evaluate_stage(args, "har")
     assert "test" not in calls
+
+
+@pytest.mark.parametrize("change", ["checkpoint_seed", "checkpoint_epochs", "history"])
+def test_replaced_checkpoint_or_incomplete_history_cannot_reuse_sidecar(change):
+    expected = {"epochs": 40, "seed": 42, "split_seed": 42, "val_seed": 42}
+    actual = expected.copy()
+    protocol = {"config": actual, "train_seed": 42, "split_seed": 42, "val_seed": 42}
+    completed = {
+        **expected,
+        "protocol": copy.deepcopy(protocol),
+        "per_epoch": [{"epoch": epoch} for epoch in range(1, 41)],
+    }
+    if change == "checkpoint_seed":
+        actual["seed"] = 43
+    elif change == "checkpoint_epochs":
+        actual["epochs"] = 1
+    else:
+        completed["per_epoch"] = [{"epoch": 1}]
+    with pytest.raises(ValueError, match="checkpoint configuration|training history"):
+        study.validate_training_run(expected, actual, protocol, completed)
