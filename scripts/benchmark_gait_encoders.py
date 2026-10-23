@@ -61,6 +61,11 @@ def parser():
     result.add_argument("--warmup", type=bounded_int(0, 20), default=5)
     result.add_argument("--torch-threads", type=bounded_int(1, 32), default=2)
     result.add_argument("--seed", type=bounded_int(0, 2**32 - 1), default=42)
+    result.add_argument(
+        "--pack-multiscale",
+        action="store_true",
+        help="also benchmark inference-only packed copies of multiscale encoders",
+    )
     result.add_argument("--out", required=True, type=Path)
     return result
 
@@ -171,7 +176,9 @@ def model_sizes(model):
     }
 
 
-def restore_models(torch, lock_path, lock, baseline_path, device):
+def restore_models(
+    torch, lock_path, lock, baseline_path, device, pack_multiscale=False
+):
     import numpy as np
 
     from engine.train_metric import load_metric_encoder
@@ -258,11 +265,52 @@ def restore_models(torch, lock_path, lock, baseline_path, device):
     ensemble = Ensemble(members)
     for model in (baseline, ensemble):
         model.requires_grad_(False).to(device).eval()
-    return {
+    models = {
         "old_baseline_raw": baseline,
         "selected_ensemble": ensemble,
         "selected_single": members[0],
-    }, details
+    }
+    if pack_multiscale:
+        import copy
+
+        from models.gait_inference import pack_multiscale_branches
+
+        packed_members = []
+        for member in members:
+            packed_encoder = pack_multiscale_branches(member.encoder)
+            # Preserve the member's WCCN state, reusing the already copied
+            # encoder rather than deep-copying that encoder a second time.
+            packed_members.append(
+                copy.deepcopy(member, {id(member.encoder): packed_encoder})
+            )
+        packed_ensemble = Ensemble(packed_members).requires_grad_(False).eval()
+        models["selected_ensemble_packed"] = packed_ensemble
+        models["selected_single_packed"] = packed_members[0]
+    return models, details
+
+
+def check_packed_output(torch, original, packed, inputs, device):
+    """Compare complete inference outputs outside all timed intervals."""
+    with torch.inference_mode(), torch.autocast(device_type=device.type, enabled=False):
+        expected = original(inputs)
+        actual = packed(inputs)
+        if (
+            expected.ndim != 2
+            or expected.shape[0] != len(inputs)
+            or actual.shape != expected.shape
+            or not torch.isfinite(expected).all().item()
+            or not torch.isfinite(actual).all().item()
+        ):
+            raise ValueError(
+                "original/packed outputs must have matching finite batch shapes"
+            )
+        max_abs_diff = (expected - actual).abs().max().item()
+        if not math.isfinite(max_abs_diff) or max_abs_diff > 1e-5:
+            raise ValueError(
+                f"packed output mismatch for input {tuple(inputs.shape)}: "
+                f"max_abs_diff={max_abs_diff}, tolerance=1e-5"
+            )
+    return max_abs_diff
 
 
 def percentile95(values):
@@ -363,7 +411,12 @@ def main(argv=None):
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.set_float32_matmul_precision("highest")
         models, members = restore_models(
-            torch, lock_path, lock, args.baseline_checkpoint, device
+            torch,
+            lock_path,
+            lock,
+            args.baseline_checkpoint,
+            device,
+            pack_multiscale=args.pack_multiscale,
         )
         channels = 9 if lock["source"] == "har" else 3
         generator = torch.Generator(device="cpu").manual_seed(args.seed)
@@ -379,6 +432,16 @@ def main(argv=None):
         input_hash = hashlib.sha256(inputs_cpu.numpy().tobytes()).hexdigest()
         inputs = inputs_cpu.to(device)
         del inputs_cpu
+        packed_checks = {}
+        if args.pack_multiscale:
+            for name in ("selected_ensemble", "selected_single"):
+                packed_name = name + "_packed"
+                packed_checks[packed_name] = {
+                    size: check_packed_output(
+                        torch, models[name], models[packed_name], inputs[:size], device
+                    )
+                    for size in args.batch_sizes
+                }
         results = {}
         for name, model in models.items():
             results[name] = {**model_sizes(model), "batches": []}
@@ -398,6 +461,11 @@ def main(argv=None):
                         args.repetitions,
                     )
                 )
+                if name in packed_checks:
+                    results[name]["batches"][-1].update(
+                        max_abs_diff=packed_checks[name][size],
+                        reference_case=name.removesuffix("_packed"),
+                    )
         report = {
             "schema_version": 1,
             "kind": "checkpoint_synthetic_inference",
@@ -439,6 +507,7 @@ def main(argv=None):
                 "tf32": False,
                 "autocast": False,
                 "compiled": False,
+                "pack_multiscale": args.pack_multiscale,
                 "timer": "perf_counter; CUDA synchronized before/after each forward",
                 "transfer_included": False,
                 "included": "raw baseline; complete encoders; selected WCCN; ensemble concatenation/scaling",
