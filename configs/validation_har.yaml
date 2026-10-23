@@ -1,0 +1,25 @@
+# Activity selection: held-out train subjects; original test is final only.
+model: cnn_lstm
+source: har
+data_root: datasets
+window_size: 128
+stride: 64
+batch_size: 64
+epochs: 20
+subset: null
+val_subjects: 4
+device: auto
+optimizer: adam
+lr: 0.001
+weight_decay: 0.0
+class_weight: balanced
+seed: 42
+num_workers: 0
+torch_threads: 2
+out_dir: runs/validation_har
+model_args:
+  n_channels: 9
+  n_classes: 6
+  hidden_dim: 128
+  n_lstm_layers: 2
+  dropout: 0.3

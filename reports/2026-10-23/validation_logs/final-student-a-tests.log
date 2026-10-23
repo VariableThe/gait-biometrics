@@ -1,0 +1,9 @@
+test_legacy_unknown_identity_and_no_resampling_across_reset (test_wisdm_pipeline_identity.WisdmPipelineIdentityTests.test_legacy_unknown_identity_and_no_resampling_across_reset) ... ok
+test_real_subject_export_preserves_ids_and_train_only_statistics (test_wisdm_pipeline_identity.WisdmPipelineIdentityTests.test_real_subject_export_preserves_ids_and_train_only_statistics) ... ok
+test_resample_rejects_reset_instead_of_sorting_sessions (test_wisdm_pipeline_identity.WisdmPipelineIdentityTests.test_resample_rejects_reset_instead_of_sorting_sessions) ... ok
+test_short_filter_segment_and_pure_windows (test_wisdm_pipeline_identity.WisdmPipelineIdentityTests.test_short_filter_segment_and_pure_windows) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.036s
+
+OK

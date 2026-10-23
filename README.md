@@ -1,410 +1,87 @@
-# Minor Specialization Project — Gait-Based User Authentication
+# Gait-based continuous authentication
 
-**Team**: Student A (Data Pipeline), Student B (Model Development), Student C (Evaluation Framework)  
-**Mentor**: Manjunath Hegde (MAHE)  
-**Focus**: Wearable-sensor gait recognition for continuous user authentication
+Minor specialization project, MAHE. Mentor: **Manjunath Hegde**. Student A owns preprocessing, Student B models, and Student C evaluation.
 
----
+The pipeline now loads authentic WISDM subject IDs, keeps windows within recording/activity boundaries, selects checkpoints on held-out validation subjects, and runs bounded batches on CPU or CUDA. **It remains a research baseline, not a usable passive authenticator.**
 
-## Project Overview
+## Run immediately
 
-This project builds a **gait-based continuous user authentication system** using wearable sensor data (accelerometer/gyroscope from smartphones). The pipeline uses deep learning models to recognize users by their unique walking patterns, enabling continuous authentication without explicit user interaction.
-
-The work is divided across three students:
-
-| Student | Track | Responsibility |
-|---------|-------|----------------|
-| **A** | Data Pipeline & Preprocessing | Data loading, windowing, resampling, sensor fusion, dataset preparation |
-| **B** | Deep Learning Model Development | CNN/LSTM/ViT architectures, multi-task learning, Siamese verification, edge compression |
-| **C** | Evaluation Framework | Metrics (EER, FAR, FRR), verification protocols, benchmarking, reporting |
-
----
-
-## Repository Structure
-
-The Student B implementation (`data/`, `models/`, `engine/`, `configs/`, `scripts/`, `tests/`) is at this repo's root.
-
-```
-gait-biometrics/
-├── README.md                    # This file
-├── Research_Reading_Plan_Gait.docx   # Reading plan (7 Student-B papers + 5 common)
-├── link.md                      # OneDrive link to datasets (CI-2026)
-├── papers/
-│   ├── student_b/               # 7 papers for Student B (B1–B7)
-│   └── common/                  # 5 common papers (C1–C5)
-│
-├── configs/                     # YAML configs for each model track
-├── data/                        # Frozen adapter interface (Student A owns this)
-├── engine/                      # Training, evaluation, Siamese training
-├── models/                      # Model implementations (B1–B7 tracks)
-├── scripts/                     # Setup, export, smoke test scripts
-├── tests/                       # Unit tests (67 passing; synthetic, not dataset-backed results)
-├── reading_notes/               # Paper notes (UNVERIFIED)
-├── student_a/                   # Student A's original pipeline (gait_pipeline.py + its README)
-├── gait_biometrics_summary.md
-├── requirements.txt
-└── STUDENT_B_SCOPE.md           # Detailed scope & integration notes
-```
-
-### `student_a/`
-
-Student A's original data pipeline — `gait_pipeline.py` and Student A's own `README.md` —
-imported unmodified from [`128Amaan/minor_specialisation_studentA`](https://github.com/128Amaan/minor_specialisation_studentA)
-at commit `8f7ab53`. Its datasets and processed artifacts are regenerated locally rather than
-committed.
-
----
-
-## Quick Start
-
-### Prerequisites
-
-- Python: no floor pinned in the repo (the measured runs used Python 3.14.8)
-- PyTorch 2.14.1, the pin in `requirements.txt` (the measured runs used torch 2.12.1+cu130)
-
-### Clone & Setup
+Python 3.14.8 and the existing pinned torch 2.14.1 dependency set were validated on Linux x86_64. Create an isolated environment with uv:
 
 ```bash
-# Clone the project
-git clone https://github.com/VariableThe/gait-biometrics.git
-cd gait-biometrics
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Extract datasets (expects CI-2026.zip at the repo root)
-python scripts/setup_datasets.py
+uv venv --python 3.14
+uv pip install --python .venv/bin/python --compile-bytecode -r requirements-dev.txt
+uv run --no-project --python .venv/bin/python python -m scripts.run_experiments --prepare --device auto
 ```
 
-The `CI-2026.zip` dataset archive is not tracked in this repo: download it from the OneDrive
-link in `link.md` and place it at the repo root before running `scripts/setup_datasets.py`.
+This downloads the original public HAR and WISDM AR v1.1 sources over HTTPS, verifies both archive checksums, and runs **20 full epochs each** for walking-only HAR and WISDM verification followed by held-out test evaluation. No OneDrive login or Git LFS is required. Effective configs, checkpoints, metrics and commands go under `runs/full_experiments/`. Choose a fresh `--out-root` for another run; existing checkpoints are preserved. Legacy `configs/siamese.yaml` is a smoke configuration without calibration subjects and is rejected by this full calibrated runner; use the two verification configs instead.
 
-This creates:
-```
-datasets/
-├── wisdm/
-│   ├── train.csv
-│   └── test.csv
-└── uci_har/
-    └── UCI HAR Dataset/
-```
-
----
-
-## Student A — Data Pipeline (Your Starting Point)
-
-### What You Own
-
-**File**: `data/adapter.py`
-
-This is the **frozen shared contract**. Student B's and C's code imports `load_windows` and `build_loader` from here. **Do not change the function signatures or return types.**
-
-### Interface Contract
-
-```python
-# data/adapter.py
-from dataclasses import dataclass
-from typing import Optional, Tuple
-import torch
-from torch.utils.data import DataLoader
-
-@dataclass
-class WindowData:
-    X: torch.Tensor              # (N, C, T) float32 — sensor windows
-    y_activity: torch.Tensor     # (N,) int64 — activity labels
-    y_subject: Optional[torch.Tensor]  # (N,) int64 or None — subject IDs
-    activity_names: list[str]    # HAR: display names read from activity_labels.txt;
-                                 # WISDM: ["activity_0", ..., "activity_5"]
-    subject_ids: list[int]       # e.g. [1, 2, 3, ...]
-    sampling_rate: float         # Hz (50.0 for HAR, 20.0 for WISDM)
-
-def load_windows(source: str, split: str, window_size: int, stride: int, data_root: str) -> WindowData:
-    """Load preprocessed windows for HAR or WISDM."""
-    ...
-
-def build_loader(data: WindowData, batch_size: int, shuffle: bool, num_workers: int) -> DataLoader:
-    """Wrap WindowData in a DataLoader."""
-    ...
-```
-
-### What You Need to Implement
-
-1. **`load_windows(source, split, window_size, stride, data_root)`**
-   - `source`: `"har"` or `"wisdm"`
-   - `split`: `"train"` or `"test"`
-   - Returns `WindowData` with correctly shaped tensors
-   - **Current stub** loads pre-windowed HAR Inertial Signals and windows WISDM CSV with session boundaries
-
-2. **`build_loader(data, batch_size, shuffle, num_workers)`**
-   - Wraps `WindowData` in a `DataLoader`
-   - Should handle `y_subject=None` gracefully (WISDM has no subject IDs)
-
-### Datasets You'll Work With
-
-| Dataset | Channels | Sampling Rate | Window Size | Subjects | Activities |
-|---------|----------|---------------|-------------|----------|------------|
-| **UCI HAR** | 9 (acc/gyro x/y/z) | 50 Hz | 128 (fixed) | 30 | 6 |
-| **WISDM** | 3 (acc x/y/z) | 20 Hz | configurable | — | 6 |
-
-**Key Notes:**
-- HAR uses **pre-windowed** Inertial Signals (128 samples, fixed)
-- WISDM requires **session-aware windowing** (your implementation)
-- WISDM **has no subject IDs** in the raw data — `y_subject=None` is correct
-- Activity labels: the HAR source labels are 1–6, but the adapter applies `- 1`, so `y_activity` is 0-indexed 0–5; WISDM labels are 0-indexed 0–5
-
-### Testing Your Adapter
+CUDA is chosen when available. CPU is supported. Use `--device cpu` explicitly when needed; batches stay bounded and the dataset remains on host memory. Run independent jobs on different machines or output roots. RAM pressure can dominate runtime, so the default runner executes sequentially on a single device.
 
 ```bash
-# Quick sanity check
-python -c "
-from data.adapter import load_windows, build_loader
-data = load_windows('har', 'train', 128, 64, '.')
-print('X:', data.X.shape)           # (N, 9, 128)
-print('y_activity:', data.y_activity.shape)
-print('activity_names:', data.activity_names)
-loader = build_loader(data, batch_size=64, shuffle=True, num_workers=0)
-print('Loader batches:', len(loader))
-"
+# All five classification tracks: full data, validation-selected checkpoints.
+uv run --no-project --python .venv/bin/python python -m scripts.run_experiments \
+  --configs configs/cnn_baseline.yaml configs/multitask.yaml configs/cnn_lstm.yaml configs/se_attention.yaml configs/vit.yaml \
+  --epochs 20 --out-root runs/all_activity_tracks
+
+# A defined four-validation-subject DeepConvLSTM activity experiment.
+uv run --no-project --python .venv/bin/python python -m scripts.run_experiments \
+  --configs configs/validation_har.yaml --out-root runs/har_activity
+
+uv run --no-project --python .venv/bin/python python -m pytest tests -q
 ```
 
----
+## Measured results
 
-## Student B — Model Development (Already Implemented)
+The [complete 23 October evidence report](reports/2026-10-23/README.md) contains effective configs, every track's results, raw timing samples, calibration counts, test provenance and limitations. Frozen-code full 20-epoch walking results:
 
-### Model Tracks (B1–B7)
+| Dataset | Test windows | EER | ROC AUC | Test FAR / FRR at validation-calibrated threshold |
+| --- | ---: | ---: | ---: | ---: |
+| UCI HAR, walking | 496 | 0.1764 | 0.9252 | 0.0358 / 0.3728 |
+| WISDM AR v1.1, walking | 345 | 0.2010 | 0.8686 | 0.1520 / 0.2468 |
 
-| Track | Model | Registry Key | Config | Paper |
-|-------|-------|--------------|--------|-------|
-| B1 | Multi-Sensor Fusion CNN | `cnn_baseline` | `configs/cnn_baseline.yaml` | Dehzangi 2017 |
-| B2 | Multi-Task Activity+Identity | `multitask` | `configs/multitask.yaml` | METIER 2020 |
-| B3 | DeepConvLSTM | `cnn_lstm` | `configs/cnn_lstm.yaml` | Sensors 2021 |
-| B4 | Siamese + Denoising AE | `siamese` (via `cnn_lstm`) | `configs/siamese.yaml` | Sheng & Li 2020 |
-| B5 | SE-DeepConvNet | `se_convnet` | `configs/se_attention.yaml` | Computers 2024 |
-| B6 | Edge Compression (Prune/Quant) | `cnn_lstm` | `configs/lightweight.yaml` | Scientific Reports 2025 |
-| B7 | SEGait-ConViT | `gait_vit` | `configs/vit.yaml` | Procedia CS 2025 |
+These measure **held-out-subject, within-recording discrimination**. EER is descriptive; the fixed threshold is chosen from validation scores, never test scores. The validation FAR target of 1% does not guarantee 1% test FAR. Genuine windows can overlap, comparisons repeat, and session/day separation is unverified. An independent calibration cohort, enrollment/probe protocol, online walking gate, temporal decisions and takeover-delay evaluation remain necessary.
 
-### Key Files
+A separate 20-epoch local GTX 1650 Ti DeepConvLSTM run with four validation subjects reached HAR test activity accuracy **0.936885**. The five-track sweep used five validation subjects and produced lower accuracies for several tracks; all are reported. Historical HAR EER 0.4162 used all activities and an older pairing protocol, so it is not a controlled comparison with the walking results above.
 
-| File | Purpose |
-|------|---------|
-| `models/registry.py` | `build_model(key, args, n_channels, n_classes)` |
-| `models/compress.py` | Pruning, quantization, ONNX export |
-| `engine/train.py` | Classification training (selects `best.pt` on **train loss**) |
-| `engine/train_siamese.py` | Siamese training (triplet/contrastive) |
-| `engine/evaluate.py` | Evaluation: activity + verification (EER, FAR, FRR, AUC) |
-| `scripts/export_onnx.py` | Export pruned/quantized ONNX models |
+Controlled performance measurements:
 
-### Training
+- **15.72x preprocessing speedup**, bit-identical outputs on the same 100,000-row homogeneous CSV fixture (1,561 windows).
+- **10.98x training / 12.59x inference** with Wiker's GTX 1650 Ti versus its CPU; **9.83x / 15.98x** on Darkstar's RTX 5070 Ti versus its CPU, on the same synthetic embedding workload. These are hardware-path execution gains, not biometric-quality improvements.
+- Real CSV boundaries now discard unsafe windows. Their changed counts are documented separately from the equal-output benchmark.
 
 ```bash
-# Classification (e.g., DeepConvLSTM on HAR)
-python -m engine.train --config configs/cnn_lstm.yaml
-
-# Siamese verification
-python -m engine.train_siamese --config configs/siamese.yaml
-
-# Edge export (prune + quantize + ONNX)
-python -m scripts.export_onnx \
-    --config configs/lightweight.yaml \
-    --checkpoint runs/smoke_classification/cnn_lstm/best.pt \
-    --out model.onnx \
-    --prune 0.3 --quantize
+uv run --no-project --python .venv/bin/python python -m scripts.benchmark_runtime --device all
+uv run --no-project --python .venv/bin/python python -m scripts.benchmark_preprocessing --baseline-ref 0f0eeb3
 ```
 
----
+Use `0f0eeb3` from this repository's evidence report. Timings include transfer and synchronized GPU work after warm-up; training throughput is triplets/sec and inference throughput is windows/sec. No phone battery or deployment latency measurement is implied.
 
-## Measured Results
+## Data contract and provenance
 
-These are dataset-backed numbers (UCI HAR / WISDM test splits), not unit-test output. Full provenance, per-class precision/recall and confusion matrices are in `STUDENT_B_RESULTS.md`.
+`data/adapter.py` preserves the shared `load_windows` / `build_loader` signatures and `WindowData` fields. Models consume `(N,C,T)` float32 tensors; activity and optional identity labels are int64.
 
-**HAR activity classification** (UCI HAR test split, 2947 windows):
+| Source | Representation | Identities | Activity encoding |
+| --- | --- | --- | --- |
+| `har` | Official 50 Hz, 9-channel, fixed 128-sample windows | Original official subject-disjoint train/test split | Original 1–6 converted to 0–5 |
+| `wisdm_v1` | Official AR v1.1, native 20 Hz, 3 accelerometer channels | Authentic IDs 1–36 with stable global encoding and project-defined 80/20 subject split | Walking=0, Jogging=1, Upstairs=2, Downstairs=3, Sitting=4, Standing=5 |
+| `wisdm` | Existing derived train/test CSVs, 3 accelerometer channels | Unknown: `y_subject=None` | Integer range 0–5 checked; semantic names remain unverified |
 
-| Model | Registry key | Test accuracy | Macro-F1 |
-|-------|--------------|---------------|----------|
-| B3 DeepConvLSTM | `cnn_lstm` | 0.930098 | 0.931380 |
-| B5 SE-DeepConvNet | `se_convnet` | 0.929420 | 0.929386 |
-| B7 SEGait-ConViT | `gait_vit` | 0.923651 | 0.924022 |
-| B2 Multi-task | `multitask` | 0.908381 | 0.910602 |
-| B1 Fusion CNN | `cnn_baseline` | 0.895487 | 0.892737 |
+`wisdm_v1` is a different explicit source from the anonymous CSV. No identity is inferred from timestamps, row order or activity. The adapter deliberately rejects UCI 507's different 18-activity/1600–1650 schema rather than mislabeling it as v1.1. No gyroscope is invented for accelerometer-only WISDM.
 
-**WISDM activity classification** (WISDM test split, 2958 windows): B3 DeepConvLSTM `cnn_lstm` accuracy **0.866802** (macro-F1 0.859304).
+Default activity training requires real identity labels for subject-disjoint validation. Legacy anonymous CSV activity training requires an explicit `validation_strategy: chronological`; it purges potentially overlapping boundary windows and makes no subject-independent claim. Multitask training maps optimizer-training identities only and never scores unseen validation identities as known classes.
 
-**HAR verification (Siamese, goal metric)**: EER **0.4162**, ROC AUC **0.6244** (10000 pairs, 9 test subjects, 128-d embeddings). This is close to chance and **not usable for authentication yet**.
+## Implementation and research
 
-**Negative sweep**: six configs varying the optimiser budget (`triplets_per_epoch`) and embedding width (`embed_dim`); the best test EER was **0.4174**, so neither lever is the bottleneck.
+- `data/`: stable model-facing adapter, raw identity parser, segmented/vectorized windowing and bounded process cache.
+- `engine/train.py`: validation-selected activity training, multitask label handling, CPU/CUDA batches.
+- `engine/train_siamese.py`: triplet/contrastive embedding training, cached identity groups, bounded index gathers, validation EER selection.
+- `engine/evaluate.py`: tied ROC handling, empirical independent operating points, validation-calibrated fixed decisions, pairing/dependence metadata and leakage guards.
+- `models/`: existing CNN, DeepConvLSTM, multitask, SE, transformer, Siamese and compression tracks. Architecture labels are adaptations, not verified paper reproductions.
+- `scripts/`: public dataset preparation, full experiments, performance benchmarks and ONNX export.
 
-**Blocker (Student A)**: WISDM ships without a subject/user column, so `y_subject=None` and no verification metric is computable on that source. Restoring subject ids from the raw WISDM v1.1 files is Student A's deliverable and is what unblocks the goal metric.
+Read [WISDM identities](docs/wisdm_identity.md), [training protocol](docs/training_protocol.md), [evaluation protocol](docs/verification_protocol.md), and the [audit of 12 supplied papers plus additional primary studies](reading_notes/research_audit.md). The audit distinguishes IMU methods from visual joint/silhouette methods and links each reusable lesson to its source. Earlier `UNVERIFIED` reading notes remain historical; they are not proof of implementation fidelity.
 
----
+The [official Fordham WISDM source](https://www.cis.fordham.edu/wisdm/dataset.php) and [official UCI HAR source](https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones) define the data. Original WISDM `readme.txt` and schema notes are retained by the downloader.
 
-## Student C — Evaluation Framework
-
-### Your Interface
-
-File: `engine/evaluate.py`
-
-Key functions you own/define:
-
-```python
-def verification_metrics(embeddings, subject_ids, n_pairs: int = 10000,
-                         seed: int = 42) -> dict:
-    """EER, FAR, FRR, ROC-AUC from genuine/impostor pairs.
-
-    Requires `subject_ids` (one per embedding row) to form the pairs; L2-normalizes
-    `embeddings` internally, so pass raw embeddings.
-    """
-    ...
-
-def _eer_operating_point(labels, scores) -> tuple[float, float, float]:
-    """Return `(eer, far, frr)` at the single interpolated FAR/FRR crossing.
-    `labels`: 1 = genuine, 0 = impostor; higher `scores` = more similar."""
-    ...
-```
-
-### Current Status
-
-- EER computation uses linear interpolation between FAR/FRR operating points
-- **Known issue**: FAR, FRR and EER are all reported from one interpolated FAR/FRR crossing point, so `FAR == FRR == EER` — they are not three independent measurements
-- Checkpoint loading uses `weights_only=True` (safe)
-- The classification trainer has no validation split (selection on train loss); the Siamese trainer carves a subject-disjoint `val_subjects` split and selects `best.pt` on validation EER
-
----
-
-## Integration Points
-
-### Data Flow
-
-```
-Student A (adapter.py)
-    └── load_windows() → WindowData
-            │
-            ├── Student B: engine.train() / train_siamese()
-            │       └── build_loader() → DataLoader → Model
-            │
-            └── Student C: evaluate.py
-                    └── verification_metrics() → EER, FAR, FRR, AUC
-```
-
-### Shared Constants
-
-| Constant | Value | Location |
-|----------|-------|----------|
-| Window size (T) | 128 | `configs/*.yaml` `window_size` |
-| HAR channels | 9 | `configs/*.yaml` `n_channels` |
-| WISDM channels | 3 | no shipped config — all `configs/*.yaml` set `n_channels: 9` (HAR); a WISDM run needs a derived config with `source: wisdm` and `n_channels: 3` |
-| HAR activities | 6 | `datasets/uci_har/UCI HAR Dataset/activity_labels.txt` (read at runtime by `data/adapter.py`) |
-| WISDM activities | 6 | `data/adapter.py` `WISDM_ACTIVITY_NAMES` (`activity_0`..`activity_5`) |
-| Sampling rate (HAR) | 50 Hz | `data/adapter.py` |
-| Sampling rate (WISDM) | 20 Hz | `data/adapter.py` |
-
----
-
-## Datasets
-
-### CI-2026 Dataset (OneDrive)
-
-The raw dataset is stored in the mentor's OneDrive. Link: see `link.md`
-
-```
-CI-2026.zip (68 MiB; from `link.md`, placed at the repo root)
-├── CI-2026/Dataset/
-│   ├── WISDM_Dataset.zip
-│   └── human+activity+recognition+using+smartphones.zip
-│       └── UCI HAR Dataset.zip
-```
-
-Download the archive from `link.md`, place it at the repo root, then run `python scripts/setup_datasets.py` to extract to `datasets/`.
-
----
-
-## Development Workflow
-
-### For Student A (Data)
-
-1. Implement `load_windows` / `build_loader` in `data/adapter.py`
-2. Test with `python -c "from data.adapter import load_windows; ..."`
-3. Ensure `y_subject=None` for WISDM, correct activity encoding
-3. Commit changes — Student B/C will pull and test
-
-### For Student B (Models)
-
-1. Pull Student A's adapter changes
-2. Train models: `python -m engine.train --config configs/*.yaml`
-3. Export ONNX: `python -m scripts.export_onnx ...`
-4. Document results in `reading_notes/` (upgrade UNVERIFIED notes)
-
-### For Student C (Evaluation)
-
-1. Define EER/FAR/FRR protocols in `engine/evaluate.py`
-2. Ensure `verification_metrics` matches Student B's Siamese outputs
-3. Produce benchmark reports
-
----
-
-## Common Commands
-
-```bash
-# Install deps
-pip install -r requirements.txt
-
-# Run all tests (Student B's test suite)
-python -m unittest discover -s tests -p 'test_*.py' -v
-
-# Quick smoke test (requires datasets)
-python scripts/smoke_test.py
-
-# Export ONNX for edge deployment
-python -m scripts.export_onnx --config configs/lightweight.yaml \
-    --checkpoint runs/.../best.pt --out model.onnx
-
-# Extract datasets (run once)
-python scripts/setup_datasets.py
-```
-
----
-
-## Known Limitations & Blockers
-
-| Issue | Owner | Status |
-|-------|-------|--------|
-| Classification trainer has no validation split (checkpoint on train loss); the Siamese trainer selects `best.pt` on validation EER via `val_subjects` | A/B/C | Partially addressed — classification protocol still needs agreeing |
-| WISDM label encoding unverified | A | Blocked on Student A's preprocessing |
-| FAR, FRR and EER all come from one interpolated crossing point, so `FAR == FRR == EER` | C | Reported as measured; not three independent metrics |
-| Structured pruning only for DeepConvLSTM (B3) | B | Others fail closed (use unstructured) |
-| No early stopping in either trainer (both run the configured epochs; `best.pt` is selected post hoc) | A/B/C | Deferred |
-| Dataset not in repo | All | Download from `link.md`, place at repo root |
-
----
-
-## Paper References (Student B Tracks)
-
-| ID | Title | Venue | Year |
-|----|-------|-------|------|
-| B1 | IMU-based gait recognition using CNNs and multi-sensor fusion | Sensors | 2017 |
-| B2 | METIER: Multi-task activity + user recognition | ACM IMWUT | 2020 |
-| B3 | DeepConvLSTM for continuous authentication | Sensors | 2021 |
-| B4 | Siamese denoising autoencoders for gait recognition | Neurocomputing | 2020 |
-| B5 | Wearable auth with SE-DeepConvNet | Computers | 2024 |
-| B6 | Real-time multi-person gait recognition at edge | Scientific Reports | 2025 |
-| B7 | SEGait-ConViT: Vision Transformer for gait | Procedia CS | 2025 |
-
-Common papers (C1–C5) cover surveys, edge computing, implicit authentication, and smartphone-based gait recognition.
-
----
-
-## Getting Help
-
-- **Slack/Teams**: Project channel (ask mentor to add you)
-- **Issues**: Open GitHub issues in this repo
-- **Mentor**: Manjunath Hegde (MAHE) — `manjunath_hegde@manipal.edu`
-
----
-
-## License
-
-Academic research project. See individual paper licenses for reuse.
-
----
-
-**Last Updated**: October 2026  
-**Maintainer**: Aditya (Student B) — `VariableThe` on GitHub
+Student A's corrected standalone pipeline is also mirrored in `student_a/gait_pipeline.py`; its NPZ export contract is separate from the raw-window adapter.

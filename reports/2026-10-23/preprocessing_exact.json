@@ -1,0 +1,30 @@
+{
+  "kind": "synthetic_homogeneous_csv_exact_output_comparison",
+  "rows": 100000,
+  "window_size": 128,
+  "stride": 64,
+  "baseline_ref": "0f0eeb3",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "torch": "2.14.1+cu130",
+  "baseline": {
+    "seconds": [
+      0.8009006580105051,
+      0.8212402630597353,
+      0.6877143370220438
+    ],
+    "median_seconds": 0.8009006580105051,
+    "windows": 1561
+  },
+  "candidate": {
+    "seconds": [
+      0.043215067009441555,
+      0.052949478034861386,
+      0.05093727901112288
+    ],
+    "median_seconds": 0.05093727901112288,
+    "windows": 1561
+  },
+  "outputs_identical": true,
+  "speedup": 15.72327131638926
+}

@@ -1,0 +1,68 @@
+{
+  "started_utc": "2026-10-23T14:56:53.162683+00:00",
+  "hostname": "Darkstar",
+  "python": "3.14.8",
+  "git_commit": "cfbb8c647268613d5987767e7e0e04ad35dafd32",
+  "experiments": [
+    {
+      "config": "configs/verification_har.yaml",
+      "effective_config": "runs/confirmed_verification/verification_har/effective_config.yaml",
+      "elapsed_seconds": 23.180964767998375,
+      "commands": [
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.train_siamese",
+          "--config",
+          "runs/confirmed_verification/verification_har/effective_config.yaml"
+        ],
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.evaluate",
+          "--config",
+          "runs/confirmed_verification/verification_har/effective_config.yaml",
+          "--checkpoint",
+          "runs/confirmed_verification/verification_har/best.pt",
+          "--task",
+          "verification",
+          "--out-dir",
+          "runs/confirmed_verification/verification_har/evaluation",
+          "--calibrate",
+          "--calibration-target-far",
+          "0.01"
+        ]
+      ]
+    },
+    {
+      "config": "configs/wisdm_verification.yaml",
+      "effective_config": "runs/confirmed_verification/wisdm_verification/effective_config.yaml",
+      "elapsed_seconds": 25.479890236001665,
+      "commands": [
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.train_siamese",
+          "--config",
+          "runs/confirmed_verification/wisdm_verification/effective_config.yaml"
+        ],
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.evaluate",
+          "--config",
+          "runs/confirmed_verification/wisdm_verification/effective_config.yaml",
+          "--checkpoint",
+          "runs/confirmed_verification/wisdm_verification/best.pt",
+          "--task",
+          "verification",
+          "--out-dir",
+          "runs/confirmed_verification/wisdm_verification/evaluation",
+          "--calibrate",
+          "--calibration-target-far",
+          "0.01"
+        ]
+      ]
+    }
+  ]
+}

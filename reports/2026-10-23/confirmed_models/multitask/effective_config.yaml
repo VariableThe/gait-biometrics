@@ -1,0 +1,23 @@
+model: multitask
+source: har
+window_size: 128
+stride: 64
+batch_size: 64
+epochs: 20
+subset: null
+optimizer: adam
+lr: 0.001
+weight_decay: 0.0
+class_weight: balanced
+seed: 42
+num_workers: 0
+torch_threads: 4
+out_dir: /home/mav/.t3/scratch/gait-auth-20261023/gait-biometrics/runs/confirmed_models/multitask
+model_args:
+  n_channels: 9
+  n_classes: 6
+  n_subjects: 21
+  hidden_dim: 128
+  dropout: 0.3
+data_root: /home/mav/.t3/scratch/gait-auth-20261023/datasets
+device: auto

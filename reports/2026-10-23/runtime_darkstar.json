@@ -1,0 +1,75 @@
+{
+  "torch_version": "2.14.1+cu130",
+  "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+  "batch_size": 64,
+  "channels": 9,
+  "window_size": 128,
+  "steps": 10,
+  "repeats": 5,
+  "torch_threads": 2,
+  "warmup_batches": 5,
+  "kind": "synthetic_execution_benchmark",
+  "cpu": {
+    "inference": {
+      "seconds_per_batch": [
+        0.01115868019987829,
+        0.010030259199993452,
+        0.010171733099923586,
+        0.010927056899890885,
+        0.01102153649990214
+      ],
+      "median_seconds": 0.010927056899890885,
+      "items_per_second": 5857.020841599085,
+      "item_unit": "windows",
+      "batch_semantics": "one anchor batch"
+    },
+    "training": {
+      "seconds_per_batch": [
+        0.09258514380017005,
+        0.0866544011001679,
+        0.09220548419980332,
+        0.0909098924999853,
+        0.09378411159996176
+      ],
+      "median_seconds": 0.09220548419980332,
+      "items_per_second": 694.1018807657487,
+      "item_unit": "triplets",
+      "batch_semantics": "anchor+positive+negative batches, three forwards, Adam step"
+    },
+    "device_name": "x86_64"
+  },
+  "cuda": {
+    "inference": {
+      "seconds_per_batch": [
+        0.0006736704999639187,
+        0.0006837295997684123,
+        0.0006983846000366611,
+        0.0006690583999443333,
+        0.0006838995999714825
+      ],
+      "median_seconds": 0.0006837295997684123,
+      "items_per_second": 93604.25528114855,
+      "item_unit": "windows",
+      "batch_semantics": "one anchor batch"
+    },
+    "training": {
+      "seconds_per_batch": [
+        0.008666367199839441,
+        0.009953463899728376,
+        0.009021536100044613,
+        0.00998405409991392,
+        0.00937724210016313
+      ],
+      "median_seconds": 0.00937724210016313,
+      "items_per_second": 6825.034409518618,
+      "item_unit": "triplets",
+      "batch_semantics": "anchor+positive+negative batches, three forwards, Adam step"
+    },
+    "device_name": "NVIDIA GeForce RTX 5070 Ti",
+    "peak_cuda_memory_bytes": 125757440
+  },
+  "cuda_speedup_over_cpu": {
+    "training": 9.832900037655984,
+    "inference": 15.981547242640971
+  }
+}

@@ -1,0 +1,15 @@
+/home/sherlock/Code/github/VariableThe/.venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/symbolic_opset9.py:4496: UserWarning: Exporting a model to ONNX with a batch_size other than 1, with a variable length with LSTM can cause an error when running the ONNX model with a different batch size. Make sure to save the model with a batch size of 1, or define the initial states (h0/c0) as inputs of the model. 
+  return _generic_rnn(
+/home/sherlock/Code/github/VariableThe/.venv/lib/python3.14/site-packages/torch/ao/nn/quantized/dynamic/modules/rnn.py:162: UserWarning: torch.quantize_per_tensor, torch.quantize_per_channel and other quantized tensor creation functions that produce tensors with dtype torch.quint8, torch.qint8, and torch.qint32 are deprecated and will be removed in a future PyTorch release. Please see https://github.com/pytorch/pytorch/issues/184982 for more information. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/quantized/Quantizer.cpp:111.)
+  w_ih = torch.quantize_per_tensor(
+[data] source=har test=(2947, 9, 128) eval_subset=128 channels=9 classes=6
+[options] prune=0.3 quantize=True (config=configs/lightweight.yaml)
+[before] params=350406 flops=7045888
+[before] accuracy=0.9531  (n=128)
+[prune] amount=0.3 params=172467 flops=3543616 param_reduction=0.5078
+[prune] accuracy=0.6641  delta=-0.2891
+[prune] NOTE: |accuracy_delta|=0.2891 exceeds 0.05 (before=0.9531, after=0.6641) — reported plainly.
+[export] wrote ../artifacts/edge_validation/model.onnx (694388 bytes) — FP32 pruned model (NOT quantized)
+[quantize] dynamically-quantized copy (int8 Linear/LSTM), measured separately — NOT the artifact at --out
+[quantize] quantized weight-elements (params)=172467  count_parameters(module)=38157 (packed int8 weights are not enumerated as trainable params)
+[quantize] estimated serialized size=312168 bytes  (vs 694388 bytes FP32 ONNX at --out)

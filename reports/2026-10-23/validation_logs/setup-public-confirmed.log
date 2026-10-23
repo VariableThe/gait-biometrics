@@ -1,0 +1,21 @@
+[
+  {
+    "source": "wisdm_v1",
+    "url": "https://www.cis.fordham.edu/wisdm/includes/datasets/latest/WISDM_ar_latest.tar.gz",
+    "archive_sha256": "e573791269aab4a629721cf04b6031b7cbf8e14261cd2bc86e65887a2bc592d7",
+    "raw_sha256": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e",
+    "identity": "original integer subject IDs; no identity reconstruction",
+    "sampling_rate": 20.0,
+    "channels": [
+      "acc_x",
+      "acc_y",
+      "acc_z"
+    ]
+  },
+  {
+    "source": "har",
+    "url": "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip",
+    "archive_sha256": "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031",
+    "representation": "official 128-sample inertial windows, official subject split"
+  }
+]

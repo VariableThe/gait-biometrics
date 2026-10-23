@@ -597,4 +597,5 @@ def export_onnx(model: nn.Module, path: str, input_shape: tuple[int, ...],
         opset_version=opset,
         input_names=["input"], output_names=["output"],
         dynamic_axes={"input": {0: "batch"}, "output": {0: "batch"}},
+        dynamo=False,  # Legacy exporter matches dynamic_axes; no optional onnxscript dependency.
     )

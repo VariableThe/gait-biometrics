@@ -25,23 +25,35 @@ previous behaviour:
 from __future__ import annotations
 
 import argparse
+import inspect
 import json
+import math
 import os
 import random
+import time
 
 import numpy as np
 import torch
 import yaml
-from torch.utils.data import default_collate
 
-from data.adapter import WindowData, build_loader, load_windows
+from data.adapter import WindowData, load_windows
 from engine.evaluate import verification_metrics
-from engine.train import _git_commit, _stratified_subset
-from models.common import save_checkpoint, seed_everything
+from engine.train import (
+    _filter_activities,
+    _git_commit,
+    _make_loader,
+    _protocol,
+    _runtime,
+    _take,
+    _validate_windows,
+)
+from engine.train import (
+    _split_validation as _subject_split,
+)
+from models.common import save_checkpoint
 from models.siamese import (
     EmbeddingNet,
     SiameseNet,
-    TripletWindowSampler,
     contrastive_loss,
     triplet_loss,
 )
@@ -92,7 +104,10 @@ def _n_triplets(config: dict, n_samples: int) -> int:
     `triplets_per_epoch` (default 1) multiplies one dataset pass, so the
     default reproduces the historical budget exactly.
     """
-    return int(config.get("triplets_per_epoch", 1)) * int(n_samples)
+    multiplier = int(config.get("triplets_per_epoch", 1))
+    if multiplier <= 0 or n_samples <= 0:
+        raise ValueError("triplets_per_epoch and n_samples must be positive")
+    return multiplier * int(n_samples)
 
 
 def _selection(val_data) -> tuple[str, str]:
@@ -129,57 +144,105 @@ def _split_validation(data: WindowData, val_subjects: int, seed: int):
     ``(train_data, val_data, val_subject_ids)`` as `WindowData` objects so
     `build_loader` keeps working.
     """
-    subjects = sorted(int(s) for s in torch.unique(data.y_subject).tolist())
-    if not 1 <= val_subjects < len(subjects):
+    return _subject_split(data, val_subjects, seed)
+
+
+class _IdentitySampler:
+    """Cache identity groups once; draw negatives without per-triplet scans."""
+
+    def __init__(self, data: WindowData):
+        if data.y_subject is None:
+            raise ValueError("verification requires real subject labels")
+        self.groups = {}
+        for index, subject in enumerate(data.y_subject.tolist()):
+            self.groups.setdefault(subject, []).append(index)
+        self.subjects = sorted(self.groups)
+        self.valid = [s for s in self.subjects if len(self.groups[s]) >= 2]
+        if len(self.subjects) < 2:
+            raise ValueError("verification requires at least 2 subjects in each split")
+        if not self.valid:
+            raise ValueError(
+                "verification requires a subject with at least 2 windows for genuine pairs"
+            )
+        self.positions = {s: i for i, s in enumerate(self.subjects)}
+
+    def indices(self, count: int, seed: int, triplets: bool):
+        rng = random.Random(seed)
+        for _ in range(count):
+            if triplets or rng.random() < 0.5:
+                subject = rng.choice(self.valid)
+                anchor, positive = rng.sample(self.groups[subject], 2)
+                if not triplets:
+                    yield anchor, positive, 1
+                    continue
+                # Uniformly select one of S-1 alternatives in O(1).
+                neg_position = rng.randrange(len(self.subjects) - 1)
+                neg_position += neg_position >= self.positions[subject]
+                negative = rng.choice(self.groups[self.subjects[neg_position]])
+                yield anchor, positive, negative
+            else:
+                s1, s2 = rng.sample(self.subjects, 2)
+                yield rng.choice(self.groups[s1]), rng.choice(self.groups[s2]), 0
+
+
+def _identity_subset(data: WindowData, n: int, seed: int) -> WindowData:
+    """Preserve every identity and at least two windows where available."""
+    sampler = _IdentitySampler(data)
+    if n >= len(data.X):
+        return data
+    rng = random.Random(seed)
+    required = [
+        i
+        for s in sampler.subjects
+        for i in rng.sample(sampler.groups[s], min(2, len(sampler.groups[s])))
+    ]
+    if n < len(required):
         raise ValueError(
-            f"val_subjects must satisfy 1 <= val_subjects < {len(subjects)} "
-            f"(the distinct subjects in the training split); got {val_subjects}"
+            f"subset={n} cannot preserve identity coverage; need at least {len(required)} windows"
         )
-    val_subject_ids = sorted(random.Random(seed).sample(subjects, val_subjects))
-    val_set = set(val_subject_ids)
-
-    val_mask = torch.tensor(
-        [int(s) in val_set for s in data.y_subject], dtype=torch.bool
+    excluded = set(required)
+    extra = rng.sample(
+        [i for i in range(len(data.X)) if i not in excluded], n - len(required)
     )
-
-    def _take(idx: torch.Tensor) -> WindowData:
-        return WindowData(
-            X=data.X[idx],
-            y_activity=data.y_activity[idx],
-            y_subject=data.y_subject[idx],
-            activity_names=data.activity_names,
-            subject_ids=data.subject_ids,
-            sampling_rate=data.sampling_rate,
-        )
-
-    train_idx = torch.nonzero(~val_mask, as_tuple=False).flatten()
-    val_idx = torch.nonzero(val_mask, as_tuple=False).flatten()
-    return _take(train_idx), _take(val_idx), val_subject_ids
+    return _take(data, torch.tensor(sorted(required + extra)))
 
 
-def _embed_windows(embedding_net: EmbeddingNet, data: WindowData, batch_size: int,
-                   num_workers: int):
+def _embed_windows(
+    embedding_net: EmbeddingNet,
+    data: WindowData,
+    batch_size: int,
+    num_workers: int,
+    config: dict | None = None,
+):
     """Embed every window in `data`; returns an (N, embed_dim) numpy array."""
     embedding_net.eval()
-    loader = build_loader(data, batch_size=batch_size, shuffle=False,
-                          num_workers=num_workers)
+    device = next(embedding_net.parameters()).device
+    loader = _make_loader(
+        data,
+        {**(config or {}), "batch_size": batch_size, "num_workers": num_workers},
+        False,
+        device,
+    )
     embs = []
-    with torch.no_grad():
+    with torch.inference_mode():
         for batch in loader:
-            embs.append(embedding_net(batch[0]).numpy())
+            embs.append(
+                embedding_net(batch[0].to(device, non_blocking=True)).cpu().numpy()
+            )
     return np.concatenate(embs)
 
 
-def train_siamese(config: dict, epochs: int, subset: int | None,
-                  loss_type: str, out_dir: str) -> dict:
+def train_siamese(
+    config: dict, epochs: int, subset: int | None, loss_type: str, out_dir: str
+) -> dict:
     """Train the siamese embedding net per `config`; returns the metrics dict."""
     if loss_type not in ("triplet", "contrastive"):
         raise ValueError(
             f"unsupported loss_type {loss_type!r}; use 'triplet' or 'contrastive'"
         )
+    started = time.monotonic()
+    device = _runtime(config, epochs, subset)
     seed = int(config.get("seed", 42))
-    seed_everything(seed)
-    torch.set_num_threads(int(config.get("torch_threads", 4)))
 
     source = config["source"]
     data = load_windows(
@@ -187,25 +250,39 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
         "train",
         window_size=int(config.get("window_size", 128)),
         stride=int(config.get("stride", 64)),
+        data_root=config.get("data_root", "datasets"),
     )
+    _validate_windows(data, config)
+    data = _filter_activities(data, config.get("activity_ids"))
     if data.y_subject is None:
         raise ValueError(
             f"siamese training requires subject labels, but source {source!r} "
             "has y_subject=None; genuine/impostor pairs cannot be formed. "
-            "Use source 'har'."
+            "Use an identity-preserving source such as 'har' or 'wisdm_v1'."
         )
-    if subset is not None:
-        data = _stratified_subset(data, int(subset), seed)
 
     # Optional subject-disjoint validation carve (default 0 = disabled).
     val_subjects = int(config.get("val_subjects", 0))
+    if val_subjects < 0 or val_subjects == 1:
+        raise ValueError("verification val_subjects must be 0 (legacy) or at least 2")
     val_data = None
     n_train_subjects_total = n_val_subjects = n_val_windows = 0
     if val_subjects > 0:
         n_train_subjects_total = int(torch.unique(data.y_subject).numel())
         data, val_data, val_subject_ids = _split_validation(data, val_subjects, seed)
         n_val_subjects = len(val_subject_ids)
-        n_val_windows = int(len(val_data.X))
+        n_val_windows = len(val_data.X)
+        _IdentitySampler(val_data)  # Fail before training if EER is undefined.
+    if subset is not None:
+        data = _identity_subset(data, int(subset), seed)
+    sampler = _IdentitySampler(data)
+    pairing = config.get("verification_pairing", "unrestricted")
+    if pairing not in ("same_activity", "unrestricted"):
+        raise ValueError("verification_pairing must be same_activity or unrestricted")
+    protocol = _protocol(data, val_data, config)
+    protocol["verification_pairing"] = pairing
+    protocol.update(n_train_windows=len(data.X), n_val_windows=n_val_windows)
+    protocol_enabled = val_data is not None or config.get("activity_ids") is not None
 
     model_args = dict(config.get("model_args", {}))
     embed_dim = int(model_args.get("embed_dim", 128))
@@ -213,7 +290,9 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
     margin = float(model_args.get("margin", 1.0))
     n_channels = int(data.X.shape[1])
 
-    model = SiameseNet(EmbeddingNet(n_channels, embed_dim=embed_dim, dropout=dropout))
+    model = SiameseNet(
+        EmbeddingNet(n_channels, embed_dim=embed_dim, dropout=dropout)
+    ).to(device)
     optimizer = torch.optim.Adam(
         model.parameters(),
         lr=float(config.get("lr", 1e-3)),
@@ -221,25 +300,31 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
     )
 
     batch_size = int(config.get("batch_size", 64))
-    n_samples = int(subset) if subset is not None else len(data.X)
+    n_samples = len(data.X)
+    _n_triplets(config, n_samples)  # Validate even when using contrastive loss.
+    val_pairs = int(config.get("val_pairs", 10000))
+    if val_pairs < 2:
+        raise ValueError("val_pairs must be at least 2")
 
     per_epoch: list[dict] = []
     best_epoch = 0
     selection_metric, selection_key = _selection(val_data)
 
     for epoch in range(1, epochs + 1):
+        epoch_started = time.monotonic()
         model.train()
         loss_sum = 0.0
         n_seen = 0
         # seed + epoch - 1: deterministic per epoch, different across epochs.
         if loss_type == "triplet":
-            sampler = TripletWindowSampler(
-                data, n_triplets=_n_triplets(config, n_samples), seed=seed + epoch - 1
+            pair_iter = _batched(
+                sampler.indices(_n_triplets(config, n_samples), seed + epoch - 1, True),
+                batch_size,
             )
-            pair_iter = _batched(sampler, batch_size)
             for chunk in pair_iter:
-                a, p, neg = default_collate(chunk)
-                optimizer.zero_grad()
+                # Gather only this batch; no full dataset or pair cache on GPU.
+                a, p, neg = data.X[torch.tensor(chunk).T].to(device, non_blocking=True)
+                optimizer.zero_grad(set_to_none=True)
                 za = model.embedding(a)
                 zp = model.embedding(p)
                 zn = model.embedding(neg)
@@ -250,10 +335,13 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
                 loss_sum += loss.item() * bs
                 n_seen += bs
         else:  # contrastive
-            sampler = _contrastive_pairs(data, n_samples, seed + epoch - 1)
-            for chunk in _batched(sampler, batch_size):
-                x1, x2, label = default_collate(chunk)
-                optimizer.zero_grad()
+            for chunk in _batched(
+                sampler.indices(n_samples, seed + epoch - 1, False), batch_size
+            ):
+                indices = torch.tensor(chunk).T
+                x1, x2 = data.X[indices[:2]].to(device, non_blocking=True)
+                label = indices[2].to(device, dtype=torch.float32)
+                optimizer.zero_grad(set_to_none=True)
                 z1, z2 = model(x1, x2)
                 loss = contrastive_loss(z1, z2, label, margin)
                 loss.backward()
@@ -263,20 +351,36 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
                 n_seen += bs
 
         epoch_loss = loss_sum / max(n_seen, 1)
+        if not math.isfinite(epoch_loss):
+            raise ValueError("nonfinite Siamese training loss")
         record = {"epoch": epoch, "loss": epoch_loss}
         val_metrics = None
         if val_data is not None:
+            pair_options = {}
+            if (
+                pairing == "same_activity"
+                and "activity_ids" in inspect.signature(verification_metrics).parameters
+            ):
+                pair_options["activity_ids"] = val_data.y_activity.cpu().numpy()
             val_metrics = verification_metrics(
                 _embed_windows(
-                    model.embedding, val_data, batch_size,
+                    model.embedding,
+                    val_data,
+                    batch_size,
                     int(config.get("num_workers", 0)),
+                    config,
                 ),
                 val_data.y_subject.numpy(),
-                n_pairs=10000,
+                n_pairs=val_pairs,
                 seed=seed,
+                **pair_options,
             )
             record["val_eer"] = val_metrics["eer"]
             record["val_roc_auc"] = val_metrics["roc_auc"]
+            if not math.isfinite(record["val_eer"]):
+                raise ValueError("nonfinite validation EER")
+        if protocol_enabled:
+            record["elapsed_seconds"] = time.monotonic() - epoch_started
         per_epoch.append(record)
 
         if val_metrics is None:
@@ -301,6 +405,8 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
             if val_metrics is not None:
                 checkpoint_metrics["val_eer"] = val_metrics["eer"]
                 checkpoint_metrics["val_roc_auc"] = val_metrics["roc_auc"]
+            if protocol_enabled:
+                checkpoint_metrics["protocol"] = protocol
             save_checkpoint(
                 os.path.join(out_dir, "best.pt"),
                 model,
@@ -326,9 +432,14 @@ def train_siamese(config: dict, epochs: int, subset: int | None,
         "margin": margin,
         "seed": seed,
         "git_commit": _git_commit(),
+        "protocol": protocol,
+        "device": str(device),
+        "elapsed_seconds": time.monotonic() - started,
+        "n_train_windows": len(data.X),
+        "n_train_subjects": len(sampler.subjects),
     }
     if val_data is not None:
-        n_train_windows = int(len(data.X))
+        n_train_windows = len(data.X)
         metrics["n_val_subjects"] = n_val_subjects
         metrics["n_val_windows"] = n_val_windows
         metrics["val_subject_fraction"] = n_val_subjects / n_train_subjects_total
@@ -347,21 +458,32 @@ def main(argv: list[str] | None = None) -> None:
         description="Siamese embedding training (triplet/contrastive)"
     )
     parser.add_argument("--config", required=True, help="path to the YAML config")
-    parser.add_argument("--epochs", type=int, default=None, help="override config epochs")
-    parser.add_argument("--subset", type=int, default=None, help="override config subset")
     parser.add_argument(
-        "--loss", choices=["triplet", "contrastive"], default=None,
+        "--epochs", type=int, default=None, help="override config epochs"
+    )
+    parser.add_argument(
+        "--subset", type=int, default=None, help="override config subset"
+    )
+    parser.add_argument(
+        "--loss",
+        choices=["triplet", "contrastive"],
+        default=None,
         help="override config loss_type",
     )
     parser.add_argument("--out-dir", default=None, help="override config out_dir")
+    parser.add_argument("--device", default=None, help="cpu, cuda[:index], or auto")
     args = parser.parse_args(argv)
 
     with open(args.config) as f:
         config = yaml.safe_load(f)
+    if args.device is not None:
+        config["device"] = args.device
 
     epochs = args.epochs if args.epochs is not None else int(config["epochs"])
     subset = args.subset if args.subset is not None else config.get("subset")
-    loss_type = args.loss if args.loss is not None else str(config.get("loss_type", "triplet"))
+    loss_type = (
+        args.loss if args.loss is not None else str(config.get("loss_type", "triplet"))
+    )
     out_dir = args.out_dir if args.out_dir is not None else config["out_dir"]
 
     train_siamese(config, epochs, subset, loss_type, out_dir)

@@ -1,3 +1,5 @@
+> Historical project document. Current source contracts, validation behavior, measured results and limits are in [README.md](README.md) and [23 October evidence](reports/2026-10-23/README.md). Earlier results/protocols are retained here for provenance and are not directly comparable to the new walking-only runs.
+
 ### Summary of the Research Paper
 **"Journey into gait biometrics: Integrating deep learning for enhanced pattern recognition" (2024)**
 
