@@ -50,7 +50,7 @@ SOURCES = (
 
 def plan():
     return {
-        "protocol": "santos_multisensor_exploratory_v1",
+        "protocol": "santos_multisensor_exploratory_v2",
         "prior_test_inspection": True,
         "cohorts": {
             "development": list(previous.DEV_IDS),
@@ -69,6 +69,7 @@ def plan():
         "selection": "minimum equal-fold EER; ties fixed candidate order",
         "n_candidates": 30,
         "n_fold_neural_runs": 40,
+        "reproduction": "lossless validation embedding caches; model replay atol=rtol=1e-5; metrics exactly recomputed from frozen caches",
         "final_neural_runs": "two only if the selected method is neural",
         "threshold": "separately calibrate winner and baseline on reserved CALIB; FAR<=1%",
         "baseline": "descriptor_accel_axes_auto/mean",
@@ -315,19 +316,56 @@ def save_npz(path, **arrays):
         np.savez_compressed(stream, **arrays)
 
 
+def cache_validation(path, embeddings, data):
+    save_npz(
+        path,
+        embeddings=np.asarray(embeddings),
+        data_fingerprint=np.asarray(previous.data_fingerprint(data)),
+    )
+
+
+def verified_validation(path, replayed, data):
+    with np.load(path, allow_pickle=False) as saved:
+        previous._same(
+            str(saved["data_fingerprint"]),
+            previous.data_fingerprint(data),
+            "cached validation inputs",
+        )
+        z = saved["embeddings"].copy()
+    if (
+        z.shape != replayed.shape
+        or not np.isfinite(z).all()
+        or not np.allclose(z, replayed, atol=1e-5, rtol=1e-5)
+    ):
+        raise ValueError("model replay differs from frozen validation embeddings")
+    return z
+
+
 def encode(model, x, device):
     import torch
 
-    with torch.inference_mode():
-        return np.concatenate(
-            [
-                model(torch.as_tensor(x[i : i + 64], device=device))
-                .float()
-                .cpu()
-                .numpy()
-                for i in range(0, len(x), 64)
-            ],
-            axis=0,
+    old_matmul, old_cudnn = (
+        torch.backends.cuda.matmul.allow_tf32,
+        torch.backends.cudnn.allow_tf32,
+    )
+    try:
+        torch.backends.cuda.matmul.allow_tf32 = False
+        torch.backends.cudnn.allow_tf32 = False
+        with torch.inference_mode():
+            return np.concatenate(
+                [
+                    model(torch.as_tensor(x[i : i + 64], device=device))
+                    .float()
+                    .cpu()
+                    .numpy()
+                    for i in range(0, len(x), 64)
+                ],
+                axis=0,
+            )
+    finally:
+        torch.backends.cuda.matmul.allow_tf32, torch.backends.cudnn.allow_tf32 = (
+            old_matmul,
+            old_cudnn,
         )
 
 
@@ -438,6 +476,9 @@ def train_family(args):
                 save_npz(path, **metric.state_dict())
                 artifacts[str(path.relative_to(root))] = previous.digest(path)
                 z = metric.transform(features[val])
+                cache = folder / f"{name}_fold{fold['fold']}_validation.npz"
+                cache_validation(cache, z, subset(data, fold["val_subject_ids"]))
+                artifacts[str(cache.relative_to(root))] = previous.digest(cache)
                 for template in TEMPLATES:
                     folds[template].append(
                         {
@@ -485,6 +526,9 @@ def train_family(args):
                 )
                 del model
             ensemble = np.concatenate(embeddings, axis=1) / np.sqrt(2)
+            cache = folder / f"fold{fold['fold']}_validation.npz"
+            cache_validation(cache, ensemble, val)
+            artifacts[str(cache.relative_to(root))] = previous.digest(cache)
             for template in TEMPLATES:
                 folds[template].append(
                     {
@@ -570,8 +614,14 @@ def expected_artifacts(family):
             f"descriptors/{descriptor_name(s)}_fold{f}.npz"
             for s in DESCRIPTORS
             for f in range(5)
+        } | {
+            f"descriptors/{descriptor_name(s)}_fold{f}_validation.npz"
+            for s in DESCRIPTORS
+            for f in range(5)
         }
-    return {f"{family}/fold{f}_seed{s}.pt" for f in range(5) for s in (42, 43)}
+    return {f"{family}/fold{f}_seed{s}.pt" for f in range(5) for s in (42, 43)} | {
+        f"{family}/fold{f}_validation.npz" for f in range(5)
+    }
 
 
 def verified_results(root):
@@ -679,6 +729,11 @@ def lock(args):
                 if set(metric.training_subject_ids_) != set(fold["train_subject_ids"]):
                     raise ValueError("fold metric identity leakage")
                 z = metric.transform(descriptor_features(val, row["descriptor"]))
+                cache = (
+                    root
+                    / "descriptors"
+                    / f"{descriptor_name(row['descriptor'])}_fold{fold['fold']}_validation.npz"
+                )
             else:
                 channels, _ = family_config(row["family"])
                 zs = []
@@ -693,6 +748,8 @@ def lock(args):
                     )
                     zs.append(encode(model, windows(val, channels), args.device))
                 z = np.concatenate(zs, axis=1) / np.sqrt(2)
+                cache = root / row["family"] / f"fold{fold['fold']}_validation.npz"
+            z = verified_validation(cache, z, val)
             actual = metrics(score(z, val, row["template"]))
             previous._same(
                 actual["coverage"], report["coverage"], "reported fold coverage"

@@ -1,6 +1,6 @@
 # Registered exploratory Santos multisensor study
 
-`scripts/multisensor_study.py` registers `santos_multisensor_exploratory_v1`.
+`scripts/multisensor_study.py` registers `santos_multisensor_exploratory_v2`.
 **Santos TEST has already been inspected: every new TEST result is exploratory.**
 The explicit disclosure flag is `prior_test_inspection: true` in the registered
 plan, lock, attempt and result. This frozen runner has no
@@ -55,15 +55,32 @@ registered two-day identity-balanced sampler; do not replace it with the
 generic metric trainer's defaults. Fold preprocessing, metrics and neural
 normalization fit only optimizer-training identities.
 
-The **cross-host GPU training budget is exactly 40 CV runs × 40 epochs**:
+The **registered v2 cross-host GPU training budget is exactly 40 CV runs × 40 epochs**:
 `4 families × 5 folds × 2 seeds = 40`, totaling 1,600 CV run-epochs.
 There are **exactly two additional 40-epoch final fits only if the selected
-winner is neural** (1,680 run-epochs overall); a descriptor winner adds zero
+winner is neural** (1,680 v2 run-epochs overall); a descriptor winner adds zero
 neural fits. Template scoring and lock-time verification reuse checkpoints;
 they do not authorize more training. This is one aggregate budget across all
 hosts, not a budget per host. Assign each family to one host, preserve outputs,
 and record any failure before considering a retry. The runner has no global
 cross-host scheduler or checkpoint-resume stage.
+
+The v1 attempt failed its strict cross-GPU validation replay audit: one losing
+method's AUC was `0.883333` versus `0.883889`, while its EER was unchanged.
+The recorded first 40 GPU CV runs completed before any TEST
+numerical read **in this attempt**. Historical Santos TEST inspection remains
+disclosed; that ordering does not make any future TEST result confirmatory.
+Preserve the original v1 study root unchanged as the failed audit, including
+its compute and failure record.
+
+Version 2 requires a **clean rerun of all 40 CV runs** in a new empty v2 root;
+reuse no v1 checkpoints, validation caches or results. Do not retrofit v1
+artifacts or registration into v2. Record the execution history transparently:
+after the full rerun, 40 discarded v1 runs plus 40 new v2 runs, each at 40
+epochs, total 80 historically executed CV runs (3,200 run-epochs). The registered
+v2 CV budget remains 40 runs; discarded v1 runs are excluded from its candidate
+pool and reported separately. The only additional neural final fits remain the
+two 40-epoch seeds if the selected winner is neural.
 
 Run the following from the project directory using the already prepared shared
 environment and pinned Santos v7 archive. These are operator commands, not
@@ -75,7 +92,7 @@ hosts: the loader includes its spelling in the fingerprinted metadata.
 cd /home/sherlock/Code/github/VariableThe/gait-biometrics
 study_python='/home/sherlock/Code/github/VariableThe/.venv/bin/python'
 study_archive='datasets/santos/santos-v7.zip'
-study_root='artifacts/santos-multisensor-exploratory-v1'
+study_root='artifacts/santos-multisensor-exploratory-v2'
 
 uv run --no-project --python "$study_python" python -m scripts.multisensor_study \
   --stage register --archive-path "$study_archive" --out-root "$study_root"
@@ -125,13 +142,38 @@ guide. It is not a hash of every repository file or the Python environment.
 Use identical frozen source bytes, archive bytes and compatible prepared
 environments on every host; retain environment/hardware provenance separately.
 
+Each fitted descriptor/fold and each neural ensemble/fold now has a lossless
+compressed validation NPZ. `cache_validation(path, embeddings, data)` saves the
+original embedding array under `embeddings` and the exact validation
+`data_fingerprint` under that name. All three enrollment templates reuse the
+same fold cache for their descriptor specification or neural family; templates
+do not add training runs or separate embedding caches. The complete CV inventory
+is 60 descriptor artifacts (30 fitted states plus 30 validation caches) and 15
+artifacts per neural family (10 seed checkpoints plus five ensemble validation
+caches): **120 hashed artifacts plus five family `result.json` files**. The
+family results are also hashed during lock verification; registration and any
+later final-fit artifacts are separate from this CV count.
+
 `lock` requires all 30 candidates and their complete five-fold artifacts. It
 chooses minimum equal-fold mean EER, with ties resolved by fixed candidate order.
-Before reading CALIB, it reloads fitted fold artifacts and recomputes every
-candidate's EER, AUC, coverage and claim-graph hash. Each candidate's validation
-graph must match the baseline in each fold. Only then does it fit the baseline
-and selected winner on all DEV users, and load reserved CALIB users. Each method
-gets its **own independently calibrated threshold** targeting empirical CALIB
+Before reading CALIB, it reloads fitted fold artifacts and replays their
+validation embeddings. `verified_validation(path, replayed, data)` requires the
+exact validation fingerprint, identical original/replay shapes, finite original
+and replay embeddings, and `np.allclose(original, replayed, atol=1e-5,
+rtol=1e-5)`. It then returns the **original cached embeddings**, never the replay
+array. Original finiteness is checked explicitly; with finite originals,
+`np.allclose` also rejects nonfinite replay values. `encode` disables both CUDA
+matmul and cuDNN TF32 during inference and restores their previous flags in a
+`finally` block, including on failure.
+
+Every candidate's EER, AUC, coverage and claim-graph hash are recomputed from
+those exact cached originals. Numerical model replay tolerance is an embedding
+check, **not an EER/AUC tolerance**: scores and metric summaries use the original
+cache, and the existing summary guard remains `1e-10` for EER/AUC differences.
+Coverage and claim-graph summaries must match exactly. Each candidate's
+validation graph must also match the baseline in each fold. Only then does it
+fit the baseline and selected winner on all DEV users, and load reserved CALIB
+users. Each method gets its **own independently calibrated threshold** targeting empirical CALIB
 FAR ≤1%; never transfer the baseline threshold to the winner. If winner and
 baseline are identical, their fitted artifact is reused. `lock.json` freezes
 selection, fitted artifacts, thresholds, calibration fingerprint and checksums

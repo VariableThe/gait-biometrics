@@ -166,6 +166,12 @@ class StudyGuards(unittest.TestCase):
 
     def test_fixed_plan_budget_cohorts_and_prior_inspection(self):
         plan = study.plan()
+        self.assertEqual(plan["protocol"], "santos_multisensor_exploratory_v2")
+        self.assertEqual(
+            plan["reproduction"],
+            "lossless validation embedding caches; model replay atol=rtol=1e-5; "
+            "metrics exactly recomputed from frozen caches",
+        )
         self.assertEqual(
             (study.DESCRIPTORS, study.NEURAL, study.TEMPLATES),
             (DESCRIPTORS, NEURAL, TEMPLATES),
@@ -235,16 +241,121 @@ class StudyGuards(unittest.TestCase):
             for spec in DESCRIPTORS
             for f in range(5)
         }
-        self.assertEqual(study.expected_artifacts("descriptors"), descriptors)
+        descriptor_caches = {
+            "descriptors/descriptor_"
+            + "_".join(map(str, spec))
+            + f"_fold{f}_validation.npz"
+            for spec in DESCRIPTORS
+            for f in range(5)
+        }
+        self.assertEqual(
+            study.expected_artifacts("descriptors"), descriptors | descriptor_caches
+        )
         self.assertEqual(len(descriptors), 30)
+        self.assertEqual(len(descriptor_caches), 30)
+        self.assertEqual(len(study.expected_artifacts("descriptors")), 60)
         neural = set()
         for family in NEURAL:
-            expected = {
+            checkpoints = {
                 f"{family}/fold{f}_seed{s}.pt" for f in range(5) for s in (42, 43)
             }
+            caches = {f"{family}/fold{f}_validation.npz" for f in range(5)}
+            expected = checkpoints | caches
             self.assertEqual(study.expected_artifacts(family), expected)
+            self.assertEqual(
+                (len(checkpoints), len(caches), len(expected)), (10, 5, 15)
+            )
             neural.update(expected)
-        self.assertEqual(len(neural), 40)
+        self.assertEqual(len(neural), 60)
+
+    def test_validation_cache_is_lossless_and_small_replay_drift_returns_original(self):
+        data = object()  # No real or synthetic dataset is needed for this API.
+        z = np.asarray([[0.125 + np.finfo(np.float64).eps, -0.25], [0.5, -0.75]])
+        replayed = z + 1e-7
+        with (
+            tempfile.TemporaryDirectory() as temp,
+            mock.patch.object(
+                study.previous, "data_fingerprint", return_value="exact-input-hash"
+            ) as fingerprint,
+        ):
+            path = Path(temp) / "validation.npz"
+            study.cache_validation(path, z, data)
+            before = path.read_bytes()
+            with np.load(path, allow_pickle=False) as saved:
+                self.assertEqual(set(saved.files), {"embeddings", "data_fingerprint"})
+                self.assertEqual(str(saved["data_fingerprint"]), "exact-input-hash")
+                self.assertEqual(saved["embeddings"].dtype, z.dtype)
+                np.testing.assert_array_equal(saved["embeddings"], z)
+            verified = study.verified_validation(path, replayed, data)
+            np.testing.assert_array_equal(verified, z)
+            self.assertFalse(np.array_equal(verified, replayed))
+            self.assertFalse(np.shares_memory(verified, replayed))
+            np.testing.assert_array_equal(replayed, z + 1e-7)
+            self.assertEqual(path.read_bytes(), before)
+            self.assertEqual(
+                fingerprint.call_args_list, [mock.call(data), mock.call(data)]
+            )
+
+    def test_validation_cache_rejects_large_drift_shape_and_nonfinite_values(self):
+        z = np.asarray([[0.1, -0.2], [0.3, -0.4]], dtype=np.float32)
+        cases = {
+            "large_drift": (z, z + 1e-3),
+            "shape": (z, z[:, :1]),
+            "broadcastable_shape": (z, z[None, :, :]),
+            "cached_nan": (np.full_like(z, np.nan), z),
+            "cached_inf": (np.full_like(z, np.inf), z),
+            "replay_nan": (z, np.full_like(z, np.nan)),
+            "replay_inf": (z, np.full_like(z, np.inf)),
+        }
+        with (
+            tempfile.TemporaryDirectory() as temp,
+            mock.patch.object(
+                study.previous, "data_fingerprint", return_value="input-hash"
+            ),
+        ):
+            for name, (cached, replayed) in cases.items():
+                path = Path(temp) / f"{name}.npz"
+                study.cache_validation(path, cached, None)
+                before = path.read_bytes()
+                with (
+                    self.subTest(name=name),
+                    self.assertRaisesRegex(ValueError, "model replay differs"),
+                ):
+                    study.verified_validation(path, replayed, None)
+                self.assertEqual(path.read_bytes(), before)
+
+    def test_validation_cache_requires_exact_input_hash_even_for_identical_embeddings(
+        self,
+    ):
+        z = np.eye(2, dtype=np.float32)
+        with tempfile.TemporaryDirectory() as temp:
+            path = Path(temp) / "validation.npz"
+            with mock.patch.object(
+                study.previous, "data_fingerprint", return_value="original"
+            ):
+                study.cache_validation(path, z, None)
+            with (
+                mock.patch.object(
+                    study.previous, "data_fingerprint", return_value="changed"
+                ),
+                self.assertRaisesRegex(ValueError, "cached validation inputs"),
+            ):
+                study.verified_validation(path, z.copy(), None)
+
+    def test_validation_cache_cannot_overwrite_frozen_embeddings(self):
+        z = np.eye(2, dtype=np.float32)
+        with (
+            tempfile.TemporaryDirectory() as temp,
+            mock.patch.object(
+                study.previous, "data_fingerprint", return_value="input-hash"
+            ),
+        ):
+            path = Path(temp) / "validation.npz"
+            study.cache_validation(path, z, None)
+            before = path.read_bytes()
+            with self.assertRaises(FileExistsError):
+                study.cache_validation(path, z + 1e-7, None)
+            self.assertEqual(path.read_bytes(), before)
 
     def test_select_minimum_equal_fold_mean_and_fixed_order_ties(self):
         rows = _rows()
@@ -461,16 +572,17 @@ class StudyGuards(unittest.TestCase):
         ):
             rows, hashes = study.verified_results(root)
             self.assertEqual(len(rows), 30)
-            self.assertEqual(
-                len(hashes), 75
-            )  # 70 fitted artifacts and five result files
-            self.assertEqual(len({str(c.args[0]) for c in hasher.call_args_list}), 76)
+            # 70 fitted artifacts, 50 validation caches, and five result files.
+            self.assertEqual(len(hashes), 125)
+            self.assertEqual(len({str(c.args[0]) for c in hasher.call_args_list}), 126)
             for change in (
                 "registration",
                 "family",
                 "missing",
+                "missing_validation_cache",
                 "extra",
                 "hash",
+                "validation_cache_hash",
                 "coverage",
             ):
                 broken = copy.deepcopy(values)
@@ -481,10 +593,20 @@ class StudyGuards(unittest.TestCase):
                     result["family"] = "accel_supcon"
                 elif change == "missing":
                     result["artifacts"].pop(next(iter(result["artifacts"])))
+                elif change == "missing_validation_cache":
+                    cache = next(
+                        p for p in result["artifacts"] if p.endswith("_validation.npz")
+                    )
+                    result["artifacts"].pop(cache)
                 elif change == "extra":
                     result["artifacts"]["descriptors/orphan.npz"] = "extra"
                 elif change == "hash":
                     result["artifacts"][next(iter(result["artifacts"]))] = "changed"
+                elif change == "validation_cache_hash":
+                    cache = next(
+                        p for p in result["artifacts"] if p.endswith("_validation.npz")
+                    )
+                    result["artifacts"][cache] = "changed"
                 else:
                     result["rows"].pop()
                 with (
