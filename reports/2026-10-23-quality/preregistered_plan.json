@@ -1,0 +1,80 @@
+{
+  "registered_utc": "2026-10-23T15:39:00Z",
+  "sources": [
+    "har",
+    "wisdm_v1"
+  ],
+  "activity_ids": [
+    0
+  ],
+  "window_size": 128,
+  "stride": 64,
+  "split_seed": 42,
+  "val_seed": 42,
+  "val_subjects": 4,
+  "train_seeds": [
+    42,
+    43,
+    44
+  ],
+  "epochs": 40,
+  "primary_selection": "minimum validation pair EER of uniform seed ensemble; source-specific method; tie prefer simpler method",
+  "test_access": "test split never loaded until per-source selection_lock.json has been written; only selected method and frozen baseline scored; all candidates reported on validation",
+  "selection_reuses_calibration_cohort": true,
+  "candidate_neural": [
+    {
+      "name": "legacy_hard",
+      "architecture": "legacy",
+      "objective": "batch_hard",
+      "stats_fusion": false
+    },
+    {
+      "name": "multiscale_hard",
+      "architecture": "multiscale",
+      "objective": "batch_hard",
+      "stats_fusion": false
+    },
+    {
+      "name": "multiscale_supcon",
+      "architecture": "multiscale",
+      "objective": "supcon",
+      "stats_fusion": false
+    },
+    {
+      "name": "multiscale_hybrid",
+      "architecture": "multiscale",
+      "objective": "hybrid",
+      "stats_fusion": false
+    },
+    {
+      "name": "temporal_hybrid",
+      "architecture": "temporal",
+      "objective": "hybrid",
+      "stats_fusion": false
+    },
+    {
+      "name": "multiscale_stats_hybrid",
+      "architecture": "multiscale",
+      "objective": "hybrid",
+      "stats_fusion": true
+    }
+  ],
+  "postprocess_options": [
+    "none",
+    "wccn_auto"
+  ],
+  "feature_options": [
+    "standard",
+    "wccn_auto",
+    "wccn_0.2"
+  ],
+  "secondary_protocol": "prefix enrollment5, purge2 ordered windows, template cosine; label within-recording only, no cross-session proof",
+  "secondary_metrics": [
+    "ROC AUC",
+    "FRR at validation-calibrated FAR target1%",
+    "fixed test FAR",
+    "parameters",
+    "compute time"
+  ],
+  "known_prior_test_results": "Frozen baseline from d006d0a: HAR pair EER.1764, WISDM.201; new candidate test scores unknown."
+}

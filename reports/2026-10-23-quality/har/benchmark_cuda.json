@@ -1,0 +1,1032 @@
+{
+  "schema_version": 1,
+  "kind": "checkpoint_synthetic_inference",
+  "created_at_utc": "2026-10-23T15:57:25.865196+00:00",
+  "source": "har",
+  "selection": "multiscale_hybrid_none",
+  "postprocess": "none",
+  "selection_lock": "/home/mav/.t3/scratch/gait-auth-20261023/gait-biometrics/runs/research_quality_registered/har/selection_lock.json",
+  "selection_lock_sha256": "d6a516b3bba2ddc675568cea913908406a1e2873f116d3d290a3596f1ca4db5b",
+  "baseline_checkpoint": "/home/mav/.t3/scratch/gait-auth-20261023/gait-biometrics/runs/confirmed_verification/verification_har/best.pt",
+  "baseline_sha256": "d62e24507d746fd75756b3a378ea55d386d5a460eeb0a3562f9f9d0851ef627f",
+  "baseline_hash_in_lock": true,
+  "baseline_checkpoint_file_bytes": 2011395,
+  "ensemble_members": 3,
+  "single_member_seed": 42,
+  "members": [
+    {
+      "seed": 42,
+      "checkpoint": "/home/mav/.t3/scratch/gait-auth-20261023/gait-biometrics/runs/research_quality_registered/har/multiscale_hybrid/seed_42/best.pt",
+      "checkpoint_sha256": "f9c92c6c737da0fb92ef335b5cd4f95f440018c3588a596347de472f5ab6d793",
+      "checkpoint_file_bytes": 149831,
+      "model_args": {
+        "architecture": "multiscale",
+        "embed_dim": 128,
+        "width": 32,
+        "dropout": 0.1,
+        "stats_fusion": false,
+        "normalization": true
+      },
+      "parameters": 30252,
+      "parameters_unused_dae_decoder": 0,
+      "forward_parameters": 30252,
+      "parameter_bytes": 121008,
+      "buffer_bytes": 1153,
+      "tensor_state_bytes": 122161,
+      "buffers": [
+        {
+          "name": "encoder.channel_mean",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.channel_std",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.magnitude_mean",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.magnitude_std",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.normalization_fitted",
+          "shape": [],
+          "dtype": "torch.bool",
+          "bytes": 1
+        },
+        {
+          "name": "encoder.correlation_indices",
+          "shape": [
+            2,
+            66
+          ],
+          "dtype": "torch.int64",
+          "bytes": 1056
+        },
+        {
+          "name": "encoder.stats_mean",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "encoder.stats_std",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        }
+      ]
+    },
+    {
+      "seed": 43,
+      "checkpoint": "/home/mav/.t3/scratch/gait-auth-20261023/gait-biometrics/runs/research_quality_registered/har/multiscale_hybrid/seed_43/best.pt",
+      "checkpoint_sha256": "2ba7a16dd80e3bc0074b53b2eee79e8b79577c0610e928ab6479caf466d1fc12",
+      "checkpoint_file_bytes": 149831,
+      "model_args": {
+        "architecture": "multiscale",
+        "embed_dim": 128,
+        "width": 32,
+        "dropout": 0.1,
+        "stats_fusion": false,
+        "normalization": true
+      },
+      "parameters": 30252,
+      "parameters_unused_dae_decoder": 0,
+      "forward_parameters": 30252,
+      "parameter_bytes": 121008,
+      "buffer_bytes": 1153,
+      "tensor_state_bytes": 122161,
+      "buffers": [
+        {
+          "name": "encoder.channel_mean",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.channel_std",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.magnitude_mean",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.magnitude_std",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.normalization_fitted",
+          "shape": [],
+          "dtype": "torch.bool",
+          "bytes": 1
+        },
+        {
+          "name": "encoder.correlation_indices",
+          "shape": [
+            2,
+            66
+          ],
+          "dtype": "torch.int64",
+          "bytes": 1056
+        },
+        {
+          "name": "encoder.stats_mean",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "encoder.stats_std",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        }
+      ]
+    },
+    {
+      "seed": 44,
+      "checkpoint": "/home/mav/.t3/scratch/gait-auth-20261023/gait-biometrics/runs/research_quality_registered/har/multiscale_hybrid/seed_44/best.pt",
+      "checkpoint_sha256": "312a71b425a9732d2d422aef7f446ac6aeda3905f7bcf6e31d06f86b9508d44e",
+      "checkpoint_file_bytes": 149831,
+      "model_args": {
+        "architecture": "multiscale",
+        "embed_dim": 128,
+        "width": 32,
+        "dropout": 0.1,
+        "stats_fusion": false,
+        "normalization": true
+      },
+      "parameters": 30252,
+      "parameters_unused_dae_decoder": 0,
+      "forward_parameters": 30252,
+      "parameter_bytes": 121008,
+      "buffer_bytes": 1153,
+      "tensor_state_bytes": 122161,
+      "buffers": [
+        {
+          "name": "encoder.channel_mean",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.channel_std",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.magnitude_mean",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.magnitude_std",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.normalization_fitted",
+          "shape": [],
+          "dtype": "torch.bool",
+          "bytes": 1
+        },
+        {
+          "name": "encoder.correlation_indices",
+          "shape": [
+            2,
+            66
+          ],
+          "dtype": "torch.int64",
+          "bytes": 1056
+        },
+        {
+          "name": "encoder.stats_mean",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "encoder.stats_std",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        }
+      ]
+    }
+  ],
+  "hardware": {
+    "device": "cuda",
+    "device_name": "NVIDIA GeForce RTX 5070 Ti",
+    "platform": "Linux-6.8.0-147-generic-x86_64-with-glibc2.39",
+    "python": "3.14.8",
+    "torch_version": "2.14.1+cu130",
+    "cuda_version": "13.0",
+    "cudnn_version": 92400,
+    "torch_threads": 2,
+    "torch_interop_threads": 1
+  },
+  "protocol": {
+    "input_shape": [
+      128,
+      9,
+      128
+    ],
+    "input_dtype": "torch.float32",
+    "input_seed": 42,
+    "input_sha256": "7721326551d89573d3bdd13b5e364fa15615f7f206ee70537b514eff328b824f",
+    "batch_sizes": [
+      1,
+      128
+    ],
+    "warmup_batches": 5,
+    "repetitions": 30,
+    "inference_mode": true,
+    "tf32": false,
+    "autocast": false,
+    "compiled": false,
+    "timer": "perf_counter; CUDA synchronized before/after each forward",
+    "transfer_included": false,
+    "included": "raw baseline; complete encoders; selected WCCN; ensemble concatenation/scaling",
+    "excluded": "loading, input generation, transfers, calibration, scoring, training",
+    "throughput_unit": "input windows/second; one ensemble input counts once",
+    "throughput_formula": "batch_size * repetitions / sum(batch_seconds)",
+    "p95_method": "linear interpolation at (n-1)*0.95",
+    "memory_scope": "incremental CUDA allocated peak after warmup, all models co-resident"
+  },
+  "results": {
+    "old_baseline_raw": {
+      "parameters": 275712,
+      "parameters_unused_dae_decoder": 165120,
+      "forward_parameters": 110592,
+      "parameter_bytes": 1102848,
+      "buffer_bytes": 2584,
+      "tensor_state_bytes": 1105432,
+      "buffers": [
+        {
+          "name": "features.1.running_mean",
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32",
+          "bytes": 256
+        },
+        {
+          "name": "features.1.running_var",
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32",
+          "bytes": 256
+        },
+        {
+          "name": "features.1.num_batches_tracked",
+          "shape": [],
+          "dtype": "torch.int64",
+          "bytes": 8
+        },
+        {
+          "name": "features.5.running_mean",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "bytes": 512
+        },
+        {
+          "name": "features.5.running_var",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "bytes": 512
+        },
+        {
+          "name": "features.5.num_batches_tracked",
+          "shape": [],
+          "dtype": "torch.int64",
+          "bytes": 8
+        },
+        {
+          "name": "features.9.running_mean",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "bytes": 512
+        },
+        {
+          "name": "features.9.running_var",
+          "shape": [
+            128
+          ],
+          "dtype": "torch.float32",
+          "bytes": 512
+        },
+        {
+          "name": "features.9.num_batches_tracked",
+          "shape": [],
+          "dtype": "torch.int64",
+          "bytes": 8
+        }
+      ],
+      "batches": [
+        {
+          "batch_size": 1,
+          "output_shape": [
+            1,
+            128
+          ],
+          "repetitions": 30,
+          "batch_latency_ms_median": 0.4941379993397277,
+          "batch_latency_ms_p95": 0.5035720496380236,
+          "windows_per_second": 2022.9799784605257,
+          "windows_per_second_at_median": 2023.726168269209,
+          "batch_latency_ms_samples": [
+            0.5212730029597878,
+            0.494932995934505,
+            0.5055840010754764,
+            0.49362299614585936,
+            0.5011129978811368,
+            0.49305299762636423,
+            0.5003740006941371,
+            0.4937630001222715,
+            0.4985630002920516,
+            0.4857929961872287,
+            0.4973639952368103,
+            0.4848729950026609,
+            0.49123299686471,
+            0.4890139971394092,
+            0.4945129985571839,
+            0.48388300638180226,
+            0.49615299940342084,
+            0.4870630000368692,
+            0.49524399946676567,
+            0.48744299419922754,
+            0.49895299889612943,
+            0.48995300312526524,
+            0.5000940000172704,
+            0.4890630007139407,
+            0.49644299724604934,
+            0.48855299974093214,
+            0.4967239947291091,
+            0.4895629972452298,
+            0.4964030013070442,
+            0.4890039999736473
+          ],
+          "cuda_memory": {
+            "allocated_before_bytes": 35656704,
+            "peak_allocated_bytes": 37987328,
+            "peak_delta_bytes": 2330624
+          }
+        },
+        {
+          "batch_size": 128,
+          "output_shape": [
+            128,
+            128
+          ],
+          "repetitions": 30,
+          "batch_latency_ms_median": 0.40807249752106145,
+          "batch_latency_ms_p95": 0.42052799981320277,
+          "windows_per_second": 313771.09478310857,
+          "windows_per_second_at_median": 313669.75421663566,
+          "batch_latency_ms_samples": [
+            0.432353001087904,
+            0.40802299918141216,
+            0.41331299871671945,
+            0.4070619979756884,
+            0.39918300171848387,
+            0.409543004934676,
+            0.40159200580092147,
+            0.4113019967917353,
+            0.4051529977004975,
+            0.40046300273388624,
+            0.4099219950148836,
+            0.3996330051450059,
+            0.41040300129679963,
+            0.39957200351636857,
+            0.40662299579707906,
+            0.40387300396105275,
+            0.399341995944269,
+            0.4135830022278242,
+            0.39981299778446555,
+            0.40812199586071074,
+            0.3986829979112372,
+            0.3962119953939691,
+            0.4084530010004528,
+            0.40076300501823425,
+            0.41797300218604505,
+            0.42057300015585497,
+            0.41276199772255495,
+            0.41518299985909835,
+            0.4082729938090779,
+            0.42047299939440563
+          ],
+          "cuda_memory": {
+            "allocated_before_bytes": 35656704,
+            "peak_allocated_bytes": 46142464,
+            "peak_delta_bytes": 10485760
+          }
+        }
+      ]
+    },
+    "selected_ensemble": {
+      "parameters": 90756,
+      "parameters_unused_dae_decoder": 0,
+      "forward_parameters": 90756,
+      "parameter_bytes": 363024,
+      "buffer_bytes": 3459,
+      "tensor_state_bytes": 366483,
+      "buffers": [
+        {
+          "name": "members.0.encoder.channel_mean",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "members.0.encoder.channel_std",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "members.0.encoder.magnitude_mean",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "members.0.encoder.magnitude_std",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "members.0.encoder.normalization_fitted",
+          "shape": [],
+          "dtype": "torch.bool",
+          "bytes": 1
+        },
+        {
+          "name": "members.0.encoder.correlation_indices",
+          "shape": [
+            2,
+            66
+          ],
+          "dtype": "torch.int64",
+          "bytes": 1056
+        },
+        {
+          "name": "members.0.encoder.stats_mean",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "members.0.encoder.stats_std",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "members.1.encoder.channel_mean",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "members.1.encoder.channel_std",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "members.1.encoder.magnitude_mean",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "members.1.encoder.magnitude_std",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "members.1.encoder.normalization_fitted",
+          "shape": [],
+          "dtype": "torch.bool",
+          "bytes": 1
+        },
+        {
+          "name": "members.1.encoder.correlation_indices",
+          "shape": [
+            2,
+            66
+          ],
+          "dtype": "torch.int64",
+          "bytes": 1056
+        },
+        {
+          "name": "members.1.encoder.stats_mean",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "members.1.encoder.stats_std",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "members.2.encoder.channel_mean",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "members.2.encoder.channel_std",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "members.2.encoder.magnitude_mean",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "members.2.encoder.magnitude_std",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "members.2.encoder.normalization_fitted",
+          "shape": [],
+          "dtype": "torch.bool",
+          "bytes": 1
+        },
+        {
+          "name": "members.2.encoder.correlation_indices",
+          "shape": [
+            2,
+            66
+          ],
+          "dtype": "torch.int64",
+          "bytes": 1056
+        },
+        {
+          "name": "members.2.encoder.stats_mean",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "members.2.encoder.stats_std",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        }
+      ],
+      "batches": [
+        {
+          "batch_size": 1,
+          "output_shape": [
+            1,
+            384
+          ],
+          "repetitions": 30,
+          "batch_latency_ms_median": 4.538659497484332,
+          "batch_latency_ms_p95": 4.583145050855819,
+          "windows_per_second": 220.13804168007545,
+          "windows_per_second_at_median": 220.32937270449028,
+          "batch_latency_ms_samples": [
+            4.602510001859628,
+            4.573019003146328,
+            4.552060003334191,
+            4.549299999780487,
+            4.571520003082696,
+            4.52857899654191,
+            4.591429998981766,
+            4.547709999314975,
+            4.544258998066653,
+            4.5341500008362345,
+            4.556169995339587,
+            4.52575899544172,
+            4.544640003587119,
+            4.530648999207187,
+            4.526440003246535,
+            4.541048998362385,
+            4.5244290013215505,
+            4.536269996606279,
+            4.53589900280349,
+            4.55202999728499,
+            4.567849995510187,
+            4.545159004919697,
+            4.535439002211206,
+            4.51315900136251,
+            4.515959997661412,
+            4.515378997894004,
+            4.532489998382516,
+            4.507188998104539,
+            4.54598999931477,
+            4.5316399991861545
+          ],
+          "cuda_memory": {
+            "allocated_before_bytes": 35656704,
+            "peak_allocated_bytes": 35800064,
+            "peak_delta_bytes": 143360
+          }
+        },
+        {
+          "batch_size": 128,
+          "output_shape": [
+            128,
+            384
+          ],
+          "repetitions": 30,
+          "batch_latency_ms_median": 4.743221001263009,
+          "batch_latency_ms_p95": 5.494784554684884,
+          "windows_per_second": 26451.5846045107,
+          "windows_per_second_at_median": 26985.88152774593,
+          "batch_latency_ms_samples": [
+            4.612658995029051,
+            5.155594000825658,
+            4.978673001460265,
+            4.809370999282692,
+            5.011402994568925,
+            4.890582000371069,
+            5.303363999701105,
+            5.174164005438797,
+            4.873302001215052,
+            4.664070002036169,
+            5.560116005653981,
+            5.878639000002295,
+            5.202193002332933,
+            4.677071003243327,
+            5.36545499926433,
+            4.443208999873605,
+            4.543110000668094,
+            5.414935003500432,
+            4.903241999272723,
+            4.577189996780362,
+            5.341295000107493,
+            4.521969000052195,
+            4.4668900009128265,
+            4.371408002043609,
+            4.398579003463965,
+            4.372427996713668,
+            4.3884190017706715,
+            4.445939004654065,
+            4.396077994897496,
+            4.429540000273846
+          ],
+          "cuda_memory": {
+            "allocated_before_bytes": 35656704,
+            "peak_allocated_bytes": 47618048,
+            "peak_delta_bytes": 11961344
+          }
+        }
+      ]
+    },
+    "selected_single": {
+      "parameters": 30252,
+      "parameters_unused_dae_decoder": 0,
+      "forward_parameters": 30252,
+      "parameter_bytes": 121008,
+      "buffer_bytes": 1153,
+      "tensor_state_bytes": 122161,
+      "buffers": [
+        {
+          "name": "encoder.channel_mean",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.channel_std",
+          "shape": [
+            1,
+            9,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 36
+        },
+        {
+          "name": "encoder.magnitude_mean",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.magnitude_std",
+          "shape": [
+            1,
+            3,
+            1
+          ],
+          "dtype": "torch.float32",
+          "bytes": 12
+        },
+        {
+          "name": "encoder.normalization_fitted",
+          "shape": [],
+          "dtype": "torch.bool",
+          "bytes": 1
+        },
+        {
+          "name": "encoder.correlation_indices",
+          "shape": [
+            2,
+            66
+          ],
+          "dtype": "torch.int64",
+          "bytes": 1056
+        },
+        {
+          "name": "encoder.stats_mean",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        },
+        {
+          "name": "encoder.stats_std",
+          "shape": [
+            1,
+            0
+          ],
+          "dtype": "torch.float32",
+          "bytes": 0
+        }
+      ],
+      "batches": [
+        {
+          "batch_size": 1,
+          "output_shape": [
+            1,
+            128
+          ],
+          "repetitions": 30,
+          "batch_latency_ms_median": 1.5420999989146367,
+          "batch_latency_ms_p95": 1.5754079977341462,
+          "windows_per_second": 646.8942291650442,
+          "windows_per_second_at_median": 648.4663774747563,
+          "batch_latency_ms_samples": [
+            1.6170610033441335,
+            1.556790004542563,
+            1.534570001240354,
+            1.538190001156181,
+            1.528430002508685,
+            1.5416199967148714,
+            1.5384500002255663,
+            1.5328299996326678,
+            1.5281110026990063,
+            1.535449999209959,
+            1.538340002298355,
+            1.527708998764865,
+            1.5306210043490864,
+            1.5290900046238676,
+            1.5856499958317727,
+            1.5407399987452663,
+            1.5467800039914437,
+            1.543079997645691,
+            1.555770002596546,
+            1.5382999990833923,
+            1.544070000818465,
+            1.5569900060654618,
+            1.542580001114402,
+            1.5545399946859106,
+            1.5427899998030625,
+            1.5628900000592694,
+            1.5545710048172623,
+            1.548640000692103,
+            1.5458799971383996,
+            1.5349000022979453
+          ],
+          "cuda_memory": {
+            "allocated_before_bytes": 35656704,
+            "peak_allocated_bytes": 35799040,
+            "peak_delta_bytes": 142336
+          }
+        },
+        {
+          "batch_size": 128,
+          "output_shape": [
+            128,
+            128
+          ],
+          "repetitions": 30,
+          "batch_latency_ms_median": 1.4688245028082747,
+          "batch_latency_ms_p95": 1.481701551892911,
+          "windows_per_second": 87167.12432498418,
+          "windows_per_second_at_median": 87144.51573709062,
+          "batch_latency_ms_samples": [
+            1.4997489997767843,
+            1.4680000022053719,
+            1.4834300018264912,
+            1.4782090001972392,
+            1.4695600038976409,
+            1.462619002268184,
+            1.4786690007895231,
+            1.4760999983991496,
+            1.463540000258945,
+            1.4680890017189085,
+            1.4584499949705787,
+            1.4584089949494228,
+            1.4751499984413385,
+            1.4769300032639876,
+            1.479589001974091,
+            1.4654999977210537,
+            1.4720990002388135,
+            1.473459997214377,
+            1.4737000019522384,
+            1.471548996050842,
+            1.471858995500952,
+            1.454088996979408,
+            1.4549400002579205,
+            1.47570000262931,
+            1.458459002606105,
+            1.4647800053353421,
+            1.4537690003635362,
+            1.4570799976354465,
+            1.4533199937432073,
+            1.4565089950338006
+          ],
+          "cuda_memory": {
+            "allocated_before_bytes": 35656704,
+            "peak_allocated_bytes": 47486976,
+            "peak_delta_bytes": 11830272
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "source": "wisdm_v1",
+  "selection": {
+    "name": "multiscale_hard_none",
+    "method": "multiscale_hard",
+    "postprocess": "none",
+    "validation": {
+      "eer": 0.0198,
+      "far": 0.0198,
+      "frr": 0.0198,
+      "legacy_far_frr_semantics": "aliases_of_interpolated_eer_not_independent_rates",
+      "eer_threshold": -0.5862955960032694,
+      "eer_threshold_semantics": "nearest_empirical_crossing_on_evaluation_not_deployable",
+      "far_at_eer_threshold": 0.0198,
+      "frr_at_eer_threshold": 0.0198,
+      "far_at_frr_0.01": 0.0284,
+      "frr_at_far_0.01": 0.0522,
+      "operating_points_semantics": "empirical_constraint_at_most_0.01_on_evaluation",
+      "roc_auc": 0.9985090400000002,
+      "n_pairs": 10000,
+      "score_semantics": "cosine_similarity_minus_one_higher_is_more_genuine",
+      "sampling": "balanced_subject_uniform_with_replacement",
+      "pairing_version": 2,
+      "seed": 42,
+      "requested_n_pairs": 10000,
+      "n_genuine_pairs": 5000,
+      "n_impostor_pairs": 5000,
+      "n_unique_genuine_pairs": 2675,
+      "n_unique_impostor_pairs": 3940,
+      "n_unique_pairs": 6615,
+      "n_repeated_pairs": 3385,
+      "same_activity_pairs": true,
+      "eligible_activity_ids": [
+        0
+      ],
+      "excluded_activity_ids": [],
+      "n_subjects": 4,
+      "per_subject": {
+        "0": {
+          "n_windows": 84,
+          "n_genuine_pairs": 1262,
+          "n_impostor_pairs": 2585
+        },
+        "5": {
+          "n_windows": 20,
+          "n_genuine_pairs": 1251,
+          "n_impostor_pairs": 2482
+        },
+        "27": {
+          "n_windows": 62,
+          "n_genuine_pairs": 1212,
+          "n_impostor_pairs": 2394
+        },
+        "31": {
+          "n_windows": 36,
+          "n_genuine_pairs": 1275,
+          "n_impostor_pairs": 2539
+        }
+      },
+      "n_windows_used": 202,
+      "pair_independence": "not_independent_windows_and_pairs_can_recur",
+      "per_activity": {
+        "0": {
+          "n_genuine_pairs": 5000,
+          "n_impostor_pairs": 5000
+        }
+      }
+    },
+    "artifacts": [
+      "multiscale_hard/seed_42/best.pt",
+      "multiscale_hard/seed_43/best.pt",
+      "multiscale_hard/seed_44/best.pt"
+    ],
+    "validation_cache": "validation/multiscale_hard_none.npz",
+    "training_seconds": 37.6422154230022,
+    "per_seed_validation": [
+      {
+        "seed": 42,
+        "eer": 0.0202
+      },
+      {
+        "seed": 43,
+        "eer": 0.0376
+      },
+      {
+        "seed": 44,
+        "eer": 0.0552
+      }
+    ],
+    "n_stochastic_seeds": 3
+  },
+  "registry_sha256": "5a997093b81f8c71cdbd5fdb86ff467ab5dd86beb4f91c9460da0259e6352bf4",
+  "artifact_sha256": {
+    "multiscale_hard/seed_42/best.pt": "39159cbeeadf508533306fdff34c53e17b4f8905627f320fdbf2be626af2298b",
+    "multiscale_hard/seed_43/best.pt": "41e7483ad7d3bd3d9567bcd595dc91ab97bae96e21a4c500792e89a168d7de20",
+    "multiscale_hard/seed_44/best.pt": "454bba937d5112f080dc3637e4b356209a64c73bd935dd495a0c08ab964cc10c",
+    "validation/multiscale_hard_none.npz": "111b41429a8cead3ca4e0eae54ce18a2e8d11b479b4df961757399bb7e213e5b"
+  },
+  "test_loaded_before_lock": false,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "data_root": "/home/mav/.t3/scratch/gait-auth-20261023/datasets",
+  "train_subject_ids": [
+    3,
+    4,
+    6,
+    7,
+    9,
+    10,
+    12,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    22,
+    23,
+    24,
+    25,
+    26,
+    28,
+    30,
+    32,
+    33,
+    35
+  ],
+  "val_subject_ids": [
+    0,
+    5,
+    27,
+    31
+  ],
+  "selection_rule": "minimum validation ensemble EER; ties prefer fewer stages then registered method order",
+  "development_data_sha256": "46363e5857d3a3c18525aa24a944aad0f27a065cf77b35abb53dc51043b47433",
+  "baseline_sha256": "81e672785233ed56a2dc85e26a0c5b4770153cdf14535cee94db9e3afe679ecf"
+}

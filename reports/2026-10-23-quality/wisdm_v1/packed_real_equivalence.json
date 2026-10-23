@@ -1,0 +1,19 @@
+{
+  "source": "wisdm_v1",
+  "n_test_windows": 345,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "max_absolute_embedding_errors": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "tolerance": 1e-05,
+  "eager_eer": 0.0958,
+  "packed_eer": 0.0958,
+  "fixed_threshold_counts_identical": true,
+  "packing_changes_no_training_or_calibration": true
+}

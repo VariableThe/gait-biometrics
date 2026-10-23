@@ -33,6 +33,17 @@ uv run --no-project --python .venv/bin/python python -m pytest tests -q
 
 ## Measured results
 
+The [research-extension report](reports/2026-10-23-quality/README.md) adds balanced batch-hard/SupCon training, multiscale and temporal encoders, train-only normalization, coherent augmentation, statistical baselines, covariance normalization and enrollment scoring. Thirty-six final 40-epoch neural runs compare three seeds per method with fixed subject cohorts.
+
+| Source/method | Baseline EER | New EER | Evidence |
+| --- | ---: | ---: | --- |
+| WISDM, three-seed multiscale batch-hard | 0.2010 | **0.0958** | Validation-locked primary study |
+| HAR, subject-CV descriptors + WCCN | 0.1764 | **0.1044** | Exploratory follow-up; test previously inspected |
+
+WISDM fixed test FAR/FRR improved from 0.1520/0.2468 to 0.0826/0.1072. Secondary HAR rates improved from 0.0358/0.3728 to 0.0054/0.3046. **The primary HAR neural winner worsened to EER 0.2146**; that negative result is retained. Its failure motivated separate subject-fold selection of descriptors. The secondary result needs a fresh cohort for confirmation. The new neural ensemble is smaller but slower than the old encoder; complete latency and parameter measurements are reported without claiming an architecture speedup.
+
+Use the [research reproduction guide](docs/research_experiments.md) for the full train→lock→evaluate workflow and separate one-seed smoke configs. New checkpoint format `gait_metric_v1` uses its explicit loader/runner; the existing evaluator continues to handle legacy checkpoints. Activity-classification results below are unchanged.
+
 The [complete 23 October evidence report](reports/2026-10-23/README.md) contains effective configs, every track's results, raw timing samples, calibration counts, test provenance and limitations. Frozen-code full 20-epoch walking results:
 
 | Dataset | Test windows | EER | ROC AUC | Test FAR / FRR at validation-calibrated threshold |
@@ -40,7 +51,7 @@ The [complete 23 October evidence report](reports/2026-10-23/README.md) contains
 | UCI HAR, walking | 496 | 0.1764 | 0.9252 | 0.0358 / 0.3728 |
 | WISDM AR v1.1, walking | 345 | 0.2010 | 0.8686 | 0.1520 / 0.2468 |
 
-These measure **held-out-subject, within-recording discrimination**. EER is descriptive; the fixed threshold is chosen from validation scores, never test scores. The validation FAR target of 1% does not guarantee 1% test FAR. Genuine windows can overlap, comparisons repeat, and session/day separation is unverified. An independent calibration cohort, enrollment/probe protocol, online walking gate, temporal decisions and takeover-delay evaluation remain necessary.
+These measure **held-out-subject, within-recording discrimination**. EER is descriptive; the fixed threshold is chosen from validation scores, never test scores. The validation FAR target of 1% does not guarantee 1% test FAR. Genuine windows can overlap, comparisons repeat, and session/day separation is unverified. New enrollment scoring uses ordered indices within existing recordings; independent sessions, an online walking gate, temporal decisions and takeover-delay evaluation remain necessary.
 
 A separate 20-epoch local GTX 1650 Ti DeepConvLSTM run with four validation subjects reached HAR test activity accuracy **0.936885**. The five-track sweep used five validation subjects and produced lower accuracies for several tracks; all are reported. Historical HAR EER 0.4162 used all activities and an older pairing protocol, so it is not a controlled comparison with the walking results above.
 

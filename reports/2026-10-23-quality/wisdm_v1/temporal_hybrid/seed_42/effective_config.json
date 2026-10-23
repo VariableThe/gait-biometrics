@@ -1,0 +1,37 @@
+{
+  "source": "wisdm_v1",
+  "data_root": "/home/mav/.t3/scratch/gait-auth-20261023/datasets",
+  "activity_ids": [
+    0
+  ],
+  "epochs": 40,
+  "seed": 42,
+  "split_seed": 42,
+  "val_seed": 42,
+  "val_subjects": 4,
+  "validation_pairs": 10000,
+  "objective": "hybrid",
+  "identities_per_batch": 8,
+  "windows_per_identity": 4,
+  "ce_weight": 0.5,
+  "label_smoothing": 0.05,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "margin": 0.2,
+  "temperature": 0.1,
+  "device": "cuda",
+  "torch_threads": 2,
+  "augment": {
+    "jitter_std": 0.01,
+    "scale_std": 0.05,
+    "roll_fraction": 0.05
+  },
+  "model_args": {
+    "architecture": "temporal",
+    "embed_dim": 128,
+    "width": 32,
+    "dropout": 0.1,
+    "stats_fusion": false,
+    "normalization": true
+  }
+}
