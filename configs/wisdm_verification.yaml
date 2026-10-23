@@ -1,0 +1,28 @@
+# Official WISDM v1.1 raw identities, native 20 Hz, walking only.
+model: cnn_lstm
+source: wisdm_v1
+data_root: datasets
+activity_ids: [0]
+verification_pairing: same_activity
+window_size: 128
+stride: 64
+batch_size: 64
+epochs: 20
+subset: null
+val_subjects: 4
+val_pairs: 10000
+device: auto
+optimizer: adam
+lr: 0.001
+weight_decay: 0.0
+seed: 42
+num_workers: 0
+torch_threads: 2
+out_dir: runs/wisdm_verification
+loss_type: triplet
+triplets_per_epoch: 1
+model_args:
+  n_channels: 3
+  embed_dim: 128
+  dropout: 0.3
+  margin: 1.0
