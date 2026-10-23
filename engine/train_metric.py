@@ -27,6 +27,7 @@ from engine.train import (
     _filter_activities,
     _git_commit,
     _split_validation,
+    _take,
     _validate_windows,
 )
 from models.common import seed_everything
@@ -60,6 +61,9 @@ def _resolved_config(config: dict) -> dict:
         "identities_per_batch": 8,
         "windows_per_identity": 4,
         "ce_weight": 0.5,
+        "classifier_type": "linear",
+        "angular_scale": 30.0,
+        "angular_margin": 0.3,
         "label_smoothing": 0.05,
         "margin": 0.2,
         "temperature": 0.1,
@@ -68,6 +72,8 @@ def _resolved_config(config: dict) -> dict:
         "weight_decay": 1e-4,
         "gradient_clip": 1.0,
         "device": "auto",
+        "precision": "float32",
+        "epoch_selection": "validation_eer",
         "torch_threads": 2,
         "validation_pairs": 10000,
         "eval_batch_size": 256,
@@ -79,10 +85,26 @@ def _resolved_config(config: dict) -> dict:
         raise ValueError("config.source is required")
     if resolved["objective"] not in {"batch_hard", "supcon", "hybrid"}:
         raise ValueError("objective must be batch_hard, supcon, or hybrid")
+    if resolved["classifier_type"] not in {"linear", "arcface"}:
+        raise ValueError("classifier_type must be linear or arcface")
+    if resolved["precision"] not in {"float32", "bfloat16"}:
+        raise ValueError("precision must be float32 or bfloat16")
+    if resolved["epoch_selection"] not in {"validation_eer", "final"}:
+        raise ValueError("epoch_selection must be validation_eer or final")
+    explicit = "train_subject_ids" in resolved or "val_subject_ids" in resolved
+    if explicit:
+        if not all(key in resolved for key in ("train_subject_ids", "val_subject_ids")):
+            raise ValueError(
+                "train_subject_ids and val_subject_ids are required together"
+            )
+        for key in ("train_subject_ids", "val_subject_ids"):
+            resolved[key] = _subject_ids(resolved[key], key)
+        if set(resolved["train_subject_ids"]) & set(resolved["val_subject_ids"]):
+            raise ValueError("train_subject_ids and val_subject_ids must not overlap")
     for key in ("epochs", "torch_threads", "eval_batch_size", "window_size", "stride"):
         if int(resolved[key]) <= 0:
             raise ValueError(f"{key} must be positive")
-    if int(resolved["val_subjects"]) < 2:
+    if not explicit and int(resolved["val_subjects"]) < 2:
         raise ValueError("val_subjects >= 2 is required for validation EER selection")
     if int(resolved["validation_pairs"]) < 2:
         raise ValueError("validation_pairs must be >= 2")
@@ -92,6 +114,16 @@ def _resolved_config(config: dict) -> dict:
     for key in ("lr", "temperature", "gradient_clip"):
         if not math.isfinite(float(resolved[key])) or float(resolved[key]) <= 0:
             raise ValueError(f"{key} must be finite and positive")
+    if (
+        not math.isfinite(float(resolved["angular_scale"]))
+        or float(resolved["angular_scale"]) <= 0
+    ):
+        raise ValueError("angular_scale must be finite and positive")
+    if (
+        not math.isfinite(float(resolved["angular_margin"]))
+        or not 0 <= float(resolved["angular_margin"]) < math.pi / 2
+    ):
+        raise ValueError("angular_margin must be finite and in [0, pi/2)")
     if not 0 <= float(resolved["label_smoothing"]) < 1:
         raise ValueError("label_smoothing must be in [0, 1)")
     if "seedmodel" in config and int(config["seedmodel"]) != int(resolved["seed"]):
@@ -108,6 +140,68 @@ def _resolved_config(config: dict) -> dict:
     if not isinstance(resolved["augment"], dict):
         raise TypeError("augment must be a mapping")
     return resolved
+
+
+def _subject_ids(values, name):
+    """Reject lossy ID coercions; explicit cohorts describe exact real identities."""
+    if not isinstance(values, list) or any(type(s) is not int or s < 0 for s in values):
+        raise ValueError(f"{name} must be a list of nonnegative integer subject IDs")
+    if len(values) < 2:
+        raise ValueError(f"{name} requires at least two subjects")
+    if len(set(values)) != len(values):
+        raise ValueError(f"{name} must contain unique subject IDs")
+    return sorted(values)
+
+
+def _split_cohorts(data, config):
+    """Use only post-activity-filter TRAIN rows; unused subjects stay excluded."""
+    if "train_subject_ids" not in config:
+        return _split_validation(
+            data, int(config["val_subjects"]), int(config["split_seed"])
+        )
+    if data.y_subject is None:
+        raise ValueError("explicit subject cohorts require real y_subject labels")
+    available = set(data.y_subject.unique().tolist())
+    cohorts = []
+    for key in ("train_subject_ids", "val_subject_ids"):
+        ids = config[key]
+        missing = sorted(set(ids) - available)
+        if missing:
+            raise ValueError(f"{key} unavailable after activity filtering: {missing}")
+        mask = torch.isin(data.y_subject, data.y_subject.new_tensor(ids))
+        selected = _take(data, mask)
+        if selected.subject_ids != ids:
+            raise ValueError(f"{key} exact cohort membership mismatch")
+        cohorts.append(selected)
+    return cohorts[0], cohorts[1], list(config["val_subject_ids"])
+
+
+def _validate_precision(config, device):
+    if config["precision"] == "bfloat16":
+        if device.type != "cuda":
+            raise ValueError("bfloat16 precision requires CUDA")
+        # Check the requested GPU, which need not be the process default device.
+        with torch.cuda.device(device):
+            if not torch.cuda.is_bf16_supported():
+                raise ValueError(
+                    "bfloat16 precision requires a BF16-supported CUDA device"
+                )
+
+
+def _build_classifier(config, n_classes):
+    if float(config["ce_weight"]) == 0:
+        return None
+    dimension = int(config["model_args"]["embed_dim"])
+    if config["classifier_type"] == "arcface":
+        from models.angular_margin import AngularMarginClassifier
+
+        return AngularMarginClassifier(
+            dimension,
+            n_classes,
+            scale=float(config["angular_scale"]),
+            margin=float(config["angular_margin"]),
+        )
+    return nn.Linear(dimension, n_classes)
 
 
 def _normalization_fingerprint(encoder) -> dict:
@@ -143,9 +237,12 @@ def _development_fingerprint(train, val):
 def _embed(encoder, windows, batch_size, device):
     encoder.eval()
     parts = []
-    with torch.inference_mode():
+    # Verification always uses FP32, including inside an outer autocast context.
+    with torch.inference_mode(), torch.autocast(device_type=device.type, enabled=False):
         for batch in windows.split(batch_size):
-            parts.append(encoder(batch.to(device)).detach().cpu())
+            parts.append(
+                encoder(batch.to(device=device, dtype=torch.float32)).float().cpu()
+            )
     return torch.cat(parts)
 
 
@@ -163,6 +260,46 @@ def _augment(x, config):
     from data.gait_transforms import augment_gait
 
     return augment_gait(x, config)
+
+
+def _training_losses(z, labels, sample_ids, classifier, classifier_labels, config):
+    """Distance, angular logits and all reductions stay FP32 under encoder AMP."""
+    with torch.autocast(device_type=z.device.type, enabled=False):
+        z = z.float()
+        hard, supcon = z.sum() * 0.0, z.sum() * 0.0
+        if config["objective"] in {"batch_hard", "hybrid"}:
+            hard = batch_hard_triplet_loss(
+                z,
+                labels,
+                float(config["margin"]),
+                softplus=bool(config["softplus"]),
+                sample_ids=sample_ids,
+            )
+        if config["objective"] in {"supcon", "hybrid"}:
+            supcon = supervised_contrastive_loss(
+                z,
+                labels,
+                float(config["temperature"]),
+                sample_ids=sample_ids,
+            )
+        metric_loss = (
+            (hard + supcon) / 2 if config["objective"] == "hybrid" else hard + supcon
+        )
+        ce = z.sum() * 0.0
+        if classifier is not None:
+            # Only optimizer-training IDs reach CE; unseen validation IDs never do.
+            logits = (
+                classifier(z, classifier_labels)
+                if config["classifier_type"] == "arcface"
+                else classifier(z)
+            )
+            ce = F.cross_entropy(
+                logits.float(),
+                classifier_labels,
+                label_smoothing=float(config["label_smoothing"]),
+            )
+        loss = metric_loss + float(config["ce_weight"]) * ce
+    return hard, supcon, ce, loss
 
 
 def load_metric_encoder(checkpoint, device="cpu"):
@@ -192,7 +329,7 @@ def load_metric_encoder(checkpoint, device="cpu"):
 
 
 def train_metric(config: dict, out_dir: str) -> dict:
-    """Train optimizer identities only; select earliest minimum validation EER."""
+    """Train exact optimizer identities; select validation EER or a fixed final epoch."""
     started = time.monotonic()
     config = _resolved_config(config)
     seed = int(config["seed"])
@@ -200,6 +337,7 @@ def train_metric(config: dict, out_dir: str) -> dict:
     seed_everything(seed)
     torch.set_num_threads(int(config["torch_threads"]))
     device = _device(config)
+    _validate_precision(config, device)
     data = load_windows(
         config["source"],
         "train",
@@ -216,9 +354,7 @@ def train_metric(config: dict, out_dir: str) -> dict:
     # Match the walking baseline: select the declared activity cohort before
     # the fixed subject split (some source identities have no walking rows).
     data = _filter_activities(data, config["activity_ids"])
-    train_data, val_data, val_ids = _split_validation(
-        data, int(config["val_subjects"]), split_seed
-    )
+    train_data, val_data, val_ids = _split_cohorts(data, config)
     sampler = IdentityBalancedBatchSampler(
         train_data.y_subject,
         int(config["identities_per_batch"]),
@@ -244,12 +380,9 @@ def train_metric(config: dict, out_dir: str) -> dict:
     if config["model_args"]["normalization"] and not fingerprint["buffers"]:
         raise ValueError("normalization requires embedded mean/std buffers")
     encoder.to(device)
-    ce_weight = float(config["ce_weight"])
-    classifier = (
-        nn.Linear(int(config["model_args"]["embed_dim"]), len(train_ids)).to(device)
-        if ce_weight > 0
-        else None
-    )
+    classifier = _build_classifier(config, len(train_ids))
+    if classifier is not None:
+        classifier.to(device)
     parameters = list(encoder.parameters())
     if classifier is not None:
         parameters.extend(classifier.parameters())
@@ -270,6 +403,16 @@ def train_metric(config: dict, out_dir: str) -> dict:
         if device.type == "cuda"
         else platform.processor(),
     }
+    selection_metric = (
+        "val_eer" if config["epoch_selection"] == "validation_eer" else "final_epoch"
+    )
+    classifier_config = {
+        "classifier_type": config["classifier_type"],
+        "angular_scale": float(config["angular_scale"]),
+        "angular_margin": float(config["angular_margin"]),
+        "enabled": classifier is not None,
+        "n_classes": len(train_ids),
+    }
     protocol = {
         "name": "held_out_subject_within_recording_discrimination",
         "source": config["source"],
@@ -278,6 +421,13 @@ def train_metric(config: dict, out_dir: str) -> dict:
         "val_subject_ids": val_ids,
         "classifier_subject_ids": train_ids,
         "classifier_label_mapping": "sorted_train_ids_to_0_based",
+        "classifier_config": classifier_config,
+        "cohort_assignment": "explicit"
+        if "train_subject_ids" in config
+        else "seeded_split",
+        "unused_subject_ids": sorted(
+            set(data.subject_ids) - set(train_ids) - set(val_ids)
+        ),
         "activity_ids": config["activity_ids"],
         "n_channels": int(data.X.shape[1]),
         "window_size": int(data.X.shape[2]),
@@ -300,8 +450,14 @@ def train_metric(config: dict, out_dir: str) -> dict:
         "sampler": sampler.context,
         "n_train_windows": len(train_data.X),
         "n_val_windows": len(val_data.X),
-        "selection_metric": "val_eer",
-        "selection_ties": "earliest_epoch",
+        "epoch_selection": config["epoch_selection"],
+        "selection_metric": selection_metric,
+        "selection_ties": "earliest_epoch"
+        if config["epoch_selection"] == "validation_eer"
+        else "not_applicable",
+        "validation_used_for_selection": config["epoch_selection"] == "validation_eer",
+        "precision": config["precision"],
+        "evaluation_precision": "float32",
         "test_split_loaded": False,
         "development_data_sha256": _development_fingerprint(train_data, val_data),
     }
@@ -333,7 +489,13 @@ def train_metric(config: dict, out_dir: str) -> dict:
                 labels = train_data.y_subject[indices].to(device)
                 sample_ids = indices.to(device)
                 optimizer.zero_grad(set_to_none=True)
-                z = encoder(_augment(x, config["augment"]))
+                x = _augment(x, config["augment"])
+                with torch.autocast(
+                    device_type=device.type,
+                    dtype=torch.bfloat16,
+                    enabled=config["precision"] == "bfloat16",
+                ):
+                    z = encoder(x)
                 if z.ndim != 2 or z.shape != (
                     len(rows),
                     int(config["model_args"]["embed_dim"]),
@@ -341,35 +503,14 @@ def train_metric(config: dict, out_dir: str) -> dict:
                     raise ValueError(
                         "encoder output must have shape (batch, embed_dim)"
                     )
-                hard = z.sum() * 0.0
-                supcon = z.sum() * 0.0
-                if config["objective"] in {"batch_hard", "hybrid"}:
-                    hard = batch_hard_triplet_loss(
-                        z,
-                        labels,
-                        float(config["margin"]),
-                        softplus=bool(config["softplus"]),
-                        sample_ids=sample_ids,
-                    )
-                if config["objective"] in {"supcon", "hybrid"}:
-                    supcon = supervised_contrastive_loss(
-                        z, labels, float(config["temperature"]), sample_ids=sample_ids
-                    )
-                metric_loss = (
-                    (hard + supcon) / 2
-                    if config["objective"] == "hybrid"
-                    else hard + supcon
+                hard, supcon, ce, loss = _training_losses(
+                    z,
+                    labels,
+                    sample_ids,
+                    classifier,
+                    remapped[indices].to(device),
+                    config,
                 )
-                ce = (
-                    F.cross_entropy(
-                        classifier(z),
-                        remapped[indices].to(device),
-                        label_smoothing=float(config["label_smoothing"]),
-                    )
-                    if classifier is not None
-                    else z.sum() * 0.0
-                )
-                loss = metric_loss + ce_weight * ce
                 if not torch.isfinite(loss):
                     raise FloatingPointError("nonfinite metric training loss")
                 loss.backward()
@@ -406,13 +547,22 @@ def train_metric(config: dict, out_dir: str) -> dict:
             records.append(record)
             log_file.write(json.dumps(record, allow_nan=False) + "\n")
             log_file.flush()
-            if record["val_eer"] < best_eer:
+            selected = (
+                record["val_eer"] < best_eer
+                if config["epoch_selection"] == "validation_eer"
+                else epoch == int(config["epochs"])
+            )
+            if selected:
                 best_eer, best_epoch = record["val_eer"], epoch
                 # Save only raw encoder keys: no wrapper/classification prefix.
                 torch.save(
                     {
                         "checkpoint_format": "gait_metric_v1",
                         "epoch": epoch,
+                        "completed_epochs": epoch,
+                        "epoch_selection": config["epoch_selection"],
+                        "precision": config["precision"],
+                        "classifier_config": classifier_config,
                         "model_state_dict": {
                             k: v.detach().cpu() for k, v in encoder.state_dict().items()
                         },
@@ -428,6 +578,7 @@ def train_metric(config: dict, out_dir: str) -> dict:
                         "val_seed": val_seed,
                         "metrics": {
                             **record,
+                            "per_epoch": list(records),
                             "protocol": protocol,
                             "validation": validation,
                         },
@@ -436,13 +587,29 @@ def train_metric(config: dict, out_dir: str) -> dict:
                     Path(out_dir) / "best.pt",
                 )
             scheduler.step()
+    # An early selected checkpoint still records the entire completed run while
+    # retaining its selected encoder/classifier state and per-epoch validation.
+    protocol["completed_epochs"] = len(records)
+    checkpoint_path = Path(out_dir) / "best.pt"
+    payload = torch.load(checkpoint_path, map_location="cpu", weights_only=True)
+    payload["completed_epochs"] = len(records)
+    payload["metrics"]["per_epoch"] = records
+    payload["metrics"]["protocol"] = protocol
+    torch.save(payload, checkpoint_path)
     metrics = {
         "method": "metric_learning",
         "objective": config["objective"],
-        "selection_metric": "val_eer",
+        "epoch_selection": config["epoch_selection"],
+        "selection_metric": selection_metric,
         "best_epoch": best_epoch,
         "best_val_eer": best_eer,
+        "selected_epoch": best_epoch,
+        "selected_val_eer": best_eer,
+        "observed_min_val_eer": min(record["val_eer"] for record in records),
         "epochs": int(config["epochs"]),
+        "completed_epochs": len(records),
+        "precision": config["precision"],
+        "classifier_config": classifier_config,
         "per_epoch": records,
         "protocol": protocol,
         "hardware": hardware,
