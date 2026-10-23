@@ -71,16 +71,15 @@ class StudyGuards(unittest.TestCase):
 
     def test_actual_checkpoint_config_epoch_history_and_protocol(self):
         fold = {"train_subject_ids": [1, 2], "val_subject_ids": [3, 4]}
-        config = _resolved_config(
-            training_config("har", "datasets", fold, "arcface", 96, 42, "cpu")
-        )
+        expected = training_config("har", "datasets", fold, "arcface", 96, 42, "cpu")
+        config = _resolved_config(expected)
         protocol = {**fold, "config": config, "test_split_loaded": False}
         completed = {
             "best_epoch": 40,
             "per_epoch": [{"epoch": i} for i in range(1, 41)],
             "protocol": protocol,
         }
-        validate_run(config, config, protocol, completed, 40)
+        validate_run(expected, config, protocol, completed, 40)
         for alteration in (
             "seed",
             "history",
@@ -112,8 +111,13 @@ class StudyGuards(unittest.TestCase):
             else:
                 p["test_split_loaded"] = True
                 done["protocol"] = p
+            if alteration in {"seed", "steps", "softplus"}:
+                # Keep all supplied actual metadata mutually consistent. Only
+                # the complete registered config can reject this replacement.
+                p["config"] = actual
+                done["protocol"] = p
             with self.subTest(alteration=alteration), self.assertRaises(ValueError):
-                validate_run(config, actual, p, done, epoch)
+                validate_run(expected, actual, p, done, epoch)
 
     def test_cannot_re_register_orphaned_artifacts(self):
         with tempfile.TemporaryDirectory() as temp:
