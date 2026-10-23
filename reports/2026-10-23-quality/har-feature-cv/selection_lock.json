@@ -1,0 +1,356 @@
+{
+  "study": "secondary_har_feature_cross_validation",
+  "exploratory_previous_test_inspection": true,
+  "candidates": [
+    {
+      "method": "standard",
+      "mode": "standard",
+      "shrinkage": "auto",
+      "folds": [
+        {
+          "validation_subject_ids": [
+            24,
+            22,
+            15,
+            4,
+            6,
+            2
+          ],
+          "train_subject_ids": [
+            7,
+            10,
+            13,
+            16,
+            18,
+            20,
+            21,
+            25,
+            26,
+            27,
+            28
+          ],
+          "eer": 0.063,
+          "roc_auc": 0.98449284
+        },
+        {
+          "validation_subject_ids": [
+            20,
+            27,
+            18,
+            26,
+            25,
+            7
+          ],
+          "train_subject_ids": [
+            2,
+            4,
+            6,
+            10,
+            13,
+            15,
+            16,
+            21,
+            22,
+            24,
+            28
+          ],
+          "eer": 0.1394,
+          "roc_auc": 0.9306664799999999
+        },
+        {
+          "validation_subject_ids": [
+            13,
+            28,
+            16,
+            10,
+            21
+          ],
+          "train_subject_ids": [
+            2,
+            4,
+            6,
+            7,
+            15,
+            18,
+            20,
+            22,
+            24,
+            25,
+            26,
+            27
+          ],
+          "eer": 0.094,
+          "roc_auc": 0.9672580399999999
+        }
+      ],
+      "mean_eer": 0.0988
+    },
+    {
+      "method": "wccn_auto",
+      "mode": "wccn",
+      "shrinkage": "auto",
+      "folds": [
+        {
+          "validation_subject_ids": [
+            24,
+            22,
+            15,
+            4,
+            6,
+            2
+          ],
+          "train_subject_ids": [
+            7,
+            10,
+            13,
+            16,
+            18,
+            20,
+            21,
+            25,
+            26,
+            27,
+            28
+          ],
+          "eer": 0.08,
+          "roc_auc": 0.98220428
+        },
+        {
+          "validation_subject_ids": [
+            20,
+            27,
+            18,
+            26,
+            25,
+            7
+          ],
+          "train_subject_ids": [
+            2,
+            4,
+            6,
+            10,
+            13,
+            15,
+            16,
+            21,
+            22,
+            24,
+            28
+          ],
+          "eer": 0.0838,
+          "roc_auc": 0.97496892
+        },
+        {
+          "validation_subject_ids": [
+            13,
+            28,
+            16,
+            10,
+            21
+          ],
+          "train_subject_ids": [
+            2,
+            4,
+            6,
+            7,
+            15,
+            18,
+            20,
+            22,
+            24,
+            25,
+            26,
+            27
+          ],
+          "eer": 0.0928,
+          "roc_auc": 0.9558158400000001
+        }
+      ],
+      "mean_eer": 0.08553333333333334
+    },
+    {
+      "method": "wccn_0.2",
+      "mode": "wccn",
+      "shrinkage": 0.2,
+      "folds": [
+        {
+          "validation_subject_ids": [
+            24,
+            22,
+            15,
+            4,
+            6,
+            2
+          ],
+          "train_subject_ids": [
+            7,
+            10,
+            13,
+            16,
+            18,
+            20,
+            21,
+            25,
+            26,
+            27,
+            28
+          ],
+          "eer": 0.0682,
+          "roc_auc": 0.98700148
+        },
+        {
+          "validation_subject_ids": [
+            20,
+            27,
+            18,
+            26,
+            25,
+            7
+          ],
+          "train_subject_ids": [
+            2,
+            4,
+            6,
+            10,
+            13,
+            15,
+            16,
+            21,
+            22,
+            24,
+            28
+          ],
+          "eer": 0.0848,
+          "roc_auc": 0.97522808
+        },
+        {
+          "validation_subject_ids": [
+            13,
+            28,
+            16,
+            10,
+            21
+          ],
+          "train_subject_ids": [
+            2,
+            4,
+            6,
+            7,
+            15,
+            18,
+            20,
+            22,
+            24,
+            25,
+            26,
+            27
+          ],
+          "eer": 0.0936,
+          "roc_auc": 0.95755028
+        }
+      ],
+      "mean_eer": 0.0822
+    }
+  ],
+  "winner": {
+    "method": "wccn_0.2",
+    "mode": "wccn",
+    "shrinkage": 0.2,
+    "folds": [
+      {
+        "validation_subject_ids": [
+          24,
+          22,
+          15,
+          4,
+          6,
+          2
+        ],
+        "train_subject_ids": [
+          7,
+          10,
+          13,
+          16,
+          18,
+          20,
+          21,
+          25,
+          26,
+          27,
+          28
+        ],
+        "eer": 0.0682,
+        "roc_auc": 0.98700148
+      },
+      {
+        "validation_subject_ids": [
+          20,
+          27,
+          18,
+          26,
+          25,
+          7
+        ],
+        "train_subject_ids": [
+          2,
+          4,
+          6,
+          10,
+          13,
+          15,
+          16,
+          21,
+          22,
+          24,
+          28
+        ],
+        "eer": 0.0848,
+        "roc_auc": 0.97522808
+      },
+      {
+        "validation_subject_ids": [
+          13,
+          28,
+          16,
+          10,
+          21
+        ],
+        "train_subject_ids": [
+          2,
+          4,
+          6,
+          7,
+          15,
+          18,
+          20,
+          22,
+          24,
+          25,
+          26,
+          27
+        ],
+        "eer": 0.0936,
+        "roc_auc": 0.95755028
+      }
+    ],
+    "mean_eer": 0.0822
+  },
+  "development_data_sha256": "87669e8af45e66560f258473807ee363f7d357ca63eaf028f7913b4ad3762e68",
+  "calibration": {
+    "threshold": -0.626271847066529,
+    "far": 0.01,
+    "frr": 0.215,
+    "false_accepts": 50,
+    "false_rejects": 1075,
+    "n_genuine": 5000,
+    "n_impostor": 5000,
+    "decision_rule": "score >= threshold",
+    "target_far": 0.01,
+    "selection": "empirical_far_at_most_target"
+  },
+  "artifact_sha256": {
+    "metric.npz": "75b323e17c64551d82d978af352d9394755598a6d5a6fda614aa7685076223c6",
+    "calibration.npz": "adc0205d6a71a1c6efcc43ca4885b9c86fd53e50d1e546af7cdba591631dddbe",
+    "pretraining_protocol.json": "65f3a0371d49c6d559ad80fcd7563650c6d1f1789e5f0e2be9480710d3d6a94e"
+  }
+}

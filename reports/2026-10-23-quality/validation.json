@@ -1,0 +1,44 @@
+{
+  "merged": {
+    "tests_passed": 201,
+    "subtests_passed": 126,
+    "warnings": 8,
+    "seconds": 9.67,
+    "host": "Wiker",
+    "command": "uv run --no-project --python ../.venv/bin/python python -m pytest tests -q"
+  },
+  "student-b": {
+    "tests_passed": 197,
+    "subtests_passed": 126,
+    "warnings": 8,
+    "seconds": 8.72,
+    "host": "Wiker",
+    "command": "uv run --no-project --python ../.venv/bin/python python -m pytest tests -q"
+  },
+  "ruff": "passed for all new/changed Python modules and tests",
+  "whitespace": "git diff --check passed",
+  "dependency_audit": "unchanged dependencies; first-phase installed-distribution audit found no known vulnerabilities",
+  "independent_review": "core objective/normalization/protocol and resume guards reviewed; secondary CV reviewed separately",
+  "real_cpu_training": {
+    "source": "har",
+    "epochs": 1,
+    "windows": 955,
+    "host": "Wiker",
+    "result": "passed; checkpoint and metadata written"
+  },
+  "cuda_training": {
+    "host": "Darkstar",
+    "completed_final_runs": 36,
+    "epochs_each": 40
+  },
+  "precision": {
+    "real_wisdm_windows": 345,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "result": "IEEE FP32 eager and packed embeddings identical; EER and fixed counts unchanged",
+    "tf32": "rejected by serving helper; prior reduced-precision check exceeded tolerance"
+  }
+}

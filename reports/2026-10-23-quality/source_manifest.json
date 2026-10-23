@@ -1,0 +1,36 @@
+{
+  "primary_training_commit": "32291a536e5f8cdd6584d026220a0b326c079401",
+  "primary_selection_evaluation_commit": "26f94c9c19e1fea3e300461c498f51be87c5461b",
+  "primary_neural_runs": 36,
+  "epochs_each": 40,
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "source_hashes": {
+    "engine/train_metric.py": "a9a3fcd83afcc096c479b7f6af1960ff3bba4b7d75970e278b2df913f9a43586",
+    "models/metric_learning.py": "ec83dce3a580afd13fb90c09e1902f7cfdbe459fa9f2d0419d349e838b182983",
+    "models/gait_encoders.py": "71a6993f4a38ac9081f3ab0f3eca0074fd25a3ddb785e3a9f0af1bc7a1f375d0",
+    "data/gait_transforms.py": "9f091e25fe74501d7d5ceb6a6593106e56afef1597a545e948c739d89084e043",
+    "models/gait_features.py": "219e107f516fe2a72aceb7071962f33bdb21faf65f624fc39e93b39e549cd572",
+    "models/gait_metric.py": "9973abf43b4b78892b6d2effcbab17b04c72c8933b087d009a96977c48a56bab",
+    "engine/enrollment.py": "d33dcc91c2307f6bbe9aceba8a76221e4a5a3a8011fd3494d3cf9aa7f57f3ecf",
+    "scripts/research_verification.py": "cf9164a4f76df00c78272f8d12be00585f4b3956bd9797e9d60190f01a77ada4",
+    "scripts/cross_validate_gait_features.py": "13b4da1b463f62093865c9f87584336bd32002680f06b1106af6d24ece028af5",
+    "models/gait_inference.py": "216955e24d47726d53035b6ecec328960b1434d6073f4a4d83082f86d79bf558",
+    "scripts/benchmark_gait_encoders.py": "f8200f02228bc5d6bd938d1c9a98e00f67a7960884056160b2fe4f2fa3ebe9b1",
+    "scripts/benchmark_gait_features.py": "9d430e4e346c99b09f005bde3f22ff12ffd5f7e99825cbebbee9d14c52464522"
+  },
+  "preliminary_validation_only": {
+    "neural_runs": 36,
+    "reason_not_primary": "repeated with pre-training dataset fingerprints and stricter budget guards before any new candidate test score was read",
+    "test_loaded": false
+  },
+  "secondary_test_reuse": "exploratory follow-up after observing primary HAR failure; never a new blind-holdout claim",
+  "local_real_cpu_smoke_seconds": 4.448512673028745,
+  "local_cuda_smoke_exit": 137,
+  "local_cuda_context": "host had about1GB available RAM and full8GB swap; no completion or speed result claimed",
+  "final_implementation_commit": "2da45a0d2847d1ea6e6849b062bae9af7f4d1c01",
+  "measured_repository": "https://github.com/VariableThe/gait-biometrics"
+}

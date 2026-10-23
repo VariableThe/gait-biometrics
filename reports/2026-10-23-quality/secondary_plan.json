@@ -1,0 +1,16 @@
+{
+  "recorded_utc": "2026-10-23T15:58:28.541905+00:00",
+  "study": "secondary_har_feature_cross_validation",
+  "reason": "neural validation winner failed to generalize; stop selecting on the four original validation subjects",
+  "test_reuse": "exploratory: HAR test was previously inspected for the primary study; no fresh-holdout claim",
+  "development": "only the 17 original optimizer-training identities; original4validation IDs reserved for calibration",
+  "folds": "three disjoint subject groups from np.random.default_rng(2026).permutation(sorted IDs), np.array_split(3)",
+  "methods": [
+    "standard",
+    "wccn_auto",
+    "wccn_0.2"
+  ],
+  "selection": "lowest mean held-out-subject pair EER across three folds; fixed pairseed42; tie methodorder",
+  "fitting": "fit selected feature transform on original17 training identities; calibrate on original4 validation; freeze before one secondary test evaluation",
+  "no_further_test_driven_selection": true
+}
