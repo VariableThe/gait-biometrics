@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-23T17:23:39.355589+00:00",
+  "benchmark": "resident_synthetic_metric_training_precision",
+  "hardware": {
+    "device": "cpu",
+    "torch_version": "2.14.1+cu130",
+    "cuda_version": "13.0",
+    "cudnn_version": 92400,
+    "python_version": "3.14.8",
+    "platform": "Linux-7.2.8-300.fc45.x86_64-x86_64-with-glibc2.44",
+    "device_name": "",
+    "cuda_capability": null,
+    "torch_threads": 2,
+    "tf32_matmul": false,
+    "tf32_cudnn": false,
+    "cudnn_benchmark": false,
+    "deterministic_algorithms": false
+  },
+  "settings": {
+    "out": "../artifacts/subject_scaling_validation/metric_precision_cpu.json",
+    "device": "cpu",
+    "precision": null,
+    "channels": [
+      3,
+      9
+    ],
+    "widths": [
+      32,
+      96
+    ],
+    "batch_sizes": [
+      32
+    ],
+    "architecture": "multiscale",
+    "embed_dim": 128,
+    "window_size": 128,
+    "identities_per_batch": 8,
+    "n_classes": 8,
+    "steps": 20,
+    "warmup": 5,
+    "repeats": 3,
+    "seed": 42,
+    "torch_threads": 2,
+    "precisions": [
+      "float32"
+    ]
+  },
+  "protocol": {
+    "timing": "synchronized perf_counter wall time over the entire step block",
+    "includes": [
+      "zero_grad",
+      "encoder_forward",
+      "trainer_metric_and_classifier_losses",
+      "trainer_finite_loss_check",
+      "backward",
+      "trainer_gradient_clip",
+      "AdamW_step"
+    ],
+    "excludes": [
+      "CPU_input_generation",
+      "normalization_fit",
+      "model_initialization",
+      "CPU_to_device_transfer",
+      "dataloading",
+      "augmentation",
+      "scheduler",
+      "trainer_logging",
+      "validation",
+      "checkpointing"
+    ],
+    "input": "one resident FP32 synthetic P*K batch reused each step; distinct raw row IDs",
+    "normalization": "32 separate synthetic TRAIN-only CPU rows; fit before model.to(device)",
+    "precision": "FP32 parameters/input/AdamW/losses; CUDA BF16 autocast only around encoder",
+    "repeat_reset": "fixed seed and fresh encoder/classifier/optimizer/input each repeat and precision",
+    "memory": "CUDA process allocator bytes; peaks reset after warmup with AdamW state resident, gradients cleared; reserved includes warmup cache; CPU null",
+    "constraints": [
+      "synthetic throughput only; no quality or convergence evidence",
+      "resident batch reuse excludes input pipeline and does not estimate full epoch time",
+      "wall time includes trainer-path host synchronizations and Python dispatch",
+      "allocator counters exclude other processes and CUDA driver/library allocations",
+      "run only on idle hardware; record contention and thermal conditions externally",
+      "same seed/state does not imply identical FP32/BF16 training trajectories"
+    ]
+  },
+  "cases": [
+    {
+      "channels": 3,
+      "width": 32,
+      "batch_size": 32,
+      "precision": "float32",
+      "config": {
+        "epochs": 40,
+        "seed": 42,
+        "split_seed": 42,
+        "val_seed": 42,
+        "val_subjects": 4,
+        "activity_ids": [
+          0
+        ],
+        "window_size": 128,
+        "stride": 64,
+        "objective": "hybrid",
+        "identities_per_batch": 8,
+        "windows_per_identity": 4,
+        "ce_weight": 0.5,
+        "classifier_type": "arcface",
+        "angular_scale": 30.0,
+        "angular_margin": 0.3,
+        "label_smoothing": 0.05,
+        "margin": 0.2,
+        "temperature": 0.1,
+        "softplus": false,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "device": "cpu",
+        "precision": "float32",
+        "epoch_selection": "validation_eer",
+        "torch_threads": 2,
+        "validation_pairs": 10000,
+        "eval_batch_size": 256,
+        "data_root": "datasets",
+        "augment": {},
+        "source": "synthetic_train_only",
+        "model_args": {
+          "architecture": "multiscale",
+          "embed_dim": 128,
+          "width": 32,
+          "dropout": 0.1,
+          "stats_fusion": false,
+          "normalization": true
+        }
+      },
+      "repeats": [
+        {
+          "repeat": 1,
+          "elapsed_seconds": 1.0223998579895124,
+          "ms_per_step": 51.11999289947562,
+          "windows_per_second": 625.9781777146579,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 6.536298751831055,
+          "initial_state_sha256": "291956fa63c924a107cabdd67ddf7325e8d484169cfbcb1449b1253080e5623f",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 2,
+          "elapsed_seconds": 1.008473085006699,
+          "ms_per_step": 50.42365425033495,
+          "windows_per_second": 634.6227871770606,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 6.536298751831055,
+          "initial_state_sha256": "291956fa63c924a107cabdd67ddf7325e8d484169cfbcb1449b1253080e5623f",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 3,
+          "elapsed_seconds": 0.8004956629592925,
+          "ms_per_step": 40.02478314796463,
+          "windows_per_second": 799.5046439527628,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 6.536298751831055,
+          "initial_state_sha256": "291956fa63c924a107cabdd67ddf7325e8d484169cfbcb1449b1253080e5623f",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        }
+      ],
+      "summary": {
+        "median_ms_per_step": 50.42365425033495,
+        "mean_ms_per_step": 47.189476765925065,
+        "stdev_ms_per_step": 6.2145673910582095,
+        "min_ms_per_step": 40.02478314796463,
+        "max_ms_per_step": 51.11999289947562,
+        "windows_per_second_at_median": 634.6227871770606,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null
+      }
+    },
+    {
+      "channels": 3,
+      "width": 96,
+      "batch_size": 32,
+      "precision": "float32",
+      "config": {
+        "epochs": 40,
+        "seed": 42,
+        "split_seed": 42,
+        "val_seed": 42,
+        "val_subjects": 4,
+        "activity_ids": [
+          0
+        ],
+        "window_size": 128,
+        "stride": 64,
+        "objective": "hybrid",
+        "identities_per_batch": 8,
+        "windows_per_identity": 4,
+        "ce_weight": 0.5,
+        "classifier_type": "arcface",
+        "angular_scale": 30.0,
+        "angular_margin": 0.3,
+        "label_smoothing": 0.05,
+        "margin": 0.2,
+        "temperature": 0.1,
+        "softplus": false,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "device": "cpu",
+        "precision": "float32",
+        "epoch_selection": "validation_eer",
+        "torch_threads": 2,
+        "validation_pairs": 10000,
+        "eval_batch_size": 256,
+        "data_root": "datasets",
+        "augment": {},
+        "source": "synthetic_train_only",
+        "model_args": {
+          "architecture": "multiscale",
+          "embed_dim": 128,
+          "width": 96,
+          "dropout": 0.1,
+          "stats_fusion": false,
+          "normalization": true
+        }
+      },
+      "repeats": [
+        {
+          "repeat": 1,
+          "elapsed_seconds": 2.163732088985853,
+          "ms_per_step": 108.18660444929264,
+          "windows_per_second": 295.7852329582863,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 1.1072020530700684,
+          "initial_state_sha256": "dca0294fc350d25cd83497be9225472e8acb0447687a691363543e04d0751614",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 2,
+          "elapsed_seconds": 2.3084741460625082,
+          "ms_per_step": 115.42370730312541,
+          "windows_per_second": 277.23940555783474,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 1.1072020530700684,
+          "initial_state_sha256": "dca0294fc350d25cd83497be9225472e8acb0447687a691363543e04d0751614",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 3,
+          "elapsed_seconds": 1.8195967699866742,
+          "ms_per_step": 90.97983849933371,
+          "windows_per_second": 351.72627834720055,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 1.1072020530700684,
+          "initial_state_sha256": "dca0294fc350d25cd83497be9225472e8acb0447687a691363543e04d0751614",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        }
+      ],
+      "summary": {
+        "median_ms_per_step": 108.18660444929264,
+        "mean_ms_per_step": 104.86338341725059,
+        "stdev_ms_per_step": 12.556214757844034,
+        "min_ms_per_step": 90.97983849933371,
+        "max_ms_per_step": 115.42370730312541,
+        "windows_per_second_at_median": 295.7852329582863,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null
+      }
+    },
+    {
+      "channels": 9,
+      "width": 32,
+      "batch_size": 32,
+      "precision": "float32",
+      "config": {
+        "epochs": 40,
+        "seed": 42,
+        "split_seed": 42,
+        "val_seed": 42,
+        "val_subjects": 4,
+        "activity_ids": [
+          0
+        ],
+        "window_size": 128,
+        "stride": 64,
+        "objective": "hybrid",
+        "identities_per_batch": 8,
+        "windows_per_identity": 4,
+        "ce_weight": 0.5,
+        "classifier_type": "arcface",
+        "angular_scale": 30.0,
+        "angular_margin": 0.3,
+        "label_smoothing": 0.05,
+        "margin": 0.2,
+        "temperature": 0.1,
+        "softplus": false,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "device": "cpu",
+        "precision": "float32",
+        "epoch_selection": "validation_eer",
+        "torch_threads": 2,
+        "validation_pairs": 10000,
+        "eval_batch_size": 256,
+        "data_root": "datasets",
+        "augment": {},
+        "source": "synthetic_train_only",
+        "model_args": {
+          "architecture": "multiscale",
+          "embed_dim": 128,
+          "width": 32,
+          "dropout": 0.1,
+          "stats_fusion": false,
+          "normalization": true
+        }
+      },
+      "repeats": [
+        {
+          "repeat": 1,
+          "elapsed_seconds": 0.6290244789561257,
+          "ms_per_step": 31.451223947806284,
+          "windows_per_second": 1017.4484800052429,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 5.535493850708008,
+          "initial_state_sha256": "3a1f7d6efa4b6b78379ebfd0caff43a4ecf437fa8d1c2080ef11cb01d778829c",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 2,
+          "elapsed_seconds": 0.7551431650063023,
+          "ms_per_step": 37.757158250315115,
+          "windows_per_second": 847.5214100556133,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 5.535493850708008,
+          "initial_state_sha256": "3a1f7d6efa4b6b78379ebfd0caff43a4ecf437fa8d1c2080ef11cb01d778829c",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 3,
+          "elapsed_seconds": 0.751094390056096,
+          "ms_per_step": 37.5547195028048,
+          "windows_per_second": 852.0899749393697,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 5.535493850708008,
+          "initial_state_sha256": "3a1f7d6efa4b6b78379ebfd0caff43a4ecf437fa8d1c2080ef11cb01d778829c",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        }
+      ],
+      "summary": {
+        "median_ms_per_step": 37.5547195028048,
+        "mean_ms_per_step": 35.5877005669754,
+        "stdev_ms_per_step": 3.583723549232412,
+        "min_ms_per_step": 31.451223947806284,
+        "max_ms_per_step": 37.757158250315115,
+        "windows_per_second_at_median": 852.0899749393697,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null
+      }
+    },
+    {
+      "channels": 9,
+      "width": 96,
+      "batch_size": 32,
+      "precision": "float32",
+      "config": {
+        "epochs": 40,
+        "seed": 42,
+        "split_seed": 42,
+        "val_seed": 42,
+        "val_subjects": 4,
+        "activity_ids": [
+          0
+        ],
+        "window_size": 128,
+        "stride": 64,
+        "objective": "hybrid",
+        "identities_per_batch": 8,
+        "windows_per_identity": 4,
+        "ce_weight": 0.5,
+        "classifier_type": "arcface",
+        "angular_scale": 30.0,
+        "angular_margin": 0.3,
+        "label_smoothing": 0.05,
+        "margin": 0.2,
+        "temperature": 0.1,
+        "softplus": false,
+        "lr": 0.001,
+        "weight_decay": 0.0001,
+        "gradient_clip": 1.0,
+        "device": "cpu",
+        "precision": "float32",
+        "epoch_selection": "validation_eer",
+        "torch_threads": 2,
+        "validation_pairs": 10000,
+        "eval_batch_size": 256,
+        "data_root": "datasets",
+        "augment": {},
+        "source": "synthetic_train_only",
+        "model_args": {
+          "architecture": "multiscale",
+          "embed_dim": 128,
+          "width": 96,
+          "dropout": 0.1,
+          "stats_fusion": false,
+          "normalization": true
+        }
+      },
+      "repeats": [
+        {
+          "repeat": 1,
+          "elapsed_seconds": 1.9990665779914707,
+          "ms_per_step": 99.95332889957353,
+          "windows_per_second": 320.1494172560423,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 1.6308871507644653,
+          "initial_state_sha256": "46d0ea8d0ae81b169ad02a910c280df5e406f8f87cbb09457d2b480a358d55d2",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 2,
+          "elapsed_seconds": 1.8526177450548857,
+          "ms_per_step": 92.63088725274429,
+          "windows_per_second": 345.45712503743687,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 1.6308871507644653,
+          "initial_state_sha256": "46d0ea8d0ae81b169ad02a910c280df5e406f8f87cbb09457d2b480a358d55d2",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        },
+        {
+          "repeat": 3,
+          "elapsed_seconds": 1.7357918620109558,
+          "ms_per_step": 86.78959310054779,
+          "windows_per_second": 368.70780074895896,
+          "timed_optimizer_updates": 20,
+          "warmup_optimizer_updates": 5,
+          "warmup_finite_forward_loss_gradients": true,
+          "observed_embedding_dtype": "torch.float32",
+          "observed_compute_layer": "stem.0",
+          "observed_compute_dtype": "torch.float32",
+          "final_loss": 1.6308871507644653,
+          "initial_state_sha256": "46d0ea8d0ae81b169ad02a910c280df5e406f8f87cbb09457d2b480a358d55d2",
+          "memory": {
+            "baseline_allocated_bytes": null,
+            "baseline_reserved_bytes": null,
+            "peak_allocated_bytes": null,
+            "peak_reserved_bytes": null
+          }
+        }
+      ],
+      "summary": {
+        "median_ms_per_step": 92.63088725274429,
+        "mean_ms_per_step": 93.12460308428854,
+        "stdev_ms_per_step": 6.595741166720845,
+        "min_ms_per_step": 86.78959310054779,
+        "max_ms_per_step": 99.95332889957353,
+        "windows_per_second_at_median": 345.45712503743687,
+        "peak_allocated_bytes": null,
+        "peak_reserved_bytes": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,909 @@
+{
+  "protocol_sha256": "4abc5ae7cf5264661b1989d3b4ba70b2f3c15bf63dccda441efaa7baf6d5b840",
+  "candidates": [
+    {
+      "name": "linear_w32",
+      "kind": "neural",
+      "summary": {
+        "n_folds": 3,
+        "n_seeds": 2,
+        "n_runs": 6,
+        "mean": {
+          "eer": 0.1856,
+          "roc_auc": 0.88836906
+        },
+        "per_fold": [
+          {
+            "fold": 0,
+            "mean": {
+              "eer": 0.213,
+              "roc_auc": 0.8466971
+            }
+          },
+          {
+            "fold": 1,
+            "mean": {
+              "eer": 0.07619999999999999,
+              "roc_auc": 0.9732454
+            }
+          },
+          {
+            "fold": 2,
+            "mean": {
+              "eer": 0.2676,
+              "roc_auc": 0.8451646800000001
+            }
+          }
+        ],
+        "per_seed": [
+          {
+            "seed": 42,
+            "mean": {
+              "eer": 0.16473333333333331,
+              "roc_auc": 0.9033016266666667
+            }
+          },
+          {
+            "seed": 43,
+            "mean": {
+              "eer": 0.2064666666666667,
+              "roc_auc": 0.8734364933333333
+            }
+          }
+        ],
+        "fold_sample_sd": {
+          "eer": 0.09859797158156958,
+          "roc_auc": 0.07350905996277464
+        },
+        "seed_sample_sd": {
+          "eer": 0.029509923001518615,
+          "roc_auc": 0.02111783830104043
+        },
+        "all_fold_results": [
+          {
+            "fold": 0,
+            "seed": 42,
+            "eer": 0.2014,
+            "roc_auc": 0.852244
+          },
+          {
+            "fold": 0,
+            "seed": 43,
+            "eer": 0.2246,
+            "roc_auc": 0.8411502000000001
+          },
+          {
+            "fold": 1,
+            "seed": 42,
+            "eer": 0.075,
+            "roc_auc": 0.98057688
+          },
+          {
+            "fold": 1,
+            "seed": 43,
+            "eer": 0.0774,
+            "roc_auc": 0.96591392
+          },
+          {
+            "fold": 2,
+            "seed": 42,
+            "eer": 0.2178,
+            "roc_auc": 0.8770840000000001
+          },
+          {
+            "fold": 2,
+            "seed": 43,
+            "eer": 0.3174,
+            "roc_auc": 0.81324536
+          }
+        ],
+        "weighting": "equal training seeds within fold, then equal folds",
+        "uncertainty": "descriptive only; dependent folds and seeds are not a population CI"
+      },
+      "runs": [
+        {
+          "fold": 0,
+          "seed": 42,
+          "eer": 0.2014,
+          "roc_auc": 0.852244,
+          "parameters": 28972,
+          "elapsed_seconds": 9.511844761997054,
+          "checkpoint": "linear_w32/fold_0/seed_42/best.pt",
+          "checkpoint_sha256": "a39a67f467ea6945405719ffe8aea92810ddbf58fa974c28dcadf36c8a8db7f1",
+          "metrics_sha256": "b9319e3d7192b16dee7e0a178c60b6852f570961351b131ea8f41061bea110f6"
+        },
+        {
+          "fold": 0,
+          "seed": 43,
+          "eer": 0.2246,
+          "roc_auc": 0.8411502000000001,
+          "parameters": 28972,
+          "elapsed_seconds": 7.362291799996456,
+          "checkpoint": "linear_w32/fold_0/seed_43/best.pt",
+          "checkpoint_sha256": "66feef0dce047d9efc68faf3d130c6db5c1e9ad65c492ec6ce7053c914dbbf8e",
+          "metrics_sha256": "725eb07cdcdb2826c26c209d5aa632c7bacb86f92677a0fe5290f784bf5e168c"
+        },
+        {
+          "fold": 1,
+          "seed": 42,
+          "eer": 0.075,
+          "roc_auc": 0.98057688,
+          "parameters": 28972,
+          "elapsed_seconds": 11.297424597003555,
+          "checkpoint": "linear_w32/fold_1/seed_42/best.pt",
+          "checkpoint_sha256": "cde2be115e25888226416c8d645221de9a28a271da623ad46f63171ddc86e4cc",
+          "metrics_sha256": "516b6379460903ddc9edf2a0132b99a04e6be8e92891fe004ce18e44ab5e26ad"
+        },
+        {
+          "fold": 1,
+          "seed": 43,
+          "eer": 0.0774,
+          "roc_auc": 0.96591392,
+          "parameters": 28972,
+          "elapsed_seconds": 11.227211099001579,
+          "checkpoint": "linear_w32/fold_1/seed_43/best.pt",
+          "checkpoint_sha256": "d5700dd18d408fbf3836cc3746d013ce4c614208470f16d0307322e9da9a2f19",
+          "metrics_sha256": "a877d7be5374ca31a6388863399c43e840784b76c5348c89dcbd9744db7cb70b"
+        },
+        {
+          "fold": 2,
+          "seed": 42,
+          "eer": 0.2178,
+          "roc_auc": 0.8770840000000001,
+          "parameters": 28972,
+          "elapsed_seconds": 9.557460477000859,
+          "checkpoint": "linear_w32/fold_2/seed_42/best.pt",
+          "checkpoint_sha256": "16337c7cf0ed5b21754a20c8717d153e583cfece7efd701ef8906360d538525e",
+          "metrics_sha256": "a310f2162c94d2cf94f6de6223522563c889d29dbb4dc1324b8e329ab4ff4ebb"
+        },
+        {
+          "fold": 2,
+          "seed": 43,
+          "eer": 0.3174,
+          "roc_auc": 0.81324536,
+          "parameters": 28972,
+          "elapsed_seconds": 9.655131428000459,
+          "checkpoint": "linear_w32/fold_2/seed_43/best.pt",
+          "checkpoint_sha256": "8340b83a6015d88b9d83e8990c1249e7b91c0b3691417acdd612f0a9730514d6",
+          "metrics_sha256": "e43f9f027f7d26fd0062eb6856f46d60f7863cd96ff36035a27cbcdb42b05888"
+        }
+      ]
+    },
+    {
+      "name": "linear_w96",
+      "kind": "neural",
+      "summary": {
+        "n_folds": 3,
+        "n_seeds": 2,
+        "n_runs": 6,
+        "mean": {
+          "eer": 0.16329999999999997,
+          "roc_auc": 0.9034059066666666
+        },
+        "per_fold": [
+          {
+            "fold": 0,
+            "mean": {
+              "eer": 0.1948,
+              "roc_auc": 0.86032028
+            }
+          },
+          {
+            "fold": 1,
+            "mean": {
+              "eer": 0.0629,
+              "roc_auc": 0.9835191799999999
+            }
+          },
+          {
+            "fold": 2,
+            "mean": {
+              "eer": 0.2322,
+              "roc_auc": 0.8663782600000001
+            }
+          }
+        ],
+        "per_seed": [
+          {
+            "seed": 42,
+            "mean": {
+              "eer": 0.16266666666666668,
+              "roc_auc": 0.90392052
+            }
+          },
+          {
+            "seed": 43,
+            "mean": {
+              "eer": 0.16393333333333335,
+              "roc_auc": 0.9028912933333333
+            }
+          }
+        ],
+        "fold_sample_sd": {
+          "eer": 0.08893711261335169,
+          "roc_auc": 0.06944621806517708
+        },
+        "seed_sample_sd": {
+          "eer": 0.0008956685895029624,
+          "roc_auc": 0.0007277731553780524
+        },
+        "all_fold_results": [
+          {
+            "fold": 0,
+            "seed": 42,
+            "eer": 0.1974,
+            "roc_auc": 0.8609814
+          },
+          {
+            "fold": 0,
+            "seed": 43,
+            "eer": 0.1922,
+            "roc_auc": 0.85965916
+          },
+          {
+            "fold": 1,
+            "seed": 42,
+            "eer": 0.0568,
+            "roc_auc": 0.98761824
+          },
+          {
+            "fold": 1,
+            "seed": 43,
+            "eer": 0.069,
+            "roc_auc": 0.9794201199999999
+          },
+          {
+            "fold": 2,
+            "seed": 42,
+            "eer": 0.2338,
+            "roc_auc": 0.86316192
+          },
+          {
+            "fold": 2,
+            "seed": 43,
+            "eer": 0.2306,
+            "roc_auc": 0.8695946000000001
+          }
+        ],
+        "weighting": "equal training seeds within fold, then equal folds",
+        "uncertainty": "descriptive only; dependent folds and seeds are not a population CI"
+      },
+      "runs": [
+        {
+          "fold": 0,
+          "seed": 42,
+          "eer": 0.1974,
+          "roc_auc": 0.8609814,
+          "parameters": 203396,
+          "elapsed_seconds": 8.753150210002786,
+          "checkpoint": "linear_w96/fold_0/seed_42/best.pt",
+          "checkpoint_sha256": "3580d1c7d4d6ad2e800208fcacf6f9641485c1b6a0ca6ea1568b39b6fc4853f1",
+          "metrics_sha256": "737193245db0794f1c91e03101e56e530fcdc616db0cd238b89194dc5e6c883c"
+        },
+        {
+          "fold": 0,
+          "seed": 43,
+          "eer": 0.1922,
+          "roc_auc": 0.85965916,
+          "parameters": 203396,
+          "elapsed_seconds": 8.42131927399896,
+          "checkpoint": "linear_w96/fold_0/seed_43/best.pt",
+          "checkpoint_sha256": "905d70071b82c7587e5550937608c821fe402150863896a566d9fc77e1d64e6d",
+          "metrics_sha256": "0ba2e9bd8f454df85721fb1aa9979a0e6dfa6f97eda9333bca9d07a085d6953d"
+        },
+        {
+          "fold": 1,
+          "seed": 42,
+          "eer": 0.0568,
+          "roc_auc": 0.98761824,
+          "parameters": 203396,
+          "elapsed_seconds": 11.026306963001844,
+          "checkpoint": "linear_w96/fold_1/seed_42/best.pt",
+          "checkpoint_sha256": "524cf532d51367b8dda1f5f72432b9a3789aa68c2ec4bc2c1ac1a42e269bdf2b",
+          "metrics_sha256": "aa70d9364396bf84e468e9fcffb14b3d73507db3b7543e07e7699cab41d3a007"
+        },
+        {
+          "fold": 1,
+          "seed": 43,
+          "eer": 0.069,
+          "roc_auc": 0.9794201199999999,
+          "parameters": 203396,
+          "elapsed_seconds": 11.651207021001028,
+          "checkpoint": "linear_w96/fold_1/seed_43/best.pt",
+          "checkpoint_sha256": "ddc3fa10414f274fba1f2a1e1cf27c478e4ea63e0b57fee99573f8ed25c2506b",
+          "metrics_sha256": "4b3a0136ea4837509742d75ed09f065ce4317c23ca8b791bf03b0d2555dcc2aa"
+        },
+        {
+          "fold": 2,
+          "seed": 42,
+          "eer": 0.2338,
+          "roc_auc": 0.86316192,
+          "parameters": 203396,
+          "elapsed_seconds": 9.642925100997672,
+          "checkpoint": "linear_w96/fold_2/seed_42/best.pt",
+          "checkpoint_sha256": "68dcd87a24cfd0ba9149a1960a91301d4923ef78ea8416dbedd5932f2388effc",
+          "metrics_sha256": "b398515702fc1c02618b54da98ea5cf72b5a20d631f474fe10a27e80da022e4d"
+        },
+        {
+          "fold": 2,
+          "seed": 43,
+          "eer": 0.2306,
+          "roc_auc": 0.8695946000000001,
+          "parameters": 203396,
+          "elapsed_seconds": 9.540148331994715,
+          "checkpoint": "linear_w96/fold_2/seed_43/best.pt",
+          "checkpoint_sha256": "c2cf9b7e1d4d5ce005002436a10e94d435ad5385e9e0761fb07cc3d5e1dfe4ca",
+          "metrics_sha256": "de80f04b5446c3c6903adbec8195eafc23127309a2f6e4813dcc75ed5759af0b"
+        }
+      ]
+    },
+    {
+      "name": "arcface_w32",
+      "kind": "neural",
+      "summary": {
+        "n_folds": 3,
+        "n_seeds": 2,
+        "n_runs": 6,
+        "mean": {
+          "eer": 0.1727,
+          "roc_auc": 0.9062342200000001
+        },
+        "per_fold": [
+          {
+            "fold": 0,
+            "mean": {
+              "eer": 0.2135,
+              "roc_auc": 0.8574822
+            }
+          },
+          {
+            "fold": 1,
+            "mean": {
+              "eer": 0.07,
+              "roc_auc": 0.9834696
+            }
+          },
+          {
+            "fold": 2,
+            "mean": {
+              "eer": 0.23460000000000003,
+              "roc_auc": 0.8777508599999999
+            }
+          }
+        ],
+        "per_seed": [
+          {
+            "seed": 42,
+            "mean": {
+              "eer": 0.16466666666666668,
+              "roc_auc": 0.9124262266666665
+            }
+          },
+          {
+            "seed": 43,
+            "mean": {
+              "eer": 0.18073333333333336,
+              "roc_auc": 0.9000422133333332
+            }
+          }
+        ],
+        "fold_sample_sd": {
+          "eer": 0.08956433441945516,
+          "roc_auc": 0.06765118319258877
+        },
+        "seed_sample_sd": {
+          "eer": 0.011360848951063861,
+          "roc_auc": 0.00875681980630458
+        },
+        "all_fold_results": [
+          {
+            "fold": 0,
+            "seed": 42,
+            "eer": 0.2022,
+            "roc_auc": 0.85499308
+          },
+          {
+            "fold": 0,
+            "seed": 43,
+            "eer": 0.2248,
+            "roc_auc": 0.85997132
+          },
+          {
+            "fold": 1,
+            "seed": 42,
+            "eer": 0.085,
+            "roc_auc": 0.98029688
+          },
+          {
+            "fold": 1,
+            "seed": 43,
+            "eer": 0.055,
+            "roc_auc": 0.98664232
+          },
+          {
+            "fold": 2,
+            "seed": 42,
+            "eer": 0.2068,
+            "roc_auc": 0.90198872
+          },
+          {
+            "fold": 2,
+            "seed": 43,
+            "eer": 0.2624,
+            "roc_auc": 0.853513
+          }
+        ],
+        "weighting": "equal training seeds within fold, then equal folds",
+        "uncertainty": "descriptive only; dependent folds and seeds are not a population CI"
+      },
+      "runs": [
+        {
+          "fold": 0,
+          "seed": 42,
+          "eer": 0.2022,
+          "roc_auc": 0.85499308,
+          "parameters": 28972,
+          "elapsed_seconds": 8.192788350999763,
+          "checkpoint": "arcface_w32/fold_0/seed_42/best.pt",
+          "checkpoint_sha256": "72ce1642cd462f2db49785cc167bada80497ab66041bcc58be984b31a40ec366",
+          "metrics_sha256": "0aa9f3ff8f97ef9fa536144eb12f35b5dbe85470688b5bec2666cd0817572d30"
+        },
+        {
+          "fold": 0,
+          "seed": 43,
+          "eer": 0.2248,
+          "roc_auc": 0.85997132,
+          "parameters": 28972,
+          "elapsed_seconds": 8.047159483001451,
+          "checkpoint": "arcface_w32/fold_0/seed_43/best.pt",
+          "checkpoint_sha256": "b035f561c15b3ac27e3b83a5397fada03a25c4038684a4843a19832e6a20ca83",
+          "metrics_sha256": "989ed196b599ada534b49bdc1728b857b22f6f34b25c9fe66a583546e6bd936a"
+        },
+        {
+          "fold": 1,
+          "seed": 42,
+          "eer": 0.085,
+          "roc_auc": 0.98029688,
+          "parameters": 28972,
+          "elapsed_seconds": 13.398979122997844,
+          "checkpoint": "arcface_w32/fold_1/seed_42/best.pt",
+          "checkpoint_sha256": "58bf0b713c6c5087dfaeecaedb113963aaacc91f1f159f32eed2727c656dd28c",
+          "metrics_sha256": "3a697c55de1c25b292bf0cbf501759b0a968e15b5029677856c794ec46c26941"
+        },
+        {
+          "fold": 1,
+          "seed": 43,
+          "eer": 0.055,
+          "roc_auc": 0.98664232,
+          "parameters": 28972,
+          "elapsed_seconds": 13.785824477999995,
+          "checkpoint": "arcface_w32/fold_1/seed_43/best.pt",
+          "checkpoint_sha256": "3a76f860121ed32803bf2e38070cdb6e7995ed96491728a53b889ece79a992ae",
+          "metrics_sha256": "ae45299aea36c0667f0ea42cd128dd1f90b09f1ef0c800868286c000717e221e"
+        },
+        {
+          "fold": 2,
+          "seed": 42,
+          "eer": 0.2068,
+          "roc_auc": 0.90198872,
+          "parameters": 28972,
+          "elapsed_seconds": 12.173396065001725,
+          "checkpoint": "arcface_w32/fold_2/seed_42/best.pt",
+          "checkpoint_sha256": "ce98a5cbff2ecf1051298f7a3d1614ed48f3bb97e8e767fb542576a2afe521f4",
+          "metrics_sha256": "7b96f6a7d2468add997732601ac9581bc46983ddc993fa5e7a310e49a44b50a8"
+        },
+        {
+          "fold": 2,
+          "seed": 43,
+          "eer": 0.2624,
+          "roc_auc": 0.853513,
+          "parameters": 28972,
+          "elapsed_seconds": 12.005549052999413,
+          "checkpoint": "arcface_w32/fold_2/seed_43/best.pt",
+          "checkpoint_sha256": "115b63625ee5fc8dd3641b60d4d95df5ff06aa47ef0966a9c751b87555d17384",
+          "metrics_sha256": "5fc0819a2bdaf69fb02a6b0f1b3e80df74e652f482cccfe77218f9030e538765"
+        }
+      ]
+    },
+    {
+      "name": "arcface_w96",
+      "kind": "neural",
+      "summary": {
+        "n_folds": 3,
+        "n_seeds": 2,
+        "n_runs": 6,
+        "mean": {
+          "eer": 0.1625,
+          "roc_auc": 0.9025759400000001
+        },
+        "per_fold": [
+          {
+            "fold": 0,
+            "mean": {
+              "eer": 0.2056,
+              "roc_auc": 0.8519925000000002
+            }
+          },
+          {
+            "fold": 1,
+            "mean": {
+              "eer": 0.0704,
+              "roc_auc": 0.9840568799999999
+            }
+          },
+          {
+            "fold": 2,
+            "mean": {
+              "eer": 0.2115,
+              "roc_auc": 0.8716784400000002
+            }
+          }
+        ],
+        "per_seed": [
+          {
+            "seed": 42,
+            "mean": {
+              "eer": 0.15746666666666667,
+              "roc_auc": 0.89976196
+            }
+          },
+          {
+            "seed": 43,
+            "mean": {
+              "eer": 0.16753333333333334,
+              "roc_auc": 0.9053899200000001
+            }
+          }
+        ],
+        "fold_sample_sd": {
+          "eer": 0.07981547469006245,
+          "roc_auc": 0.07124774905836381
+        },
+        "seed_sample_sd": {
+          "eer": 0.007118208263944586,
+          "roc_auc": 0.003979568680246738
+        },
+        "all_fold_results": [
+          {
+            "fold": 0,
+            "seed": 42,
+            "eer": 0.2134,
+            "roc_auc": 0.8428735600000001
+          },
+          {
+            "fold": 0,
+            "seed": 43,
+            "eer": 0.1978,
+            "roc_auc": 0.8611114400000001
+          },
+          {
+            "fold": 1,
+            "seed": 42,
+            "eer": 0.0666,
+            "roc_auc": 0.9858791999999998
+          },
+          {
+            "fold": 1,
+            "seed": 43,
+            "eer": 0.0742,
+            "roc_auc": 0.98223456
+          },
+          {
+            "fold": 2,
+            "seed": 42,
+            "eer": 0.1924,
+            "roc_auc": 0.87053312
+          },
+          {
+            "fold": 2,
+            "seed": 43,
+            "eer": 0.2306,
+            "roc_auc": 0.8728237600000001
+          }
+        ],
+        "weighting": "equal training seeds within fold, then equal folds",
+        "uncertainty": "descriptive only; dependent folds and seeds are not a population CI"
+      },
+      "runs": [
+        {
+          "fold": 0,
+          "seed": 42,
+          "eer": 0.2134,
+          "roc_auc": 0.8428735600000001,
+          "parameters": 203396,
+          "elapsed_seconds": 9.47709370499797,
+          "checkpoint": "arcface_w96/fold_0/seed_42/best.pt",
+          "checkpoint_sha256": "7fbd10b560910eca2af5ff8068915134b36edcb736aa3f17d317425d8b7e2bc2",
+          "metrics_sha256": "2e3e17de467b2181a83f9f982c315a898aaf5bd0700e3388a86296358e7fa33a"
+        },
+        {
+          "fold": 0,
+          "seed": 43,
+          "eer": 0.1978,
+          "roc_auc": 0.8611114400000001,
+          "parameters": 203396,
+          "elapsed_seconds": 9.493033163998916,
+          "checkpoint": "arcface_w96/fold_0/seed_43/best.pt",
+          "checkpoint_sha256": "051864c4d6fccecd7881614143d17a2bc8343d1669b3faa4eba608e79478253c",
+          "metrics_sha256": "9b494db980c183857016b21e14ec5a913dd9c5bd340a58affc6748f9ed28a1ad"
+        },
+        {
+          "fold": 1,
+          "seed": 42,
+          "eer": 0.0666,
+          "roc_auc": 0.9858791999999998,
+          "parameters": 203396,
+          "elapsed_seconds": 13.424117930997454,
+          "checkpoint": "arcface_w96/fold_1/seed_42/best.pt",
+          "checkpoint_sha256": "56639ab5dee2c5c18134c9056f90f8cecbdff8dfb7cd99cdbe935c947016fa3d",
+          "metrics_sha256": "42f67ae6087a3ddfa42e7dfb3679baa6214aeab3c34cc3c185c1d50d90084a7f"
+        },
+        {
+          "fold": 1,
+          "seed": 43,
+          "eer": 0.0742,
+          "roc_auc": 0.98223456,
+          "parameters": 203396,
+          "elapsed_seconds": 12.937019769000472,
+          "checkpoint": "arcface_w96/fold_1/seed_43/best.pt",
+          "checkpoint_sha256": "6bedb1cfbf45e59fc8455e553d53ed79ff03bd4f960636f3cb266223f54a4bed",
+          "metrics_sha256": "7c085750df46d7c433500feefddf22a5c00268cf0b587b91a17b33471384c2dd"
+        },
+        {
+          "fold": 2,
+          "seed": 42,
+          "eer": 0.1924,
+          "roc_auc": 0.87053312,
+          "parameters": 203396,
+          "elapsed_seconds": 10.865641462005442,
+          "checkpoint": "arcface_w96/fold_2/seed_42/best.pt",
+          "checkpoint_sha256": "29d140d08fca5525b07051ec304a4b0c3156659102a1d56cc426d11a82c2facf",
+          "metrics_sha256": "cc1b2d5eab5561fc5571e1b4375ded41e14695310ea17b426480d75c68293835"
+        },
+        {
+          "fold": 2,
+          "seed": 43,
+          "eer": 0.2306,
+          "roc_auc": 0.8728237600000001,
+          "parameters": 203396,
+          "elapsed_seconds": 10.919172360998346,
+          "checkpoint": "arcface_w96/fold_2/seed_43/best.pt",
+          "checkpoint_sha256": "d0a82fa8672138b208a417339334a54d8a0b521d5e81871ad6c7080d008c7fc4",
+          "metrics_sha256": "f7dd0f78f579f1dc4568d809d7eda0685149f8fe9f0a4ce6c53068ab8fd6bb0e"
+        }
+      ]
+    },
+    {
+      "name": "features_standard",
+      "kind": "features",
+      "summary": {
+        "n_folds": 3,
+        "n_seeds": 1,
+        "n_runs": 3,
+        "mean": {
+          "eer": 0.147,
+          "roc_auc": 0.92382868
+        },
+        "per_fold": [
+          {
+            "fold": 0,
+            "mean": {
+              "eer": 0.1912,
+              "roc_auc": 0.88062408
+            }
+          },
+          {
+            "fold": 1,
+            "mean": {
+              "eer": 0.06,
+              "roc_auc": 0.99214496
+            }
+          },
+          {
+            "fold": 2,
+            "mean": {
+              "eer": 0.1898,
+              "roc_auc": 0.898717
+            }
+          }
+        ],
+        "per_seed": [
+          {
+            "seed": 42,
+            "mean": {
+              "eer": 0.147,
+              "roc_auc": 0.92382868
+            }
+          }
+        ],
+        "fold_sample_sd": {
+          "eer": 0.07534746180197446,
+          "roc_auc": 0.05985126584551403
+        },
+        "seed_sample_sd": {
+          "eer": null,
+          "roc_auc": null
+        },
+        "all_fold_results": [
+          {
+            "fold": 0,
+            "seed": 42,
+            "eer": 0.1912,
+            "roc_auc": 0.88062408
+          },
+          {
+            "fold": 1,
+            "seed": 42,
+            "eer": 0.06,
+            "roc_auc": 0.99214496
+          },
+          {
+            "fold": 2,
+            "seed": 42,
+            "eer": 0.1898,
+            "roc_auc": 0.898717
+          }
+        ],
+        "weighting": "equal training seeds within fold, then equal folds",
+        "uncertainty": "descriptive only; dependent folds and seeds are not a population CI"
+      },
+      "mode": "standard",
+      "shrinkage": "auto"
+    },
+    {
+      "name": "features_wccn_auto",
+      "kind": "features",
+      "summary": {
+        "n_folds": 3,
+        "n_seeds": 1,
+        "n_runs": 3,
+        "mean": {
+          "eer": 0.127,
+          "roc_auc": 0.9402822133333333
+        },
+        "per_fold": [
+          {
+            "fold": 0,
+            "mean": {
+              "eer": 0.1958,
+              "roc_auc": 0.89229188
+            }
+          },
+          {
+            "fold": 1,
+            "mean": {
+              "eer": 0.0276,
+              "roc_auc": 0.99703192
+            }
+          },
+          {
+            "fold": 2,
+            "mean": {
+              "eer": 0.1576,
+              "roc_auc": 0.93152284
+            }
+          }
+        ],
+        "per_seed": [
+          {
+            "seed": 42,
+            "mean": {
+              "eer": 0.127,
+              "roc_auc": 0.9402822133333333
+            }
+          }
+        ],
+        "fold_sample_sd": {
+          "eer": 0.08817641407995677,
+          "roc_auc": 0.05291657548155329
+        },
+        "seed_sample_sd": {
+          "eer": null,
+          "roc_auc": null
+        },
+        "all_fold_results": [
+          {
+            "fold": 0,
+            "seed": 42,
+            "eer": 0.1958,
+            "roc_auc": 0.89229188
+          },
+          {
+            "fold": 1,
+            "seed": 42,
+            "eer": 0.0276,
+            "roc_auc": 0.99703192
+          },
+          {
+            "fold": 2,
+            "seed": 42,
+            "eer": 0.1576,
+            "roc_auc": 0.93152284
+          }
+        ],
+        "weighting": "equal training seeds within fold, then equal folds",
+        "uncertainty": "descriptive only; dependent folds and seeds are not a population CI"
+      },
+      "mode": "wccn",
+      "shrinkage": "auto"
+    },
+    {
+      "name": "features_wccn_0.2",
+      "kind": "features",
+      "summary": {
+        "n_folds": 3,
+        "n_seeds": 1,
+        "n_runs": 3,
+        "mean": {
+          "eer": 0.12633333333333333,
+          "roc_auc": 0.9418636800000001
+        },
+        "per_fold": [
+          {
+            "fold": 0,
+            "mean": {
+              "eer": 0.1908,
+              "roc_auc": 0.89586588
+            }
+          },
+          {
+            "fold": 1,
+            "mean": {
+              "eer": 0.0282,
+              "roc_auc": 0.99669824
+            }
+          },
+          {
+            "fold": 2,
+            "mean": {
+              "eer": 0.16,
+              "roc_auc": 0.93302692
+            }
+          }
+        ],
+        "per_seed": [
+          {
+            "seed": 42,
+            "mean": {
+              "eer": 0.12633333333333333,
+              "roc_auc": 0.9418636800000001
+            }
+          }
+        ],
+        "fold_sample_sd": {
+          "eer": 0.08636997935239614,
+          "roc_auc": 0.05099370011350026
+        },
+        "seed_sample_sd": {
+          "eer": null,
+          "roc_auc": null
+        },
+        "all_fold_results": [
+          {
+            "fold": 0,
+            "seed": 42,
+            "eer": 0.1908,
+            "roc_auc": 0.89586588
+          },
+          {
+            "fold": 1,
+            "seed": 42,
+            "eer": 0.0282,
+            "roc_auc": 0.99669824
+          },
+          {
+            "fold": 2,
+            "seed": 42,
+            "eer": 0.16,
+            "roc_auc": 0.93302692
+          }
+        ],
+        "weighting": "equal training seeds within fold, then equal folds",
+        "uncertainty": "descriptive only; dependent folds and seeds are not a population CI"
+      },
+      "mode": "wccn",
+      "shrinkage": 0.2
+    }
+  ],
+  "source_test_loaded": false
+}

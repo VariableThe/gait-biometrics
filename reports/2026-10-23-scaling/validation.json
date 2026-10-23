@@ -1,0 +1,43 @@
+{
+  "main": {
+    "passed": 290,
+    "subtests": 215,
+    "warnings": 8,
+    "seconds": 10.86,
+    "host": "Wiker"
+  },
+  "student_b": {
+    "passed": 286,
+    "subtests": 215,
+    "warnings": 8,
+    "seconds": 9.5,
+    "host": "Wiker"
+  },
+  "command": "TMPDIR=<workspace>/artifacts/tmp OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 CUDA_VISIBLE_DEVICES='' uv run --no-project --python ../.venv/bin/python python -m pytest -q",
+  "local_real_cpu_arcface_smoke": {
+    "passed": true,
+    "epochs": 1,
+    "optimizer_steps": 2,
+    "train_windows": 610,
+    "validation_windows": 336,
+    "selection_metric": "final_epoch",
+    "calibration_excluded": true,
+    "test_loaded": false,
+    "seconds": 2.9564659129828215
+  },
+  "registered_gpu_study": {
+    "host": "Darkstar",
+    "device": "RTX 5070 Ti",
+    "completed_runs": 48,
+    "epochs_each": 40,
+    "optimizer_seed_grid": [
+      42,
+      43
+    ],
+    "folds": 3,
+    "source_test_loaded": false,
+    "implementation_commit": "40789b491d34c10fcd99a31f2b60c7b0d4549ade"
+  },
+  "independent_review": "Two resume/provenance findings closed before launch; separate second review passed. Regression metadata consistency strengthened afterward; scientific source unchanged.",
+  "dependencies": "No new dependencies; previous installed-distribution audit found zero known vulnerabilities."
+}
