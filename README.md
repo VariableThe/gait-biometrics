@@ -33,6 +33,22 @@ uv run --no-project --python .venv/bin/python python -m pytest tests -q
 
 ## Measured results
 
+The [controlled scaling study](reports/2026-10-23-scaling/README.md) adds 48 GPU
+runs with three subject folds, two seeds, fixed final epochs and independent
+calibration. Wider encoders help WISDM but slightly worsen HAR; descriptor
+methods win the development comparison on both. These fold scores are not
+new test improvements. BF16 was slower in every matched GPU shape, so FP32
+remains the default.
+
+The [first genuine cross-day study](reports/2026-10-23-cross-day/README.md) uses
+a separate public Santos dataset and a frozen 15/5/5 development/calibration/test
+population split. Day1 enrollment against day2 trial probes gives **7.0% test
+EER**, AUC **0.9888**, and fixed-threshold FAR/FRR **0.5% / 22%**. Only five test
+users contributed 50 genuine and 200 impostor claims; one user had 8/10 genuine
+claims rejected. This is a small controlled leg-sensor result, not a phone or
+deployment claim. [The stage guide](docs/cross_day_verification.md) records the
+single test attempt, calibration lock, data/source checks and reproduction.
+
 The [research-extension report](reports/2026-10-23-quality/README.md) adds balanced batch-hard/SupCon training, multiscale and temporal encoders, train-only normalization, coherent augmentation, statistical baselines, covariance normalization and enrollment scoring. Thirty-six final 40-epoch neural runs compare three seeds per method with fixed subject cohorts.
 
 | Source/method | Baseline EER | New EER | Evidence |
