@@ -41,6 +41,27 @@ def main():
     args = parser.parse_args()
     if args.epochs is not None and args.epochs <= 0:
         parser.error("epochs must be positive")
+    prepared = []
+    stems = set()
+    for config_path in args.configs:
+        config = yaml.safe_load(config_path.read_text())
+        if not isinstance(config, dict):
+            parser.error(f"{config_path}: expected a configuration mapping")
+        if config_path.stem in stems:
+            parser.error(
+                "config filenames must have distinct stems for separate output directories"
+            )
+        stems.add(config_path.stem)
+        if "loss_type" in config and int(config.get("val_subjects", 0)) < 2:
+            parser.error(
+                f"{config_path}: calibrated verification requires val_subjects >= 2; use configs/verification_har.yaml or configs/wisdm_verification.yaml"
+            )
+        folder = args.out_root / config_path.stem
+        if (folder / "best.pt").exists():
+            parser.error(
+                f"{folder}/best.pt already exists; choose a fresh --out-root to preserve results"
+            )
+        prepared.append((config_path, config, folder))
     args.out_root.mkdir(parents=True, exist_ok=True)
     environment = {**os.environ, "PYTHONUNBUFFERED": "1"}
 
@@ -71,13 +92,7 @@ def main():
         "git_commit": commit,
         "experiments": [],
     }
-    for config_path in args.configs:
-        config = yaml.safe_load(config_path.read_text())
-        folder = args.out_root / config_path.stem
-        if (folder / "best.pt").exists():
-            parser.error(
-                f"{folder}/best.pt already exists; choose a fresh --out-root to preserve results"
-            )
+    for config_path, config, folder in prepared:
         folder.mkdir(parents=True, exist_ok=True)
         config.update(
             data_root=str(args.data_root.resolve()),

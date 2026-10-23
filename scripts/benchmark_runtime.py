@@ -33,7 +33,10 @@ def benchmark(
             torch.cuda.synchronize()
 
     def step(training: bool):
-        inputs = [x.to(device, non_blocking=True) for x in batches]
+        inputs = [
+            x.to(device, non_blocking=True)
+            for x in (batches if training else batches[:1])
+        ]
         if training:
             optimizer.zero_grad(set_to_none=True)
             outputs = [model(x) for x in inputs]
@@ -60,7 +63,8 @@ def benchmark(
         result["training" if training else "inference"] = {
             "seconds_per_batch": timings,
             "median_seconds": statistics.median(timings),
-            "windows_per_second": batch_size / statistics.median(timings),
+            "items_per_second": batch_size / statistics.median(timings),
+            "item_unit": "triplets" if training else "windows",
             "batch_semantics": "one anchor batch"
             if not training
             else "anchor+positive+negative batches, three forwards, Adam step",

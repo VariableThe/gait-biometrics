@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import shutil
 import tarfile
@@ -15,13 +16,18 @@ import urllib.request
 import zipfile
 from pathlib import Path
 
-from scripts.setup_datasets import _extract_zipfile_to
+from scripts.setup_datasets import (
+    _extract_zipfile_to,
+    _open_no_follow,
+    _safe_member_target,
+)
 
 WISDM_URL = (
     "https://www.cis.fordham.edu/wisdm/includes/datasets/latest/WISDM_ar_latest.tar.gz"
 )
 WISDM_SHA256 = "e573791269aab4a629721cf04b6031b7cbf8e14261cd2bc86e65887a2bc592d7"
 HAR_URL = "https://archive.ics.uci.edu/static/public/240/human+activity+recognition+using+smartphones.zip"
+HAR_SHA256 = "c00b803081a5c797cd5e4b83700a9810b38d53d9d84e01917e090e1fdbc81031"
 
 
 def sha256(path: Path) -> str:
@@ -36,7 +42,7 @@ def download(url: str, target: Path, expected_sha256: str | None = None) -> Path
         try:
             with (
                 urllib.request.urlopen(url, timeout=120) as src,
-                temporary.open("wb") as dst,
+                _open_no_follow(str(temporary)) as dst,
             ):
                 shutil.copyfileobj(src, dst)
             if expected_sha256 and sha256(temporary) != expected_sha256:
@@ -57,12 +63,16 @@ def prepare_wisdm(root: Path, archive: Path) -> dict:
     dest = root / "wisdm"
     dest.mkdir(parents=True, exist_ok=True)
     names = ["readme.txt", "WISDM_ar_v1.1_raw.txt", "WISDM_ar_v1.1_raw_about.txt"]
+    targets = {name: _safe_member_target(str(root), f"wisdm/{name}") for name in names}
     with tarfile.open(archive, "r:gz") as stream:
         for name in names:
             member = stream.getmember(f"WISDM_ar_v1.1/{name}")
             if not member.isfile():
                 raise ValueError(f"expected an ordinary dataset file: {name}")
-            with stream.extractfile(member) as src, (dest / name).open("wb") as dst:
+            with (
+                stream.extractfile(member) as src,
+                _open_no_follow(targets[name]) as dst,
+            ):
                 shutil.copyfileobj(src, dst)
     return {
         "source": "wisdm_v1",
@@ -76,11 +86,32 @@ def prepare_wisdm(root: Path, archive: Path) -> dict:
 
 
 def prepare_har(root: Path, archive: Path) -> dict:
+    if sha256(archive) != HAR_SHA256:
+        raise ValueError("UCI HAR archive checksum mismatch")
     with zipfile.ZipFile(archive) as outer:
         if "UCI HAR Dataset.zip" in outer.namelist():
             contents = outer.read("UCI HAR Dataset.zip")
         else:
             contents = archive.read_bytes()
+    required = {"UCI HAR Dataset/README.txt", "UCI HAR Dataset/activity_labels.txt"}
+    for split in ("train", "test"):
+        required.update(
+            f"UCI HAR Dataset/{split}/{prefix}_{split}.txt"
+            for prefix in ("subject", "y")
+        )
+        for sensor in ("body_acc", "body_gyro", "total_acc"):
+            required.update(
+                f"UCI HAR Dataset/{split}/Inertial Signals/{sensor}_{axis}_{split}.txt"
+                for axis in "xyz"
+            )
+    with zipfile.ZipFile(io.BytesIO(contents)) as inner:
+        if not required <= set(inner.namelist()):
+            raise ValueError(
+                "UCI HAR archive is missing required inertial signals/labels"
+            )
+    # Validate relative to data_root so a pre-existing uci_har symlink cannot
+    # change the containment boundary before the shared ZIP writer checks it.
+    _safe_member_target(str(root), "uci_har/UCI HAR Dataset/README.txt")
     _extract_zipfile_to(contents, str(root / "uci_har"), skip_prefixes=("__MACOSX/",))
     return {
         "source": "har",
@@ -109,13 +140,17 @@ def main() -> None:
         )
         manifests.append(prepare_wisdm(args.data_root, archive))
     if args.dataset in ("all", "har"):
-        archive = args.har_archive or download(HAR_URL, args.cache_dir / "UCI_HAR.zip")
+        archive = args.har_archive or download(
+            HAR_URL, args.cache_dir / "UCI_HAR.zip", HAR_SHA256
+        )
         manifests.append(prepare_har(args.data_root, archive))
     args.data_root.mkdir(parents=True, exist_ok=True)
     for manifest in manifests:
-        (args.data_root / f"{manifest['source']}_provenance.json").write_text(
-            json.dumps(manifest, indent=2) + "\n"
+        target = _safe_member_target(
+            str(args.data_root), f"{manifest['source']}_provenance.json"
         )
+        with _open_no_follow(target) as stream:
+            stream.write((json.dumps(manifest, indent=2) + "\n").encode())
     print(json.dumps(manifests, indent=2))
 
 

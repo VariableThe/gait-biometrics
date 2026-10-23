@@ -441,8 +441,8 @@ def _evaluation_data(config: dict, split: str, protocol: dict):
     data = load_windows(
         source,
         split,
-        window_size=int(config.get("window_size", 128)),
-        stride=int(config.get("stride", 64)),
+        window_size=int(config.get("window_size", protocol.get("window_size", 128))),
+        stride=int(config.get("stride", protocol.get("stride", 64))),
         data_root=config.get("data_root", "datasets"),
     )
     for key, actual in (

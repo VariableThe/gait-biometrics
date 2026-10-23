@@ -15,8 +15,8 @@ from data.adapter import WindowData
 from engine.evaluate import (
     _eval_verification,
     _evaluation_data,
-    _verification_pairs,
     _roc,
+    _verification_pairs,
     calibrate_threshold,
     compute_eer,
     fixed_threshold_metrics,
@@ -285,6 +285,18 @@ class InferenceProtocolTests(unittest.TestCase):
     def test_unsupported_normalization_fails(self):
         with self.assertRaisesRegex(ValueError, "normalization"):
             self.run_evaluation({**self.protocol, "normalization": "unknown"})
+
+    def test_omitted_windowing_uses_checkpoint_protocol(self):
+        config = {
+            k: v for k, v in self.config.items() if k not in ("window_size", "stride")
+        }
+        protocol = {**self.protocol, "window_size": 16, "stride": 8}
+        with mock.patch(
+            "engine.evaluate.load_windows", return_value=windows([30, 31])
+        ) as load:
+            _evaluation_data(config, "test", protocol)
+        self.assertEqual(load.call_args.kwargs["window_size"], 16)
+        self.assertEqual(load.call_args.kwargs["stride"], 8)
 
 
 if __name__ == "__main__":

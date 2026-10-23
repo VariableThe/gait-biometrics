@@ -285,9 +285,8 @@ def main(argv=None) -> int:
     if out_dir:
         os.makedirs(out_dir, exist_ok=True)
     try:
-        # torch 2.14's ONNX exporter is opset-18 native and cannot downgrade to
-        # 13; requesting 18 yields a clean, checker-valid graph. compress's
-        # default (13) is overridden here for that reason only.
+        # Use opset 18 for this deployment artifact. The shared wrapper selects
+        # the legacy exporter explicitly, matching its dynamic_axes contract.
         C.export_onnx(export_model, args.out, input_shape, opset=18)
     except Exception as e:
         _fail(f"ONNX export to {args.out!r} failed: {e}")
