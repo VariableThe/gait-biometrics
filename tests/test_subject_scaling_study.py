@@ -10,6 +10,7 @@ from unittest.mock import patch
 import torch
 
 from data.adapter import WindowData
+from engine.train_metric import _resolved_config
 from scripts.subject_scaling_study import (
     EPOCHS,
     NEURAL,
@@ -70,7 +71,9 @@ class StudyGuards(unittest.TestCase):
 
     def test_actual_checkpoint_config_epoch_history_and_protocol(self):
         fold = {"train_subject_ids": [1, 2], "val_subject_ids": [3, 4]}
-        config = training_config("har", "datasets", fold, "arcface", 96, 42, "cpu")
+        config = _resolved_config(
+            training_config("har", "datasets", fold, "arcface", 96, 42, "cpu")
+        )
         protocol = {**fold, "config": config, "test_split_loaded": False}
         completed = {
             "best_epoch": 40,
@@ -78,7 +81,15 @@ class StudyGuards(unittest.TestCase):
             "protocol": protocol,
         }
         validate_run(config, config, protocol, completed, 40)
-        for alteration in ("seed", "history", "epoch", "cohort", "test"):
+        for alteration in (
+            "seed",
+            "history",
+            "epoch",
+            "cohort",
+            "test",
+            "steps",
+            "softplus",
+        ):
             actual, p, done, epoch = (
                 copy.deepcopy(config),
                 copy.deepcopy(protocol),
@@ -87,6 +98,10 @@ class StudyGuards(unittest.TestCase):
             )
             if alteration == "seed":
                 actual["seed"] = 43
+            elif alteration == "steps":
+                actual["steps_per_epoch"] = 1
+            elif alteration == "softplus":
+                actual["softplus"] = True
             elif alteration == "history":
                 done["per_epoch"] = done["per_epoch"][:-1]
             elif alteration == "epoch":
@@ -99,6 +114,19 @@ class StudyGuards(unittest.TestCase):
                 done["protocol"] = p
             with self.subTest(alteration=alteration), self.assertRaises(ValueError):
                 validate_run(config, actual, p, done, epoch)
+
+    def test_cannot_re_register_orphaned_artifacts(self):
+        with tempfile.TemporaryDirectory() as temp:
+            args = SimpleNamespace(
+                out_root=Path(temp), data_root=Path("datasets"), device="cpu"
+            )
+            source = args.out_root / "har"
+            source.mkdir()
+            (source / "best.pt").write_bytes(b"old run")
+            with self.assertRaisesRegex(
+                ValueError, "original pretraining registration"
+            ):
+                register(args, "har", self.data())
 
     def test_lock_cannot_start_training_missing_run(self):
         with (

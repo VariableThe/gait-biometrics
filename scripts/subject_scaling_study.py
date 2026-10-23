@@ -121,7 +121,9 @@ def training_config(source, root, fold, head, width, seed, device):
 
 def validate_run(expected, config, protocol, completed, epoch):
     """Validate actual checkpoint and complete history, not a requested sidecar."""
-    if any(config.get(key) != value for key, value in expected.items()):
+    from engine.train_metric import _resolved_config
+
+    if config != _resolved_config(expected):
         raise ValueError("checkpoint config differs from registered run")
     if epoch != expected["epochs"] or completed.get("best_epoch") != epoch:
         raise ValueError("fixed final epoch checkpoint is incomplete")
@@ -168,6 +170,10 @@ def register(args, source, data):
     # JSON canonicalization preserves tuple/list equality across resume.
     plan = json.loads(json.dumps(plan))
     path = folder / "pretraining_protocol.json"
+    if not path.exists() and folder.exists() and any(folder.iterdir()):
+        raise ValueError(
+            "existing artifacts lack original pretraining registration; use a new study directory"
+        )
     if path.exists() and json.loads(path.read_text()) != plan:
         raise ValueError(
             "registered data/cohort/budget changed; use a new study directory"
