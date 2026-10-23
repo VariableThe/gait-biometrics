@@ -6,7 +6,6 @@ import os
 import sys
 import unittest
 from types import SimpleNamespace
-from unittest import mock
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if REPO_ROOT not in sys.path:
@@ -139,9 +138,11 @@ class PackedInferenceTests(unittest.TestCase):
         model = pack_multiscale_branches(
             build_gait_encoder(3, {"architecture": "multiscale"}).eval()
         )
-        with mock.patch.object(torch.backends.cudnn, "allow_tf32", True):
-            with self.assertRaisesRegex(RuntimeError, "allow_tf32=False"):
-                model(SimpleNamespace(is_cuda=True))
+        with (
+            torch.backends.cudnn.flags(allow_tf32=True),
+            self.assertRaisesRegex(RuntimeError, "allow_tf32=False"),
+        ):
+            model(SimpleNamespace(is_cuda=True))
 
 
 if __name__ == "__main__":

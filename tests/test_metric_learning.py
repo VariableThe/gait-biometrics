@@ -17,6 +17,8 @@ if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
 import torch
+from torch.nn import functional as F
+
 from data.adapter import WindowData
 from engine.train import _filter_activities, _split_validation
 from engine.train_metric import _resolved_config, load_metric_encoder, train_metric
@@ -25,7 +27,6 @@ from models.metric_learning import (
     batch_hard_triplet_loss,
     supervised_contrastive_loss,
 )
-from torch.nn import functional as F
 
 
 class _SingleThreadTests(unittest.TestCase):

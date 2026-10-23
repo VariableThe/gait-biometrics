@@ -17,16 +17,10 @@ from pathlib import Path
 
 import torch
 import yaml
-from data.adapter import load_windows
-from models.common import seed_everything
-from models.metric_learning import (
-    IdentityBalancedBatchSampler,
-    batch_hard_triplet_loss,
-    supervised_contrastive_loss,
-)
 from torch import nn
 from torch.nn import functional as F
 
+from data.adapter import load_windows
 from engine.evaluate import verification_metrics
 from engine.train import (
     _device,
@@ -34,6 +28,12 @@ from engine.train import (
     _git_commit,
     _split_validation,
     _validate_windows,
+)
+from models.common import seed_everything
+from models.metric_learning import (
+    IdentityBalancedBatchSampler,
+    batch_hard_triplet_loss,
+    supervised_contrastive_loss,
 )
 
 

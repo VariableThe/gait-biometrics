@@ -12,6 +12,7 @@ if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
 import torch
+
 from data.gait_transforms import augment_gait
 from models.gait_encoders import build_gait_encoder
 
