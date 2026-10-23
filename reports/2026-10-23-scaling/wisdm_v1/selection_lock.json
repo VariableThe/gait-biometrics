@@ -1,0 +1,82 @@
+{
+  "study": "subject_scaling_v1",
+  "winner": "features_wccn_0.2",
+  "mean_cv_eer": 0.12633333333333333,
+  "calibration_subject_ids": [
+    17,
+    24,
+    27,
+    30
+  ],
+  "calibration": {
+    "threshold": -0.7181353880744141,
+    "far": 0.01,
+    "frr": 0.1012,
+    "false_accepts": 50,
+    "false_rejects": 506,
+    "n_genuine": 5000,
+    "n_impostor": 5000,
+    "decision_rule": "score >= threshold",
+    "target_far": 0.01,
+    "selection": "empirical_far_at_most_target"
+  },
+  "calibration_pair_metadata": {
+    "sampling": "balanced_subject_uniform_with_replacement",
+    "pairing_version": 2,
+    "seed": 42,
+    "requested_n_pairs": 10000,
+    "n_genuine_pairs": 5000,
+    "n_impostor_pairs": 5000,
+    "n_unique_genuine_pairs": 2825,
+    "n_unique_impostor_pairs": 4057,
+    "n_unique_pairs": 6882,
+    "n_repeated_pairs": 3118,
+    "same_activity_pairs": true,
+    "eligible_activity_ids": [
+      0
+    ],
+    "excluded_activity_ids": [],
+    "n_subjects": 4,
+    "per_subject": {
+      "17": {
+        "n_windows": 22,
+        "n_genuine_pairs": 1244,
+        "n_impostor_pairs": 2572
+      },
+      "24": {
+        "n_windows": 40,
+        "n_genuine_pairs": 1232,
+        "n_impostor_pairs": 2485
+      },
+      "27": {
+        "n_windows": 62,
+        "n_genuine_pairs": 1243,
+        "n_impostor_pairs": 2434
+      },
+      "30": {
+        "n_windows": 88,
+        "n_genuine_pairs": 1281,
+        "n_impostor_pairs": 2509
+      }
+    },
+    "n_windows_used": 212,
+    "pair_independence": "not_independent_windows_and_pairs_can_recur",
+    "per_activity": {
+      "0": {
+        "n_genuine_pairs": 5000,
+        "n_impostor_pairs": 5000
+      }
+    }
+  },
+  "artifact_sha256": {
+    "pretraining_protocol.json": "4abc5ae7cf5264661b1989d3b4ba70b2f3c15bf63dccda441efaa7baf6d5b840",
+    "development_results.json": "8adad6f9e16ce3c1699cc55db8195e5f461a440c9d8ecf1759317d6f54631315",
+    "frozen_choice.json": "9ccbbffa8564a6c0159b4524b9c1fe382d30ec4756a49dc52c2c65c8c406784d",
+    "selected_metric.npz": "47f807865378ee6a7dfc52cb8551339566a7478c2d90c69e6baa94637af10bc4",
+    "calibration.npz": "c4bf8109aa0c4cace8d2859cb35559d4121e9ccbeb7b91d8637de78f01a8f9d4"
+  },
+  "selection_comparator": "CV is per fold/seed; final neural calibration uses six-member ensemble (not CV prediction)",
+  "source_test_loaded": false,
+  "prior_test_inspection": true,
+  "deployment_ready": false
+}

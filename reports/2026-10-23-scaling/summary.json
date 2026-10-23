@@ -1,0 +1,40 @@
+{
+  "har": {
+    "winner": "features_standard",
+    "baseline_cv_eer": 0.1820333333333333,
+    "selected_cv_eer": 0.11646666666666665,
+    "relative_development_eer_reduction": 0.36019044131111516,
+    "calibration": {
+      "threshold": -0.4643558482942578,
+      "far": 0.01,
+      "frr": 0.2298,
+      "false_accepts": 50,
+      "false_rejects": 1149,
+      "n_genuine": 5000,
+      "n_impostor": 5000,
+      "decision_rule": "score >= threshold",
+      "target_far": 0.01,
+      "selection": "empirical_far_at_most_target"
+    },
+    "no_source_test_access": true
+  },
+  "wisdm_v1": {
+    "winner": "features_wccn_0.2",
+    "baseline_cv_eer": 0.1856,
+    "selected_cv_eer": 0.12633333333333333,
+    "relative_development_eer_reduction": 0.3193247126436782,
+    "calibration": {
+      "threshold": -0.7181353880744141,
+      "far": 0.01,
+      "frr": 0.1012,
+      "false_accepts": 50,
+      "false_rejects": 506,
+      "n_genuine": 5000,
+      "n_impostor": 5000,
+      "decision_rule": "score >= threshold",
+      "target_far": 0.01,
+      "selection": "empirical_far_at_most_target"
+    },
+    "no_source_test_access": true
+  }
+}
