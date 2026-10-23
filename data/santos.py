@@ -49,6 +49,7 @@ SANTOS_SUBJECT_IDS = (
 )
 SANTOS_CSV_HEADER = ("frame", "acc x", "acc y", "acc z", "gyro x", "gyro y", "gyro z")
 SANTOS_ACCEL_CHANNELS = ("acc x", "acc y", "acc z")
+SANTOS_GYRO_CHANNELS = ("gyro x", "gyro y", "gyro z")
 SANTOS_ARCHIVE_PREFIX = "A multi-sensor human gait dataset/"
 _INT64_MIN = -(2**63)
 _INT64_MAX = 2**63 - 1
@@ -196,7 +197,7 @@ def fingerprint_santos_members(archive_path, subject_ids):
     }
 
 
-def _parse_recording(payload, record, window_size, stride):
+def _parse_recording(payload, record, window_size, stride, n_channels=3):
     try:
         stream = io.StringIO(payload.decode("utf-8"), newline="")
     except UnicodeDecodeError as exc:
@@ -231,8 +232,8 @@ def _parse_recording(payload, record, window_size, stride):
                         math.isfinite(value) and abs(value) <= _FLOAT32_MAX
                         for value in sensor_values
                     )
-                    # Gyroscope values affect row validity, never model input.
-                    xyz = sensor_values[:3]
+                    # All six values affect validity in either channel mode.
+                    xyz = sensor_values[:n_channels]
                 except (ValueError, OverflowError):
                     valid = False
             if not valid:
@@ -311,18 +312,31 @@ def _parse_recording(payload, record, window_size, stride):
     return windows, frames, starts
 
 
-def load_santos_windows(archive_path, subject_ids, *, window_size=256, stride=256):
-    """Load trial/day-bounded 3-axis acceleration with authentic subject IDs.
+def load_santos_windows(
+    archive_path, subject_ids, *, window_size=256, stride=256, channels="accel"
+):
+    """Load trial/day-bounded acceleration and opt-in authentic gyroscope axes.
 
     Returns NumPy arrays plus JSON-compatible metadata. ``starts`` contains
     zero-based original data-row offsets (header excluded, bad rows included).
     ``frames`` contains all original MCU frame integers. Member payloads for
     unrequested subjects are never opened. No normalization or unit conversion
-    is applied, and no complete-archive checksum is computed.
+    is applied, and no complete-archive checksum is computed. ``channels`` is
+    ``'accel'`` (the unchanged three-axis default) or ``'accel_gyro'`` (six axes,
+    acceleration xyz then gyroscope xyz). Acceleration is m/s^2; gyroscope is
+    degrees/sec, NOT radians/sec. Consult per-axis ``channel_units`` metadata.
     """
     subjects = _subject_ids(subject_ids)
     window_size = _positive_integer(window_size, "window_size")
     stride = _positive_integer(stride, "stride")
+    if not isinstance(channels, str) or channels not in ("accel", "accel_gyro"):
+        raise ValueError("channels must be 'accel' or 'accel_gyro'")
+    channel_names = SANTOS_ACCEL_CHANNELS + (
+        SANTOS_GYRO_CHANNELS if channels == "accel_gyro" else ()
+    )
+    channel_units = ["m/s^2"] * 3 + (
+        ["degrees/sec"] * 3 if channels == "accel_gyro" else []
+    )
     windows, frame_windows, offsets = [], [], []
     labels, days, trials, recording_indices = [], [], [], []
     recordings = []
@@ -333,7 +347,7 @@ def load_santos_windows(archive_path, subject_ids, *, window_size=256, stride=25
             payload = archive.read(info)
             record = _member_record(key, info, payload)
             values, frames, starts = _parse_recording(
-                payload, record, window_size, stride
+                payload, record, window_size, stride, len(channel_names)
             )
             recordings.append(record)
             windows.extend(values)
@@ -381,10 +395,12 @@ def load_santos_windows(archive_path, subject_ids, *, window_size=256, stride=25
         "archive_integrity": "caller must verify official size/MD5 and record SHA256",
         "subject_ids": subjects,
         "sampling_rate_hz": 100,
-        "channels": list(SANTOS_ACCEL_CHANNELS),
-        "units": "m/s^2",
+        "channels": list(channel_names),
+        "units": "m/s^2" if channels == "accel" else "mixed; see channel_units",
+        "channel_names": list(channel_names),
+        "channel_units": channel_units,
         "source_header": list(SANTOS_CSV_HEADER),
-        "omitted_channels": ["gyro x", "gyro y", "gyro z"],
+        "omitted_channels": list(SANTOS_GYRO_CHANNELS) if channels == "accel" else [],
         "placement_side": "unknown; trials pool both leg placements",
         "window_size": window_size,
         "stride": stride,
@@ -407,7 +423,7 @@ def load_santos_windows(archive_path, subject_ids, *, window_size=256, stride=25
     return {
         "X": np.stack(windows).astype(np.float32, copy=False)
         if windows
-        else np.empty((0, 3, window_size), dtype=np.float32),
+        else np.empty((0, len(channel_names), window_size), dtype=np.float32),
         "subjects": np.asarray(labels, dtype=np.int64),
         "days": np.asarray(days, dtype=np.int64),
         "trials": np.asarray(trials, dtype=np.int64),
