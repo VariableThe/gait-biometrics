@@ -1,0 +1,230 @@
+{
+  "task": "verification",
+  "source": "wisdm_v1",
+  "subset": null,
+  "n_samples": 345,
+  "embed_dim": 128,
+  "eer": 0.201,
+  "far": 0.201,
+  "frr": 0.201,
+  "legacy_far_frr_semantics": "aliases_of_interpolated_eer_not_independent_rates",
+  "eer_threshold": -0.5811568898228463,
+  "eer_threshold_semantics": "nearest_empirical_crossing_on_evaluation_not_deployable",
+  "far_at_eer_threshold": 0.201,
+  "frr_at_eer_threshold": 0.201,
+  "far_at_frr_0.01": 0.9612,
+  "frr_at_far_0.01": 0.4978,
+  "operating_points_semantics": "empirical_constraint_at_most_0.01_on_evaluation",
+  "roc_auc": 0.8686247599999999,
+  "n_pairs": 10000,
+  "score_semantics": "cosine_similarity_minus_one_higher_is_more_genuine",
+  "sampling": "balanced_subject_uniform_with_replacement",
+  "pairing_version": 2,
+  "seed": 42,
+  "requested_n_pairs": 10000,
+  "n_genuine_pairs": 5000,
+  "n_impostor_pairs": 5000,
+  "n_unique_genuine_pairs": 3063,
+  "n_unique_impostor_pairs": 4602,
+  "n_unique_pairs": 7665,
+  "n_repeated_pairs": 2335,
+  "same_activity_pairs": true,
+  "eligible_activity_ids": [
+    0
+  ],
+  "excluded_activity_ids": [],
+  "n_subjects": 8,
+  "per_subject": {
+    "1": {
+      "n_windows": 83,
+      "n_genuine_pairs": 607,
+      "n_impostor_pairs": 1271
+    },
+    "2": {
+      "n_windows": 59,
+      "n_genuine_pairs": 673,
+      "n_impostor_pairs": 1244
+    },
+    "8": {
+      "n_windows": 64,
+      "n_genuine_pairs": 662,
+      "n_impostor_pairs": 1231
+    },
+    "11": {
+      "n_windows": 26,
+      "n_genuine_pairs": 590,
+      "n_impostor_pairs": 1255
+    },
+    "13": {
+      "n_windows": 40,
+      "n_genuine_pairs": 612,
+      "n_impostor_pairs": 1203
+    },
+    "14": {
+      "n_windows": 18,
+      "n_genuine_pairs": 591,
+      "n_impostor_pairs": 1250
+    },
+    "21": {
+      "n_windows": 37,
+      "n_genuine_pairs": 619,
+      "n_impostor_pairs": 1279
+    },
+    "34": {
+      "n_windows": 18,
+      "n_genuine_pairs": 646,
+      "n_impostor_pairs": 1267
+    }
+  },
+  "n_windows_used": 345,
+  "pair_independence": "not_independent_windows_and_pairs_can_recur",
+  "per_activity": {
+    "0": {
+      "n_genuine_pairs": 5000,
+      "n_impostor_pairs": 5000
+    }
+  },
+  "fixed_threshold": {
+    "threshold": -0.48318791960311014,
+    "far": 0.152,
+    "frr": 0.2468,
+    "false_accepts": 760,
+    "false_rejects": 1234,
+    "n_genuine": 5000,
+    "n_impostor": 5000,
+    "decision_rule": "score >= threshold"
+  },
+  "protocol": "held_out_subject_within_recording_discrimination",
+  "checkpoint_protocol": {
+    "source": "wisdm_v1",
+    "data_root": "/home/mav/.t3/scratch/gait-auth-20261023/datasets",
+    "train_subject_ids": [
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      30,
+      32,
+      33,
+      35
+    ],
+    "val_subject_ids": [
+      0,
+      5,
+      27,
+      31
+    ],
+    "activity_ids": [
+      0
+    ],
+    "n_channels": 3,
+    "window_size": 128,
+    "stride": 64,
+    "sampling_rate": 20.0,
+    "normalization": "none",
+    "split": "subject_disjoint",
+    "seed": 42,
+    "verification_pairing": "same_activity",
+    "n_train_windows": 725,
+    "n_val_windows": 202
+  },
+  "calibration": {
+    "threshold": -0.48318791960311014,
+    "far": 0.01,
+    "frr": 0.174,
+    "false_accepts": 50,
+    "false_rejects": 870,
+    "n_genuine": 5000,
+    "n_impostor": 5000,
+    "decision_rule": "score >= threshold",
+    "target_far": 0.01,
+    "selection": "empirical_far_at_most_target",
+    "source_split": "train_held_out_subjects",
+    "subject_ids": [
+      0,
+      5,
+      27,
+      31
+    ],
+    "n_samples": 202,
+    "pair_context": {
+      "sampling": "balanced_subject_uniform_with_replacement",
+      "pairing_version": 2,
+      "seed": 42,
+      "requested_n_pairs": 10000,
+      "n_genuine_pairs": 5000,
+      "n_impostor_pairs": 5000,
+      "n_unique_genuine_pairs": 2675,
+      "n_unique_impostor_pairs": 3940,
+      "n_unique_pairs": 6615,
+      "n_repeated_pairs": 3385,
+      "same_activity_pairs": true,
+      "eligible_activity_ids": [
+        0
+      ],
+      "excluded_activity_ids": [],
+      "n_subjects": 4,
+      "per_subject": {
+        "0": {
+          "n_windows": 84,
+          "n_genuine_pairs": 1262,
+          "n_impostor_pairs": 2585
+        },
+        "5": {
+          "n_windows": 20,
+          "n_genuine_pairs": 1251,
+          "n_impostor_pairs": 2482
+        },
+        "27": {
+          "n_windows": 62,
+          "n_genuine_pairs": 1212,
+          "n_impostor_pairs": 2394
+        },
+        "31": {
+          "n_windows": 36,
+          "n_genuine_pairs": 1275,
+          "n_impostor_pairs": 2539
+        }
+      },
+      "n_windows_used": 202,
+      "pair_independence": "not_independent_windows_and_pairs_can_recur",
+      "per_activity": {
+        "0": {
+          "n_genuine_pairs": 5000,
+          "n_impostor_pairs": 5000
+        }
+      }
+    },
+    "limitation": "validation also used for checkpoint selection; cross-session calibration unverified"
+  },
+  "activity_ids": [
+    0
+  ],
+  "activity_names": [
+    "Walking",
+    "Jogging",
+    "Upstairs",
+    "Downstairs",
+    "Sitting",
+    "Standing"
+  ],
+  "session_separation": "unverified_no_session_ids_in_WindowData",
+  "overlap_exclusion": "not_possible_without_recording_offsets",
+  "deployment_ready": false,
+  "git_commit": "cfbb8c647268613d5987767e7e0e04ad35dafd32"
+}

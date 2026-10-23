@@ -1,0 +1,213 @@
+{
+  "model": "siamese",
+  "loss_type": "triplet",
+  "embed_dim": 128,
+  "source": "wisdm_v1",
+  "epochs": 20,
+  "subset": null,
+  "per_epoch": [
+    {
+      "epoch": 1,
+      "loss": 0.49533940557775824,
+      "val_eer": 0.242,
+      "val_roc_auc": 0.8705158,
+      "elapsed_seconds": 1.2596005859995785
+    },
+    {
+      "epoch": 2,
+      "loss": 0.2856313043832779,
+      "val_eer": 0.2402,
+      "val_roc_auc": 0.8879888,
+      "elapsed_seconds": 0.2052065149982809
+    },
+    {
+      "epoch": 3,
+      "loss": 0.19752457182982872,
+      "val_eer": 0.1776,
+      "val_roc_auc": 0.93052372,
+      "elapsed_seconds": 0.19838423200053512
+    },
+    {
+      "epoch": 4,
+      "loss": 0.13871915890225048,
+      "val_eer": 0.2314,
+      "val_roc_auc": 0.8929154,
+      "elapsed_seconds": 0.22663793899846496
+    },
+    {
+      "epoch": 5,
+      "loss": 0.12873599693692964,
+      "val_eer": 0.187,
+      "val_roc_auc": 0.9182019600000001,
+      "elapsed_seconds": 0.22332203400219441
+    },
+    {
+      "epoch": 6,
+      "loss": 0.11039288288560407,
+      "val_eer": 0.1606,
+      "val_roc_auc": 0.9461974,
+      "elapsed_seconds": 0.1925745549997373
+    },
+    {
+      "epoch": 7,
+      "loss": 0.10713903440483685,
+      "val_eer": 0.1442,
+      "val_roc_auc": 0.9523801599999999,
+      "elapsed_seconds": 0.2057423780024692
+    },
+    {
+      "epoch": 8,
+      "loss": 0.08304174182743862,
+      "val_eer": 0.191,
+      "val_roc_auc": 0.88557532,
+      "elapsed_seconds": 0.21842423000271083
+    },
+    {
+      "epoch": 9,
+      "loss": 0.08026216909803194,
+      "val_eer": 0.1754,
+      "val_roc_auc": 0.91832808,
+      "elapsed_seconds": 0.21584642800007714
+    },
+    {
+      "epoch": 10,
+      "loss": 0.09524021596744142,
+      "val_eer": 0.2408,
+      "val_roc_auc": 0.8970512800000001,
+      "elapsed_seconds": 0.22425489899978857
+    },
+    {
+      "epoch": 11,
+      "loss": 0.07659172918262153,
+      "val_eer": 0.19,
+      "val_roc_auc": 0.91272076,
+      "elapsed_seconds": 0.21771315699879779
+    },
+    {
+      "epoch": 12,
+      "loss": 0.07316288968612408,
+      "val_eer": 0.1236,
+      "val_roc_auc": 0.9474829600000001,
+      "elapsed_seconds": 0.4164111620011681
+    },
+    {
+      "epoch": 13,
+      "loss": 0.06666402538146439,
+      "val_eer": 0.139,
+      "val_roc_auc": 0.9365990000000001,
+      "elapsed_seconds": 0.2089924149986473
+    },
+    {
+      "epoch": 14,
+      "loss": 0.05804261359675177,
+      "val_eer": 0.1114,
+      "val_roc_auc": 0.9456442,
+      "elapsed_seconds": 0.21645089099911274
+    },
+    {
+      "epoch": 15,
+      "loss": 0.0663260695954849,
+      "val_eer": 0.1468,
+      "val_roc_auc": 0.89690704,
+      "elapsed_seconds": 0.24454492800214211
+    },
+    {
+      "epoch": 16,
+      "loss": 0.051227547238612996,
+      "val_eer": 0.1844,
+      "val_roc_auc": 0.90201896,
+      "elapsed_seconds": 0.2513600709971797
+    },
+    {
+      "epoch": 17,
+      "loss": 0.050513232422286065,
+      "val_eer": 0.1074,
+      "val_roc_auc": 0.9577551599999999,
+      "elapsed_seconds": 0.23110617299971636
+    },
+    {
+      "epoch": 18,
+      "loss": 0.04940634283429847,
+      "val_eer": 0.0754,
+      "val_roc_auc": 0.98330708,
+      "elapsed_seconds": 0.2058094700005313
+    },
+    {
+      "epoch": 19,
+      "loss": 0.04053903904454462,
+      "val_eer": 0.1114,
+      "val_roc_auc": 0.9622279200000001,
+      "elapsed_seconds": 0.20634743299888214
+    },
+    {
+      "epoch": 20,
+      "loss": 0.044041646611073924,
+      "val_eer": 0.1538,
+      "val_roc_auc": 0.9392489599999999,
+      "elapsed_seconds": 0.25097352000011597
+    }
+  ],
+  "final_loss": 0.044041646611073924,
+  "best_epoch": 18,
+  "selection_metric": "val_eer",
+  "n_params": 174720,
+  "margin": 1.0,
+  "seed": 42,
+  "git_commit": "cfbb8c647268613d5987767e7e0e04ad35dafd32",
+  "protocol": {
+    "source": "wisdm_v1",
+    "data_root": "/home/mav/.t3/scratch/gait-auth-20261023/datasets",
+    "train_subject_ids": [
+      3,
+      4,
+      6,
+      7,
+      9,
+      10,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      23,
+      24,
+      25,
+      26,
+      28,
+      30,
+      32,
+      33,
+      35
+    ],
+    "val_subject_ids": [
+      0,
+      5,
+      27,
+      31
+    ],
+    "activity_ids": [
+      0
+    ],
+    "n_channels": 3,
+    "window_size": 128,
+    "stride": 64,
+    "sampling_rate": 20.0,
+    "normalization": "none",
+    "split": "subject_disjoint",
+    "seed": 42,
+    "verification_pairing": "same_activity",
+    "n_train_windows": 725,
+    "n_val_windows": 202
+  },
+  "device": "cuda",
+  "elapsed_seconds": 11.914228571997228,
+  "n_train_windows": 725,
+  "n_train_subjects": 23,
+  "n_val_subjects": 4,
+  "n_val_windows": 202,
+  "val_subject_fraction": 0.14814814814814814,
+  "val_window_fraction": 0.21790722761596548
+}

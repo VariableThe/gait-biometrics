@@ -1,0 +1,217 @@
+{
+  "model": "gait_vit",
+  "source": "har",
+  "epochs": 20,
+  "subset": null,
+  "per_epoch": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5334011379588466,
+      "train_acc": 0.7954303931987248,
+      "val_activity_loss": 0.46570935691646786,
+      "val_activity_acc": 0.8663540445486518,
+      "elapsed_seconds": 1.865467534000345
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.16490760714797487,
+      "train_acc": 0.9319872476089267,
+      "val_activity_loss": 0.4215377981120509,
+      "val_activity_acc": 0.8745603751465416,
+      "elapsed_seconds": 1.3172385809994012
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.13560255988904488,
+      "train_acc": 0.9396032589443855,
+      "val_activity_loss": 0.3891818750767607,
+      "val_activity_acc": 0.9126611957796014,
+      "elapsed_seconds": 1.26710455400098
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.15610041601165703,
+      "train_acc": 0.9362380446333688,
+      "val_activity_loss": 0.5125452064126206,
+      "val_activity_acc": 0.8716295427901524,
+      "elapsed_seconds": 1.265221207999275
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.12400700100191173,
+      "train_acc": 0.9463336875664187,
+      "val_activity_loss": 0.37397266897304116,
+      "val_activity_acc": 0.9232121922626025,
+      "elapsed_seconds": 1.2384913669993693
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.11517959575555108,
+      "train_acc": 0.944916755224938,
+      "val_activity_loss": 0.3492911778748525,
+      "val_activity_acc": 0.936694021101993,
+      "elapsed_seconds": 1.6084591380022175
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.11157991261337925,
+      "train_acc": 0.9434998228834574,
+      "val_activity_loss": 0.38516598193964113,
+      "val_activity_acc": 0.9109026963657679,
+      "elapsed_seconds": 1.4398422119993484
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.10705419304261721,
+      "train_acc": 0.9489904357066951,
+      "val_activity_loss": 0.4356405490273468,
+      "val_activity_acc": 0.9114888628370457,
+      "elapsed_seconds": 1.465659126999526
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.14457283071907032,
+      "train_acc": 0.9396032589443855,
+      "val_activity_loss": 0.4568163495235678,
+      "val_activity_acc": 0.8944900351699883,
+      "elapsed_seconds": 1.42752278700209
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.14605404532656702,
+      "train_acc": 0.9349982288345732,
+      "val_activity_loss": 0.3064390062185273,
+      "val_activity_acc": 0.9155920281359906,
+      "elapsed_seconds": 1.5293307770007232
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.11663076888573241,
+      "train_acc": 0.9482819695359547,
+      "val_activity_loss": 0.43207509069761385,
+      "val_activity_acc": 0.9109026963657679,
+      "elapsed_seconds": 1.4264200210018316
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.10383496548831357,
+      "train_acc": 0.9527098831030818,
+      "val_activity_loss": 0.3945414519389482,
+      "val_activity_acc": 0.9103165298944901,
+      "elapsed_seconds": 1.4312869700006559
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.10099987722101932,
+      "train_acc": 0.9502302515054906,
+      "val_activity_loss": 0.3960230959686347,
+      "val_activity_acc": 0.9267291910902696,
+      "elapsed_seconds": 1.2447291690004931
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.10707978058634099,
+      "train_acc": 0.9491675522493801,
+      "val_activity_loss": 0.4042253095508146,
+      "val_activity_acc": 0.9302461899179367,
+      "elapsed_seconds": 1.271063205000246
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.10224665028877422,
+      "train_acc": 0.9498760184201205,
+      "val_activity_loss": 0.4438615360636819,
+      "val_activity_acc": 0.9267291910902696,
+      "elapsed_seconds": 1.300177146000351
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.09692833736259128,
+      "train_acc": 0.953241232731137,
+      "val_activity_loss": 0.4090697128568085,
+      "val_activity_acc": 0.9349355216881594,
+      "elapsed_seconds": 1.2383328940013598
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.09926419442415955,
+      "train_acc": 0.9514700673042862,
+      "val_activity_loss": 0.4975928664775205,
+      "val_activity_acc": 0.9284876905041032,
+      "elapsed_seconds": 1.2991806770005496
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.11246723337630103,
+      "train_acc": 0.9493446687920651,
+      "val_activity_loss": 0.7751816741833932,
+      "val_activity_acc": 0.8640093786635404,
+      "elapsed_seconds": 1.272572254001716
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.16758980410153082,
+      "train_acc": 0.9296847325540205,
+      "val_activity_loss": 0.32787008740767787,
+      "val_activity_acc": 0.9120750293083235,
+      "elapsed_seconds": 1.2763406669982942
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.14835826047041972,
+      "train_acc": 0.934821112291888,
+      "val_activity_loss": 0.34672261658807013,
+      "val_activity_acc": 0.9208675263774913,
+      "elapsed_seconds": 1.2554835340015416
+    }
+  ],
+  "best_epoch": 10,
+  "selection_metric": "val_activity_loss",
+  "best_val_activity_loss": 0.3064390062185273,
+  "final_train_loss": 0.14835826047041972,
+  "final_train_acc": 0.934821112291888,
+  "protocol": {
+    "source": "har",
+    "data_root": "/home/mav/.t3/scratch/gait-auth-20261023/datasets",
+    "train_subject_ids": [
+      2,
+      4,
+      6,
+      7,
+      10,
+      15,
+      16,
+      18,
+      20,
+      21,
+      22,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "val_subject_ids": [
+      0,
+      5,
+      13,
+      14,
+      29
+    ],
+    "activity_ids": null,
+    "n_channels": 9,
+    "window_size": 128,
+    "stride": 64,
+    "sampling_rate": 50.0,
+    "normalization": "none",
+    "split": "subject_disjoint",
+    "seed": 42,
+    "n_train_windows": 5646,
+    "n_val_windows": 1706,
+    "purged_windows": 0
+  },
+  "device": "cuda",
+  "elapsed_seconds": 32.445380314999056,
+  "n_params": 813958,
+  "git_commit": "cfbb8c647268613d5987767e7e0e04ad35dafd32"
+}

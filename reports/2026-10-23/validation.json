@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-23",
+  "local_host": "wiker",
+  "python": "3.14.8",
+  "torch": "2.14.1+cu130",
+  "onnxruntime": "1.31.0",
+  "complete_suite": {
+    "command": "uv run --no-project --python ../.venv/bin/python python -m pytest tests -q",
+    "passed": 135,
+    "subtests_passed": 66,
+    "warnings": 8,
+    "errors": 0
+  },
+  "standalone_student_a": {
+    "command": "uv run --no-project --python ../.venv/bin/python python -m unittest discover -s tests -v",
+    "passed": 4,
+    "errors": 0
+  },
+  "additional_final_check": "ONNX Runtime numerical agreement with PyTorch at batch sizes1and2, rtol1e-4atol1e-5; passed",
+  "audits": {
+    "installed_distributions": "pip-audit --local",
+    "known_vulnerabilities": 0
+  },
+  "full_dataset_experiments": {
+    "classification_tracks": 5,
+    "verification_sources": 2,
+    "epochs_each": 20,
+    "subset": null,
+    "checkpoints_selected_on_validation": true,
+    "test_used_for_model_selection": false
+  },
+  "independent_review": {
+    "rounds": 3,
+    "critical_findings_remaining": 0,
+    "p2_findings_resolved": 6
+  },
+  "test_source_sha256": {
+    "data/adapter.py": "62706daf284fb2a4f1ca081451dab199253fb6a5acb64ad5513ce86b69011607",
+    "engine/train.py": "091c3f4d73dd051438a3c42bef6b0ef3f3dcf3d803d020f87808d6a05332193a",
+    "engine/train_siamese.py": "99b552c26227c1f215f8d9c293b29181cc0f44ffe1af631bce82a4951bf30d2b",
+    "engine/evaluate.py": "fe409b181b9aa2bb35e8e8577aba1045f2a8d061c7c63415c244decfb6cd2a15",
+    "models/compress.py": "b095e64d1ccace6e5105cff0d9b68d2e2d96cfd8babac1bd4785879c47af0f6b",
+    "scripts/run_experiments.py": "0a21f8c3690f9801cb32a09d96c0b1be92acb57a8486ab0962a4df44da584420",
+    "scripts/setup_public_datasets.py": "cf3ce3ca11d98e6f19129301f47d39c93032a3ae6afdda9d0df824eeb4ced238",
+    "scripts/benchmark_runtime.py": "40a986df520f08faa673d125d3247f84ef5dbcf90f1a460bf2ba496bc586c9b3",
+    "scripts/benchmark_preprocessing.py": "cb6d13a355812651ce6a3bd3e2a64d4ec8fd18ce07b66bf15900a377d20d57b1",
+    "scripts/export_onnx.py": "1c8dd2a7611d2a1c503d7f2b7252134da76d9d1f55b30f1039b6375f704689c0"
+  },
+  "limitations": [
+    "Known upstream Torch ONNX/quantization deprecation and tracer warnings remain",
+    "No cross-session authentication or deployment-ready claim",
+    "Smoke/unit fixtures do not count as biometric evidence"
+  ]
+}

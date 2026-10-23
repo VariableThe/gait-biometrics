@@ -1,0 +1,143 @@
+{
+  "started_utc": "2026-10-23T14:56:53.484702+00:00",
+  "hostname": "Darkstar",
+  "python": "3.14.8",
+  "git_commit": "cfbb8c647268613d5987767e7e0e04ad35dafd32",
+  "experiments": [
+    {
+      "config": "configs/cnn_baseline.yaml",
+      "effective_config": "runs/confirmed_models/cnn_baseline/effective_config.yaml",
+      "elapsed_seconds": 37.18694619800226,
+      "commands": [
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.train",
+          "--config",
+          "runs/confirmed_models/cnn_baseline/effective_config.yaml"
+        ],
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.evaluate",
+          "--config",
+          "runs/confirmed_models/cnn_baseline/effective_config.yaml",
+          "--checkpoint",
+          "runs/confirmed_models/cnn_baseline/best.pt",
+          "--task",
+          "activity",
+          "--out-dir",
+          "runs/confirmed_models/cnn_baseline/evaluation"
+        ]
+      ]
+    },
+    {
+      "config": "configs/multitask.yaml",
+      "effective_config": "runs/confirmed_models/multitask/effective_config.yaml",
+      "elapsed_seconds": 27.873654820999946,
+      "commands": [
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.train",
+          "--config",
+          "runs/confirmed_models/multitask/effective_config.yaml"
+        ],
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.evaluate",
+          "--config",
+          "runs/confirmed_models/multitask/effective_config.yaml",
+          "--checkpoint",
+          "runs/confirmed_models/multitask/best.pt",
+          "--task",
+          "activity",
+          "--out-dir",
+          "runs/confirmed_models/multitask/evaluation"
+        ]
+      ]
+    },
+    {
+      "config": "configs/cnn_lstm.yaml",
+      "effective_config": "runs/confirmed_models/cnn_lstm/effective_config.yaml",
+      "elapsed_seconds": 22.805046477998985,
+      "commands": [
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.train",
+          "--config",
+          "runs/confirmed_models/cnn_lstm/effective_config.yaml"
+        ],
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.evaluate",
+          "--config",
+          "runs/confirmed_models/cnn_lstm/effective_config.yaml",
+          "--checkpoint",
+          "runs/confirmed_models/cnn_lstm/best.pt",
+          "--task",
+          "activity",
+          "--out-dir",
+          "runs/confirmed_models/cnn_lstm/evaluation"
+        ]
+      ]
+    },
+    {
+      "config": "configs/se_attention.yaml",
+      "effective_config": "runs/confirmed_models/se_attention/effective_config.yaml",
+      "elapsed_seconds": 24.950968692999595,
+      "commands": [
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.train",
+          "--config",
+          "runs/confirmed_models/se_attention/effective_config.yaml"
+        ],
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.evaluate",
+          "--config",
+          "runs/confirmed_models/se_attention/effective_config.yaml",
+          "--checkpoint",
+          "runs/confirmed_models/se_attention/best.pt",
+          "--task",
+          "activity",
+          "--out-dir",
+          "runs/confirmed_models/se_attention/evaluation"
+        ]
+      ]
+    },
+    {
+      "config": "configs/vit.yaml",
+      "effective_config": "runs/confirmed_models/vit/effective_config.yaml",
+      "elapsed_seconds": 48.98978408599942,
+      "commands": [
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.train",
+          "--config",
+          "runs/confirmed_models/vit/effective_config.yaml"
+        ],
+        [
+          "/home/mav/.t3/scratch/gait-auth-20261023/.venv/bin/python",
+          "-m",
+          "engine.evaluate",
+          "--config",
+          "runs/confirmed_models/vit/effective_config.yaml",
+          "--checkpoint",
+          "runs/confirmed_models/vit/best.pt",
+          "--task",
+          "activity",
+          "--out-dir",
+          "runs/confirmed_models/vit/evaluation"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "subset": 128,
+  "seed": 42,
+  "before_accuracy": 0.953125,
+  "after_pruning_accuracy": 0.6640625,
+  "prune": 0.3,
+  "parameters_before": 350406,
+  "parameters_after": 172467,
+  "flops_before": 7045888,
+  "flops_after": 3543616,
+  "fp32_onnx_bytes": 694388,
+  "separate_quantized_estimated_serialized_bytes": 312168,
+  "fine_tuned": false,
+  "latency_measured": false
+}

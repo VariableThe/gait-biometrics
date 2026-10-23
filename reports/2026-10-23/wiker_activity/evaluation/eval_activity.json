@@ -1,0 +1,93 @@
+{
+  "task": "activity",
+  "model": "cnn_lstm",
+  "source": "har",
+  "subset": null,
+  "n_samples": 2947,
+  "accuracy": 0.9368849677638276,
+  "per_class": {
+    "0": {
+      "precision": 0.9959677419354839,
+      "recall": 0.9959677419354839
+    },
+    "1": {
+      "precision": 0.9870410367170627,
+      "recall": 0.970276008492569
+    },
+    "2": {
+      "precision": 0.9699769053117783,
+      "recall": 1.0
+    },
+    "3": {
+      "precision": 0.8135922330097087,
+      "recall": 0.8533604887983707
+    },
+    "4": {
+      "precision": 0.8714859437751004,
+      "recall": 0.8157894736842105
+    },
+    "5": {
+      "precision": 0.9907749077490775,
+      "recall": 1.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      494,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      457,
+      13,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      420,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      419,
+      64,
+      5
+    ],
+    [
+      1,
+      1,
+      0,
+      96,
+      434,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      537
+    ]
+  ],
+  "activity_names": [
+    "WALKING",
+    "WALKING_UPSTAIRS",
+    "WALKING_DOWNSTAIRS",
+    "SITTING",
+    "STANDING",
+    "LAYING"
+  ],
+  "git_commit": "0f0eeb3126967e9d7858ce763006f285bae99259"
+}

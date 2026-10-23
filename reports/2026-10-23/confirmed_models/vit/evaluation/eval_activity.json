@@ -1,0 +1,93 @@
+{
+  "task": "activity",
+  "model": "gait_vit",
+  "source": "har",
+  "subset": null,
+  "n_samples": 2947,
+  "accuracy": 0.8727519511367492,
+  "per_class": {
+    "0": {
+      "precision": 0.7986348122866894,
+      "recall": 0.9435483870967742
+    },
+    "1": {
+      "precision": 0.9294403892944039,
+      "recall": 0.8110403397027601
+    },
+    "2": {
+      "precision": 0.9350961538461539,
+      "recall": 0.9261904761904762
+    },
+    "3": {
+      "precision": 0.7905544147843943,
+      "recall": 0.7841140529531568
+    },
+    "4": {
+      "precision": 0.8114285714285714,
+      "recall": 0.8007518796992481
+    },
+    "5": {
+      "precision": 1.0,
+      "recall": 0.9720670391061452
+    }
+  },
+  "confusion_matrix": [
+    [
+      468,
+      9,
+      19,
+      0,
+      0,
+      0
+    ],
+    [
+      81,
+      382,
+      7,
+      0,
+      1,
+      0
+    ],
+    [
+      29,
+      2,
+      389,
+      0,
+      0,
+      0
+    ],
+    [
+      4,
+      3,
+      1,
+      385,
+      98,
+      0
+    ],
+    [
+      4,
+      0,
+      0,
+      102,
+      426,
+      0
+    ],
+    [
+      0,
+      15,
+      0,
+      0,
+      0,
+      522
+    ]
+  ],
+  "activity_names": [
+    "WALKING",
+    "WALKING_UPSTAIRS",
+    "WALKING_DOWNSTAIRS",
+    "SITTING",
+    "STANDING",
+    "LAYING"
+  ],
+  "git_commit": "cfbb8c647268613d5987767e7e0e04ad35dafd32"
+}

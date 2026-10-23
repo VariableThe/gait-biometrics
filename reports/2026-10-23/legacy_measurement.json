@@ -1,0 +1,30 @@
+{
+  "source": "legacy",
+  "seconds": 13.739476687042043,
+  "splits": {
+    "train": {
+      "shape": [
+        28903,
+        90,
+        3
+      ],
+      "identity_available": false,
+      "subject_ids": [
+        -1
+      ],
+      "sha256": "4a3a9924bd59b4a40b7ad01ef0ef2430601df0f8495ab867e0d9726b0f4e966b"
+    },
+    "test": {
+      "shape": [
+        7759,
+        90,
+        3
+      ],
+      "identity_available": false,
+      "subject_ids": [
+        -1
+      ],
+      "sha256": "4a3a9924bd59b4a40b7ad01ef0ef2430601df0f8495ab867e0d9726b0f4e966b"
+    }
+  }
+}

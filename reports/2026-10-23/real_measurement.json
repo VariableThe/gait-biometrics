@@ -1,0 +1,64 @@
+{
+  "source": "real",
+  "seconds": 23.667377203004435,
+  "splits": {
+    "train": {
+      "shape": [
+        28885,
+        90,
+        3
+      ],
+      "identity_available": true,
+      "subject_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36
+      ],
+      "sha256": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e"
+    },
+    "test": {
+      "shape": [
+        7776,
+        90,
+        3
+      ],
+      "identity_available": true,
+      "subject_ids": [
+        2,
+        3,
+        9,
+        12,
+        14,
+        15,
+        22,
+        35
+      ],
+      "sha256": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e"
+    }
+  }
+}
