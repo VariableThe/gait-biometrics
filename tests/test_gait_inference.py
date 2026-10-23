@@ -5,6 +5,8 @@ from __future__ import annotations
 import os
 import sys
 import unittest
+from types import SimpleNamespace
+from unittest import mock
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if REPO_ROOT not in sys.path:
@@ -132,6 +134,14 @@ class PackedInferenceTests(unittest.TestCase):
                 pack_multiscale_branches(
                     build_gait_encoder(3, {"architecture": architecture}).eval()
                 )
+
+    def test_reduced_precision_cuda_is_rejected_before_forward(self):
+        model = pack_multiscale_branches(
+            build_gait_encoder(3, {"architecture": "multiscale"}).eval()
+        )
+        with mock.patch.object(torch.backends.cudnn, "allow_tf32", True):
+            with self.assertRaisesRegex(RuntimeError, "allow_tf32=False"):
+                model(SimpleNamespace(is_cuda=True))
 
 
 if __name__ == "__main__":

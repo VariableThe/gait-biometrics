@@ -140,3 +140,13 @@ packed cases when enabled. There are no
 energy measurements; latency, parameter count, and memory are not energy
 measurements. Biometric test scores belong to the separate locked study
 evaluation and are not inputs to this benchmark.
+
+
+CUDA packing requires `torch.backends.cudnn.allow_tf32 = False` for both the
+reference and packed model. The helper rejects CUDA forward calls when cuDNN
+TF32 is enabled: different convolution shapes can choose different reduced
+precision kernels and exceed the stated equivalence tolerance. The benchmark
+already disables TF32 and autocast. It does not silently change a caller's
+precision settings. Validate the actual serving dtype/backend and real inputs
+before adoption; this is numerical equivalence within tolerance, not bitwise
+identity or permission to skip quality checks.

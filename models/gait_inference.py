@@ -68,6 +68,11 @@ class _FrozenPackedEncoder(nn.Module):
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
+        if x.is_cuda and torch.backends.cudnn.allow_tf32:
+            raise RuntimeError(
+                "packed CUDA inference requires torch.backends.cudnn.allow_tf32=False; "
+                "reduced-precision convolution can exceed the equivalence tolerance"
+            )
         return self.model(x)
 
 
@@ -86,6 +91,8 @@ def pack_multiscale_branches(model: GaitEncoder) -> nn.Module:
     The returned module rejects training and normalization fitting. It is a
     serving artifact, not a new resumable/weights-only checkpoint format: load
     the original checkpoint normally, call ``eval()``, then apply this helper.
+    CUDA inference requires cuDNN TF32 disabled; configure both reference and
+    packed inference identically before checking numerical equivalence.
     """
     if not isinstance(model, GaitEncoder) or model.architecture != "multiscale":
         raise ValueError("packing requires a multiscale GaitEncoder")
