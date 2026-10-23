@@ -1,0 +1,30 @@
+{
+  "main": {
+    "passed": 331,
+    "subtests": 311,
+    "warnings": 8,
+    "seconds": 7.68,
+    "host": "Wiker"
+  },
+  "student_b": {
+    "passed": 327,
+    "subtests": 311,
+    "warnings": 8,
+    "seconds": 7.5,
+    "host": "Wiker"
+  },
+  "focused": {
+    "passed": 41,
+    "subtests": 96,
+    "seconds": 1.95
+  },
+  "real_execution": "All DEV/CALIB/TEST study stages completed locally on Wiker CPU. GPU was not necessary for this descriptor study.",
+  "source_commit_before_test": "4cbd10b",
+  "independent_review": "Source-only first review passed; concrete frozen registry/metric/calibration lock reviewed separately before first TEST access.",
+  "ruff": "all new Python files passed",
+  "dependencies": "unchanged pinned dependencies",
+  "archive_sha256": "ed944fa88a98ce1058327ff4b3c8f919fbf58626fc7e3c5256360ee080a3a304",
+  "registry_sha256": "c902e6766f793a792b6aab310493f8dc7f15a8197993b00c0a2817b292e4bc37",
+  "metric_sha256": "5fad4e057a501590d2e3b1c69b8ff5f00b4844cac53dcd6db54497b260dd9a0a",
+  "test_attempts": 1
+}

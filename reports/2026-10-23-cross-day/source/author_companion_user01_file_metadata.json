@@ -1,0 +1,282 @@
+[
+  {
+    "name": "capture_user01_day1_0001_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0001_imu_walk.csv",
+    "size": 19144,
+    "sha": "308c4ae1e59410b4da226e3965ca6b5d6d3e9daa",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0001_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0001_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0001_nexus_walk.csv",
+    "size": 17562,
+    "sha": "ef85cb72bf7f211db74137b95d4d5bf45ead3f29",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0001_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0002_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0002_imu_walk.csv",
+    "size": 20554,
+    "sha": "6fcf968dfcf4d08f3403855136d1e9c5a7b77c7a",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0002_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0002_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0002_nexus_walk.csv",
+    "size": 18904,
+    "sha": "4a152a4d23b0fbb95fcf2ab0b1683725bf98e695",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0002_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0003_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0003_imu_walk.csv",
+    "size": 16602,
+    "sha": "16682eac5c40f4cf7c7f20d6536d75f958e9117c",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0003_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0003_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0003_nexus_walk.csv",
+    "size": 15263,
+    "sha": "73e52ea22458742ad142c8d0bca1c938a7765273",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0003_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0004_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0004_imu_walk.csv",
+    "size": 18343,
+    "sha": "41a02b74c6af1a2a23498ba0666e9bd6aa6a915e",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0004_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0004_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0004_nexus_walk.csv",
+    "size": 16924,
+    "sha": "eed5f3e7bda0a96b32f8058bb05252f6c73a1b52",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0004_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0005_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0005_imu_walk.csv",
+    "size": 18847,
+    "sha": "917158347c18eeec7e53553d73aafaf677302c95",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0005_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0005_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0005_nexus_walk.csv",
+    "size": 17473,
+    "sha": "d99bc8b48cd859a631f973af0c45b5256f948ee9",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0005_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0006_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0006_imu_walk.csv",
+    "size": 18876,
+    "sha": "01f7f78a907c460100c4b1bfc1f9fc288f18c699",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0006_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0006_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0006_nexus_walk.csv",
+    "size": 17480,
+    "sha": "307101c174d3a9d58b5d8ae3799a59ad88690ec1",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0006_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0007_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0007_imu_walk.csv",
+    "size": 16970,
+    "sha": "c896d01deee0c46e6db166ee7646180010df088e",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0007_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0007_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0007_nexus_walk.csv",
+    "size": 15754,
+    "sha": "e6c11ce2a923f3ac993793878fdd1724ba1cd209",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0007_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0008_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0008_imu_walk.csv",
+    "size": 18178,
+    "sha": "42cacbcc834fd173cc1a785de4f95446ba633e93",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0008_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0008_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0008_nexus_walk.csv",
+    "size": 16958,
+    "sha": "9f7157198c9f3586e5720779d9d5f1c983a5b3d7",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0008_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0009_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0009_imu_walk.csv",
+    "size": 18976,
+    "sha": "709f32ef91387ef00d5e12e6aa5557465a537781",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0009_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0009_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0009_nexus_walk.csv",
+    "size": 17800,
+    "sha": "5c6c609f6f8342fde9fb60f1146dbdc48b53a016",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0009_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0010_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0010_imu_walk.csv",
+    "size": 18849,
+    "sha": "5301fd2e397eb94dd0129083c98ee0719c2fefbd",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0010_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day1_0010_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day1_0010_nexus_walk.csv",
+    "size": 17683,
+    "sha": "4936321167681fa8267465ca35949fbb19917079",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day1_0010_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0001_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0001_imu_walk.csv",
+    "size": 16526,
+    "sha": "82495066b2cb4ec7f00849f6c9f7549e16a69c4c",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0001_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0001_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0001_nexus_walk.csv",
+    "size": 14325,
+    "sha": "50707c8db8657eaf8dac6669d7a3d2ad61197bac",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0001_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0002_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0002_imu_walk.csv",
+    "size": 18701,
+    "sha": "166919e3850a796e2a3088630a5d07eb79098658",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0002_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0002_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0002_nexus_walk.csv",
+    "size": 16244,
+    "sha": "9a41e046cff17a23bc64807fc358f29ab40e3717",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0002_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0003_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0003_imu_walk.csv",
+    "size": 20815,
+    "sha": "f7010dd1c7e415f23118751bd05719bd6435d961",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0003_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0003_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0003_nexus_walk.csv",
+    "size": 17936,
+    "sha": "f7be9934d9a95e79203b9e0dcc66b17a821e427d",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0003_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0004_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0004_imu_walk.csv",
+    "size": 16845,
+    "sha": "819f70ffd20487748af99a69f8943b608036804d",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0004_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0004_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0004_nexus_walk.csv",
+    "size": 14317,
+    "sha": "eb0603f3445205a77cdc31bf3e47b1649cdd6893",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0004_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0005_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0005_imu_walk.csv",
+    "size": 19357,
+    "sha": "6040ca0e47b783f98dd59565f3ec0e8566270530",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0005_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0005_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0005_nexus_walk.csv",
+    "size": 16547,
+    "sha": "4e3e044b99a576f212b6a96502db236955133775",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0005_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0006_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0006_imu_walk.csv",
+    "size": 17445,
+    "sha": "48d306207247fcf34e0928a8d46bffff81f22edf",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0006_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0006_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0006_nexus_walk.csv",
+    "size": 15023,
+    "sha": "a5ec70cc8575ec0324443d42db0718b7c5d565e1",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0006_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0007_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0007_imu_walk.csv",
+    "size": 18076,
+    "sha": "86e1022215b2b25e5c62accd579f53641c9ae027",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0007_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0007_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0007_nexus_walk.csv",
+    "size": 15687,
+    "sha": "e676648a57071f2d5faf25e70b331bbdeb843bcf",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0007_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0008_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0008_imu_walk.csv",
+    "size": 18125,
+    "sha": "eb1c278db3e7fb50ec5d52a08e3ccc2460e98e27",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0008_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0008_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0008_nexus_walk.csv",
+    "size": 15452,
+    "sha": "906138006a46f281a29b80175c11399e1d4c2198",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0008_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0009_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0009_imu_walk.csv",
+    "size": 16843,
+    "sha": "022d4b65ab0ac2900fe27a97c5bf1d8de9983577",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0009_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0009_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0009_nexus_walk.csv",
+    "size": 14428,
+    "sha": "f8af1ddc9629f15f5a42e3ea016fb365eb78a9f3",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0009_nexus_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0010_imu_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0010_imu_walk.csv",
+    "size": 18180,
+    "sha": "fde62709076bb844e2403e5cbc4564aeb6e9c379",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0010_imu_walk.csv"
+  },
+  {
+    "name": "capture_user01_day2_0010_nexus_walk.csv",
+    "path": "csv_files/user01/capture_user01_day2_0010_nexus_walk.csv",
+    "size": 15717,
+    "sha": "849a86f182a3d76bd8ef90fa0249617b308fdd36",
+    "download_url": "https://raw.githubusercontent.com/geisekss/gait_reliability_investigation/23930c7d3ba69d63e94b9de503b0d3096efb7875/csv_files/user01/capture_user01_day2_0010_nexus_walk.csv"
+  }
+]
