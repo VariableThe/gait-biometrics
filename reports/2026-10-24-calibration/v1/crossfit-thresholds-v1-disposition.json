@@ -1,0 +1,11 @@
+{
+  "excluded_from_selection": true,
+  "reason": [
+    "float ties could trigger promotion",
+    "coverage assumed instead of registered/enforced",
+    "exact thresholds recomputed from fresh instead of cached scores"
+  ],
+  "source_sha256": "eec186202f63f5b658bbb438c7309f09ec79c41653542a031698737c5090eaee",
+  "payloads_opened": "DEV only",
+  "budget": "100 completed CPU covariance fits, excluded from selection"
+}
