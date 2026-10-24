@@ -12,9 +12,13 @@ import json
 import math
 import os
 import platform
+import random
+import tempfile
 import time
 from pathlib import Path
+from typing import Any
 
+import numpy as np
 import torch
 import yaml
 from torch import nn
@@ -45,7 +49,7 @@ def build_gait_encoder(n_channels: int, model_args: dict):
     return factory(n_channels, model_args)
 
 
-def _resolved_config(config: dict) -> dict:
+def _resolved_config(config: dict[str, Any]) -> dict[str, Any]:
     # Round-trip restricts checkpoint metadata to plain JSON values, no objects.
     config = json.loads(json.dumps(config, allow_nan=False))
     defaults = {
@@ -80,7 +84,7 @@ def _resolved_config(config: dict) -> dict:
         "data_root": "datasets",
         "augment": {},
     }
-    resolved = {**defaults, **config}
+    resolved: dict[str, Any] = {**defaults, **config}
     if "source" not in resolved:
         raise ValueError("config.source is required")
     if resolved["objective"] not in {"batch_hard", "supcon", "hybrid"}:
@@ -101,9 +105,28 @@ def _resolved_config(config: dict) -> dict:
             resolved[key] = _subject_ids(resolved[key], key)
         if set(resolved["train_subject_ids"]) & set(resolved["val_subject_ids"]):
             raise ValueError("train_subject_ids and val_subject_ids must not overlap")
-    for key in ("epochs", "torch_threads", "eval_batch_size", "window_size", "stride"):
-        if int(resolved[key]) <= 0:
-            raise ValueError(f"{key} must be positive")
+    # Never silently truncate an optimization budget or sampling dimension.
+    for key in (
+        "epochs",
+        "torch_threads",
+        "eval_batch_size",
+        "window_size",
+        "stride",
+        "identities_per_batch",
+        "windows_per_identity",
+        "validation_pairs",
+        "val_subjects",
+        "seed",
+        "split_seed",
+        "val_seed",
+    ):
+        minimum = 0 if key in {"seed", "split_seed", "val_seed", "val_subjects"} else 1
+        if type(resolved[key]) is not int or resolved[key] < minimum:
+            raise ValueError(f"{key} must be an integer >= {minimum}")
+    if resolved.get("steps_per_epoch") is not None and (
+        type(resolved["steps_per_epoch"]) is not int or resolved["steps_per_epoch"] <= 0
+    ):
+        raise ValueError("steps_per_epoch must be a positive integer")
     if not explicit and int(resolved["val_subjects"]) < 2:
         raise ValueError("val_subjects >= 2 is required for validation EER selection")
     if int(resolved["validation_pairs"]) < 2:
@@ -234,6 +257,220 @@ def _development_fingerprint(train, val):
     return checksum.hexdigest()
 
 
+def _json_digest(value):
+    return hashlib.sha256(
+        json.dumps(value, sort_keys=True, allow_nan=False).encode()
+    ).hexdigest()
+
+
+def _window_fingerprint(data):
+    """Hash TRAIN tensor roles, shapes, dtypes, order, values and interpretation."""
+    checksum = hashlib.sha256()
+    metadata = {
+        "activity_names": data.activity_names,
+        "subject_ids": data.subject_ids,
+        "sampling_rate": float(data.sampling_rate),
+    }
+    checksum.update(json.dumps(metadata, sort_keys=True, allow_nan=False).encode())
+    for name in ("X", "y_subject", "y_activity"):
+        value = getattr(data, name)
+        description = None if value is None else [list(value.shape), str(value.dtype)]
+        checksum.update(json.dumps([name, description]).encode())
+        if value is not None:
+            # memoryview avoids another dataset-sized byte-string allocation.
+            checksum.update(
+                memoryview(value.detach().cpu().contiguous().numpy()).cast("B")
+            )
+    return checksum.hexdigest()
+
+
+def _source_fingerprints():
+    root = Path(__file__).resolve().parents[1]
+    # Include transitive local model, loader and evaluation dependencies.
+    return {
+        str(path.relative_to(root)): hashlib.sha256(path.read_bytes()).hexdigest()
+        for directory in ("engine", "models", "data")
+        for path in sorted((root / directory).rglob("*.py"))
+    }
+
+
+def _cpu_state(value):
+    """Detach snapshots, including CPU tensors that otherwise alias live weights."""
+    if isinstance(value, torch.Tensor):
+        return value.detach().cpu().clone()
+    if isinstance(value, dict):
+        return {key: _cpu_state(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_cpu_state(item) for item in value]
+    if isinstance(value, tuple):
+        return tuple(_cpu_state(item) for item in value)
+    return value
+
+
+def _atomic_write(path, write):
+    """Replace one artifact only after a complete, flushed same-directory write."""
+    path = Path(path)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            dir=path.parent, prefix=f".{path.name}.", delete=False
+        ) as stream:
+            temporary = Path(stream.name)
+            write(stream)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+
+
+def _atomic_torch_save(payload, path):
+    _atomic_write(path, lambda stream: torch.save(payload, stream))
+
+
+def _rng_state(device):
+    numpy_state = np.random.get_state()
+    return {
+        "python": random.getstate(),
+        "numpy": {
+            "algorithm": numpy_state[0],
+            "keys": numpy_state[1].tolist(),
+            "position": int(numpy_state[2]),
+            "has_gauss": int(numpy_state[3]),
+            "cached_gaussian": float(numpy_state[4]),
+        },
+        "torch_cpu": torch.get_rng_state(),
+        "torch_cuda": torch.cuda.get_rng_state_all() if device.type == "cuda" else [],
+    }
+
+
+def _restore_rng(state, device):
+    random.setstate(state["python"])
+    numpy_state = state["numpy"]
+    np.random.set_state(
+        (
+            numpy_state["algorithm"],
+            np.asarray(numpy_state["keys"], dtype=np.uint32),
+            numpy_state["position"],
+            numpy_state["has_gauss"],
+            numpy_state["cached_gaussian"],
+        )
+    )
+    torch.set_rng_state(state["torch_cpu"])
+    if device.type == "cuda":
+        if len(state["torch_cuda"]) != torch.cuda.device_count():
+            raise ValueError("resume CUDA RNG device count mismatch")
+        torch.cuda.set_rng_state_all(state["torch_cuda"])
+    elif state["torch_cuda"]:
+        raise ValueError("cannot restore CUDA training RNG on CPU")
+
+
+def _sampler_state(sampler, completed_epochs):
+    # __iter__ owns a fresh local Random(seed + epoch). At an epoch boundary
+    # there are no pending draws; persist the exact next iterator's RNG state.
+    return {
+        "algorithm": "python_random_seed_plus_epoch_v1",
+        "seed": sampler.seed,
+        "next_epoch": completed_epochs,
+        "rng_state": random.Random(sampler.seed + completed_epochs).getstate(),
+        "context": sampler.context,
+    }
+
+
+def _resume_provenance(config, out_dir, data_fingerprints, protocol, hardware):
+    return {
+        "output_dir": str(Path(out_dir).resolve()),
+        "data_root": str(Path(config["data_root"]).resolve()),
+        "config_sha256": _json_digest(config),
+        "sources": _source_fingerprints(),
+        "data": data_fingerprints,
+        "cohorts_and_protocol": protocol,
+        "runtime": {
+            **hardware,
+            "python_version": platform.python_version(),
+            "numpy_version": str(np.__version__),
+            "cuda_device_count": torch.cuda.device_count()
+            if hardware["device"].startswith("cuda")
+            else 0,
+            "deterministic_algorithms": torch.are_deterministic_algorithms_enabled(),
+            "cudnn_deterministic": torch.backends.cudnn.deterministic,
+            "cudnn_benchmark": torch.backends.cudnn.benchmark,
+            "cuda_matmul_allow_tf32": torch.backends.cuda.matmul.allow_tf32,
+            "cudnn_allow_tf32": torch.backends.cudnn.allow_tf32,
+            "float32_matmul_precision": torch.get_float32_matmul_precision(),
+            "cublas_workspace_config": os.environ.get("CUBLAS_WORKSPACE_CONFIG"),
+        },
+    }
+
+
+def _load_resume(out_dir, config):
+    path = Path(out_dir) / "last.pt"
+    if not path.is_file():
+        raise ValueError(
+            "resume requires last.pt from --resumable; best.pt is inference-only"
+        )
+    state = torch.load(path, map_location="cpu", weights_only=True)
+    if (
+        not isinstance(state, dict)
+        or state.get("checkpoint_format") != "gait_metric_resume_v1"
+    ):
+        raise ValueError(
+            "expected a gait_metric_resume_v1 last.pt; legacy best.pt cannot resume"
+        )
+    if state.get("config") != config:
+        raise ValueError(
+            "resume config mismatch (including the original total epochs budget)"
+        )
+    provenance = state.get("provenance", {})
+    if provenance.get("output_dir") != str(Path(out_dir).resolve()):
+        raise ValueError("resume output directory provenance mismatch")
+    if provenance.get("config_sha256") != _json_digest(config):
+        raise ValueError("resume config fingerprint mismatch")
+    if provenance.get("sources") != _source_fingerprints():
+        raise ValueError(
+            "resume source fingerprint mismatch; restore the original source checkout"
+        )
+    records, completed = state.get("history"), state.get("completed_epochs")
+    if (
+        type(completed) is not int
+        or not 0 <= completed <= config["epochs"]
+        or not isinstance(records, list)
+        or len(records) != completed
+        or any(
+            not isinstance(row, dict) or row.get("epoch") != i
+            for i, row in enumerate(records, 1)
+        )
+    ):
+        raise ValueError("resume completed epoch/history mismatch")
+    json.dumps(records, allow_nan=False)
+    selected = None
+    if records and config["epoch_selection"] == "validation_eer":
+        selected = min(records, key=lambda row: row["val_eer"])
+    elif completed == config["epochs"]:
+        selected = records[-1]
+    best = state.get("best_checkpoint")
+    if (
+        state.get("best_epoch") != (selected["epoch"] if selected else 0)
+        or state.get("best_val_eer") != (selected["val_eer"] if selected else None)
+        or (selected is None and best is not None)
+        or (
+            selected is not None
+            and (
+                not isinstance(best, dict)
+                or best.get("checkpoint_format") != "gait_metric_v1"
+                or best.get("epoch") != selected["epoch"]
+                or best.get("config") != config
+                or best.get("metrics", {}).get("val_eer") != selected["val_eer"]
+            )
+        )
+    ):
+        raise ValueError("resume best selection/history mismatch")
+    if state.get("scaler_state_dict") is not None:
+        raise ValueError("this trainer uses float32/BF16 without a gradient scaler")
+    return state
+
+
 def _embed(encoder, windows, batch_size, device):
     encoder.eval()
     parts = []
@@ -328,10 +565,26 @@ def load_metric_encoder(checkpoint, device="cpu"):
     return encoder, protocol, config
 
 
-def train_metric(config: dict, out_dir: str) -> dict:
-    """Train exact optimizer identities; select validation EER or a fixed final epoch."""
+def train_metric(
+    config: dict, out_dir: str, *, resumable: bool = False, resume: bool = False
+) -> dict:
+    """Train metric identities, optionally committing epoch-boundary last.pt state.
+
+    ``resume=True`` implies ``resumable=True`` and keeps the original total epoch
+    budget. Only a matching last.pt in its original output directory is accepted.
+    """
     started = time.monotonic()
     config = _resolved_config(config)
+    resumable = resumable or resume
+    resume_state = _load_resume(out_dir, config) if resume else None
+    managed = ("last.pt", "best.pt", "per_epoch.jsonl", "metrics.json")
+    if not resume and (
+        (resumable and any((Path(out_dir) / name).exists() for name in managed))
+        or (Path(out_dir) / "last.pt").exists()
+    ):
+        raise ValueError(
+            "training artifacts already exist; use --resume or a fresh output directory"
+        )
     seed = int(config["seed"])
     split_seed, val_seed = int(config["split_seed"]), int(config["val_seed"])
     seed_everything(seed)
@@ -346,6 +599,7 @@ def train_metric(config: dict, out_dir: str) -> dict:
         data_root=config["data_root"],
     )
     _validate_windows(data, config)
+    data_fingerprints = {"loaded_train": _window_fingerprint(data)} if resumable else {}
     expected_channels = {"har": 9, "wisdm_v1": 3}.get(config["source"])
     if expected_channels is not None and data.X.shape[1] != expected_channels:
         raise ValueError(
@@ -355,6 +609,11 @@ def train_metric(config: dict, out_dir: str) -> dict:
     # the fixed subject split (some source identities have no walking rows).
     data = _filter_activities(data, config["activity_ids"])
     train_data, val_data, val_ids = _split_cohorts(data, config)
+    if resumable:
+        data_fingerprints.update(
+            optimizer_train=_window_fingerprint(train_data),
+            validation=_window_fingerprint(val_data),
+        )
     sampler = IdentityBalancedBatchSampler(
         train_data.y_subject,
         int(config["identities_per_batch"]),
@@ -461,11 +720,91 @@ def train_metric(config: dict, out_dir: str) -> dict:
         "test_split_loaded": False,
         "development_data_sha256": _development_fingerprint(train_data, val_data),
     }
-    os.makedirs(out_dir, exist_ok=True)
     records, best_eer, best_epoch = [], math.inf, 0
+    best_payload = None
+    completed_epochs, previous_elapsed = 0, 0.0
+    provenance = (
+        _resume_provenance(config, out_dir, data_fingerprints, protocol, hardware)
+        if resumable
+        else None
+    )
+    if resume_state is not None:
+        assert provenance is not None  # A resume always enables resumable mode.
+        for key, value in provenance.items():
+            if resume_state["provenance"].get(key) != value:
+                raise ValueError(f"resume {key} provenance mismatch")
+        completed_epochs = resume_state["completed_epochs"]
+        if resume_state.get("sampler_state") != _sampler_state(
+            sampler, completed_epochs
+        ):
+            raise ValueError("resume sampler RNG state mismatch")
+        encoder.load_state_dict(resume_state["model_state_dict"], strict=True)
+        if classifier is None:
+            if resume_state["classifier_state_dict"] is not None:
+                raise ValueError("resume classifier state mismatch")
+        else:
+            classifier.load_state_dict(
+                resume_state["classifier_state_dict"], strict=True
+            )
+        optimizer.load_state_dict(resume_state["optimizer_state_dict"])
+        scheduler.load_state_dict(resume_state["scheduler_state_dict"])
+        if (
+            scheduler.last_epoch != completed_epochs
+            or scheduler.T_max != config["epochs"]
+        ):
+            raise ValueError("resume scheduler/epoch budget mismatch")
+        records = resume_state["history"]
+        best_epoch = resume_state["best_epoch"]
+        best_eer = resume_state["best_val_eer"] if best_epoch else math.inf
+        best_payload = resume_state["best_checkpoint"]
+        previous_elapsed = float(resume_state["elapsed_seconds"])
+        _restore_rng(resume_state["rng_state"], device)
+
+    os.makedirs(out_dir, exist_ok=True)
     log_path = Path(out_dir) / "per_epoch.jsonl"
-    with log_path.open("w") as log_file:
-        for epoch in range(1, int(config["epochs"]) + 1):
+
+    def save_boundary(completed):
+        _atomic_torch_save(
+            {
+                "checkpoint_format": "gait_metric_resume_v1",
+                "config": config,
+                "provenance": provenance,
+                "completed_epochs": completed,
+                "history": list(records),
+                "best_epoch": best_epoch,
+                "best_val_eer": best_eer if best_epoch else None,
+                "best_checkpoint": best_payload,
+                "model_state_dict": _cpu_state(encoder.state_dict()),
+                "classifier_state_dict": _cpu_state(classifier.state_dict())
+                if classifier is not None
+                else None,
+                "optimizer_state_dict": _cpu_state(optimizer.state_dict()),
+                "scheduler_state_dict": scheduler.state_dict(),
+                # BF16 has no GradScaler; explicitly record the absence of one.
+                "scaler_state_dict": None,
+                "rng_state": _rng_state(device),
+                "sampler_state": _sampler_state(sampler, completed),
+                "elapsed_seconds": previous_elapsed + time.monotonic() - started,
+            },
+            Path(out_dir) / "last.pt",
+        )
+
+    if resume:
+        # last.pt is authoritative if interruption left a stale best or a
+        # partial/ahead log. Rebuild derived artifacts without duplicate rows.
+        encoded = "".join(
+            json.dumps(row, allow_nan=False) + "\n" for row in records
+        ).encode()
+        _atomic_write(log_path, lambda stream: stream.write(encoded))
+        if best_payload is not None:
+            _atomic_torch_save(best_payload, Path(out_dir) / "best.pt")
+        else:
+            (Path(out_dir) / "best.pt").unlink(missing_ok=True)
+        (Path(out_dir) / "metrics.json").unlink(missing_ok=True)
+    elif resumable:
+        save_boundary(0)
+    with log_path.open("a" if resume else "w") as log_file:
+        for epoch in range(completed_epochs + 1, int(config["epochs"]) + 1):
             epoch_started = time.monotonic()
             sampler.set_epoch(epoch - 1)
             encoder.train()
@@ -555,38 +894,44 @@ def train_metric(config: dict, out_dir: str) -> dict:
             if selected:
                 best_eer, best_epoch = record["val_eer"], epoch
                 # Save only raw encoder keys: no wrapper/classification prefix.
-                torch.save(
-                    {
-                        "checkpoint_format": "gait_metric_v1",
-                        "epoch": epoch,
-                        "completed_epochs": epoch,
-                        "epoch_selection": config["epoch_selection"],
-                        "precision": config["precision"],
-                        "classifier_config": classifier_config,
-                        "model_state_dict": {
-                            k: v.detach().cpu() for k, v in encoder.state_dict().items()
-                        },
-                        "classifier_state_dict": {
-                            k: v.detach().cpu()
-                            for k, v in classifier.state_dict().items()
-                        }
-                        if classifier is not None
-                        else None,
-                        "config": config,
-                        "train_seed": seed,
-                        "split_seed": split_seed,
-                        "val_seed": val_seed,
-                        "metrics": {
-                            **record,
-                            "per_epoch": list(records),
-                            "protocol": protocol,
-                            "validation": validation,
-                        },
-                        "hardware": hardware,
+                best_payload = {
+                    "checkpoint_format": "gait_metric_v1",
+                    "epoch": epoch,
+                    "completed_epochs": epoch,
+                    "epoch_selection": config["epoch_selection"],
+                    "precision": config["precision"],
+                    "classifier_config": classifier_config,
+                    "model_state_dict": {
+                        k: v.detach().cpu().clone()
+                        for k, v in encoder.state_dict().items()
                     },
-                    Path(out_dir) / "best.pt",
-                )
+                    "classifier_state_dict": {
+                        k: v.detach().cpu().clone()
+                        for k, v in classifier.state_dict().items()
+                    }
+                    if classifier is not None
+                    else None,
+                    "config": config,
+                    "train_seed": seed,
+                    "split_seed": split_seed,
+                    "val_seed": val_seed,
+                    "metrics": {
+                        **record,
+                        "per_epoch": list(records),
+                        "protocol": protocol,
+                        "validation": validation,
+                    },
+                    "hardware": hardware,
+                }
+                if not resumable:
+                    torch.save(best_payload, Path(out_dir) / "best.pt")
             scheduler.step()
+            if resumable:
+                # Commit optimizer/scheduler/RNG and the selected snapshot in
+                # one file before updating the inference-only best.pt copy.
+                save_boundary(epoch)
+                if selected:
+                    _atomic_torch_save(best_payload, Path(out_dir) / "best.pt")
     # An early selected checkpoint still records the entire completed run while
     # retaining its selected encoder/classifier state and per-epoch validation.
     protocol["completed_epochs"] = len(records)
@@ -595,7 +940,10 @@ def train_metric(config: dict, out_dir: str) -> dict:
     payload["completed_epochs"] = len(records)
     payload["metrics"]["per_epoch"] = records
     payload["metrics"]["protocol"] = protocol
-    torch.save(payload, checkpoint_path)
+    if resumable:
+        _atomic_torch_save(payload, checkpoint_path)
+    else:
+        torch.save(payload, checkpoint_path)
     metrics = {
         "method": "metric_learning",
         "objective": config["objective"],
@@ -616,13 +964,18 @@ def train_metric(config: dict, out_dir: str) -> dict:
         "seed": seed,
         "split_seed": split_seed,
         "val_seed": val_seed,
-        "elapsed_seconds": time.monotonic() - started,
+        "elapsed_seconds": previous_elapsed + time.monotonic() - started,
         "git_commit": _git_commit(),
         "checkpoint": str(Path(out_dir) / "best.pt"),
     }
-    (Path(out_dir) / "metrics.json").write_text(
-        json.dumps(metrics, indent=2, allow_nan=False) + "\n"
-    )
+    encoded_metrics = json.dumps(metrics, indent=2, allow_nan=False) + "\n"
+    if resumable:
+        _atomic_write(
+            Path(out_dir) / "metrics.json",
+            lambda stream: stream.write(encoded_metrics.encode()),
+        )
+    else:
+        (Path(out_dir) / "metrics.json").write_text(encoded_metrics)
     return metrics
 
 
@@ -631,12 +984,29 @@ def main():
     parser.add_argument("--config", required=True)
     parser.add_argument("--out-dir", required=True)
     parser.add_argument("--epochs", type=int)
+    parser.add_argument(
+        "--resumable",
+        action="store_true",
+        help="write epoch-boundary last.pt (fresh output directory)",
+    )
+    parser.add_argument(
+        "--resume",
+        action="store_true",
+        help="resume matching last.pt in --out-dir at the original total epoch budget",
+    )
     args = parser.parse_args()
     with open(args.config) as stream:
         config = yaml.safe_load(stream)
     if args.epochs is not None:
         config["epochs"] = args.epochs
-    print(json.dumps(train_metric(config, args.out_dir), indent=2))
+    print(
+        json.dumps(
+            train_metric(
+                config, args.out_dir, resumable=args.resumable, resume=args.resume
+            ),
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":

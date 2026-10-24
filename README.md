@@ -8,19 +8,20 @@ The [24 October hillclimb report](reports/2026-10-24-hillclimb/README.md) adds s
 
 The separate [DEV-only calibration follow-up](reports/2026-10-24-calibration/README.md) nominates pooled calibration followed by metric refitting: mean validation FAR 0.917%→0.836%, FRR 19.276%→15.126%, with 12/15 people no worse. It opens no original CALIB/TEST data and does not change the published test threshold. One development user remains completely rejected; the full report retains those per-person limits and the discarded first attempt.
 
+The [existing-data engineering follow-up](reports/2026-10-24-engineering/README.md) adds recoverable training, strict numeric/setup checks, raw-sample overlap exclusion, a source-bound walking gate, continuous decisions and censored takeover accounting, plus frozen environments and CPU CI. Walking-gate DEV balanced accuracy is 91.22%; it is not an authentication result. The registered claimant-normalization comparison retains raw scoring because normalized alternatives fail the promotion gates. [The remaining-problem register](docs/open_problems.md) distinguishes implemented software from claims needing fresh phone/session evidence.
+
 ## Run immediately
 
 Python 3.14.8 and the existing pinned torch 2.14.1 dependency set were validated on Linux x86_64. Create an isolated environment with uv:
 
 ```bash
-uv venv --python 3.14
-uv pip install --python .venv/bin/python --compile-bytecode -r requirements-dev.txt
-uv run --no-project --python .venv/bin/python python -m scripts.run_experiments --prepare --device auto
+uv sync --frozen --extra cpu --compile-bytecode
+uv run --frozen --extra cpu python -m scripts.run_experiments --prepare --device cpu
 ```
 
 This downloads the original public HAR and WISDM AR v1.1 sources over HTTPS, verifies both archive checksums, and runs **20 full epochs each** for walking-only HAR and WISDM verification followed by held-out test evaluation. No OneDrive login or Git LFS is required. Effective configs, checkpoints, metrics and commands go under `runs/full_experiments/`. Choose a fresh `--out-root` for another run; existing checkpoints are preserved. Legacy `configs/siamese.yaml` is a smoke configuration without calibration subjects and is rejected by this full calibrated runner; use the two verification configs instead.
 
-CUDA is chosen when available. CPU is supported. Use `--device cpu` explicitly when needed; batches stay bounded and the dataset remains on host memory. Run independent jobs on different machines or output roots. RAM pressure can dominate runtime, so the default runner executes sequentially on a single device.
+For a compatible NVIDIA GPU, select the locked `cu130` extra and `--device cuda`; see the [environment guide](docs/reproducible_environment.md). Existing requirements-based environments remain supported. Batches stay bounded and the dataset remains on host memory. Run independent jobs on different machines or output roots. RAM pressure can dominate runtime, so the default runner executes sequentially on a single device.
 
 ```bash
 # All five classification tracks: full data, validation-selected checkpoints.
@@ -71,7 +72,7 @@ The [complete 23 October evidence report](reports/2026-10-23/README.md) contains
 | UCI HAR, walking | 496 | 0.1764 | 0.9252 | 0.0358 / 0.3728 |
 | WISDM AR v1.1, walking | 345 | 0.2010 | 0.8686 | 0.1520 / 0.2468 |
 
-These measure **held-out-subject, within-recording discrimination**. EER is descriptive; the fixed threshold is chosen from validation scores, never test scores. The validation FAR target of 1% does not guarantee 1% test FAR. Genuine windows can overlap, comparisons repeat, and session/day separation is unverified. New enrollment scoring uses ordered indices within existing recordings; independent sessions, an online walking gate, temporal decisions and takeover-delay evaluation remain necessary.
+These historical results measure **held-out-subject, within-recording discrimination**. EER is descriptive; the fixed threshold is chosen from validation scores, never test scores. The validation FAR target of 1% does not guarantee 1% test FAR. Their genuine windows can overlap, comparisons repeat, and session/day separation is unverified. The new opt-in [raw-support protocol](docs/window_provenance.md) excludes shared samples where authentic WISDM offsets can be reconstructed; it does not retroactively change these scores. [Walking gating](docs/walking_gate.md), [temporal decisions](docs/stream_authentication.md), and [source-bound inference integration](docs/window_authentication.md) now have tested implementations. Independent sessions and real device takeover measurements remain unverified.
 
 A separate 20-epoch local GTX 1650 Ti DeepConvLSTM run with four validation subjects reached HAR test activity accuracy **0.936885**. The five-track sweep used five validation subjects and produced lower accuracies for several tracks; all are reported. Historical HAR EER 0.4162 used all activities and an older pairing protocol, so it is not a controlled comparison with the walking results above.
 

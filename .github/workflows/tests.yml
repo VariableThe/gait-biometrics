@@ -1,0 +1,38 @@
+name: CPU validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OMP_NUM_THREADS: "1"
+      OPENBLAS_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+      CUDA_VISIBLE_DEVICES: ""
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: "0.13.4"
+          enable-cache: true
+      - run: uv sync --frozen --extra cpu --compile-bytecode
+      - name: Check changed Python surfaces
+        shell: bash
+        run: |
+          mapfile -t checked_files < .github/python-quality-files.txt
+          uv run --frozen --extra cpu ruff check "${checked_files[@]}"
+          uv run --frozen --extra cpu ty check --python .venv/bin/python "${checked_files[@]}"
+      - run: uv run --frozen --extra cpu python -m pytest -q
+      - run: uv audit --frozen
+      - run: uv run --frozen --extra cpu pip-audit --local
+      # Local PyTorch wheel suffixes are absent from PyPI's audit API. Check
+      # the corresponding pinned upstream release explicitly as well.
+      - run: uv run --frozen --extra cpu pip-audit -r requirements.txt --no-deps --disable-pip --timeout 60

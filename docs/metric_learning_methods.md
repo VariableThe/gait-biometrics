@@ -157,7 +157,10 @@ the opt-in CLI; `--epochs` overrides duration. Use the shared uv environment.
 hardware metadata, and `metrics.protocol`. Protocol includes exact train/val
 IDs, classifier mapping, source/dimensions, activity filter, sampler exclusions,
 normalization fingerprint, objective, model args, configuration, and selection
-rule. Optimizer resume is not implemented.
+rule. Optional epoch-boundary optimizer/RNG recovery is now available with
+`--resumable` and `--resume`; see [metric_resume.md](metric_resume.md) for its
+fixed-budget provenance contract. Historical inference-only checkpoints do not
+contain enough state to resume optimization.
 
 `load_metric_encoder(checkpoint, device='cpu')` uses
 `torch.load(..., weights_only=True)`, constructs the declared encoder, strictly

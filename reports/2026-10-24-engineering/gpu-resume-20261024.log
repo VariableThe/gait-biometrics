@@ -1,0 +1,9 @@
+{"device": {"requested": "cuda", "actual": "cuda:0", "name": "NVIDIA GeForce GTX 1650 Ti", "index": 0, "capability": [7, 5], "total_memory_bytes": 3911581696, "cuda_device_count": 1}, "versions": {"python": "3.14.8", "python_executable": "/home/sherlock/Code/github/VariableThe/.venv/bin/python", "torch": "2.14.1+cu130", "cuda": "13.0", "cudnn": 92400}, "settings": {"CUDA_VISIBLE_DEVICES": "0", "CUBLAS_WORKSPACE_CONFIG": ":4096:8", "deterministic_algorithms": true, "deterministic_warn_only": false, "cudnn_deterministic": true, "cudnn_benchmark": false, "cuda_matmul_allow_tf32": false, "cudnn_allow_tf32": false, "float32_matmul_precision": "highest", "torch_threads": 1}}
+Running uninterrupted four epochs / eight actual CUDA optimizer steps
+{"phase": "full", "actual_optimizer_steps": 8, "raw_wall_seconds": 1.325654481}
+Running split prefix; interrupt immediately after committed epoch 2
+{"phase": "split_initial", "actual_optimizer_steps": 4, "raw_wall_seconds": 0.138437673}
+Resuming original four-epoch budget for two remaining epochs
+{"phase": "split_resume", "actual_optimizer_steps": 4, "raw_wall_seconds": 0.190547022}
+Actual CUDA full versus committed epoch-2 resume matched exactly for every listed replay state and full best.pt payload.
+{"status": "success", "success": true, "reason": "Actual CUDA full versus committed epoch-2 resume matched exactly for every listed replay state and full best.pt payload.", "report": "/home/sherlock/Code/github/VariableThe/artifacts/gpu-resume-20261024.json"}

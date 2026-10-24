@@ -1,13 +1,15 @@
 import unittest
+
 import numpy as np
 import torch
+
 from engine.evaluate import compute_eer, verification_metrics
 
 
 class TestEvaluateMetrics(unittest.TestCase):
     def setUp(self):
         np.random.seed(42)
-        torch.set_num_threads(2)
+        torch.set_num_threads(1)
 
     def test_compute_eer_perfect_separation(self):
         # Perfect separation: genuine > impostor

@@ -6,6 +6,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from typing import Any, cast
 from unittest import mock
 
 import numpy as np
@@ -160,7 +161,7 @@ class PairProtocolTests(unittest.TestCase):
     def test_invalid_pair_budgets(self):
         for n in (0, 1, -1, 2.5, True, "10"):
             with self.subTest(n=n), self.assertRaises(ValueError):
-                _verification_pairs(np.array([0, 0, 1, 1]), n, 0)
+                _verification_pairs(np.array([0, 0, 1, 1]), cast(Any, n), 0)
 
     def test_invalid_embeddings_and_labels(self):
         for z in (
@@ -188,7 +189,7 @@ class PairProtocolTests(unittest.TestCase):
 
 class InferenceProtocolTests(unittest.TestCase):
     def setUp(self):
-        torch.set_num_threads(2)
+        torch.set_num_threads(1)
         self.config = {
             "source": "wisdm_v1",
             "data_root": "/real/path",
@@ -270,9 +271,11 @@ class InferenceProtocolTests(unittest.TestCase):
                 self.run_evaluation(protocol)
 
     def test_empty_activity_filter_fails_actionably(self):
-        with mock.patch("engine.evaluate.load_windows", return_value=windows([1, 2])):
-            with self.assertRaisesRegex(ValueError, "existing zero-indexed"):
-                _evaluation_data({**self.config, "activity_ids": [6]}, "test", {})
+        with (
+            mock.patch("engine.evaluate.load_windows", return_value=windows([1, 2])),
+            self.assertRaisesRegex(ValueError, "existing zero-indexed"),
+        ):
+            _evaluation_data({**self.config, "activity_ids": [6]}, "test", {})
 
     def test_pairing_inherited_from_checkpoint_and_mismatch_rejected(self):
         protocol = {**self.protocol, "verification_pairing": "unrestricted"}

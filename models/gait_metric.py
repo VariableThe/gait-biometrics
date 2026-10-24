@@ -6,6 +6,9 @@ speaker-recognition system: https://doi.org/10.21437/Interspeech.2006-183
 
 from __future__ import annotations
 
+from numbers import Real
+from typing import cast
+
 import numpy as np
 from sklearn.covariance import LedoitWolf
 
@@ -20,13 +23,22 @@ class WithinClassMetric:
     def __init__(self, mode: str = "wccn", shrinkage: float | str = "auto"):
         if mode not in ("standard", "wccn"):
             raise ValueError("mode must be standard or wccn")
-        if shrinkage != "auto" and not 0 < float(shrinkage) <= 1:
-            raise ValueError("shrinkage must be auto or in (0, 1]")
+        if not (isinstance(shrinkage, str) and shrinkage == "auto") and (
+            isinstance(shrinkage, (bool, np.bool_))
+            or not isinstance(shrinkage, Real)
+            or not np.isfinite(shrinkage)
+            or not 0 < cast(float, shrinkage) <= 1
+        ):
+            raise ValueError("shrinkage must be auto or a finite real in (0, 1]")
         self.mode, self.shrinkage = mode, shrinkage
 
     @staticmethod
     def _features(features):
-        values = np.asarray(features, dtype=np.float64)
+        values = np.asarray(features)
+        if values.dtype.kind not in "iuf":
+            raise ValueError("features must be real numeric values")
+        with np.errstate(over="ignore", invalid="ignore"):
+            values = values.astype(np.float64)
         if values.ndim != 2 or min(values.shape) <= 0 or not np.isfinite(values).all():
             raise ValueError("features must be a nonempty finite (N,D) matrix")
         return values
@@ -34,14 +46,25 @@ class WithinClassMetric:
     def fit(self, features, subject_ids):
         values = self._features(features)
         subjects = np.asarray(subject_ids)
-        if subjects.shape != (len(values),) or subjects.dtype.kind not in "iu":
-            raise ValueError("one integer subject ID is required per training row")
+        if (
+            subjects.shape != (len(values),)
+            or subjects.dtype.kind not in "iu"
+            or np.any(subjects < 0)
+            or np.any(subjects > np.iinfo(np.int64).max)
+        ):
+            raise ValueError(
+                "one nonnegative int64-compatible subject ID is required per training row"
+            )
         identities, counts = np.unique(subjects, return_counts=True)
         if len(identities) < 2:
             raise ValueError("metric fitting requires at least two training subjects")
-        self.mean_ = values.mean(axis=0)
-        self.scale_ = values.std(axis=0).clip(min=1e-6)
-        standardized = (values - self.mean_) / self.scale_
+        with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
+            mean = values.mean(axis=0)
+            scale = values.std(axis=0).clip(min=1e-6)
+            standardized = (values - mean) / scale
+        if not all(np.isfinite(x).all() for x in (mean, scale, standardized)):
+            raise ValueError("training statistics must remain finite in float64")
+        self.mean_, self.scale_ = mean, scale
         self.projection_ = np.eye(values.shape[1])
         self.training_subject_ids_ = identities.tolist()
         if self.mode == "wccn":
@@ -78,11 +101,25 @@ class WithinClassMetric:
         values = self._features(features)
         if values.shape[1] != len(self.mean_):
             raise ValueError("feature dimension differs from fitted training data")
-        transformed = ((values - self.mean_) / self.scale_) @ self.projection_
-        norms = np.linalg.norm(transformed, axis=1, keepdims=True)
-        if (norms < 1e-12).any():
-            raise ValueError(
-                "a descriptor equals the training center and has no cosine direction"
+        with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
+            transformed = ((values - self.mean_) / self.scale_) @ self.projection_
+            norms = np.linalg.norm(transformed, axis=1, keepdims=True)
+        if not np.isfinite(transformed).all():
+            raise ValueError("transformed descriptors must remain finite in float64")
+        unstable = (
+            ~np.isfinite(norms) | (norms < np.sqrt(np.finfo(float).tiny))
+        ).ravel()
+        if unstable.any():
+            # Recover finite nonzero directions without changing ordinary
+            # normalization arithmetic or imposing a magnitude-dependent floor.
+            scale = np.max(np.abs(transformed[unstable]), axis=1, keepdims=True)
+            if (scale == 0).any():
+                raise ValueError(
+                    "a descriptor equals the training center and has no cosine direction"
+                )
+            transformed[unstable] /= scale
+            norms[unstable] = np.linalg.norm(
+                transformed[unstable], axis=1, keepdims=True
             )
         return (transformed / norms).astype(np.float32)
 
@@ -100,22 +137,39 @@ class WithinClassMetric:
 
     @classmethod
     def from_state_dict(cls, state):
-        result = cls()
-        result.mean_ = np.asarray(state["mean"], dtype=np.float64).copy()
-        result.scale_ = np.asarray(state["scale"], dtype=np.float64).copy()
-        result.projection_ = np.asarray(state["projection"], dtype=np.float64).copy()
-        result.training_subject_ids_ = np.asarray(
-            state["training_subject_ids"], dtype=np.int64
-        ).tolist()
+        try:
+            arrays = [np.asarray(state[key]) for key in ("mean", "scale", "projection")]
+            subjects = np.asarray(state["training_subject_ids"])
+        except (KeyError, IndexError, TypeError) as exc:
+            raise ValueError(
+                "fitted metric state requires numeric arrays and training IDs"
+            ) from exc
+        if any(array.dtype.kind not in "iuf" for array in arrays):
+            raise ValueError("fitted metric arrays must be real numeric values")
+        with np.errstate(over="ignore", invalid="ignore"):
+            mean, scale, projection = [array.astype(np.float64) for array in arrays]
         if (
-            result.projection_.shape != (len(result.mean_), len(result.mean_))
-            or result.scale_.shape != result.mean_.shape
-            or (result.scale_ <= 0).any()
+            mean.ndim != 1
+            or not mean.size
+            or projection.shape != (mean.size, mean.size)
+            or scale.shape != mean.shape
+            or (scale <= 0).any()
         ):
             raise ValueError("invalid fitted metric dimensions or scales")
-        if not all(
-            np.isfinite(x).all()
-            for x in (result.mean_, result.scale_, result.projection_)
-        ):
+        if not all(np.isfinite(x).all() for x in (mean, scale, projection)):
             raise ValueError("fitted metric state must be finite")
+        if (
+            subjects.ndim != 1
+            or subjects.dtype.kind not in "iu"
+            or len(subjects) < 2
+            or np.any(subjects < 0)
+            or np.any(subjects > np.iinfo(np.int64).max)
+            or len(np.unique(subjects)) != len(subjects)
+        ):
+            raise ValueError(
+                "training IDs must be unique nonnegative int64-compatible integers for >=2 subjects"
+            )
+        result = cls()
+        result.mean_, result.scale_, result.projection_ = mean, scale, projection
+        result.training_subject_ids_ = subjects.astype(np.int64).tolist()
         return result
