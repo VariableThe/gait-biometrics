@@ -1,0 +1,2773 @@
+[
+  {
+    "original_path": "calibration_control_scores.npz",
+    "original_bytes": 2306,
+    "original_sha256": "b1cb259013fee4f444554d8b7f7c26382d44256326635233eaf6c596b02b66dc",
+    "published_path": "calibration_control_scores.npz",
+    "published_sha256": "b1cb259013fee4f444554d8b7f7c26382d44256326635233eaf6c596b02b66dc"
+  },
+  {
+    "original_path": "calibration_lagcov_scores.npz",
+    "original_bytes": 2306,
+    "original_sha256": "f4d617868ca1d194e95b9faa3618d376fde722f387c177fa63f9fc5d934f76f5",
+    "published_path": "calibration_lagcov_scores.npz",
+    "published_sha256": "f4d617868ca1d194e95b9faa3618d376fde722f387c177fa63f9fc5d934f76f5"
+  },
+  {
+    "original_path": "calibration_oldbaseline_scores.npz",
+    "original_bytes": 2313,
+    "original_sha256": "9b2bc450720c30f73052a483754fb462858875600c7d6c3a3e2afdfbcd288cc9",
+    "published_path": "calibration_oldbaseline_scores.npz",
+    "published_sha256": "9b2bc450720c30f73052a483754fb462858875600c7d6c3a3e2afdfbcd288cc9"
+  },
+  {
+    "original_path": "development.json",
+    "original_bytes": 17208285,
+    "original_sha256": "140a3729920ed49ebf9e574eff001f58d0329e97bb7b62056b1c6589c5db633b",
+    "published_path": "development.json.gz",
+    "published_sha256": "f8b223c9e76f9affeda37c77d32a4fdd2a27e1392bb29dd0b0ddd3ec4691d75c"
+  },
+  {
+    "original_path": "development_features.npz",
+    "original_bytes": 1894365,
+    "original_sha256": "0ab7bc0c35f715cba12ca7c043fda0f6b33c9b31df357605ecf9b99736b92f83",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "final_control.npz",
+    "original_bytes": 1472778,
+    "original_sha256": "34bdc4bae016f336940793fbe832e0ca71502f27d8ed3aed9825b2736a6b4749",
+    "published_path": "final_control.npz",
+    "published_sha256": "34bdc4bae016f336940793fbe832e0ca71502f27d8ed3aed9825b2736a6b4749"
+  },
+  {
+    "original_path": "final_lagcov.npz",
+    "original_bytes": 1666001,
+    "original_sha256": "0f2426ebd305c3c57949224f1ba83e4545f512165ef7f8d03214fae9651c1519",
+    "published_path": "final_lagcov.npz",
+    "published_sha256": "0f2426ebd305c3c57949224f1ba83e4545f512165ef7f8d03214fae9651c1519"
+  },
+  {
+    "original_path": "final_oldbaseline.npz",
+    "original_bytes": 300544,
+    "original_sha256": "05b4a33a45bb115eaddb668e83adaaf7050f851b3814b28336c8e8a7739c0906",
+    "published_path": "final_oldbaseline.npz",
+    "published_sha256": "05b4a33a45bb115eaddb668e83adaaf7050f851b3814b28336c8e8a7739c0906"
+  },
+  {
+    "original_path": "fold_00_control.json",
+    "original_bytes": 46200,
+    "original_sha256": "b4f909ec051505e6a1f81c0a9aa988c54963de5cb6e3a3078aead8e0ef992383",
+    "published_path": "fold_00_control.json.gz",
+    "published_sha256": "9c97cfc6b72499bf2f3571530834a471e08527050e9519a4ae8b5a53da0bd738"
+  },
+  {
+    "original_path": "fold_00_control.npz",
+    "original_bytes": 1342197,
+    "original_sha256": "fe2b4e626ba4a106c9be3c78a0a2d6f22f2a4b28dd77ae436c22b16c67499308",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_control_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "e46a64459b15828c1593f48d82512ee266cf09f3eb06aaf0785b1a88428fb76b",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_lagcov.json",
+    "original_bytes": 49528,
+    "original_sha256": "e6aa410f9f4258492498f85df79bc494003e6367a7192a7750b89255306ca511",
+    "published_path": "fold_00_lagcov.json.gz",
+    "published_sha256": "9a89bb997f114d2fabe965fc7d4f4d23faf1db2ca7687f07d750aea6eac7a9fc"
+  },
+  {
+    "original_path": "fold_00_lagcov.npz",
+    "original_bytes": 1519585,
+    "original_sha256": "ba6ad57455b15e18334a2ee4bd546806a3d284386381744c29cab2ef68c96386",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_lagcov_scores.npz",
+    "original_bytes": 1133,
+    "original_sha256": "3ed72492a03438f8bf276ba765489222863159394ef8e0c9052f01e77b1be41e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_nuisance.json",
+    "original_bytes": 46184,
+    "original_sha256": "dcbc97ba7fd348f92a53adfecb88f14eadb9aae244a2e53defe3bc74b07432eb",
+    "published_path": "fold_00_nuisance.json.gz",
+    "published_sha256": "f799e040ddcfed54d084cb1e18871ca677a834d519448cf10224992d1561b3d8"
+  },
+  {
+    "original_path": "fold_00_nuisance.npz",
+    "original_bytes": 1351066,
+    "original_sha256": "43030c8042b19f31f2bb6eccc0ee615dbc0f2ef7a066ac9b7f2f20c03eeacc30",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_nuisance_scores.npz",
+    "original_bytes": 1144,
+    "original_sha256": "9c9fa4490684c47c9ba900035b0bb70e4b57accfef43f9e567e7064a61cfbca0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_oldbaseline.json",
+    "original_bytes": 10393,
+    "original_sha256": "1ed851c53ac2f6f78b68b0317feb26bd75223bf19a404517baacf9b1ab498bcc",
+    "published_path": "fold_00_oldbaseline.json.gz",
+    "published_sha256": "916c2bddfe83d703b8b7efb2b25889f18af8fdb7536e1c4624cadf830fcac61a"
+  },
+  {
+    "original_path": "fold_00_oldbaseline.npz",
+    "original_bytes": 254143,
+    "original_sha256": "a85510f84f7c811471f92a6837bb349b9ec39c92d94c92ca0fd6bc7c4a9d0e70",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_oldbaseline_scores.npz",
+    "original_bytes": 1135,
+    "original_sha256": "2f0e66d77a4c729fd801ef36dc44afaec34dd23629ccdf3c779222b4f2a8ce8e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_snorm.json",
+    "original_bytes": 230379,
+    "original_sha256": "0dd3ebd6cff95be7c00b5ef239ff35920d8ace18865a22671c43cb473900c059",
+    "published_path": "fold_00_snorm.json.gz",
+    "published_sha256": "e636e76945cd5c9d169648aba497aff09f95a83641a2896c47536ddc175b4ab7"
+  },
+  {
+    "original_path": "fold_00_snorm.npz",
+    "original_bytes": 1342197,
+    "original_sha256": "fe2b4e626ba4a106c9be3c78a0a2d6f22f2a4b28dd77ae436c22b16c67499308",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_snorm_lagcov.json",
+    "original_bytes": 247043,
+    "original_sha256": "d1f9533a914f1f1ed4f56306002b16874a316047852f158938dcff5aae9d8c35",
+    "published_path": "fold_00_snorm_lagcov.json.gz",
+    "published_sha256": "aba5a3f41705d492175cceaa46c069824672100f22b0c2621ecd072249944048"
+  },
+  {
+    "original_path": "fold_00_snorm_lagcov.npz",
+    "original_bytes": 1519585,
+    "original_sha256": "ba6ad57455b15e18334a2ee4bd546806a3d284386381744c29cab2ef68c96386",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_snorm_lagcov_scores.npz",
+    "original_bytes": 1155,
+    "original_sha256": "94ef84897a8dc88d986a6cefef94c670551c7b52621f931fcc42fe8852a98868",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_snorm_nuisance.json",
+    "original_bytes": 230340,
+    "original_sha256": "14429b555c75aa137df6900782a5099bdbbada8b186c4005920fbeea7787f6ee",
+    "published_path": "fold_00_snorm_nuisance.json.gz",
+    "published_sha256": "75eeb870919cd8847cd815f0a8eac47b898e935589860e0f065d0582f8943674"
+  },
+  {
+    "original_path": "fold_00_snorm_nuisance.npz",
+    "original_bytes": 1351066,
+    "original_sha256": "43030c8042b19f31f2bb6eccc0ee615dbc0f2ef7a066ac9b7f2f20c03eeacc30",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_snorm_nuisance_scores.npz",
+    "original_bytes": 1164,
+    "original_sha256": "a246e460ab9f7ac283165e522fa196ef4be14ba5014d89ed35379114bb37f428",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_00_snorm_scores.npz",
+    "original_bytes": 1165,
+    "original_sha256": "bcaeb3db20620b639eb6540ec274054adf06c43edf9f237f1787f1ac23822662",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_control.json",
+    "original_bytes": 46138,
+    "original_sha256": "449c17523f49f240d57c02f7393ccd4ef6096d1f1683b06b0fa11860dadccccc",
+    "published_path": "fold_01_control.json.gz",
+    "published_sha256": "fc6aa8c1c9a5282cf7b0dd73bf8af9934ad98e01ad2ef935fabe86c5ede90fdd"
+  },
+  {
+    "original_path": "fold_01_control.npz",
+    "original_bytes": 1345311,
+    "original_sha256": "485ae256deebc175c2d1ae7eeafbcfc8392eea3116dab4ca45d74b592ac04b1d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_control_scores.npz",
+    "original_bytes": 1133,
+    "original_sha256": "9e8a7d8087b582ca45bcbb93a8d6b93e0d625112dddacec8063a8f68b69b4be0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_lagcov.json",
+    "original_bytes": 49519,
+    "original_sha256": "3ca9947ea4ce0a9f34dd3f3c5fbc717de2b6c1d1111ced2a4ca7aecbbc9c2782",
+    "published_path": "fold_01_lagcov.json.gz",
+    "published_sha256": "1b9e7509d5e64e696a6c8d173c3f855c2549c37726acacede83ce041e5ddcc9f"
+  },
+  {
+    "original_path": "fold_01_lagcov.npz",
+    "original_bytes": 1527449,
+    "original_sha256": "fc300b1f378d4dc909013771ac2ef73c6ba1c32ba38bce061d109a7be737b3cd",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_lagcov_scores.npz",
+    "original_bytes": 1133,
+    "original_sha256": "b5e7a250c0c33f230367d50865fc4877457822c8fe28394dfb7565afcf1dc426",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_nuisance.json",
+    "original_bytes": 46206,
+    "original_sha256": "210bb1052c3b0035117858f2c53b5e3b1b7d3c19093b43446b9979845e0fb36e",
+    "published_path": "fold_01_nuisance.json.gz",
+    "published_sha256": "8ae9fa7a3e84ae80507bbd76111edb3d39f5283c8a27185373e55f790e4da81b"
+  },
+  {
+    "original_path": "fold_01_nuisance.npz",
+    "original_bytes": 1356810,
+    "original_sha256": "96776f067a51e7d95efb50d2a61aee0fe80b47e39015001a6573cf76b6b2e0d1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_nuisance_scores.npz",
+    "original_bytes": 1145,
+    "original_sha256": "5defe27cef7d69eb9fdc8e2e9c776998e423c8f9ab73aa2ce0af0024e072c81b",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_oldbaseline.json",
+    "original_bytes": 10389,
+    "original_sha256": "a47cd98018f087415b040299fe791a523b16a9ae86c0022d32ac2261fb9be319",
+    "published_path": "fold_01_oldbaseline.json.gz",
+    "published_sha256": "8958425e4c6fa2dee08a07460313925bba3227ff2d2ec358c1ca950c1995aaf2"
+  },
+  {
+    "original_path": "fold_01_oldbaseline.npz",
+    "original_bytes": 256593,
+    "original_sha256": "8c35911eacd33bc3be09a1614d1779ae0ce04794eb25f1af6fc5aacbe7c3ba45",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_oldbaseline_scores.npz",
+    "original_bytes": 1147,
+    "original_sha256": "2a9192155da2830f98b194edddce4c74f1da03885e6d768350114bd8027ae359",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_snorm.json",
+    "original_bytes": 230409,
+    "original_sha256": "acdee09e2ddc42c7f9b3e673d9393acb1c03c8dbff8fb342f620a327cea8a0ae",
+    "published_path": "fold_01_snorm.json.gz",
+    "published_sha256": "6ba5c6f1dc39acf98577435aa353f6dad189940bb0e222c13bc4d1ec5d875631"
+  },
+  {
+    "original_path": "fold_01_snorm.npz",
+    "original_bytes": 1345311,
+    "original_sha256": "485ae256deebc175c2d1ae7eeafbcfc8392eea3116dab4ca45d74b592ac04b1d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_snorm_lagcov.json",
+    "original_bytes": 247054,
+    "original_sha256": "2bf31af60e28585b267548d44b99e0b7e37345bb9845ad4fe0c9bb10c8634ff9",
+    "published_path": "fold_01_snorm_lagcov.json.gz",
+    "published_sha256": "f02fdaace7d1cca88473ef18814001603f99ff9fa9cee542e6f72d40838750c0"
+  },
+  {
+    "original_path": "fold_01_snorm_lagcov.npz",
+    "original_bytes": 1527449,
+    "original_sha256": "fc300b1f378d4dc909013771ac2ef73c6ba1c32ba38bce061d109a7be737b3cd",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_snorm_lagcov_scores.npz",
+    "original_bytes": 1156,
+    "original_sha256": "9a4c89e166e4c94610916863621a5e8363cf79d7669318b7e5df0a59f6b44141",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_snorm_nuisance.json",
+    "original_bytes": 230438,
+    "original_sha256": "11d00427819cf5f49bd2967cb619d92f708f597bbb77a939cea415bdb4a01044",
+    "published_path": "fold_01_snorm_nuisance.json.gz",
+    "published_sha256": "8a9e12b65226ea4372c879464c8ef87c10a64bffaa20a25b186241afb0453b40"
+  },
+  {
+    "original_path": "fold_01_snorm_nuisance.npz",
+    "original_bytes": 1356810,
+    "original_sha256": "96776f067a51e7d95efb50d2a61aee0fe80b47e39015001a6573cf76b6b2e0d1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_snorm_nuisance_scores.npz",
+    "original_bytes": 1164,
+    "original_sha256": "5ae616988dfff47f7deb7deab1bb00a2ebd8023240b9a45a52903a2558225588",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_01_snorm_scores.npz",
+    "original_bytes": 1158,
+    "original_sha256": "8b24a6175cf4ba424fdda243f6e3cff902ff0284846e491486940043ae3ef0f2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_control.json",
+    "original_bytes": 46183,
+    "original_sha256": "c08d6de8e1e9ae225e42e8e45b11403268ba1583cf2e27f5b835ff8fce5cc3a8",
+    "published_path": "fold_02_control.json.gz",
+    "published_sha256": "1729903f7361d8582a810f9adcd9f9e1df9c0baebcdb1b8282a90e310245ef89"
+  },
+  {
+    "original_path": "fold_02_control.npz",
+    "original_bytes": 1340186,
+    "original_sha256": "deb65e637ae4a42e808a8191d97b9f5b679c77d164f069613a47e230fd1e3121",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_control_scores.npz",
+    "original_bytes": 1134,
+    "original_sha256": "3956bd71c8cdc785db3dfa0959c59f07806f5ef9ad0509074f10818342f3b360",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_lagcov.json",
+    "original_bytes": 49553,
+    "original_sha256": "125c9c55c76ba43c10619a76491ef8ee5638e38af7f3945c42a9ba933c20fce3",
+    "published_path": "fold_02_lagcov.json.gz",
+    "published_sha256": "ab395feaeb4555c24704465201f719b2897164ba0e5274635e31e1e54d59521d"
+  },
+  {
+    "original_path": "fold_02_lagcov.npz",
+    "original_bytes": 1522098,
+    "original_sha256": "a305be297424bcd9df2db2777ec5b8623fe5ab69eaf2f44e73d20c385b914c42",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_lagcov_scores.npz",
+    "original_bytes": 1142,
+    "original_sha256": "979ad7f90189fdd548599690ac6be0e476a840c5dacc8f9e698a61a867b6f54c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_nuisance.json",
+    "original_bytes": 46234,
+    "original_sha256": "ba9ea339a22af718607c56c02c5b6fa2f1395e75b3785724a6b4d67006374365",
+    "published_path": "fold_02_nuisance.json.gz",
+    "published_sha256": "093782bfec1198e1a6c4fe9a2cfd28094e61f641b6a5c1b75310aa496d411395"
+  },
+  {
+    "original_path": "fold_02_nuisance.npz",
+    "original_bytes": 1351049,
+    "original_sha256": "c5359fb2ea665fe1850ff6f4e80781550561c3e0b14227fef45dcedbd6e9571a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_nuisance_scores.npz",
+    "original_bytes": 1137,
+    "original_sha256": "b38448761e18d1ab299a1980d2daef1bd3b8c78ea5ba6ee2492433b293e68298",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_oldbaseline.json",
+    "original_bytes": 10312,
+    "original_sha256": "4eb8b4afff8dfcbd0234afff532a150fb739731c5101af3b7e40958d93db6533",
+    "published_path": "fold_02_oldbaseline.json.gz",
+    "published_sha256": "0c45c940656146bcccfc7f19bbc3b7c1d2f67bd0e4422076e06509b910d50aaf"
+  },
+  {
+    "original_path": "fold_02_oldbaseline.npz",
+    "original_bytes": 254906,
+    "original_sha256": "0522db9fdb80fb5ff9b32ebe6b8ea202416d5c284eacf7656cdf09f01a6743bb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_oldbaseline_scores.npz",
+    "original_bytes": 1147,
+    "original_sha256": "12acf74cb3533cb4b7fabd5c6119d7d563ba51548e9ef1a505d3a48d658cec7c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_snorm.json",
+    "original_bytes": 230492,
+    "original_sha256": "ebcefacaf6a520a9fff657d3b3c04e8403dd42d671b93dd4ec328f78ddaf9994",
+    "published_path": "fold_02_snorm.json.gz",
+    "published_sha256": "bbafe17a670244a5c6a8fb2c466e2ae25a51a38271c32f75ff1b1eaec144032f"
+  },
+  {
+    "original_path": "fold_02_snorm.npz",
+    "original_bytes": 1340186,
+    "original_sha256": "deb65e637ae4a42e808a8191d97b9f5b679c77d164f069613a47e230fd1e3121",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_snorm_lagcov.json",
+    "original_bytes": 247049,
+    "original_sha256": "706e82595d7fd885e7e6a60dc35cbbcffc5afb4b1d802c90ecdda18339799f97",
+    "published_path": "fold_02_snorm_lagcov.json.gz",
+    "published_sha256": "b92ec1b9dfcb6bff36072aef2a6db2bedaaf5bcbe972254f405edac76587c4bc"
+  },
+  {
+    "original_path": "fold_02_snorm_lagcov.npz",
+    "original_bytes": 1522098,
+    "original_sha256": "a305be297424bcd9df2db2777ec5b8623fe5ab69eaf2f44e73d20c385b914c42",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_snorm_lagcov_scores.npz",
+    "original_bytes": 1156,
+    "original_sha256": "0926edd48658aacaf997fde34b9ee3138254c9df0e9b32fb6e758d35f1056736",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_snorm_nuisance.json",
+    "original_bytes": 230493,
+    "original_sha256": "0d403733da2e87d926d4ce859db3e9969cd5c5ddb9a372ab6c21f551805bc451",
+    "published_path": "fold_02_snorm_nuisance.json.gz",
+    "published_sha256": "4613600269b757025c6827e348716a44f02a5d4ee93dc31693b655582e3d50d7"
+  },
+  {
+    "original_path": "fold_02_snorm_nuisance.npz",
+    "original_bytes": 1351049,
+    "original_sha256": "c5359fb2ea665fe1850ff6f4e80781550561c3e0b14227fef45dcedbd6e9571a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_snorm_nuisance_scores.npz",
+    "original_bytes": 1164,
+    "original_sha256": "c270ae2a5a7b98e5d68f7c3616b72457a0ab226c32326ba2e9570705901ad8d5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_02_snorm_scores.npz",
+    "original_bytes": 1160,
+    "original_sha256": "93fe8b4bb0cbbd0ee16418d2305b87ca3fa22515ef376ba4f361f3bd0443a5ae",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_control.json",
+    "original_bytes": 46402,
+    "original_sha256": "c22ab60a72c50fc7cf6309c4b090d6ed2104442fe1079dcba4ca795fd60943ba",
+    "published_path": "fold_03_control.json.gz",
+    "published_sha256": "171b785f27dbaff9c005b11bf3047a882c91602ac5e5cfae036decac8da9c3f6"
+  },
+  {
+    "original_path": "fold_03_control.npz",
+    "original_bytes": 1346784,
+    "original_sha256": "af9a39a0d29d42dd96ee1cb78d37960884bcc769fa6c4cdeb04cd1e5e92111ea",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_control_scores.npz",
+    "original_bytes": 1137,
+    "original_sha256": "1c2d8ace1a8d0e04fadc5d3efff2fd910e17e9ebff13061642d89b16ffaab900",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_lagcov.json",
+    "original_bytes": 49649,
+    "original_sha256": "cbf9686690fad76284890aabd0d45483f6acc28b4320ca469c430591156e18e4",
+    "published_path": "fold_03_lagcov.json.gz",
+    "published_sha256": "6696d08628eeab1e47e018e80d2a6772cea8ec949ed7b7779a964965e9850ce2"
+  },
+  {
+    "original_path": "fold_03_lagcov.npz",
+    "original_bytes": 1522409,
+    "original_sha256": "4091ca79eba69ea25b135fcc516b1dd03626d0727935cd313dbbda0f828e17dc",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_lagcov_scores.npz",
+    "original_bytes": 1144,
+    "original_sha256": "25a269c0a09042b536a7253ac2dea7d3e71fbe95716a2b8a97796e99376261c7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_nuisance.json",
+    "original_bytes": 46323,
+    "original_sha256": "06470399b234e3c70ad840af1f20b8dbd7d5a6585c09f47f4d926cf2fca7d738",
+    "published_path": "fold_03_nuisance.json.gz",
+    "published_sha256": "02d29a4e97da700c66ceeda298b690d55a3b697d326ea8040edecfa8d1dc3ae8"
+  },
+  {
+    "original_path": "fold_03_nuisance.npz",
+    "original_bytes": 1351098,
+    "original_sha256": "00c90342a7978698b5cdde836648d8033e96fa1c38be8d210f41f8344090b560",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_nuisance_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "878973f94d6f4d9d7b48775d8b562650982905fb32f01d6baa3fd7488df74ce0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_oldbaseline.json",
+    "original_bytes": 10434,
+    "original_sha256": "e4f9e7984ec44a400e870f0b3075b5d8d33e5ed497790b128871246db1952ec1",
+    "published_path": "fold_03_oldbaseline.json.gz",
+    "published_sha256": "774cd7b573be4e95a30e57a83ca9f4f7e5ce3fdbbd5b1271c2d0bc12780bc359"
+  },
+  {
+    "original_path": "fold_03_oldbaseline.npz",
+    "original_bytes": 255029,
+    "original_sha256": "ccfb5bb054408957b049d72dacc4b9b9b01c66c0bf6b5adb20060039747fc9f6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_oldbaseline_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "8a6455002cb82b8f1e462ba4f810e6a891ef99e21dfc830f8a5cf22e582b08ed",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_snorm.json",
+    "original_bytes": 230748,
+    "original_sha256": "714828550d1c1e35957ba3836b4229f220bbcf13510e401dfdb424f50faf4e0b",
+    "published_path": "fold_03_snorm.json.gz",
+    "published_sha256": "d2fc3b614807d8a04aeb1c4a7bc5c37d84bcb5516d2276ebf1cf864d50f7f727"
+  },
+  {
+    "original_path": "fold_03_snorm.npz",
+    "original_bytes": 1346784,
+    "original_sha256": "af9a39a0d29d42dd96ee1cb78d37960884bcc769fa6c4cdeb04cd1e5e92111ea",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_snorm_lagcov.json",
+    "original_bytes": 247226,
+    "original_sha256": "c9b842db7acc753009c89e8dd39bbc674f4239e4ca85d76645ebb3874dafa6b4",
+    "published_path": "fold_03_snorm_lagcov.json.gz",
+    "published_sha256": "c512aa76b931e916346691a0b63112bcf6c0df68cab6bf2af364c975fcdec3ac"
+  },
+  {
+    "original_path": "fold_03_snorm_lagcov.npz",
+    "original_bytes": 1522409,
+    "original_sha256": "4091ca79eba69ea25b135fcc516b1dd03626d0727935cd313dbbda0f828e17dc",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_snorm_lagcov_scores.npz",
+    "original_bytes": 1161,
+    "original_sha256": "492df54da0cfe1cc37446bf19ae805b8f153b9c4d5da825396208d44c858f659",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_snorm_nuisance.json",
+    "original_bytes": 230491,
+    "original_sha256": "18756a3523c5b5af4677bc53154560d1b4b773ee4ae22765014cc23d4a4e6adf",
+    "published_path": "fold_03_snorm_nuisance.json.gz",
+    "published_sha256": "5417f07a87f0e7b2c49c820dfbb382b1b9b4fd061d953c5a6d7d0f31c13266f1"
+  },
+  {
+    "original_path": "fold_03_snorm_nuisance.npz",
+    "original_bytes": 1351098,
+    "original_sha256": "00c90342a7978698b5cdde836648d8033e96fa1c38be8d210f41f8344090b560",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_snorm_nuisance_scores.npz",
+    "original_bytes": 1157,
+    "original_sha256": "56283772005b76db67f8d145896d22fc422622962d32b4ba668f73ac7f0b83f7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_03_snorm_scores.npz",
+    "original_bytes": 1160,
+    "original_sha256": "ad2bb6302f47d9f38831f9da701e050a15d7e547f390c91442355dfcb1ec41b1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_control.json",
+    "original_bytes": 46225,
+    "original_sha256": "f63ccbcced0d3914fc5bc1a2c260c2d4a568f1713db7162a48f2ad0d58ffc500",
+    "published_path": "fold_04_control.json.gz",
+    "published_sha256": "5b465d97b6ece4051869482b6d0ea5f2b3b8e0f35c252470fdfaa11c447c57eb"
+  },
+  {
+    "original_path": "fold_04_control.npz",
+    "original_bytes": 1340436,
+    "original_sha256": "5f33376c44a305f8b4900e4881116beba5e05113b9af13e31f748ef95ad54fed",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_control_scores.npz",
+    "original_bytes": 1115,
+    "original_sha256": "ce00eb0a5dab2112998519e41d53ac28eb6ccb5de6d62fb6b2e997f2e42ebdf5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_lagcov.json",
+    "original_bytes": 49572,
+    "original_sha256": "34b49844319af5db7e1c74dee48538b1ed6648407d1e5434d1710231ac79bb2f",
+    "published_path": "fold_04_lagcov.json.gz",
+    "published_sha256": "55ebc9ed7ab15d420a1baac001a3c045615c112c9c186aa691a0c4760355fc45"
+  },
+  {
+    "original_path": "fold_04_lagcov.npz",
+    "original_bytes": 1522200,
+    "original_sha256": "1992856c70693a1ee4ba10fe6b6a3fa157671e6d975fc87b8013807b0aeb531c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_lagcov_scores.npz",
+    "original_bytes": 1127,
+    "original_sha256": "f9d3cda182d3d84fb0e695036c41937f502a0872e7e48664e537abd24b741383",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_nuisance.json",
+    "original_bytes": 46235,
+    "original_sha256": "be4fc90b2ada6a417b2b0a542af538b5304105620462e622c5e64fc454878c4a",
+    "published_path": "fold_04_nuisance.json.gz",
+    "published_sha256": "007f2ecfec61d2d6c74f6685ccbb17d0cc90030a93e3c0613e19ae761a91b626"
+  },
+  {
+    "original_path": "fold_04_nuisance.npz",
+    "original_bytes": 1351030,
+    "original_sha256": "7028396522ebae77dea2d81293e9d082807f28f155ecf7129e301e81ba9fe9a7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_nuisance_scores.npz",
+    "original_bytes": 1121,
+    "original_sha256": "0c13eed1ca50bb365189d0d7ce8e4b5ab0f2b25a710d27574b310e122a33a2e6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_oldbaseline.json",
+    "original_bytes": 10460,
+    "original_sha256": "795df9fede56ea9dc1dc0c316e7ac8ab3c04bc43bf6ac31631c994e88d40ddf9",
+    "published_path": "fold_04_oldbaseline.json.gz",
+    "published_sha256": "4cdc1b404ca0f3128b8acdd860fec26acab473cd2e8ece8fd6981256326ee53f"
+  },
+  {
+    "original_path": "fold_04_oldbaseline.npz",
+    "original_bytes": 255005,
+    "original_sha256": "16a6de28c1e9f66a6d147c6c9e2c3ffc39c983925212d14d8d38b0f3396c7e74",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_oldbaseline_scores.npz",
+    "original_bytes": 1115,
+    "original_sha256": "19bf39d15247a13732f88988670528657d94797408a2ffadd55078e8df238ad3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_snorm.json",
+    "original_bytes": 230412,
+    "original_sha256": "9d1a66e296fd753b50f06d7c8eaadc11bee2336e23e9b1137acd40a6510db00c",
+    "published_path": "fold_04_snorm.json.gz",
+    "published_sha256": "506b481925217c09b21dc4d16352003ea4f1e94082f4f4935cc162d87a2bcfcc"
+  },
+  {
+    "original_path": "fold_04_snorm.npz",
+    "original_bytes": 1340436,
+    "original_sha256": "5f33376c44a305f8b4900e4881116beba5e05113b9af13e31f748ef95ad54fed",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_snorm_lagcov.json",
+    "original_bytes": 246914,
+    "original_sha256": "a7631b4cc6dbf6a20b0ddaf01bceecb4cfe280528eafeda7580312180431beb2",
+    "published_path": "fold_04_snorm_lagcov.json.gz",
+    "published_sha256": "d389915875375eb9b7812d5e2ffb9b81e59bbc7fa8a1120948e8beb0e1c1da72"
+  },
+  {
+    "original_path": "fold_04_snorm_lagcov.npz",
+    "original_bytes": 1522200,
+    "original_sha256": "1992856c70693a1ee4ba10fe6b6a3fa157671e6d975fc87b8013807b0aeb531c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_snorm_lagcov_scores.npz",
+    "original_bytes": 1132,
+    "original_sha256": "f0026293910a5de327d9a1a75f88aae017593e404239c409e214f6db4a588055",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_snorm_nuisance.json",
+    "original_bytes": 230423,
+    "original_sha256": "afb8f6ce30373454b738fdf4dc8c4b0aaa3220105006453b94381b6c4890f58e",
+    "published_path": "fold_04_snorm_nuisance.json.gz",
+    "published_sha256": "9d61e2881d660caf576adab0649ae889ac7d51736201e4744cc45518b8cecf82"
+  },
+  {
+    "original_path": "fold_04_snorm_nuisance.npz",
+    "original_bytes": 1351030,
+    "original_sha256": "7028396522ebae77dea2d81293e9d082807f28f155ecf7129e301e81ba9fe9a7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_snorm_nuisance_scores.npz",
+    "original_bytes": 1135,
+    "original_sha256": "4a3bfb955bc160155e85c2539f8f3d64903f99975dcb86800a36fbe68312c691",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_04_snorm_scores.npz",
+    "original_bytes": 1135,
+    "original_sha256": "d0b3ec76af341687b7f0a90b284999d7057d5b946c025ed80f37f895fd171714",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_control.json",
+    "original_bytes": 46335,
+    "original_sha256": "b1307cf9b2ffab95c98acd79a340c550846925300c45231bde50d53a1ca33073",
+    "published_path": "fold_05_control.json.gz",
+    "published_sha256": "66846080778cc865dceaa0e486c6c8c98ecdcbc4a7a80f5acea202cd0c4d1d41"
+  },
+  {
+    "original_path": "fold_05_control.npz",
+    "original_bytes": 1338006,
+    "original_sha256": "a13cfc65d3777bb5138ea59c5f3fe273d8d8782006bf7cb6dffdd1fd1a27c950",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_control_scores.npz",
+    "original_bytes": 1135,
+    "original_sha256": "37d1b26cab5d76505710d027e0d868163a6f4c969727941c76832ce70d427c10",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_lagcov.json",
+    "original_bytes": 49737,
+    "original_sha256": "e7a59308b013c5c5d2336bd155293e613f2e680e1817d84a4ce21e87101758d7",
+    "published_path": "fold_05_lagcov.json.gz",
+    "published_sha256": "201074ebaa932d7f5c7df613d4baf5a114cf5349334053e8359fe837505d2a63"
+  },
+  {
+    "original_path": "fold_05_lagcov.npz",
+    "original_bytes": 1519840,
+    "original_sha256": "05a5ec332c4a8ee1e2b05421eb3fbb999f780a5945a2e101896f096640a47319",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_lagcov_scores.npz",
+    "original_bytes": 1140,
+    "original_sha256": "714c1dbcba8245f64a3faa195912126ed1935bc089e3e65e59d758b707a90d96",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_nuisance.json",
+    "original_bytes": 46348,
+    "original_sha256": "19485cfbc2a9763e4caaa91041e9f0ae5e065527b3ee2353577996b8b225461f",
+    "published_path": "fold_05_nuisance.json.gz",
+    "published_sha256": "9d7da7926ffdd7ef487add3a50b2fe2cd2035f506ef68c6d3d1a27ace2cb9bd5"
+  },
+  {
+    "original_path": "fold_05_nuisance.npz",
+    "original_bytes": 1350308,
+    "original_sha256": "14e35b747e6e1022ab9b821f2e70174675b87ee7ab10fe3887178c2f0a6ddad1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_nuisance_scores.npz",
+    "original_bytes": 1137,
+    "original_sha256": "1707b95b010ae2ae4a2e5375cc5a86434247fcc739187191b60c8f036aa07ac6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_oldbaseline.json",
+    "original_bytes": 10457,
+    "original_sha256": "0908de95f7faaab6f5856434243e0eae9e3ee2446dddc6414d0132ca2bead6ae",
+    "published_path": "fold_05_oldbaseline.json.gz",
+    "published_sha256": "1f15b97c04abaf5c2c84917c418770849a4ad8946df04f3ccdc0d2febc06b2f3"
+  },
+  {
+    "original_path": "fold_05_oldbaseline.npz",
+    "original_bytes": 254253,
+    "original_sha256": "fa4cbd94ec4c75427111ce7710bc3f92d95be2f3bf66a7982f8b9f50f935c7c7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_oldbaseline_scores.npz",
+    "original_bytes": 1147,
+    "original_sha256": "fbad1c29adc1a43455386c5baa5f3b2b31e3329177947978ac6a2c1d73e9fd95",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_snorm.json",
+    "original_bytes": 230635,
+    "original_sha256": "6606c427eea24c70e26a2011e0b5c5518f30c70a145a908c71231429326d15e7",
+    "published_path": "fold_05_snorm.json.gz",
+    "published_sha256": "cd711308fa851414cef32618ed524e627d4dd736e2944c7a1c4bfad767290b01"
+  },
+  {
+    "original_path": "fold_05_snorm.npz",
+    "original_bytes": 1338006,
+    "original_sha256": "a13cfc65d3777bb5138ea59c5f3fe273d8d8782006bf7cb6dffdd1fd1a27c950",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_snorm_lagcov.json",
+    "original_bytes": 247271,
+    "original_sha256": "308271529fcb9ad372f95c1f722af0dbfcd699bf5aff6a2026619259edac6785",
+    "published_path": "fold_05_snorm_lagcov.json.gz",
+    "published_sha256": "751765b6551bd0519661993bccf430cc5aab278e32d5632e0664516a945fa8ba"
+  },
+  {
+    "original_path": "fold_05_snorm_lagcov.npz",
+    "original_bytes": 1519840,
+    "original_sha256": "05a5ec332c4a8ee1e2b05421eb3fbb999f780a5945a2e101896f096640a47319",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_snorm_lagcov_scores.npz",
+    "original_bytes": 1165,
+    "original_sha256": "b5939f7d112af862375e32b2c93a795bcc15e8fa65cfff1758121306b1e8fff4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_snorm_nuisance.json",
+    "original_bytes": 230570,
+    "original_sha256": "fc3e20a4b5fbf1298d8e4476ec488c49f1338149f35c3003cdf291232c4a1c50",
+    "published_path": "fold_05_snorm_nuisance.json.gz",
+    "published_sha256": "a36992a850f012595402a6c964fbef88df6ac882d1e08a714c5d9afcfcad8ec2"
+  },
+  {
+    "original_path": "fold_05_snorm_nuisance.npz",
+    "original_bytes": 1350308,
+    "original_sha256": "14e35b747e6e1022ab9b821f2e70174675b87ee7ab10fe3887178c2f0a6ddad1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_snorm_nuisance_scores.npz",
+    "original_bytes": 1158,
+    "original_sha256": "88dc1e3516508c6d1e08dd2a26e7623f3ede9993dd01dcba196ba5d25e58bad1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_05_snorm_scores.npz",
+    "original_bytes": 1154,
+    "original_sha256": "03ee8effa946ea07b58ff6d575f7731cb422cc04620d36bba7bfaf3440cb9f08",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_control.json",
+    "original_bytes": 46095,
+    "original_sha256": "aea0ac4f82364c41f8258f6e24adeb7fe7962d2573a1fa510767ad6941d34d09",
+    "published_path": "fold_06_control.json.gz",
+    "published_sha256": "b23a98e1e23170c7d43b7407c38b061de4c186f0d548f56a729ddf47b1c09732"
+  },
+  {
+    "original_path": "fold_06_control.npz",
+    "original_bytes": 1345700,
+    "original_sha256": "362bd2d8cd6b4cd22926eca493051b9b2e4deabbdb1fbec881d4b88b96ce1689",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_control_scores.npz",
+    "original_bytes": 1135,
+    "original_sha256": "f4af20fd04178d0cd108d23cba0314b238ef1744519c9bc8cacdc44e25955109",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_lagcov.json",
+    "original_bytes": 49394,
+    "original_sha256": "22d23478f4c40f977e9da57e6378c2a5e02c67c343d01c7f2e464f47bfebe7c7",
+    "published_path": "fold_06_lagcov.json.gz",
+    "published_sha256": "cb64b23273270a4326b985828aef3bdb5d0576044ca46ec7bb822d0683829009"
+  },
+  {
+    "original_path": "fold_06_lagcov.npz",
+    "original_bytes": 1524837,
+    "original_sha256": "f12c28baee4611bc77194a3dda9cd3b086016618ad86101945c322ce62970541",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_lagcov_scores.npz",
+    "original_bytes": 1137,
+    "original_sha256": "12cf7dabf09e26f67c9933488d71a5be67dabb63aa28f88161859fc6b977972f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_nuisance.json",
+    "original_bytes": 46137,
+    "original_sha256": "b88e1a46662a6be7173e2da1369bf0fd1fed7856834f00c6f6815e3e1ae2f2a9",
+    "published_path": "fold_06_nuisance.json.gz",
+    "published_sha256": "c8a530a38023d78dbc14e1404813de62b493cbee35ee7d6ec2f0c181df1d0fb9"
+  },
+  {
+    "original_path": "fold_06_nuisance.npz",
+    "original_bytes": 1355349,
+    "original_sha256": "3ec52952c8e6680e827fbfbc2d5f9c6f727f3dc8dd9e970baf31bc9766256d8d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_nuisance_scores.npz",
+    "original_bytes": 1134,
+    "original_sha256": "da3f270bc85499a6b0d12ac37f0d62eaf60db547fa4c92937691d6d6095f617c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_oldbaseline.json",
+    "original_bytes": 10259,
+    "original_sha256": "bd954f39942c6878c5eec48dde06be841133be14435ac8031eb302361a3ae439",
+    "published_path": "fold_06_oldbaseline.json.gz",
+    "published_sha256": "57519bd5cf352fe1773551cbf7e4ed485e116d7f8a6b2d4a9badeffbc831a72a"
+  },
+  {
+    "original_path": "fold_06_oldbaseline.npz",
+    "original_bytes": 255791,
+    "original_sha256": "71acfaa63ab3d2db2dc3f38247c549b6588bfa0e117abceeb70ca2428a343d63",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_oldbaseline_scores.npz",
+    "original_bytes": 1134,
+    "original_sha256": "18912e821ae7631c5063b41ab056c124c90ee75bf18f92ecc73f7ee965b5783c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_snorm.json",
+    "original_bytes": 230269,
+    "original_sha256": "7d2c81ce5c53c0d696dbbb59381ed8f2ae60b57f098846321ba083d80fa46569",
+    "published_path": "fold_06_snorm.json.gz",
+    "published_sha256": "fa37505abbea6a2c35c419dee7b25763d8635f949352798de5fa94adb12d1236"
+  },
+  {
+    "original_path": "fold_06_snorm.npz",
+    "original_bytes": 1345700,
+    "original_sha256": "362bd2d8cd6b4cd22926eca493051b9b2e4deabbdb1fbec881d4b88b96ce1689",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_snorm_lagcov.json",
+    "original_bytes": 246751,
+    "original_sha256": "6126c359d66addb6b3f16f25f302ddcb5df24d000ab58ec4cc0502eca8b1407f",
+    "published_path": "fold_06_snorm_lagcov.json.gz",
+    "published_sha256": "db49d1e68825f85aa5733b9e4fac259220810a6ccc959a7c5df9cf9c9ba748f4"
+  },
+  {
+    "original_path": "fold_06_snorm_lagcov.npz",
+    "original_bytes": 1524837,
+    "original_sha256": "f12c28baee4611bc77194a3dda9cd3b086016618ad86101945c322ce62970541",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_snorm_lagcov_scores.npz",
+    "original_bytes": 1165,
+    "original_sha256": "2fc283cc031162772625d0bc35f23c66d7fc5cb8789855843011b8fab1f222bd",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_snorm_nuisance.json",
+    "original_bytes": 230460,
+    "original_sha256": "3e6847828922070f98152de73f3fbf4ac7f8672a3204cc9fef696ec4268be5ee",
+    "published_path": "fold_06_snorm_nuisance.json.gz",
+    "published_sha256": "00339890dd329fd770855f8cac7927d4575c46d2e07b1a73e0e88d4faea31830"
+  },
+  {
+    "original_path": "fold_06_snorm_nuisance.npz",
+    "original_bytes": 1355349,
+    "original_sha256": "3ec52952c8e6680e827fbfbc2d5f9c6f727f3dc8dd9e970baf31bc9766256d8d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_snorm_nuisance_scores.npz",
+    "original_bytes": 1167,
+    "original_sha256": "b5b1be92bcfed3a998a73b356ad9d8f797ecf5ee8823041fc5b456346b2e704d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_06_snorm_scores.npz",
+    "original_bytes": 1157,
+    "original_sha256": "8c047f4a05d481f21848ad5ad25713d0f350870ff23e6e2c48d2296a06eeb495",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_control.json",
+    "original_bytes": 46251,
+    "original_sha256": "805e29e9d3d957a11d7b51ab4529745af649836e5dee27799a76b4f5940ce888",
+    "published_path": "fold_07_control.json.gz",
+    "published_sha256": "7c0e1f5d292d97e568da786c4525d3e0513264290e523de79e6af9a4b8d41183"
+  },
+  {
+    "original_path": "fold_07_control.npz",
+    "original_bytes": 1340138,
+    "original_sha256": "150717b0bfb5ec088c9a5ce4d38934cf3d013a7e0ecd7462329a5297a368ed37",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_control_scores.npz",
+    "original_bytes": 1112,
+    "original_sha256": "ff395e79d1caf7bfad3b3cf1c8f117e4fa4765de1fd895d8987ed25f579c61d0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_lagcov.json",
+    "original_bytes": 49555,
+    "original_sha256": "970659fb4dc21fabc1574ba097198ed8515b4d1cd077f94186f8d61c0140207e",
+    "published_path": "fold_07_lagcov.json.gz",
+    "published_sha256": "9c674ee33c65053f45ce43478850ded0b1721848bd20c4039d2f410e1bd1705c"
+  },
+  {
+    "original_path": "fold_07_lagcov.npz",
+    "original_bytes": 1522324,
+    "original_sha256": "2a95650c3a00723782e674be901c0041dcdd0732c2e2b914fc5678109f796def",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_lagcov_scores.npz",
+    "original_bytes": 1116,
+    "original_sha256": "18e3ac8fae70644e6d60d49559bfc8adae0313cfec332ac0ebecddd479ebe88c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_nuisance.json",
+    "original_bytes": 46172,
+    "original_sha256": "8cc90ed6edc7f665d73a1e8c8172044f90593bdc6e37788f371e5c0321d6ecdd",
+    "published_path": "fold_07_nuisance.json.gz",
+    "published_sha256": "cd394057860164c48526a9be35fd893893b093654618f5f436d7813d016b6e65"
+  },
+  {
+    "original_path": "fold_07_nuisance.npz",
+    "original_bytes": 1352042,
+    "original_sha256": "92dd31827e21586826966de03b75daf5ef13ef013cbcea063721f179b46f8e9e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_nuisance_scores.npz",
+    "original_bytes": 1114,
+    "original_sha256": "485d9e07be3f1eb6cc50ac659328facbc91d7c9909ce1356d93bdac924f61dd4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_oldbaseline.json",
+    "original_bytes": 10319,
+    "original_sha256": "2b5e543a7c864fe5b504a143ea89650362f02131c4b6bc2ec023694120af8f2e",
+    "published_path": "fold_07_oldbaseline.json.gz",
+    "published_sha256": "12a183176a7b128e0e22374febf98ea018925f65321efcc70a2bbe43d0b807e2"
+  },
+  {
+    "original_path": "fold_07_oldbaseline.npz",
+    "original_bytes": 254957,
+    "original_sha256": "81f45e1e5de5e94c4536de3f05699605aaac235b8f7427205e1430ebfa4b8c10",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_oldbaseline_scores.npz",
+    "original_bytes": 1117,
+    "original_sha256": "7e2ba2b7b5afd2f0235924b5f3053fe762de9a8eaab0d928dbdd430066c2fa80",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_snorm.json",
+    "original_bytes": 230410,
+    "original_sha256": "a66a279dc68af6582be3cc339a8b8b6c9afe7cfe8189cc984f3d4f505e911e85",
+    "published_path": "fold_07_snorm.json.gz",
+    "published_sha256": "44d0183da26f9fba21f76158f8ac3b103302950f9776a7c7930cd04e66714d05"
+  },
+  {
+    "original_path": "fold_07_snorm.npz",
+    "original_bytes": 1340138,
+    "original_sha256": "150717b0bfb5ec088c9a5ce4d38934cf3d013a7e0ecd7462329a5297a368ed37",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_snorm_lagcov.json",
+    "original_bytes": 246904,
+    "original_sha256": "bf6318f1d4dbe0d145094e3b60b611fde96d8228e30e520fbe08f0eb25b08bad",
+    "published_path": "fold_07_snorm_lagcov.json.gz",
+    "published_sha256": "337b3d543a3b5ef1a5e6e07a7751555bde995a6664e50e7482fd7d4aa4e5349e"
+  },
+  {
+    "original_path": "fold_07_snorm_lagcov.npz",
+    "original_bytes": 1522324,
+    "original_sha256": "2a95650c3a00723782e674be901c0041dcdd0732c2e2b914fc5678109f796def",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_snorm_lagcov_scores.npz",
+    "original_bytes": 1132,
+    "original_sha256": "7d5cd998b5ce0cae6d27e43ca97717b4957c6533fc76fc64ba348511b210b897",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_snorm_nuisance.json",
+    "original_bytes": 230296,
+    "original_sha256": "3e66676569830b896838ce80607021fffe2b107c39a4007600a86282a24bcc35",
+    "published_path": "fold_07_snorm_nuisance.json.gz",
+    "published_sha256": "41dbfb435e9d43d46516d3b4fdaddf9e40145021ce5b79bf42a316715be90ba0"
+  },
+  {
+    "original_path": "fold_07_snorm_nuisance.npz",
+    "original_bytes": 1352042,
+    "original_sha256": "92dd31827e21586826966de03b75daf5ef13ef013cbcea063721f179b46f8e9e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_snorm_nuisance_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "909af2787dce81852524f7e1b54672234be40231cdb2760e8b786a9c0f94088e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_07_snorm_scores.npz",
+    "original_bytes": 1137,
+    "original_sha256": "f5855cc9ffa906cb15d2cc453fd2e91a3ce2a3a77e5467debaccc970042d7cf7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_control.json",
+    "original_bytes": 46169,
+    "original_sha256": "079975a92e75807f4c023f110319f7db3c0011542c2014199537f52b1751d080",
+    "published_path": "fold_08_control.json.gz",
+    "published_sha256": "e2221b795d047b76ed54b2420d89f0554db2913d9cf583426d6069478a7f54c4"
+  },
+  {
+    "original_path": "fold_08_control.npz",
+    "original_bytes": 1348210,
+    "original_sha256": "989abd105ef032d5fc164d165e4db3a60737b42a8392a45e53fd8212879069d7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_control_scores.npz",
+    "original_bytes": 1140,
+    "original_sha256": "baf51feb6850b0fa5badff7b8c8830763d9f98c282dc180bb163f9f70f07a460",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_lagcov.json",
+    "original_bytes": 49435,
+    "original_sha256": "43aad5aae947c56668d9496086fe3aa6a5e433689b5aba493c4ed17435024f1f",
+    "published_path": "fold_08_lagcov.json.gz",
+    "published_sha256": "4852fda093d7c29cfcacb25a9ee19c41d70c4b0b7d5f30e3f7ee64d1bc2ca1f0"
+  },
+  {
+    "original_path": "fold_08_lagcov.npz",
+    "original_bytes": 1527428,
+    "original_sha256": "a5d9170dbc8bff24b2b0f38ca1099cc78bed36580f5f8dee7f5ecaba84653979",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_lagcov_scores.npz",
+    "original_bytes": 1138,
+    "original_sha256": "e7bb1419941c719384fb1902a051eb61cd1f9b8427a674582e3bcfacf9c1c027",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_nuisance.json",
+    "original_bytes": 46219,
+    "original_sha256": "3c076f36565040a7b96f396695de27279d392ab23765013b29743098349c071e",
+    "published_path": "fold_08_nuisance.json.gz",
+    "published_sha256": "917a2c1063158aa01f13cf5c7f737be1a935a64e589db38170dda60a3a234944"
+  },
+  {
+    "original_path": "fold_08_nuisance.npz",
+    "original_bytes": 1354744,
+    "original_sha256": "b459bafb521a533617eccba405bf38fd04fd2751b8a660c1b3d903d3c2e93d75",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_nuisance_scores.npz",
+    "original_bytes": 1140,
+    "original_sha256": "5ee5da1111bdfd636c0a222cad9ddb25d157e5294f58278664245834eef28fb7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_oldbaseline.json",
+    "original_bytes": 10413,
+    "original_sha256": "e984da8ec89d3f883e2cce3d32304644b1092cdddc49ccb8cac19cb9c05e41bc",
+    "published_path": "fold_08_oldbaseline.json.gz",
+    "published_sha256": "67ab890117b88ee1438cabcf34afec6bdc8970139b4c6acd0898f5b2c727eb48"
+  },
+  {
+    "original_path": "fold_08_oldbaseline.npz",
+    "original_bytes": 256512,
+    "original_sha256": "78d353c1116b7ec49d3d13e77579ffe7fb2005a07d38d7abea68ffc52a33667a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_oldbaseline_scores.npz",
+    "original_bytes": 1146,
+    "original_sha256": "67fa3ea36d1a42faebeb9f4bcf9038e99d72a36239d68acf54374f2b23888912",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_snorm.json",
+    "original_bytes": 230527,
+    "original_sha256": "1f8de5f0e0af33756948ae44562bf2a6d54bfa294bb4bb81a2236f1f674e6011",
+    "published_path": "fold_08_snorm.json.gz",
+    "published_sha256": "c0c4ae33290853b0b28039f63079f4489c54c2909e4013b20db95811eace13a9"
+  },
+  {
+    "original_path": "fold_08_snorm.npz",
+    "original_bytes": 1348210,
+    "original_sha256": "989abd105ef032d5fc164d165e4db3a60737b42a8392a45e53fd8212879069d7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_snorm_lagcov.json",
+    "original_bytes": 247161,
+    "original_sha256": "c641d1e2c2f810230f36164084ac1e2fced18701a27514a3159d6f76edd34f36",
+    "published_path": "fold_08_snorm_lagcov.json.gz",
+    "published_sha256": "f19889a6e964e359649dcf2d083af2912eb14934e67a3c64daa91b2f30a1889b"
+  },
+  {
+    "original_path": "fold_08_snorm_lagcov.npz",
+    "original_bytes": 1527428,
+    "original_sha256": "a5d9170dbc8bff24b2b0f38ca1099cc78bed36580f5f8dee7f5ecaba84653979",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_snorm_lagcov_scores.npz",
+    "original_bytes": 1160,
+    "original_sha256": "f196f934f853614ab3acc72196d2d2901caf94f45a785a9381954aebd5464dcf",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_snorm_nuisance.json",
+    "original_bytes": 230620,
+    "original_sha256": "80a49c4832fe80db7a7438ab60be1829b901524e5106a3e1e0dbce354230822f",
+    "published_path": "fold_08_snorm_nuisance.json.gz",
+    "published_sha256": "0acd8462ae52339e1b4d9c217c987f5fe7cc203389b3c17cf23ea484c98812fa"
+  },
+  {
+    "original_path": "fold_08_snorm_nuisance.npz",
+    "original_bytes": 1354744,
+    "original_sha256": "b459bafb521a533617eccba405bf38fd04fd2751b8a660c1b3d903d3c2e93d75",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_snorm_nuisance_scores.npz",
+    "original_bytes": 1160,
+    "original_sha256": "9b91bddc924b8530bb9c555f63ae966eb4efc08af01e4e87b9129796d218bb69",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_08_snorm_scores.npz",
+    "original_bytes": 1155,
+    "original_sha256": "b116682a46810b416a32497b3bd0c9584855da33f75b2f30fc8bc289eaa0b855",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_control.json",
+    "original_bytes": 46433,
+    "original_sha256": "578e6b6171d087b3b99b023579ce1bd647e72244c4b15f1b9dc3cc78ac779657",
+    "published_path": "fold_09_control.json.gz",
+    "published_sha256": "fb770078136aeea19b71c40d71682bdb7258fa6f1603f846a258e1992beccc83"
+  },
+  {
+    "original_path": "fold_09_control.npz",
+    "original_bytes": 1339839,
+    "original_sha256": "08f868508cd3471c3864b57607bd1ae209385611b1c7364b184cf9f7726062f8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_control_scores.npz",
+    "original_bytes": 1142,
+    "original_sha256": "92a4b03804537531d6a45857699dd2417ca06cd63cfc7cc5d5d21e106b418370",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_lagcov.json",
+    "original_bytes": 49707,
+    "original_sha256": "2eca7b2942d0d058efe39c0630b0ed451160db6ab5f20dee578f0a32bde12d1b",
+    "published_path": "fold_09_lagcov.json.gz",
+    "published_sha256": "60e05b0de3db2d01ee5c0012e6b0c51d6dffcdb318c5b3d122e38dffc41f91a7"
+  },
+  {
+    "original_path": "fold_09_lagcov.npz",
+    "original_bytes": 1519669,
+    "original_sha256": "ef52ca6517732724a21239df0fd29b77b4bffc1f58801124e608af8dcaa6832a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_lagcov_scores.npz",
+    "original_bytes": 1140,
+    "original_sha256": "45fcd0246909e55db61d1ee488de24174785a174c8bedccdad220b80c6d114a5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_nuisance.json",
+    "original_bytes": 46387,
+    "original_sha256": "962ef66efd36d8b9f15b0fee70e90354ea66d0dfae454245fd1f1fde4fed61a0",
+    "published_path": "fold_09_nuisance.json.gz",
+    "published_sha256": "6651cd2462b6d7eb9d10f203d43d62940273cf123fef3be7893e4ea705991436"
+  },
+  {
+    "original_path": "fold_09_nuisance.npz",
+    "original_bytes": 1349817,
+    "original_sha256": "e21fdcb731745270d59e8e3d4d8e9ca85c302cbc38f1ecc6cf046d89c6aab4c4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_nuisance_scores.npz",
+    "original_bytes": 1130,
+    "original_sha256": "155038a52fc446eff299718dcfbe1682900a0c2c95f3fec587c75e4ea3f52bef",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_oldbaseline.json",
+    "original_bytes": 10483,
+    "original_sha256": "49a511a63196ae7ca253f09b4b927bf21c5ae6ce087f83a7a2c43c294b0d32aa",
+    "published_path": "fold_09_oldbaseline.json.gz",
+    "published_sha256": "ebbd88bb5332b60a493b141459e74bbd39cec67e914d7574717dececc288441d"
+  },
+  {
+    "original_path": "fold_09_oldbaseline.npz",
+    "original_bytes": 254283,
+    "original_sha256": "c807118a103b91302ecd0e972d4a12285bec8ab3a69300a03a8ad4db214a9f41",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_oldbaseline_scores.npz",
+    "original_bytes": 1145,
+    "original_sha256": "a9cabf40f89855003a2789c8b061c7e09e9f17e0a582b20dbca154156131e33c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_snorm.json",
+    "original_bytes": 230676,
+    "original_sha256": "60acc293943f750bceb50356484a6f45effa878e750ba8a783d35c35b1513740",
+    "published_path": "fold_09_snorm.json.gz",
+    "published_sha256": "6a0f6efa9e418ceee31366f14c2579aa9d6d919234cf7ab3036a8204b4a0159a"
+  },
+  {
+    "original_path": "fold_09_snorm.npz",
+    "original_bytes": 1339839,
+    "original_sha256": "08f868508cd3471c3864b57607bd1ae209385611b1c7364b184cf9f7726062f8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_snorm_lagcov.json",
+    "original_bytes": 247076,
+    "original_sha256": "4b23b364f71783f8261915e7014bb97a9a27ca55e03c758da15207e237c62b73",
+    "published_path": "fold_09_snorm_lagcov.json.gz",
+    "published_sha256": "b352bc078fad55b2ad35b1a6c3345aba41c2f1ee986a3bffcad5eb9a9db7b8eb"
+  },
+  {
+    "original_path": "fold_09_snorm_lagcov.npz",
+    "original_bytes": 1519669,
+    "original_sha256": "ef52ca6517732724a21239df0fd29b77b4bffc1f58801124e608af8dcaa6832a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_snorm_lagcov_scores.npz",
+    "original_bytes": 1157,
+    "original_sha256": "1d00bccab8900bb67df64c6cfffba9b820a8b6c4d120561bc6c48b84372679c4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_snorm_nuisance.json",
+    "original_bytes": 230624,
+    "original_sha256": "538c3337ea94d9f780ad9035397c962d0641a597805018cba42959073020d1fa",
+    "published_path": "fold_09_snorm_nuisance.json.gz",
+    "published_sha256": "ccd588bca07382327ba2b9138bde0e58194a65212f97239993948982f57be379"
+  },
+  {
+    "original_path": "fold_09_snorm_nuisance.npz",
+    "original_bytes": 1349817,
+    "original_sha256": "e21fdcb731745270d59e8e3d4d8e9ca85c302cbc38f1ecc6cf046d89c6aab4c4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_snorm_nuisance_scores.npz",
+    "original_bytes": 1155,
+    "original_sha256": "5a44868f3c3df97fec788a8164a227ae5a177ecc881dbdcdc10ee2b6c3d93d67",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_09_snorm_scores.npz",
+    "original_bytes": 1168,
+    "original_sha256": "32d14cb35bb91eec628a52f4eb26a1f45e90734cab4e9292b844be47d07eb886",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_control.json",
+    "original_bytes": 46398,
+    "original_sha256": "f1e9b297c4d4d9ee7957bd916dbb8d657c2ab44d2911139ec7acc2e004aabfa5",
+    "published_path": "fold_10_control.json.gz",
+    "published_sha256": "f4b912214d4b36951b5e92a4a88478df9a1449a00906c1a565b6b9bab624a9af"
+  },
+  {
+    "original_path": "fold_10_control.npz",
+    "original_bytes": 1345142,
+    "original_sha256": "cd1d944d96dca2b4e4a43fd872725c5d3217f70da011af4857ff5634ca6f830f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_control_scores.npz",
+    "original_bytes": 1146,
+    "original_sha256": "2e777bc4a51fcff8d9d5ffa8a51112961528996cbe5a189edf211602a26a1692",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_lagcov.json",
+    "original_bytes": 49624,
+    "original_sha256": "1ce86adc221e35a89b26f1ae7befa7aa67a2a352da9786cb9731b0f184c86fbb",
+    "published_path": "fold_10_lagcov.json.gz",
+    "published_sha256": "2ea4abafc719a4a04de7393b92d2f82c77751284181decdb5bf438ad758d0e53"
+  },
+  {
+    "original_path": "fold_10_lagcov.npz",
+    "original_bytes": 1519936,
+    "original_sha256": "0f60fb2cbff146f8310a375654e93e2236327a60d206b8112fd52c93d520d2fb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_lagcov_scores.npz",
+    "original_bytes": 1132,
+    "original_sha256": "be360795fb0e1b864d9cd0bab61c7abcfd9764c310de4a89808d3698e8a4aa19",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_nuisance.json",
+    "original_bytes": 46295,
+    "original_sha256": "d8cd98e7ee4ca3e056e517dc89563a265ffab74a2d36f275bb675c09c22c43d7",
+    "published_path": "fold_10_nuisance.json.gz",
+    "published_sha256": "08428f8c7f057997a50824fd1c6702391bffd861eaa9f4ca0a044e113c5dd6c9"
+  },
+  {
+    "original_path": "fold_10_nuisance.npz",
+    "original_bytes": 1350618,
+    "original_sha256": "ed7015b87e8d34e62f3696ca35437c2be4f8c037f2cc540c8c7b5f2000145adc",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_nuisance_scores.npz",
+    "original_bytes": 1139,
+    "original_sha256": "239def0717c484a1d039aaf2e523a29a04a69590423ba18de4f49e8e08a00407",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_oldbaseline.json",
+    "original_bytes": 10477,
+    "original_sha256": "8db6736a4488e130c5cd5222b34e8dc65179e063541317788507f3dbaf5bd6c1",
+    "published_path": "fold_10_oldbaseline.json.gz",
+    "published_sha256": "cdd6c3f8318c245cd120f5b431842461f1701e1c4be555c42a22f1db360f1827"
+  },
+  {
+    "original_path": "fold_10_oldbaseline.npz",
+    "original_bytes": 254317,
+    "original_sha256": "15a96b248b4fae96bc9bbaae847853e7ecccd05f53446d9913ccd91aa86b90e9",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_oldbaseline_scores.npz",
+    "original_bytes": 1140,
+    "original_sha256": "625e8dd7510e46f604292d782c03c85256dae8ff6223ed825fdf207e2ed5ea95",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_snorm.json",
+    "original_bytes": 230582,
+    "original_sha256": "17b0a934c678a9d697b5156ae767510d08a63f069473402905c1d237ec8cbeae",
+    "published_path": "fold_10_snorm.json.gz",
+    "published_sha256": "88bc9050082c2bd7666aac15102d33dc659eaba1653ec39b3171bd34077021a1"
+  },
+  {
+    "original_path": "fold_10_snorm.npz",
+    "original_bytes": 1345142,
+    "original_sha256": "cd1d944d96dca2b4e4a43fd872725c5d3217f70da011af4857ff5634ca6f830f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_snorm_lagcov.json",
+    "original_bytes": 247192,
+    "original_sha256": "612cff6e71fa6fff515862f2b0c8c0f50fa090080da2bf2878bbd1c5d998685f",
+    "published_path": "fold_10_snorm_lagcov.json.gz",
+    "published_sha256": "6d3eca534e1947c4fdb822a05364290f89a76af46e5c9293805a1e1322e46ff3"
+  },
+  {
+    "original_path": "fold_10_snorm_lagcov.npz",
+    "original_bytes": 1519936,
+    "original_sha256": "0f60fb2cbff146f8310a375654e93e2236327a60d206b8112fd52c93d520d2fb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_snorm_lagcov_scores.npz",
+    "original_bytes": 1156,
+    "original_sha256": "3e935eb58e73132de247a9a236892bbbb281bd16bf647c06d812e9d37fd5d281",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_snorm_nuisance.json",
+    "original_bytes": 230392,
+    "original_sha256": "da93655a25526d8d056ca3d2c9c45c814d6bb73e363c269796fbec2405ed316f",
+    "published_path": "fold_10_snorm_nuisance.json.gz",
+    "published_sha256": "eb7e96176dbec6b93b707c90759f96863aeb8d88a8d3a3957db6fcc4f448e697"
+  },
+  {
+    "original_path": "fold_10_snorm_nuisance.npz",
+    "original_bytes": 1350618,
+    "original_sha256": "ed7015b87e8d34e62f3696ca35437c2be4f8c037f2cc540c8c7b5f2000145adc",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_snorm_nuisance_scores.npz",
+    "original_bytes": 1165,
+    "original_sha256": "21e932daf4032afe924dbb72715f33b8e57cdac9e0a56af33ca4805444361bea",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_10_snorm_scores.npz",
+    "original_bytes": 1162,
+    "original_sha256": "56ab5b9575c836c0ec57f3d1741c787d2dece9ecae82188738aeb13cd36c681d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_control.json",
+    "original_bytes": 46129,
+    "original_sha256": "ee77c68c31c75d8e86b84ba0d9a3903f439d2eed43ec6dabbcbd86f477fe49ad",
+    "published_path": "fold_11_control.json.gz",
+    "published_sha256": "394dffe19b52fb27d183d30613534acf2f2cf49e32864a7b9af3819816c2715f"
+  },
+  {
+    "original_path": "fold_11_control.npz",
+    "original_bytes": 1346693,
+    "original_sha256": "a6ce1518c65d4ba95e4817c63828fc4e47c10f60037dc885d0b7e6b41f972e56",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_control_scores.npz",
+    "original_bytes": 1131,
+    "original_sha256": "59d64c3023175be25a01cdef4c5f4b4a236b37551332f9ace230ffe2dcc0e66c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_lagcov.json",
+    "original_bytes": 49400,
+    "original_sha256": "c1460c01d7e78ef65b1205e738e6b9e091f9d67f81b49702f0addcad8bd54459",
+    "published_path": "fold_11_lagcov.json.gz",
+    "published_sha256": "cc0e89312093d4ec7f2203e3ee5b4a7b8c41ef0a81611def1cb4c350dca5a726"
+  },
+  {
+    "original_path": "fold_11_lagcov.npz",
+    "original_bytes": 1529357,
+    "original_sha256": "694d91a573a81578d2d305fe7d1ac5e4d551d20edb6e7ce2cf567948f29b0851",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_lagcov_scores.npz",
+    "original_bytes": 1137,
+    "original_sha256": "865106593e6cea9b4ce5417de245c4ca8ce5ea79a7b448a2216ceb129f42e407",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_nuisance.json",
+    "original_bytes": 46164,
+    "original_sha256": "9f0cc980bba755dc57469c5fc7fd6160d7c3bc0cffe9a43eb601fa7be0af936f",
+    "published_path": "fold_11_nuisance.json.gz",
+    "published_sha256": "2d64c92cfe3dd89492b18409a424447612c7163ae9f1d8a033df3c23112269d3"
+  },
+  {
+    "original_path": "fold_11_nuisance.npz",
+    "original_bytes": 1359739,
+    "original_sha256": "b2f9147992a4ce0d7a2be9fc7618154fffc7fd5644ba1a4e1ffad361072ed3b3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_nuisance_scores.npz",
+    "original_bytes": 1142,
+    "original_sha256": "9330753f6603dc2a5d84fde1fbd26747d0ae3eefbaadd69ace1e7233d415ec67",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_oldbaseline.json",
+    "original_bytes": 10336,
+    "original_sha256": "d5723257eb39f20da6d5115f51972ba93364ef5b82c30f232254b6503c99069a",
+    "published_path": "fold_11_oldbaseline.json.gz",
+    "published_sha256": "7d29d7a23eaf77364296fb5447ac8ea8a569b828b788620f33dc08eadde4eb77"
+  },
+  {
+    "original_path": "fold_11_oldbaseline.npz",
+    "original_bytes": 257297,
+    "original_sha256": "f9d6645c109d03d8c2cdcd42ec2fa5bc8ae4a817a5fafd09894701aed56d0c4f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_oldbaseline_scores.npz",
+    "original_bytes": 1145,
+    "original_sha256": "d0514e5dc8e001947347e43a529c9db16957c76a5c1687d506e52cd207976246",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_snorm.json",
+    "original_bytes": 230519,
+    "original_sha256": "8c3d559d1ccf6ff5abe0bfc717a893789711bb77c6082c2907f4a5881740100e",
+    "published_path": "fold_11_snorm.json.gz",
+    "published_sha256": "7cae7627828b10e8b6f4f89993ef351e9bebeefd9a96872684e74803de33c770"
+  },
+  {
+    "original_path": "fold_11_snorm.npz",
+    "original_bytes": 1346693,
+    "original_sha256": "a6ce1518c65d4ba95e4817c63828fc4e47c10f60037dc885d0b7e6b41f972e56",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_snorm_lagcov.json",
+    "original_bytes": 246866,
+    "original_sha256": "0362685bb7a35674daedf2dfd598c477cc8e43ac700aaeb94121b25b521c3cf4",
+    "published_path": "fold_11_snorm_lagcov.json.gz",
+    "published_sha256": "15a8efaf16ee67a701cbf34db7c3959e2428836977d3f39119f09c7fb96a00d8"
+  },
+  {
+    "original_path": "fold_11_snorm_lagcov.npz",
+    "original_bytes": 1529357,
+    "original_sha256": "694d91a573a81578d2d305fe7d1ac5e4d551d20edb6e7ce2cf567948f29b0851",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_snorm_lagcov_scores.npz",
+    "original_bytes": 1163,
+    "original_sha256": "2dd92cd8d5914b98c92e44f0a815cf3c05f95506e792508c71de892a9a513cc5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_snorm_nuisance.json",
+    "original_bytes": 230541,
+    "original_sha256": "d61ba4384867b496377950b2c7168abf24bf89f03581c3a3e3c4e8c5f2ed956e",
+    "published_path": "fold_11_snorm_nuisance.json.gz",
+    "published_sha256": "2f5786e099e1ae8c8d467fa3510d1f21b4f042484b581dd608c741ac7a799e4f"
+  },
+  {
+    "original_path": "fold_11_snorm_nuisance.npz",
+    "original_bytes": 1359739,
+    "original_sha256": "b2f9147992a4ce0d7a2be9fc7618154fffc7fd5644ba1a4e1ffad361072ed3b3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_snorm_nuisance_scores.npz",
+    "original_bytes": 1159,
+    "original_sha256": "ccd45b830d5c7a2dee737b4088a214e72bb299555f7b20f5ce5afaaeddbb30da",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_11_snorm_scores.npz",
+    "original_bytes": 1152,
+    "original_sha256": "45336aa5692673ad20f12dc980aecca0218164c75613c0747bbb7157a0ac19c8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_control.json",
+    "original_bytes": 46089,
+    "original_sha256": "4bcb10d66cbaf253d1e9e7df2abb692655e0de580a0c305f0264505a126ab3e4",
+    "published_path": "fold_12_control.json.gz",
+    "published_sha256": "02e2f300c0a139c95411fcfa284bb60e99fb06bf47b14a7db3914b66a85c3231"
+  },
+  {
+    "original_path": "fold_12_control.npz",
+    "original_bytes": 1339737,
+    "original_sha256": "f985d34f824bc7283609c6a607c42666e0d93790d783f2582db603074f2055c4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_control_scores.npz",
+    "original_bytes": 1140,
+    "original_sha256": "1e7175ba0b689f25d9f42890375a9fe81567a4f134ea30891db071a31c5edecf",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_lagcov.json",
+    "original_bytes": 49400,
+    "original_sha256": "9ba4b5af98dc1a859cf5965948127ecd833eab592cdddccceab76c301659b1bf",
+    "published_path": "fold_12_lagcov.json.gz",
+    "published_sha256": "c65e58e7a093d5352f9493734bb7240ab3eaa740f7cb2589a6a5b092a0e84d3f"
+  },
+  {
+    "original_path": "fold_12_lagcov.npz",
+    "original_bytes": 1520067,
+    "original_sha256": "d027d86a4a0766774335ed1ff56751cfaae03fd184834f7ecf28a52fd77117eb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_lagcov_scores.npz",
+    "original_bytes": 1142,
+    "original_sha256": "1d8e6b82e5648a331a910c0ee27eb976d90b2ed80a6294b7e7d0cd794584a0bb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_nuisance.json",
+    "original_bytes": 46082,
+    "original_sha256": "0b1cecf5e1b93935ed723bbca64152e0ce86a3b4b464b2cfe7af34a2aa5c7199",
+    "published_path": "fold_12_nuisance.json.gz",
+    "published_sha256": "9a8d3f965c02d5914b77ecbc5b634f356d9b7af1e4be099509eb834c743ba246"
+  },
+  {
+    "original_path": "fold_12_nuisance.npz",
+    "original_bytes": 1347372,
+    "original_sha256": "34bc9d4b9ce32ceca220c85f7405bec1109e248384730f94a44aa477859a1dfa",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_nuisance_scores.npz",
+    "original_bytes": 1140,
+    "original_sha256": "b1a3af2db4ac095132728e3361f1b8e133e5973c67b7b94240df0e4c6c45f5d3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_oldbaseline.json",
+    "original_bytes": 10299,
+    "original_sha256": "731bab8f3f9646b93b5e1d1c0a7cddf334dc4e1c65279c74f8ea803fa8eedf0a",
+    "published_path": "fold_12_oldbaseline.json.gz",
+    "published_sha256": "4b864f3dd8dd1f4b81f71dd26f6ea96d64e9d598521e866554b89e53a2131b80"
+  },
+  {
+    "original_path": "fold_12_oldbaseline.npz",
+    "original_bytes": 254240,
+    "original_sha256": "cc2f24655792278457cb7bd769f0cc4c61e1e0d113532ba46c4aa4e72600968c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_oldbaseline_scores.npz",
+    "original_bytes": 1144,
+    "original_sha256": "ca44b6a791e5dceda8d3add04c28f5a6ffd97ab98764f56cdf69c52f991be201",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_snorm.json",
+    "original_bytes": 230378,
+    "original_sha256": "d43e2dc47bc596b9460fbe055f9ff0aa91a55ae6522ab53feadc160842d1dc3a",
+    "published_path": "fold_12_snorm.json.gz",
+    "published_sha256": "440b98399ab91f812925e3923e09a697ab1eddb09e27d6d0208c494f49035d7a"
+  },
+  {
+    "original_path": "fold_12_snorm.npz",
+    "original_bytes": 1339737,
+    "original_sha256": "f985d34f824bc7283609c6a607c42666e0d93790d783f2582db603074f2055c4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_snorm_lagcov.json",
+    "original_bytes": 246901,
+    "original_sha256": "ea664c707981a244c32dfd61ccce51610fa1c7e31fd1ea27b20040124fcaefa1",
+    "published_path": "fold_12_snorm_lagcov.json.gz",
+    "published_sha256": "464b42b3eaa3dfe4cc09e17424209f607d60635628e00bb8fb7fab04c5b280b1"
+  },
+  {
+    "original_path": "fold_12_snorm_lagcov.npz",
+    "original_bytes": 1520067,
+    "original_sha256": "d027d86a4a0766774335ed1ff56751cfaae03fd184834f7ecf28a52fd77117eb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_snorm_lagcov_scores.npz",
+    "original_bytes": 1166,
+    "original_sha256": "6ebd2d4bddb464904fe8965bd636bf51c2eecb6f90b689a621157ee93b95cb83",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_snorm_nuisance.json",
+    "original_bytes": 230322,
+    "original_sha256": "39d7c223daf6741373c08e0bcf2631274239844c0a659c7787d28523cf32dbfe",
+    "published_path": "fold_12_snorm_nuisance.json.gz",
+    "published_sha256": "de970ffd9b07f2d5bcf8b3554c6ec5aeba8eff23becbeb38a901a5274e105893"
+  },
+  {
+    "original_path": "fold_12_snorm_nuisance.npz",
+    "original_bytes": 1347372,
+    "original_sha256": "34bc9d4b9ce32ceca220c85f7405bec1109e248384730f94a44aa477859a1dfa",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_snorm_nuisance_scores.npz",
+    "original_bytes": 1167,
+    "original_sha256": "37a89b3b9a6e31cd4d1de0a711755cbf61c7107b926c519e261a6348164060c2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_12_snorm_scores.npz",
+    "original_bytes": 1168,
+    "original_sha256": "4f7c85d88c10621b75b453542b4ccb1e709c2039831fa933788beeb6a8fe24de",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_control.json",
+    "original_bytes": 46360,
+    "original_sha256": "3f17066ceed423f2c9137d99d06087569a91caef1852200f37e0be2c4fdff637",
+    "published_path": "fold_13_control.json.gz",
+    "published_sha256": "42796e4c6fb4326a34729eb9bf7483feea0de8aa0a279b51a8fbf14dcba5f75a"
+  },
+  {
+    "original_path": "fold_13_control.npz",
+    "original_bytes": 1343078,
+    "original_sha256": "3b232e2e09c269201f168303cc65769da67a44e3d1878ba15b7ec4773280ba1e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_control_scores.npz",
+    "original_bytes": 1143,
+    "original_sha256": "acbf97b828b79d823e598433e7add26750f3f19bbab07d8e8cd03de079e34c7b",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_lagcov.json",
+    "original_bytes": 49595,
+    "original_sha256": "5d10a762ba9a726b45e36c698f7a0df1be70d188cb98950116b2f66920bd00be",
+    "published_path": "fold_13_lagcov.json.gz",
+    "published_sha256": "6a9ddbe72102114e50dc64f87e963c7c29b58c568f0babe79fa7f2d36367528d"
+  },
+  {
+    "original_path": "fold_13_lagcov.npz",
+    "original_bytes": 1519819,
+    "original_sha256": "d7232f2dbefd1ec483acb39e6c9ab5c9e5625b630e0405867ae46111f04fafbb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_lagcov_scores.npz",
+    "original_bytes": 1141,
+    "original_sha256": "734f0c6d06644170da5ee7a515d67f9239e779c01aadfcfff5e601aba52800b3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_nuisance.json",
+    "original_bytes": 46270,
+    "original_sha256": "de8679a0403422031ccb9d7ca746462c11fbb3a585c2766266fa75cd701790df",
+    "published_path": "fold_13_nuisance.json.gz",
+    "published_sha256": "d1baf647d9cdc3ac628d1eceffd87c853cea90f67ce710857363fe13dad4408b"
+  },
+  {
+    "original_path": "fold_13_nuisance.npz",
+    "original_bytes": 1350158,
+    "original_sha256": "883fb4b9aab09b667fbc4ff320cc099edd40f919a682f4c30e8ba3c1e072719f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_nuisance_scores.npz",
+    "original_bytes": 1132,
+    "original_sha256": "2259a7273641e5fd48a5c2aa71e3ae988246b772dc47716ae506d610e5b2c57f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_oldbaseline.json",
+    "original_bytes": 10503,
+    "original_sha256": "4108201e3fa3543ed377cc53b385e6299a5b59e8b5237ecf348d278f8e4a2a0a",
+    "published_path": "fold_13_oldbaseline.json.gz",
+    "published_sha256": "7e97780071a743ec1abcee20f6978f6640c20bd4385f40bf0fd824776a0da9f6"
+  },
+  {
+    "original_path": "fold_13_oldbaseline.npz",
+    "original_bytes": 254282,
+    "original_sha256": "731f8a8955eef0a7eaedc68d9016a3400020d55c769bbb5194779aab51e06f62",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_oldbaseline_scores.npz",
+    "original_bytes": 1138,
+    "original_sha256": "19d42a9195daec29aa4194bd1ca6bc5822ecebaef04e773177346ae2b5fa3fd7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_snorm.json",
+    "original_bytes": 230714,
+    "original_sha256": "4e5cf611123496896d237bfda182f24d2e459bc0b576ccbe0c416ddae71ba2a0",
+    "published_path": "fold_13_snorm.json.gz",
+    "published_sha256": "eb0ab68cb4e7713a566ae39a38bcbda6a3c645901a46b3c412c870624d048c65"
+  },
+  {
+    "original_path": "fold_13_snorm.npz",
+    "original_bytes": 1343078,
+    "original_sha256": "3b232e2e09c269201f168303cc65769da67a44e3d1878ba15b7ec4773280ba1e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_snorm_lagcov.json",
+    "original_bytes": 247154,
+    "original_sha256": "9c894b15de6a8fba2ce0b25d808fc655d6b29580a57c5011dcb61811ed6816bc",
+    "published_path": "fold_13_snorm_lagcov.json.gz",
+    "published_sha256": "fd7825daa7e54d2551b3fb30f9ecdaf280b280e6a3ed652b60d3a28f3124949a"
+  },
+  {
+    "original_path": "fold_13_snorm_lagcov.npz",
+    "original_bytes": 1519819,
+    "original_sha256": "d7232f2dbefd1ec483acb39e6c9ab5c9e5625b630e0405867ae46111f04fafbb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_snorm_lagcov_scores.npz",
+    "original_bytes": 1165,
+    "original_sha256": "1f9102af3f9da6b6a1b66b62281b521d8adaafe8698f5509a429e9a8f3734e91",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_snorm_nuisance.json",
+    "original_bytes": 230664,
+    "original_sha256": "1c30eb52a14f9eeda40b0895b3a0965f952cd687e43455ea7c11cc91f93fc092",
+    "published_path": "fold_13_snorm_nuisance.json.gz",
+    "published_sha256": "e0a13f42eb88aba8f986e7d2923eae6801d12653f6ee771eefa59cbcbd20744e"
+  },
+  {
+    "original_path": "fold_13_snorm_nuisance.npz",
+    "original_bytes": 1350158,
+    "original_sha256": "883fb4b9aab09b667fbc4ff320cc099edd40f919a682f4c30e8ba3c1e072719f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_snorm_nuisance_scores.npz",
+    "original_bytes": 1157,
+    "original_sha256": "4351a3fc30f69f212c7e0a9559933d79aa5e558c1b6ab92339ac1aa9e27b9094",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_13_snorm_scores.npz",
+    "original_bytes": 1155,
+    "original_sha256": "b349fe3f87b5bc47d86ad9f423fca87a8a8b670b3947b44d2151367b4abd5008",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_control.json",
+    "original_bytes": 46278,
+    "original_sha256": "6a49d01cbfb0a5559a18b26ad883ab6302e14089db1c6ce9fccb278883b016be",
+    "published_path": "fold_14_control.json.gz",
+    "published_sha256": "1b5f36fe0ba8cec0024f0b579692cafcf7c2b08485ec7addf3ee7cdc14e125eb"
+  },
+  {
+    "original_path": "fold_14_control.npz",
+    "original_bytes": 1346700,
+    "original_sha256": "d0d7eca0dcffc9f884a56532ff40f8e573b467e859e1c554caf70d3a2e9c402e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_control_scores.npz",
+    "original_bytes": 1116,
+    "original_sha256": "dea7f020567b24a623844e1973841fa61c05ee2615c4b1090ba8ce4ed522aeff",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_lagcov.json",
+    "original_bytes": 49558,
+    "original_sha256": "f3234e0cb286ed6b23d88e10e74355c975737b7b905eef0c6462f3f3edc54d05",
+    "published_path": "fold_14_lagcov.json.gz",
+    "published_sha256": "07d6d00506d32aaac6bfa5113b684dda8c759c06725b4001f9116588240d6a20"
+  },
+  {
+    "original_path": "fold_14_lagcov.npz",
+    "original_bytes": 1524970,
+    "original_sha256": "50be74e7fe647a840fcbd310cea6b23faddae51e8327ec247f6d3dd7825ab071",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_lagcov_scores.npz",
+    "original_bytes": 1115,
+    "original_sha256": "f0b7c2253655bf4eda956c7f71888f0db37715ce06a3fdc4a1c07cd0589d93a2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_nuisance.json",
+    "original_bytes": 46252,
+    "original_sha256": "7f8693f6f0d6bff85e1637651f40aea397f23769273fa1b7f5fc61dafd947b38",
+    "published_path": "fold_14_nuisance.json.gz",
+    "published_sha256": "0e1adaeb5b2a48e7cbb0186c17258c1fe0213dfc70fee66dae62875a9a66d21b"
+  },
+  {
+    "original_path": "fold_14_nuisance.npz",
+    "original_bytes": 1351374,
+    "original_sha256": "c147617a6cca5fd02496c960edc37d51fb4fe390acaaa1ea6cfb39210cfbf4b8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_nuisance_scores.npz",
+    "original_bytes": 1115,
+    "original_sha256": "6b3ffc895841002564ffe2b0fa9a545129835f46cc04de3fdead64cf07ea97cf",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_oldbaseline.json",
+    "original_bytes": 10393,
+    "original_sha256": "f1d40775de14c1f42d1200e117a22ada26a997aa83de195a7dd63a57b876acc8",
+    "published_path": "fold_14_oldbaseline.json.gz",
+    "published_sha256": "3c392ead488dc2aa955e8d1380d5bc243bc453363e4ae8bdd44163a22c69fc45"
+  },
+  {
+    "original_path": "fold_14_oldbaseline.npz",
+    "original_bytes": 255692,
+    "original_sha256": "45c62b2390512f0c99b1833247d5cfe97adb437cdbf4662680f9b3f62a1ab994",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_oldbaseline_scores.npz",
+    "original_bytes": 1114,
+    "original_sha256": "d89628dd8c099c717621a87abfe5d00554336fe81521ce4e9f5832cd3c5feea8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_snorm.json",
+    "original_bytes": 230350,
+    "original_sha256": "98ac87d6fb0de77d989eb8abd10ac2ff52aa85fd69979a58821c2b5f6cd2ccfd",
+    "published_path": "fold_14_snorm.json.gz",
+    "published_sha256": "2f6c853fdc7c00c5d01c43259a34ee1de5c755583a5d571c455c07796b62e90c"
+  },
+  {
+    "original_path": "fold_14_snorm.npz",
+    "original_bytes": 1346700,
+    "original_sha256": "d0d7eca0dcffc9f884a56532ff40f8e573b467e859e1c554caf70d3a2e9c402e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_snorm_lagcov.json",
+    "original_bytes": 246824,
+    "original_sha256": "d18f666308ca73b9f25650ea2ec42d5ede9cb917abf3766be313e0e17ae8de30",
+    "published_path": "fold_14_snorm_lagcov.json.gz",
+    "published_sha256": "a7075d6b346fe7b23c12391d9ad5111bed8a466c533ce07076eb0cc79368527b"
+  },
+  {
+    "original_path": "fold_14_snorm_lagcov.npz",
+    "original_bytes": 1524970,
+    "original_sha256": "50be74e7fe647a840fcbd310cea6b23faddae51e8327ec247f6d3dd7825ab071",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_snorm_lagcov_scores.npz",
+    "original_bytes": 1143,
+    "original_sha256": "5619b26e19cfd8b2cc72adc0aa1c0b66be3e66eca07d5cde5fa64761568f9c0e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_snorm_nuisance.json",
+    "original_bytes": 230315,
+    "original_sha256": "33be38aaa29168484fad205a48b701dbf2a0f53d52398847c885f9a9f302c40f",
+    "published_path": "fold_14_snorm_nuisance.json.gz",
+    "published_sha256": "ad129e3c15169d7eb99b49bb0d77951831154585dc0a84f6491dfb541e64efcf"
+  },
+  {
+    "original_path": "fold_14_snorm_nuisance.npz",
+    "original_bytes": 1351374,
+    "original_sha256": "c147617a6cca5fd02496c960edc37d51fb4fe390acaaa1ea6cfb39210cfbf4b8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_snorm_nuisance_scores.npz",
+    "original_bytes": 1134,
+    "original_sha256": "d55a6414489dcee8df4f36ed075b3d69e33dbda58b475fed0fb762624aad7441",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_14_snorm_scores.npz",
+    "original_bytes": 1134,
+    "original_sha256": "f822e57ff6186507a74f367c3afcacbd09402da5d9bbbc5f943c78d62876f06a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_control.json",
+    "original_bytes": 46264,
+    "original_sha256": "12c87e23fdd666d61035da8fc122c7edfea0f2e6dc9a19d9d7ab604d2a279084",
+    "published_path": "fold_15_control.json.gz",
+    "published_sha256": "3ec528bfbbd5680852015ff99707f04a00594b11ccb3c2cf7ca6191eab9f2b57"
+  },
+  {
+    "original_path": "fold_15_control.npz",
+    "original_bytes": 1347020,
+    "original_sha256": "9fd62b41ead8307cf826e98f44ca4960b1dca7a798499cfd4b9e30d48685775a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_control_scores.npz",
+    "original_bytes": 1114,
+    "original_sha256": "97477d1713d0c97ff63d3532c8b85968ff95124d35b4f14b3019a2f61c7061ab",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_lagcov.json",
+    "original_bytes": 49576,
+    "original_sha256": "66156d5922e387c50df381e97af506e006cf5ef615e6dbe0d656c522b6235494",
+    "published_path": "fold_15_lagcov.json.gz",
+    "published_sha256": "6de3e9b826d2ab4185d1caf6d010704ea2d5390e1b2c8420a06ddd600daab269"
+  },
+  {
+    "original_path": "fold_15_lagcov.npz",
+    "original_bytes": 1529324,
+    "original_sha256": "be40d05e14f25a32dbc5a0d3d7c5992420ee1818291af7009c65949c891fdafb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_lagcov_scores.npz",
+    "original_bytes": 1110,
+    "original_sha256": "3946d55eed510e93807626dff7f276ee0bc6c349a63516db6a081087a7f35e1c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_nuisance.json",
+    "original_bytes": 46252,
+    "original_sha256": "898f10422984c8f6842404b6a4297fee343ba017bcc11b039530666588614c6f",
+    "published_path": "fold_15_nuisance.json.gz",
+    "published_sha256": "bfa209bfe40e29e58f3ca05003962c6c4d5fa60b4306bbc7d942775eeeff139b"
+  },
+  {
+    "original_path": "fold_15_nuisance.npz",
+    "original_bytes": 1357992,
+    "original_sha256": "b072ba4149f00a50b981d03c221c3583f1c575053e9284b2c875b11c39fcf1f5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_nuisance_scores.npz",
+    "original_bytes": 1116,
+    "original_sha256": "dccc210aacb1f0de44d3347a34226bde116e62c9f1518fea28eab82c376687e5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_oldbaseline.json",
+    "original_bytes": 10390,
+    "original_sha256": "7ab8477af671d10fc47b5b7e6da0b9d9b582d6040937ae3db6428776ee30a099",
+    "published_path": "fold_15_oldbaseline.json.gz",
+    "published_sha256": "c8c498bab97c44afedd08143148703d06d0292cbf4ebe65010a963ac83ff9707"
+  },
+  {
+    "original_path": "fold_15_oldbaseline.npz",
+    "original_bytes": 257203,
+    "original_sha256": "cee8c268a2cdb6e89f30b0e0cdc272f14da6bb65decd6a79d51b72b3053b6765",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_oldbaseline_scores.npz",
+    "original_bytes": 1115,
+    "original_sha256": "a8432e16afef31f447ab0afb1faa9f8d1759eb529b57aa005db5c00b8dad52e6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_snorm.json",
+    "original_bytes": 230350,
+    "original_sha256": "b022a2a051a76c249d843d0014c674c3381895362396fefe26edf93f79618103",
+    "published_path": "fold_15_snorm.json.gz",
+    "published_sha256": "520eae0568640481633eb9ccd39405a13ab3a027fb827070fb3719b31080fc3d"
+  },
+  {
+    "original_path": "fold_15_snorm.npz",
+    "original_bytes": 1347020,
+    "original_sha256": "9fd62b41ead8307cf826e98f44ca4960b1dca7a798499cfd4b9e30d48685775a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_snorm_lagcov.json",
+    "original_bytes": 246880,
+    "original_sha256": "ca931ca1c4c14b118e64857edf484ac5bafcfb16b689b8d5195525ceef5b32a9",
+    "published_path": "fold_15_snorm_lagcov.json.gz",
+    "published_sha256": "097a37cc5d3cc7dc550c0b5fc6cc2982152439452e5bb52b10a7b1f61dfd9961"
+  },
+  {
+    "original_path": "fold_15_snorm_lagcov.npz",
+    "original_bytes": 1529324,
+    "original_sha256": "be40d05e14f25a32dbc5a0d3d7c5992420ee1818291af7009c65949c891fdafb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_snorm_lagcov_scores.npz",
+    "original_bytes": 1133,
+    "original_sha256": "680461b2c4072cd0b3290023e47c54ec8a0548ed0ed2bfe2dc3c5ed91112cda8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_snorm_nuisance.json",
+    "original_bytes": 230257,
+    "original_sha256": "8a9c69dc8b27802b6b63f64acc32f8afc1d8944277ca9d35c9fd81ed18c7673d",
+    "published_path": "fold_15_snorm_nuisance.json.gz",
+    "published_sha256": "4b58fdfd17503e0e5270a25fefd35d6c4d9d3589205a06652fd6360d3cb0c84f"
+  },
+  {
+    "original_path": "fold_15_snorm_nuisance.npz",
+    "original_bytes": 1357992,
+    "original_sha256": "b072ba4149f00a50b981d03c221c3583f1c575053e9284b2c875b11c39fcf1f5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_snorm_nuisance_scores.npz",
+    "original_bytes": 1135,
+    "original_sha256": "4bceb8912dd8560b18238add5764e2a762a06513e11c128d9a49fe5d1b387b74",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_15_snorm_scores.npz",
+    "original_bytes": 1137,
+    "original_sha256": "ce254e902db5d0902f032aad82eb45897627c22f82d033871d18af278c3335b2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_control.json",
+    "original_bytes": 46074,
+    "original_sha256": "5bb363c6903ab5e7549b9fca03b9218ee53048947cf0fab24d94be5150b73a4f",
+    "published_path": "fold_16_control.json.gz",
+    "published_sha256": "bd208fb3d7fd994272b7df7790b68e512d85a4c6b6f37f022fe4f98e5d1070e2"
+  },
+  {
+    "original_path": "fold_16_control.npz",
+    "original_bytes": 1340361,
+    "original_sha256": "dd16cf0844a26196e8e4c72d1bf6d359b8336f965713093e8bd1d65fe4d35f98",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_control_scores.npz",
+    "original_bytes": 1139,
+    "original_sha256": "7aa6311ae2bb5b3520347ad8a8725de5f27ae68b59a6ce011a904a9386c02013",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_lagcov.json",
+    "original_bytes": 49384,
+    "original_sha256": "6ea9ae5ceb47b131567ad60cd5ede1fe857d679ca43aa3bbd83de7222a50de12",
+    "published_path": "fold_16_lagcov.json.gz",
+    "published_sha256": "fd90258657712566916d68c58f029eb616b8976f8155f529f19834885061c6e8"
+  },
+  {
+    "original_path": "fold_16_lagcov.npz",
+    "original_bytes": 1522346,
+    "original_sha256": "83e78a88f91c512671904a1e309007202d37d2dd2b686128172206d9a0a92139",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_lagcov_scores.npz",
+    "original_bytes": 1144,
+    "original_sha256": "1d97746a37d228b6cd39cb16064f1c14790beeab44e4493227cacc9a7426ee1e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_nuisance.json",
+    "original_bytes": 46056,
+    "original_sha256": "1cef9595dea2fc626eee3f8d23496f4a631b1d2a0cd3259efd3ed17cacb751da",
+    "published_path": "fold_16_nuisance.json.gz",
+    "published_sha256": "e2ffc7998e67f6202783ec6ba4bdb596f8b4b9a045d37f58e6bbaa5b51413917"
+  },
+  {
+    "original_path": "fold_16_nuisance.npz",
+    "original_bytes": 1351181,
+    "original_sha256": "694787e7c83ef9021e76ba3d54276b3ab27e8b1bd3e3e536691c45c48b58fea7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_nuisance_scores.npz",
+    "original_bytes": 1145,
+    "original_sha256": "bd9e838e39870ed292976cb88070a6bbb85846884570094b1087d61e4c859549",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_oldbaseline.json",
+    "original_bytes": 10247,
+    "original_sha256": "60658cc18ccad88bb4db759b642bdc1a33bfbd907ca34368821a44431f7c3313",
+    "published_path": "fold_16_oldbaseline.json.gz",
+    "published_sha256": "c2afef729bd5aba4e9c90afb78a19899bf8b76a7ed1dd2b87aadd11da7ba7011"
+  },
+  {
+    "original_path": "fold_16_oldbaseline.npz",
+    "original_bytes": 255014,
+    "original_sha256": "9f0c5d6197b3b58605353868ef9d209359ee702c77964ec05755f449e01c1d7c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_oldbaseline_scores.npz",
+    "original_bytes": 1132,
+    "original_sha256": "31b44c53ea2ac1ffc366a687c39466d3a8ca1b99c462bd3db1e87ef4dbf907a0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_snorm.json",
+    "original_bytes": 230446,
+    "original_sha256": "492809fb1204efce1b244a0ccbf57c57fedbb3cb64fb93f976b9e1faf2ec17b5",
+    "published_path": "fold_16_snorm.json.gz",
+    "published_sha256": "874091414c0a8da2b5d9da672305c119f2e7c9d26d1dafe89608ef622d267dbe"
+  },
+  {
+    "original_path": "fold_16_snorm.npz",
+    "original_bytes": 1340361,
+    "original_sha256": "dd16cf0844a26196e8e4c72d1bf6d359b8336f965713093e8bd1d65fe4d35f98",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_snorm_lagcov.json",
+    "original_bytes": 246925,
+    "original_sha256": "cfafb1bcdd85a40b511b69420eaa12a0f6c751832021e57f6a36fd8ed796cca2",
+    "published_path": "fold_16_snorm_lagcov.json.gz",
+    "published_sha256": "3fcb52f947748a6e8caffa41b79f9ff904a45428aa77014a6beccab890bf69f5"
+  },
+  {
+    "original_path": "fold_16_snorm_lagcov.npz",
+    "original_bytes": 1522346,
+    "original_sha256": "83e78a88f91c512671904a1e309007202d37d2dd2b686128172206d9a0a92139",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_snorm_lagcov_scores.npz",
+    "original_bytes": 1162,
+    "original_sha256": "f6a3878b94faf24227daa43e849823646e7d434166705933b093844328802704",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_snorm_nuisance.json",
+    "original_bytes": 230303,
+    "original_sha256": "2f0f77b5928a573f1798a8b0f65603df697c8a54dd3777d064aca9d6976727e1",
+    "published_path": "fold_16_snorm_nuisance.json.gz",
+    "published_sha256": "47643f97bf7cd23896c9b192ba119ca47545a27e523902eea632b68e2bcccd09"
+  },
+  {
+    "original_path": "fold_16_snorm_nuisance.npz",
+    "original_bytes": 1351181,
+    "original_sha256": "694787e7c83ef9021e76ba3d54276b3ab27e8b1bd3e3e536691c45c48b58fea7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_snorm_nuisance_scores.npz",
+    "original_bytes": 1154,
+    "original_sha256": "7903782e666ecce27a28fe28b7d65fb0793df2cd8ddb082798adde7b6be36718",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_16_snorm_scores.npz",
+    "original_bytes": 1160,
+    "original_sha256": "fb8da0a5f0784955563748d7b84ae6cf7896aac82e634eaa9184868e6c9a3f67",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_control.json",
+    "original_bytes": 46247,
+    "original_sha256": "1a10ccb82044490fb5b43ad356b881aae27b2b04f79e1bd67748497549df14fa",
+    "published_path": "fold_17_control.json.gz",
+    "published_sha256": "4ce4cba28550ac12643472581ebd013ec360209dfe867dffc670d05f042617f8"
+  },
+  {
+    "original_path": "fold_17_control.npz",
+    "original_bytes": 1341558,
+    "original_sha256": "f52829c35a3886bd3cc719caa277023b0e03458420fbaae85d8270222986a2b8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_control_scores.npz",
+    "original_bytes": 1143,
+    "original_sha256": "0253036b7889cc9ba6cd4fbf181543101b99771b7fd91c578ab99c3458e61f26",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_lagcov.json",
+    "original_bytes": 49570,
+    "original_sha256": "482cade98632974ec6138ba4d2e3136bcf36239e27b0634f76ec9fc9f0a9c6bd",
+    "published_path": "fold_17_lagcov.json.gz",
+    "published_sha256": "83d02984dbff9e077890940f50045d533e8f52740a6f34ceb84aabcc1e5c90a9"
+  },
+  {
+    "original_path": "fold_17_lagcov.npz",
+    "original_bytes": 1519930,
+    "original_sha256": "282cf76449b56b0aa9fc0130eeb541d017156f0a296d31048fad3618060f3799",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_lagcov_scores.npz",
+    "original_bytes": 1144,
+    "original_sha256": "6fcfb914b1d737aa6fff867388f10ef58a70f2eab6be11b907fe5cd60e50ee4f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_nuisance.json",
+    "original_bytes": 46249,
+    "original_sha256": "a832fdfc8b2b159e564b722644bad8b3460bf190b9a780aac148783aa08b36f3",
+    "published_path": "fold_17_nuisance.json.gz",
+    "published_sha256": "2caa7e93dc85766916a602c4ae36faab10335b139b419d3cafb7efdf913a0751"
+  },
+  {
+    "original_path": "fold_17_nuisance.npz",
+    "original_bytes": 1348012,
+    "original_sha256": "2b53a0f1d83de2e27a3feb6ab023e746456bd6a30ab544035bba28398c0afc2a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_nuisance_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "c2e888690fd0471297878e9882398b630bbff788030e52624a45d2eda30da375",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_oldbaseline.json",
+    "original_bytes": 10456,
+    "original_sha256": "d6e217c99681314956381930afe615c7e74f5506ecf05e54f7254e1915f2247b",
+    "published_path": "fold_17_oldbaseline.json.gz",
+    "published_sha256": "0b272a75a93772c5f2419ad68375d4aa5bc1805c1a4cab64fda4eda0f329a583"
+  },
+  {
+    "original_path": "fold_17_oldbaseline.npz",
+    "original_bytes": 254243,
+    "original_sha256": "a9b7ca86d5aba45684086f673d21a1317e7645058fcdddd8427089247c876480",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_oldbaseline_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "66453d901645b5496dd2d4044cc50c47df47e159b4aab606fdd42ea590093dd1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_snorm.json",
+    "original_bytes": 230616,
+    "original_sha256": "0dde786ca641dcb1f0d29284431f2cec0ded624d7dede0e7aee620f8c2005644",
+    "published_path": "fold_17_snorm.json.gz",
+    "published_sha256": "16a6b5a9565671012586adac5f527dd597f43b59c038961ac85e990fe7041381"
+  },
+  {
+    "original_path": "fold_17_snorm.npz",
+    "original_bytes": 1341558,
+    "original_sha256": "f52829c35a3886bd3cc719caa277023b0e03458420fbaae85d8270222986a2b8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_snorm_lagcov.json",
+    "original_bytes": 247224,
+    "original_sha256": "8871d4de2e12f16e48b1efeba865ff76da332a9eb33d718363971bd17a540b73",
+    "published_path": "fold_17_snorm_lagcov.json.gz",
+    "published_sha256": "493163e73394c9af01b4e7f86cb90c7dc10ed074154a2a79cef50308a6e75592"
+  },
+  {
+    "original_path": "fold_17_snorm_lagcov.npz",
+    "original_bytes": 1519930,
+    "original_sha256": "282cf76449b56b0aa9fc0130eeb541d017156f0a296d31048fad3618060f3799",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_snorm_lagcov_scores.npz",
+    "original_bytes": 1160,
+    "original_sha256": "2623c851d884fe8a007c97e73896dd43727be8525b22cef6aa0ba7a38efbcd7e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_snorm_nuisance.json",
+    "original_bytes": 230602,
+    "original_sha256": "608bd26ba63fdf59d37f0cb21da7489f89d266e218cd733e33682bdf2b88172d",
+    "published_path": "fold_17_snorm_nuisance.json.gz",
+    "published_sha256": "3dcef68d63943c0cb4a67671ca1864172004c5edb4d42540f38b7edd49da9612"
+  },
+  {
+    "original_path": "fold_17_snorm_nuisance.npz",
+    "original_bytes": 1348012,
+    "original_sha256": "2b53a0f1d83de2e27a3feb6ab023e746456bd6a30ab544035bba28398c0afc2a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_snorm_nuisance_scores.npz",
+    "original_bytes": 1156,
+    "original_sha256": "81e428da221c107fef07239aa1dba89248f58758c7f057878dcfbc2828f98ce0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_17_snorm_scores.npz",
+    "original_bytes": 1161,
+    "original_sha256": "a4b2dd8922561ad39ec9054ede1f332f247dab826e90ba0f3991cf1bf42943e2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_control.json",
+    "original_bytes": 46243,
+    "original_sha256": "7e53ca07288efbca918c1aa1029577be607cb19f47bc5569531fe9c4650b089e",
+    "published_path": "fold_18_control.json.gz",
+    "published_sha256": "7918d60cb24be0e1b9c8fd4f5c22bd511123849fa89c6349cae9015a7ba92ac0"
+  },
+  {
+    "original_path": "fold_18_control.npz",
+    "original_bytes": 1340262,
+    "original_sha256": "597ee99cb20eaba8df593813c2c696996f6906e0792d4cc9a964324c706a6e04",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_control_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "dec8d3beb5421708582050ec42fdaf7796572d432f929667594bd514d232af55",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_lagcov.json",
+    "original_bytes": 49604,
+    "original_sha256": "ee478ef9b34c7f32493b7bac03a70e15a959e096d4d52c8256d0533608466b4c",
+    "published_path": "fold_18_lagcov.json.gz",
+    "published_sha256": "ad84fd7dc4372a57a7811141d07ee36ad524cb85334d6dee68dd711c71676839"
+  },
+  {
+    "original_path": "fold_18_lagcov.npz",
+    "original_bytes": 1522259,
+    "original_sha256": "f74323bffc32a837483672ad232dcff9fc0c67e172212f92ea9cf33baa19f95e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_lagcov_scores.npz",
+    "original_bytes": 1139,
+    "original_sha256": "d53e6b4f669932ce23280982c7c69a372533827f3db46b9d8a2a4e89d13d2cf5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_nuisance.json",
+    "original_bytes": 46314,
+    "original_sha256": "4be905fb4ed855755b711380cfcda4cd6f9c4c217b66216fbd9a84f2dc473136",
+    "published_path": "fold_18_nuisance.json.gz",
+    "published_sha256": "6749399af4cbd6f90854440bfbcec1c705382a2df95bba8b073869b97a004057"
+  },
+  {
+    "original_path": "fold_18_nuisance.npz",
+    "original_bytes": 1351979,
+    "original_sha256": "f5183756e2924516f71ff3974ba2958dce9c426e384f30ea79c69e6a5362c874",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_nuisance_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "10f9c5c4253d637c77d62cb08fec7c6c1e8eca6fbc0b53d0e3db74f344548068",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_oldbaseline.json",
+    "original_bytes": 10419,
+    "original_sha256": "5faa210dff0840428cfde1721d65874a34851fb557176fe8f8ff6c85064cfdd2",
+    "published_path": "fold_18_oldbaseline.json.gz",
+    "published_sha256": "2513cb7b91d579453db088ce20a9793e74b3aa196d17446f3943dda53cda5eaa"
+  },
+  {
+    "original_path": "fold_18_oldbaseline.npz",
+    "original_bytes": 254978,
+    "original_sha256": "65f73b88f509656417d83331898174513c5701e5c6e695161c32373383884d67",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_oldbaseline_scores.npz",
+    "original_bytes": 1136,
+    "original_sha256": "fc76bb4dbec059dde06e9a2753c5263fec1d19e84dead5c3a62d285f0860284d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_snorm.json",
+    "original_bytes": 230497,
+    "original_sha256": "3fe68345cfafb9a8b1da762a4e56e23dc1241c24364e939749d896629a546737",
+    "published_path": "fold_18_snorm.json.gz",
+    "published_sha256": "5d3a74ceed352a2c88bb43d88923398d2a1ac4ac6de6d465c5759b9fde621046"
+  },
+  {
+    "original_path": "fold_18_snorm.npz",
+    "original_bytes": 1340262,
+    "original_sha256": "597ee99cb20eaba8df593813c2c696996f6906e0792d4cc9a964324c706a6e04",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_snorm_lagcov.json",
+    "original_bytes": 247145,
+    "original_sha256": "fdfd8dc13cfde6246210d049cec9b775953f41ed504a47a3c6dd620977a7e6bf",
+    "published_path": "fold_18_snorm_lagcov.json.gz",
+    "published_sha256": "4d471ed3fafd27fadf514003945ab89a0f26f572a4cb2f5137ac01b874f7a63d"
+  },
+  {
+    "original_path": "fold_18_snorm_lagcov.npz",
+    "original_bytes": 1522259,
+    "original_sha256": "f74323bffc32a837483672ad232dcff9fc0c67e172212f92ea9cf33baa19f95e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_snorm_lagcov_scores.npz",
+    "original_bytes": 1159,
+    "original_sha256": "89346239759f07ac7391026c14a4d871adff2df2339f81e43c2404e944acb705",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_snorm_nuisance.json",
+    "original_bytes": 230528,
+    "original_sha256": "70cf180296a81b8b95fcbf98009de19a871e35396b478bde159bea8f4b7910a1",
+    "published_path": "fold_18_snorm_nuisance.json.gz",
+    "published_sha256": "ccf77d4877f911dda2c07fd6f9829356fde601885a88b24bab82d58263f8eee9"
+  },
+  {
+    "original_path": "fold_18_snorm_nuisance.npz",
+    "original_bytes": 1351979,
+    "original_sha256": "f5183756e2924516f71ff3974ba2958dce9c426e384f30ea79c69e6a5362c874",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_snorm_nuisance_scores.npz",
+    "original_bytes": 1155,
+    "original_sha256": "b0539e5872554537c79b6e8186ae4cb7e511edf7d757670ca387f3bcd17db779",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_18_snorm_scores.npz",
+    "original_bytes": 1157,
+    "original_sha256": "c70dd9a74d81e9743e9addf135907e8ee7f87370d446574f957005d81829e50b",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_control.json",
+    "original_bytes": 46183,
+    "original_sha256": "2d7eac00ccf243a79770c689e5fbfea5436f46ee2472229b3a974337d15ac4e7",
+    "published_path": "fold_19_control.json.gz",
+    "published_sha256": "fef0994eaa313028edf5a9da697bfec1b25b6671bddefe0e84571254463f6a73"
+  },
+  {
+    "original_path": "fold_19_control.npz",
+    "original_bytes": 1344383,
+    "original_sha256": "8c74b3ccf50eca64729a5dd58bbfff71a491d1848e5d1764f941c20135f3927c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_control_scores.npz",
+    "original_bytes": 1134,
+    "original_sha256": "77a4d3df5e279aef89e25bd2841f8a9defe440855af80cc8d777e9b150ba579b",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_lagcov.json",
+    "original_bytes": 49495,
+    "original_sha256": "98de816fad6ae12cea12aaf58ecd68f2a9d0088134240d1ee543354d203c7083",
+    "published_path": "fold_19_lagcov.json.gz",
+    "published_sha256": "7573235d82191eb6e9bb715439a6093dd90239372d0e9480f5e944c30ebf501e"
+  },
+  {
+    "original_path": "fold_19_lagcov.npz",
+    "original_bytes": 1520289,
+    "original_sha256": "c18558ebce657355ea293bcb6addb65818d5093665bc7ce675e884d458270043",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_lagcov_scores.npz",
+    "original_bytes": 1144,
+    "original_sha256": "2e86c4fa579b42d4f66403d0ddd85ac8896ef85266a6fe366a816f359dfb66ff",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_nuisance.json",
+    "original_bytes": 46218,
+    "original_sha256": "9ae2e0c98902308b9934c6d488724f3f694b6c81df50df0c54ff5b046bdd37a1",
+    "published_path": "fold_19_nuisance.json.gz",
+    "published_sha256": "1d7fc327ab74a3822b7bb11527df1c611e9ed9d887fcaac7062ffcd1a4ad30ff"
+  },
+  {
+    "original_path": "fold_19_nuisance.npz",
+    "original_bytes": 1347504,
+    "original_sha256": "2cd625e3ab4d0bc305ff6cc2b696b6b1d86b9152939b729d11cc33fbb8e67276",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_nuisance_scores.npz",
+    "original_bytes": 1147,
+    "original_sha256": "6ae90a4898364137dc9b946c17703c5148069978cfa123140b0224cc1f409840",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_oldbaseline.json",
+    "original_bytes": 10444,
+    "original_sha256": "b8f9a0dad0251d1b9a8fabff80a6663a395d326254071547da9e7f68130121d9",
+    "published_path": "fold_19_oldbaseline.json.gz",
+    "published_sha256": "1e865f65be56bdfc6c9d791a6f2ac633a30443d1555f55910a603966ddd94544"
+  },
+  {
+    "original_path": "fold_19_oldbaseline.npz",
+    "original_bytes": 254208,
+    "original_sha256": "184b7319897ac0285645e542be9087c77e67980f9a96938ad4d1cb288c6e44c9",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_oldbaseline_scores.npz",
+    "original_bytes": 1133,
+    "original_sha256": "e172decef396a5cef4d23d9c6a690c6062a20c11a663e41716bb6a2581be3d29",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_snorm.json",
+    "original_bytes": 230522,
+    "original_sha256": "cc5b97fc65ffc540e0b9d1732ebc116535746115d8a055be242d1adc790b1f69",
+    "published_path": "fold_19_snorm.json.gz",
+    "published_sha256": "db7f4ea874e1ca2c5dc60fd7c1f8448902f63892f811a4ba9edfb2d9b5b34845"
+  },
+  {
+    "original_path": "fold_19_snorm.npz",
+    "original_bytes": 1344383,
+    "original_sha256": "8c74b3ccf50eca64729a5dd58bbfff71a491d1848e5d1764f941c20135f3927c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_snorm_lagcov.json",
+    "original_bytes": 247032,
+    "original_sha256": "2910b94a6389b34868ae194b25ecd2f75d0860be09fb801964e8f581ff5fc143",
+    "published_path": "fold_19_snorm_lagcov.json.gz",
+    "published_sha256": "0fbbfb619dea230d82b3c653257746d8993140bb35c2f4feefc3df7d64213db5"
+  },
+  {
+    "original_path": "fold_19_snorm_lagcov.npz",
+    "original_bytes": 1520289,
+    "original_sha256": "c18558ebce657355ea293bcb6addb65818d5093665bc7ce675e884d458270043",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_snorm_lagcov_scores.npz",
+    "original_bytes": 1161,
+    "original_sha256": "3b9056e6fc8c2bfbc018de9f08c6a49ba3e7fdeab0794150e3fec3e3655bcb2d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_snorm_nuisance.json",
+    "original_bytes": 230456,
+    "original_sha256": "88c6e053119e44a237423bb479c9bf35800942b05202af7719786438d8f50ae2",
+    "published_path": "fold_19_snorm_nuisance.json.gz",
+    "published_sha256": "5ab7bac171a20117949544d41b0583e5ee787ece56af431ae613b2c3e24ae691"
+  },
+  {
+    "original_path": "fold_19_snorm_nuisance.npz",
+    "original_bytes": 1347504,
+    "original_sha256": "2cd625e3ab4d0bc305ff6cc2b696b6b1d86b9152939b729d11cc33fbb8e67276",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_snorm_nuisance_scores.npz",
+    "original_bytes": 1164,
+    "original_sha256": "cdda9a325b2f27bf7034df0d8a4bb03b07ea8ff891fc8775a690e31fc05e2134",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "fold_19_snorm_scores.npz",
+    "original_bytes": 1156,
+    "original_sha256": "b623a19edf412208a039dedc0489f33a2568343a1770c9e19d951f3c63d218a5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "lock_attempt.json",
+    "original_bytes": 812,
+    "original_sha256": "e19c4f26519fc303043306ea56da8a3691f79d163dbdde2f2daa82ad993fbf8f",
+    "published_path": "lock_attempt.json.gz",
+    "published_sha256": "5165920268158c484b9b93a94460b1d13e70414b413ad52e0fb7f4afa0bc02c5"
+  },
+  {
+    "original_path": "protocol_lock.json",
+    "original_bytes": 201709,
+    "original_sha256": "01c79465d8bee4d72e497d75bfe74f52f8c69301d0c2c24fa87a6f3eacae2b47",
+    "published_path": "protocol_lock.json.gz",
+    "published_sha256": "9692b0ee31cfb8674efce760faac70c5786e7ca2721b746f2722c7b00c5977f7"
+  },
+  {
+    "original_path": "registration.json",
+    "original_bytes": 165898,
+    "original_sha256": "528f5bffa3bdabdef6e341c0ee6d2e930bbb2a147e3c95661727860a67c4bd30",
+    "published_path": "registration.json.gz",
+    "published_sha256": "2495e55eee8afffa52f8102a403d7a1ce9018434efa021d31e42f07b36f52a40"
+  },
+  {
+    "original_path": "test_attempt.json",
+    "original_bytes": 189,
+    "original_sha256": "4b1ce63f474871c1ebca3f19e42f85b1951725f60978ffffb87eb2715dcb3adb",
+    "published_path": "test_attempt.json.gz",
+    "published_sha256": "bc3c0ae07bd73ad403f1615f5b1b9dc0a1267cf2a9ccaf432c748b5656c039a7"
+  },
+  {
+    "original_path": "test_control_scores.npz",
+    "original_bytes": 2346,
+    "original_sha256": "d23b2d194eb57eb9c0fc80e31a317340bf1eb120df74d52992d839950b664053",
+    "published_path": "test_control_scores.npz",
+    "published_sha256": "d23b2d194eb57eb9c0fc80e31a317340bf1eb120df74d52992d839950b664053"
+  },
+  {
+    "original_path": "test_lagcov_scores.npz",
+    "original_bytes": 2338,
+    "original_sha256": "cefa1bd29d57bbb654d42085a740fe98f07f078c8adacdcbfc94af8d24c17575",
+    "published_path": "test_lagcov_scores.npz",
+    "published_sha256": "cefa1bd29d57bbb654d42085a740fe98f07f078c8adacdcbfc94af8d24c17575"
+  },
+  {
+    "original_path": "test_oldbaseline_scores.npz",
+    "original_bytes": 2347,
+    "original_sha256": "d1368103a35767c77e29d10eed96929e2d756f6bba5fab6b1be49c70440ea9b4",
+    "published_path": "test_oldbaseline_scores.npz",
+    "published_sha256": "d1368103a35767c77e29d10eed96929e2d756f6bba5fab6b1be49c70440ea9b4"
+  },
+  {
+    "original_path": "test_result.json",
+    "original_bytes": 200135,
+    "original_sha256": "2afb0cd64a6df1c35b758ecbb9b28e42a3b35e0fa100ced113bbcfd25f633e78",
+    "published_path": "test_result.json.gz",
+    "published_sha256": "5fad92b54a5b6d88755037643300e87d8ef472e795486dadc6fbfb381eefec7f"
+  }
+]
