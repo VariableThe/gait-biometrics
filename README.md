@@ -6,6 +6,8 @@ The pipeline now loads authentic WISDM subject IDs, keeps windows within recordi
 
 The [24 October hillclimb report](reports/2026-10-24-hillclimb/README.md) adds six-axis sensor fusion, rotation invariants, lagged covariance and independently calibrated enrollment-score blending. On five reused Santos cross-day test users, the latest selected method has descriptive EER 0%, with **3/200 false accepts (1.5%) and 0/50 genuine rejections** at its frozen calibration threshold. The matched lagcov control has 7/200 false accepts and 0/50 rejections. This is exploratory evidence: the threshold still misses the intended 1% test FAR, and these controlled leg recordings do not establish phone deployment. The report retains all candidate results, failed audit compute, source/artifact hashes, per-person errors, and runtime costs.
 
+The separate [DEV-only calibration follow-up](reports/2026-10-24-calibration/README.md) nominates pooled calibration followed by metric refitting: mean validation FAR 0.917%→0.836%, FRR 19.276%→15.126%, with 12/15 people no worse. It opens no original CALIB/TEST data and does not change the published test threshold. One development user remains completely rejected; the full report retains those per-person limits and the discarded first attempt.
+
 ## Run immediately
 
 Python 3.14.8 and the existing pinned torch 2.14.1 dependency set were validated on Linux x86_64. Create an isolated environment with uv:

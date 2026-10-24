@@ -1,0 +1,1822 @@
+[
+  {
+    "original_path": "features.npz",
+    "original_sha256": "7ac2c827bcdfe0b27a1c07cf14fc32430cbabe243b2de74848273124f5be8096",
+    "original_bytes": 849888,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_inner_0.npz",
+    "original_sha256": "a915293768630e69f66cfafdbdceff06c41148193cbbb2acdd82729092662792",
+    "original_bytes": 1380914,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_inner_1.npz",
+    "original_sha256": "9ef94551b221318ab2bc8a43677f8db1243a633646c4ca99773bef850fd85933",
+    "original_bytes": 1375672,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_inner_2.npz",
+    "original_sha256": "4bb51fbd844391d8385e9baa938e1b04c41235cf89f87114d854d894516ca4f1",
+    "original_bytes": 1375705,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_inner_3.npz",
+    "original_sha256": "8c31b5a53830bf881530b759858f29d1d844997eeb5f5f8ed3b5f7e0d250f72f",
+    "original_bytes": 1375651,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_mean_multi_A.npz",
+    "original_sha256": "c3b1cee6adb89ec44364ee07ef9375659fe2367d21882491545009358c2ee346",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_mean_multi_B.npz",
+    "original_sha256": "c3b1cee6adb89ec44364ee07ef9375659fe2367d21882491545009358c2ee346",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_mean_multi_C.npz",
+    "original_sha256": "cb53981045a5fe5dc9adb977deca79d0ac149c1cd8ee1c432828275450214a58",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_mean_multi_D.npz",
+    "original_sha256": "cb53981045a5fe5dc9adb977deca79d0ac149c1cd8ee1c432828275450214a58",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_mean_multi_pool.npz",
+    "original_sha256": "e8fba57c8eb7819fd97f25655ed0e8e3e2f2e07c459bc4dcb1830e41e5efa4b0",
+    "original_bytes": 3170,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_multi_A.npz",
+    "original_sha256": "284df309a3cdaf31ea0907df1e5f3ac0e3008ab4e05eb162dfff1f408243a971",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_multi_B.npz",
+    "original_sha256": "284df309a3cdaf31ea0907df1e5f3ac0e3008ab4e05eb162dfff1f408243a971",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_multi_C.npz",
+    "original_sha256": "3ed72492a03438f8bf276ba765489222863159394ef8e0c9052f01e77b1be41e",
+    "original_bytes": 1133,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_multi_D.npz",
+    "original_sha256": "3ed72492a03438f8bf276ba765489222863159394ef8e0c9052f01e77b1be41e",
+    "original_bytes": 1133,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_multi_pool.npz",
+    "original_sha256": "4286856170383e52b6e96a9c1470c5c78e91aa8a89fdc2ed109a04dc913c2a7b",
+    "original_bytes": 3176,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_00_refit.npz",
+    "original_sha256": "3109b9f491b3711113c9264f7ea14aa325453956b7c701ea5697bb1f185c5335",
+    "original_bytes": 1519585,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_inner_0.npz",
+    "original_sha256": "7888324152f7c27904d4d0cd2070e23eef212bb8b0a051f0b0613f5563caf596",
+    "original_bytes": 1383399,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_inner_1.npz",
+    "original_sha256": "2cd0c19117061271efcff60708b3279acbaa6bcd94acb5276aae0eaec72714d1",
+    "original_bytes": 1383414,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_inner_2.npz",
+    "original_sha256": "3f58e8fbbd75f8a35582e8fcb8536f694e2189accda5d691c20e762d1ecfaee0",
+    "original_bytes": 1383314,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_inner_3.npz",
+    "original_sha256": "a915293768630e69f66cfafdbdceff06c41148193cbbb2acdd82729092662792",
+    "original_bytes": 1380914,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_mean_multi_A.npz",
+    "original_sha256": "481131e5f16991341863dd068463a29ee8264ed1e947e15367dd6bae42bd859a",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_mean_multi_B.npz",
+    "original_sha256": "481131e5f16991341863dd068463a29ee8264ed1e947e15367dd6bae42bd859a",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_mean_multi_C.npz",
+    "original_sha256": "b6771f300afb7788f7d5cecfa92b72c78e8fe6fb598b76d89f75a1180082a3c0",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_mean_multi_D.npz",
+    "original_sha256": "b6771f300afb7788f7d5cecfa92b72c78e8fe6fb598b76d89f75a1180082a3c0",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_mean_multi_pool.npz",
+    "original_sha256": "f1c8de8a1e8d28fdc4559ed283f364b6093710d7ebd937cfa37e7c364f9a22f6",
+    "original_bytes": 3175,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_multi_A.npz",
+    "original_sha256": "5fc9499447eb62090401483aa4a5f07213c3420ca643891b68b005287daee9b4",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_multi_B.npz",
+    "original_sha256": "5fc9499447eb62090401483aa4a5f07213c3420ca643891b68b005287daee9b4",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_multi_C.npz",
+    "original_sha256": "b5e7a250c0c33f230367d50865fc4877457822c8fe28394dfb7565afcf1dc426",
+    "original_bytes": 1133,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_multi_D.npz",
+    "original_sha256": "b5e7a250c0c33f230367d50865fc4877457822c8fe28394dfb7565afcf1dc426",
+    "original_bytes": 1133,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_multi_pool.npz",
+    "original_sha256": "1de2d17ecc485a5626e92cdf8bc1549566ad800395613605a8a64c53347949cc",
+    "original_bytes": 3178,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_01_refit.npz",
+    "original_sha256": "ce557ac9a9947a857e3a9f5fc7d5e4f764216cde5e0d90962fa990a82ebf979a",
+    "original_bytes": 1527449,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_inner_0.npz",
+    "original_sha256": "e4ebca94fa9e5d737fecd3fce7af4cc89c0d698febbe214a4ce065b5455002c3",
+    "original_bytes": 1377997,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_inner_1.npz",
+    "original_sha256": "7add74945d1aa08d0a15c0fb60c7af37ca1f348997856499f5a863d75fb86433",
+    "original_bytes": 1377884,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_inner_2.npz",
+    "original_sha256": "9ef94551b221318ab2bc8a43677f8db1243a633646c4ca99773bef850fd85933",
+    "original_bytes": 1375672,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_inner_3.npz",
+    "original_sha256": "7888324152f7c27904d4d0cd2070e23eef212bb8b0a051f0b0613f5563caf596",
+    "original_bytes": 1383399,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_mean_multi_A.npz",
+    "original_sha256": "a136b709dd90eccc56b03b50872538ae10aa5d2e30e80a609734ae557b09a6bf",
+    "original_bytes": 1130,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_mean_multi_B.npz",
+    "original_sha256": "a136b709dd90eccc56b03b50872538ae10aa5d2e30e80a609734ae557b09a6bf",
+    "original_bytes": 1130,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_mean_multi_C.npz",
+    "original_sha256": "8160f88173ce30a8aed3c2ff32d699a62a9d5347d86ddac5cf3f5a0edc516e38",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_mean_multi_D.npz",
+    "original_sha256": "8160f88173ce30a8aed3c2ff32d699a62a9d5347d86ddac5cf3f5a0edc516e38",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_mean_multi_pool.npz",
+    "original_sha256": "df494cc53e4949d9a87b61ea102cc1c97f147ea7db45d1ba69f8c5c8f37588f7",
+    "original_bytes": 3178,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_multi_A.npz",
+    "original_sha256": "2f8bc3f0d604afdb8cc2cb50ab4500561dada50545034aad8bd220b8aadef426",
+    "original_bytes": 1143,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_multi_B.npz",
+    "original_sha256": "2f8bc3f0d604afdb8cc2cb50ab4500561dada50545034aad8bd220b8aadef426",
+    "original_bytes": 1143,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_multi_C.npz",
+    "original_sha256": "979ad7f90189fdd548599690ac6be0e476a840c5dacc8f9e698a61a867b6f54c",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_multi_D.npz",
+    "original_sha256": "979ad7f90189fdd548599690ac6be0e476a840c5dacc8f9e698a61a867b6f54c",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_multi_pool.npz",
+    "original_sha256": "be20db6683fef765b03123206ae9f64ec9c623a4799304b216f8491ae25cc988",
+    "original_bytes": 3180,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_02_refit.npz",
+    "original_sha256": "a1e5bd9e8ef427a2eba3cba0f73ec83fe36be7dde672ad2fa9d6638a834497c7",
+    "original_bytes": 1522098,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_inner_0.npz",
+    "original_sha256": "0f1212b3c87f97e3bb3310cce075565f06d39969c6c335a31c122263c7560e41",
+    "original_bytes": 1378050,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_inner_1.npz",
+    "original_sha256": "4bb51fbd844391d8385e9baa938e1b04c41235cf89f87114d854d894516ca4f1",
+    "original_bytes": 1375705,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_inner_2.npz",
+    "original_sha256": "2cd0c19117061271efcff60708b3279acbaa6bcd94acb5276aae0eaec72714d1",
+    "original_bytes": 1383414,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_inner_3.npz",
+    "original_sha256": "e4ebca94fa9e5d737fecd3fce7af4cc89c0d698febbe214a4ce065b5455002c3",
+    "original_bytes": 1377997,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_mean_multi_A.npz",
+    "original_sha256": "3f3ae385033657f9cad0d0fa8d15f37cf7c13da31325d4d3fda52570ca8fa91e",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_mean_multi_B.npz",
+    "original_sha256": "3f3ae385033657f9cad0d0fa8d15f37cf7c13da31325d4d3fda52570ca8fa91e",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_mean_multi_C.npz",
+    "original_sha256": "5c623a5d862798c2acd142454ec454488d00c758080b6b614ee0c7be9eb7db8b",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_mean_multi_D.npz",
+    "original_sha256": "5c623a5d862798c2acd142454ec454488d00c758080b6b614ee0c7be9eb7db8b",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_mean_multi_pool.npz",
+    "original_sha256": "c52d6561c3efb5e8f062d18fd1036216e3e9ffaa025b5d9e85c8fc5c174453aa",
+    "original_bytes": 3169,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_multi_A.npz",
+    "original_sha256": "5940dbd52d70d0743e03045294d62032cafff07c9edecec52dff4ed753f7b602",
+    "original_bytes": 1152,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_multi_B.npz",
+    "original_sha256": "5940dbd52d70d0743e03045294d62032cafff07c9edecec52dff4ed753f7b602",
+    "original_bytes": 1152,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_multi_C.npz",
+    "original_sha256": "25a269c0a09042b536a7253ac2dea7d3e71fbe95716a2b8a97796e99376261c7",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_multi_D.npz",
+    "original_sha256": "25a269c0a09042b536a7253ac2dea7d3e71fbe95716a2b8a97796e99376261c7",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_multi_pool.npz",
+    "original_sha256": "5dcae1d4e1f46af550fc77130147f27987ca6de2b91afc3d51cb08f937d5e896",
+    "original_bytes": 3162,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_03_refit.npz",
+    "original_sha256": "375cb63b6709a14df1bac23c8abe937377a1f4448144f2f9554902d322481b50",
+    "original_bytes": 1522409,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_inner_0.npz",
+    "original_sha256": "8c31b5a53830bf881530b759858f29d1d844997eeb5f5f8ed3b5f7e0d250f72f",
+    "original_bytes": 1375651,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_inner_1.npz",
+    "original_sha256": "3f58e8fbbd75f8a35582e8fcb8536f694e2189accda5d691c20e762d1ecfaee0",
+    "original_bytes": 1383314,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_inner_2.npz",
+    "original_sha256": "7add74945d1aa08d0a15c0fb60c7af37ca1f348997856499f5a863d75fb86433",
+    "original_bytes": 1377884,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_inner_3.npz",
+    "original_sha256": "0f1212b3c87f97e3bb3310cce075565f06d39969c6c335a31c122263c7560e41",
+    "original_bytes": 1378050,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_mean_multi_A.npz",
+    "original_sha256": "36245e2418689e15f887d740f8ee6b3cb4bd8d7d8b24cd5fddd5ecf0ea560875",
+    "original_bytes": 1107,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_mean_multi_B.npz",
+    "original_sha256": "36245e2418689e15f887d740f8ee6b3cb4bd8d7d8b24cd5fddd5ecf0ea560875",
+    "original_bytes": 1107,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_mean_multi_C.npz",
+    "original_sha256": "09288a9f955ef437f942232a0d26214a5983ccbb4a5d9664abe16525998d828c",
+    "original_bytes": 1115,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_mean_multi_D.npz",
+    "original_sha256": "09288a9f955ef437f942232a0d26214a5983ccbb4a5d9664abe16525998d828c",
+    "original_bytes": 1115,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_mean_multi_pool.npz",
+    "original_sha256": "7fc42b2a94fce6932de8f8eeb5f487626086350e9decd2d2a522bc79c8f948cc",
+    "original_bytes": 3193,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_multi_A.npz",
+    "original_sha256": "d195f0493872698134f1849b83724ea6da80d88dad210bd30f40807d41c2586e",
+    "original_bytes": 1114,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_multi_B.npz",
+    "original_sha256": "d195f0493872698134f1849b83724ea6da80d88dad210bd30f40807d41c2586e",
+    "original_bytes": 1114,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_multi_C.npz",
+    "original_sha256": "f9d3cda182d3d84fb0e695036c41937f502a0872e7e48664e537abd24b741383",
+    "original_bytes": 1127,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_multi_D.npz",
+    "original_sha256": "f9d3cda182d3d84fb0e695036c41937f502a0872e7e48664e537abd24b741383",
+    "original_bytes": 1127,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_multi_pool.npz",
+    "original_sha256": "d703ecc61038f1ebcb234eab66c01a1ff6f6a1ab89e0891d44e6c059690ff366",
+    "original_bytes": 3198,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_04_refit.npz",
+    "original_sha256": "3c4f0528ebabc75686d30ca53cc9595dc3a2ce17452773aa4be2873cf2bcb465",
+    "original_bytes": 1522200,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_inner_0.npz",
+    "original_sha256": "b2932600f5f7592404f9a80342e436d12684bf25bd50e17216b972dfc8eab997",
+    "original_bytes": 1378463,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_inner_1.npz",
+    "original_sha256": "febf50ea194fddf41dbf55a3376028aa4203c80db5ac0ce7c4536e1d296f9861",
+    "original_bytes": 1380618,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_inner_2.npz",
+    "original_sha256": "dec3bfb2f84b657c74c00a32e8c7888e703291e8d5d8ad17e5209dc8ac4fc7a4",
+    "original_bytes": 1380594,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_inner_3.npz",
+    "original_sha256": "3f4a566d1dd0c830592308a57e011ca6ef00f0a5a9f53e83dc4161d4ac95cb44",
+    "original_bytes": 1374093,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_mean_multi_A.npz",
+    "original_sha256": "67191dc3c7f0004f02adc67156b8e472dd68b409c419f1b326479f02934eb5f7",
+    "original_bytes": 1131,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_mean_multi_B.npz",
+    "original_sha256": "67191dc3c7f0004f02adc67156b8e472dd68b409c419f1b326479f02934eb5f7",
+    "original_bytes": 1131,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_mean_multi_C.npz",
+    "original_sha256": "6c0b76d5290f51a16166aa3781995d70bd24133993d22849d3c3a071662d5da9",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_mean_multi_D.npz",
+    "original_sha256": "6c0b76d5290f51a16166aa3781995d70bd24133993d22849d3c3a071662d5da9",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_mean_multi_pool.npz",
+    "original_sha256": "a6fdfeacd3c09b41ff7575f1f30e341ad23f5986abbcae8f4dc1fbff10811607",
+    "original_bytes": 3174,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_multi_A.npz",
+    "original_sha256": "729367646c67e3d10af5224f35d4ab25bf93a47c36a512138da35ebc28e9a142",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_multi_B.npz",
+    "original_sha256": "729367646c67e3d10af5224f35d4ab25bf93a47c36a512138da35ebc28e9a142",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_multi_C.npz",
+    "original_sha256": "714c1dbcba8245f64a3faa195912126ed1935bc089e3e65e59d758b707a90d96",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_multi_D.npz",
+    "original_sha256": "714c1dbcba8245f64a3faa195912126ed1935bc089e3e65e59d758b707a90d96",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_multi_pool.npz",
+    "original_sha256": "958b46d4252bff48a092fcc9da50e297c60544d8695e5c95844adc0315b432fd",
+    "original_bytes": 3169,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_05_refit.npz",
+    "original_sha256": "781f4a883aa540e873082ae175f5f5a7e85a8ec262c4ad5fbf3edc1cc97e9ea9",
+    "original_bytes": 1519840,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_inner_0.npz",
+    "original_sha256": "fb8dd3d768d599b9272bedb9259c3cfb18156aa569549fc48ae63abe9fd50ac8",
+    "original_bytes": 1382091,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_inner_1.npz",
+    "original_sha256": "5b59d3475e2ab3da12504e3d8eea32617e5b1ad4b0e6c6e5e994659f30c82f47",
+    "original_bytes": 1385780,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_inner_2.npz",
+    "original_sha256": "d98f906c30616e7185e9802b3470d9ec06257a43adb2d2bef65dcf1d5a535110",
+    "original_bytes": 1378098,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_inner_3.npz",
+    "original_sha256": "b2932600f5f7592404f9a80342e436d12684bf25bd50e17216b972dfc8eab997",
+    "original_bytes": 1378463,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_mean_multi_A.npz",
+    "original_sha256": "9ba4a519247beff01d4c7ddd40d5230097c68d3965ed9e6c2652d2205be87bae",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_mean_multi_B.npz",
+    "original_sha256": "9ba4a519247beff01d4c7ddd40d5230097c68d3965ed9e6c2652d2205be87bae",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_mean_multi_C.npz",
+    "original_sha256": "3db0d81a62662fa783a0f8abe6c1551a29848c60307b3b69e8001bb8361dcccd",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_mean_multi_D.npz",
+    "original_sha256": "3db0d81a62662fa783a0f8abe6c1551a29848c60307b3b69e8001bb8361dcccd",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_mean_multi_pool.npz",
+    "original_sha256": "7ed483abc15d35a005ee9e97a9b5f7b2604e3ad136b1e0b92d50969440b765ab",
+    "original_bytes": 3171,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_multi_A.npz",
+    "original_sha256": "dfc68e23658c0b445138d7b7a5d3e8ef36ca42b8dcc404daa06cda954fe366e2",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_multi_B.npz",
+    "original_sha256": "dfc68e23658c0b445138d7b7a5d3e8ef36ca42b8dcc404daa06cda954fe366e2",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_multi_C.npz",
+    "original_sha256": "12cf7dabf09e26f67c9933488d71a5be67dabb63aa28f88161859fc6b977972f",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_multi_D.npz",
+    "original_sha256": "12cf7dabf09e26f67c9933488d71a5be67dabb63aa28f88161859fc6b977972f",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_multi_pool.npz",
+    "original_sha256": "f6a5a837607cdbe74ede7a58c2d2139381fbe74d126d73baf261189a654dc26e",
+    "original_bytes": 3173,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_06_refit.npz",
+    "original_sha256": "b8e9d25cc854d2d85d3c7ea4ff5d7c6ae3b02fcfa8816a45804b1b437516fa78",
+    "original_bytes": 1524837,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_inner_0.npz",
+    "original_sha256": "468639e9736db494f967a2aa1db8f0043fa4a968cc91038e23ae544e6e5c4c6c",
+    "original_bytes": 1382986,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_inner_1.npz",
+    "original_sha256": "7331fdf234419b0021aad85295bba67c86c2ced74d588d44765a87cca85536dc",
+    "original_bytes": 1375348,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_inner_2.npz",
+    "original_sha256": "febf50ea194fddf41dbf55a3376028aa4203c80db5ac0ce7c4536e1d296f9861",
+    "original_bytes": 1380618,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_inner_3.npz",
+    "original_sha256": "fb8dd3d768d599b9272bedb9259c3cfb18156aa569549fc48ae63abe9fd50ac8",
+    "original_bytes": 1382091,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_mean_multi_A.npz",
+    "original_sha256": "6cca4b5c14be7b126c6779680552383a305902f3024dfb243381706cd0e29699",
+    "original_bytes": 1110,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_mean_multi_B.npz",
+    "original_sha256": "6cca4b5c14be7b126c6779680552383a305902f3024dfb243381706cd0e29699",
+    "original_bytes": 1110,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_mean_multi_C.npz",
+    "original_sha256": "f0a8b07ca3d07d381e5ac771f1b3daa566e3528a112be2dee99b07922eaa7c6e",
+    "original_bytes": 1110,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_mean_multi_D.npz",
+    "original_sha256": "f0a8b07ca3d07d381e5ac771f1b3daa566e3528a112be2dee99b07922eaa7c6e",
+    "original_bytes": 1110,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_mean_multi_pool.npz",
+    "original_sha256": "dec3d862d313fe6e008fc2799fe7cb2e52eb6ed31a1bcff0c25847462d3693ab",
+    "original_bytes": 3193,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_multi_A.npz",
+    "original_sha256": "024f1506972a22d707abe6c18f3abf78efa8f03728ad5b28991c58e5c2803e74",
+    "original_bytes": 1113,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_multi_B.npz",
+    "original_sha256": "024f1506972a22d707abe6c18f3abf78efa8f03728ad5b28991c58e5c2803e74",
+    "original_bytes": 1113,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_multi_C.npz",
+    "original_sha256": "18e3ac8fae70644e6d60d49559bfc8adae0313cfec332ac0ebecddd479ebe88c",
+    "original_bytes": 1116,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_multi_D.npz",
+    "original_sha256": "18e3ac8fae70644e6d60d49559bfc8adae0313cfec332ac0ebecddd479ebe88c",
+    "original_bytes": 1116,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_multi_pool.npz",
+    "original_sha256": "058569e7e926c99b13009685f1185f713782f064532e146bb146043cdfb47977",
+    "original_bytes": 3191,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_07_refit.npz",
+    "original_sha256": "1c2265c9dccd24cc7705f031c2ab2f77cae89ef9354933cff260f27d869c5fa1",
+    "original_bytes": 1522324,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_inner_0.npz",
+    "original_sha256": "6733e3fef588b44c4e7ec1a996726cf24710ba7e91eee6e9824a343ab4356d50",
+    "original_bytes": 1380617,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_inner_1.npz",
+    "original_sha256": "dec3bfb2f84b657c74c00a32e8c7888e703291e8d5d8ad17e5209dc8ac4fc7a4",
+    "original_bytes": 1380594,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_inner_2.npz",
+    "original_sha256": "5b59d3475e2ab3da12504e3d8eea32617e5b1ad4b0e6c6e5e994659f30c82f47",
+    "original_bytes": 1385780,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_inner_3.npz",
+    "original_sha256": "468639e9736db494f967a2aa1db8f0043fa4a968cc91038e23ae544e6e5c4c6c",
+    "original_bytes": 1382986,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_mean_multi_A.npz",
+    "original_sha256": "db3389c3fc99134fe09a2445b9f8c94d0f7dfc777839fb3e36c8433ab9bf35ae",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_mean_multi_B.npz",
+    "original_sha256": "db3389c3fc99134fe09a2445b9f8c94d0f7dfc777839fb3e36c8433ab9bf35ae",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_mean_multi_C.npz",
+    "original_sha256": "72276d6b27a50e1b64a5f4fe35d3abdde2b4483ece659be4afb9fecf49bd62be",
+    "original_bytes": 1133,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_mean_multi_D.npz",
+    "original_sha256": "72276d6b27a50e1b64a5f4fe35d3abdde2b4483ece659be4afb9fecf49bd62be",
+    "original_bytes": 1133,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_mean_multi_pool.npz",
+    "original_sha256": "40b62d7240ef2f0f29a909eb963c106f40d7327c53ab3b6b4b2365bdfac1bdb3",
+    "original_bytes": 3167,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_multi_A.npz",
+    "original_sha256": "2c8b4132043d5e355f081a61fc6a26f718ed4939ecc712dc443a74e9f0616338",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_multi_B.npz",
+    "original_sha256": "2c8b4132043d5e355f081a61fc6a26f718ed4939ecc712dc443a74e9f0616338",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_multi_C.npz",
+    "original_sha256": "e7bb1419941c719384fb1902a051eb61cd1f9b8427a674582e3bcfacf9c1c027",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_multi_D.npz",
+    "original_sha256": "e7bb1419941c719384fb1902a051eb61cd1f9b8427a674582e3bcfacf9c1c027",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_multi_pool.npz",
+    "original_sha256": "431fc09a09f327f59833876a6938e9a1a81c9e84a499a8229c3484527a044d33",
+    "original_bytes": 3166,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_08_refit.npz",
+    "original_sha256": "374781b0002f0e287cb3b0a7c0aacf6fe5df548260ed69809144c387f165d7e1",
+    "original_bytes": 1527428,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_inner_0.npz",
+    "original_sha256": "3f4a566d1dd0c830592308a57e011ca6ef00f0a5a9f53e83dc4161d4ac95cb44",
+    "original_bytes": 1374093,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_inner_1.npz",
+    "original_sha256": "d98f906c30616e7185e9802b3470d9ec06257a43adb2d2bef65dcf1d5a535110",
+    "original_bytes": 1378098,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_inner_2.npz",
+    "original_sha256": "7331fdf234419b0021aad85295bba67c86c2ced74d588d44765a87cca85536dc",
+    "original_bytes": 1375348,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_inner_3.npz",
+    "original_sha256": "6733e3fef588b44c4e7ec1a996726cf24710ba7e91eee6e9824a343ab4356d50",
+    "original_bytes": 1380617,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_mean_multi_A.npz",
+    "original_sha256": "4adb44b7fb54e27aef85ed13184f940f1df7b2819833c10978352bf7d1118f1c",
+    "original_bytes": 1145,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_mean_multi_B.npz",
+    "original_sha256": "4adb44b7fb54e27aef85ed13184f940f1df7b2819833c10978352bf7d1118f1c",
+    "original_bytes": 1145,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_mean_multi_C.npz",
+    "original_sha256": "09f648fa089dffc5723c62ca9a9759197e40ebe40c746621ea1ce05e716f47a5",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_mean_multi_D.npz",
+    "original_sha256": "09f648fa089dffc5723c62ca9a9759197e40ebe40c746621ea1ce05e716f47a5",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_mean_multi_pool.npz",
+    "original_sha256": "755b02cb43b5f8fc28f9fa2ae2c2719edba569393dc661b079b24b2ce57d7219",
+    "original_bytes": 3172,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_multi_A.npz",
+    "original_sha256": "9725251ee3e9d56bcc124f827dd669f8228bc7168183958733b8ca35476cd04b",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_multi_B.npz",
+    "original_sha256": "9725251ee3e9d56bcc124f827dd669f8228bc7168183958733b8ca35476cd04b",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_multi_C.npz",
+    "original_sha256": "45fcd0246909e55db61d1ee488de24174785a174c8bedccdad220b80c6d114a5",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_multi_D.npz",
+    "original_sha256": "45fcd0246909e55db61d1ee488de24174785a174c8bedccdad220b80c6d114a5",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_multi_pool.npz",
+    "original_sha256": "2506a6cda2ca147e1ee6ebf12d325a949b53e270dbf2452df6fc0938cd52cc99",
+    "original_bytes": 3179,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_09_refit.npz",
+    "original_sha256": "f4c5618a11231fb3c887cd5285bf327585fbfffe2327b443b99032f02bdd7f54",
+    "original_bytes": 1519669,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_inner_0.npz",
+    "original_sha256": "3df58a4794498ff5ef1c5dc800737ce558c583416a120dbb6e23d0cc994b3fc4",
+    "original_bytes": 1382636,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_inner_1.npz",
+    "original_sha256": "5e316e48d7e5ce82e46f478f3c849d5de69fae44c5a182486120c33b09b34383",
+    "original_bytes": 1373416,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_inner_2.npz",
+    "original_sha256": "f55580f4603ba4dba8775e77e2dc6be0632f3590d0c176782497dcdf50c0a425",
+    "original_bytes": 1373382,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_inner_3.npz",
+    "original_sha256": "595e449522f4f818e3c1d4e352fda516e62d8dcb3f5b445fe289e006529c40f8",
+    "original_bytes": 1378199,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_mean_multi_A.npz",
+    "original_sha256": "965ed2741c7bd0f655009bd55abcaa3e0c8e3690b5cd009ce9b1ee8018ba5e36",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_mean_multi_B.npz",
+    "original_sha256": "965ed2741c7bd0f655009bd55abcaa3e0c8e3690b5cd009ce9b1ee8018ba5e36",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_mean_multi_C.npz",
+    "original_sha256": "04adc0c171eec178915952368292c1cdbc65ff64f639fb278cf0f18083624432",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_mean_multi_D.npz",
+    "original_sha256": "04adc0c171eec178915952368292c1cdbc65ff64f639fb278cf0f18083624432",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_mean_multi_pool.npz",
+    "original_sha256": "ac7a3c931fc6faf37e2dbf2ee047e3331a87b6e2e77a125df48215a485cf19f1",
+    "original_bytes": 3173,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_multi_A.npz",
+    "original_sha256": "f6befc647c79c3af9f4b202b57d66ce7a34d800f2fafcab4165cfd092c642d05",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_multi_B.npz",
+    "original_sha256": "f6befc647c79c3af9f4b202b57d66ce7a34d800f2fafcab4165cfd092c642d05",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_multi_C.npz",
+    "original_sha256": "be360795fb0e1b864d9cd0bab61c7abcfd9764c310de4a89808d3698e8a4aa19",
+    "original_bytes": 1132,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_multi_D.npz",
+    "original_sha256": "be360795fb0e1b864d9cd0bab61c7abcfd9764c310de4a89808d3698e8a4aa19",
+    "original_bytes": 1132,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_multi_pool.npz",
+    "original_sha256": "3a0cc1b02f0ecb140377ca9bb279413d6a2fd066aaa0f40ad83a679959e3d64d",
+    "original_bytes": 3161,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_10_refit.npz",
+    "original_sha256": "1f3d6b4a01503446ff15f6f200c71d2fce2b0834bac452109c823fed3258d3b5",
+    "original_bytes": 1519936,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_inner_0.npz",
+    "original_sha256": "96b882de3833b2be12242976c631b06f765d758d1f6887e2ffc2d402b8686565",
+    "original_bytes": 1382707,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_inner_1.npz",
+    "original_sha256": "ca208f7f7489417e6a61b300b639f618a2905c677d7194d0f83a03e588d9e63c",
+    "original_bytes": 1382808,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_inner_2.npz",
+    "original_sha256": "d54ce919ecd5f15742552794f5bd5bff31f0bbd87cd662d176322f90b8507def",
+    "original_bytes": 1387700,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_inner_3.npz",
+    "original_sha256": "3df58a4794498ff5ef1c5dc800737ce558c583416a120dbb6e23d0cc994b3fc4",
+    "original_bytes": 1382636,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_mean_multi_A.npz",
+    "original_sha256": "a3b0241ec12073be581cdff31610ccaa4364ba6dcb7db6adf779267025237e74",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_mean_multi_B.npz",
+    "original_sha256": "a3b0241ec12073be581cdff31610ccaa4364ba6dcb7db6adf779267025237e74",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_mean_multi_C.npz",
+    "original_sha256": "393d253bde154fbf4b8a1c5aeb96e39a8bfb9943f49584713d517e7a06e43b4b",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_mean_multi_D.npz",
+    "original_sha256": "393d253bde154fbf4b8a1c5aeb96e39a8bfb9943f49584713d517e7a06e43b4b",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_mean_multi_pool.npz",
+    "original_sha256": "c5833b4331688a8feff801038215d6d2aa30e7f6add37c7103122184b0f0fc40",
+    "original_bytes": 3172,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_multi_A.npz",
+    "original_sha256": "6d5439e9fa6b4fe2ec888ab3fb17cf37d1627e865b8ab3a1197f44c9b9df8f65",
+    "original_bytes": 1132,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_multi_B.npz",
+    "original_sha256": "6d5439e9fa6b4fe2ec888ab3fb17cf37d1627e865b8ab3a1197f44c9b9df8f65",
+    "original_bytes": 1132,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_multi_C.npz",
+    "original_sha256": "865106593e6cea9b4ce5417de245c4ca8ce5ea79a7b448a2216ceb129f42e407",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_multi_D.npz",
+    "original_sha256": "865106593e6cea9b4ce5417de245c4ca8ce5ea79a7b448a2216ceb129f42e407",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_multi_pool.npz",
+    "original_sha256": "ff88b582129008a9eeb9a83e08f19d4b85d4e7097ebcbf0254097b0e1b167e02",
+    "original_bytes": 3168,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_11_refit.npz",
+    "original_sha256": "631dc3e21410cd5cae2d6c21e9378425d66e060d5840b4f9bb5073daf022fe55",
+    "original_bytes": 1529357,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_inner_0.npz",
+    "original_sha256": "0589bbd3553bbb9d9709f4b4faaeecce5c21644d2582524b1997f0dfa470d635",
+    "original_bytes": 1373462,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_inner_1.npz",
+    "original_sha256": "78fa85ff47de17d09035c5af5de23d58565b481e8e5007ecd8460776d705a08b",
+    "original_bytes": 1378271,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_inner_2.npz",
+    "original_sha256": "5e316e48d7e5ce82e46f478f3c849d5de69fae44c5a182486120c33b09b34383",
+    "original_bytes": 1373416,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_inner_3.npz",
+    "original_sha256": "96b882de3833b2be12242976c631b06f765d758d1f6887e2ffc2d402b8686565",
+    "original_bytes": 1382707,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_mean_multi_A.npz",
+    "original_sha256": "cc5d05d73f937b746750b2f8ccfd5fc550199af7c5437f524770fc650f8ca5d8",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_mean_multi_B.npz",
+    "original_sha256": "cc5d05d73f937b746750b2f8ccfd5fc550199af7c5437f524770fc650f8ca5d8",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_mean_multi_C.npz",
+    "original_sha256": "d46154febc14fddd40b9273bc57dd519fa068cf91cacbed5efffa06855829d06",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_mean_multi_D.npz",
+    "original_sha256": "d46154febc14fddd40b9273bc57dd519fa068cf91cacbed5efffa06855829d06",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_mean_multi_pool.npz",
+    "original_sha256": "633ddd9099f1f633da1e6ea6bd82db13fc705772e272bb7cbcdab54130fe5ffd",
+    "original_bytes": 3174,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_multi_A.npz",
+    "original_sha256": "8cdbf61ef333d64fe9aa3b965a362fedbbc47e75d2a20b7520c49fd019647571",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_multi_B.npz",
+    "original_sha256": "8cdbf61ef333d64fe9aa3b965a362fedbbc47e75d2a20b7520c49fd019647571",
+    "original_bytes": 1140,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_multi_C.npz",
+    "original_sha256": "1d8e6b82e5648a331a910c0ee27eb976d90b2ed80a6294b7e7d0cd794584a0bb",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_multi_D.npz",
+    "original_sha256": "1d8e6b82e5648a331a910c0ee27eb976d90b2ed80a6294b7e7d0cd794584a0bb",
+    "original_bytes": 1142,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_multi_pool.npz",
+    "original_sha256": "7c0942e60a60003f03027a67159e7beea950ef5dd180ee7d090ea4f35abbe4af",
+    "original_bytes": 3173,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_12_refit.npz",
+    "original_sha256": "ddd7a7d8926200dab899e2686927733ae5bc4969ba6de0a989215e8ce59f3ec4",
+    "original_bytes": 1520067,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_inner_0.npz",
+    "original_sha256": "3153ac43424f1ddf2aa10137113082ef906c32522b06bfcbe4a9b675c068b3bc",
+    "original_bytes": 1378221,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_inner_1.npz",
+    "original_sha256": "f55580f4603ba4dba8775e77e2dc6be0632f3590d0c176782497dcdf50c0a425",
+    "original_bytes": 1373382,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_inner_2.npz",
+    "original_sha256": "ca208f7f7489417e6a61b300b639f618a2905c677d7194d0f83a03e588d9e63c",
+    "original_bytes": 1382808,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_inner_3.npz",
+    "original_sha256": "0589bbd3553bbb9d9709f4b4faaeecce5c21644d2582524b1997f0dfa470d635",
+    "original_bytes": 1373462,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_mean_multi_A.npz",
+    "original_sha256": "318923f4d7696a0fdb70bf01f88f509192a8164e22ef75341f98b2df2b98c112",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_mean_multi_B.npz",
+    "original_sha256": "318923f4d7696a0fdb70bf01f88f509192a8164e22ef75341f98b2df2b98c112",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_mean_multi_C.npz",
+    "original_sha256": "b2d5e52e2ec870a09c29ee4afc90de3229cba35cb8b3c46826b63dfca1d63868",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_mean_multi_D.npz",
+    "original_sha256": "b2d5e52e2ec870a09c29ee4afc90de3229cba35cb8b3c46826b63dfca1d63868",
+    "original_bytes": 1136,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_mean_multi_pool.npz",
+    "original_sha256": "64e370de75ca258194cde31126504760a56aa1620f4aeec96cdcc265687a943f",
+    "original_bytes": 3172,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_multi_A.npz",
+    "original_sha256": "f082a0ecab773be5f88632371d62331dc39dac3b1e39d0180a45546480126065",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_multi_B.npz",
+    "original_sha256": "f082a0ecab773be5f88632371d62331dc39dac3b1e39d0180a45546480126065",
+    "original_bytes": 1137,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_multi_C.npz",
+    "original_sha256": "734f0c6d06644170da5ee7a515d67f9239e779c01aadfcfff5e601aba52800b3",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_multi_D.npz",
+    "original_sha256": "734f0c6d06644170da5ee7a515d67f9239e779c01aadfcfff5e601aba52800b3",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_multi_pool.npz",
+    "original_sha256": "24d934ea80d9dd11e1712baeeec247a79b3de0f706fd8723b7e079e4f370b729",
+    "original_bytes": 3179,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_13_refit.npz",
+    "original_sha256": "c37857262c87915975bd756a2f64f576efd3c7f34bd2fade0561daa1b3c77d58",
+    "original_bytes": 1519819,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_inner_0.npz",
+    "original_sha256": "595e449522f4f818e3c1d4e352fda516e62d8dcb3f5b445fe289e006529c40f8",
+    "original_bytes": 1378199,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_inner_1.npz",
+    "original_sha256": "d54ce919ecd5f15742552794f5bd5bff31f0bbd87cd662d176322f90b8507def",
+    "original_bytes": 1387700,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_inner_2.npz",
+    "original_sha256": "78fa85ff47de17d09035c5af5de23d58565b481e8e5007ecd8460776d705a08b",
+    "original_bytes": 1378271,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_inner_3.npz",
+    "original_sha256": "3153ac43424f1ddf2aa10137113082ef906c32522b06bfcbe4a9b675c068b3bc",
+    "original_bytes": 1378221,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_mean_multi_A.npz",
+    "original_sha256": "387ba3bcd5d1860271b4a2bd5554705bc53f4f606dffc5b032943c2ff4535d30",
+    "original_bytes": 1114,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_mean_multi_B.npz",
+    "original_sha256": "387ba3bcd5d1860271b4a2bd5554705bc53f4f606dffc5b032943c2ff4535d30",
+    "original_bytes": 1114,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_mean_multi_C.npz",
+    "original_sha256": "dcb656a300f33c323aca223c2a7ddb5755beb359e8a46af67f527f9c2adf32e3",
+    "original_bytes": 1113,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_mean_multi_D.npz",
+    "original_sha256": "dcb656a300f33c323aca223c2a7ddb5755beb359e8a46af67f527f9c2adf32e3",
+    "original_bytes": 1113,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_mean_multi_pool.npz",
+    "original_sha256": "a44e45e4dda71583c2c737976aef3270622d492526f5c54519e3d9ec3da197f7",
+    "original_bytes": 3196,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_multi_A.npz",
+    "original_sha256": "797f7d004ab05125598693c183d8e4e97388218b6c9c58357c0da3759ccffa02",
+    "original_bytes": 1120,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_multi_B.npz",
+    "original_sha256": "797f7d004ab05125598693c183d8e4e97388218b6c9c58357c0da3759ccffa02",
+    "original_bytes": 1120,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_multi_C.npz",
+    "original_sha256": "f0b7c2253655bf4eda956c7f71888f0db37715ce06a3fdc4a1c07cd0589d93a2",
+    "original_bytes": 1115,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_multi_D.npz",
+    "original_sha256": "f0b7c2253655bf4eda956c7f71888f0db37715ce06a3fdc4a1c07cd0589d93a2",
+    "original_bytes": 1115,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_multi_pool.npz",
+    "original_sha256": "1b6745c3e8cd206408684e531e9cefa95b7f33c24b17ad43a0a41603346e6122",
+    "original_bytes": 3200,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_14_refit.npz",
+    "original_sha256": "7146d570a20c0b9408c0930e38e05b7421d2792d8a788d46fd3a5fb2817b7119",
+    "original_bytes": 1524970,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_inner_0.npz",
+    "original_sha256": "a80c43691600427db7907db2bf5f259c8dbaf73b583865e1aa44a9dfe58f4957",
+    "original_bytes": 1385404,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_inner_1.npz",
+    "original_sha256": "f7b87448896fb2d50382f78361d72b826daf6fb429130be797fd47138e092406",
+    "original_bytes": 1383279,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_inner_2.npz",
+    "original_sha256": "7b70d444195d8b7840f91a4a38be96008c4d4de37acf075103259858d4f4863e",
+    "original_bytes": 1385592,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_inner_3.npz",
+    "original_sha256": "338009a26e7ff80e0534290ec84cd7a62479dbbcd22ebd22ea17459af4a051a4",
+    "original_bytes": 1382907,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_mean_multi_A.npz",
+    "original_sha256": "0dc8aaeed02d015f059784d0c1f933d12acf30fbd53727df0d6223610012214e",
+    "original_bytes": 1106,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_mean_multi_B.npz",
+    "original_sha256": "0dc8aaeed02d015f059784d0c1f933d12acf30fbd53727df0d6223610012214e",
+    "original_bytes": 1106,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_mean_multi_C.npz",
+    "original_sha256": "50d15e2214dc42a99dd61160bbde1e55497d3a79a643ce6a651eb94502385c91",
+    "original_bytes": 1111,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_mean_multi_D.npz",
+    "original_sha256": "50d15e2214dc42a99dd61160bbde1e55497d3a79a643ce6a651eb94502385c91",
+    "original_bytes": 1111,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_mean_multi_pool.npz",
+    "original_sha256": "1a37cf125ff015bd7a7f137f76adb06506d7e4238f93639c0563be544cef717c",
+    "original_bytes": 3194,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_multi_A.npz",
+    "original_sha256": "8f902c6f53d30b6d36c35d8b711bdc51eaa9ec61f193d620544f810c8423aaa6",
+    "original_bytes": 1108,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_multi_B.npz",
+    "original_sha256": "8f902c6f53d30b6d36c35d8b711bdc51eaa9ec61f193d620544f810c8423aaa6",
+    "original_bytes": 1108,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_multi_C.npz",
+    "original_sha256": "3946d55eed510e93807626dff7f276ee0bc6c349a63516db6a081087a7f35e1c",
+    "original_bytes": 1110,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_multi_D.npz",
+    "original_sha256": "3946d55eed510e93807626dff7f276ee0bc6c349a63516db6a081087a7f35e1c",
+    "original_bytes": 1110,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_multi_pool.npz",
+    "original_sha256": "2f21e20814cf2cf9036e6590949dac4d6b9ee64f49a3d21e6f68c086abe04605",
+    "original_bytes": 3196,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_15_refit.npz",
+    "original_sha256": "9953f11371fe168c01d94cd78cb550f40959c02bf827c0dd781f2b9315429614",
+    "original_bytes": 1529324,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_inner_0.npz",
+    "original_sha256": "d19b975d4a2147d7fe1413aa453409e153798ebf1c56eeecffcf85b04cc3cc69",
+    "original_bytes": 1375796,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_inner_1.npz",
+    "original_sha256": "681a1f0ef66d01f6fe2934e30654471798693bb3c3242c1528e5e98e9a1622dd",
+    "original_bytes": 1377746,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_inner_2.npz",
+    "original_sha256": "882cc72b9a7910538c13d1eea84105e0fd0266df3ec2c945937d241ff2fc617e",
+    "original_bytes": 1375832,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_inner_3.npz",
+    "original_sha256": "a80c43691600427db7907db2bf5f259c8dbaf73b583865e1aa44a9dfe58f4957",
+    "original_bytes": 1385404,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_mean_multi_A.npz",
+    "original_sha256": "9ecf86fe11cc817492cb19360802692aa028c226fc7af3efee951a1ac7eea03a",
+    "original_bytes": 1147,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_mean_multi_B.npz",
+    "original_sha256": "9ecf86fe11cc817492cb19360802692aa028c226fc7af3efee951a1ac7eea03a",
+    "original_bytes": 1147,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_mean_multi_C.npz",
+    "original_sha256": "3b666aca192aa9633aecccc789849b5fc010fa316b431e4e23d4b3e1b24e9a96",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_mean_multi_D.npz",
+    "original_sha256": "3b666aca192aa9633aecccc789849b5fc010fa316b431e4e23d4b3e1b24e9a96",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_mean_multi_pool.npz",
+    "original_sha256": "a00b6e1e8f30f135a9dc72505ab86ba80a90b1ccaa5e6f723c416db79d3e5265",
+    "original_bytes": 3173,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_multi_A.npz",
+    "original_sha256": "9bbb6d8129f0911e0f185d7cd5a7b503fbb733d2f4bd6a855c6caa55d22422aa",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_multi_B.npz",
+    "original_sha256": "9bbb6d8129f0911e0f185d7cd5a7b503fbb733d2f4bd6a855c6caa55d22422aa",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_multi_C.npz",
+    "original_sha256": "1d97746a37d228b6cd39cb16064f1c14790beeab44e4493227cacc9a7426ee1e",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_multi_D.npz",
+    "original_sha256": "1d97746a37d228b6cd39cb16064f1c14790beeab44e4493227cacc9a7426ee1e",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_multi_pool.npz",
+    "original_sha256": "417d7985a601e0928e37a376bcef323eec2440e062c93bcc5676dc82ec23e95c",
+    "original_bytes": 3175,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_16_refit.npz",
+    "original_sha256": "d7f293e8ec90ce1ee170a19599ae0af221e78b4d5b8047aae316420861baeecd",
+    "original_bytes": 1522346,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_inner_0.npz",
+    "original_sha256": "ed4c8a56444339be04f4d862a6f1fa46c479cebcc24a805af17a3de4971746df",
+    "original_bytes": 1376069,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_inner_1.npz",
+    "original_sha256": "7491d0af8072a691e0d90a18d7ddeab2ef4e4387d768d5195fe325dd4ce5f39e",
+    "original_bytes": 1375595,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_inner_2.npz",
+    "original_sha256": "f7b87448896fb2d50382f78361d72b826daf6fb429130be797fd47138e092406",
+    "original_bytes": 1383279,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_inner_3.npz",
+    "original_sha256": "d19b975d4a2147d7fe1413aa453409e153798ebf1c56eeecffcf85b04cc3cc69",
+    "original_bytes": 1375796,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_mean_multi_A.npz",
+    "original_sha256": "e6cc7ffda921f7489e1af7726497f036747a1fb5fda1879db4e9d01abc2db20b",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_mean_multi_B.npz",
+    "original_sha256": "e6cc7ffda921f7489e1af7726497f036747a1fb5fda1879db4e9d01abc2db20b",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_mean_multi_C.npz",
+    "original_sha256": "6ed9a6c4757ea6289eaf62562751645f9e596ef299b4e4874f79638a60496c4e",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_mean_multi_D.npz",
+    "original_sha256": "6ed9a6c4757ea6289eaf62562751645f9e596ef299b4e4874f79638a60496c4e",
+    "original_bytes": 1138,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_mean_multi_pool.npz",
+    "original_sha256": "39275fe816e56f47bc9d10f9bf3114d98ee6ea593dcf24eb7ce2ef4231dabc1f",
+    "original_bytes": 3167,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_multi_A.npz",
+    "original_sha256": "4353ca8cbc68a3a69745e33b90d01d6d1b0a5fd04d08258a9f671a64d8e1d72b",
+    "original_bytes": 1145,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_multi_B.npz",
+    "original_sha256": "4353ca8cbc68a3a69745e33b90d01d6d1b0a5fd04d08258a9f671a64d8e1d72b",
+    "original_bytes": 1145,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_multi_C.npz",
+    "original_sha256": "6fcfb914b1d737aa6fff867388f10ef58a70f2eab6be11b907fe5cd60e50ee4f",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_multi_D.npz",
+    "original_sha256": "6fcfb914b1d737aa6fff867388f10ef58a70f2eab6be11b907fe5cd60e50ee4f",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_multi_pool.npz",
+    "original_sha256": "899bb0a4a2acc019a6ab5da273359d01e07448f249e01dbb136c186e7fd86cb3",
+    "original_bytes": 3170,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_17_refit.npz",
+    "original_sha256": "d66da83683049ecb766fa903124b082247e0e2e112d49cb7e0f7b36a89605d46",
+    "original_bytes": 1519930,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_inner_0.npz",
+    "original_sha256": "51b0c6f7d065d9c39a40a728adc1b002e687f818cd0b49c0c608494d455d1cea",
+    "original_bytes": 1375821,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_inner_1.npz",
+    "original_sha256": "7b70d444195d8b7840f91a4a38be96008c4d4de37acf075103259858d4f4863e",
+    "original_bytes": 1385592,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_inner_2.npz",
+    "original_sha256": "681a1f0ef66d01f6fe2934e30654471798693bb3c3242c1528e5e98e9a1622dd",
+    "original_bytes": 1377746,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_inner_3.npz",
+    "original_sha256": "ed4c8a56444339be04f4d862a6f1fa46c479cebcc24a805af17a3de4971746df",
+    "original_bytes": 1376069,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_mean_multi_A.npz",
+    "original_sha256": "96a74980f4280d63bc99747cccfc47b89156f6896f1609215d1131a5c469ca00",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_mean_multi_B.npz",
+    "original_sha256": "96a74980f4280d63bc99747cccfc47b89156f6896f1609215d1131a5c469ca00",
+    "original_bytes": 1134,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_mean_multi_C.npz",
+    "original_sha256": "c6ee86073c86a4fbc91823b0aebec70918850977286f7f291695ac216ec3635b",
+    "original_bytes": 1135,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_mean_multi_D.npz",
+    "original_sha256": "c6ee86073c86a4fbc91823b0aebec70918850977286f7f291695ac216ec3635b",
+    "original_bytes": 1135,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_mean_multi_pool.npz",
+    "original_sha256": "f59bc2d5d5bf0cf4115e36e21260afbf9188b42c7389ecaae487e6b55fc10147",
+    "original_bytes": 3176,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_multi_A.npz",
+    "original_sha256": "9846d3f1924750413163da39dd80f895b8d91e21d4620439702ea49bbc39651c",
+    "original_bytes": 1143,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_multi_B.npz",
+    "original_sha256": "9846d3f1924750413163da39dd80f895b8d91e21d4620439702ea49bbc39651c",
+    "original_bytes": 1143,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_multi_C.npz",
+    "original_sha256": "d53e6b4f669932ce23280982c7c69a372533827f3db46b9d8a2a4e89d13d2cf5",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_multi_D.npz",
+    "original_sha256": "d53e6b4f669932ce23280982c7c69a372533827f3db46b9d8a2a4e89d13d2cf5",
+    "original_bytes": 1139,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_multi_pool.npz",
+    "original_sha256": "ba0bd665f9b3f04a722d9551d7cdbae1e40b04bf1688e215a388856597a5a26a",
+    "original_bytes": 3174,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_18_refit.npz",
+    "original_sha256": "fc442853c9a1f4ada803c75473efdd77a8e74fa9d332bffd8631dabc08903f92",
+    "original_bytes": 1522259,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_inner_0.npz",
+    "original_sha256": "338009a26e7ff80e0534290ec84cd7a62479dbbcd22ebd22ea17459af4a051a4",
+    "original_bytes": 1382907,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_inner_1.npz",
+    "original_sha256": "882cc72b9a7910538c13d1eea84105e0fd0266df3ec2c945937d241ff2fc617e",
+    "original_bytes": 1375832,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_inner_2.npz",
+    "original_sha256": "7491d0af8072a691e0d90a18d7ddeab2ef4e4387d768d5195fe325dd4ce5f39e",
+    "original_bytes": 1375595,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_inner_3.npz",
+    "original_sha256": "51b0c6f7d065d9c39a40a728adc1b002e687f818cd0b49c0c608494d455d1cea",
+    "original_bytes": 1375821,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_mean_multi_A.npz",
+    "original_sha256": "cac3a581214c24884d0972b0f6f7e30f1c426e48343d5e9a3e3c22544e216bbf",
+    "original_bytes": 1130,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_mean_multi_B.npz",
+    "original_sha256": "cac3a581214c24884d0972b0f6f7e30f1c426e48343d5e9a3e3c22544e216bbf",
+    "original_bytes": 1130,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_mean_multi_C.npz",
+    "original_sha256": "6c2448f1b3e31ade46b0c6e8134b43ea5cda4cd9346b6620378478bf17ee67ff",
+    "original_bytes": 1149,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_mean_multi_D.npz",
+    "original_sha256": "6c2448f1b3e31ade46b0c6e8134b43ea5cda4cd9346b6620378478bf17ee67ff",
+    "original_bytes": 1149,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_mean_multi_pool.npz",
+    "original_sha256": "5bbb71ac544871284799e60439744139430a224003e42c083537adcfa6e82f9b",
+    "original_bytes": 3178,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_multi_A.npz",
+    "original_sha256": "a474d4294acd9693e14184b2c6374efea2259e0f31829dec20a3f4a7290632a9",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_multi_B.npz",
+    "original_sha256": "a474d4294acd9693e14184b2c6374efea2259e0f31829dec20a3f4a7290632a9",
+    "original_bytes": 1141,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_multi_C.npz",
+    "original_sha256": "2e86c4fa579b42d4f66403d0ddd85ac8896ef85266a6fe366a816f359dfb66ff",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_multi_D.npz",
+    "original_sha256": "2e86c4fa579b42d4f66403d0ddd85ac8896ef85266a6fe366a816f359dfb66ff",
+    "original_bytes": 1144,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_multi_pool.npz",
+    "original_sha256": "3ce7aca9b054151eab8f2f1b5ea9ce29241f1cf8829132a5fad1e1583f784811",
+    "original_bytes": 3170,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "fold_19_refit.npz",
+    "original_sha256": "485a9de309cd7cfbe78772e912901e839d506459ecb138cfa8898ddd22cf1c56",
+    "original_bytes": 1520289,
+    "publication": "hash inventory only; full numeric state retained in local archive"
+  },
+  {
+    "original_path": "registration.json",
+    "original_sha256": "a28ac9c026c0f96addcb4e59aa4ee05ece53c883078a8ae303a1d7c84c095c5f",
+    "original_bytes": 171009,
+    "published_path": "registration.json.gz",
+    "published_sha256": "e88d9aa3714fca122bfd5b51ca3ff0551d8082488275ceb5e5654363c54a538c"
+  },
+  {
+    "original_path": "results.json",
+    "original_sha256": "f8488d4ee18cb433cd6b218a1c26653a6a453f42a76c0cd2883e92a9b78eac49",
+    "original_bytes": 10506991,
+    "published_path": "results.json.gz",
+    "published_sha256": "3d260fc60ad7eb5a17a2f323413c84d28414dc3ba2b15f237dfe10bfef9b5fd5"
+  }
+]
