@@ -1,6 +1,8 @@
 import unittest
+
 import numpy as np
 import torch
+
 from engine.evaluate import compute_eer, verification_metrics
 
 

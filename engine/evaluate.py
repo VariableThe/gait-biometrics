@@ -18,10 +18,12 @@ import argparse
 import json
 import os
 import random
+from typing import Any
 
 import numpy as np
 import torch
 import yaml
+from numpy.typing import NDArray
 from sklearn.metrics import roc_auc_score, roc_curve
 
 from data.adapter import load_windows
@@ -30,8 +32,15 @@ from models.common import load_checkpoint, seed_everything
 from models.registry import build_model
 from models.siamese import EmbeddingNet
 
+type RealScalar = (
+    float
+    | np.integer[Any]
+    | np.floating[Any]
+    | NDArray[np.integer[Any] | np.floating[Any]]
+)
 
-def classification_metrics(y_true, y_pred, n_classes: int) -> dict:
+
+def classification_metrics(y_true, y_pred, n_classes: int | np.integer[Any]) -> dict:
     """Accuracy, per-class precision/recall, and the confusion matrix.
 
     Rows of the confusion matrix are true classes, columns are predicted.
@@ -141,7 +150,7 @@ def _finite_real_scalar(value, name: str) -> float:
     return result
 
 
-def fixed_threshold_metrics(labels, scores, threshold: float) -> dict:
+def fixed_threshold_metrics(labels, scores, threshold: RealScalar) -> dict:
     """Count actual decisions using score >= threshold (ties are accepted)."""
     labels, scores = _validated_scores(labels, scores)
     threshold = _finite_real_scalar(threshold, "threshold")
@@ -161,7 +170,7 @@ def fixed_threshold_metrics(labels, scores, threshold: float) -> dict:
     }
 
 
-def calibrate_threshold(labels, scores, target_far: float = 0.01) -> dict:
+def calibrate_threshold(labels, scores, target_far: RealScalar = 0.01) -> dict:
     """Least restrictive empirical threshold with FAR <= target.
 
     Caller must supply independent validation scores, never evaluation scores.
@@ -275,7 +284,7 @@ def _verification_pairs(subject_ids, n_pairs: int, seed: int, activity_ids=None)
         else [],
         "n_subjects": len(per_subject),
         "per_subject": per_subject,
-        "n_windows_used": int(len(np.unique(pairs))),
+        "n_windows_used": len(np.unique(pairs)),
         "pair_independence": "not_independent_windows_and_pairs_can_recur",
         "per_activity": {
             str(a): {
@@ -329,7 +338,7 @@ def verification_metrics(
     seed: int = 42,
     *,
     activity_ids=None,
-    threshold: float | None = None,
+    threshold: RealScalar | None = None,
 ) -> dict:
     """Descriptive pair metrics; supply an independently calibrated threshold.
 
@@ -425,7 +434,7 @@ def _eval_activity(
         "model": config["model"],
         "source": source,
         "subset": int(subset) if subset is not None else None,
-        "n_samples": int(len(y_true)),
+        "n_samples": len(y_true),
         "accuracy": metrics["accuracy"],
         "per_class": metrics["per_class"],
         "confusion_matrix": metrics["confusion_matrix"],
@@ -455,7 +464,7 @@ def _checkpoint_protocol(checkpoint: str) -> dict:
         else {}
     )
     if not isinstance(protocol, dict):
-        raise ValueError("checkpoint metrics.protocol must be a mapping")
+        raise ValueError("checkpoint metrics.protocol must be a mapping")  # noqa: TRY004 -- checkpoint validation contract
     return protocol
 
 
@@ -586,7 +595,7 @@ def _eval_verification(
         and pairing != protocol["verification_pairing"]
     ):
         raise ValueError("config verification_pairing differs from checkpoint protocol")
-    calibration = None
+    calibration: dict[str, Any] | None = None
     if calibrate:
         train_ids, val_ids = (
             protocol.get("train_subject_ids"),

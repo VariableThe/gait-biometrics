@@ -16,6 +16,7 @@ import random
 import tempfile
 import time
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import torch
@@ -48,7 +49,7 @@ def build_gait_encoder(n_channels: int, model_args: dict):
     return factory(n_channels, model_args)
 
 
-def _resolved_config(config: dict) -> dict:
+def _resolved_config(config: dict[str, Any]) -> dict[str, Any]:
     # Round-trip restricts checkpoint metadata to plain JSON values, no objects.
     config = json.loads(json.dumps(config, allow_nan=False))
     defaults = {
@@ -83,7 +84,7 @@ def _resolved_config(config: dict) -> dict:
         "data_root": "datasets",
         "augment": {},
     }
-    resolved = {**defaults, **config}
+    resolved: dict[str, Any] = {**defaults, **config}
     if "source" not in resolved:
         raise ValueError("config.source is required")
     if resolved["objective"] not in {"batch_hard", "supcon", "hybrid"}:
@@ -728,6 +729,7 @@ def train_metric(
         else None
     )
     if resume_state is not None:
+        assert provenance is not None  # A resume always enables resumable mode.
         for key, value in provenance.items():
             if resume_state["provenance"].get(key) != value:
                 raise ValueError(f"resume {key} provenance mismatch")

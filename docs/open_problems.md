@@ -5,14 +5,20 @@ results remain descriptive; new software does not retroactively validate them.
 
 | Problem | Implementation / evidence | Status |
 | --- | --- | --- |
-| Evaluation precision, finite values and checkpoint shape validation | `numerical_validation.md` | Implemented; integration checks pending |
-| Recoverable metric-training interruptions | `metric_resume.md` | Implemented; integration checks pending |
-| Causal decisions, silence expiry and latched fallback | `continuous_auth.md` | Policy implemented; stream integration pending |
-| Fractional training options and late validation failures | `training_validation.md` | In progress |
-| Partial HAR extraction mistaken for complete setup | `training_validation.md` | In progress |
-| Verification windows sharing raw sensor samples | `window_provenance.md` | In progress for official WISDM v1 |
-| Claimant score scales at a low FAR operating point | Fixed raw/Z/S blend comparison, DEV only | In progress |
-| Reproducible CPU/CUDA environments and automated checks | `pyproject.toml`, `uv.lock` and CI | In progress |
+| Evaluation precision, finite values and checkpoint shape validation | [Numerical validation](numerical_validation.md) | Implemented and tested |
+| Recoverable metric-training interruptions | [Metric resume](metric_resume.md) | Exact CPU and local deterministic FP32 CUDA equivalence verified |
+| Causal decisions, silence expiry and latched fallback | [Policy](continuous_auth.md), [strict stream/evaluation](stream_authentication.md) | Implemented and tested |
+| Fractional training options and late validation failures | [Training validation](training_validation.md) | Fixed before optimization |
+| Partial HAR extraction mistaken for complete setup | [Dataset repair](training_validation.md) | Fixed; generated-archive regressions pass |
+| Verification windows sharing raw sensor samples | [Raw provenance](window_provenance.md) | Implemented; existing WISDM TRAIN parity/nonoverlap verified |
+| Claimant score scales at a low FAR operating point | [Fixed raw/Z/S comparison](claimant_normalization.md) | 100 fits replayed; alternatives fail gates, retain raw |
+| Walking activity gate | [Source-bound detector](walking_gate.md) | One registered TRAIN-only fit and held DEV validation |
+| Raw window → gate → encoder → template score → decision | [Window adapter](window_authentication.md) | Implemented; explicit single-window calibration required |
+| Reproducible CPU/CUDA environments and automated checks | [Environment/CI](reproducible_environment.md) | Frozen CPU installation and both repository suites pass; dated audits pass |
+
+The [follow-up report](../reports/2026-10-24-engineering/README.md) retains all
+negative/positive DEV evidence, per-person limits, hashes, source snapshots and
+validation logs. These are opt-in protocols; old metrics are not rewritten.
 
 ## Limits that software cannot remove
 

@@ -7,6 +7,7 @@ speaker-recognition system: https://doi.org/10.21437/Interspeech.2006-183
 from __future__ import annotations
 
 from numbers import Real
+from typing import cast
 
 import numpy as np
 from sklearn.covariance import LedoitWolf
@@ -26,7 +27,7 @@ class WithinClassMetric:
             isinstance(shrinkage, (bool, np.bool_))
             or not isinstance(shrinkage, Real)
             or not np.isfinite(shrinkage)
-            or not 0 < shrinkage <= 1
+            or not 0 < cast(float, shrinkage) <= 1
         ):
             raise ValueError("shrinkage must be auto or a finite real in (0, 1]")
         self.mode, self.shrinkage = mode, shrinkage

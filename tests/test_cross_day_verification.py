@@ -11,6 +11,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from typing import Any
 from unittest import mock
 from zipfile import ZipFile
 
@@ -58,7 +59,9 @@ def _evaluation_functions():
     namespace = {"np": np, "roc_curve": roc_curve}
     exec(  # noqa: S102 -- compile only the explicitly selected local pure functions
         compile(
-            ast.Module(body=functions, type_ignores=[]), "engine/evaluate.py", "exec"
+            ast.Module(body=list[ast.stmt](functions), type_ignores=[]),
+            "engine/evaluate.py",
+            "exec",
         ),
         namespace,
     )
@@ -477,9 +480,10 @@ class CrossDayArchiveTests(_TorchFreeTestCase):
             ("ARCHIVE_MD5", "0" * 32, "MD5"),
             ("ARCHIVE_SHA256", "0" * 64, "SHA-256"),
         ):
+            overrides: dict[str, Any] = {**pinned, field: wrong}
             with (
                 self.subTest(field=field),
-                mock.patch.multiple(study, **{**pinned, field: wrong}),
+                mock.patch.multiple(study, **overrides),
                 mock.patch.object(
                     study,
                     "ZipFile",

@@ -25,7 +25,10 @@ do not establish GPU training determinism. Other Python minor versions and
 operating systems have not been validated by this follow-up.
 
 The GitHub workflow uses the CPU extra, frozen lock, pinned action commits and
-single-thread tests. It downloads dependencies, but no datasets and no training
+single-thread tests. Pinned Ruff and ty check the Python surfaces listed in
+`.github/python-quality-files.txt`; this is an explicit scope for the follow-up,
+not a claim that every legacy file has been migrated to strict typing.
+It downloads dependencies, but no datasets and no training
 artifacts. Package-cache reuse avoids repeated wheel downloads. The local
 integration check uses a separate environment so it cannot mutate an active
 training environment. No startup or installation speedup is claimed.

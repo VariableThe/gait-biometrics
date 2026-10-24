@@ -1,0 +1,395 @@
+{
+  "status": "success",
+  "success": true,
+  "reason": "Actual CUDA full versus committed epoch-2 resume matched exactly for every listed replay state and full best.pt payload.",
+  "scope": "actual local CUDA; synthetic TRAIN tensors only; no newdata",
+  "fixture_source": "tests/test_metric_resume.py::_data/_config/test_split_run_matches_uninterrupted_with_dropout_augmentation_and_adam",
+  "paths": {
+    "script": "/home/sherlock/Code/github/VariableThe/artifacts/gpu_resume_check_20261024.py",
+    "run_root": "/home/sherlock/Code/github/VariableThe/artifacts/gpu-resume-run-20261024",
+    "report": "/home/sherlock/Code/github/VariableThe/artifacts/gpu-resume-20261024.json",
+    "log": "/home/sherlock/Code/github/VariableThe/artifacts/gpu-resume-20261024.log"
+  },
+  "versions": {
+    "python": "3.14.8",
+    "python_executable": "/home/sherlock/Code/github/VariableThe/.venv/bin/python",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "cudnn": 92400
+  },
+  "config": {
+    "source": "har",
+    "device": "cuda",
+    "torch_threads": 1,
+    "epochs": 4,
+    "steps_per_epoch": 2,
+    "seed": 42,
+    "split_seed": 42,
+    "val_seed": 42,
+    "window_size": 16,
+    "validation_pairs": 20,
+    "identities_per_batch": 2,
+    "windows_per_identity": 2,
+    "train_subject_ids": [
+      3,
+      11,
+      29
+    ],
+    "val_subject_ids": [
+      41,
+      53
+    ],
+    "objective": "hybrid",
+    "classifier_type": "linear",
+    "ce_weight": 0.5,
+    "precision": "float32",
+    "augment": {
+      "jitter_std": 0.02
+    },
+    "model_args": {
+      "width": 4,
+      "embed_dim": 6,
+      "dropout": 0.25
+    },
+    "data_root": "/home/sherlock/Code/github/VariableThe/artifacts/gpu-resume-run-20261024/synthetic-only-no-dataset"
+  },
+  "synthetic": {
+    "shape": [
+      24,
+      9,
+      16
+    ],
+    "generation_seed": 73,
+    "subject_ids": [
+      3,
+      11,
+      29,
+      41,
+      53,
+      67
+    ],
+    "windows_per_subject": 4,
+    "optimizer_train_windows": 12,
+    "held_out_train_validation_windows": 8,
+    "unused_windows": 4,
+    "all_loader_splits": [
+      "train",
+      "train",
+      "train"
+    ],
+    "real_data_read": false,
+    "loader_calls": [
+      {
+        "phase": "full",
+        "source": "har",
+        "split": "train"
+      },
+      {
+        "phase": "split_initial",
+        "source": "har",
+        "split": "train"
+      },
+      {
+        "phase": "split_resume",
+        "source": "har",
+        "split": "train"
+      }
+    ]
+  },
+  "run_plan": {
+    "total_epochs": 4,
+    "steps_per_epoch": 2,
+    "uninterrupted_epochs": 4,
+    "interrupted_after_committed_epoch": 2,
+    "resumed_remaining_epochs": 2,
+    "expected_optimizer_steps": {
+      "full": 8,
+      "split_initial": 4,
+      "split_resume": 4
+    }
+  },
+  "exact_checks": {
+    "model_state_dict": {
+      "exact": true
+    },
+    "classifier_state_dict": {
+      "exact": true
+    },
+    "optimizer_state_dict": {
+      "exact": true
+    },
+    "scheduler_state_dict": {
+      "exact": true
+    },
+    "scaler_state_dict": {
+      "exact": true
+    },
+    "rng_state": {
+      "exact": true
+    },
+    "sampler_state": {
+      "exact": true
+    },
+    "history": {
+      "exact": true
+    },
+    "completed_epochs": {
+      "exact": true
+    },
+    "best_epoch": {
+      "exact": true
+    },
+    "best_val_eer": {
+      "exact": true
+    },
+    "best_checkpoint": {
+      "exact": true
+    },
+    "elapsed_seconds": {
+      "exact": true
+    }
+  },
+  "additional_checks": {
+    "best_pt_entire_payload": {
+      "exact": true
+    },
+    "returned_per_epoch": {
+      "exact": true
+    },
+    "committed_history_prefix_preserved": {
+      "exact": true
+    },
+    "selected_epoch": {
+      "exact": true
+    },
+    "selected_val_eer": {
+      "exact": true
+    },
+    "repaired_log_matches_committed_history": {
+      "exact": true
+    },
+    "actual_optimizer_step_counts": {
+      "exact": true
+    },
+    "actual_augmentation_counts": {
+      "exact": true
+    },
+    "actual_encoder_forward_counts": {
+      "exact": true
+    },
+    "actual_classifier_forward_counts": {
+      "exact": true
+    },
+    "completed_epochs": {
+      "exact": true
+    },
+    "cosine_total_epoch_budget": {
+      "exact": true
+    },
+    "cosine_completed_epochs": {
+      "exact": true
+    },
+    "nonempty_classifier_state": {
+      "exact": true
+    },
+    "observational_elapsed_seconds_zero": {
+      "exact": true
+    },
+    "all_loaders_synthetic_train": {
+      "exact": true
+    }
+  },
+  "observations": {
+    "optimizer_steps": {
+      "full": 8,
+      "split_initial": 4,
+      "split_resume": 4
+    },
+    "encoder_forwards": {
+      "full:train": 8,
+      "full:eval": 4,
+      "split_initial:train": 4,
+      "split_initial:eval": 2,
+      "split_resume:train": 4,
+      "split_resume:eval": 2
+    },
+    "classifier_forwards": {
+      "full:train": 8,
+      "split_initial:train": 4,
+      "split_resume:train": 4
+    },
+    "augmentation_calls": {
+      "full": 8,
+      "split_initial": 4,
+      "split_resume": 4
+    },
+    "live_parameter_devices": [
+      "cuda:0"
+    ],
+    "live_gradient_devices": [
+      "cuda:0"
+    ],
+    "live_optimizer_moment_devices": [
+      "cuda:0"
+    ],
+    "dropout_probabilities": [
+      [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ]
+    ],
+    "checkpoint_cuda_rng": {
+      "split_committed_epoch2": {
+        "device": "cuda",
+        "cuda_device_count": 1,
+        "rng_state_bytes": [
+          16
+        ]
+      },
+      "split_final_epoch4": {
+        "device": "cuda",
+        "cuda_device_count": 1,
+        "rng_state_bytes": [
+          16
+        ]
+      },
+      "full_final_epoch4": {
+        "device": "cuda",
+        "cuda_device_count": 1,
+        "rng_state_bytes": [
+          16
+        ]
+      }
+    }
+  },
+  "timing": {
+    "training_monotonic_clock_fixed_to": 123.0,
+    "raw_wall_seconds": {
+      "full": 1.325654481,
+      "split_initial": 0.138437673,
+      "split_resume": 0.190547022
+    },
+    "note": "Trainer observational clock fixed at 123.0, so recorded epoch/total elapsed values are zero. Raw perf_counter wall times include startup, CUDA initialization, compilation/kernel setup, I/O, and instrumentation; no GPU performance claim.",
+    "raw_total_script_wall_seconds": 5.482972254
+  },
+  "mocked_boundaries": [
+    "generated load_windows",
+    "trainer observational monotonic clock",
+    "Git metadata synthetic-test",
+    "post-commit interruption"
+  ],
+  "cuda_mocked": false,
+  "settings": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+    "deterministic_algorithms": true,
+    "deterministic_warn_only": false,
+    "cudnn_deterministic": true,
+    "cudnn_benchmark": false,
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": false,
+    "float32_matmul_precision": "highest",
+    "torch_threads": 1
+  },
+  "device": {
+    "requested": "cuda",
+    "actual": "cuda:0",
+    "name": "NVIDIA GeForce GTX 1650 Ti",
+    "index": 0,
+    "capability": [
+      7,
+      5
+    ],
+    "total_memory_bytes": 3911581696,
+    "cuda_device_count": 1
+  },
+  "interruption": {
+    "after_committed_epoch": 2,
+    "message": "last.pt epoch 2 fully committed"
+  },
+  "results": {
+    "completed_epochs": 4,
+    "selected_epoch": 1,
+    "selected_val_eer": 0.3,
+    "history": [
+      {
+        "epoch": 1,
+        "loss": 1.2139022946357727,
+        "batch_hard_loss": 0.22773396223783493,
+        "supcon_loss": 1.1059266328811646,
+        "ce_loss": 1.0941439270973206,
+        "collapsed_fraction": 0.0,
+        "grad_norm": 1.9373146295547485,
+        "val_eer": 0.3,
+        "val_roc_auc": 0.66,
+        "val_collapsed_fraction": 0.0,
+        "lr": 0.001,
+        "elapsed_seconds": 0.0
+      },
+      {
+        "epoch": 2,
+        "loss": 1.41610848903656,
+        "batch_hard_loss": 0.2993357554078102,
+        "supcon_loss": 1.4192569255828857,
+        "ce_loss": 1.1136243343353271,
+        "collapsed_fraction": 0.0,
+        "grad_norm": 3.4186728596687317,
+        "val_eer": 0.3,
+        "val_roc_auc": 0.68,
+        "val_collapsed_fraction": 0.0,
+        "lr": 0.0008535533905932737,
+        "elapsed_seconds": 0.0
+      },
+      {
+        "epoch": 3,
+        "loss": 1.154386043548584,
+        "batch_hard_loss": 0.15715963393449783,
+        "supcon_loss": 1.0366982221603394,
+        "ce_loss": 1.1149142980575562,
+        "collapsed_fraction": 0.0,
+        "grad_norm": 1.8096800446510315,
+        "val_eer": 0.3,
+        "val_roc_auc": 0.64,
+        "val_collapsed_fraction": 0.0,
+        "lr": 0.0005,
+        "elapsed_seconds": 0.0
+      },
+      {
+        "epoch": 4,
+        "loss": 1.6042487621307373,
+        "batch_hard_loss": 0.41807208955287933,
+        "supcon_loss": 1.715454638004303,
+        "ce_loss": 1.074970781803131,
+        "collapsed_fraction": 0.0,
+        "grad_norm": 4.002073287963867,
+        "val_eer": 0.3,
+        "val_roc_auc": 0.6000000000000001,
+        "val_collapsed_fraction": 0.0,
+        "lr": 0.00014644660940672628,
+        "elapsed_seconds": 0.0
+      }
+    ],
+    "comparisons_loaded_with": {
+      "map_location": "cpu",
+      "weights_only": true
+    },
+    "tensor_equality": "dtype/shape/layout and exact contiguous byte equality",
+    "scalar_float_equality": "IEEE-754 double byte equality",
+    "whole_last_pt_compared": false,
+    "whole_last_pt_note": "All listed replay state keys compared exactly. Output-directory provenance intentionally differs between full and split runs."
+  }
+}

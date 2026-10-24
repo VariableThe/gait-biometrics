@@ -1,0 +1,1001 @@
+From 6fc598fbfb1ac6f3a158e8565a5dfdbdbb678485 Mon Sep 17 00:00:00 2001
+From: aaditagrawal <103925638+aaditagrawal@users.noreply.github.com>
+Date: Fri, 23 Oct 2026 20:26:32 +0530
+Subject: [PATCH 1/2] fix: preserve real WISDM subjects and segment-safe
+ preprocessing
+
+---
+ .gitignore                            |   4 +
+ docs/wisdm_identity.md                | 135 ++++++++
+ gait_pipeline.py                      | 462 +++++++++++++++++++++++---
+ requirements.txt                      |   3 +
+ tests/test_wisdm_pipeline_identity.py | 127 +++++++
+ 5 files changed, 676 insertions(+), 55 deletions(-)
+ create mode 100644 .gitignore
+ create mode 100644 docs/wisdm_identity.md
+ create mode 100644 requirements.txt
+ create mode 100644 tests/test_wisdm_pipeline_identity.py
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..907f327
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,4 @@
++__pycache__/
++*.pyc
++.venv/
++processed_*/
+diff --git a/docs/wisdm_identity.md b/docs/wisdm_identity.md
+new file mode 100644
+index 0000000..abf61c3
+--- /dev/null
++++ b/docs/wisdm_identity.md
+@@ -0,0 +1,135 @@
++# WISDM identity and recording boundaries
++
++The supplied `wisdm/train.csv` and `test.csv` expose only accelerometer axes,
++timestamps in seconds, and activity labels. They cannot support person-level
++verification. No code reconstructs a person from row order, activity, timestamp,
++or a source split name. `source="wisdm"` remains usable for activity recognition
++and returns `y_subject=None`; identity training/evaluation must reject it.
++
++## Authentic source and schema
++
++Use `source="wisdm_v1"` and put the official extracted file at
++`<data_root>/wisdm/WISDM_ar_v1.1_raw.txt`. The adapter also accepts the official
++`wisdm/WISDM_ar_v1.1/` subdirectory. Its six native fields are
++`user,activity,timestamp,x,y,z;`. The included raw-about document identifies
++users as masked integer IDs 1–36, timestamps as phone uptime in nanoseconds,
++and sampling rate as 20 Hz. Integer timestamps are parsed without float rounding.
++
++Primary sources:
++
++- [Fordham WISDM dataset page](https://www.cis.fordham.edu/wisdm/dataset.php)
++  distinguishes controlled AR v1.1 from real-world Actitracker v2 and documents
++  masked subject IDs. Its distribution asks redistributors to retain `readme.txt`.
++- [Official AR archive](https://www.cis.fordham.edu/wisdm/includes/datasets/latest/WISDM_ar_latest.tar.gz)
++  includes `WISDM_ar_v1.1_raw_about.txt`, the schema authority read for this implementation.
++- [Kwapisz, Weiss and Moore, Activity Recognition using Cell Phone Accelerometers](https://www.cis.fordham.edu/wisdm/public_files/sensorKDD-2010.pdf)
++  describes the controlled collection protocol. This is an activity-recognition
++  study, not evidence of this project's verification performance.
++- [UCI dataset 507](https://archive.ics.uci.edu/dataset/507/wisdm+smartphone+and+smartwatch+activity+and+biometrics+dataset)
++  is a different WISDM collection with 51 IDs 1600–1650 and 18 activities.
++  This v1.1 parser intentionally rejects that schema rather than relabeling it.
++
++Measured official download fingerprints (2026-10-23):
++
++```text
++AR archive SHA256: e573791269aab4a629721cf04b6031b7cbf8e14261cd2bc86e65887a2bc592d7
++raw text SHA256:   9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e
++```
++
++The raw reader computes the actual SHA256 and records schema version, source URL,
++record counts, and whether it matches the official fingerprint. A schema-valid
++subset or synthetic test fixture can be loaded but does not match that fingerprint.
++No download contents or subject IDs are inferred from a filename alone.
++
++## Labels and splits
++
++Activity labels are fixed across splits:
++
++| Label | Activity |
++| --- | --- |
++| 0 | Walking |
++| 1 | Jogging |
++| 2 | Upstairs |
++| 3 | Downstairs |
++| 4 | Sitting |
++| 5 | Standing |
++
++For walking verification set `activity_ids: [0]` in the trainer configuration.
++The adapter emits native 20 Hz, unscaled, 3-channel `(N,3,T)` float32 windows.
++It does not invent gyroscopes or add train/test-dependent scaling.
++
++The source split sorts all observed real IDs, permutes them with NumPy
++`default_rng(42)`, allocates floor(80%) to training and the remainder to test
++(at least one subject per side). Filtering activities happens after this split.
++This is a project-defined reproducible subject split, not an official WISDM split.
++Training validation must be carved only from source-training subjects.
++
++`WindowData.y_subject` contains globally contiguous int64 indices into
++`WindowData.subject_ids`, which holds the same sorted original real IDs in both
++splits. Thus `subject_ids[y_subject[i]]` recovers the source identity. Source IDs
++are not independently remapped per split. HAR's existing mapping is unchanged.
++
++## Boundaries and invalid data
++
++Windows remain inside runs with the same subject, activity, and explicit session
++if supplied. Source order is preserved. A timestamp reset or duplicate, gap above
++one second, missing/nonfinite sensor record, or removed source-row interval breaks
++continuity. The one-second gap threshold is an explicit conservative policy;
++it does not establish a session identity. Semicolon-concatenated records are read
++separately. Missing/foreign subject IDs and unknown activity names fail clearly.
++Window strides restart at each boundary; mixed-activity majority labels are removed.
++
++The official raw file produced 1,073,630 valid records and 24,579 excluded records
++with this policy. At `window_size=128, stride=64`, measured native-rate windows were:
++
++| Source split | All activity windows | Walking windows | Walking subjects |
++| --- | ---: | ---: | ---: |
++| train | 2,155 | 927 | 27 |
++| test | 718 | 345 | 8 |
++
++The source subject partition has 28/8 subjects; one training subject has no surviving
++walking windows, and real subject 7 has only one. Training pair/triplet sampling
++must handle subjects without two genuine examples. These are data-retention counts,
++not authentication accuracy measurements. Overlapping windows remain correlated;
++subject separation does not establish cross-day or cross-device performance.
++The supported evaluation claim is held-out-subject verification within these
++recordings. No explicit cross-session split or test-based tuning is established
++by this preprocessing; validation-selected thresholds must remain fixed on test.
++
++The reader caches one raw frame per process, keyed by resolved path, size, and
++modification time in nanoseconds. Treat the cached frame as read-only. The cache
++invalidates when file metadata changes and is never deserialized from pickle.
++Measured on the primary CPU: first train load 10.586 s, subsequent test load
++0.107 s, repeated train load 0.297 s. These timings preceded a small parser cleanup;
++they compare cold parsing against warm reuse, not independent-machine performance.
++
++## Student A processed output
++
++Run the standalone pipeline with `--wisdm-raw /absolute/path/to/WISDM_ar_v1.1_raw.txt`
++to select authentic identities. Without it, the original CSV zip remains the
++activity-only input. The original NPZ keys `X`, `y`, `subject`, file names, and
++`(N,T,3)` shape are preserved. Real-source `subject` stores the original WISDM IDs;
++legacy unknown identities store integer `-1`, replacing misleading `train`/`test`
++strings. Consumers must inspect `identity_available` in the JSON sidecar.
++
++Resampling and filtering occur separately within each valid segment. Short
++segments safely skip FIR filtering if too short for its padding. Normalization
++statistics come exclusively from source-training windows and are reused for test.
++JSON sidecars include the input fingerprint, source URL, split IDs/protocol,
++boundary policy, identity availability, output counts, and filter availability.
++Upsampling to the standalone pipeline's default 50 Hz does not add measured
++information beyond the original 20 Hz sensors. The UCI-HAR export is unchanged.
++
++Boundary, label, cache-invalidation, missing-identity, subject-disjointness, and
++train-only normalization regression tests use explicitly synthetic fixtures.
++Real-source retention counts above were measured separately on the official file.
++
++The complete standalone WISDM export was also run with its default 50 Hz,
++90-sample windows and 45-sample stride. Real v1.1 produced 28,885 training and
++7,776 test windows in 23.67 s. The supplied legacy zip produced 28,903 training
++and 7,759 test windows in 13.74 s, with every exported identity explicitly `-1`.
++Both used training-only statistics and wrote schema/provenance JSON sidecars.
++These wall times include parsing, preprocessing, and compressed output under
++concurrent primary-machine load, with OpenBLAS limited to one thread; they are
++not a controlled before/after speed benchmark. Local artifacts are under
++`artifacts/student_a_identity_validation/` in the parent workspace.
+diff --git a/gait_pipeline.py b/gait_pipeline.py
+index 221c494..d7b8a5b 100644
+--- a/gait_pipeline.py
++++ b/gait_pipeline.py
+@@ -4,91 +4,443 @@ The implementation follows the supplied papers' reusable preprocessing ideas:
+ timestamp-aware resampling, optional FIR-like low-pass filtering, sliding
+ windows, training-only standardization, and subject-safe splits.
+ """
++
+ from __future__ import annotations
+-import argparse, json, zipfile
++
++import argparse
++import hashlib
++import json
++import math
++import warnings
++import zipfile
++from array import array
++from functools import lru_cache
+ from pathlib import Path
++
+ import numpy as np
+ import pandas as pd
+ 
+ try:
+     from scipy.interpolate import interp1d
+-    from scipy.signal import firwin, filtfilt
+-except Exception:
++    from scipy.signal import filtfilt, firwin
++except ImportError:
+     interp1d = firwin = filtfilt = None
+ 
+ ROOT = Path(__file__).resolve().parent
+ 
++WISDM_V1_ACTIVITY_NAMES = [
++    "Walking",
++    "Jogging",
++    "Upstairs",
++    "Downstairs",
++    "Sitting",
++    "Standing",
++]
++WISDM_V1_URL = "https://www.cis.fordham.edu/wisdm/dataset.php"
++WISDM_V1_RAW_SHA256 = "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e"
++
++
++def _wisdm_fingerprint(path):
++    with open(path, "rb") as stream:
++        return hashlib.file_digest(stream, "sha256").hexdigest()
++
++
++def _read_wisdm_v1(path):
++    """Read a raw file once per process; invalidate when size or mtime changes.
++
++    The returned cached frame is shared and must be treated as read-only.
++    """
++    resolved = Path(path).resolve()
++    stat = resolved.stat()
++    return _read_wisdm_v1_cached(str(resolved), stat.st_size, stat.st_mtime_ns)
++
++
++@lru_cache(maxsize=1)
++def _read_wisdm_v1_cached(path, size, mtime_ns):
++    """Read native subject,activity,timestamp_ns,x,y,z; records in source order.
++
++    Semicolons can separate multiple records on one physical line. Invalid
++    sensor records are counted and break continuity; identities are never guessed.
++    Array buffers avoid retaining a million Python record objects in memory.
++    """
++    columns = {
++        k: array("q" if k in ("subject", "Activity", "timestamp", "_segment") else "f")
++        for k in (
++            "subject",
++            "Activity",
++            "timestamp",
++            "acc_x",
++            "acc_y",
++            "acc_z",
++            "_segment",
++        )
++    }
++    activities = {name: i for i, name in enumerate(WISDM_V1_ACTIVITY_NAMES)}
++    max_float = np.finfo(np.float32).max
++    invalid = 0
++    segment = 0
++    with open(path, encoding="utf-8") as stream:
++        for line_no, line in enumerate(stream, 1):
++            for record in line.strip().split(";"):
++                if not record.strip():
++                    continue
++                fields = [field.strip() for field in record.split(",")]
++                if len(fields) != 6:
++                    invalid += 1
++                    segment += 1
++                    continue
++                try:
++                    subject = int(fields[0])
++                except ValueError as exc:
++                    raise ValueError(
++                        f"Missing/invalid real WISDM subject ID at {path}:{line_no}"
++                    ) from exc
++                if not 1 <= subject <= 36:
++                    raise ValueError(
++                        f"Not a WISDM AR v1.1 subject ID at {path}:{line_no}: {subject}"
++                    )
++                if fields[1] not in activities:
++                    raise ValueError(
++                        f"Unknown WISDM AR v1.1 activity at {path}:{line_no}: {fields[1]!r}"
++                    )
++                try:
++                    timestamp = int(fields[2])
++                    xyz = tuple(float(value) for value in fields[3:])
++                    valid = 0 < timestamp <= 9223372036854775807 and all(
++                        math.isfinite(value) and abs(value) <= max_float
++                        for value in xyz
++                    )
++                except ValueError:
++                    valid = False
++                if not valid:
++                    invalid += 1
++                    segment += 1
++                    continue
++                for key, value in zip(
++                    columns, (subject, activities[fields[1]], timestamp, *xyz, segment)
++                ):
++                    columns[key].append(value)
++    df = pd.DataFrame(
++        {key: np.asarray(value) for key, value in columns.items()}, copy=False
++    )
++    df["_source_row"] = np.arange(len(df))
++    if df.empty:
++        raise ValueError(f"No valid subject-labelled WISDM AR v1.1 records in {path}")
++    df.attrs.update(
++        source_url=WISDM_V1_URL,
++        sha256=_wisdm_fingerprint(path),
++        invalid_records=invalid,
++        valid_records=len(df),
++        timestamp_unit="nanoseconds",
++        schema="WISDM AR v1.1 raw",
++        schema_version=1,
++    )
++    df.attrs["matches_official_sha256"] = df.attrs["sha256"] == WISDM_V1_RAW_SHA256
++    if invalid:
++        warnings.warn(
++            f"WISDM AR v1.1: excluded {invalid} invalid records; each breaks window continuity",
++            RuntimeWarning,
++        )
++    return df
++
++
++def _wisdm_subject_split(subjects):
++    """Fixed 80/20 split of real IDs, independent of record order and activity."""
++    ids = np.unique(np.asarray(subjects, dtype=np.int64))
++    if len(ids) < 2:
++        raise ValueError(
++            "Subject-disjoint WISDM train/test requires at least two real subjects"
++        )
++    shuffled = np.random.default_rng(42).permutation(ids)
++    n_train = min(len(ids) - 1, max(1, int(0.8 * len(ids))))
++    return np.sort(shuffled[:n_train]), np.sort(shuffled[n_train:])
++
++
++def _wisdm_segments(df, timestamp_scale=1.0):
++    """Yield contiguous valid runs; never sort records or bridge boundaries.
++
++    A reset, duplicate timestamp, or gap over one second ends a run. The gap
++    threshold is a conservative preprocessing rule, not an inferred session ID.
++    """
++    if df.empty:
++        return
++    times = df["timestamp"].to_numpy()
++    values = df[["acc_x", "acc_y", "acc_z"]].to_numpy(dtype=np.float32)
++    labels = df["Activity"].to_numpy()
++    valid = np.isfinite(times) & np.all(np.isfinite(values), axis=1) & pd.notna(labels)
++    boundary = np.ones(len(df), dtype=bool)
++    delta = np.diff(times)
++    boundary[1:] = (
++        (delta <= 0)
++        | (delta > timestamp_scale)
++        | (labels[1:] != labels[:-1])
++        | ~valid[1:]
++        | ~valid[:-1]
++    )
++    for key in ("subject", "session", "_segment"):
++        if key in df:
++            ids = df[key].to_numpy()
++            valid &= pd.notna(ids)
++            boundary[1:] |= (ids[1:] != ids[:-1]) | ~valid[1:] | ~valid[:-1]
++    if "_source_row" in df:
++        boundary[1:] |= np.diff(df["_source_row"].to_numpy()) != 1
++    starts = np.flatnonzero(boundary)
++    for start, stop in zip(starts, np.r_[starts[1:], len(df)]):
++        if valid[start]:
++            yield start, stop
++
++
+ def resample(values, timestamps, hz):
+-    t = np.asarray(timestamps, float); x = np.asarray(values, float)
+-    keep = np.isfinite(t) & np.all(np.isfinite(x), axis=1)
+-    t, x = t[keep], x[keep]
+-    order = np.argsort(t); t, x = t[order], x
+-    t, ix = np.unique(t, return_index=True); x = x[ix]
+-    if len(t) < 3: return x
+-    grid = np.arange(t[0], t[-1] + 1e-9, 1.0 / hz)
+-    return np.column_stack([np.interp(grid, t, x[:, j]) for j in range(x.shape[1])])
++    """Resample one already-separated recording; never sort across resets."""
++    t = np.asarray(timestamps, dtype=np.float64)
++    x = np.asarray(values, dtype=np.float32)
++    if not np.isfinite(hz) or hz <= 0:
++        raise ValueError("hz must be positive and finite")
++    if not len(t):
++        return np.empty((0, x.shape[1]), dtype=np.float32)
++    if (
++        not np.all(np.isfinite(t))
++        or not np.all(np.isfinite(x))
++        or np.any(np.diff(t) <= 0)
++    ):
++        raise ValueError(
++            "Resampling requires a finite, strictly increasing single segment"
++        )
++    t = t - t[0]
++    grid = np.arange(0, t[-1] + 1e-9, 1.0 / hz)
++    return np.column_stack(
++        [np.interp(grid, t, x[:, j]) for j in range(x.shape[1])]
++    ).astype(np.float32)
++
+ 
+ def lowpass(x, hz, cutoff=8.0):
+-    if filtfilt is None or firwin is None or len(x) < 32: return x
++    if not 0 < cutoff < hz / 2:
++        raise ValueError("cutoff must be between zero and the Nyquist frequency")
++    if filtfilt is None or firwin is None:
++        return x
+     taps = firwin(31, cutoff, fs=hz)
+-    return filtfilt(taps, [1.0], x, axis=0).astype(np.float32)
++    padlen = 3 * (len(taps) - 1)
++    if len(x) <= padlen:
++        return x
++    return filtfilt(taps, [1.0], x, axis=0, padlen=padlen).astype(np.float32)
++
+ 
+ def windows(x, y, subject, size, step):
+-    out, labels, subs = [], [], []
+-    for start in range(0, max(0, len(x)-size+1), step):
+-        z = x[start:start+size]
+-        if len(z) != size: continue
+-        # majority label, with a purity score to flag boundary windows
+-        vals, counts = np.unique(y[start:start+size], return_counts=True)
+-        k = int(np.argmax(counts)); out.append(z); labels.append(vals[k]); subs.append(subject)
+-    return np.asarray(out, np.float32), np.asarray(labels), np.asarray(subs)
++    """Pure-activity windows, restarting stride at every label boundary."""
++    if size <= 0 or step <= 0:
++        raise ValueError("window size and step must be positive")
++    x, y = np.asarray(x), np.asarray(y)
++    if len(x) != len(y):
++        raise ValueError("Signal and activity lengths differ")
++    starts = (
++        np.r_[0, np.flatnonzero(y[1:] != y[:-1]) + 1]
++        if len(y)
++        else np.array([], dtype=int)
++    )
++    out, labels = [], []
++    for start, stop in zip(starts, np.r_[starts[1:], len(y)]):
++        if stop - start < size:
++            continue
++        block = np.lib.stride_tricks.sliding_window_view(x[start:stop], size, axis=0)[
++            ::step
++        ].transpose(0, 2, 1)
++        out.append(block)
++        labels.extend([y[start]] * len(block))
++    X = (
++        np.concatenate(out)
++        if out
++        else np.empty((0, size, x.shape[1]), dtype=np.float32)
++    )
++    return (
++        X.astype(np.float32),
++        np.asarray(labels, dtype=np.int64),
++        np.full(len(labels), subject, dtype=np.int64),
++    )
++
+ 
+ def save_npz(out, name, X, y, subjects, meta, stats=None):
+     out.mkdir(parents=True, exist_ok=True)
+-    np.savez_compressed(out / f'{name}.npz', X=X, y=y, subject=subjects)
+-    (out / f'{name}.json').write_text(json.dumps(meta, indent=2), encoding='utf-8')
+-    if stats: np.savez(out / f'{name}_normalization.npz', **stats)
++    np.savez_compressed(out / f"{name}.npz", X=X, y=y, subject=subjects)
++    (out / f"{name}.json").write_text(json.dumps(meta, indent=2), encoding="utf-8")
++    if stats:
++        np.savez(out / f"{name}_normalization.npz", **stats)
++
++
++def _prepare_wisdm_split(df, args, timestamp_scale):
++    chunks, labels, subjects = [], [], []
++    timestamps = df.timestamp.to_numpy()
++    values = df[["acc_x", "acc_y", "acc_z"]].to_numpy(dtype=np.float32)
++    activities = df.Activity.to_numpy()
++    identities = df.subject.to_numpy() if "subject" in df else None
++    for start, stop in _wisdm_segments(df, timestamp_scale):
++        duration = (timestamps[stop - 1] - timestamps[start]) / timestamp_scale
++        if duration * args.hz + 1 + 1e-7 < args.window:
++            continue
++        # Subtract integer nanoseconds before converting to seconds.
++        ts = timestamps[start:stop]
++        seconds = (ts - ts[0]) / timestamp_scale
++        x = resample(values[start:stop], seconds, args.hz)
++        x = lowpass(x, args.hz, args.cutoff)
++        subject = int(identities[start]) if identities is not None else -1
++        w, y, sub = windows(
++            x, np.full(len(x), int(activities[start])), subject, args.window, args.step
++        )
++        if len(w):
++            chunks.append(w)
++            labels.append(y)
++            subjects.append(sub)
++    if not chunks:
++        return (
++            np.empty((0, args.window, 3), dtype=np.float32),
++            np.empty(0, dtype=np.int64),
++            np.empty(0, dtype=np.int64),
++        )
++    return np.concatenate(chunks), np.concatenate(labels), np.concatenate(subjects)
++
+ 
+ def process_wisdm(args, out):
+-    zpath = ROOT/'Dataset'/'WISDM_Dataset.zip'
++    """Keep X/y/subject NPZ keys; unknown legacy subjects are explicitly -1."""
++    if args.window <= 0 or args.step <= 0:
++        raise ValueError("window and step must be positive")
++    raw_path = getattr(args, "wisdm_raw", None)
+     allsets = []
+-    with zipfile.ZipFile(zpath) as z:
+-        for split in ('train','test'):
+-            with z.open(f'{split}.csv') as f: df = pd.read_csv(f)
+-            cols = ['acc_x','acc_y','acc_z']; X = resample(df[cols].values, df['timestamp'].values, args.hz)
+-            X = lowpass(X, args.hz, args.cutoff)
+-            raw_y = df.Activity.to_numpy(); tt = df.timestamp.to_numpy(float)
+-            grid = np.linspace(tt.min(), tt.max(), len(X))
+-            y = raw_y[np.clip(np.searchsorted(tt, grid), 0, len(raw_y)-1)]
+-            # WISDM archive has no subject column; preserve source split as group.
+-            w, lab, sub = windows(X, y, split, args.window, args.step)
+-            allsets.append((split,w,lab,sub))
+-    train = next(v for v in allsets if v[0]=='train')[1]
+-    mu, sd = train.mean(axis=(0,1)), train.std(axis=(0,1)); sd[sd < 1e-6] = 1
+-    for split,w,y,s in allsets:
+-        save_npz(out, f'wisdm_{split}', ((w-mu)/sd).astype(np.float32), y,s,
+-                 {**vars(args), 'normalization':'train-only standard score'}, {'mean':mu,'std':sd})
++    if raw_path:
++        path = Path(raw_path).expanduser().resolve()
++        df = _read_wisdm_v1(path)
++        train_ids, test_ids = _wisdm_subject_split(df.subject)
++        provenance = {
++            **df.attrs,
++            "source": "wisdm_v1",
++            "source_path": str(path),
++            "identity_available": True,
++            "subject_values": "original WISDM user IDs (1..36)",
++            "activity_names": WISDM_V1_ACTIVITY_NAMES,
++            "split_protocol": "sorted subjects, numpy default_rng(42), 80% train, remainder test",
++            "train_subject_ids": train_ids.tolist(),
++            "test_subject_ids": test_ids.tolist(),
++        }
++        for split, ids in [("train", train_ids), ("test", test_ids)]:
++            part = df.loc[df.subject.isin(ids)].reset_index(drop=True)
++            allsets.append((split, *_prepare_wisdm_split(part, args, 1e9)))
++    else:
++        path = ROOT / "Dataset" / "WISDM_Dataset.zip"
++        provenance = {
++            "source": "legacy_wisdm_csv",
++            "source_path": str(path),
++            "sha256": _wisdm_fingerprint(path),
++            "identity_available": False,
++            "subject_values": "-1 means unknown; not usable for identity verification",
++            "activity_names": [f"activity_{i}" for i in range(6)],
++            "timestamp_unit": "seconds",
++            "split_protocol": "provided CSV splits; subject overlap unknown",
++        }
++        with zipfile.ZipFile(path) as archive:
++            for split in ("train", "test"):
++                with archive.open(f"{split}.csv") as stream:
++                    df = pd.read_csv(stream)
++                required = {"timestamp", "Activity", "acc_x", "acc_y", "acc_z"}
++                if not required <= set(df):
++                    raise ValueError(
++                        f"Missing WISDM columns: {sorted(required - set(df))}"
++                    )
++                labels = df.Activity.to_numpy()
++                if not np.all(
++                    np.isfinite(labels)
++                    & (labels == np.floor(labels))
++                    & (labels >= 0)
++                    & (labels < 6)
++                ):
++                    raise ValueError(
++                        "Legacy WISDM activity labels must be integers 0..5"
++                    )
++                # Source split strings are provenance, never person identities.
++                df = df.drop(columns=["subject"], errors="ignore")
++                allsets.append((split, *_prepare_wisdm_split(df, args, 1.0)))
++    train = allsets[0][1]
++    if not len(train):
++        raise ValueError(
++            "No training windows survive WISDM segment boundaries; reduce window length"
++        )
++    mu, sd = train.mean(axis=(0, 1)), train.std(axis=(0, 1))
++    sd[sd < 1e-6] = 1
++    for split, w, y, subjects in allsets:
++        metadata = {
++            **vars(args),
++            **provenance,
++            "normalization": "train-only standard score",
++            "boundary_policy": "subject/activity/session change, nonincreasing timestamp, invalid record, gap >1 second",
++            "windows": len(w),
++            "shape": list(w.shape),
++            "subject_ids": np.unique(subjects).tolist(),
++            "scipy_filter_available": filtfilt is not None,
++        }
++        save_npz(
++            out,
++            f"wisdm_{split}",
++            ((w - mu) / sd).astype(np.float32),
++            y,
++            subjects,
++            metadata,
++            {"mean": mu, "std": sd},
++        )
++
+ 
+ def read_uci(z):
+     with zipfile.ZipFile(z) as outer:
+-        nested = outer.read('UCI HAR Dataset.zip')
++        nested = outer.read("UCI HAR Dataset.zip")
+     import io
++
+     with zipfile.ZipFile(io.BytesIO(nested)) as d:
+-        def txt(name): return np.loadtxt(d.open(name))
+-        Xtr, Xte = txt('UCI HAR Dataset/train/X_train.txt'), txt('UCI HAR Dataset/test/X_test.txt')
+-        ytr, yte = txt('UCI HAR Dataset/train/y_train.txt').astype(int).ravel(), txt('UCI HAR Dataset/test/y_test.txt').astype(int).ravel()
+-        str_, ste = txt('UCI HAR Dataset/train/subject_train.txt').astype(int).ravel(), txt('UCI HAR Dataset/test/subject_test.txt').astype(int).ravel()
++
++        def txt(name):
++            return np.loadtxt(d.open(name))
++
++        Xtr, Xte = (
++            txt("UCI HAR Dataset/train/X_train.txt"),
++            txt("UCI HAR Dataset/test/X_test.txt"),
++        )
++        ytr, yte = (
++            txt("UCI HAR Dataset/train/y_train.txt").astype(int).ravel(),
++            txt("UCI HAR Dataset/test/y_test.txt").astype(int).ravel(),
++        )
++        str_, ste = (
++            txt("UCI HAR Dataset/train/subject_train.txt").astype(int).ravel(),
++            txt("UCI HAR Dataset/test/subject_test.txt").astype(int).ravel(),
++        )
+     # Dataset already provides 128-sample windows x 561 engineered features.
+-    return (Xtr,ytr,str_), (Xte,yte,ste)
++    return (Xtr, ytr, str_), (Xte, yte, ste)
++
+ 
+ def process_uci(args, out):
+-    tr,te = read_uci(ROOT/'Dataset'/'human+activity+recognition+using+smartphones.zip')
+-    for name,(X,y,s) in [('uci_har_train',tr),('uci_har_test',te)]: save_npz(out,name,X.astype(np.float32),y,s,vars(args))
++    tr, te = read_uci(
++        ROOT / "Dataset" / "human+activity+recognition+using+smartphones.zip"
++    )
++    for name, (X, y, s) in [("uci_har_train", tr), ("uci_har_test", te)]:
++        save_npz(out, name, X.astype(np.float32), y, s, vars(args))
++
+ 
+ def main():
+-    p=argparse.ArgumentParser(); p.add_argument('--out',default='processed')
+-    p.add_argument('--hz',type=float,default=50); p.add_argument('--window',type=int,default=90)
+-    p.add_argument('--step',type=int,default=45); p.add_argument('--cutoff',type=float,default=8)
+-    a=p.parse_args(); out=ROOT/a.out; process_wisdm(a,out); process_uci(a,out)
+-    print(json.dumps({'output':str(out), 'window_samples':a.window, 'step_samples':a.step}, indent=2))
+-if __name__=='__main__': main()
++    p = argparse.ArgumentParser()
++    p.add_argument("--out", default="processed")
++    p.add_argument("--hz", type=float, default=50)
++    p.add_argument("--window", type=int, default=90)
++    p.add_argument("--step", type=int, default=45)
++    p.add_argument("--cutoff", type=float, default=8)
++    p.add_argument(
++        "--wisdm-raw",
++        help="Official WISDM_ar_v1.1_raw.txt with genuine user IDs; otherwise legacy activity-only CSV zip",
++    )
++    a = p.parse_args()
++    out = ROOT / a.out
++    process_wisdm(a, out)
++    process_uci(a, out)
++    print(
++        json.dumps(
++            {"output": str(out), "window_samples": a.window, "step_samples": a.step},
++            indent=2,
++        )
++    )
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/requirements.txt b/requirements.txt
+new file mode 100644
+index 0000000..1b08dac
+--- /dev/null
++++ b/requirements.txt
+@@ -0,0 +1,3 @@
++numpy==2.5.4
++pandas==3.0.6
++scipy==1.18.1
+diff --git a/tests/test_wisdm_pipeline_identity.py b/tests/test_wisdm_pipeline_identity.py
+new file mode 100644
+index 0000000..aa127ad
+--- /dev/null
++++ b/tests/test_wisdm_pipeline_identity.py
+@@ -0,0 +1,127 @@
++"""Boundary and train-only normalization tests with deliberately synthetic data."""
++
++import argparse
++import hashlib
++import importlib.util
++import json
++import tempfile
++import unittest
++import zipfile
++from pathlib import Path
++
++import numpy as np
++import pandas as pd
++
++ROOT = Path(__file__).resolve().parents[1]
++PIPELINE = ROOT / "gait_pipeline.py"
++if not PIPELINE.is_file():
++    PIPELINE = ROOT / "student_a" / "gait_pipeline.py"
++spec = importlib.util.spec_from_file_location("identity_pipeline_under_test", PIPELINE)
++pipeline = importlib.util.module_from_spec(spec)
++spec.loader.exec_module(pipeline)
++
++
++class WisdmPipelineIdentityTests(unittest.TestCase):
++    def setUp(self):
++        self.tmp = tempfile.TemporaryDirectory()
++        self.addCleanup(self.tmp.cleanup)
++        self.root = Path(self.tmp.name)
++        self.args = argparse.Namespace(
++            hz=20.0, cutoff=8.0, window=4, step=2, wisdm_raw=None, out="processed"
++        )
++
++    def test_resample_rejects_reset_instead_of_sorting_sessions(self):
++        with self.assertRaisesRegex(ValueError, "single segment"):
++            pipeline.resample(np.zeros((4, 3)), [0, 0.05, 0, 0.05], 20)
++        with self.assertRaisesRegex(ValueError, "single segment"):
++            pipeline.resample(np.zeros((4, 3)), [0, 0.05, 0.05, 0.1], 20)
++
++    def test_short_filter_segment_and_pure_windows(self):
++        x = np.zeros((40, 3), dtype=np.float32)
++        self.assertEqual(pipeline.lowpass(x, 20, 8).shape, x.shape)
++        X, y, subjects = pipeline.windows(
++            np.arange(24).reshape(8, 3), [0] * 3 + [1] * 5, 17, 4, 2
++        )
++        self.assertEqual(X.shape, (1, 4, 3))
++        np.testing.assert_array_equal(y, [1])
++        np.testing.assert_array_equal(subjects, [17])
++        np.testing.assert_array_equal(X[0], np.arange(24).reshape(8, 3)[3:7])
++
++    def test_real_subject_export_preserves_ids_and_train_only_statistics(self):
++        raw = self.root / "WISDM_ar_v1.1_raw.txt"
++        rows = []
++        for subject in [1, 4, 11, 33, 36]:
++            for j in range(12):
++                rows.append(
++                    f"{subject},Walking,{1_000_000_000 + j * 50_000_000},{subject + j},{subject * 2 + j},3;\n"
++                )
++        raw.write_text("".join(rows))
++        self.args.wisdm_raw = str(raw)
++        out = self.root / "result"
++        pipeline.process_wisdm(self.args, out)
++        with (
++            np.load(out / "wisdm_train.npz", allow_pickle=False) as tr,
++            np.load(out / "wisdm_test.npz", allow_pickle=False) as te,
++        ):
++            self.assertEqual(set(tr.files), {"X", "y", "subject"})
++            self.assertEqual(tr["X"].shape[1:], (4, 3))
++            self.assertTrue(set(tr["subject"]).isdisjoint(te["subject"]))
++            self.assertEqual(
++                set(tr["subject"]) | set(te["subject"]), {1, 4, 11, 33, 36}
++            )
++            np.testing.assert_allclose(tr["X"].mean(axis=(0, 1)), 0, atol=1e-6)
++            self.assertGreater(abs(float(te["X"][..., 0].mean())), 0.01)
++        with (
++            np.load(out / "wisdm_train_normalization.npz", allow_pickle=False) as a,
++            np.load(out / "wisdm_test_normalization.npz", allow_pickle=False) as b,
++        ):
++            np.testing.assert_array_equal(a["mean"], b["mean"])
++            np.testing.assert_array_equal(a["std"], b["std"])
++        metadata = json.loads((out / "wisdm_train.json").read_text())
++        self.assertTrue(metadata["identity_available"])
++        self.assertEqual(
++            metadata["sha256"], hashlib.sha256(raw.read_bytes()).hexdigest()
++        )
++        self.assertEqual(metadata["activity_names"][0], "Walking")
++
++    def test_legacy_unknown_identity_and_no_resampling_across_reset(self):
++        dataset = self.root / "Dataset"
++        dataset.mkdir()
++        archive = dataset / "WISDM_Dataset.zip"
++        old_root = pipeline.ROOT
++        pipeline.ROOT = self.root
++        self.addCleanup(setattr, pipeline, "ROOT", old_root)
++
++        def write_archive(test_value):
++            with zipfile.ZipFile(archive, "w") as z:
++                for split, offset in [("train", 0), ("test", test_value)]:
++                    df = pd.DataFrame(
++                        {
++                            "acc_x": np.r_[np.arange(6), np.arange(6) + 100] + offset,
++                            "acc_y": [0] * 12,
++                            "acc_z": [1] * 12,
++                            "timestamp": list(np.arange(6) / 20) * 2,
++                            "Activity": [0] * 12,
++                        }
++                    )
++                    z.writestr(f"{split}.csv", df.to_csv(index=False))
++
++        write_archive(1000)
++        out = self.root / "first"
++        pipeline.process_wisdm(self.args, out)
++        with np.load(out / "wisdm_train.npz", allow_pickle=False) as train:
++            before = train["X"].copy()
++            self.assertEqual(len(before), 4)
++            np.testing.assert_array_equal(train["subject"], [-1] * 4)
++        meta = json.loads((out / "wisdm_train.json").read_text())
++        self.assertFalse(meta["identity_available"])
++        write_archive(5000)
++        pipeline.process_wisdm(self.args, self.root / "second")
++        with np.load(
++            self.root / "second" / "wisdm_train.npz", allow_pickle=False
++        ) as after:
++            np.testing.assert_array_equal(before, after["X"])
++
++
++if __name__ == "__main__":
++    unittest.main()
+-- 
+2.56.0
+
+
+From 3c63db5058833a2d128458315972679d7e768528 Mon Sep 17 00:00:00 2001
+From: aaditagrawal <103925638+aaditagrawal@users.noreply.github.com>
+Date: Fri, 23 Oct 2026 20:39:00 +0530
+Subject: [PATCH 2/2] docs: explain authentic identities and measured
+ standalone preprocessing
+
+---
+ README.md | 149 +++++++-----------------------------------------------
+ 1 file changed, 19 insertions(+), 130 deletions(-)
+
+diff --git a/README.md b/README.md
+index c760d42..43be6f3 100644
+--- a/README.md
++++ b/README.md
+@@ -1,146 +1,35 @@
+-# Inertial Sensor Data Pipeline
++# Inertial sensor data pipeline
+ 
+-This project prepares inertial-sensor datasets for gait recognition, activity recognition, and authentication experiments. The implementation is contained in [`gait_pipeline.py`](gait_pipeline.py).
++Student A preprocessing for the MAHE gait-authentication project. `gait_pipeline.py` exports the existing NPZ keys (`X`, `y`, `subject`) and JSON sidecars, with WISDM `(N,T,3)` sensor windows and UCI HAR's original 561 engineered features. It is separate from the merged project's `(N,C,T)` raw-window adapter.
+ 
+-The pipeline was designed from the preprocessing methods described in the supplied papers. It is intended to produce clean, reproducible model inputs rather than reproduce any paper's complete neural-network architecture or reported results.
++## Run
+ 
+-## Included datasets
+-
+-The `Dataset/` directory contains:
+-
+-- `WISDM_Dataset.zip`
+-- `human+activity+recognition+using+smartphones.zip`, containing the UCI HAR dataset
+-
+-The source archives are read directly. They are not modified or extracted permanently by the script.
+-
+-## What the pipeline does
+-
+-### WISDM
+-
+-For each WISDM train and test split, the script:
+-
+-1. Reads the three accelerometer axes: `acc_x`, `acc_y`, and `acc_z`.
+-2. Uses timestamps to resample the signal to a regular 50 Hz grid.
+-3. Applies a low-pass FIR filter with an 8 Hz cutoff when SciPy is available.
+-4. Creates sliding windows of 90 samples, corresponding to 1.8 seconds at 50 Hz.
+-5. Uses a 50% overlap, so the step size is 45 samples.
+-6. Assigns each window the majority activity label.
+-7. Standardizes the windows using statistics calculated from the training split only.
+-8. Saves the processed arrays as compressed NumPy files.
+-
+-The 50 Hz resampling, timestamp handling, filtering, and fixed-window approach follow the general procedures described in the supplied gait-preprocessing papers. The 1.8-second window and 50% overlap are practical defaults for the available WISDM data.
+-
+-### UCI HAR
+-
+-UCI HAR is already distributed as fixed samples with labels and subject identifiers. The script therefore preserves its provided representation and exports:
+-
+-- training features and labels;
+-- test features and labels;
+-- subject identifiers for subject-aware evaluation.
+-
+-The UCI HAR feature arrays have shape `(samples, 561)` because they are the dataset's existing engineered feature representation, not raw 3-axis windows.
+-
+-## Running the pipeline
+-
+-From the project directory, run:
+-
+-```powershell
+-python gait_pipeline.py --out processed
+-```
+-
+-The default configuration is:
+-
+-```text
+-Sampling rate: 50 Hz
+-Window length: 90 samples / 1.8 seconds
+-Window step: 45 samples / 50% overlap
+-Low-pass cutoff: 8 Hz
+-Output directory: processed/
++```bash
++uv venv --python 3.14
++uv pip install --python .venv/bin/python --compile-bytecode -r requirements.txt
++uv run --no-project --python .venv/bin/python python gait_pipeline.py --wisdm-raw /absolute/path/to/WISDM_ar_v1.1_raw.txt --out processed_identity
+ ```
+ 
+-The main parameters can be changed from the command line:
++Get the authentic file using the merged project's `python -m scripts.setup_public_datasets --dataset wisdm_v1` command; it verifies the official Fordham archive checksum and retains source documentation. Native WISDM is 20 Hz with real IDs 1–36 and Walking=0. The standalone default deliberately remains resampled 50 Hz, T90/step45, with an 8 Hz low-pass filter. Upsampling adds no measured information. Set parameters explicitly when matching an experiment.
+ 
+-```powershell
+-python gait_pipeline.py `
+-  --out processed_64 `
+-  --hz 50 `
+-  --window 64 `
+-  --step 32 `
+-  --cutoff 8
+-```
+-
+-The 64-sample configuration corresponds to the 1.28-second window used in the supplied AE-GDI work.
+-
+-## Output files
+-
+-Each `.npz` file contains:
+-
+-- `X`: input samples;
+-- `y`: integer labels;
+-- `subject`: source split or subject identifier.
+-
+-The generated files are:
+-
+-```text
+-processed/
+-├── wisdm_train.npz
+-├── wisdm_test.npz
+-├── wisdm_train.json
+-├── wisdm_test.json
+-├── wisdm_train_normalization.npz
+-├── wisdm_test_normalization.npz
+-├── uci_har_train.npz
+-├── uci_har_test.npz
+-├── uci_har_train.json
+-└── uci_har_test.json
+-```
+-
+-For WISDM, `X` has shape `(number_of_windows, window_length, 3)`. With the default settings, the generated shapes are approximately:
++Without `--wisdm-raw`, the included anonymous CSV archive is processed for activity-only use:
+ 
+-```text
+-wisdm_train: (232662, 90, 3)
+-wisdm_test:  (232237, 90, 3)
++```bash
++uv run --no-project --python .venv/bin/python python gait_pipeline.py --out processed_legacy
+ ```
+ 
+-The exact counts can change if the source archives or command-line parameters change.
++Legacy `subject` values are now integer **-1**, with `identity_available=false`; the strings `train`/`test` are never person identities. Do not calculate person-verification metrics from those exports. Existing tracked `processed/` files predate this fix; regenerate into a fresh output directory.
+ 
+-## Loading the data
++## Correctness and evidence
+ 
+-```python
+-import numpy as np
++Resampling/filtering now occurs within contiguous subject/activity/timestamp segments. It never sorts or resamples across resets, duplicate timestamps, gaps, invalid rows or removed-record boundaries. Short runs skip unsafe FIR padding. Activity encoding is fixed for authentic v1.1; old CSV numeric labels are range checked but remain semantically unnamed. Normalization statistics are fit on source-training windows only and reused unchanged for test. Authentic source train/test subjects are disjoint, deterministically split 80/20; metadata records source IDs, fingerprint, valid/invalid row counts, filtering status, identity availability and boundary policy.
+ 
+-train = np.load("processed/wisdm_train.npz")
+-X_train = train["X"]
+-y_train = train["y"]
++Real full standalone processing completed with 28,885 train/7,776 test windows over 28/8 source subjects at default 50 Hz/T90/step45. Legacy activity-only exports produced 28,903/7,759 windows with unknown identities. These differ from the model adapter's native 20 Hz/T128 counts and are not interchangeable. Measured absolute times were 23.67 s real and 13.74 s legacy under concurrent load; no before/after speed gain is claimed.
+ 
+-test = np.load("processed/wisdm_test.npz")
+-X_test = test["X"]
+-y_test = test["y"]
+-```
+-
+-## Important limitations
+-
+-- The WISDM archives do not expose a subject identifier in the columns used by this pipeline. The `subject` field therefore records `train` or `test`, not individual people. Do not use it as a person-level identity label.
+-- The WISDM pipeline operates on accelerometer channels only because those are the channels present in the supplied CSV files. It does not invent gyroscope data.
+-- The UCI HAR export preserves the dataset's 561 engineered features. It does not reconstruct the original six raw inertial channels.
+-- The supplied papers use different datasets, window definitions, and experimental protocols. The code captures reusable preprocessing ideas, but it should not be interpreted as an exact reproduction of every paper.
+-- For model evaluation, keep the official train/test split and avoid fitting normalization statistics on the test set.
+-
+-## Dependencies
+-
+-The script requires Python with:
++Run regression tests with the isolated environment:
+ 
+-```text
+-numpy
+-pandas
+-scipy (recommended for FIR filtering)
++```bash
++uv run --no-project --python .venv/bin/python python -m unittest discover -s tests -v
+ ```
+ 
+-Install them with:
+-
+-```powershell
+-python -m pip install numpy pandas scipy
+-```
+-
+-If SciPy is unavailable, the script still performs timestamp-based linear resampling but skips the FIR filtering step.
+-
++[Source/schema, checksums, boundary tests and provenance](docs/wisdm_identity.md) describe the full contract. The [merged runnable project](https://github.com/VariableThe/gait-biometrics) contains full model training/evaluation. Neither these exports nor subject separation establishes cross-session continuous authentication.
+-- 
+2.56.0
+

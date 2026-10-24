@@ -92,9 +92,16 @@ selection match exactly. A fixed observational clock permits exact history
 comparison without making runtime claims. Tests also exercise uncommitted epoch
 rollback, initial/final boundaries, ties, log/best repair, safe loading, atomic
 write failure, mismatch refusal and the unchanged default checkpoint contract.
-CUDA RNG bookkeeping is tested with mocks; actual CUDA training equivalence has
-not been measured. CUDA kernels may require deterministic settings for exact
-numerical replay even on an otherwise matching runtime.
+CUDA RNG bookkeeping has mock coverage. A separate synthetic FP32 check on the
+local GTX 1650 Ti with Torch 2.14.1+cu130 also matched uninterrupted four-epoch
+training against epoch-two interruption/resume exactly for parameters,
+optimizer/scheduler, CPU/CUDA RNG, sampler, history and best checkpoint. It used
+deterministic algorithms, cuDNN deterministic mode, disabled benchmarking/TF32,
+and `CUBLAS_WORKSPACE_CONFIG=:4096:8`. The observational trainer clock was fixed;
+this establishes no timing or biometric-quality result. See the
+[follow-up evidence](../reports/2026-10-24-engineering/README.md).
+Other CUDA kernels/devices/precisions remain untested, and may require different
+determinism support even on an otherwise matching runtime.
 
 ```bash
 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 \

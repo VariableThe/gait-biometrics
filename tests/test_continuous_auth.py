@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import unittest
+from typing import Any, cast
 
 from engine.continuous_auth import ContinuousAuthenticator
 
@@ -79,11 +80,12 @@ class ContinuousAuthenticationTests(unittest.TestCase):
         self.assertEqual(result["oldest_evidence_age"], 2)
 
     def test_gate_or_missing_score_abstains_without_refreshing_evidence(self):
-        for kwargs, reason in (
+        cases: tuple[tuple[dict[str, Any], str], ...] = (
             ({"score": None}, "missing_score"),
             ({"score": 1, "quality_ok": False}, "quality_gate"),
             ({"score": 1, "walking_probability": 0.79}, "not_walking"),
-        ):
+        )
+        for kwargs, reason in cases:
             with self.subTest(reason=reason):
                 auth = ContinuousAuthenticator(0.5)
                 auth.update(1, 0)
@@ -230,7 +232,9 @@ class ContinuousAuthenticationTests(unittest.TestCase):
                     auth.update(1, 0)
                     auth.update(1, 1)
                     kwargs = {"score": 1, "timestamp": 2, field: value}
-                    result = self.assert_decision(auth.update(**kwargs), "challenge")
+                    result = self.assert_decision(
+                        auth.update(**cast(Any, kwargs)), "challenge"
+                    )
                     self.assertFalse(result["evidence_added"])
 
     def test_invalid_walking_range_quality_and_identifiers_fail_closed(self):
@@ -244,7 +248,8 @@ class ContinuousAuthenticationTests(unittest.TestCase):
                 with self.subTest(field=field, value=value):
                     kwargs = {"score": 1, "timestamp": 2, field: value}
                     self.assert_decision(
-                        ContinuousAuthenticator(0).update(**kwargs), "challenge"
+                        ContinuousAuthenticator(0).update(**cast(Any, kwargs)),
+                        "challenge",
                     )
 
     def test_touching_half_open_intervals_are_independent_and_causal(self):
@@ -275,7 +280,11 @@ class ContinuousAuthenticationTests(unittest.TestCase):
         )
 
     def test_gated_or_unscored_windows_still_block_overlapping_reuse(self):
-        for kwargs in ({"score": None}, {"score": 1, "quality_ok": False}):
+        cases: tuple[dict[str, Any], ...] = (
+            {"score": None},
+            {"score": 1, "quality_ok": False},
+        )
+        for kwargs in cases:
             with self.subTest(kwargs=kwargs):
                 auth = ContinuousAuthenticator(0)
                 self.assert_decision(
@@ -389,7 +398,7 @@ class ContinuousAuthenticationTests(unittest.TestCase):
         ]
         for kwargs in configurations:
             with self.subTest(kwargs=kwargs), self.assertRaises(ValueError):
-                ContinuousAuthenticator(**({"threshold": 0} | kwargs))
+                ContinuousAuthenticator(**cast(Any, {"threshold": 0} | kwargs))
 
 
 if __name__ == "__main__":

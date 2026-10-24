@@ -43,7 +43,11 @@ SOURCE_FILES = (
 RAW_SHA256 = "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e"
 ACTIVITY_NAMES = ["Walking", "Jogging", "Upstairs", "Downstairs", "Sitting", "Standing"]
 CONTRACT = SourceContract(
-    "wisdm_v1", 20.0, ("acc_x", "acc_y", "acc_z"), ("wisdm_native_10_per_g",) * 3, 128
+    "wisdm_v1",
+    20.0,
+    ("acc_x", "acc_y", "acc_z"),
+    ("wisdm_native_10_per_g", "wisdm_native_10_per_g", "wisdm_native_10_per_g"),
+    128,
 )
 STRIDE = 64
 SPLIT_SEED = 20261024

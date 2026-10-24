@@ -605,4 +605,5 @@ def select_threshold(labels, probabilities):
         key = (tp * nneg + tn * npos, -(nneg - tn), float(threshold))
         if best is None or key > best[0]:
             best = key, float(threshold)
+    assert best is not None  # Candidates always include 0.0 and 1.0.
     return best[1]

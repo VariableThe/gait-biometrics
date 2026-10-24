@@ -5,6 +5,7 @@ from __future__ import annotations
 import io
 import unittest
 import warnings
+from typing import Any, cast
 
 import numpy as np
 import torch
@@ -53,7 +54,7 @@ class ScoreValidationTests(unittest.TestCase):
                     self.subTest(value=value, function=function.__name__),
                     self.assertRaises(ValueError),
                 ):
-                    function([1, 0], [1, 0], value)
+                    function([1, 0], [1, 0], cast(Any, value))
         for value in (0, 1, np.float32(0.5), np.array(0.5)):
             result = calibrate_threshold([1, 0], [1, 0], value)
             self.assertIsInstance(result["target_far"], float)
@@ -144,7 +145,7 @@ class ClassificationValidationTests(unittest.TestCase):
                 classification_metrics(truth, predicted, 2)
         for count in (True, np.bool_(True), 0, -1, 2.5, np.array(2)):
             with self.subTest(n_classes=count), self.assertRaises(ValueError):
-                classification_metrics([0], [0], count)
+                classification_metrics([0], [0], cast(Any, count))
 
 
 class EmbeddingNumericsTests(unittest.TestCase):

@@ -1,0 +1,353 @@
+{
+  "source": "wisdm_v1",
+  "split": "train",
+  "tensor_parity": true,
+  "n_windows": 2155,
+  "walking_windows": 927,
+  "enrollment": {
+    "protocol": "raw_support_prefix_enrollment_v1",
+    "enrollment_windows": 5,
+    "purge_samples": 128,
+    "purge_unit": "valid parsed raw records between half-open supports",
+    "prefix_order": "start_rows ascending, stable input order for ties",
+    "reserved_prefix_policy": "all subjects with more than n windows; no re-admission",
+    "n_input_windows": 927,
+    "n_input_subjects": 27,
+    "included_subject_ids": [
+      0,
+      3,
+      5,
+      7,
+      9,
+      10,
+      12,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      30,
+      31,
+      32,
+      33,
+      35
+    ],
+    "excluded_subject_ids": [
+      4,
+      6,
+      22
+    ],
+    "exclusion_reason": "insufficient prefix windows or no raw-support-safe probe",
+    "n_enrollment": 120,
+    "n_probes": 780,
+    "n_purged": 18,
+    "purged_indices": [
+      5,
+      6,
+      19,
+      20,
+      21,
+      64,
+      102,
+      176,
+      212,
+      286,
+      320,
+      426,
+      462,
+      604,
+      716,
+      800,
+      801,
+      841
+    ],
+    "n_excluded_windows": 9,
+    "per_subject": {
+      "0": {
+        "n_windows": 84,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 78,
+        "n_purged": 1
+      },
+      "3": {
+        "n_windows": 26,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 20,
+        "n_purged": 1
+      },
+      "4": {
+        "n_windows": 5,
+        "eligible": false,
+        "n_enrollment": 0,
+        "n_probes": 0,
+        "n_purged": 0
+      },
+      "5": {
+        "n_windows": 20,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 15,
+        "n_purged": 0
+      },
+      "6": {
+        "n_windows": 1,
+        "eligible": false,
+        "n_enrollment": 0,
+        "n_probes": 0,
+        "n_purged": 0
+      },
+      "7": {
+        "n_windows": 64,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 59,
+        "n_purged": 0
+      },
+      "9": {
+        "n_windows": 34,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 28,
+        "n_purged": 1
+      },
+      "10": {
+        "n_windows": 24,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 19,
+        "n_purged": 0
+      },
+      "12": {
+        "n_windows": 28,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 23,
+        "n_purged": 0
+      },
+      "15": {
+        "n_windows": 9,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 4,
+        "n_purged": 0
+      },
+      "16": {
+        "n_windows": 63,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 55,
+        "n_purged": 3
+      },
+      "17": {
+        "n_windows": 22,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 17,
+        "n_purged": 0
+      },
+      "18": {
+        "n_windows": 91,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 85,
+        "n_purged": 1
+      },
+      "19": {
+        "n_windows": 14,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 8,
+        "n_purged": 1
+      },
+      "20": {
+        "n_windows": 6,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 1,
+        "n_purged": 0
+      },
+      "22": {
+        "n_windows": 3,
+        "eligible": false,
+        "n_enrollment": 0,
+        "n_probes": 0,
+        "n_purged": 0
+      },
+      "23": {
+        "n_windows": 33,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 27,
+        "n_purged": 1
+      },
+      "24": {
+        "n_windows": 40,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 33,
+        "n_purged": 2
+      },
+      "25": {
+        "n_windows": 44,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 39,
+        "n_purged": 0
+      },
+      "26": {
+        "n_windows": 16,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 11,
+        "n_purged": 0
+      },
+      "27": {
+        "n_windows": 62,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 56,
+        "n_purged": 1
+      },
+      "28": {
+        "n_windows": 10,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 4,
+        "n_purged": 1
+      },
+      "30": {
+        "n_windows": 88,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 82,
+        "n_purged": 1
+      },
+      "31": {
+        "n_windows": 36,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 30,
+        "n_purged": 1
+      },
+      "32": {
+        "n_windows": 38,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 31,
+        "n_purged": 2
+      },
+      "33": {
+        "n_windows": 52,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 47,
+        "n_purged": 0
+      },
+      "35": {
+        "n_windows": 14,
+        "eligible": true,
+        "n_enrollment": 5,
+        "n_probes": 8,
+        "n_purged": 1
+      }
+    },
+    "raw_offset_nonoverlap_verified": true,
+    "cross_session": false,
+    "provenance": {
+      "source": "wisdm_v1",
+      "source_sha256": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e",
+      "row_coordinate": "zero_based_valid_parsed_record_ordinal",
+      "support": "[start_rows, stop_rows)",
+      "segment_definition": "first valid-row ordinal of a contiguous preprocessing run",
+      "n_windows": 927,
+      "n_segments": 643,
+      "timestamps_available": true,
+      "timestamp_endpoints": "first and last included sample; nanoseconds",
+      "cross_session": false
+    }
+  },
+  "pairs": {
+    "sampling": "genuine_subject_uniform_impostor_pair_uniform_with_replacement",
+    "pairing_version": "raw_support_v1",
+    "seed": 42,
+    "requested_n_pairs": 10000,
+    "n_genuine_pairs": 5000,
+    "n_impostor_pairs": 5000,
+    "n_unique_genuine_pairs": 3294,
+    "n_unique_impostor_pairs": 4962,
+    "n_unique_pairs": 8256,
+    "n_repeated_pairs": 1744,
+    "same_activity_pairs": false,
+    "eligible_activity_ids": null,
+    "excluded_activity_ids": [],
+    "per_activity": {
+      "0": {
+        "n_available_genuine_pairs": 24270,
+        "n_available_impostor_pairs": 404647,
+        "n_excluded_raw_support_genuine_pairs": 284,
+        "n_excluded_raw_support_impostor_pairs": 0,
+        "eligible_genuine_subject_ids": [
+          0,
+          3,
+          4,
+          5,
+          7,
+          9,
+          10,
+          12,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          30,
+          31,
+          32,
+          33,
+          35
+        ],
+        "eligible": true
+      }
+    },
+    "n_subjects": 27,
+    "n_windows_used": 927,
+    "purge_samples": 0,
+    "purge_unit": "valid parsed raw records between half-open supports",
+    "raw_offset_nonoverlap_verified": true,
+    "pair_independence": "not_independent_windows_and_pairs_can_recur",
+    "cross_session": false,
+    "provenance": {
+      "source": "wisdm_v1",
+      "source_sha256": "9aba4b1eaece56ab6d9187b16fc010c176e464750a4ec44c9d833514ecc1fa2e",
+      "row_coordinate": "zero_based_valid_parsed_record_ordinal",
+      "support": "[start_rows, stop_rows)",
+      "segment_definition": "first valid-row ordinal of a contiguous preprocessing run",
+      "n_windows": 927,
+      "n_segments": 643,
+      "timestamps_available": true,
+      "timestamp_endpoints": "first and last included sample; nanoseconds",
+      "cross_session": false
+    }
+  },
+  "n_genuine_pairs": 5000,
+  "verified_no_shared_raw_support": true,
+  "elapsed_seconds": 4.494633391033858,
+  "interpretation": "source alignment and exclusion check only; no biometric quality or cross-session claim"
+}
