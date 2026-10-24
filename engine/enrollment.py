@@ -121,7 +121,11 @@ def enrollment_scores(embeddings, subjects, enroll_idx, probe_idx):
     This validates row disjointness; use enrollment_split for the purge policy.
     """
     ids = _subjects(subjects)
-    z = _numpy(embeddings).astype(np.float64)
+    z = _numpy(embeddings)
+    if z.dtype.kind not in "iuf":
+        raise ValueError("embeddings must be real numeric values")
+    with np.errstate(over="ignore", invalid="ignore"):
+        z = z.astype(np.float64)
     if z.ndim != 2 or z.shape[0] != len(ids) or z.shape[1] == 0:
         raise ValueError("embeddings must have shape (len(subjects), positive D)")
     if not np.isfinite(z).all():

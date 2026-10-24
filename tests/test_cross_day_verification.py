@@ -39,6 +39,7 @@ TEST = (26, 28, 22, 15, 6)
 def _evaluation_functions():
     """Compile the actual pure metric functions without executing Torch imports."""
     names = {
+        "_finite_real_scalar",
         "_validated_scores",
         "_roc",
         "_eer_operating_point",

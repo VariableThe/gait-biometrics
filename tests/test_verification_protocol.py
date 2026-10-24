@@ -188,7 +188,7 @@ class PairProtocolTests(unittest.TestCase):
 
 class InferenceProtocolTests(unittest.TestCase):
     def setUp(self):
-        torch.set_num_threads(2)
+        torch.set_num_threads(1)
         self.config = {
             "source": "wisdm_v1",
             "data_root": "/real/path",

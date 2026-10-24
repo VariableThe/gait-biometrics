@@ -37,10 +37,12 @@ import torch
 import yaml
 
 from data.adapter import WindowData, load_windows
-from engine.evaluate import verification_metrics
+from engine.evaluate import _verification_pairs, verification_metrics
 from engine.train import (
     _filter_activities,
+    _finite_setting,
     _git_commit,
+    _integer_setting,
     _make_loader,
     _protocol,
     _runtime,
@@ -104,10 +106,10 @@ def _n_triplets(config: dict, n_samples: int) -> int:
     `triplets_per_epoch` (default 1) multiplies one dataset pass, so the
     default reproduces the historical budget exactly.
     """
-    multiplier = int(config.get("triplets_per_epoch", 1))
-    if multiplier <= 0 or n_samples <= 0:
-        raise ValueError("triplets_per_epoch and n_samples must be positive")
-    return multiplier * int(n_samples)
+    multiplier = _integer_setting(
+        config.get("triplets_per_epoch", 1), "triplets_per_epoch", 1
+    )
+    return multiplier * _integer_setting(n_samples, "n_samples", 1)
 
 
 def _selection(val_data) -> tuple[str, str]:
@@ -187,6 +189,7 @@ class _IdentitySampler:
 
 def _identity_subset(data: WindowData, n: int, seed: int) -> WindowData:
     """Preserve every identity and at least two windows where available."""
+    n = _integer_setting(n, "subset", 1)
     sampler = _IdentitySampler(data)
     if n >= len(data.X):
         return data
@@ -240,6 +243,25 @@ def train_siamese(
         raise ValueError(
             f"unsupported loss_type {loss_type!r}; use 'triplet' or 'contrastive'"
         )
+    # Static settings must fail before data loading or allocating a model.
+    _n_triplets(config, 1)  # Validate even when using contrastive loss.
+    val_pairs = _integer_setting(config.get("val_pairs", 10000), "val_pairs", 2)
+    val_subjects = _integer_setting(config.get("val_subjects", 0), "val_subjects")
+    if val_subjects == 1:
+        raise ValueError("verification val_subjects must be 0 (legacy) or at least 2")
+    pairing = config.get("verification_pairing", "unrestricted")
+    if pairing not in ("same_activity", "unrestricted"):
+        raise ValueError("verification_pairing must be same_activity or unrestricted")
+    model_args = dict(config.get("model_args", {}))
+    embed_dim = _integer_setting(
+        model_args.get("embed_dim", 128), "model_args.embed_dim", 1
+    )
+    dropout = _finite_setting(model_args.get("dropout", 0.3), "model_args.dropout")
+    if not 0 <= dropout <= 1:
+        raise ValueError("model_args.dropout must be between 0 and 1")
+    margin = _finite_setting(model_args.get("margin", 1.0), "model_args.margin")
+    if margin < 0:
+        raise ValueError("model_args.margin must be nonnegative")
     started = time.monotonic()
     device = _runtime(config, epochs, subset)
     seed = int(config.get("seed", 42))
@@ -262,9 +284,6 @@ def train_siamese(
         )
 
     # Optional subject-disjoint validation carve (default 0 = disabled).
-    val_subjects = int(config.get("val_subjects", 0))
-    if val_subjects < 0 or val_subjects == 1:
-        raise ValueError("verification val_subjects must be 0 (legacy) or at least 2")
     val_data = None
     n_train_subjects_total = n_val_subjects = n_val_windows = 0
     if val_subjects > 0:
@@ -273,21 +292,22 @@ def train_siamese(
         n_val_subjects = len(val_subject_ids)
         n_val_windows = len(val_data.X)
         _IdentitySampler(val_data)  # Fail before training if EER is undefined.
+        # Use the evaluator's exact eligibility rule with only two probe pairs.
+        # Identity coverage alone cannot establish same-activity feasibility.
+        _verification_pairs(
+            val_data.y_subject,
+            2,
+            seed,
+            activity_ids=val_data.y_activity if pairing == "same_activity" else None,
+        )
     if subset is not None:
         data = _identity_subset(data, int(subset), seed)
     sampler = _IdentitySampler(data)
-    pairing = config.get("verification_pairing", "unrestricted")
-    if pairing not in ("same_activity", "unrestricted"):
-        raise ValueError("verification_pairing must be same_activity or unrestricted")
     protocol = _protocol(data, val_data, config)
     protocol["verification_pairing"] = pairing
     protocol.update(n_train_windows=len(data.X), n_val_windows=n_val_windows)
     protocol_enabled = val_data is not None or config.get("activity_ids") is not None
 
-    model_args = dict(config.get("model_args", {}))
-    embed_dim = int(model_args.get("embed_dim", 128))
-    dropout = float(model_args.get("dropout", 0.3))
-    margin = float(model_args.get("margin", 1.0))
     n_channels = int(data.X.shape[1])
 
     model = SiameseNet(
@@ -301,10 +321,6 @@ def train_siamese(
 
     batch_size = int(config.get("batch_size", 64))
     n_samples = len(data.X)
-    _n_triplets(config, n_samples)  # Validate even when using contrastive loss.
-    val_pairs = int(config.get("val_pairs", 10000))
-    if val_pairs < 2:
-        raise ValueError("val_pairs must be at least 2")
 
     per_epoch: list[dict] = []
     best_epoch = 0
@@ -479,7 +495,7 @@ def main(argv: list[str] | None = None) -> None:
     if args.device is not None:
         config["device"] = args.device
 
-    epochs = args.epochs if args.epochs is not None else int(config["epochs"])
+    epochs = args.epochs if args.epochs is not None else config["epochs"]
     subset = args.subset if args.subset is not None else config.get("subset")
     loss_type = (
         args.loss if args.loss is not None else str(config.get("loss_type", "triplet"))

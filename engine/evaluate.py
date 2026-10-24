@@ -36,8 +36,22 @@ def classification_metrics(y_true, y_pred, n_classes: int) -> dict:
 
     Rows of the confusion matrix are true classes, columns are predicted.
     """
-    y_true = np.asarray(y_true, dtype=np.int64)
-    y_pred = np.asarray(y_pred, dtype=np.int64)
+    if (
+        isinstance(n_classes, (bool, np.bool_))
+        or not isinstance(n_classes, (int, np.integer))
+        or n_classes < 1
+    ):
+        raise ValueError("n_classes must be a positive integer")
+    y_true, y_pred = np.asarray(y_true), np.asarray(y_pred)
+    if y_true.ndim != 1 or y_pred.ndim != 1 or y_true.shape != y_pred.shape:
+        raise ValueError("true and predicted labels must be equally sized 1D arrays")
+    for labels in (y_true, y_pred):
+        if labels.size and (
+            labels.dtype.kind not in "iu"
+            or np.any(labels < 0)
+            or np.any(labels >= n_classes)
+        ):
+            raise ValueError("classification labels must be integers in [0, n_classes)")
     n = len(y_true)
     cm = np.zeros((n_classes, n_classes), dtype=np.int64)
     for t, p in zip(y_true, y_pred):
@@ -60,11 +74,21 @@ def classification_metrics(y_true, y_pred, n_classes: int) -> dict:
 
 def _validated_scores(labels, scores):
     labels = np.asarray(labels)
-    scores = np.asarray(scores, dtype=np.float64)
+    scores = np.asarray(scores)
     if labels.ndim != 1 or scores.ndim != 1 or labels.shape != scores.shape:
         raise ValueError("labels and scores must be equally sized 1D arrays")
-    if not len(labels) or not np.isin(labels, [0, 1]).all():
+    if (
+        not len(labels)
+        or labels.dtype.kind not in "biuf"
+        or not np.isin(labels, [0, 1]).all()
+    ):
         raise ValueError("labels must be nonempty and binary (1 genuine, 0 impostor)")
+    if scores.dtype.kind not in "iuf":
+        raise ValueError("scores must be real numeric values")
+    # Compare in float64, including when a float64 cutoff lies strictly between
+    # adjacent float32 values. NumPy otherwise may round a Python scalar down.
+    with np.errstate(over="ignore", invalid="ignore"):
+        scores = scores.astype(np.float64)
     if not np.isfinite(scores).all():
         raise ValueError("scores must be finite")
     if not (np.any(labels == 1) and np.any(labels == 0)):
@@ -74,12 +98,13 @@ def _validated_scores(labels, scores):
 
 def _roc(labels, scores):
     labels, scores = _validated_scores(labels, scores)
+    if scores.max() == np.finfo(np.float64).max:
+        raise ValueError("scores too large for a finite reject-all threshold")
     far, tpr, thresholds = roc_curve(labels, scores, drop_intermediate=False)
     # Arrays have equal lengths. Replace sklearn's +inf reject-all sentinel
     # with a finite threshold. Tied scores move together; do not interpolate it.
-    thresholds[0] = np.nextafter(scores.max(), np.inf)
-    if not np.isfinite(thresholds[0]):
-        raise ValueError("scores too large for a finite reject-all threshold")
+    with np.errstate(under="ignore"):
+        thresholds[0] = np.nextafter(scores.max(), np.inf)
     n_genuine = int((labels == 1).sum())
     # Compute count fractions to avoid 1 - .99 > .01 rejecting an attainable
     # FRR of exactly 1% because of subtraction roundoff.
@@ -106,12 +131,20 @@ def compute_eer(labels, scores) -> float:
     return _eer_operating_point(labels, scores)[0]
 
 
+def _finite_real_scalar(value, name: str) -> float:
+    scalar = np.asarray(value)
+    if scalar.ndim != 0 or scalar.dtype.kind not in "iuf":
+        raise ValueError(f"{name} must be a finite real scalar")
+    result = float(scalar)
+    if not np.isfinite(result):
+        raise ValueError(f"{name} must be a finite real scalar")
+    return result
+
+
 def fixed_threshold_metrics(labels, scores, threshold: float) -> dict:
     """Count actual decisions using score >= threshold (ties are accepted)."""
     labels, scores = _validated_scores(labels, scores)
-    threshold = float(threshold)
-    if not np.isfinite(threshold):
-        raise ValueError("threshold must be finite")
+    threshold = _finite_real_scalar(threshold, "threshold")
     accepted = scores >= threshold
     genuine, impostor = labels == 1, labels == 0
     fa = int(np.count_nonzero(accepted & impostor))
@@ -133,7 +166,8 @@ def calibrate_threshold(labels, scores, target_far: float = 0.01) -> dict:
 
     Caller must supply independent validation scores, never evaluation scores.
     """
-    if not np.isfinite(target_far) or not 0 <= target_far <= 1:
+    target_far = _finite_real_scalar(target_far, "target_far")
+    if not 0 <= target_far <= 1:
         raise ValueError("target_far must be between 0 and 1")
     far, _, thresholds = _roc(labels, scores)
     index = int(np.flatnonzero(far <= target_far)[-1])
@@ -144,12 +178,19 @@ def calibrate_threshold(labels, scores, target_far: float = 0.01) -> dict:
     }
 
 
-def _integer_ids(values, n: int, name: str) -> np.ndarray:
+def _integer_ids(values, n: int | None, name: str) -> np.ndarray:
     if isinstance(values, torch.Tensor):
         values = values.detach().cpu().numpy()
     ids = np.asarray(values)
-    if ids.ndim != 1 or len(ids) != n or ids.dtype.kind not in "iu":
-        raise ValueError(f"{name} must be a 1D integer array with one label per window")
+    if (
+        ids.ndim != 1
+        or (n is not None and len(ids) != n)
+        or ids.dtype.kind not in "iu"
+        or np.any(ids < 0)
+    ):
+        raise ValueError(
+            f"{name} must be a 1D nonnegative integer array with one label per window"
+        )
     return ids
 
 
@@ -165,7 +206,7 @@ def _verification_pairs(subject_ids, n_pairs: int, seed: int, activity_ids=None)
         or n_pairs < 2
     ):
         raise ValueError("n_pairs must be an integer >= 2")
-    subs = _integer_ids(subject_ids, len(subject_ids), "subject_ids")
+    subs = _integer_ids(subject_ids, None, "subject_ids")
     activities = (
         np.zeros(len(subs), dtype=np.int64)
         if activity_ids is None
@@ -254,17 +295,26 @@ def _verification_pairs(subject_ids, n_pairs: int, seed: int, activity_ids=None)
 
 
 def _verification_scores(embeddings, subject_ids, n_pairs, seed, activity_ids=None):
-    z = torch.as_tensor(embeddings).detach().to(device="cpu", dtype=torch.float64)
+    z = torch.as_tensor(embeddings).detach()
+    if z.is_complex() or z.dtype == torch.bool:
+        raise ValueError("embeddings must be real numeric values")
+    z = z.to(device="cpu", dtype=torch.float64)
     if z.ndim != 2 or not z.shape[0] or not z.shape[1]:
         raise ValueError("embeddings must be a nonempty (N, D) matrix")
     subs = _integer_ids(subject_ids, len(z), "subject_ids")
-    norms = torch.linalg.vector_norm(z, dim=1)
-    if (
-        not torch.isfinite(z).all()
-        or not torch.isfinite(norms).all()
-        or (norms == 0).any()
-    ):
+    if not torch.isfinite(z).all():
         raise ValueError("embeddings must be finite with nonzero row norms")
+    norms = torch.linalg.vector_norm(z, dim=1)
+    unstable = ~torch.isfinite(norms) | (norms < np.sqrt(np.finfo(float).tiny))
+    if unstable.any():
+        # Only rescale rows whose squared norms overflow/underflow; preserve
+        # ordinary score arithmetic for frozen research replay.
+        scale = z[unstable].abs().amax(dim=1)
+        if (scale == 0).any():
+            raise ValueError("embeddings must be finite with nonzero row norms")
+        z = z.clone()
+        z[unstable] = z[unstable] / scale[:, None]
+        norms[unstable] = torch.linalg.vector_norm(z[unstable], dim=1)
     z = z / norms[:, None]
     pairs, labels, context = _verification_pairs(subs, n_pairs, seed, activity_ids)
     # Preserve historical negative-cosine-distance scale: [-2, 0].
