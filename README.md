@@ -4,6 +4,8 @@ Minor specialization project, MAHE. Mentor: **Manjunath Hegde**. Student A owns 
 
 The pipeline now loads authentic WISDM subject IDs, keeps windows within recording/activity boundaries, selects checkpoints on held-out validation subjects, and runs bounded batches on CPU or CUDA. **It remains a research baseline, not a usable passive authenticator.**
 
+The [24 October hillclimb report](reports/2026-10-24-hillclimb/README.md) adds six-axis sensor fusion, rotation invariants, lagged covariance and independently calibrated enrollment-score blending. On five reused Santos cross-day test users, the latest selected method has descriptive EER 0%, with **3/200 false accepts (1.5%) and 0/50 genuine rejections** at its frozen calibration threshold. The matched lagcov control has 7/200 false accepts and 0/50 rejections. This is exploratory evidence: the threshold still misses the intended 1% test FAR, and these controlled leg recordings do not establish phone deployment. The report retains all candidate results, failed audit compute, source/artifact hashes, per-person errors, and runtime costs.
+
 ## Run immediately
 
 Python 3.14.8 and the existing pinned torch 2.14.1 dependency set were validated on Linux x86_64. Create an isolated environment with uv:

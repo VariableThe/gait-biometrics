@@ -1,0 +1,806 @@
+[
+  {
+    "original_path": "accel_cross_day_supcon/fold0_seed42.pt",
+    "original_bytes": 145208,
+    "original_sha256": "ea11257fa6743fc06a1916f57fc4692b49db5ddf5e1b711e6373c31a32244fb8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold0_seed43.pt",
+    "original_bytes": 145208,
+    "original_sha256": "c5d509afb8d8c1e8c1169e6c7946e6f0b268a1ecb8554129bbd9953e058c80da",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold0_validation.npz",
+    "original_bytes": 118075,
+    "original_sha256": "aa0cd094aef61ef415d19049ee86c8c28903b2873f9a8fdf8595eae585f93718",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold1_seed42.pt",
+    "original_bytes": 145208,
+    "original_sha256": "422f938fec9f7e358094d4f5e2eceeee9471a87f24ae401afc53562dc648f2a2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold1_seed43.pt",
+    "original_bytes": 145208,
+    "original_sha256": "c6afa4b33cd14a56c7e660c40ae64b2f23538fba2daac6e7b23bc9f1dc22fae8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold1_validation.npz",
+    "original_bytes": 112260,
+    "original_sha256": "5501ff402675ac3759b19b7c3610f9d521bc6f9bd84ac9b1e023cf3926039181",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold2_seed42.pt",
+    "original_bytes": 145208,
+    "original_sha256": "42321e663affbede31c56441d98b91ae0ffce342b2fdaf73b998f0165f9c7f7a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold2_seed43.pt",
+    "original_bytes": 145208,
+    "original_sha256": "05ea485021358df756c10cf64ed5c935b207dd36b6e21aef5ef3b9ada3a87de8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold2_validation.npz",
+    "original_bytes": 116177,
+    "original_sha256": "64350359f99a18a5226c0d1b0042117fa7bdce0e2dfec1ec68f7f84e1f85a0da",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold3_seed42.pt",
+    "original_bytes": 145208,
+    "original_sha256": "c54f9e4b6b0d7037c528ef946b3c85a3312e6dda9e019ac45e7261800b214e53",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold3_seed43.pt",
+    "original_bytes": 145208,
+    "original_sha256": "fb67777b9b64c6fe48f31fe23c6ac202a38f968fcdf2adc9bb873bcf47c81a3b",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold3_validation.npz",
+    "original_bytes": 116169,
+    "original_sha256": "4b04179c1fe66d91e7bbb7b3e75b5c9979a5362f0e54d16d272a7c71a96d96ef",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold4_seed42.pt",
+    "original_bytes": 145208,
+    "original_sha256": "93c4fb71479be850562524b5fa5a218442b57d21b2640ad52fd117e91aa9a0b0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold4_seed43.pt",
+    "original_bytes": 145208,
+    "original_sha256": "9dacdeb71db3569e0a6ee53bd634f393d1b659b0dbed89a29ab391003fff3923",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/fold4_validation.npz",
+    "original_bytes": 116144,
+    "original_sha256": "e400ba7e7ab8fbaa413c2fd5dd3db55ba233a9a135977a48085a78087523a4e2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_cross_day_supcon/result.json",
+    "original_bytes": 431594,
+    "original_sha256": "3bd2a4315df5a39cd6260cf88fbf7c38e829b561a1b088fb3577bfee701eab53",
+    "published_path": "accel_cross_day_supcon/result.json.gz",
+    "published_sha256": "7907242e72e20405f5ebae68e22ebbec0e0d018e535677b192e2ffc52ef48704"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold0_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "5e773102c6609353921b4718dfb40970983a473d88812ec87f774d47be1d2f18",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold0_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "b7e10572078179dedd476896091cd9e05f666bd7a60096a1f07ddcf11056d300",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold0_validation.npz",
+    "original_bytes": 118121,
+    "original_sha256": "788ab2d0ba88e39eef90e2781d33142ae084d7f5dd3b03112d7d13cce206748a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold1_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "59fc003d19d6b62ebf5792b29f714c3823f2d8e9729a40c4169f13b115afb3e5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold1_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "a71fe7200e5e1a12bddea78e8bae701d806067803291ce8f20623d9e5b349747",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold1_validation.npz",
+    "original_bytes": 112229,
+    "original_sha256": "e8758577bec17136212a5f8bf92f9c29dc5abfdb0f43af3a0688cc1ecec2749e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold2_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "d2053b0eaa12047bb911751d69deb524339c96177775fe067487163848a132b2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold2_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "8e14db8e2788da34148a2f825a3c0219a20ec421e3c00dbb63d05f94b78343c5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold2_validation.npz",
+    "original_bytes": 116144,
+    "original_sha256": "1bb3466b2d24a924d87a9eb5a570fbd94bffdc1a235b0cf156eb3a90f5e2a955",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold3_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "dbedcc1c8f98add3efddcd798eb774acd968e40911ddb27a5ce08f31124deff6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold3_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "b7071c9fea4bf71148c6ddfd73f7e4405163e58414f781e0f18531cf5fec58d9",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold3_validation.npz",
+    "original_bytes": 116118,
+    "original_sha256": "dff5def9feb451606869e21926ba88781341be321716727c078a3d24d6a3640c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold4_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "221c7012717137d3e903244d6abd772d4d1bab8c7e5e8a9b98c7f8a37f8e26d7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold4_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "9c252f8f3a87a9e17cb4b4609d8730e5d69cbca78b7d819dc76390dc1a3f41f3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/fold4_validation.npz",
+    "original_bytes": 116183,
+    "original_sha256": "7bc89273b78d04c76a451a81d5f1e687cbc90a2b37ba0875353b7b424a411bf2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_cross_day_supcon/result.json",
+    "original_bytes": 431971,
+    "original_sha256": "b75b588df06f4c4f2ff5fbcbe916a3d3cdfce739499015217ea4bc570565b39f",
+    "published_path": "accel_gyro_cross_day_supcon/result.json.gz",
+    "published_sha256": "0bb450965717a785691ff560fc6359ff5748d1d53e1296ce7bc3aeb455aa685d"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold0_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "a22afae6649c9c0615f401f6d4c04d2c0d5b390704a90339915c08aef027074c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold0_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "6a96c085f2b3234102141c3cd7ed9b7f377f2e541d568ab91a88a8e26e3f4269",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold0_validation.npz",
+    "original_bytes": 118080,
+    "original_sha256": "48a4ed53519953d3cce115dce5a360b4f287e59b38bdf0202e2dd10ab615b4c4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold1_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "a0d628f919e704b66d4b596357e9f99bddc40defe869d85ab2f233fe02d12b5c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold1_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "2ac5fb03e6940c4e43277038e9b2a97d96515450156c39b52209ceca38c8aea5",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold1_validation.npz",
+    "original_bytes": 112206,
+    "original_sha256": "333ed1cbc7eb41dd8ba4f61c1e9e7329a1318ae80abcb5a92daef2d5cf2901fb",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold2_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "3387b8c13dda5960ab34c9de9e767487c23c0aef9ed7424521648de63c86178e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold2_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "deac8ae4f39f17dd9e0a93565d9fea681dc69e9e705749ccb322316224965ed2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold2_validation.npz",
+    "original_bytes": 116149,
+    "original_sha256": "f0b0a8692aa6eb01823cddaf0a16726f93066d3bda08dcef21dcd22ae2abdb46",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold3_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "19771b9f9661a1496bb6b335967c4ff85723fa664eb443d1b6e1c8db11936885",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold3_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "b62ba67dbc2f87869fe46befa7d39773c42984497cae943b82ec6b203c524069",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold3_validation.npz",
+    "original_bytes": 116100,
+    "original_sha256": "e70f11a8efe8539b2fb807ff150985df9e13e2d6c4f94287144d71e6ec9eb0cf",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold4_seed42.pt",
+    "original_bytes": 156024,
+    "original_sha256": "55d9c8d174b49d7cd240afab7ae6d18cd8abccfd0599892da53d719350e46f87",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold4_seed43.pt",
+    "original_bytes": 156024,
+    "original_sha256": "97d282e95438ebcafa4359b105cae81f5de45088b5edbf88303441d9c4e16155",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/fold4_validation.npz",
+    "original_bytes": 116138,
+    "original_sha256": "d8c6a52196925e6468e1a71bec82b98079858b2d4b782a84b37c5a4a68cba087",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_gyro_supcon/result.json",
+    "original_bytes": 431219,
+    "original_sha256": "0358f5f0a27c1134ec293cd6dbc6b16350465e8a148cf2b46eadd479364e0366",
+    "published_path": "accel_gyro_supcon/result.json.gz",
+    "published_sha256": "67f4b5b21d2917a4b319b6012ea3581f7a79bd67559c43caf24ff21a1d736f9a"
+  },
+  {
+    "original_path": "accel_supcon/fold0_seed42.pt",
+    "original_bytes": 145144,
+    "original_sha256": "364c7d0ba7f614bc768d5f43bdf648921ecc6a4ef24b34062f6610ed044da6b0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold0_seed43.pt",
+    "original_bytes": 145144,
+    "original_sha256": "1436f02d5fe660e78042bf6854e37317b0ea1077dcc246fa5bac1548ed4d4f25",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold0_validation.npz",
+    "original_bytes": 118127,
+    "original_sha256": "a8bc1798c24020cecc6cca1d9908cfcc6e15769021d08724c926377e3a81f04f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold1_seed42.pt",
+    "original_bytes": 145144,
+    "original_sha256": "bc08a04e89fe962fa4ce0cd08fe7f00d225259e2c0e37f605ed0d346c683cb40",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold1_seed43.pt",
+    "original_bytes": 145144,
+    "original_sha256": "b107aa6c3184c7b11598403d730edfa866ea4c99ae4eb0ade6fce6e266b9e085",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold1_validation.npz",
+    "original_bytes": 112265,
+    "original_sha256": "e5b1fdbb169508aa2e9f34297d3d56b532a208fbe20f34e0af781555f2bc60d7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold2_seed42.pt",
+    "original_bytes": 145144,
+    "original_sha256": "1394ddf01711cb2f4fb5be03b1a61a52944249d1a247f67a89b3cbd70a5e03a0",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold2_seed43.pt",
+    "original_bytes": 145144,
+    "original_sha256": "a47d64b5b7287269ace9be2f56ad9c29aa6e5fbd50cba5f9ede47bcdcb96c44f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold2_validation.npz",
+    "original_bytes": 116154,
+    "original_sha256": "4019a46a3913729d38b0e50f454c09e5f866440ca038be81e86542c0e6c72db4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold3_seed42.pt",
+    "original_bytes": 145144,
+    "original_sha256": "6075b17fdd3ead7e450d11b1b5adbda24be457b2396361aad39202d1fc44a67d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold3_seed43.pt",
+    "original_bytes": 145144,
+    "original_sha256": "d8eacf615a62e28ad3c998a3725d0aa594017c9ab93b351d8952bf34c307c440",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold3_validation.npz",
+    "original_bytes": 116138,
+    "original_sha256": "7b238dc93292d74a64a17356b86e685e0bc96fac27bfb7966d0350404555bc77",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold4_seed42.pt",
+    "original_bytes": 145144,
+    "original_sha256": "24033a1803a3ec795600ff711e835d6bd27ef5034491f05c9d6c7eee20d6cee6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold4_seed43.pt",
+    "original_bytes": 145144,
+    "original_sha256": "c7c9f1b71b00aa23b787e791fb38e54669e109019d30ad488c540be8fc0eef60",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/fold4_validation.npz",
+    "original_bytes": 116196,
+    "original_sha256": "d4d59a47326f5b2c67a8814908bfcc77796772b221c4bffc2768e6c83af7c469",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "accel_supcon/result.json",
+    "original_bytes": 430809,
+    "original_sha256": "a71a7dfbdf9b886267c9974223b4aeda041de99945eebecab8cd2cef820c08da",
+    "published_path": "accel_supcon/result.json.gz",
+    "published_sha256": "4dd29539cc2b44d8ff2b276a09b5767dff3c1114e089dbf7a2859b3a659fd38a"
+  },
+  {
+    "original_path": "descriptor_accel_axes_auto_mean_final.npz",
+    "original_bytes": 72124,
+    "original_sha256": "ccdd418d6d85644a12b764a310f2f416574d3824f4bc454a31a921a5fcb35b86",
+    "published_path": "descriptor_accel_axes_auto_mean_final.npz",
+    "published_sha256": "ccdd418d6d85644a12b764a310f2f416574d3824f4bc454a31a921a5fcb35b86"
+  },
+  {
+    "original_path": "descriptor_accel_gyro_fusion_auto_multi_final.npz",
+    "original_bytes": 815202,
+    "original_sha256": "1ef100c1cd9c7e84bb7780ea4b5dfad65731d348269cebe001784184d6cb79c3",
+    "published_path": "descriptor_accel_gyro_fusion_auto_multi_final.npz",
+    "published_sha256": "1ef100c1cd9c7e84bb7780ea4b5dfad65731d348269cebe001784184d6cb79c3"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold0.npz",
+    "original_bytes": 72128,
+    "original_sha256": "0ebd9ff31f3ae3bc9d227732aff2d7fbff974cc7a555766b3d8b92037e7b4900",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold0_validation.npz",
+    "original_bytes": 46963,
+    "original_sha256": "ee08f0a79a10ad002209d2aa7d2ad2ff62f532a90d73b9621ed657001776b29f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold1.npz",
+    "original_bytes": 72230,
+    "original_sha256": "a83ab7ff317e2b161f90470a39084f5ea0e29ec7992c7057288ff9a3a22a819c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold1_validation.npz",
+    "original_bytes": 44627,
+    "original_sha256": "c2aaf34b8773a0b2a7952cb057f2ae6352d0222b281163d234ee25beeb523e50",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold2.npz",
+    "original_bytes": 72117,
+    "original_sha256": "bf41df0ce30302e94420042a271c5c388826ed1aedc2f04098ac702be9bac191",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold2_validation.npz",
+    "original_bytes": 46176,
+    "original_sha256": "506f1980e9efc7c04f4184bff2fe9b6ce6fd3c32b541f838db34d61f438d351b",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold3.npz",
+    "original_bytes": 72207,
+    "original_sha256": "3aa48032d5f65356126c7381d5215ab61acee574d4d0bdee056555009eac7866",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold3_validation.npz",
+    "original_bytes": 46106,
+    "original_sha256": "c62fc04ba7390688fc1a57bb3b078cd348f95d71cf0d16ac800ef9ec879784cd",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold4.npz",
+    "original_bytes": 72171,
+    "original_sha256": "173785f98bbbe56d928f0b3fc5b5dddf12fcd6626c032f0fedca2c18e1872ba3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_axes_auto_fold4_validation.npz",
+    "original_bytes": 46176,
+    "original_sha256": "a3c8f4a9f40946cf8922cf980ff0115fec70de00d3b1c8510d7aadb4bae6b8d9",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold0.npz",
+    "original_bytes": 321844,
+    "original_sha256": "58424eef4bd1256747680e3ee6633bcea101b6fc51c52cc8586b7db3639c51b7",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold0_validation.npz",
+    "original_bytes": 93360,
+    "original_sha256": "02a6c69e73d23ff53ffc6ecdd198f3d2068a5e9f3af8be6fa38e5b8a75f75068",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold1.npz",
+    "original_bytes": 321846,
+    "original_sha256": "3d690ebd419a1f22c4ec2a418282f880261097d3321c510f02c6218e20963426",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold1_validation.npz",
+    "original_bytes": 88642,
+    "original_sha256": "652181895edde7b30664df1eb058599f8cba3f7454e294326cc883b3bbae7f5e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold2.npz",
+    "original_bytes": 321782,
+    "original_sha256": "335bc1f459113863742f3c4a740f8608cb2658e0f89b46e2bee603d9955f9b88",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold2_validation.npz",
+    "original_bytes": 91822,
+    "original_sha256": "f92f48aa2ec175fa7b2c92b4049f3d20a6ed61b7ffbde346d2c2a0452e6fe338",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold3.npz",
+    "original_bytes": 321771,
+    "original_sha256": "6bc16559db8a75b89cf323abf71f509f07eade221b551a829847040ece79be7e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold3_validation.npz",
+    "original_bytes": 91732,
+    "original_sha256": "888ebbbe58c5bc1fdef6721bc9676c5d3741ce15117f7735b9459f23afc13623",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold4.npz",
+    "original_bytes": 321811,
+    "original_sha256": "f272a2ec772d8903c97f86a4944577f1ca94748bd8c5922a2b37af5a6099e1a3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_axes_auto_fold4_validation.npz",
+    "original_bytes": 91625,
+    "original_sha256": "09fe1c31d9e010e3c184a87430212d152931800d8fdffa6a25bc89bbd0839703",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold0.npz",
+    "original_bytes": 810758,
+    "original_sha256": "0cff970fdef832984eeded58e6f2091bcd7beb4ba71c6ac2274311aec427089f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold0_validation.npz",
+    "original_bytes": 134603,
+    "original_sha256": "f6ef6ca21dff56a09f6e7af3f5256555f15991c7e53e1b7718bf7fd5db30df5d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold1.npz",
+    "original_bytes": 811940,
+    "original_sha256": "6c095114748d2232939c488fd3385c79e6c52a48edc3daa43f1fd7175fa0e724",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold1_validation.npz",
+    "original_bytes": 127855,
+    "original_sha256": "443161f8a2e8dbb88d97249d4b9e4f2019162ad54cd81357e70dcd721cf48bc9",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold2.npz",
+    "original_bytes": 810330,
+    "original_sha256": "381480178a64f52d84ba6641ef3e704152c3b149a1513c133d73aa5b59becf0c",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold2_validation.npz",
+    "original_bytes": 132455,
+    "original_sha256": "38df4856c668c89a52c5ff951bb9225aad70a8413c540810fc06e9c6be3f64df",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold3.npz",
+    "original_bytes": 814319,
+    "original_sha256": "44b1020e2cab7f4504dd650baa8c098e75727c1878d2a3ceb732219886154d40",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold3_validation.npz",
+    "original_bytes": 132369,
+    "original_sha256": "8044cc22f1afbc9d1cea9767d3c931faa0d3c020566e420b4481caa8662a0176",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold4.npz",
+    "original_bytes": 810427,
+    "original_sha256": "54b566f3eec849d9553a29214a74d18c51d79d882d708243cd9aa8e98418c714",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_0.2_fold4_validation.npz",
+    "original_bytes": 132266,
+    "original_sha256": "726a44f80a7b832f729eca4d3335b5c922aa14b3321debfe4cddb5c4c96812e2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold0.npz",
+    "original_bytes": 818652,
+    "original_sha256": "4239a55df64b46c76403d460c383586b86a2cbb95fbd03957bb52c94e48987c9",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold0_validation.npz",
+    "original_bytes": 134629,
+    "original_sha256": "bdbc9feb8b48fc59a07cc3153cb07f14e2ec051b6fbc49e22c8a1db960c827c1",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold1.npz",
+    "original_bytes": 815041,
+    "original_sha256": "bcdd15508fe0ab3b7894f3b9ad62c1afd5bfc5372922cee76a69af408ad63b53",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold1_validation.npz",
+    "original_bytes": 127841,
+    "original_sha256": "455db021b64e7e2857c4cd1199713595d1eeac219def7d1a1b40ae46a134f9bd",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold2.npz",
+    "original_bytes": 814301,
+    "original_sha256": "934091b95bfddbae3e2c54ba3c39c1da49e4916a57ac2554d70dcd0ce50cb880",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold2_validation.npz",
+    "original_bytes": 132436,
+    "original_sha256": "33427399b9b0f7ddd787ae38b8a1501b3af9444c335eb64c72a35cd6217471a4",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold3.npz",
+    "original_bytes": 820716,
+    "original_sha256": "004e21c33e33ffab6f6ac056016e23af906ad5464c899841a177c07e105fa7c2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold3_validation.npz",
+    "original_bytes": 132291,
+    "original_sha256": "2e2aaf5ccc0435f7699663a471e64c8b15ce44f2e1c5f7993bb0cbfbf58b3f6e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold4.npz",
+    "original_bytes": 814493,
+    "original_sha256": "4f9714821238c3268f4b5252db990086ddb3a0cb21780bab7c8187e63568d7f8",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_fusion_auto_fold4_validation.npz",
+    "original_bytes": 132223,
+    "original_sha256": "bb5b117b100fcd672a386aa327724d782a8c6fee3963ba273b304163d4a65393",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold0.npz",
+    "original_bytes": 114561,
+    "original_sha256": "2f21a53157896d7fb743d348d7b730df66cdb6758214b6f818e240f44c7d1d64",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold0_validation.npz",
+    "original_bytes": 57638,
+    "original_sha256": "5855f47f2c262d69d9f3ff9941e15aae50291fac09241232bb31bb02f0a573a3",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold1.npz",
+    "original_bytes": 114584,
+    "original_sha256": "14917ca016af68cfcbfb1d7bcbdef8998b09e1dd0ac5e0a84dd55b939a2de805",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold1_validation.npz",
+    "original_bytes": 54735,
+    "original_sha256": "ec8aee6833d7cb1f19abd49257d89e7985a0809bc7c8ac692145a7574c147bf6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold2.npz",
+    "original_bytes": 114602,
+    "original_sha256": "64d8eeea641050a26d2e182e9c27cbd017fc2b4e30b6d87e5b88b1b886b3810d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold2_validation.npz",
+    "original_bytes": 56762,
+    "original_sha256": "14168194b4274aa09cf868c041360948d5cc5f12d70333d18a2ae83351edb724",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold3.npz",
+    "original_bytes": 114649,
+    "original_sha256": "1b06cf20075c9e58483bf2f3e847ebc5b139bb1505ec76d2bc795a128cac2947",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold3_validation.npz",
+    "original_bytes": 56683,
+    "original_sha256": "969289cd61806d7bd52983d1900a63c9a830e4d7bf4919f16407bc4835800bc2",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold4.npz",
+    "original_bytes": 114612,
+    "original_sha256": "c169de23f6c268ee324accd6a99f2c65b4932915e464407dc511df396029203f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_gyro_invariant_auto_fold4_validation.npz",
+    "original_bytes": 56648,
+    "original_sha256": "bf879a75490a4f3fba45e0d00cb08b5e64ad96cdfadd70745f238b61607e521f",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold0.npz",
+    "original_bytes": 24529,
+    "original_sha256": "47b8b95f7d64c459bf7c084e8028aaf0036e55791843bd8345a026c5da8de270",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold0_validation.npz",
+    "original_bytes": 29080,
+    "original_sha256": "af4d86fe4c34aef5875d6fdd130c2dd37ff2591913f43a2baacfd456a4a54803",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold1.npz",
+    "original_bytes": 24540,
+    "original_sha256": "35dd8761378b9ff3783ff71e1292edf9d09e73d6752812544a3378e1de08391e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold1_validation.npz",
+    "original_bytes": 27668,
+    "original_sha256": "bc59fac7b738e4856da6ae1d4529c7af29b9bcb4e9148e168d5b36e41ec936f6",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold2.npz",
+    "original_bytes": 24538,
+    "original_sha256": "f07262ad2c4c2c222b427d609b15400128bb2845b3568515d9d1c76d2d0f99bd",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold2_validation.npz",
+    "original_bytes": 28627,
+    "original_sha256": "5bb8169b254e787381cdf89c8bfba8985f373cefc7b397b15e2465c20434728a",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold3.npz",
+    "original_bytes": 24563,
+    "original_sha256": "e958677081d92f1166f5c26ca1b75f824a8e854089807b118ef5d403b5221212",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold3_validation.npz",
+    "original_bytes": 28642,
+    "original_sha256": "7249e8fad157fcca99b37a1fe44144f7eafb965ab471df5fa7df9ba1c548c14d",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold4.npz",
+    "original_bytes": 24603,
+    "original_sha256": "25cd8f080e8912978e495bd74f2b815220721a373cd2dc51b2a6e83864e9ed2e",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/descriptor_accel_invariant_auto_fold4_validation.npz",
+    "original_bytes": 28642,
+    "original_sha256": "b81ad109c3a3af78e1f6dbe67c26dc20afa2ef2b1a8c66fc6600a31cf4b823aa",
+    "publication": "hash inventory only; full CV state retained in local experiment archive"
+  },
+  {
+    "original_path": "descriptors/result.json",
+    "original_bytes": 101072,
+    "original_sha256": "0b75aa541d9f3ab3e9ab20756ae17db0fc6b4a4561a14cd31e6db3abd55fb08c",
+    "published_path": "descriptors/result.json.gz",
+    "published_sha256": "58920eab19a597f9a5f276914880f7268addac8d92c06dd38c56f15573899157"
+  },
+  {
+    "original_path": "exploratory_test_attempt.json",
+    "original_bytes": 110,
+    "original_sha256": "7d27b3e0c538baaf4e26ad604b39f5f438028c7762433f8a2d9981b97aa7badc",
+    "published_path": "exploratory_test_attempt.json.gz",
+    "published_sha256": "2c527d4277286df5932ef986c689f8a4b37689b6d6c127b1ce0a80da24f45ac0"
+  },
+  {
+    "original_path": "exploratory_test_result.json",
+    "original_bytes": 10471,
+    "original_sha256": "d441404fa9b8f78f9aea7539f922f98031280edfe1ac83b3c93bf9c3f42bd1d0",
+    "published_path": "exploratory_test_result.json.gz",
+    "published_sha256": "1da6d0a83dfba8f8ccec2f9074d242bd013c4a784828768a6f5217174eb23aea"
+  },
+  {
+    "original_path": "exploratory_test_scores.npz",
+    "original_bytes": 4936,
+    "original_sha256": "f9bd88e8f891724047e35cdd6da3118ce63813fcb9538eb3efacb3eb11c0372e",
+    "published_path": "exploratory_test_scores.npz",
+    "published_sha256": "f9bd88e8f891724047e35cdd6da3118ce63813fcb9538eb3efacb3eb11c0372e"
+  },
+  {
+    "original_path": "lock.json",
+    "original_bytes": 1844245,
+    "original_sha256": "09ec831630d4bbe23ca2f1bd131a6f1855b4d801f5f913aaa50dcac912bb90e1",
+    "published_path": "lock.json.gz",
+    "published_sha256": "ecf5edd150f8a10292e849df49373392e287a049fd538a2547f0d24fad74625c"
+  },
+  {
+    "original_path": "registration.json",
+    "original_bytes": 100026,
+    "original_sha256": "30ac660a4d85937f3edda11d0ac9b1c99f7bb9eb7834b6f5b2a9d919b061ec13",
+    "published_path": "registration.json.gz",
+    "published_sha256": "24cf5f6d5a2c0601753bcc1bea573765e05a4617a6708ae967eca7301d9e3649"
+  }
+]
