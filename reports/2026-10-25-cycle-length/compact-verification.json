@@ -1,0 +1,59 @@
+{
+  "status": "pass_with_preserved_serialization_erratum",
+  "records": 5120,
+  "diagnostics": 1280,
+  "cached_baseline_exact": true,
+  "saved_json_fingerprint": "9061bf1d4df7f88a56ef9dd156e55625a4b44933867e87fd55bc5083cf890112",
+  "original_in_memory_fingerprint": "51a085a519c36fb465a0b69812c61bed11cac5bca9995c31d1da15d8a7af801b",
+  "full_numeric_array_replay": false,
+  "groups": [
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "records": 1280,
+      "finite": 848,
+      "failures": {
+        "none": 848,
+        "no_eligible_minima_pair": 192,
+        "channel_degenerate": 240
+      },
+      "finite_half_alias": 96
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "records": 1280,
+      "finite": 848,
+      "failures": {
+        "none": 848,
+        "no_eligible_minima_pair": 192,
+        "channel_degenerate": 240
+      },
+      "finite_half_alias": 96
+    },
+    {
+      "length": 768,
+      "rule": "exact_max_smallest_exact_tie",
+      "records": 1280,
+      "finite": 959,
+      "failures": {
+        "none": 959,
+        "no_eligible_minima_pair": 1,
+        "channel_degenerate": 320
+      },
+      "finite_half_alias": 96
+    },
+    {
+      "length": 768,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "records": 1280,
+      "finite": 959,
+      "failures": {
+        "none": 959,
+        "no_eligible_minima_pair": 1,
+        "channel_degenerate": 320
+      },
+      "finite_half_alias": 96
+    }
+  ]
+}

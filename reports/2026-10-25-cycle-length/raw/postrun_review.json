@@ -1,0 +1,918 @@
+{
+  "classification": "Post-run saved-evidence review only; no new measurement, conditions, detector changes, or experiment retry",
+  "measurement_status": "complete",
+  "original_frozen_audit_status": "failed at preserved fingerprint serialization defect",
+  "postrun_saved_array_audit_status": "pass_with_documented_fingerprint_serialization_defect",
+  "rule_comparisons": [
+    {
+      "length": 256,
+      "field_difference_counts": {
+        "selected_lag": 0,
+        "pair_bounds_inclusive": 0,
+        "failure_reason": 0,
+        "valid_pre_quality": 0
+      },
+      "feature_vectors_bitwise_equal_where_finite": true,
+      "invalid_nan_masks_equal": true
+    },
+    {
+      "length": 768,
+      "field_difference_counts": {
+        "selected_lag": 0,
+        "pair_bounds_inclusive": 0,
+        "failure_reason": 0,
+        "valid_pre_quality": 0
+      },
+      "feature_vectors_bitwise_equal_where_finite": true,
+      "invalid_nan_masks_equal": true
+    }
+  ],
+  "balanced_harmonic_diagnostics": [
+    {
+      "channel": "raw_acc_magnitude",
+      "balanced_fixtures": 320,
+      "halfP_in_nearmax": 320,
+      "P_in_nearmax": 320,
+      "unique_nearmax_count": 0,
+      "correlation_at_halfP_range": [
+        0.9999999999999994,
+        1.0
+      ],
+      "correlation_at_P_range": [
+        0.9999999999999994,
+        1.0
+      ]
+    },
+    {
+      "channel": "raw_gyro_magnitude",
+      "balanced_fixtures": 320,
+      "halfP_in_nearmax": 0,
+      "P_in_nearmax": 320,
+      "unique_nearmax_count": 0,
+      "correlation_at_halfP_range": [
+        -1.0,
+        -0.9999999999999997
+      ],
+      "correlation_at_P_range": [
+        0.9999999999999994,
+        1.0
+      ]
+    },
+    {
+      "channel": "filtered_acc_magnitude",
+      "balanced_fixtures": 320,
+      "halfP_in_nearmax": 204,
+      "P_in_nearmax": 116,
+      "unique_nearmax_count": 200,
+      "correlation_at_halfP_range": [
+        0.9997558462841335,
+        0.999999959555771
+      ],
+      "correlation_at_P_range": [
+        0.99975547971134,
+        0.999999959555739
+      ]
+    },
+    {
+      "channel": "filtered_gyro_magnitude",
+      "balanced_fixtures": 320,
+      "halfP_in_nearmax": 0,
+      "P_in_nearmax": 270,
+      "unique_nearmax_count": 82,
+      "correlation_at_halfP_range": [
+        -0.9999999834145614,
+        -0.9999871853103555
+      ],
+      "correlation_at_P_range": [
+        0.9999872326782496,
+        0.9999999834145872
+      ]
+    }
+  ],
+  "continuous_geometric_phase_holes": [
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 120,
+      "geometric_available": 31,
+      "geometric_phase_hole_indices": [
+        30
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 128,
+      "geometric_available": 27,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 140,
+      "geometric_available": 22,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 160,
+      "geometric_available": 15,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 180,
+      "geometric_available": 10,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 200,
+      "geometric_available": 6,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "alternating_step_harmonic",
+      "period_samples": 180,
+      "geometric_available": 20,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "alternating_step_harmonic",
+      "period_samples": 200,
+      "geometric_available": 12,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 120,
+      "geometric_available": 31,
+      "geometric_phase_hole_indices": [
+        30
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 128,
+      "geometric_available": 27,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 140,
+      "geometric_available": 22,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 160,
+      "geometric_available": 15,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 180,
+      "geometric_available": 10,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 200,
+      "geometric_available": 6,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 120,
+      "geometric_available": 31,
+      "geometric_phase_hole_indices": [
+        30
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 128,
+      "geometric_available": 27,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 140,
+      "geometric_available": 22,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 160,
+      "geometric_available": 15,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 180,
+      "geometric_available": 10,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "gravity_periodic_6axis",
+      "period_samples": 200,
+      "geometric_available": 6,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "alternating_step_harmonic",
+      "period_samples": 180,
+      "geometric_available": 20,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "alternating_step_harmonic",
+      "period_samples": 200,
+      "geometric_available": 12,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 120,
+      "geometric_available": 31,
+      "geometric_phase_hole_indices": [
+        30
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 128,
+      "geometric_available": 27,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 140,
+      "geometric_available": 22,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 160,
+      "geometric_available": 15,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        30,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 180,
+      "geometric_available": 10,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        31
+      ]
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "family": "weak_degenerate_gyro",
+      "period_samples": 200,
+      "geometric_available": 6,
+      "geometric_phase_hole_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        31
+      ]
+    }
+  ],
+  "N768_strict_minima_failure_records": [
+    {
+      "selected_lag": 180,
+      "raw_maxr": 0.9999701790460247,
+      "exact_max_ties": [
+        180
+      ],
+      "strict_minima": [
+        67,
+        157,
+        608,
+        698
+      ],
+      "pair_bounds_inclusive": null,
+      "pair_length_samples": null,
+      "pair_stored_samples": null,
+      "eligible_pair_count": 0,
+      "failure_reason": "no_eligible_minima_pair",
+      "finite_features": false,
+      "valid_pre_quality": false,
+      "quality_evaluated": false,
+      "row_id": 2386,
+      "fixture_index": 596,
+      "fixture_key": "alternating_step_harmonic/P180/phase20",
+      "length": 768,
+      "rule": "exact_max_smallest_exact_tie",
+      "correlation_row": 1193,
+      "family": "alternating_step_harmonic",
+      "period_samples": 180,
+      "phase_index": 20,
+      "phase_cycles": 0.625,
+      "truth_stride_period_samples": 180,
+      "truth_events_raw": [
+        67.5,
+        247.5,
+        427.5,
+        607.5
+      ],
+      "truth_events_with_minima_margins": [
+        67.5,
+        247.5,
+        427.5,
+        607.5
+      ],
+      "truth_full_anchored_stride_in_raw": true,
+      "truth_full_anchored_stride_with_margins": true,
+      "truth_interval_can_fit_stride_raw": true,
+      "truth_interval_can_fit_stride_with_margins": true,
+      "selected_lag_alias": "one_stride",
+      "selected_pair_alias": "unavailable",
+      "selected_pair_period_ratio": null,
+      "truth_anchored_strides_contained_in_selected_pair": 0,
+      "all_nearmax_lags": [
+        180
+      ],
+      "correlation_gaps": {
+        "top_minus_second": 0.0023445099942938086,
+        "max_minus_lowest_nearmax": 0.0,
+        "max_minus_best_outside_nearmax": 0.0023445099942938086
+      },
+      "finite_correlation_count": 121,
+      "undefined_correlation_count": 0,
+      "selected_lag_correlation": 0.9999701790460247,
+      "selected_interval_interpretation": "putative repeat interval; anatomical stride not inferred",
+      "status": "no_eligible_minima_pair",
+      "input_finite_count": 4608,
+      "input_sample_value_count": 4608,
+      "magnitude_finite_count": 1536,
+      "filtered_acc_finite_count": 768,
+      "guard_evaluated": false,
+      "channel_population_std": null,
+      "channel_raw_rms": null,
+      "channel_degenerate": null,
+      "feature_norm": null,
+      "feature_channel_means": null,
+      "explicit_no_quality_cutoffs": true,
+      "quality_cutoff": null,
+      "quality_trained": false,
+      "quality_applied": false,
+      "acceleration_harmonic_ambiguity": false,
+      "full_six_axis_signal_half_periodic": false,
+      "joint_magnitudes_half_periodic": false,
+      "gyro_contains_physical_P": true,
+      "extracted_interval_alias": false,
+      "finite_extracted_interval_alias": false,
+      "unique_nearmax_is_stride_evidence": false,
+      "geometric_reference": {
+        "minima_times": [
+          67.5,
+          157.5,
+          247.5,
+          337.5,
+          427.5,
+          517.5,
+          607.5,
+          697.5
+        ],
+        "eligible_pairs": [
+          {
+            "bounds": [
+              67.5,
+              247.5
+            ],
+            "length": 180.0,
+            "event_indices": [
+              0,
+              2
+            ]
+          },
+          {
+            "bounds": [
+              157.5,
+              337.5
+            ],
+            "length": 180.0,
+            "event_indices": [
+              1,
+              3
+            ]
+          },
+          {
+            "bounds": [
+              247.5,
+              427.5
+            ],
+            "length": 180.0,
+            "event_indices": [
+              2,
+              4
+            ]
+          },
+          {
+            "bounds": [
+              337.5,
+              517.5
+            ],
+            "length": 180.0,
+            "event_indices": [
+              3,
+              5
+            ]
+          },
+          {
+            "bounds": [
+              427.5,
+              607.5
+            ],
+            "length": 180.0,
+            "event_indices": [
+              4,
+              6
+            ]
+          },
+          {
+            "bounds": [
+              517.5,
+              697.5
+            ],
+            "length": 180.0,
+            "event_indices": [
+              5,
+              7
+            ]
+          }
+        ],
+        "available_at_selected_lag": true,
+        "chosen_pair": {
+          "bounds": [
+            337.5,
+            517.5
+          ],
+          "length": 180.0,
+          "event_indices": [
+            3,
+            5
+          ]
+        },
+        "reference_kind": "continuous prescribed raw-magnitude minima; no filtered minima used"
+      }
+    }
+  ],
+  "canonical_saved_JSON_scientific_fingerprint": "9061bf1d4df7f88a56ef9dd156e55625a4b44933867e87fd55bc5083cf890112",
+  "original_in_memory_scientific_fingerprint": "51a085a519c36fb465a0b69812c61bed11cac5bca9995c31d1da15d8a7af801b",
+  "report_sha256": "bd890b2065009c961c7f8dc53624d85435e50ea44186d86465323673b45761da"
+}

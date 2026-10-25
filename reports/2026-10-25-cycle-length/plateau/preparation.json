@@ -1,0 +1,13 @@
+{
+  "status": "prepared_without_fixture_measurement",
+  "saved_windows": 12,
+  "cached_rows": 24,
+  "old_files_unchanged": true,
+  "old_file_count": 26,
+  "process_cpu_seconds": 1.280593884,
+  "wall_seconds": 1.2741680769249797,
+  "cpu_affinity": [
+    0
+  ],
+  "hard_cpu_seconds": 10
+}

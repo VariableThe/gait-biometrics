@@ -1,0 +1,115 @@
+{
+  "status": "handoff_with_documented_fingerprint_serialization_defect",
+  "measurement_attempts": 1,
+  "measurement_status": "complete",
+  "measurement_reruns": 0,
+  "original_artifacts_unchanged_verified": true,
+  "frozen_files_unchanged_verified": true,
+  "postrun_audit": "postrun_audit.json",
+  "review_notes": "REVIEW_NOTES.md",
+  "corrected_saved_JSON_fingerprint_file": "fingerprint_serialization_note.json",
+  "total_indexed_bytes": 184891443,
+  "files": {
+    "README.md": {
+      "bytes": 6621,
+      "sha256": "25d82d1d12de511b8d0c0bb78e89af4b292d300afad353971d13150b81109fa6"
+    },
+    "RESULTS.md": {
+      "bytes": 2558,
+      "sha256": "d9ab9b4e78325c6951c3f324ca4ff25b97b861f590dce7195e45a2290dfe20f1"
+    },
+    "REVIEW_NOTES.md": {
+      "bytes": 6328,
+      "sha256": "f86892c119c751b91e9741ca73d49926ad576bfe9e4d3766ce47f1a93f9551a2"
+    },
+    "arrays/correlation_present_mask.npy": {
+      "bytes": 2688,
+      "sha256": "0e1f77fadb231c806633e4aaae1cc9769f9a6732cc4c563ab525a7ed20878038"
+    },
+    "arrays/diagnostic_correlations.npy": {
+      "bytes": 14786688,
+      "sha256": "17d26f6e5948e772b1313f9808fd43fbae6d934ca403ee721fc95a19e41bb622"
+    },
+    "arrays/diagnostic_present_mask.npy": {
+      "bytes": 1408,
+      "sha256": "95aecdaa76f489dd5a7ec8143b576f38d12581e478ba70be892d13aedd24a7c5"
+    },
+    "arrays/extractor_correlations.npy": {
+      "bytes": 2478208,
+      "sha256": "74ae0fcb1f3e4cf3eb62d19a1cb78883bcd3dc73e8ebaf86630e1e91c0afc622"
+    },
+    "arrays/feature_valid_mask.npy": {
+      "bytes": 5248,
+      "sha256": "87b05b75137b13a440c072c66f00c56c19a50a9b453b7b447c771671550a3eb1"
+    },
+    "arrays/features.npy": {
+      "bytes": 16384128,
+      "sha256": "f5e6e4e2e230a2754574166d457d1adad2bb55ebb3191240869a46d9bbce60f0"
+    },
+    "arrays/fixed_check_vectors.npy": {
+      "bytes": 17552,
+      "sha256": "4f6824c7a5fab04c681c52d43cb0a33a1997508cd299f64b5154481da917a66e"
+    },
+    "arrays/fixture_present_mask.npy": {
+      "bytes": 1408,
+      "sha256": "95aecdaa76f489dd5a7ec8143b576f38d12581e478ba70be892d13aedd24a7c5"
+    },
+    "arrays/record_present_mask.npy": {
+      "bytes": 5248,
+      "sha256": "9747c0449ca8992d10b3928e0956faa17b66d561f2a9f93f4763ee2b3ce3babc"
+    },
+    "arrays/windows_768.npy": {
+      "bytes": 47186048,
+      "sha256": "03ee7b17a5ed6d5366084ef303c7cee8c209eef14e454fef4729987d741b19e2"
+    },
+    "attempt.started.json": {
+      "bytes": 211,
+      "sha256": "d88edcc65ff1bdaed6f806edfee3b8b60c2fb430744339d91a0748112424a10b"
+    },
+    "audit.py": {
+      "bytes": 9612,
+      "sha256": "612cbb5153f66b959ef2773cd6293f40dc8954e341ef036d0a5dcd3a5d2d38c9"
+    },
+    "audit_arrays.npz": {
+      "bytes": 81296238,
+      "sha256": "52d82bb78b30a064e76b7134f4cf737fba33f0956907bcf29d4bfbea5b6f9903"
+    },
+    "cached_reference.json": {
+      "bytes": 1966939,
+      "sha256": "8142292bb75473133fe82ab3436f5b5ecd91b04c45d6558eda1e02c14902b40f"
+    },
+    "diagnostics.jsonl": {
+      "bytes": 5715548,
+      "sha256": "620cdf39d24e4f80361a449f05e970eb5b29e53e05a00646f1a2097e0da48d0e"
+    },
+    "fingerprint_serialization_note.json": {
+      "bytes": 1134,
+      "sha256": "7d25d67665ca85383fbc9cd2c41972e1b39e9b247ebdb5d98dee4804e9a0effe"
+    },
+    "postrun_audit.json": {
+      "bytes": 604,
+      "sha256": "c088747076eb96a163e25ef0aa3dc334251d4b401da28a832e3f75c4764ed962"
+    },
+    "postrun_audit.py": {
+      "bytes": 10459,
+      "sha256": "83a102f90b7601a0f406029eee1a87773352f1b237ce75d7ca43f3f98ad03e1d"
+    },
+    "postrun_review.json": {
+      "bytes": 18455,
+      "sha256": "dce5732809319c32d18a1e3af4fac3fbef7b2549def113d6453a0ed1973de7cc"
+    },
+    "prototype.py": {
+      "bytes": 48203,
+      "sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    "records.jsonl": {
+      "bytes": 14746216,
+      "sha256": "9f6862b34dcc2e76f7e790f1c47ba2138e02b34802a5ff79536f892f322d5e15"
+    },
+    "report.json": {
+      "bytes": 193693,
+      "sha256": "bd890b2065009c961c7f8dc53624d85435e50ea44186d86465323673b45761da"
+    }
+  },
+  "index_content_sha256": "36a051dcb55659531feaaf4c104d6cf13290d131173586662089e67e6c80b073"
+}

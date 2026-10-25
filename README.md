@@ -18,6 +18,8 @@ The [25 October robustness and simulation report](reports/2026-10-25-robustness/
 
 The [short-window cycle feasibility report](reports/2026-10-25-cycle/README.md) tests 1,280 fixed synthetic windows before a cycle-model fit: 848 yield finite features, 432 fail, and 96 finite outputs represent half-strides. Keep Canonical362 while redesigning the cycle protocol. A new exact-count ROC utility retains failed claims and fixes two floating-point EER edge cases. These are synthetic feasibility and evaluation results, with no new biometric model or TEST result.
 
+The [longer-window recreation and plateau regression](reports/2026-10-25-cycle-length/README.md) preserve 5,120 synthetic comparison rows. Extending 256→768 samples reduces missing pairs from 192→1 per lag rule; half-period aliases remain. An independently checked twelve-fixture plateau regression fixes that one numerical tie case while retaining every gyro failure and alias. This is numerical evidence, with no cycle DEV model or new authentication result.
+
 ## Run immediately
 
 Python 3.14.8 and the existing pinned torch 2.14.1 dependency set were validated on Linux x86_64. Create an isolated environment with uv:
