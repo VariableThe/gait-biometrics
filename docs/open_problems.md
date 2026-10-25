@@ -62,13 +62,15 @@ complete block, so no identity has both-day support and no registered training
 owner passes the proposed count flag. This protocol cannot retain the cohort.
 Complete segments preserve raw support for all fifteen people and all historical
 trials, adding 33,810 valid tail rows; 29 fragments are shorter than 256 samples.
-Extraction, tail-matched canonical controls and partial-failure/enrollment rules
-remain open. Subject 19's fragmented day2 trial remains outside the old claim
+A separate canonical experiment evaluates one fixed eligible-support/control rule below.
+Cycle extraction and partial-failure/enrollment rules remain open. Subject 19's fragmented day2 trial remains outside the old claim
 graph. No cycle DEV fit or authentication threshold change is implied.
 
-The [joint-repeat comparison](../reports/2026-10-25-joint-repeat/README.md) resolves the stipulated synthetic half-period lag using gyro evidence, with missing boundaries and noise-only finite outputs retained. All 8,640 records and complete numeric arrays replay. This does not change the authentication nominee. A separately specified N446 linear, endpoint-exclusive waveform addendum is being prepared; it must pass its own synthetic gates before a DEV registration can be prepared. Matched support, source-row perturbations and complete failed-claim denominators remain required.
+The [joint-repeat comparison](../reports/2026-10-25-joint-repeat/README.md) resolves the stipulated synthetic half-period lag using gyro evidence, with missing boundaries and noise-only finite outputs retained. All 8,640 records and complete numeric arrays replay. This does not change the authentication nominee. The subsequent N446 linear, endpoint-exclusive waveform addendum fails its fixed synthetic gate and stops. Matched support, source-row perturbations and complete failed-claim denominators remain required.
 
-The [N446 waveform addendum](../reports/2026-10-25-native-waveform/README.md) is now **stopped**: four of 960 required nondegenerate fixtures have no admissible pair despite correct lag selection. Its fixed all-960 gate fails; no duration adjustment, fallback, longer window or repaired rerun is allowed under this registration. Both portable numeric replays retain STOP. The next separately proposed comparison uses the unchanged canonical descriptor and source-matched support without repeat segmentation; it is preparation only.
+The [N446 waveform addendum](../reports/2026-10-25-native-waveform/README.md) is now **stopped**: four of 960 required nondegenerate fixtures have no admissible pair despite correct lag selection. Its fixed all-960 gate fails; no duration adjustment, fallback, longer window or repaired rerun is allowed under this registration. Both portable numeric replays retain STOP. The separate nonsegmented comparison below has completed without changing this stop.
+
+The [nonsegmented full-support comparison](../reports/2026-10-25-full-support/README.md) is complete. Its 299 eligible historical trials add 32,600 distinct rows using 885 covers with exact multiplicity weights. The full-support estimator worsens clean equal-fold FRR by `133/8700` (1.528736 percentage points) against the matched aggregation control and fails 14 of 33 replacement gates against frozen Canonical362. All 121 preflight contexts, 11,373 required windows, 200 new fits, 100 restored reference models and 660 score sets verify; an independent read-only audit reproduces the score sets bit for bit. Canonical362 remains selected, subject 9 remains completely rejected, and gain/noise sensitivity persists. This tests one support/aggregation policy on reused DEV; it establishes neither a pure tail-row effect nor independent generalization.
 
 ## Limits that software cannot remove
 

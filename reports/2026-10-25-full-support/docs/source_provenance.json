@@ -1,0 +1,16 @@
+{
+  "dataset": "Santos multi-sensor gait",
+  "version": 7,
+  "doi": "10.6084/m9.figshare.14727231.v7",
+  "url": "https://ndownloader.figshare.com/files/35882624",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "authors": "Geise Santos, Marcelo M. Wanderley, Tiago Tavares, Anderson Rocha",
+  "archive": "/home/sherlock/Code/github/VariableThe/gait-biometrics/datasets/santos/santos-v7.zip",
+  "size_bytes": 1523321221,
+  "md5": "35adf0860202f2aefa37560dc0748ebd",
+  "sha256": "ed944fa88a98ce1058327ff4b3c8f919fbf58626fc7e3c5256360ee080a3a304",
+  "sha256_basis": "locally measured official v7 bytes, also matched publisher MD5 and size",
+  "extracted": false,
+  "signal_values_parsed": false
+}

@@ -1,0 +1,2 @@
+# Cache replay only; full original environment is preserved under environment/.
+numpy==2.5.4
