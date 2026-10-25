@@ -1,0 +1,105 @@
+{
+  "files": [
+    {
+      "bytes": 7226,
+      "path": "README.md",
+      "sha256": "8ba201e83ea51842f4ad0ab648e7e94014ec4814f0a4c856c492526ca1259fda"
+    },
+    {
+      "bytes": 3791,
+      "path": "audit.md",
+      "sha256": "58e0242c8a8b1e145a468f738ceba26cf40687173528630f630bcde4f539f1d0"
+    },
+    {
+      "bytes": 141,
+      "path": "evidence/attempt.json",
+      "sha256": "03a1b95670217dd792ca0793bcd7b28613abb8f36e6fa7b380b2da57cb0909d1"
+    },
+    {
+      "bytes": 75384,
+      "path": "evidence/development_metadata.input.json.gz",
+      "sha256": "32625c187c71f21c1a8e55dfd6b5ced440ab9889792a9a2eb342ba4e1debded9"
+    },
+    {
+      "bytes": 289,
+      "path": "evidence/diagnostics.json",
+      "sha256": "429889d55d72065f80b1d3417cdcafbe3e1d3112231fe404f7e99acab8b5d825"
+    },
+    {
+      "bytes": 4638,
+      "path": "evidence/historical_registration.input.json.gz",
+      "sha256": "11e9bcd0a9629d997b5d5fe544c97303752e153d78d2bf35ec33d58918d8c765"
+    },
+    {
+      "bytes": 3234,
+      "path": "evidence/registration.json",
+      "sha256": "138628cca5930231798b105f03de6855077d30c17f3f208b1ef654a9b9c092bf"
+    },
+    {
+      "bytes": 330066,
+      "path": "evidence/result.json.gz",
+      "sha256": "954e6a1bf4896aaf4dc456a84ad430e3d0a56888e6ae75c9f3946b1a2eb2aae7"
+    },
+    {
+      "bytes": 5416,
+      "path": "guarded_inventory.py",
+      "sha256": "f0d7272c9bb3332c34c9571921064673ad91def2ee9e763ffb0cb95d34ac89a8"
+    },
+    {
+      "bytes": 3343,
+      "path": "provenance.json",
+      "sha256": "0dd11f825265d5f8f0bacf1d1f7f9e1c1f86c7173f14d1301fda1d148ca72e6e"
+    },
+    {
+      "bytes": 4541,
+      "path": "replay.py",
+      "sha256": "7619c2b7e5edd4fb0d22103ebf8d71986f64087b9ad20a6b9a7d11805c8fa217"
+    },
+    {
+      "bytes": 66852,
+      "path": "summary.json",
+      "sha256": "1a6ecf54efa7d4cdf6cc6ebd2519bee4e39cb22b8ff3086732e0aaa02eeb7db5"
+    },
+    {
+      "bytes": 3972,
+      "path": "validation/santos-support-inventory-v1-run-access.json",
+      "sha256": "d6e95c79c56428e6011419a0b9411b2064aed2f64424701d7ec47c7abbb9447f"
+    },
+    {
+      "bytes": 168,
+      "path": "validation/santos-support-inventory-v1-run.log",
+      "sha256": "d2f42ee7543a327cfb4f9c1cd7bf234526f7695d7bd11f7c06d02a8315eb4a42"
+    },
+    {
+      "bytes": 2862,
+      "path": "validation/santos-support-inventory-v1-verify-b-access.json",
+      "sha256": "5bc016b4e4c4c59abce0cb20ab81dd7d7e147037347cc8842835693cd5807499"
+    },
+    {
+      "bytes": 108,
+      "path": "validation/santos-support-inventory-v1-verify-b.log",
+      "sha256": "eb83b17d0c42b00231b0790baf8ae25f724c604d019c7f9af56fec5b103ec3ed"
+    },
+    {
+      "bytes": 2803,
+      "path": "validation/santos-support-inventory-v1-verify-main-access.json",
+      "sha256": "72a4cd5fc2ab72ff1dcc879ea501c701b1c2e0fe295cfd5591b2f89908b03ffe"
+    },
+    {
+      "bytes": 108,
+      "path": "validation/santos-support-inventory-v1-verify-main.log",
+      "sha256": "eb83b17d0c42b00231b0790baf8ae25f724c604d019c7f9af56fec5b103ec3ed"
+    },
+    {
+      "bytes": 6815,
+      "path": "validation/support-inventory-b-full-20261025.log",
+      "sha256": "d30353740cbbfd0a8cb9e3d56e74c33cf1e92c1d6495c763795a0ce393bc4adb"
+    },
+    {
+      "bytes": 6795,
+      "path": "validation/support-inventory-main-full-20261025.log",
+      "sha256": "4dd0a71047d0b936de989636dddec5604b0a0777319555288e04a976f4cc567c"
+    }
+  ],
+  "schema_version": 1
+}

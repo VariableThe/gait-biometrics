@@ -1,0 +1,77 @@
+{
+  "access_guard_sha256": "f0d7272c9bb3332c34c9571921064673ad91def2ee9e763ffb0cb95d34ac89a8",
+  "historical_sources": "Public canonical registration/development snapshots; no raw member or whole archive authenticity recheck",
+  "integrity_limits": {
+    "historical_signal_fingerprint": "e39d5a85f2f8adc3f4906ce3f64c36f4dbe24b9907561cfa90f4a0f329762f1a",
+    "member_manifest_link_verified": true,
+    "member_payload_hashes_verified": false,
+    "raw_member_reads": 0,
+    "signal_fingerprint_verified": false
+  },
+  "mirror_scope": "Student B contains exact copies of this one inventory, not an independent replication",
+  "registration_sha256": "138628cca5930231798b105f03de6855077d30c17f3f208b1ef654a9b9c092bf",
+  "restored_attempt": {
+    "attempt.json": {
+      "bytes": 141,
+      "encoding": "identity",
+      "published_path": "evidence/attempt.json",
+      "sha256": "03a1b95670217dd792ca0793bcd7b28613abb8f36e6fa7b380b2da57cb0909d1"
+    },
+    "development_metadata.input.json.gz": {
+      "bytes": 75384,
+      "encoding": "identity",
+      "published_path": "evidence/development_metadata.input.json.gz",
+      "sha256": "32625c187c71f21c1a8e55dfd6b5ced440ab9889792a9a2eb342ba4e1debded9"
+    },
+    "diagnostics.json": {
+      "bytes": 289,
+      "encoding": "identity",
+      "published_path": "evidence/diagnostics.json",
+      "sha256": "429889d55d72065f80b1d3417cdcafbe3e1d3112231fe404f7e99acab8b5d825"
+    },
+    "historical_registration.input.json.gz": {
+      "bytes": 4638,
+      "encoding": "identity",
+      "published_path": "evidence/historical_registration.input.json.gz",
+      "sha256": "11e9bcd0a9629d997b5d5fe544c97303752e153d78d2bf35ec33d58918d8c765"
+    },
+    "registration.json": {
+      "bytes": 3234,
+      "encoding": "identity",
+      "published_path": "evidence/registration.json",
+      "sha256": "138628cca5930231798b105f03de6855077d30c17f3f208b1ef654a9b9c092bf"
+    },
+    "result.json": {
+      "bytes": 12181414,
+      "encoding": "gzip",
+      "published_path": "evidence/result.json.gz",
+      "sha256": "80be0bc4e54ff1244a2ff8cf909dccf5ca7c3c2ee5189f58f64e9991e32aa25b"
+    }
+  },
+  "result_sha256": "80be0bc4e54ff1244a2ff8cf909dccf5ca7c3c2ee5189f58f64e9991e32aa25b",
+  "runtime": {
+    "byteorder": "little",
+    "cache_tag": "cpython-314",
+    "executable": "/home/sherlock/.local/share/uv/python/cpython-3.14.8-linux-x86_64-gnu/bin/python3.14",
+    "implementation": "CPython",
+    "python": "3.14.8 (main, Oct 14 2026, 01:04:34) [Clang 23.1.3 ]"
+  },
+  "schema_version": 1,
+  "source_commits": {
+    "main": "7e6aabe0c28950c8732380419bec58f9c7d45063",
+    "student_b": "97a47d0b1b8d2b3ac47a43039654639ceb3014a1"
+  },
+  "sources": {
+    "docs/santos_support_inventory.md": "e4ad7d0bf8ed821ec6d2f23e17f5e19ab8b350690719179a68885dabcba958f2",
+    "scripts/santos_support_inventory.py": "36127295f714f6683cb4b7106b938d92795168ba0418c31f771b03d75583ab3e",
+    "tests/test_santos_support_inventory.py": "ad769e89a38a1d2f2c292da68e7517f7f3d172f7b9ea3cb146405e4ae43d0265"
+  },
+  "timing_scope": "process CPU, job wall, peak RSS from guarded run/replays; full scientific suites ran concurrently; no performance improvement claim",
+  "validation": {
+    "main_tests": 1272,
+    "preexisting_warnings_each": 8,
+    "quality_files_each": 53,
+    "student_b_tests": 1268,
+    "subtests_each": 1805
+  }
+}

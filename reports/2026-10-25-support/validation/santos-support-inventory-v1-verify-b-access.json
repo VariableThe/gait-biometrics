@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "stage": "verify",
+  "wrapper_sha256": "f0d7272c9bb3332c34c9571921064673ad91def2ee9e763ffb0cb95d34ac89a8",
+  "exit_code": 0,
+  "exception": null,
+  "allowed_sources": [
+    "/home/sherlock/Code/github/VariableThe/gait-biometrics-student-b/docs/santos_support_inventory.md",
+    "/home/sherlock/Code/github/VariableThe/gait-biometrics-student-b/scripts/santos_support_inventory.py",
+    "/home/sherlock/Code/github/VariableThe/gait-biometrics-student-b/tests/test_santos_support_inventory.py"
+  ],
+  "allowed_original_inputs": [],
+  "output_root": "/home/sherlock/Code/github/VariableThe/artifacts/santos-support-inventory-v1",
+  "file_accesses": [
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/artifacts/santos-support-inventory-v1/registration.json",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/gait-biometrics-student-b/scripts/santos_support_inventory.py",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/gait-biometrics-student-b/tests/test_santos_support_inventory.py",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/gait-biometrics-student-b/docs/santos_support_inventory.md",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/artifacts/santos-support-inventory-v1/attempt.json",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/artifacts/santos-support-inventory-v1/diagnostics.json",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/artifacts/santos-support-inventory-v1/result.json",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/artifacts/santos-support-inventory-v1/historical_registration.input.json.gz",
+      "mode": "rb"
+    },
+    {
+      "path": "/home/sherlock/Code/github/VariableThe/artifacts/santos-support-inventory-v1/development_metadata.input.json.gz",
+      "mode": "rb"
+    }
+  ],
+  "imports_seen": [
+    "__future__",
+    "_colorize",
+    "_io",
+    "_typing",
+    "_wmi",
+    "abc",
+    "argparse",
+    "builtins",
+    "collections",
+    "collections.abc",
+    "compression._common",
+    "copyreg",
+    "errno",
+    "functools",
+    "gzip",
+    "hashlib",
+    "io",
+    "itertools",
+    "json",
+    "locale",
+    "math",
+    "operator",
+    "os",
+    "pathlib",
+    "platform",
+    "re",
+    "resource",
+    "shutil",
+    "signal",
+    "struct",
+    "sys",
+    "time",
+    "types",
+    "typing",
+    "weakref",
+    "zlib"
+  ],
+  "denied_accesses": [],
+  "raw_member_reads": 0,
+  "process_cpu_seconds_for_job": 5.191657447,
+  "wall_seconds_for_job": 10.46773108607158,
+  "max_rss_kib": 135280,
+  "scope": "Python-level import/Path.open guard for this reviewed stdlib job; not an OS sandbox or raw-data authenticity audit"
+}
