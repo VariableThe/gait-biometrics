@@ -1,0 +1,12 @@
+{
+  "derived_script_hash_bindings_checked": 2,
+  "fresh_paper_check": "IDNet \u00a73 reopened and consistent; Barth/Matrix retrieval unavailable; descriptions compared against supplied independently verified brief",
+  "historical_finite_one_P_preserved_comparisons": 3230,
+  "legacy_control_candidate_coverage_comparisons": 5120,
+  "no_full_or_default_grid_replay_run_by_reviewer": true,
+  "original_anchors_checked": 4,
+  "original_full_replay_log_and_provenance_match": true,
+  "recipe_python_path_resolves_to_verified_shared_environment": true,
+  "secondary_cover_windows_checked": 885,
+  "secondary_planning_segments_weights_checked": 299
+}

@@ -1,0 +1,187 @@
+{
+  "cases": [
+    {
+      "case": "existing-output",
+      "error": "RuntimeError: Output directory already exists; choose a fresh path",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "missing-publication-file",
+      "error": "RuntimeError: Publication file inventory mismatch",
+      "output_retained": false,
+      "stdout": ""
+    },
+    {
+      "case": "extra-publication-file",
+      "error": "RuntimeError: Publication file inventory mismatch",
+      "output_retained": false,
+      "stdout": ""
+    },
+    {
+      "case": "corrupt-publication-file",
+      "error": "RuntimeError: Publication digest mismatch: evidence/keys.json.gz",
+      "output_retained": false,
+      "stdout": ""
+    },
+    {
+      "case": "symlink-publication-file",
+      "error": "RuntimeError: Symlink in publication",
+      "output_retained": false,
+      "stdout": ""
+    },
+    {
+      "case": "unsafe-path-5",
+      "error": "RuntimeError: Unsafe relative path",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "unsafe-path-6",
+      "error": "RuntimeError: Unsafe relative path",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "unsafe-path-7",
+      "error": "RuntimeError: Unsafe relative path",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "unsafe-path-8",
+      "error": "RuntimeError: Noncanonical relative path",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "unsafe-path-9",
+      "error": "RuntimeError: Noncanonical relative path",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "unsafe-path-10",
+      "error": "RuntimeError: Noncanonical relative path",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "wrong-restored-sha",
+      "error": "RuntimeError: Restored digest mismatch: saved/array_schema.json",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "inflation-size-bound",
+      "error": "RuntimeError: Inflated file exceeds registered size",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "wrong-part-order",
+      "error": "RuntimeError: Combined numeric archive mismatch",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-over-inflation",
+      "error": "RuntimeError: Numeric evidence exceeds registered size",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-short-inflation",
+      "error": "RuntimeError: Restored NPZ mismatch",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-missing-member",
+      "error": "RuntimeError: NPZ member inventory mismatch",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-extra-member",
+      "error": "RuntimeError: NPZ member inventory mismatch",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-unsafe-member-18",
+      "error": "RuntimeError: Unsafe NPZ member",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-unsafe-member-19",
+      "error": "RuntimeError: Unsafe NPZ member",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-unsafe-member-20",
+      "error": "RuntimeError: Unsafe NPZ member",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-unsafe-member-21",
+      "error": "RuntimeError: Unsafe NPZ member",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "npz-duplicate-member",
+      "error": "RuntimeError: NPZ member inventory mismatch",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "wrong-npy-sha",
+      "error": "RuntimeError: NPY bytes mismatch: x.npy",
+      "output_retained": true,
+      "stdout": ""
+    },
+    {
+      "case": "child-failure-False",
+      "error": "RuntimeError: Numeric replay failed; outputs retained: /dev/shm/joint-publication-review-n_gi_1ja/negative-probes-r2/child-failure-False-out",
+      "output_retained": true,
+      "stdout": "intentional tiny child failure\n"
+    },
+    {
+      "case": "child-failure-True",
+      "error": "RuntimeError: Numeric replay failed; outputs retained: /dev/shm/joint-publication-review-n_gi_1ja/negative-probes-r2/child-failure-True-out",
+      "output_retained": true,
+      "stdout": "intentional tiny child failure\n"
+    },
+    {
+      "case": "numeric-source-change",
+      "error": "RuntimeError: Frozen source changed: README.md",
+      "exit_code": 1
+    },
+    {
+      "case": "numeric-binding-change",
+      "error": "RuntimeError: Saved binding changed: attempt.started.json",
+      "exit_code": 1
+    },
+    {
+      "case": "numeric-record-change",
+      "error": "RuntimeError: Records changed",
+      "exit_code": 1
+    },
+    {
+      "case": "numeric-diagnostics-change",
+      "error": "RuntimeError: Diagnostics changed",
+      "exit_code": 1
+    },
+    {
+      "case": "numeric-version-change",
+      "error": "RuntimeError: Registered package versions required",
+      "exit_code": 1
+    }
+  ],
+  "count": 31,
+  "scope": "Temporary malformed publication and tiny ZIP probes only; no full/default scientific replay"
+}

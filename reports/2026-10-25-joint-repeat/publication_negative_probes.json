@@ -1,0 +1,32 @@
+[
+  {
+    "case": "missing_chunk",
+    "message": "RuntimeError: Publication file inventory mismatch",
+    "output_created": false,
+    "returncode": 1
+  },
+  {
+    "case": "changed_chunk",
+    "message": "RuntimeError: Publication digest mismatch: evidence/numeric.npz.xz.part00",
+    "output_created": false,
+    "returncode": 1
+  },
+  {
+    "case": "extra_nested_file",
+    "message": "RuntimeError: Publication file inventory mismatch",
+    "output_created": false,
+    "returncode": 1
+  },
+  {
+    "case": "changed_metadata",
+    "message": "RuntimeError: Publication digest mismatch: evidence/report.json.gz",
+    "output_created": false,
+    "returncode": 1
+  },
+  {
+    "case": "existing_output",
+    "message": "RuntimeError: Output directory already exists; choose a fresh path",
+    "output_created": true,
+    "returncode": 1
+  }
+]

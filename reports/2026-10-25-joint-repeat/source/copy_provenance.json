@@ -1,0 +1,149 @@
+{
+  "copies": [
+    {
+      "destination": "legacy.py",
+      "end_line": 186,
+      "function": "fixture",
+      "function_utf8_sha256": "ef8527ae9ce5881c3c39ed077ebaf99c5477116891b7dcf7318d595a29b95d43",
+      "line": 169,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 192,
+      "function": "correlations",
+      "function_utf8_sha256": "653015b989a5529d13412a76fcbcd5a535e9cc0409127d2119f79b8a2bfe3c1c",
+      "line": 189,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 202,
+      "function": "select",
+      "function_utf8_sha256": "d1f4594441729a4e69d0c0b50e27ead41250292c49303bd5ac99d0c24098bfc2",
+      "line": 195,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 215,
+      "function": "correlation_summary",
+      "function_utf8_sha256": "10708bed78ad0d3b7b5e6a20c94b66ec383f1c74769513df37d4b1605170be05",
+      "line": 205,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 225,
+      "function": "minima_and_pair",
+      "function_utf8_sha256": "ae7f96fc3ecdf2cd8a0b7d7ddff139de7ee68e05662cb3cc8f8af697b96377ce",
+      "line": 218,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 246,
+      "function": "features_from_pair",
+      "function_utf8_sha256": "820a485331a86a9f337f81c1286e57c8e67e0fda41baf1b279c03845123bd9bd",
+      "line": 228,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 265,
+      "function": "extract",
+      "function_utf8_sha256": "a5a656a0b555371221200cf46d299da4d8e7aa48ef0dfdfa3e48cbef5957dde4",
+      "line": 249,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 273,
+      "function": "alias",
+      "function_utf8_sha256": "785a7e6896bfbd5533f32bc2711e382442169eeb5420a60adf2d5a5270092c33",
+      "line": 268,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 287,
+      "function": "truth",
+      "function_utf8_sha256": "80df4c703f524030727fcabf2c4736feefd35db3e7a9e2449c8e8c1f505791d9",
+      "line": 276,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 328,
+      "function": "geometric_reference",
+      "function_utf8_sha256": "dc16331f6fdd65f845a419fd12dd3567804ba62379d135328316dea9f1bfa130",
+      "line": 311,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "legacy.py",
+      "end_line": 363,
+      "function": "fixed_checks",
+      "function_utf8_sha256": "7fe2fe7ab90ea40b678b547211040fb7cd7a027208855920f4f82aacd7a95385",
+      "line": 331,
+      "parent": "cycle-length-feasibility-r1/prototype.py",
+      "parent_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "end_line": 179,
+      "function": "exact_plateau_runs",
+      "function_utf8_sha256": "970ecb4757c21e7f917d4310d047d04d97ccfd30bcdf8622395f2873ca0e4ffc",
+      "line": 158,
+      "parent": "cycle-plateau-regression-r1/runner.py",
+      "parent_sha256": "e5e1278615b5a51b561db44a6d079971e3086eccd3b5216086000b1dfc764cea"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "end_line": 185,
+      "function": "ranked_pairs",
+      "function_utf8_sha256": "5c691d570edbda8c9ed363d378c1c4f6173742db6a5b6e648af63b6e3287b9ce",
+      "line": 182,
+      "parent": "cycle-plateau-regression-r1/runner.py",
+      "parent_sha256": "e5e1278615b5a51b561db44a6d079971e3086eccd3b5216086000b1dfc764cea"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "end_line": 191,
+      "function": "plateau_minima_and_pair",
+      "function_utf8_sha256": "6a7b1c077b9cae9e983b449d6fd9e01fe7cf5927850587cb8646e17c3d1235a0",
+      "line": 188,
+      "parent": "cycle-plateau-regression-r1/runner.py",
+      "parent_sha256": "e5e1278615b5a51b561db44a6d079971e3086eccd3b5216086000b1dfc764cea"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "end_line": 205,
+      "function": "independent_groupby_reference",
+      "function_utf8_sha256": "44f790f8af560152330f02464bdfbc1e9a7344820b01658fd314ff48270e7af4",
+      "line": 194,
+      "parent": "cycle-plateau-regression-r1/runner.py",
+      "parent_sha256": "e5e1278615b5a51b561db44a6d079971e3086eccd3b5216086000b1dfc764cea"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "end_line": 248,
+      "function": "synthetic_helper_checks",
+      "function_utf8_sha256": "07176cd89874c90caf7e96022fe2ad0fd9aa37987425fa1645906bdb2fadcdea",
+      "line": 208,
+      "parent": "cycle-plateau-regression-r1/runner.py",
+      "parent_sha256": "e5e1278615b5a51b561db44a6d079971e3086eccd3b5216086000b1dfc764cea"
+    }
+  ],
+  "parent_top_level_executed": false
+}

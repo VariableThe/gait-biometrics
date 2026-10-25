@@ -66,6 +66,8 @@ Extraction, tail-matched canonical controls and partial-failure/enrollment rules
 remain open. Subject 19's fragmented day2 trial remains outside the old claim
 graph. No cycle DEV fit or authentication threshold change is implied.
 
+The [joint-repeat comparison](../reports/2026-10-25-joint-repeat/README.md) resolves the stipulated synthetic half-period lag using gyro evidence, with missing boundaries and noise-only finite outputs retained. All 8,640 records and complete numeric arrays replay. This does not change the authentication nominee. A separately specified N446 linear, endpoint-exclusive waveform addendum is being prepared; it must pass its own synthetic gates before a DEV registration can be prepared. Matched support, source-row perturbations and complete failed-claim denominators remain required.
+
 ## Limits that software cannot remove
 
 The anonymous legacy WISDM CSVs have no identity mapping; the authentic v1 loader

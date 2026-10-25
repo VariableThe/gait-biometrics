@@ -1,0 +1,28 @@
+{
+  "completion_anchors_unchanged": {
+    "artifact_index_sha256": "bc5d948e2b2904cc3534234f88f8afa9001bba96788bec5e1a8c611f9076bd31",
+    "freeze_sha256": "118ddd391ea75185b69667de22037cca4e1162b2f556515054b14eeb7b0d66d0",
+    "report_sha256": "e8ed94c32f0bafb2dde1cf96aa0897e4751946e1779d5d1112338c31332a0fad",
+    "status": "complete",
+    "summary_sha256": "fd9a2576a4ab2ca5808e11dff63af4dc8f4d3115b1b494fa33793e2262759c1d"
+  },
+  "log_sha256": "0521c828714ff045dad0b78e59a60c36310fd6b04458686a77e3bc16e9008fe4",
+  "result": {
+    "array_schema_and_metadata_checked": true,
+    "cpu_seconds": 327.848625676,
+    "event": "verify",
+    "full_correlations_replayed": true,
+    "guard_stat_mask_relationships_checked": true,
+    "inputs": 2880,
+    "no_filter_reexecution": true,
+    "no_generated_inputs": true,
+    "quality_cutoff": null,
+    "raw_magnitude_bits_bound": true,
+    "records": 8640,
+    "saved_feature_and_pair_replay": true,
+    "status": "pass",
+    "wall_origin": "common_module_start",
+    "wall_seconds": 344.1600493469741
+  },
+  "verification_scope": "All saved correlation/statistic/mask/pair/feature bits and NPZ/NPY replay. No filtering or generator recreation during saved-only verification. Recorded wall origin excludes shell/uv startup; measurement and verification timing are separate."
+}
