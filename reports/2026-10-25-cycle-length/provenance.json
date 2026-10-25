@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "length_source_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c",
+  "length_manifest_sha256": "a3ea13c846ebf5c035eb8583acbdf8156fb03dd4533672b586dac9ec586eb2c6",
+  "length_report_sha256": "bd890b2065009c961c7f8dc53624d85435e50ea44186d86465323673b45761da",
+  "length_in_memory_fingerprint": "51a085a519c36fb465a0b69812c61bed11cac5bca9995c31d1da15d8a7af801b",
+  "length_saved_json_fingerprint": "9061bf1d4df7f88a56ef9dd156e55625a4b44933867e87fd55bc5083cf890112",
+  "length_full_array_payload_published": false,
+  "length_arrays_remain_local": "artifacts/cycle-length-feasibility-r1",
+  "plateau_full_saved_bundle_published": true,
+  "root_parent_commits": {
+    "main": "f98d6f25e0b1f98c8e4c8d82d2ddc7bec7ae3bda",
+    "student_b": "c789713c810a1c49cb7f44040a31a06c77ab483b",
+    "hub": "e8e7ef7426cde03133808627fba6d4a08b9b3b41"
+  },
+  "independent_reviews": [
+    "dataset-next-20261025-cycle-length-evidence-audit-r1",
+    "dataset-next-20261025-cycle-phase-diagnosis-r1",
+    "dataset-next-20261025-cycle-plateau-audit-r1"
+  ],
+  "precision_probe_adaptation": "Only input array path changed to a lossless copied fixture and pathlib import added; source recovered from reviewer executed transcript",
+  "full_measurement_rerun_by_root": false,
+  "real_dataset_payload_read": false,
+  "old_frozen_files_changed": false,
+  "numeric_module_or_threshold_changed": false,
+  "limits": [
+    "Four analytic families, reused fixtures, no subject/session or gait error estimates",
+    "Plateau panel selected after observing the failure; not a full-grid evaluation",
+    "Historical length audit fails the disclosed combined-fingerprint assertion; individual hashes pass",
+    "Full length NPZ and partial arrays are omitted; compact checker does not replay them"
+  ]
+}

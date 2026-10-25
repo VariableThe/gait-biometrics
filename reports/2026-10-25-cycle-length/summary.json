@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic support recreation and outcome-informed numerical regression, not gait performance",
+  "keep_model": "Canonical362",
+  "disposition": "Defer a cycle DEV experiment",
+  "length_groups": [
+    {
+      "length": 256,
+      "rule": "exact_max_smallest_exact_tie",
+      "records": 1280,
+      "finite": 848,
+      "missing_pair": 192,
+      "channel_degenerate": 240,
+      "finite_half_alias": 96,
+      "geometric_available": 1086,
+      "no_pair_despite_geometric_available": 0
+    },
+    {
+      "length": 256,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "records": 1280,
+      "finite": 848,
+      "missing_pair": 192,
+      "channel_degenerate": 240,
+      "finite_half_alias": 96,
+      "geometric_available": 1086,
+      "no_pair_despite_geometric_available": 0
+    },
+    {
+      "length": 768,
+      "rule": "exact_max_smallest_exact_tie",
+      "records": 1280,
+      "finite": 959,
+      "missing_pair": 1,
+      "channel_degenerate": 320,
+      "finite_half_alias": 96,
+      "geometric_available": 1280,
+      "no_pair_despite_geometric_available": 1
+    },
+    {
+      "length": 768,
+      "rule": "nearmax_atol_1e-10_smallest",
+      "records": 1280,
+      "finite": 959,
+      "missing_pair": 1,
+      "channel_degenerate": 320,
+      "finite_half_alias": 96,
+      "geometric_available": 1280,
+      "no_pair_despite_geometric_available": 1
+    }
+  ],
+  "runtime": {
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "implementation": "cpython",
+    "machine": "x86_64",
+    "byteorder": "little",
+    "float64_dtype": "<f8",
+    "file_sha256": {
+      "python_executable": "28299dda2e5c8572d39821fee8552b543dfadc4681a4c4d0b03c69e56d7f9d66",
+      "numpy_init": "09295a80660f17925ae23765ce8cbd7ff7ceae968d5f2f89349f1cb74c0b9e11",
+      "numpy_core_binary": "ffdecbe5382f6499d77fbb3fd034fbf3c0ac5a5516be76044610bb41f9934e04",
+      "scipy_init": "39ccae300a4739cc53719bd3b39ce3f8f66e736c6eb672006e338a4c5cc3dc76",
+      "natural_spline_source": "dd6edb30b03a437dc66e9d937648ed7c47aa4a87d334fbf49451bfbc13c589bd",
+      "ppoly_binary": "33d442e9dfefc94ccf405dd6da06e4a388850a67da7f30c2c74ccf1f0d107034",
+      "sos_filter_binary": "b1ce61eb0ceee27d2e1d35cffe8001d43246f52cda38084c9b96a83093d0bab8"
+    },
+    "single_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    },
+    "cuda_visible_devices": ""
+  },
+  "timings": {
+    "process_cpu_seconds": 64.069864588,
+    "elapsed_after_import_cpu_seconds": 64.032129692,
+    "elapsed_after_import_wall_seconds": 66.66214266908355,
+    "cpu_affinity": [
+      0
+    ],
+    "limits": {
+      "soft_cpu_seconds": 290,
+      "hard_cpu_seconds": 299,
+      "cooperative_stop_seconds": 270
+    }
+  },
+  "quality_cutoff": null,
+  "plateau_rows": 48,
+  "plateau_panel_selected_after_failure": true,
+  "full_plateau_grid_run": false,
+  "new_biometric_fit": false,
+  "new_test_read": false
+}

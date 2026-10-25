@@ -41,6 +41,21 @@ rates/EER and some stressed fold/claimant false accepts worsen. Retain the
 canonical baseline; severe noise and the fully rejected DEV person remain open.
 All 200 fits, 440 scores and 541 geometry contexts verify.
 
+The [cycle feasibility follow-up](../reports/2026-10-25-cycle/README.md) tests
+1,280 fixed synthetic windows before fitting a cycle baseline. Short support,
+missing boundaries, degenerate channels and half-stride aliases require a new
+protocol. The [exact gated ROC utility](gated_roc.md) now retains failed claims,
+reports undefined crossings honestly and avoids floating-point equality errors.
+Longer contiguous support and matched validity-gated canonical controls remain
+research options using existing DEV recordings; no cycle DEV fit is claimed.
+
+The [long-support recreation](../reports/2026-10-25-cycle-length/README.md)
+reduces missing pairs from 192 to one in the fixed synthetic grid. A targeted
+twelve-fixture plateau convention clears the remaining strict-minimum tie, with
+guards and half-period aliases retained. It is not a full-grid plateau result
+or a cycle DEV comparison. Matched support, enrollment aggregation, long-window
+coverage and anatomical ambiguity remain unresolved research decisions.
+
 ## Limits that software cannot remove
 
 The anonymous legacy WISDM CSVs have no identity mapping; the authentic v1 loader

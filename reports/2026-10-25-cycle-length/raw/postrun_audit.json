@@ -1,0 +1,13 @@
+{
+  "status": "pass_with_documented_fingerprint_serialization_defect",
+  "new_measurements": false,
+  "canonical_saved_JSON_fingerprint": "9061bf1d4df7f88a56ef9dd156e55625a4b44933867e87fd55bc5083cf890112",
+  "records_audited": 5120,
+  "diagnostic_channels_audited": 5120,
+  "legacy_records_all_fields_exact": 1280,
+  "fixed_vectors_audited": 18,
+  "scientific_fingerprint_sha256": "51a085a519c36fb465a0b69812c61bed11cac5bca9995c31d1da15d8a7af801b",
+  "report_sha256": "bd890b2065009c961c7f8dc53624d85435e50ea44186d86465323673b45761da",
+  "cpu_seconds": 2.834259962,
+  "wall_seconds": 2.864317259984091
+}

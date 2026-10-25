@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic feasibility and exact empirical evaluation; no biometric fit or real payload load",
+  "main_source_commit": "b2490bb2e7e63052fb7ce8cc7a4116842614fe98",
+  "student_b_source_commit": "cb4cb5339c8c851fe1bbe5e8e4c31e555ac0d6b1",
+  "source_sha256": {
+    "engine/gated_roc.py": "879347e3d2180b9d941765d31db1a3f06c66b6a71626c35e5d07f3cb85df56bf",
+    "tests/test_gated_roc.py": "fe11a58b8f136e87fca5997774d4d5051b52bdf96956f93697f455b72ae62433",
+    "docs/gated_roc.md": "8eef51df83c3f113b5bb285ea8dc6ac856aba1e682721201ff60ad383e4b12b5",
+    ".github/python-quality-files.txt": "07e2fb19ca978512fdee8df7ba51884580ec4932045aec7967040bc49c0f1adc"
+  },
+  "raw_files_sha256": {
+    "prototype.py": "0cc33e195edf4d1a13591dd8b2d4abe9380bd7526509c9e714968b60abc8b85d",
+    "README.md": "cfd9133b4e735337d1f302efb0640671c8a92782a15fc3489dc2358942b88146",
+    "report.json": "0ec0068ff1a2d08b8aa3b382d5f175dca37bcfced8a828d2631070c352a8b5a9"
+  },
+  "raw_manifest_sha256": "fbc8c8e23ad94709d0729d908135d6007469d680e6de7a031d4959be3833f9cd",
+  "raw_source_sha256": "0cc33e195edf4d1a13591dd8b2d4abe9380bd7526509c9e714968b60abc8b85d",
+  "frozen_evidence_read_only_audit": "dataset-next-20261025-cycle-evidence-audit-r1",
+  "utility_read_only_audit": "dataset-next-20261025-gated-roc-audit-r1",
+  "utility_root_followup": "Added dedicated six-claim terminal equality regression; production source unchanged",
+  "raw_roc_erratum": [
+    "Conditional exact1/3 erroneously classified interpolated",
+    "Terminal exact1/3 can be erroneously undefined"
+  ],
+  "preservation": "Never reset or overwrite original r1; raw README reset advice superseded",
+  "runtime": {
+    "process_cpu_seconds": 10.265022105,
+    "measurement_cpu_seconds": 10.232486176,
+    "measurement_wall_seconds": 10.367585972999223,
+    "cpu_affinity": [
+      0
+    ],
+    "cpu_limit_seconds": {
+      "soft": 290,
+      "hard": 299,
+      "cooperative_stop": 280
+    },
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "cuda_visible_devices": "",
+    "single_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "root_validation": {
+    "main": 268,
+    "student_b": 268,
+    "gated_roc_tests": 69,
+    "suite": "tests/test_gated_roc.py tests/test_robustness_selection.py tests/test_calibration_selection.py",
+    "ruff": "0.17.1",
+    "ty": "0.0.90",
+    "full_suite_rerun": false
+  },
+  "replay": "Path-only source modification in a fresh directory; all declared scientific fields exact in same runtime; no cross-platform bitwise promise",
+  "quality_cutoff": {
+    "own_9_train": null,
+    "own_12_train": null,
+    "estimated": false,
+    "applied": false,
+    "future_rule": "max(0, identity-balanced fifth percentile of TRAIN maxr), fitted separately on each own TRAIN split; weighted quantile convention must be preregistered."
+  },
+  "new_biometric_results": false,
+  "original_calib_test_opened": false
+}

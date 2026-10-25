@@ -1,0 +1,1 @@
+{"CPU_affinity":[0],"CPU_budget_seconds":60,"CUDA_visible_devices":"","combined_cpu_seconds_through_verification":3.9599920099999997,"freeze_cpu_seconds":0.800073725,"preparation_cpu_seconds":1.280593884,"run_cpu_seconds_through_verification":1.879324401,"run_wall_seconds_after_initial_setup":2.5831861790502444}

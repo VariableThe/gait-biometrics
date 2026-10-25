@@ -1,0 +1,71 @@
+{
+  "source": "/home/sherlock/Code/github/VariableThe/artifacts/cycle-length-feasibility-r1/prototype.py",
+  "source_sha256": "a8dd5b7572207cdf1f80b12febfef7a6dcd1906fa766c699354390b4138b2c5c",
+  "source_top_level_executed": false,
+  "function_copies": [
+    {
+      "name": "correlations",
+      "source_start_line": 189,
+      "source_end_line": 192,
+      "utf8_sha256": "653015b989a5529d13412a76fcbcd5a535e9cc0409127d2119f79b8a2bfe3c1c",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "select",
+      "source_start_line": 195,
+      "source_end_line": 202,
+      "utf8_sha256": "d1f4594441729a4e69d0c0b50e27ead41250292c49303bd5ac99d0c24098bfc2",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "correlation_summary",
+      "source_start_line": 205,
+      "source_end_line": 215,
+      "utf8_sha256": "10708bed78ad0d3b7b5e6a20c94b66ec383f1c74769513df37d4b1605170be05",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "minima_and_pair",
+      "source_start_line": 218,
+      "source_end_line": 225,
+      "utf8_sha256": "ae7f96fc3ecdf2cd8a0b7d7ddff139de7ee68e05662cb3cc8f8af697b96377ce",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "features_from_pair",
+      "source_start_line": 228,
+      "source_end_line": 246,
+      "utf8_sha256": "820a485331a86a9f337f81c1286e57c8e67e0fda41baf1b279c03845123bd9bd",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "extract",
+      "source_start_line": 249,
+      "source_end_line": 265,
+      "utf8_sha256": "a5a656a0b555371221200cf46d299da4d8e7aa48ef0dfdfa3e48cbef5957dde4",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "alias",
+      "source_start_line": 268,
+      "source_end_line": 273,
+      "utf8_sha256": "785a7e6896bfbd5533f32bc2711e382442169eeb5420a60adf2d5a5270092c33",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "truth",
+      "source_start_line": 276,
+      "source_end_line": 287,
+      "utf8_sha256": "80df4c703f524030727fcabf2c4736feefd35db3e7a9e2449c8e8c1f505791d9",
+      "copy": "verbatim AST-delimited function text"
+    },
+    {
+      "name": "geometric_reference",
+      "source_start_line": 311,
+      "source_end_line": 328,
+      "utf8_sha256": "dc16331f6fdd65f845a419fd12dd3567804ba62379d135328316dea9f1bfa130",
+      "copy": "verbatim AST-delimited function text"
+    }
+  ],
+  "candidate_only_change": "runner.plateau_extract clones extract globals and replaces minima_and_pair only; code object unchanged"
+}

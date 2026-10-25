@@ -1,0 +1,1023 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic count arithmetic only; no biometric performance measurement",
+  "frozen_raw_report_sha256": "0ec0068ff1a2d08b8aa3b382d5f175dca37bcfced8a828d2631070c352a8b5a9",
+  "source_sha256": {
+    "engine/gated_roc.py": "879347e3d2180b9d941765d31db1a3f06c66b6a71626c35e5d07f3cb85df56bf",
+    "tests/test_gated_roc.py": "fe11a58b8f136e87fca5997774d4d5051b52bdf96956f93697f455b72ae62433",
+    "docs/gated_roc.md": "8eef51df83c3f113b5bb285ea8dc6ac856aba1e682721201ff60ad383e4b12b5"
+  },
+  "examples": {
+    "all_reject": {
+      "labels": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "valid": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "result": {
+        "schema_version": 1,
+        "denominator": "all_original_claims",
+        "counts": {
+          "n_genuine": 4,
+          "n_impostor": 4,
+          "n_valid_genuine": 0,
+          "n_valid_impostor": 0,
+          "n_failed_genuine": 4,
+          "n_failed_impostor": 4
+        },
+        "coverage": {
+          "genuine": {
+            "valid_fraction": 0.0,
+            "valid_fraction_exact": "0",
+            "failure_fraction": 1.0,
+            "failure_fraction_exact": "1"
+          },
+          "impostor": {
+            "valid_fraction": 0.0,
+            "valid_fraction_exact": "0",
+            "failure_fraction": 1.0,
+            "failure_fraction_exact": "1"
+          }
+        },
+        "states": [
+          {
+            "policy": {
+              "kind": "reject_all",
+              "threshold": null
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 0,
+              "n_valid_impostor": 0,
+              "n_failed_genuine": 4,
+              "n_failed_impostor": 4,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "tn": 4
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 1.0,
+            "frr_exact": "1"
+          }
+        ],
+        "terminal": {
+          "state_index": 0,
+          "policy": {
+            "kind": "reject_all",
+            "threshold": null
+          },
+          "counts": {
+            "n_genuine": 4,
+            "n_impostor": 4,
+            "n_valid_genuine": 0,
+            "n_valid_impostor": 0,
+            "n_failed_genuine": 4,
+            "n_failed_impostor": 4,
+            "tp": 0,
+            "fp": 0,
+            "fn": 4,
+            "tn": 4
+          },
+          "far": 0.0,
+          "far_exact": "0",
+          "frr": 1.0,
+          "frr_exact": "1"
+        },
+        "eer": {
+          "status": "undefined_no_crossing",
+          "eer": null,
+          "eer_exact": null,
+          "bracket": null
+        },
+        "conditional": {
+          "denominator": "valid_claims_only",
+          "eer": {
+            "status": "undefined_empty_valid_class",
+            "eer": null,
+            "eer_exact": null,
+            "bracket": null
+          }
+        }
+      }
+    },
+    "poor_coverage_perfect_conditional": {
+      "labels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": [
+        0.9,
+        0.8,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        0.2,
+        0.1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "valid": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "result": {
+        "schema_version": 1,
+        "denominator": "all_original_claims",
+        "counts": {
+          "n_genuine": 10,
+          "n_impostor": 10,
+          "n_valid_genuine": 2,
+          "n_valid_impostor": 2,
+          "n_failed_genuine": 8,
+          "n_failed_impostor": 8
+        },
+        "coverage": {
+          "genuine": {
+            "valid_fraction": 0.2,
+            "valid_fraction_exact": "1/5",
+            "failure_fraction": 0.8,
+            "failure_fraction_exact": "4/5"
+          },
+          "impostor": {
+            "valid_fraction": 0.2,
+            "valid_fraction_exact": "1/5",
+            "failure_fraction": 0.8,
+            "failure_fraction_exact": "4/5"
+          }
+        },
+        "states": [
+          {
+            "policy": {
+              "kind": "reject_all",
+              "threshold": null
+            },
+            "counts": {
+              "n_genuine": 10,
+              "n_impostor": 10,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 2,
+              "n_failed_genuine": 8,
+              "n_failed_impostor": 8,
+              "tp": 0,
+              "fp": 0,
+              "fn": 10,
+              "tn": 10
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 1.0,
+            "frr_exact": "1"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.9
+            },
+            "counts": {
+              "n_genuine": 10,
+              "n_impostor": 10,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 2,
+              "n_failed_genuine": 8,
+              "n_failed_impostor": 8,
+              "tp": 1,
+              "fp": 0,
+              "fn": 9,
+              "tn": 10
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 0.9,
+            "frr_exact": "9/10"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.8
+            },
+            "counts": {
+              "n_genuine": 10,
+              "n_impostor": 10,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 2,
+              "n_failed_genuine": 8,
+              "n_failed_impostor": 8,
+              "tp": 2,
+              "fp": 0,
+              "fn": 8,
+              "tn": 10
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 0.8,
+            "frr_exact": "4/5"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.2
+            },
+            "counts": {
+              "n_genuine": 10,
+              "n_impostor": 10,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 2,
+              "n_failed_genuine": 8,
+              "n_failed_impostor": 8,
+              "tp": 2,
+              "fp": 1,
+              "fn": 8,
+              "tn": 9
+            },
+            "far": 0.1,
+            "far_exact": "1/10",
+            "frr": 0.8,
+            "frr_exact": "4/5"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.1
+            },
+            "counts": {
+              "n_genuine": 10,
+              "n_impostor": 10,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 2,
+              "n_failed_genuine": 8,
+              "n_failed_impostor": 8,
+              "tp": 2,
+              "fp": 2,
+              "fn": 8,
+              "tn": 8
+            },
+            "far": 0.2,
+            "far_exact": "1/5",
+            "frr": 0.8,
+            "frr_exact": "4/5"
+          }
+        ],
+        "terminal": {
+          "state_index": 4,
+          "policy": {
+            "kind": "score_at_least",
+            "threshold": 0.1
+          },
+          "counts": {
+            "n_genuine": 10,
+            "n_impostor": 10,
+            "n_valid_genuine": 2,
+            "n_valid_impostor": 2,
+            "n_failed_genuine": 8,
+            "n_failed_impostor": 8,
+            "tp": 2,
+            "fp": 2,
+            "fn": 8,
+            "tn": 8
+          },
+          "far": 0.2,
+          "far_exact": "1/5",
+          "frr": 0.8,
+          "frr_exact": "4/5"
+        },
+        "eer": {
+          "status": "undefined_no_crossing",
+          "eer": null,
+          "eer_exact": null,
+          "bracket": null
+        },
+        "conditional": {
+          "denominator": "valid_claims_only",
+          "eer": {
+            "status": "exact_threshold_state",
+            "eer": 0.0,
+            "eer_exact": "0",
+            "bracket": {
+              "state_indexes": [
+                2,
+                2
+              ],
+              "policies": [
+                {
+                  "kind": "score_at_least",
+                  "threshold": 0.8
+                },
+                {
+                  "kind": "score_at_least",
+                  "threshold": 0.8
+                }
+              ],
+              "upper_weight": 0.0,
+              "upper_weight_exact": "0"
+            }
+          }
+        }
+      }
+    },
+    "crossing_gated": {
+      "labels": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "scores": [
+        0.9,
+        0.6,
+        0.3,
+        null,
+        0.8,
+        0.5,
+        0.2,
+        null
+      ],
+      "valid": [
+        true,
+        true,
+        true,
+        false,
+        true,
+        true,
+        true,
+        false
+      ],
+      "result": {
+        "schema_version": 1,
+        "denominator": "all_original_claims",
+        "counts": {
+          "n_genuine": 4,
+          "n_impostor": 4,
+          "n_valid_genuine": 3,
+          "n_valid_impostor": 3,
+          "n_failed_genuine": 1,
+          "n_failed_impostor": 1
+        },
+        "coverage": {
+          "genuine": {
+            "valid_fraction": 0.75,
+            "valid_fraction_exact": "3/4",
+            "failure_fraction": 0.25,
+            "failure_fraction_exact": "1/4"
+          },
+          "impostor": {
+            "valid_fraction": 0.75,
+            "valid_fraction_exact": "3/4",
+            "failure_fraction": 0.25,
+            "failure_fraction_exact": "1/4"
+          }
+        },
+        "states": [
+          {
+            "policy": {
+              "kind": "reject_all",
+              "threshold": null
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 3,
+              "n_valid_impostor": 3,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 1,
+              "tp": 0,
+              "fp": 0,
+              "fn": 4,
+              "tn": 4
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 1.0,
+            "frr_exact": "1"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.9
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 3,
+              "n_valid_impostor": 3,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 1,
+              "tp": 1,
+              "fp": 0,
+              "fn": 3,
+              "tn": 4
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 0.75,
+            "frr_exact": "3/4"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.8
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 3,
+              "n_valid_impostor": 3,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 1,
+              "tp": 1,
+              "fp": 1,
+              "fn": 3,
+              "tn": 3
+            },
+            "far": 0.25,
+            "far_exact": "1/4",
+            "frr": 0.75,
+            "frr_exact": "3/4"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.6
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 3,
+              "n_valid_impostor": 3,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 1,
+              "tp": 2,
+              "fp": 1,
+              "fn": 2,
+              "tn": 3
+            },
+            "far": 0.25,
+            "far_exact": "1/4",
+            "frr": 0.5,
+            "frr_exact": "1/2"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.5
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 3,
+              "n_valid_impostor": 3,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 1,
+              "tp": 2,
+              "fp": 2,
+              "fn": 2,
+              "tn": 2
+            },
+            "far": 0.5,
+            "far_exact": "1/2",
+            "frr": 0.5,
+            "frr_exact": "1/2"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.3
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 3,
+              "n_valid_impostor": 3,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 1,
+              "tp": 3,
+              "fp": 2,
+              "fn": 1,
+              "tn": 2
+            },
+            "far": 0.5,
+            "far_exact": "1/2",
+            "frr": 0.25,
+            "frr_exact": "1/4"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.2
+            },
+            "counts": {
+              "n_genuine": 4,
+              "n_impostor": 4,
+              "n_valid_genuine": 3,
+              "n_valid_impostor": 3,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 1,
+              "tp": 3,
+              "fp": 3,
+              "fn": 1,
+              "tn": 1
+            },
+            "far": 0.75,
+            "far_exact": "3/4",
+            "frr": 0.25,
+            "frr_exact": "1/4"
+          }
+        ],
+        "terminal": {
+          "state_index": 6,
+          "policy": {
+            "kind": "score_at_least",
+            "threshold": 0.2
+          },
+          "counts": {
+            "n_genuine": 4,
+            "n_impostor": 4,
+            "n_valid_genuine": 3,
+            "n_valid_impostor": 3,
+            "n_failed_genuine": 1,
+            "n_failed_impostor": 1,
+            "tp": 3,
+            "fp": 3,
+            "fn": 1,
+            "tn": 1
+          },
+          "far": 0.75,
+          "far_exact": "3/4",
+          "frr": 0.25,
+          "frr_exact": "1/4"
+        },
+        "eer": {
+          "status": "exact_threshold_state",
+          "eer": 0.5,
+          "eer_exact": "1/2",
+          "bracket": {
+            "state_indexes": [
+              4,
+              4
+            ],
+            "policies": [
+              {
+                "kind": "score_at_least",
+                "threshold": 0.5
+              },
+              {
+                "kind": "score_at_least",
+                "threshold": 0.5
+              }
+            ],
+            "upper_weight": 0.0,
+            "upper_weight_exact": "0"
+          }
+        },
+        "conditional": {
+          "denominator": "valid_claims_only",
+          "eer": {
+            "status": "exact_threshold_state",
+            "eer": 0.3333333333333333,
+            "eer_exact": "1/3",
+            "bracket": {
+              "state_indexes": [
+                3,
+                3
+              ],
+              "policies": [
+                {
+                  "kind": "score_at_least",
+                  "threshold": 0.6
+                },
+                {
+                  "kind": "score_at_least",
+                  "threshold": 0.6
+                }
+              ],
+              "upper_weight": 0.0,
+              "upper_weight_exact": "0"
+            }
+          }
+        }
+      }
+    },
+    "all_window_policy_cartesian_claims": {
+      "labels": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "scores": [
+        0.9,
+        null,
+        null,
+        null
+      ],
+      "valid": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "result": {
+        "schema_version": 1,
+        "denominator": "all_original_claims",
+        "counts": {
+          "n_genuine": 2,
+          "n_impostor": 2,
+          "n_valid_genuine": 1,
+          "n_valid_impostor": 0,
+          "n_failed_genuine": 1,
+          "n_failed_impostor": 2
+        },
+        "coverage": {
+          "genuine": {
+            "valid_fraction": 0.5,
+            "valid_fraction_exact": "1/2",
+            "failure_fraction": 0.5,
+            "failure_fraction_exact": "1/2"
+          },
+          "impostor": {
+            "valid_fraction": 0.0,
+            "valid_fraction_exact": "0",
+            "failure_fraction": 1.0,
+            "failure_fraction_exact": "1"
+          }
+        },
+        "states": [
+          {
+            "policy": {
+              "kind": "reject_all",
+              "threshold": null
+            },
+            "counts": {
+              "n_genuine": 2,
+              "n_impostor": 2,
+              "n_valid_genuine": 1,
+              "n_valid_impostor": 0,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 2,
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "tn": 2
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 1.0,
+            "frr_exact": "1"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.9
+            },
+            "counts": {
+              "n_genuine": 2,
+              "n_impostor": 2,
+              "n_valid_genuine": 1,
+              "n_valid_impostor": 0,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 2,
+              "tp": 1,
+              "fp": 0,
+              "fn": 1,
+              "tn": 2
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 0.5,
+            "frr_exact": "1/2"
+          }
+        ],
+        "terminal": {
+          "state_index": 1,
+          "policy": {
+            "kind": "score_at_least",
+            "threshold": 0.9
+          },
+          "counts": {
+            "n_genuine": 2,
+            "n_impostor": 2,
+            "n_valid_genuine": 1,
+            "n_valid_impostor": 0,
+            "n_failed_genuine": 1,
+            "n_failed_impostor": 2,
+            "tp": 1,
+            "fp": 0,
+            "fn": 1,
+            "tn": 2
+          },
+          "far": 0.0,
+          "far_exact": "0",
+          "frr": 0.5,
+          "frr_exact": "1/2"
+        },
+        "eer": {
+          "status": "undefined_no_crossing",
+          "eer": null,
+          "eer_exact": null,
+          "bracket": null
+        },
+        "conditional": {
+          "denominator": "valid_claims_only",
+          "eer": {
+            "status": "undefined_empty_valid_class",
+            "eer": null,
+            "eer_exact": null,
+            "bracket": null
+          }
+        }
+      }
+    },
+    "terminal_equality_audit_regression": {
+      "labels": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "scores": [
+        0.9,
+        0.6,
+        null,
+        0.8,
+        null,
+        null
+      ],
+      "valid": [
+        true,
+        true,
+        false,
+        true,
+        false,
+        false
+      ],
+      "result": {
+        "schema_version": 1,
+        "denominator": "all_original_claims",
+        "counts": {
+          "n_genuine": 3,
+          "n_impostor": 3,
+          "n_valid_genuine": 2,
+          "n_valid_impostor": 1,
+          "n_failed_genuine": 1,
+          "n_failed_impostor": 2
+        },
+        "coverage": {
+          "genuine": {
+            "valid_fraction": 0.6666666666666666,
+            "valid_fraction_exact": "2/3",
+            "failure_fraction": 0.3333333333333333,
+            "failure_fraction_exact": "1/3"
+          },
+          "impostor": {
+            "valid_fraction": 0.3333333333333333,
+            "valid_fraction_exact": "1/3",
+            "failure_fraction": 0.6666666666666666,
+            "failure_fraction_exact": "2/3"
+          }
+        },
+        "states": [
+          {
+            "policy": {
+              "kind": "reject_all",
+              "threshold": null
+            },
+            "counts": {
+              "n_genuine": 3,
+              "n_impostor": 3,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 1,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 2,
+              "tp": 0,
+              "fp": 0,
+              "fn": 3,
+              "tn": 3
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 1.0,
+            "frr_exact": "1"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.9
+            },
+            "counts": {
+              "n_genuine": 3,
+              "n_impostor": 3,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 1,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 2,
+              "tp": 1,
+              "fp": 0,
+              "fn": 2,
+              "tn": 3
+            },
+            "far": 0.0,
+            "far_exact": "0",
+            "frr": 0.6666666666666666,
+            "frr_exact": "2/3"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.8
+            },
+            "counts": {
+              "n_genuine": 3,
+              "n_impostor": 3,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 1,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 2,
+              "tp": 1,
+              "fp": 1,
+              "fn": 2,
+              "tn": 2
+            },
+            "far": 0.3333333333333333,
+            "far_exact": "1/3",
+            "frr": 0.6666666666666666,
+            "frr_exact": "2/3"
+          },
+          {
+            "policy": {
+              "kind": "score_at_least",
+              "threshold": 0.6
+            },
+            "counts": {
+              "n_genuine": 3,
+              "n_impostor": 3,
+              "n_valid_genuine": 2,
+              "n_valid_impostor": 1,
+              "n_failed_genuine": 1,
+              "n_failed_impostor": 2,
+              "tp": 2,
+              "fp": 1,
+              "fn": 1,
+              "tn": 2
+            },
+            "far": 0.3333333333333333,
+            "far_exact": "1/3",
+            "frr": 0.3333333333333333,
+            "frr_exact": "1/3"
+          }
+        ],
+        "terminal": {
+          "state_index": 3,
+          "policy": {
+            "kind": "score_at_least",
+            "threshold": 0.6
+          },
+          "counts": {
+            "n_genuine": 3,
+            "n_impostor": 3,
+            "n_valid_genuine": 2,
+            "n_valid_impostor": 1,
+            "n_failed_genuine": 1,
+            "n_failed_impostor": 2,
+            "tp": 2,
+            "fp": 1,
+            "fn": 1,
+            "tn": 2
+          },
+          "far": 0.3333333333333333,
+          "far_exact": "1/3",
+          "frr": 0.3333333333333333,
+          "frr_exact": "1/3"
+        },
+        "eer": {
+          "status": "exact_threshold_state",
+          "eer": 0.3333333333333333,
+          "eer_exact": "1/3",
+          "bracket": {
+            "state_indexes": [
+              3,
+              3
+            ],
+            "policies": [
+              {
+                "kind": "score_at_least",
+                "threshold": 0.6
+              },
+              {
+                "kind": "score_at_least",
+                "threshold": 0.6
+              }
+            ],
+            "upper_weight": 0.0,
+            "upper_weight_exact": "0"
+          }
+        },
+        "conditional": {
+          "denominator": "valid_claims_only",
+          "eer": {
+            "status": "interpolated",
+            "eer": 0.5,
+            "eer_exact": "1/2",
+            "bracket": {
+              "state_indexes": [
+                1,
+                2
+              ],
+              "policies": [
+                {
+                  "kind": "score_at_least",
+                  "threshold": 0.9
+                },
+                {
+                  "kind": "score_at_least",
+                  "threshold": 0.8
+                }
+              ],
+              "upper_weight": 0.5,
+              "upper_weight_exact": "1/2"
+            }
+          }
+        }
+      }
+    }
+  }
+}

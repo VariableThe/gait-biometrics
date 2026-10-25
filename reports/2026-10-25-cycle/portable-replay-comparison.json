@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "all_scientific_fields_exact": true,
+  "different_top_level_fields": [],
+  "comparison_keys": [
+    "status",
+    "manifest_sha256",
+    "manifest",
+    "assumptions",
+    "sources",
+    "records",
+    "analytical_evidence",
+    "reference_checks",
+    "controls",
+    "roc_examples",
+    "summary",
+    "recommendation"
+  ],
+  "original_source_sha256": "0cc33e195edf4d1a13591dd8b2d4abe9380bd7526509c9e714968b60abc8b85d",
+  "relocated_source_sha256": "28ae752b93b2d7e9220b7374ef271095bcca6fe1f9029f1a037ea06d2172ae08",
+  "original_runtime": {
+    "process_cpu_seconds": 10.265022105,
+    "measurement_cpu_seconds": 10.232486176,
+    "measurement_wall_seconds": 10.367585972999223,
+    "cpu_affinity": [
+      0
+    ],
+    "cpu_limit_seconds": {
+      "soft": 290,
+      "hard": 299,
+      "cooperative_stop": 280
+    },
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "cuda_visible_devices": "",
+    "single_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "replay_runtime": {
+    "process_cpu_seconds": 9.730040766,
+    "measurement_cpu_seconds": 9.696681779,
+    "measurement_wall_seconds": 10.083014372969046,
+    "cpu_affinity": [
+      0
+    ],
+    "cpu_limit_seconds": {
+      "soft": 290,
+      "hard": 299,
+      "cooperative_stop": 280
+    },
+    "python": "3.14.8",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "cuda_visible_devices": "",
+    "single_thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    }
+  },
+  "limitation": "No cross-platform bitwise promise; near ties can depend on the numeric runtime"
+}
