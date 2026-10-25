@@ -41,3 +41,9 @@ models/gait_canonical.py
 tests/test_gait_canonical.py
 scripts/canonical_orientation_study.py
 tests/test_canonical_orientation_study.py
+models/nuisance_metric.py
+tests/test_nuisance_metric.py
+engine/robustness_selection.py
+tests/test_robustness_selection.py
+scripts/nuisance_covariance_study.py
+tests/test_nuisance_covariance_study.py
