@@ -1,0 +1,14 @@
+{
+  "dataset_payloads": "Santos DEV only",
+  "original_calib_test_loaded": false,
+  "repository": "https://github.com/VariableThe/gait-biometrics",
+  "simulation_recreation": "Two standard CLI invocations produced byte-identical SHA256 25c7cb0fd82244c71d763e1e48a020c13524c5558c7e5c900f1f08f503f85c31",
+  "simulation_sources": {
+    "docs/auth_simulation.md": "61e04f622cdbf892f041d40cf8642625045a11224ac4a219a50cc202b60dd08c",
+    "engine/auth_simulation.py": "1aa509426cc89d90321ae957b24798642be78072c2e432e9aec76da375a40c2b",
+    "engine/continuous_auth.py": "d2290166d11aaf860eb3e8f7146d220654c2457540162eb0a807730da8b57a17",
+    "engine/continuous_evaluation.py": "df13ef8c34e5c53fc9b19d423f5107922d1fb4635735dbfc370533974d81cd43",
+    "tests/test_auth_simulation.py": "82eff8f294659da723cc4bd3c680daff62b56f183dd0422afbb52e09fb673cdd"
+  },
+  "source_commit": "b5a014c"
+}

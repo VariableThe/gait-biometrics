@@ -10,6 +10,8 @@ The separate [DEV-only calibration follow-up](reports/2026-10-24-calibration/REA
 
 The [existing-data engineering follow-up](reports/2026-10-24-engineering/README.md) adds recoverable training, strict numeric/setup checks, raw-sample overlap exclusion, a source-bound walking gate, continuous decisions and censored takeover accounting, plus frozen environments and CPU CI. Walking-gate DEV balanced accuracy is 91.22%; it is not an authentication result. The registered claimant-normalization comparison retains raw scoring because normalized alternatives fail the promotion gates. [The remaining-problem register](docs/open_problems.md) distinguishes implemented software from claims needing fresh phone/session evidence.
 
+The [25 October robustness and simulation report](reports/2026-10-25-robustness/README.md) adds a registered 300-fit full/log-covariance comparison, 660 score replays and 297 timed synthetic policy replays. Neither new representation passes the clean DEV gates. Fixed-threshold sensor stresses expose substantial rotation/noise sensitivity; these synthetic results do not change the published TEST point or establish phone performance.
+
 ## Run immediately
 
 Python 3.14.8 and the existing pinned torch 2.14.1 dependency set were validated on Linux x86_64. Create an isolated environment with uv:

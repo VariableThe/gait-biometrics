@@ -20,6 +20,13 @@ The [follow-up report](../reports/2026-10-24-engineering/README.md) retains all
 negative/positive DEV evidence, per-person limits, hashes, source snapshots and
 validation logs. These are opt-in protocols; old metrics are not rewritten.
 
+The [25 October follow-up](../reports/2026-10-25-robustness/README.md) adds frozen
+full/log-covariance baselines, deterministic source-bound sensor perturbations
+and timed takeover simulations. Neither covariance arm passes promotion. Probe
+rotation/noise substantially increases rejection; orientation/noise robustness
+remains a measurable research problem using existing data. Simulated recording
+resets demonstrate bounded expiry and preserve short-follow-up censoring.
+
 ## Limits that software cannot remove
 
 The anonymous legacy WISDM CSVs have no identity mapping; the authentic v1 loader
