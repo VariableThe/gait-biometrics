@@ -2,7 +2,7 @@
 
 **The sole full-support candidate F does not improve the registered support outcome and fails 14 of 33 unchanged replacement gates. Retain R (Canonical362 / auto WCCN / rawmean_multi / policy C).** H is a diagnostic aggregation control and cannot be nominated. This completed single attempt is exploratory evidence on reused DEV; it supplies no independent confirmation.
 
-Full DEV raw-source/feature/model/score verification and independent concrete review have **passed**. Both retain R; the separate publication-layer review is pending. The compact replay below verifies cached decisions, thresholds, metrics and gates only. It cannot establish raw-feature extraction, model inference, the historical R numeric copies, or the original executable runtime from this portable bundle.
+Full DEV raw-source/feature/model/score verification and independent concrete review have **passed**. Both retain R. Independent publication-layer review also cleared with no P1/P2 findings. The compact replay below verifies cached decisions, thresholds, metrics and gates only. It cannot establish raw-feature extraction, model inference, the historical R numeric copies, or the original executable runtime from this portable bundle.
 
 ## Registered comparison and primary result
 
