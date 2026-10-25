@@ -47,3 +47,5 @@ engine/robustness_selection.py
 tests/test_robustness_selection.py
 scripts/nuisance_covariance_study.py
 tests/test_nuisance_covariance_study.py
+engine/gated_roc.py
+tests/test_gated_roc.py
