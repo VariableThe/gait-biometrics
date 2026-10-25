@@ -137,6 +137,8 @@ relationships and feature/pair replay without recomputing every correlation.
 Existing directories and changed/missing/extra published files are refused.
 Failures retain their outputs. No signals are generated, filtered or fitted.
 
+Publication integration checks pass: main full correlation replay, Student B default replay, five root refusal probes and 31 independent failure probes. Ruff 0.17.1 and ty 0.0.90 pass for the two new helpers. [Validation records](publication_validation.json) and the [publication review](publication_review/audit-result.json) retain the evidence. Student B uses the same synthetic inputs and is a mirror, not independent data replication.
+
 This is a **relocated numeric replay**, not verification of the original
 absolute-path runtime/cache closure, original regression tree or OS/kernel.
 The original strict verification is preserved separately. A local inventory

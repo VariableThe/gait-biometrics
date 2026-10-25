@@ -1,0 +1,107 @@
+{
+  "files": {
+    "main_full": {
+      "path": "artifacts/joint-repeat-publication-main-replay-r1/numeric-verification.json",
+      "result": {
+        "audit": {
+          "array_schema_and_metadata_checked": true,
+          "full_correlations_replayed": true,
+          "guard_stat_mask_relationships_checked": true,
+          "inputs": 2880,
+          "no_filter_reexecution": true,
+          "no_generated_inputs": true,
+          "quality_cutoff": null,
+          "raw_magnitude_bits_bound": true,
+          "records": 8640,
+          "saved_feature_and_pair_replay": true,
+          "status": "pass"
+        },
+        "no_generator_filter_or_fit": true,
+        "original_regression_tree_restored": false,
+        "original_runtime_closure_verified": false,
+        "scope": "relocated_saved_numeric_replay",
+        "timing": {
+          "cpu_seconds": 321.993195562,
+          "wall_origin": "common_module_start",
+          "wall_seconds": 372.6448715990409
+        },
+        "versions": {
+          "numpy": "2.5.4",
+          "python": "3.14.8",
+          "scipy": "1.18.1"
+        }
+      },
+      "sha256": "4993c92be81955fb85f26936c73c8f9f1a1b5e4b66a9e3b4521431f0230131e4"
+    },
+    "negative_probes": {
+      "path": "artifacts/joint-repeat-publication-negative-r1/results.json",
+      "result": [
+        {
+          "case": "missing_chunk",
+          "message": "RuntimeError: Publication file inventory mismatch",
+          "output_created": false,
+          "returncode": 1
+        },
+        {
+          "case": "changed_chunk",
+          "message": "RuntimeError: Publication digest mismatch: evidence/numeric.npz.xz.part00",
+          "output_created": false,
+          "returncode": 1
+        },
+        {
+          "case": "extra_nested_file",
+          "message": "RuntimeError: Publication file inventory mismatch",
+          "output_created": false,
+          "returncode": 1
+        },
+        {
+          "case": "changed_metadata",
+          "message": "RuntimeError: Publication digest mismatch: evidence/report.json.gz",
+          "output_created": false,
+          "returncode": 1
+        },
+        {
+          "case": "existing_output",
+          "message": "RuntimeError: Output directory already exists; choose a fresh path",
+          "output_created": true,
+          "returncode": 1
+        }
+      ],
+      "sha256": "5ce3174e3b03951946207f12542de333cf735d888d93d3586ce5d3cee03221c5"
+    },
+    "student_b_default": {
+      "path": "artifacts/joint-repeat-publication-b-replay-r1/numeric-verification.json",
+      "result": {
+        "audit": {
+          "array_schema_and_metadata_checked": true,
+          "full_correlations_replayed": false,
+          "guard_stat_mask_relationships_checked": true,
+          "inputs": 2880,
+          "no_filter_reexecution": true,
+          "no_generated_inputs": true,
+          "quality_cutoff": null,
+          "raw_magnitude_bits_bound": true,
+          "records": 8640,
+          "saved_feature_and_pair_replay": true,
+          "status": "pass"
+        },
+        "no_generator_filter_or_fit": true,
+        "original_regression_tree_restored": false,
+        "original_runtime_closure_verified": false,
+        "scope": "relocated_saved_numeric_replay",
+        "timing": {
+          "cpu_seconds": 14.680906526,
+          "wall_origin": "common_module_start",
+          "wall_seconds": 29.59326936607249
+        },
+        "versions": {
+          "numpy": "2.5.4",
+          "python": "3.14.8",
+          "scipy": "1.18.1"
+        }
+      },
+      "sha256": "0fdedcddd562186ec27afa9e30c15263c955afe88e8cbfb984699ed8ee197002"
+    }
+  },
+  "scope": "Publication integration checks, separate from original frozen measurement"
+}

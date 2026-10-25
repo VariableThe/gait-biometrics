@@ -44,5 +44,6 @@ complete OS, kernel or firmware.
 The review supports the exact synthetic mechanism result and its negative
 controls. It supplies no gait/authentication/DEV improvement, real-data protocol
 authorization or validation of the future linear endpoint-exclusive mapping.
-The relocated publication helper is a new integration layer; its own checks
-and review are recorded separately when completed.
+The independent publication review cleared the 70-file snapshot: all 69 indexed entries, 53 restored files, 15 archived sources, four original anchors and 30 numeric members match. All 112 local Markdown links resolve. Thirty-one isolated failure probes pass, covering inventories, paths, archive membership, inflation limits, digests, versions, sources, bindings and retained failures. Root separately completed main full and Student B default relocated replay and five refusal probes.
+
+The root subsequently appended these review and integration records and this documentation update, with no helper, frozen source or numeric-payload change. The expanded inventory and mirrored bytes are checked again. The publication reviewer did not duplicate the full numerical replay; those integration runs are supplied separately.
