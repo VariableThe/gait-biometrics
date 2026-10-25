@@ -1,0 +1,3659 @@
+{
+  "dev_ids": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    14,
+    16,
+    17,
+    19,
+    24,
+    25,
+    27,
+    29
+  ],
+  "disposition": "Retain Canonical362. Fixed768 fails cohort support. Complete-segment extraction requires a separate registered protocol.",
+  "extra_rows_over_old_coverage_exact": {
+    "denominator": 512,
+    "numerator": 115
+  },
+  "extra_rows_vs_historical": 33810,
+  "fits": 0,
+  "flags": {
+    "complete_segment": {
+      "all_identity_support": true,
+      "complete_historical_trial_support": true,
+      "per_identity": [
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 1,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 3,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 5,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 7,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 9,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 11,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 13,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 14,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 16,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 17,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 19,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 24,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 25,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 27,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 29,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        }
+      ],
+      "raw_support_only": true,
+      "some_identity_support": true
+    },
+    "fixed768": {
+      "all_identity_support": false,
+      "complete_historical_trial_support": false,
+      "per_identity": [
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 1,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 3,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 5,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 7,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 9,
+          "supported_trials_by_day": {
+            "1": [
+              8
+            ],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 11,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 13,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 14,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 16,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 17,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 19,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 24,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 25,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 27,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        },
+        {
+          "both_day_raw_support": false,
+          "complete_historical_trial_support": false,
+          "subject": 29,
+          "supported_trials_by_day": {
+            "1": [],
+            "2": []
+          }
+        }
+      ],
+      "raw_support_only": false,
+      "some_identity_support": false
+    },
+    "historical256": {
+      "all_identity_support": true,
+      "complete_historical_trial_support": true,
+      "per_identity": [
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 1,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 3,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 5,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 7,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 9,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 11,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 13,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 14,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 16,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 17,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 19,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 24,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 25,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 27,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        },
+        {
+          "both_day_raw_support": true,
+          "complete_historical_trial_support": true,
+          "subject": 29,
+          "supported_trials_by_day": {
+            "1": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "2": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          }
+        }
+      ],
+      "raw_support_only": false,
+      "some_identity_support": true
+    }
+  },
+  "fragmented_trials": 6,
+  "historical_graph_trials": 299,
+  "length_bands": {
+    "256..767": {
+      "count": 298,
+      "maximum": 746,
+      "median": {
+        "denominator": 2,
+        "numerator": 1227
+      },
+      "minimum": 446
+    },
+    "<256": {
+      "count": 29,
+      "maximum": 239,
+      "median": {
+        "denominator": 1,
+        "numerator": 7
+      },
+      "minimum": 1
+    },
+    ">=768": {
+      "count": 1,
+      "maximum": 931,
+      "median": {
+        "denominator": 1,
+        "numerator": 931
+      },
+      "minimum": 931
+    }
+  },
+  "length_summary": {
+    "count": 328,
+    "maximum": 931,
+    "median": {
+      "denominator": 1,
+      "numerator": 605
+    },
+    "minimum": 1
+  },
+  "long_segments": [
+    {
+      "day": 1,
+      "length": 931,
+      "original": {
+        "covered_rows": 768,
+        "frame_end": 1783,
+        "frame_start": 853,
+        "rows": 931,
+        "start_row": 0,
+        "stop_row": 931,
+        "stride_gap_rows": 0,
+        "tail_rows": 163,
+        "windows": 3
+      },
+      "segment_index": 0,
+      "subject": 9,
+      "trial": 8
+    }
+  ],
+  "metadata_reconciliation": {
+    "interpretation": "saved metadata reconciliation only; no raw verification",
+    "matches": true,
+    "observed": {
+      "continuity_breaks": 28,
+      "historical_tail_rows": 33810,
+      "historical_windows": 588
+    },
+    "reference": {
+      "continuity_breaks": 28,
+      "historical_tail_rows": 33810,
+      "historical_windows": 588
+    }
+  },
+  "original_graphs_unchanged": true,
+  "protocol": "santos_dev_continuity_support_inventory_v1",
+  "raw_member_reads": 0,
+  "scope": "metadata-only; no new biometric measurement",
+  "segments": 328,
+  "source_present_trials": 300,
+  "subject19_day2_trial1": {
+    "continuity_breaks": [
+      {
+        "frame": 1214,
+        "previous_frame": 1209,
+        "reason": "gap",
+        "row": 51
+      },
+      {
+        "frame": 1229,
+        "previous_frame": 1216,
+        "reason": "gap",
+        "row": 54
+      },
+      {
+        "frame": 1283,
+        "previous_frame": 1273,
+        "reason": "gap",
+        "row": 99
+      },
+      {
+        "frame": 1287,
+        "previous_frame": 1284,
+        "reason": "gap",
+        "row": 101
+      },
+      {
+        "frame": 1315,
+        "previous_frame": 1308,
+        "reason": "gap",
+        "row": 123
+      },
+      {
+        "frame": 1317,
+        "previous_frame": 1315,
+        "reason": "gap",
+        "row": 124
+      },
+      {
+        "frame": 1326,
+        "previous_frame": 1317,
+        "reason": "gap",
+        "row": 125
+      },
+      {
+        "frame": 1365,
+        "previous_frame": 1351,
+        "reason": "gap",
+        "row": 151
+      },
+      {
+        "frame": 1383,
+        "previous_frame": 1367,
+        "reason": "gap",
+        "row": 154
+      },
+      {
+        "frame": 1389,
+        "previous_frame": 1383,
+        "reason": "gap",
+        "row": 155
+      },
+      {
+        "frame": 1399,
+        "previous_frame": 1394,
+        "reason": "gap",
+        "row": 161
+      },
+      {
+        "frame": 1419,
+        "previous_frame": 1399,
+        "reason": "gap",
+        "row": 162
+      },
+      {
+        "frame": 1453,
+        "previous_frame": 1443,
+        "reason": "gap",
+        "row": 187
+      },
+      {
+        "frame": 1464,
+        "previous_frame": 1459,
+        "reason": "gap",
+        "row": 194
+      },
+      {
+        "frame": 1474,
+        "previous_frame": 1468,
+        "reason": "gap",
+        "row": 199
+      },
+      {
+        "frame": 1483,
+        "previous_frame": 1479,
+        "reason": "gap",
+        "row": 205
+      },
+      {
+        "frame": 1502,
+        "previous_frame": 1490,
+        "reason": "gap",
+        "row": 213
+      },
+      {
+        "frame": 1505,
+        "previous_frame": 1503,
+        "reason": "gap",
+        "row": 215
+      },
+      {
+        "frame": 1511,
+        "previous_frame": 1506,
+        "reason": "gap",
+        "row": 217
+      },
+      {
+        "frame": 1536,
+        "previous_frame": 1523,
+        "reason": "gap",
+        "row": 230
+      },
+      {
+        "frame": 1544,
+        "previous_frame": 1538,
+        "reason": "gap",
+        "row": 233
+      }
+    ],
+    "day": 2,
+    "fragmented": true,
+    "in_original_trial_graph": false,
+    "invalid_row_offsets": [],
+    "member": "A multi-sensor human gait dataset/processed_data/user19/capture_user19_day2_0001_imu_walk.csv",
+    "member_sha256": "176d6530b259bf2ccc7adc89c701d351f16e68de7ded6fd78e85410e3a99f65d",
+    "recording_index": 210,
+    "recording_key": [
+      7,
+      19,
+      2,
+      1,
+      "MCU",
+      "processed_data"
+    ],
+    "segment_count": 22,
+    "source_rows": 470,
+    "status": "source_present",
+    "subject": 19,
+    "support": {
+      "complete_segment": {
+        "unique_original_row_coverage": 470,
+        "unit_count": 22,
+        "unused_valid_rows": 0
+      },
+      "fixed768": {
+        "unique_original_row_coverage": 0,
+        "unit_count": 0,
+        "unused_valid_rows": 470
+      },
+      "historical256": {
+        "unique_original_row_coverage": 0,
+        "unit_count": 0,
+        "unused_valid_rows": 470
+      }
+    },
+    "trial": 1,
+    "unbroken": false,
+    "valid_rows": 470,
+    "zero_units": {
+      "complete_segment": false,
+      "fixed768": true,
+      "historical256": true
+    }
+  },
+  "subject_days": [
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 1,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5619,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5619
+        },
+        "historical256": {
+          "unique_original_row_coverage": 4864,
+          "unit_count": 19,
+          "unused_valid_rows": 755
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [
+        5
+      ],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 1,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5555,
+          "unit_count": 12,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5555
+        },
+        "historical256": {
+          "unique_original_row_coverage": 4864,
+          "unit_count": 19,
+          "unused_valid_rows": 691
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 3,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6680,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6680
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1560
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 3,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6655,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6655
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1535
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [
+        8,
+        9
+      ],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 5,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 7058,
+          "unit_count": 12,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 7058
+        },
+        "historical256": {
+          "unique_original_row_coverage": 4608,
+          "unit_count": 18,
+          "unused_valid_rows": 2450
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 5,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6607,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6607
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1487
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 7,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6660,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6660
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1540
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 7,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6371,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6371
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1251
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 9,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 7044,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 768,
+          "unit_count": 1,
+          "unused_valid_rows": 6276
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5376,
+          "unit_count": 21,
+          "unused_valid_rows": 1668
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 9,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 4891,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 4891
+        },
+        "historical256": {
+          "unique_original_row_coverage": 3328,
+          "unit_count": 13,
+          "unused_valid_rows": 1563
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 11,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6477,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6477
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1357
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 11,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5812,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5812
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 692
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 13,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6593,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6593
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1473
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 13,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5844,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5844
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 724
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 14,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6527,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6527
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1407
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 14,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6004,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6004
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 884
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 16,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5921,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5921
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 801
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [
+        5
+      ],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 16,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6094,
+          "unit_count": 11,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6094
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 974
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 17,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5665,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5665
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 545
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 17,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5740,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5740
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 620
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 19,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6033,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6033
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 913
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [
+        1
+      ],
+      "historical_trials": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 19,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5854,
+          "unit_count": 31,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5854
+        },
+        "historical256": {
+          "unique_original_row_coverage": 4608,
+          "unit_count": 18,
+          "unused_valid_rows": 1246
+        }
+      },
+      "unbroken_trials": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": [
+          1
+        ]
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 24,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6002,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6002
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 882
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [
+        2
+      ],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 24,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6186,
+          "unit_count": 12,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6186
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1066
+        }
+      },
+      "unbroken_trials": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 25,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6504,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6504
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1384
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 25,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6297,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6297
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1177
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 27,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6405,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6405
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1285
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 27,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 6346,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 6346
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 1226
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 1,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 29,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5309,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5309
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 189
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    },
+    {
+      "day": 2,
+      "fragmented_trials": [],
+      "historical_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "missing_trials": [],
+      "present_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "subject": 29,
+      "support": {
+        "complete_segment": {
+          "unique_original_row_coverage": 5585,
+          "unit_count": 10,
+          "unused_valid_rows": 0
+        },
+        "fixed768": {
+          "unique_original_row_coverage": 0,
+          "unit_count": 0,
+          "unused_valid_rows": 5585
+        },
+        "historical256": {
+          "unique_original_row_coverage": 5120,
+          "unit_count": 20,
+          "unused_valid_rows": 465
+        }
+      },
+      "unbroken_trials": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "zero_unit_trials": {
+        "complete_segment": [],
+        "fixed768": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "historical256": []
+      }
+    }
+  ],
+  "supported_trials": {
+    "complete_segment": 300,
+    "fixed768": 1,
+    "historical256": 299
+  },
+  "totals": {
+    "complete_segment": {
+      "unique_original_row_coverage": 184338,
+      "unit_count": 328,
+      "unused_valid_rows": 0
+    },
+    "fixed768": {
+      "unique_original_row_coverage": 768,
+      "unit_count": 1,
+      "unused_valid_rows": 183570
+    },
+    "historical256": {
+      "unique_original_row_coverage": 150528,
+      "unit_count": 588,
+      "unused_valid_rows": 33810
+    }
+  },
+  "train_owners": 100,
+  "train_owners_passing_proposed_count_gate": {
+    "complete_segment": 100,
+    "fixed768": 0,
+    "historical256": 100
+  },
+  "trial_slots": 300,
+  "unbroken_trials": 294
+}

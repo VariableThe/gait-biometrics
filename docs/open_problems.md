@@ -56,6 +56,16 @@ guards and half-period aliases retained. It is not a full-grid plateau result
 or a cycle DEV comparison. Matched support, enrollment aggregation, long-window
 coverage and anatomical ambiguity remain unresolved research decisions.
 
+The [metadata-only support inventory](../reports/2026-10-25-support/README.md)
+resolves the fixed768 coverage question: only subject 9/day 1/trial 8 has a
+complete block, so no identity has both-day support and no registered training
+owner passes the proposed count flag. This protocol cannot retain the cohort.
+Complete segments preserve raw support for all fifteen people and all historical
+trials, adding 33,810 valid tail rows; 29 fragments are shorter than 256 samples.
+Extraction, tail-matched canonical controls and partial-failure/enrollment rules
+remain open. Subject 19's fragmented day2 trial remains outside the old claim
+graph. No cycle DEV fit or authentication threshold change is implied.
+
 ## Limits that software cannot remove
 
 The anonymous legacy WISDM CSVs have no identity mapping; the authentic v1 loader
