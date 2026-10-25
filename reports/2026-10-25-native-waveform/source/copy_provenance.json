@@ -1,0 +1,272 @@
+{
+  "active_measurement_outputs_read": false,
+  "copies": [
+    {
+      "destination": "legacy.py",
+      "function": "fixture",
+      "function_utf8_sha256": "ef8527ae9ce5881c3c39ed077ebaf99c5477116891b7dcf7318d595a29b95d43",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py",
+      "parent_sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    },
+    {
+      "destination": "legacy.py",
+      "function": "correlations",
+      "function_utf8_sha256": "653015b989a5529d13412a76fcbcd5a535e9cc0409127d2119f79b8a2bfe3c1c",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py",
+      "parent_sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    },
+    {
+      "destination": "legacy.py",
+      "function": "select",
+      "function_utf8_sha256": "d1f4594441729a4e69d0c0b50e27ead41250292c49303bd5ac99d0c24098bfc2",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py",
+      "parent_sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    },
+    {
+      "destination": "legacy.py",
+      "function": "correlation_summary",
+      "function_utf8_sha256": "10708bed78ad0d3b7b5e6a20c94b66ec383f1c74769513df37d4b1605170be05",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py",
+      "parent_sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    },
+    {
+      "destination": "legacy.py",
+      "function": "minima_and_pair",
+      "function_utf8_sha256": "ae7f96fc3ecdf2cd8a0b7d7ddff139de7ee68e05662cb3cc8f8af697b96377ce",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py",
+      "parent_sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    },
+    {
+      "destination": "legacy.py",
+      "function": "fixed_checks",
+      "function_utf8_sha256": "7fe2fe7ab90ea40b678b547211040fb7cd7a027208855920f4f82aacd7a95385",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py",
+      "parent_sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "function": "exact_plateau_runs",
+      "function_utf8_sha256": "970ecb4757c21e7f917d4310d047d04d97ccfd30bcdf8622395f2873ca0e4ffc",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/plateau_helpers.py",
+      "parent_sha256": "010c9ff119d939f3bc85b6c0aff1332391891854683cb9736dcbbaee322fae84"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "function": "independent_groupby_reference",
+      "function_utf8_sha256": "44f790f8af560152330f02464bdfbc1e9a7344820b01658fd314ff48270e7af4",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/plateau_helpers.py",
+      "parent_sha256": "010c9ff119d939f3bc85b6c0aff1332391891854683cb9736dcbbaee322fae84"
+    },
+    {
+      "destination": "plateau_helpers.py",
+      "function": "synthetic_helper_checks",
+      "function_utf8_sha256": "07176cd89874c90caf7e96022fe2ad0fd9aa37987425fa1645906bdb2fadcdea",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/plateau_helpers.py",
+      "parent_sha256": "010c9ff119d939f3bc85b6c0aff1332391891854683cb9736dcbbaee322fae84"
+    },
+    {
+      "destination": "guards.py",
+      "function": "magnitudes",
+      "function_utf8_sha256": "1bb4aa979072f229323bfd7b6065cc508435941af63e328c93b7cef348973e97",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/kernel.py",
+      "parent_sha256": "8e43c369bfde380fb34a5102ad67ff5fb06e53a54f5400b480c143cd27a075fd"
+    },
+    {
+      "destination": "guards.py",
+      "function": "filter_modalities",
+      "function_utf8_sha256": "b019799d2ab63586abbd76089d4b357485ea962c51140a77a30e7e71ddc75ed7",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/kernel.py",
+      "parent_sha256": "8e43c369bfde380fb34a5102ad67ff5fb06e53a54f5400b480c143cd27a075fd"
+    },
+    {
+      "destination": "guards.py",
+      "function": "vector_guard",
+      "function_utf8_sha256": "ffced8540da9e96f7e08807b702c95bec273973b3598856b7cfdd87ac94b5d0e",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/kernel.py",
+      "parent_sha256": "8e43c369bfde380fb34a5102ad67ff5fb06e53a54f5400b480c143cd27a075fd"
+    },
+    {
+      "destination": "guards.py",
+      "function": "pearson",
+      "function_utf8_sha256": "b3be5639a0f2fdb3accb2ac6ddf0243c1fa5c7f36efaf36fce8ea780785d56b8",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/kernel.py",
+      "parent_sha256": "8e43c369bfde380fb34a5102ad67ff5fb06e53a54f5400b480c143cd27a075fd"
+    },
+    {
+      "destination": "guards.py",
+      "function": "joint_correlations",
+      "function_utf8_sha256": "6e4f6b70dbe9e171271c1dae16003cf7598e7e75a079b6304774d8255e01707d",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/kernel.py",
+      "parent_sha256": "8e43c369bfde380fb34a5102ad67ff5fb06e53a54f5400b480c143cd27a075fd"
+    },
+    {
+      "destination": "guards.py",
+      "function": "whole_window",
+      "function_utf8_sha256": "5875583a694d28c106eb0d9e1684d6fadec7050cc7ab0bf908ce830bfadf5ad4",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/kernel.py",
+      "parent_sha256": "8e43c369bfde380fb34a5102ad67ff5fb06e53a54f5400b480c143cd27a075fd"
+    },
+    {
+      "destination": "common.py",
+      "function": "require",
+      "function_utf8_sha256": "07aea090f1e0ffe029e693d88420d601dd716fbf051fb282a0b180d358f98992",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "typed",
+      "function_utf8_sha256": "c7c6b89eda83915845ba8bda5349c269dd0098a59400cfc57662ffa45d592dd7",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "canonical",
+      "function_utf8_sha256": "80137bdf14e23fc4583d9589891d861d5b98b5a7f2853d8a946602a994534390",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "fingerprint",
+      "function_utf8_sha256": "3dbe10d293aa352e5b8722210943189a88f7c637cc313b5ab16981b087cb3bf2",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "sha",
+      "function_utf8_sha256": "152630aee2b09aff5e0551142fd0d72300a4edfe8c8fce0340cc5087696867b9",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "save_json",
+      "function_utf8_sha256": "a4bbc5b6a8f20e8ae6814aea330b3fa37f55ea69f0aaf87c976a9b7789834614",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "load_json",
+      "function_utf8_sha256": "c86b51096e49e52f3b2a316af5b257c2acc0af3809af6f26f3a2ec706f7aa4d7",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "decode_json",
+      "function_utf8_sha256": "03881829a903755ae4e819c9deb7195f3aee19d108043f65b677bf40233722aa",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "runtime_identity",
+      "function_utf8_sha256": "74f97b74cf1e9c9974ee39b32879ed3f237bad872d8ba35a3d6ec0453b5ffce4",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "validate_runtime",
+      "function_utf8_sha256": "490d694bfc994f936c675eeb9363ca654205a0feae314bb280bbbab171f6ee04",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "utc",
+      "function_utf8_sha256": "5e76dd9f37aa34612ec7d3ce97685d5a5bbf0f8fc2329de0cd1e06555753f423",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "elapsed",
+      "function_utf8_sha256": "442b3b0910b7822bbfbf3e5748c1c83a14dfb4aa5a21ecb3e7c2646a13ac7941",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "stage",
+      "function_utf8_sha256": "71a4ad108991dc01fb17eaf61ca2ec23f429662bb40c01feeeebf6eff5fc29d5",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "common.py",
+      "function": "arm_budget",
+      "function_utf8_sha256": "26f651c762ee48fd21dd6d6a49c42a51c5e93fee686f699a0758df9607944620",
+      "mode": "verbatim_AST_function",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py",
+      "parent_sha256": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15"
+    },
+    {
+      "destination": "run.sh",
+      "mode": "verbatim_file",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/run.sh",
+      "parent_sha256": "1f726e0f2f837ecc3a6ddf79108ae221053b82b87dc8008841a2a9eaccd4c0d2"
+    },
+    {
+      "bytes": 4795,
+      "destination": "entry_guard.source",
+      "mode": "verbatim_prefix",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/study.py",
+      "parent_sha256": "10266717855364bb451f78ca577b74b758cfb25a4860cbd60d720589ac95d9e9"
+    },
+    {
+      "destination": "legacy_parent.source",
+      "mode": "verbatim_file",
+      "parent": "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py",
+      "parent_sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    }
+  ],
+  "parent_top_level_executed": false,
+  "parents_sha256": {
+    "/home/sherlock/Code/github/VariableThe/artifacts/complete-support-root-metadata-analysis-20261025.json": "1853ecb48964ca017d98b01586578b0646153c209c859ce613a63b81badf58f1",
+    "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/common.py": "42c873063c0ec24be0eb4dfe42abaa4f07057d5352bb1728a7096870e9871e15",
+    "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/kernel.py": "8e43c369bfde380fb34a5102ad67ff5fb06e53a54f5400b480c143cd27a075fd",
+    "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/legacy.py": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6",
+    "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/plateau_helpers.py": "010c9ff119d939f3bc85b6c0aff1332391891854683cb9736dcbbaee322fae84",
+    "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/run.sh": "1f726e0f2f837ecc3a6ddf79108ae221053b82b87dc8008841a2a9eaccd4c0d2",
+    "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-feasibility-r1/study.py": "10266717855364bb451f78ca577b74b758cfb25a4860cbd60d720589ac95d9e9",
+    "/home/sherlock/Code/github/VariableThe/artifacts/joint-repeat-preparation-reviewed-r2/snapshot/BRIEF.md": "2bf1f711cf8eec5c5dffa8069d98f3a26425708d4bdaae0ad03fe7e7154565af"
+  },
+  "restored_decorators": {
+    "common.py": {
+      "stage": "contextmanager"
+    }
+  }
+}

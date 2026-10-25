@@ -1,0 +1,31 @@
+{
+  "all_nondegenerate_lags_exact_P": true,
+  "disposition": "STOP_NO_RETRY_NO_PARAMETER_CHANGE",
+  "failed_keys": [
+    "legacy/alternating_step_harmonic/P200/phase02/N446/original/identity",
+    "legacy/alternating_step_harmonic/P200/phase18/N446/original/identity",
+    "legacy/pure_periodic_balanced_peaks/P200/phase02/N446/original/identity",
+    "legacy/pure_periodic_balanced_peaks/P200/phase18/N446/original/identity"
+  ],
+  "failure_minima": [
+    87,
+    187,
+    288,
+    388
+  ],
+  "failure_pair_durations": [
+    100,
+    101,
+    201,
+    301
+  ],
+  "nondegenerate": 960,
+  "nondegenerate_valid": 956,
+  "primary_balanced": {
+    "total": 96,
+    "valid": 94
+  },
+  "records_sha256": "5c977606167e221abb82243b475f749f954a127188c0cd09ce5b36bb4a46271a",
+  "scope": "Independent record/count arithmetic only; no source summarizer, new extraction or parameter change.",
+  "total_inputs": 1440
+}

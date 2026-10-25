@@ -1,0 +1,395 @@
+{
+  "disposition": "STOP_NO_RETRY_NO_PARAMETER_CHANGE",
+  "numeric_evidence": {
+    "npz_bytes": 86655858,
+    "npz_sha256": "5780711ad5d9f59051883dc87bf24f680150d8a95600ec4fee87599d3a373abd",
+    "parts": [
+      "evidence/numeric.npz.xz"
+    ],
+    "xz_bytes": 15194716,
+    "xz_sha256": "1f4d6750a600d7a7952f253a621b52208d157cbea5f88d489a8b31c24e9df9ee"
+  },
+  "omission_limits": "Original preparation histories and runtime binaries are not bundled; their original inventory records remain. All 21 numeric arrays restore as original NPY bytes. Relocated replay does not authenticate the original runtime, filter outputs or an owner rewriting all anchors.",
+  "omitted_original_attempt_files": [
+    "preparation_history/check-1792924807500472356/result.json",
+    "preparation_history/check-1792924807500472356/source/BRIEF.md",
+    "preparation_history/check-1792924807500472356/source/README.md",
+    "preparation_history/check-1792924807500472356/source/bootstrap.py",
+    "preparation_history/check-1792924807500472356/source/common.py",
+    "preparation_history/check-1792924807500472356/source/copy_provenance.json",
+    "preparation_history/check-1792924807500472356/source/driver.py",
+    "preparation_history/check-1792924807500472356/source/entry_guard.source",
+    "preparation_history/check-1792924807500472356/source/evidence.py",
+    "preparation_history/check-1792924807500472356/source/guards.py",
+    "preparation_history/check-1792924807500472356/source/kernel.py",
+    "preparation_history/check-1792924807500472356/source/legacy.py",
+    "preparation_history/check-1792924807500472356/source/legacy_parent.source",
+    "preparation_history/check-1792924807500472356/source/panel.py",
+    "preparation_history/check-1792924807500472356/source/plateau_helpers.py",
+    "preparation_history/check-1792924807500472356/source/run.sh",
+    "preparation_history/check-1792924807500472356/source/selftest.py",
+    "preparation_history/check-1792924807500472356/source/stress_brief.source",
+    "preparation_history/check-1792924807500472356/source/study.py",
+    "preparation_history/check-1792924807500472356/source_hashes.json",
+    "preparation_history/check-1792924938490762890/result.json",
+    "preparation_history/check-1792924938490762890/source/BRIEF.md",
+    "preparation_history/check-1792924938490762890/source/README.md",
+    "preparation_history/check-1792924938490762890/source/bootstrap.py",
+    "preparation_history/check-1792924938490762890/source/common.py",
+    "preparation_history/check-1792924938490762890/source/copy_provenance.json",
+    "preparation_history/check-1792924938490762890/source/driver.py",
+    "preparation_history/check-1792924938490762890/source/entry_guard.source",
+    "preparation_history/check-1792924938490762890/source/evidence.py",
+    "preparation_history/check-1792924938490762890/source/guards.py",
+    "preparation_history/check-1792924938490762890/source/kernel.py",
+    "preparation_history/check-1792924938490762890/source/legacy.py",
+    "preparation_history/check-1792924938490762890/source/legacy_parent.source",
+    "preparation_history/check-1792924938490762890/source/panel.py",
+    "preparation_history/check-1792924938490762890/source/plateau_helpers.py",
+    "preparation_history/check-1792924938490762890/source/run.sh",
+    "preparation_history/check-1792924938490762890/source/selftest.py",
+    "preparation_history/check-1792924938490762890/source/stress_brief.source",
+    "preparation_history/check-1792924938490762890/source/study.py",
+    "preparation_history/check-1792924938490762890/source_hashes.json",
+    "preparation_history/check-1792924994547195855/result.json",
+    "preparation_history/check-1792924994547195855/source/BRIEF.md",
+    "preparation_history/check-1792924994547195855/source/README.md",
+    "preparation_history/check-1792924994547195855/source/bootstrap.py",
+    "preparation_history/check-1792924994547195855/source/common.py",
+    "preparation_history/check-1792924994547195855/source/copy_provenance.json",
+    "preparation_history/check-1792924994547195855/source/driver.py",
+    "preparation_history/check-1792924994547195855/source/entry_guard.source",
+    "preparation_history/check-1792924994547195855/source/evidence.py",
+    "preparation_history/check-1792924994547195855/source/guards.py",
+    "preparation_history/check-1792924994547195855/source/kernel.py",
+    "preparation_history/check-1792924994547195855/source/legacy.py",
+    "preparation_history/check-1792924994547195855/source/legacy_parent.source",
+    "preparation_history/check-1792924994547195855/source/panel.py",
+    "preparation_history/check-1792924994547195855/source/plateau_helpers.py",
+    "preparation_history/check-1792924994547195855/source/run.sh",
+    "preparation_history/check-1792924994547195855/source/selftest.py",
+    "preparation_history/check-1792924994547195855/source/stress_brief.source",
+    "preparation_history/check-1792924994547195855/source/study.py",
+    "preparation_history/check-1792924994547195855/source_hashes.json",
+    "preparation_history/check-1792925075418496358/result.json",
+    "preparation_history/check-1792925075418496358/source/BRIEF.md",
+    "preparation_history/check-1792925075418496358/source/README.md",
+    "preparation_history/check-1792925075418496358/source/bootstrap.py",
+    "preparation_history/check-1792925075418496358/source/common.py",
+    "preparation_history/check-1792925075418496358/source/copy_provenance.json",
+    "preparation_history/check-1792925075418496358/source/driver.py",
+    "preparation_history/check-1792925075418496358/source/entry_guard.source",
+    "preparation_history/check-1792925075418496358/source/evidence.py",
+    "preparation_history/check-1792925075418496358/source/guards.py",
+    "preparation_history/check-1792925075418496358/source/kernel.py",
+    "preparation_history/check-1792925075418496358/source/legacy.py",
+    "preparation_history/check-1792925075418496358/source/legacy_parent.source",
+    "preparation_history/check-1792925075418496358/source/panel.py",
+    "preparation_history/check-1792925075418496358/source/plateau_helpers.py",
+    "preparation_history/check-1792925075418496358/source/run.sh",
+    "preparation_history/check-1792925075418496358/source/selftest.py",
+    "preparation_history/check-1792925075418496358/source/stress_brief.source",
+    "preparation_history/check-1792925075418496358/source/study.py",
+    "preparation_history/check-1792925075418496358/source_hashes.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/keys.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/manifest.proposed.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/parent_index.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/preparation.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/runtime.preparation.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/schema.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/selftests.json",
+    "preparation_history/index-quota-failed-generated-1792924993790047271/sources.json",
+    "preparation_history/infrastructure-failure-1792924937656165434/result.json",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/BRIEF.md",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/README.md",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/bootstrap.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/common.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/copy_provenance.json",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/driver.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/entry_guard.source",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/evidence.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/guards.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/kernel.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/legacy.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/legacy_parent.source",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/panel.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/plateau_helpers.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/run.sh",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/selftest.py",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/stress_brief.source",
+    "preparation_history/infrastructure-failure-1792924937656165434/source/study.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/result.json",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/BRIEF.md",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/README.md",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/bootstrap.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/common.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/copy_provenance.json",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/driver.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/entry_guard.source",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/evidence.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/guards.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/kernel.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/legacy.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/legacy_parent.source",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/panel.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/plateau_helpers.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/run.sh",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/selftest.py",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/stress_brief.source",
+    "preparation_history/infrastructure-failure-1792924941412081430/source/study.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/artifact_index.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/keys.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/manifest.proposed.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/parent_index.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/preparation.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/result.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/runtime.preparation.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/schema.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/selftests.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/BRIEF.md",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/README.md",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/bootstrap.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/common.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/copy_provenance.json",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/driver.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/entry_guard.source",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/evidence.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/guards.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/kernel.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/legacy.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/legacy_parent.source",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/panel.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/plateau_helpers.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/run.sh",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/selftest.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/stress_brief.source",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/source/study.py",
+    "preparation_history/runtime-state-failed-generated-1792925073960476779/sources.json"
+  ],
+  "original_anchors": {
+    "artifact_index.json": "de67865dd49bc63105d37e4677e66c3bdd58ae938675b91508839a900836282d",
+    "freeze.json": "ff133f674597377062eaafdfba9cc25e150f2c3ff4ef7f8ca9918b1c6dad772d",
+    "gates.json": "31875ebf32a1d422f13657fea439900d4a197e3f4df89d0e856b627d840f240d",
+    "report.json": "0281ba2b18504ad23be3cf09bcbec03321d1c59325029906c248de8036028dfc",
+    "sources.json": "3ea528c0a691771793140b963dd29b44546e0e7324abebafa3b9e7bcedab0ad0"
+  },
+  "restored_files": {
+    "saved/artifact_index.json": {
+      "bytes": 27259,
+      "gzip": true,
+      "published_path": "evidence/artifact_index.json.gz",
+      "sha256": "de67865dd49bc63105d37e4677e66c3bdd58ae938675b91508839a900836282d"
+    },
+    "saved/attempt.started.json": {
+      "bytes": 203,
+      "gzip": true,
+      "published_path": "evidence/attempt.started.json.gz",
+      "sha256": "af7599c77d37a5e6edb77e154dae4687afdc9d10e2388e8ce970c7fa3ce7a97f"
+    },
+    "saved/copy_provenance.json": {
+      "bytes": 14460,
+      "gzip": true,
+      "published_path": "evidence/copy_provenance.json.gz",
+      "sha256": "1cf3312259e1cfa17a740dc3b702e7e2d9a39edaa7837acd8e3c0ecb2b1ccaed"
+    },
+    "saved/freeze.json": {
+      "bytes": 2615,
+      "gzip": true,
+      "published_path": "evidence/freeze.json.gz",
+      "sha256": "ff133f674597377062eaafdfba9cc25e150f2c3ff4ef7f8ca9918b1c6dad772d"
+    },
+    "saved/gates.json": {
+      "bytes": 38436,
+      "gzip": true,
+      "published_path": "evidence/gates.json.gz",
+      "sha256": "31875ebf32a1d422f13657fea439900d4a197e3f4df89d0e856b627d840f240d"
+    },
+    "saved/keys.json": {
+      "bytes": 361300,
+      "gzip": true,
+      "published_path": "evidence/keys.json.gz",
+      "sha256": "443983971e040f6074f06eeb722f115e8af5ea2f22eee9edf1e8d7f3ddad7449"
+    },
+    "saved/manifest.proposed.json": {
+      "bytes": 8455,
+      "gzip": true,
+      "published_path": "evidence/manifest.proposed.json.gz",
+      "sha256": "8f8a04c6d964b1393e08fff9d8be0964fb765d3d0a753e2cb42384e6d7e65af4"
+    },
+    "saved/parent_index.json": {
+      "bytes": 1288,
+      "gzip": true,
+      "published_path": "evidence/parent_index.json.gz",
+      "sha256": "9e4165dac5304027bef063bbac2b7d618a58e89a0049f3fb7e14f21cba2b96f9"
+    },
+    "saved/prefix_gate.json": {
+      "bytes": 203081,
+      "gzip": true,
+      "published_path": "evidence/prefix_gate.json.gz",
+      "sha256": "e1c0dc0acfa7975c9b723531a9c6e4fb9934f61643a100750d8a6bcda653d11d"
+    },
+    "saved/preparation.json": {
+      "bytes": 1371,
+      "gzip": true,
+      "published_path": "evidence/preparation.json.gz",
+      "sha256": "4c31c2e11952375b8252f56f45f653461a3446c6d3e0fefa2dee51b7dc23724f"
+    },
+    "saved/records.jsonl": {
+      "bytes": 5828492,
+      "gzip": true,
+      "published_path": "evidence/records.jsonl.gz",
+      "sha256": "5c977606167e221abb82243b475f749f954a127188c0cd09ce5b36bb4a46271a"
+    },
+    "saved/report.json": {
+      "bytes": 4734,
+      "gzip": true,
+      "published_path": "evidence/report.json.gz",
+      "sha256": "0281ba2b18504ad23be3cf09bcbec03321d1c59325029906c248de8036028dfc"
+    },
+    "saved/runtime.preparation.json": {
+      "bytes": 3084447,
+      "gzip": true,
+      "published_path": "evidence/runtime.preparation.json.gz",
+      "sha256": "dbc9d14e3c9a80309776bf01232ee8f60e7a016ef8b6e1efb4e5b06c665470d6"
+    },
+    "saved/saved_replay.json": {
+      "bytes": 189,
+      "gzip": true,
+      "published_path": "evidence/saved_replay.json.gz",
+      "sha256": "e63b20af8f4cac7ebff3af1378d55826fa9df17cbf3572425cf4cbdf0fdf77a4"
+    },
+    "saved/schema.json": {
+      "bytes": 1006,
+      "gzip": true,
+      "published_path": "evidence/schema.json.gz",
+      "sha256": "f2449b9ce2234db3fc892f72ae8fe30ba90b8c3c8486ff7bf60034881a1a7a13"
+    },
+    "saved/selftests.json": {
+      "bytes": 16272,
+      "gzip": true,
+      "published_path": "evidence/selftests.json.gz",
+      "sha256": "a5a71fa8976d938c153d71b4c53a0a8f28444899bc67d6d8a707cb3fd16c5682"
+    },
+    "saved/sources.json": {
+      "bytes": 1485,
+      "gzip": true,
+      "published_path": "evidence/sources.json.gz",
+      "sha256": "3ea528c0a691771793140b963dd29b44546e0e7324abebafa3b9e7bcedab0ad0"
+    },
+    "saved/worker.started.json": {
+      "bytes": 319,
+      "gzip": true,
+      "published_path": "evidence/worker.started.json.gz",
+      "sha256": "94b1df1cb984ef650b1a1502291d3ec87155c84bb8c503fc943cde8d09742816"
+    },
+    "source/BRIEF.md": {
+      "bytes": 8631,
+      "gzip": false,
+      "published_path": "source/BRIEF.md",
+      "sha256": "ef2f67c512dbb11b98d115d88f844d80deea8ac034d904955e8541fc6b48d05d"
+    },
+    "source/README.md": {
+      "bytes": 4165,
+      "gzip": false,
+      "published_path": "source/README.md",
+      "sha256": "3c06f8fedf9d5cf0ee4fcdb74fc76681197391cdc54da4143c189c318719a17e"
+    },
+    "source/bootstrap.py": {
+      "bytes": 6038,
+      "gzip": false,
+      "published_path": "source/bootstrap.py",
+      "sha256": "8c2614e5f08769b4217813276d61b30b5bd8c77dcc28fb23a2a7739b2617c4bc"
+    },
+    "source/common.py": {
+      "bytes": 11030,
+      "gzip": false,
+      "published_path": "source/common.py",
+      "sha256": "f6094a75ff3d2c0b0e0b5121f279763b9866310bf021262793f08519c032eefe"
+    },
+    "source/copy_provenance.json": {
+      "bytes": 14460,
+      "gzip": false,
+      "published_path": "source/copy_provenance.json",
+      "sha256": "1cf3312259e1cfa17a740dc3b702e7e2d9a39edaa7837acd8e3c0ecb2b1ccaed"
+    },
+    "source/driver.py": {
+      "bytes": 14574,
+      "gzip": false,
+      "published_path": "source/driver.py",
+      "sha256": "da8f6325442f68e0d856b9d68280e3e61463229c468461e63f67e55f5ab69087"
+    },
+    "source/entry_guard.source": {
+      "bytes": 4795,
+      "gzip": false,
+      "published_path": "source/entry_guard.source",
+      "sha256": "f63faa233b819dc308dbbbcc0bdf8cc7942dee24b4147941e60145266d2472ce"
+    },
+    "source/evidence.py": {
+      "bytes": 12002,
+      "gzip": false,
+      "published_path": "source/evidence.py",
+      "sha256": "a82ce1d9abf1cae0a72c10fe5659365c969d601f49cca401638cea1fa4e0035a"
+    },
+    "source/guards.py": {
+      "bytes": 2473,
+      "gzip": false,
+      "published_path": "source/guards.py",
+      "sha256": "f1966983c7f7c9cb0a164be4fde5394a23849a27d7456015d9aa310208c3c17b"
+    },
+    "source/kernel.py": {
+      "bytes": 5947,
+      "gzip": false,
+      "published_path": "source/kernel.py",
+      "sha256": "37415c64c86b954f86edd3956badf3244775a9d613d95a2a7aab55ff5bab8ca0"
+    },
+    "source/legacy.py": {
+      "bytes": 5725,
+      "gzip": false,
+      "published_path": "source/legacy.py",
+      "sha256": "aae920c43a9fbb287de6b3cd54d12f28537ecfef6cc7aabdbe2b4a48ba335b82"
+    },
+    "source/legacy_parent.source": {
+      "bytes": 10500,
+      "gzip": false,
+      "published_path": "source/legacy_parent.source",
+      "sha256": "78dbe1108307d26efb0cb499c8c82baeec0d22ec8f9cf3271018564819561ae6"
+    },
+    "source/panel.py": {
+      "bytes": 8628,
+      "gzip": false,
+      "published_path": "source/panel.py",
+      "sha256": "08f7b7dc6bfed526aa5cf9d294221d2f19d457b262d21a1eeed26721c298790d"
+    },
+    "source/plateau_helpers.py": {
+      "bytes": 4048,
+      "gzip": false,
+      "published_path": "source/plateau_helpers.py",
+      "sha256": "f75e2202fef1fd9d62102afaf9c6e68196c2bb9c01ee586d4ed12d8ec5e49f5e"
+    },
+    "source/run.sh": {
+      "bytes": 2325,
+      "gzip": false,
+      "published_path": "source/run.sh",
+      "sha256": "1f726e0f2f837ecc3a6ddf79108ae221053b82b87dc8008841a2a9eaccd4c0d2"
+    },
+    "source/selftest.py": {
+      "bytes": 11735,
+      "gzip": false,
+      "published_path": "source/selftest.py",
+      "sha256": "f2acd6fdb423a513c45e9b9536d6e72e72ecff9c49d69233222b461614d0120a"
+    },
+    "source/stress_brief.source": {
+      "bytes": 7126,
+      "gzip": false,
+      "published_path": "source/stress_brief.source",
+      "sha256": "2bf1f711cf8eec5c5dffa8069d98f3a26425708d4bdaae0ad03fe7e7154565af"
+    },
+    "source/study.py": {
+      "bytes": 4865,
+      "gzip": false,
+      "published_path": "source/study.py",
+      "sha256": "ba707f376f379c1711b87da3cd3bc88e86661cd5a94f9b32d210a1e436a56f6c"
+    }
+  },
+  "scope": "Complete stopped-candidate numeric evidence and frozen source; relocation does not verify the original runtime closure."
+}
