@@ -146,6 +146,8 @@ are refused; failed restorations remain. Nothing is generated, filtered or fitte
 
 Main and Student B relocated full numeric replay both pass and reproduce STOP. Five root missing/corrupt/extra-file/existing-directory probes pass. Ruff 0.17.1 and ty 0.0.90 pass for the two new publication helpers. Student B is a byte-identical mirror, not independent data replication.
 
+Independent publication review clears the retained negative result: all 51 mirrored files, restored payloads and numeric arrays match, all 123 checked local links resolve, and 41 isolated helper checks pass. Its numerical calls were stubbed; the two actual full integration replays above supply that separate evidence. See the [review record](audit.md).
+
 This is **relocated numeric replay**, not verification of the original complete
 absolute-path runtime/cache closure or preparation-history tree. Their original
 hash records are retained; their payloads are not bundled. Mutable local trust

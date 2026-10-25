@@ -44,3 +44,7 @@ under mutable local anchors are not signatures or process-authenticity proofs.
 Publication restoration and independent publication review are separate checks.
 The original runtime/cache and preparation-history payloads are not restored by
 the portable numeric recipe; the original numeric arrays are restored exactly.
+
+Independent publication review cleared the 51-file snapshot in both repositories: all 50 indexed entries, 36 restored payloads, 18 source snapshots and 21 array pairs match. All 123 checked local links resolve. Forty-one isolated helper checks (24 restoration, 17 numeric-interface) pass; scientific calls in those tiny interface probes were stubbed. The reviewer did not repeat either full relocated numeric replay. Root supplies both actual integration logs separately. The registered STOP and all four failed cases remain unchanged.
+
+Root appended this review note and the README disposition afterward and revalidated the expanded inventory and mirror. No helper, source snapshot or numeric payload changed.
