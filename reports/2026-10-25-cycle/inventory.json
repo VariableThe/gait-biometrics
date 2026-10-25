@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "scope": "Every published bundle file except this self-referential inventory",
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 9868,
+      "sha256": "3c962810e03c6377a9dddd882963103e93f468a8a3c499e13952b8a0fd8a61df"
+    },
+    {
+      "path": "audit.md",
+      "size_bytes": 3152,
+      "sha256": "c7946b8462484c9acfaca5c7af6f99ab406f8701a599671c458565f0e1f68a79"
+    },
+    {
+      "path": "corrected-roc-examples.json",
+      "size_bytes": 25124,
+      "sha256": "ccb1c53c14c00b9e3116649846b71b0f01971c1e60aa67c440631fcd254dbccb"
+    },
+    {
+      "path": "portable-replay-comparison.json",
+      "size_bytes": 1793,
+      "sha256": "7392a9d8e9b1e8d8bbd98b8215d1d6a9c398fc1d4e15111b02ae8ee87a1e8a1f"
+    },
+    {
+      "path": "portable_replay.py",
+      "size_bytes": 4654,
+      "sha256": "4b53217631a2a5169aa20afc7ff5528f61b74a54feb912fa7f7f9539e4548a84"
+    },
+    {
+      "path": "provenance.json",
+      "size_bytes": 3047,
+      "sha256": "05949a3054c6d50e998b8b2507e0a71cf55a8e60108b8565b2655a54e901199d"
+    },
+    {
+      "path": "raw/README.md",
+      "size_bytes": 4831,
+      "sha256": "cfd9133b4e735337d1f302efb0640671c8a92782a15fc3489dc2358942b88146"
+    },
+    {
+      "path": "raw/prototype.py",
+      "size_bytes": 38912,
+      "sha256": "0cc33e195edf4d1a13591dd8b2d4abe9380bd7526509c9e714968b60abc8b85d"
+    },
+    {
+      "path": "raw/report.json.gz",
+      "size_bytes": 103089,
+      "sha256": "f958e4be7492635758d168dc0cad0d8f8de699edc4b346de9f4b01d34cbe8fd0"
+    },
+    {
+      "path": "recompute_roc_examples.py",
+      "size_bytes": 2412,
+      "sha256": "86efb8d893d6dd4e1db550a4e0361b0f7941af3fd1914e811ff54b46fd3889ed"
+    },
+    {
+      "path": "summary.json",
+      "size_bytes": 22438,
+      "sha256": "e2eb054af078880849ece32784cbc1f3720ce62debc1d4eb09196b6bd58bb225"
+    },
+    {
+      "path": "validation-main.log",
+      "size_bytes": 340,
+      "sha256": "d9382b11f585d7d343cad2296797c826cfe2cdefb3d998bf3b447edb21ac6932"
+    },
+    {
+      "path": "validation-student-b.log",
+      "size_bytes": 340,
+      "sha256": "2f63d429e3d3b719b211696936a9954f70b7b6572557923c52cdaf4708a1b110"
+    }
+  ]
+}

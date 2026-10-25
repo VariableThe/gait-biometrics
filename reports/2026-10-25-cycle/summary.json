@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "scope": "Synthetic signals; pre-quality extraction only",
+  "summary": {
+    "n": 1280,
+    "valid_pre_quality": 848,
+    "failure_reasons": {
+      "none": 848,
+      "no_eligible_minima_pair": 192,
+      "channel_degenerate": 240
+    },
+    "lag_alias_counts": {
+      "one_stride": 1184,
+      "half_stride": 96
+    },
+    "pair_alias_counts": {
+      "one_stride": 992,
+      "unavailable": 192,
+      "half_stride": 96
+    },
+    "by_family_period": [
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 80,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 90,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 100,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 110,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 120,
+        "n": 32,
+        "valid_pre_quality": 31,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 31,
+        "failure_reasons": {
+          "none": 31,
+          "no_eligible_minima_pair": 1
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 31,
+          "unavailable": 1
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 128,
+        "n": 32,
+        "valid_pre_quality": 27,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 27,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 5,
+          "none": 27
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 5,
+          "one_stride": 27
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 140,
+        "n": 32,
+        "valid_pre_quality": 22,
+        "truth_raw_full_stride_count": 27,
+        "truth_margin_full_stride_count": 22,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 10,
+          "none": 22
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 10,
+          "one_stride": 22
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 160,
+        "n": 32,
+        "valid_pre_quality": 16,
+        "truth_raw_full_stride_count": 20,
+        "truth_margin_full_stride_count": 16,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 16,
+          "none": 16
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 16,
+          "one_stride": 16
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 180,
+        "n": 32,
+        "valid_pre_quality": 10,
+        "truth_raw_full_stride_count": 14,
+        "truth_margin_full_stride_count": 10,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 22,
+          "none": 10
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 22,
+          "one_stride": 10
+        }
+      },
+      {
+        "family": "gravity_periodic_6axis",
+        "period_samples": 200,
+        "n": 32,
+        "valid_pre_quality": 6,
+        "truth_raw_full_stride_count": 9,
+        "truth_margin_full_stride_count": 6,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 26,
+          "none": 6
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 26,
+          "one_stride": 6
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 80,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 90,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 100,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 110,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 120,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 31,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 128,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 27,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 140,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 27,
+        "truth_margin_full_stride_count": 22,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 160,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 20,
+        "truth_margin_full_stride_count": 16,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 180,
+        "n": 32,
+        "valid_pre_quality": 20,
+        "truth_raw_full_stride_count": 14,
+        "truth_margin_full_stride_count": 10,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 12,
+          "none": 20
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 12,
+          "one_stride": 20
+        }
+      },
+      {
+        "family": "alternating_step_harmonic",
+        "period_samples": 200,
+        "n": 32,
+        "valid_pre_quality": 12,
+        "truth_raw_full_stride_count": 9,
+        "truth_margin_full_stride_count": 6,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 20,
+          "none": 12
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 20,
+          "one_stride": 12
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 80,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 90,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 100,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 110,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 120,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 31,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 128,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 27,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 140,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 27,
+        "truth_margin_full_stride_count": 22,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 160,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 20,
+        "truth_margin_full_stride_count": 16,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "half_stride": 32
+        },
+        "pair_alias_counts": {
+          "half_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 180,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 14,
+        "truth_margin_full_stride_count": 10,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "half_stride": 32
+        },
+        "pair_alias_counts": {
+          "half_stride": 32
+        }
+      },
+      {
+        "family": "pure_periodic_balanced_peaks",
+        "period_samples": 200,
+        "n": 32,
+        "valid_pre_quality": 32,
+        "truth_raw_full_stride_count": 9,
+        "truth_margin_full_stride_count": 6,
+        "failure_reasons": {
+          "none": 32
+        },
+        "lag_alias_counts": {
+          "half_stride": 32
+        },
+        "pair_alias_counts": {
+          "half_stride": 32
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 80,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "channel_degenerate": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 90,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "channel_degenerate": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 100,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "channel_degenerate": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 110,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 32,
+        "failure_reasons": {
+          "channel_degenerate": 32
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 32
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 120,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 31,
+        "failure_reasons": {
+          "channel_degenerate": 31,
+          "no_eligible_minima_pair": 1
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "one_stride": 31,
+          "unavailable": 1
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 128,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 32,
+        "truth_margin_full_stride_count": 27,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 5,
+          "channel_degenerate": 27
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 5,
+          "one_stride": 27
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 140,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 27,
+        "truth_margin_full_stride_count": 22,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 10,
+          "channel_degenerate": 22
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 10,
+          "one_stride": 22
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 160,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 20,
+        "truth_margin_full_stride_count": 16,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 16,
+          "channel_degenerate": 16
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 16,
+          "one_stride": 16
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 180,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 14,
+        "truth_margin_full_stride_count": 10,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 22,
+          "channel_degenerate": 10
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 22,
+          "one_stride": 10
+        }
+      },
+      {
+        "family": "weak_degenerate_gyro",
+        "period_samples": 200,
+        "n": 32,
+        "valid_pre_quality": 0,
+        "truth_raw_full_stride_count": 9,
+        "truth_margin_full_stride_count": 6,
+        "failure_reasons": {
+          "no_eligible_minima_pair": 26,
+          "channel_degenerate": 6
+        },
+        "lag_alias_counts": {
+          "one_stride": 32
+        },
+        "pair_alias_counts": {
+          "unavailable": 26,
+          "one_stride": 6
+        }
+      }
+    ]
+  },
+  "analytical_evidence": {
+    "coverage_derivation": "For a fixed stride boundary and arbitrary phase, an interval of duration D contains consecutive stride events for every phase only if D>=2*tau. Nominal D=2.56 gives tau<=1.28s. Sample endpoints actually span 255/100=2.55s, giving <=1.275s; margins [10,245] span 235/100=2.35s, giving <=1.175s. This is an ideal geometry guarantee, not sufficient for strict filtered minima, correct alias choice or finite channels.",
+    "ideal_continuous_uniform_phase_coverage": [
+      {
+        "period_samples": 80,
+        "raw_0_255": 1.0,
+        "margins_10_245": 1.0
+      },
+      {
+        "period_samples": 90,
+        "raw_0_255": 1.0,
+        "margins_10_245": 1.0
+      },
+      {
+        "period_samples": 100,
+        "raw_0_255": 1.0,
+        "margins_10_245": 1.0
+      },
+      {
+        "period_samples": 110,
+        "raw_0_255": 1.0,
+        "margins_10_245": 1.0
+      },
+      {
+        "period_samples": 120,
+        "raw_0_255": 1.0,
+        "margins_10_245": 0.9583333333333333
+      },
+      {
+        "period_samples": 128,
+        "raw_0_255": 0.9921875,
+        "margins_10_245": 0.8359375
+      },
+      {
+        "period_samples": 140,
+        "raw_0_255": 0.8214285714285714,
+        "margins_10_245": 0.6785714285714286
+      },
+      {
+        "period_samples": 160,
+        "raw_0_255": 0.59375,
+        "margins_10_245": 0.46875
+      },
+      {
+        "period_samples": 180,
+        "raw_0_255": 0.41666666666666674,
+        "margins_10_245": 0.3055555555555556
+      },
+      {
+        "period_samples": 200,
+        "raw_0_255": 0.2749999999999999,
+        "margins_10_245": 0.17500000000000004
+      }
+    ],
+    "enrollment_failure": [
+      {
+        "q": 0.05,
+        "m": 1,
+        "independent_failure_probability": 0.050000000000000044,
+        "sharp_dependence_lower_bound": 0.05,
+        "sharp_dependence_upper_bound": 0.05
+      },
+      {
+        "q": 0.05,
+        "m": 2,
+        "independent_failure_probability": 0.09750000000000003,
+        "sharp_dependence_lower_bound": 0.05,
+        "sharp_dependence_upper_bound": 0.1
+      },
+      {
+        "q": 0.05,
+        "m": 10,
+        "independent_failure_probability": 0.4012630607616213,
+        "sharp_dependence_lower_bound": 0.05,
+        "sharp_dependence_upper_bound": 0.5
+      },
+      {
+        "q": 0.05,
+        "m": 20,
+        "independent_failure_probability": 0.6415140775914581,
+        "sharp_dependence_lower_bound": 0.05,
+        "sharp_dependence_upper_bound": 1.0
+      }
+    ],
+    "dependence_assumptions": "Union failure under identical marginal q: independence gives 1-(1-q)^m. Perfectly coincident failures attain q; disjoint failures attain min(1,m*q). Bounds require only per-window marginal q. These are illustrations, not actual TRAIN/DEV rates; overlapping windows need not be independent.",
+    "claim_failure": "With independent enrollment m and probe k windows of common failure q, claim invalidity is 1-(1-q)^(m+k). Shared enrollment failures correlate many claims. No observed q is estimated here.",
+    "roc_algebra": "For genuine invalid fraction fg and impostor invalid fraction fi, FRR_full=fg+(1-fg)*FRR_valid and FAR_full=(1-fi)*FAR_valid. At terminal valid-score acceptance, FRR=fg and FAR=1-fi. Starting reject-all has FAR-FRR=-1; a crossing can exist only if fg<=1-fi (equivalently genuine valid coverage+impostor valid coverage>=1). A threshold attaining equality may still require interpolation across tied-score jumps."
+  },
+  "corrected_roc": "corrected-roc-examples.json",
+  "keep_model": "Canonical362",
+  "decision": "Redesign cycle protocol before a DEV fit"
+}

@@ -16,6 +16,8 @@ The [canonical orientation follow-up](reports/2026-10-25-canonical/README.md) no
 
 The [25 October robustness and simulation report](reports/2026-10-25-robustness/README.md) adds a registered 300-fit full/log-covariance comparison, 660 score replays and 297 timed synthetic policy replays. Neither new representation passes the clean DEV gates. Fixed-threshold sensor stresses expose substantial rotation/noise sensitivity; these synthetic results do not change the published TEST point or establish phone performance.
 
+The [short-window cycle feasibility report](reports/2026-10-25-cycle/README.md) tests 1,280 fixed synthetic windows before a cycle-model fit: 848 yield finite features, 432 fail, and 96 finite outputs represent half-strides. Keep Canonical362 while redesigning the cycle protocol. A new exact-count ROC utility retains failed claims and fixes two floating-point EER edge cases. These are synthetic feasibility and evaluation results, with no new biometric model or TEST result.
+
 ## Run immediately
 
 Python 3.14.8 and the existing pinned torch 2.14.1 dependency set were validated on Linux x86_64. Create an isolated environment with uv:
