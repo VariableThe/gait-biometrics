@@ -1,4 +1,12 @@
 data/window_provenance.py
+data/imu_perturbations.py
+engine/auth_simulation.py
+models/lag_covariance.py
+scripts/covariance_robustness_study.py
+tests/test_auth_simulation.py
+tests/test_covariance_robustness_study.py
+tests/test_imu_perturbations.py
+tests/test_lag_covariance.py
 engine/claimant_normalization.py
 engine/continuous_auth.py
 engine/continuous_evaluation.py
