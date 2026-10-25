@@ -1,0 +1,112 @@
+{"cpu_seconds": 6.751523746, "event": "baseline", "inputs": 128, "wall_origin": "shell_before_uv_launch", "wall_seconds": 6.838812298607081}
+{"cpu_seconds": 8.07741971, "event": "baseline", "inputs": 256, "wall_origin": "shell_before_uv_launch", "wall_seconds": 8.176572343567386}
+{"cpu_seconds": 9.41930569, "event": "baseline", "inputs": 384, "wall_origin": "shell_before_uv_launch", "wall_seconds": 9.53311979456339}
+{"cpu_seconds": 10.7096096, "event": "baseline", "inputs": 512, "wall_origin": "shell_before_uv_launch", "wall_seconds": 10.840523733641021}
+{"cpu_seconds": 11.887893175, "event": "baseline", "inputs": 640, "wall_origin": "shell_before_uv_launch", "wall_seconds": 12.029826810583472}
+{"cpu_seconds": 13.295642824, "event": "baseline", "inputs": 768, "wall_origin": "shell_before_uv_launch", "wall_seconds": 13.450159016647376}
+{"cpu_seconds": 14.646982199, "event": "baseline", "inputs": 896, "wall_origin": "shell_before_uv_launch", "wall_seconds": 14.814155826577917}
+{"cpu_seconds": 15.987786816, "event": "baseline", "inputs": 1024, "wall_origin": "shell_before_uv_launch", "wall_seconds": 16.167264325660653}
+{"cpu_seconds": 17.316620025, "event": "baseline", "inputs": 1152, "wall_origin": "shell_before_uv_launch", "wall_seconds": 17.508110964554362}
+{"cpu_seconds": 18.698484382, "event": "baseline", "inputs": 1280, "wall_origin": "shell_before_uv_launch", "wall_seconds": 18.903186369570903}
+{"cpu_seconds": 20.128059207, "event": "baseline", "inputs": 1408, "wall_origin": "shell_before_uv_launch", "wall_seconds": 20.345486700651236}
+{"cpu_seconds": 21.56992976, "event": "baseline", "inputs": 1536, "wall_origin": "shell_before_uv_launch", "wall_seconds": 21.801695391652174}
+{"cpu_seconds": 22.882432379, "event": "baseline", "inputs": 1664, "wall_origin": "shell_before_uv_launch", "wall_seconds": 23.12786348257214}
+{"cpu_seconds": 24.347346937, "event": "baseline", "inputs": 1792, "wall_origin": "shell_before_uv_launch", "wall_seconds": 24.607142605585977}
+{"cpu_seconds": 25.718569743, "event": "baseline", "inputs": 1920, "wall_origin": "shell_before_uv_launch", "wall_seconds": 25.992142852628604}
+{"cpu_seconds": 27.028758783, "event": "baseline", "inputs": 2048, "wall_origin": "shell_before_uv_launch", "wall_seconds": 27.314048395608552}
+{"cpu_seconds": 28.3723295, "event": "baseline", "inputs": 2176, "wall_origin": "shell_before_uv_launch", "wall_seconds": 28.669305578572676}
+{"cpu_seconds": 29.640753334, "event": "baseline", "inputs": 2304, "wall_origin": "shell_before_uv_launch", "wall_seconds": 29.949618318583816}
+{"cpu_seconds": 30.979572321, "event": "baseline", "inputs": 2432, "wall_origin": "shell_before_uv_launch", "wall_seconds": 31.345270899590105}
+{"cpu_seconds": 32.446529379, "event": "baseline", "inputs": 2560, "wall_origin": "shell_before_uv_launch", "wall_seconds": 32.826566868578084}
+{"cpu_seconds": 32.468696981, "event": "baseline_gate_passed", "rows": 5120, "wall_origin": "shell_before_uv_launch", "wall_seconds": 32.85893805057276}
+{"cpu_seconds": 36.276229962, "event": "candidate_and_diagnostics", "inputs": 32, "records": 96, "wall_origin": "shell_before_uv_launch", "wall_seconds": 36.70346206962131}
+{"cpu_seconds": 39.459438708, "event": "candidate_and_diagnostics", "inputs": 64, "records": 192, "wall_origin": "shell_before_uv_launch", "wall_seconds": 39.9149717396358}
+{"cpu_seconds": 42.811691716, "event": "candidate_and_diagnostics", "inputs": 96, "records": 288, "wall_origin": "shell_before_uv_launch", "wall_seconds": 43.2974585556658}
+{"cpu_seconds": 45.984376229, "event": "candidate_and_diagnostics", "inputs": 128, "records": 384, "wall_origin": "shell_before_uv_launch", "wall_seconds": 46.496716867550276}
+{"cpu_seconds": 49.151676172, "event": "candidate_and_diagnostics", "inputs": 160, "records": 480, "wall_origin": "shell_before_uv_launch", "wall_seconds": 49.69369397161063}
+{"cpu_seconds": 52.391620677, "event": "candidate_and_diagnostics", "inputs": 192, "records": 576, "wall_origin": "shell_before_uv_launch", "wall_seconds": 52.9621900486527}
+{"cpu_seconds": 55.516321655, "event": "candidate_and_diagnostics", "inputs": 224, "records": 672, "wall_origin": "shell_before_uv_launch", "wall_seconds": 56.11551600461826}
+{"cpu_seconds": 58.719067026, "event": "candidate_and_diagnostics", "inputs": 256, "records": 768, "wall_origin": "shell_before_uv_launch", "wall_seconds": 59.347066016634926}
+{"cpu_seconds": 62.337095795, "event": "candidate_and_diagnostics", "inputs": 288, "records": 864, "wall_origin": "shell_before_uv_launch", "wall_seconds": 62.99642285564914}
+{"cpu_seconds": 65.357506795, "event": "candidate_and_diagnostics", "inputs": 320, "records": 960, "wall_origin": "shell_before_uv_launch", "wall_seconds": 66.04705666564405}
+{"cpu_seconds": 68.498109003, "event": "candidate_and_diagnostics", "inputs": 352, "records": 1056, "wall_origin": "shell_before_uv_launch", "wall_seconds": 69.21661694755312}
+{"cpu_seconds": 71.699204557, "event": "candidate_and_diagnostics", "inputs": 384, "records": 1152, "wall_origin": "shell_before_uv_launch", "wall_seconds": 72.44659755961038}
+{"cpu_seconds": 75.057650841, "event": "candidate_and_diagnostics", "inputs": 416, "records": 1248, "wall_origin": "shell_before_uv_launch", "wall_seconds": 75.83594028756488}
+{"cpu_seconds": 78.138462879, "event": "candidate_and_diagnostics", "inputs": 448, "records": 1344, "wall_origin": "shell_before_uv_launch", "wall_seconds": 78.94510993163567}
+{"cpu_seconds": 81.505838803, "event": "candidate_and_diagnostics", "inputs": 480, "records": 1440, "wall_origin": "shell_before_uv_launch", "wall_seconds": 82.34207764163148}
+{"cpu_seconds": 84.760727346, "event": "candidate_and_diagnostics", "inputs": 512, "records": 1536, "wall_origin": "shell_before_uv_launch", "wall_seconds": 85.6265594495926}
+{"cpu_seconds": 87.818744635, "event": "candidate_and_diagnostics", "inputs": 544, "records": 1632, "wall_origin": "shell_before_uv_launch", "wall_seconds": 88.71182427660096}
+{"cpu_seconds": 91.008865368, "event": "candidate_and_diagnostics", "inputs": 576, "records": 1728, "wall_origin": "shell_before_uv_launch", "wall_seconds": 91.92943496757653}
+{"cpu_seconds": 94.054702051, "event": "candidate_and_diagnostics", "inputs": 608, "records": 1824, "wall_origin": "shell_before_uv_launch", "wall_seconds": 95.00139628560282}
+{"cpu_seconds": 97.235346124, "event": "candidate_and_diagnostics", "inputs": 640, "records": 1920, "wall_origin": "shell_before_uv_launch", "wall_seconds": 98.21163784060627}
+{"cpu_seconds": 100.343752426, "event": "candidate_and_diagnostics", "inputs": 672, "records": 2016, "wall_origin": "shell_before_uv_launch", "wall_seconds": 101.3478481406346}
+{"cpu_seconds": 103.437682024, "event": "candidate_and_diagnostics", "inputs": 704, "records": 2112, "wall_origin": "shell_before_uv_launch", "wall_seconds": 104.47052088566124}
+{"cpu_seconds": 106.852165795, "event": "candidate_and_diagnostics", "inputs": 736, "records": 2208, "wall_origin": "shell_before_uv_launch", "wall_seconds": 107.91275241959374}
+{"cpu_seconds": 110.161968805, "event": "candidate_and_diagnostics", "inputs": 768, "records": 2304, "wall_origin": "shell_before_uv_launch", "wall_seconds": 111.2493152555544}
+{"cpu_seconds": 113.476688247, "event": "candidate_and_diagnostics", "inputs": 800, "records": 2400, "wall_origin": "shell_before_uv_launch", "wall_seconds": 114.59274897666182}
+{"cpu_seconds": 116.688499003, "event": "candidate_and_diagnostics", "inputs": 832, "records": 2496, "wall_origin": "shell_before_uv_launch", "wall_seconds": 117.8328708925983}
+{"cpu_seconds": 120.124350457, "event": "candidate_and_diagnostics", "inputs": 864, "records": 2592, "wall_origin": "shell_before_uv_launch", "wall_seconds": 121.29648057860322}
+{"cpu_seconds": 123.379672572, "event": "candidate_and_diagnostics", "inputs": 896, "records": 2688, "wall_origin": "shell_before_uv_launch", "wall_seconds": 124.58152006356977}
+{"cpu_seconds": 126.609237252, "event": "candidate_and_diagnostics", "inputs": 928, "records": 2784, "wall_origin": "shell_before_uv_launch", "wall_seconds": 127.83981065964326}
+{"cpu_seconds": 129.645645456, "event": "candidate_and_diagnostics", "inputs": 960, "records": 2880, "wall_origin": "shell_before_uv_launch", "wall_seconds": 130.90221329464111}
+{"cpu_seconds": 132.837829103, "event": "candidate_and_diagnostics", "inputs": 992, "records": 2976, "wall_origin": "shell_before_uv_launch", "wall_seconds": 134.12234908156097}
+{"cpu_seconds": 136.0624864, "event": "candidate_and_diagnostics", "inputs": 1024, "records": 3072, "wall_origin": "shell_before_uv_launch", "wall_seconds": 137.3774679725757}
+{"cpu_seconds": 139.288665788, "event": "candidate_and_diagnostics", "inputs": 1056, "records": 3168, "wall_origin": "shell_before_uv_launch", "wall_seconds": 140.63386521860957}
+{"cpu_seconds": 142.806540801, "event": "candidate_and_diagnostics", "inputs": 1088, "records": 3264, "wall_origin": "shell_before_uv_launch", "wall_seconds": 144.1851385536138}
+{"cpu_seconds": 146.007727776, "event": "candidate_and_diagnostics", "inputs": 1120, "records": 3360, "wall_origin": "shell_before_uv_launch", "wall_seconds": 147.41381531464867}
+{"cpu_seconds": 149.150893642, "event": "candidate_and_diagnostics", "inputs": 1152, "records": 3456, "wall_origin": "shell_before_uv_launch", "wall_seconds": 150.583349005552}
+{"cpu_seconds": 152.364253808, "event": "candidate_and_diagnostics", "inputs": 1184, "records": 3552, "wall_origin": "shell_before_uv_launch", "wall_seconds": 153.83149164065253}
+{"cpu_seconds": 155.793193531, "event": "candidate_and_diagnostics", "inputs": 1216, "records": 3648, "wall_origin": "shell_before_uv_launch", "wall_seconds": 157.29280781163834}
+{"cpu_seconds": 158.993629442, "event": "candidate_and_diagnostics", "inputs": 1248, "records": 3744, "wall_origin": "shell_before_uv_launch", "wall_seconds": 160.52135444059968}
+{"cpu_seconds": 162.059838489, "event": "candidate_and_diagnostics", "inputs": 1280, "records": 3840, "wall_origin": "shell_before_uv_launch", "wall_seconds": 163.61398274358362}
+{"cpu_seconds": 165.16754475, "event": "candidate_and_diagnostics", "inputs": 1312, "records": 3936, "wall_origin": "shell_before_uv_launch", "wall_seconds": 166.74989363458008}
+{"cpu_seconds": 168.210819478, "event": "candidate_and_diagnostics", "inputs": 1344, "records": 4032, "wall_origin": "shell_before_uv_launch", "wall_seconds": 169.81974490755238}
+{"cpu_seconds": 171.386723743, "event": "candidate_and_diagnostics", "inputs": 1376, "records": 4128, "wall_origin": "shell_before_uv_launch", "wall_seconds": 173.02338275359944}
+{"cpu_seconds": 174.444754284, "event": "candidate_and_diagnostics", "inputs": 1408, "records": 4224, "wall_origin": "shell_before_uv_launch", "wall_seconds": 176.10930408956483}
+{"cpu_seconds": 177.626049718, "event": "candidate_and_diagnostics", "inputs": 1440, "records": 4320, "wall_origin": "shell_before_uv_launch", "wall_seconds": 179.31861355155706}
+{"cpu_seconds": 180.912225773, "event": "candidate_and_diagnostics", "inputs": 1472, "records": 4416, "wall_origin": "shell_before_uv_launch", "wall_seconds": 182.6330518706236}
+{"cpu_seconds": 184.359611536, "event": "candidate_and_diagnostics", "inputs": 1504, "records": 4512, "wall_origin": "shell_before_uv_launch", "wall_seconds": 186.10953303659335}
+{"cpu_seconds": 187.504227865, "event": "candidate_and_diagnostics", "inputs": 1536, "records": 4608, "wall_origin": "shell_before_uv_launch", "wall_seconds": 189.28257855365518}
+{"cpu_seconds": 190.779043288, "event": "candidate_and_diagnostics", "inputs": 1568, "records": 4704, "wall_origin": "shell_before_uv_launch", "wall_seconds": 192.5853050496662}
+{"cpu_seconds": 194.04797696, "event": "candidate_and_diagnostics", "inputs": 1600, "records": 4800, "wall_origin": "shell_before_uv_launch", "wall_seconds": 195.88553826755378}
+{"cpu_seconds": 197.377306162, "event": "candidate_and_diagnostics", "inputs": 1632, "records": 4896, "wall_origin": "shell_before_uv_launch", "wall_seconds": 199.24476448865607}
+{"cpu_seconds": 200.454556724, "event": "candidate_and_diagnostics", "inputs": 1664, "records": 4992, "wall_origin": "shell_before_uv_launch", "wall_seconds": 202.3463923985837}
+{"cpu_seconds": 203.765630813, "event": "candidate_and_diagnostics", "inputs": 1696, "records": 5088, "wall_origin": "shell_before_uv_launch", "wall_seconds": 205.68429876759183}
+{"cpu_seconds": 206.878716525, "event": "candidate_and_diagnostics", "inputs": 1728, "records": 5184, "wall_origin": "shell_before_uv_launch", "wall_seconds": 208.82457123859785}
+{"cpu_seconds": 210.293249342, "event": "candidate_and_diagnostics", "inputs": 1760, "records": 5280, "wall_origin": "shell_before_uv_launch", "wall_seconds": 212.2685681335861}
+{"cpu_seconds": 213.704506313, "event": "candidate_and_diagnostics", "inputs": 1792, "records": 5376, "wall_origin": "shell_before_uv_launch", "wall_seconds": 215.71089107962325}
+{"cpu_seconds": 217.291684102, "event": "candidate_and_diagnostics", "inputs": 1824, "records": 5472, "wall_origin": "shell_before_uv_launch", "wall_seconds": 219.3305126116611}
+{"cpu_seconds": 220.51103942, "event": "candidate_and_diagnostics", "inputs": 1856, "records": 5568, "wall_origin": "shell_before_uv_launch", "wall_seconds": 222.5806384156458}
+{"cpu_seconds": 223.726764565, "event": "candidate_and_diagnostics", "inputs": 1888, "records": 5664, "wall_origin": "shell_before_uv_launch", "wall_seconds": 225.8215805735672}
+{"cpu_seconds": 226.82112741, "event": "candidate_and_diagnostics", "inputs": 1920, "records": 5760, "wall_origin": "shell_before_uv_launch", "wall_seconds": 228.9441314386204}
+{"cpu_seconds": 229.045647563, "event": "candidate_and_diagnostics", "inputs": 1952, "records": 5856, "wall_origin": "shell_before_uv_launch", "wall_seconds": 231.1867277546553}
+{"cpu_seconds": 231.265629055, "event": "candidate_and_diagnostics", "inputs": 1984, "records": 5952, "wall_origin": "shell_before_uv_launch", "wall_seconds": 233.42597797466442}
+{"cpu_seconds": 233.583151326, "event": "candidate_and_diagnostics", "inputs": 2016, "records": 6048, "wall_origin": "shell_before_uv_launch", "wall_seconds": 235.76240118360147}
+{"cpu_seconds": 235.918045404, "event": "candidate_and_diagnostics", "inputs": 2048, "records": 6144, "wall_origin": "shell_before_uv_launch", "wall_seconds": 238.11753629066516}
+{"cpu_seconds": 238.177818857, "event": "candidate_and_diagnostics", "inputs": 2080, "records": 6240, "wall_origin": "shell_before_uv_launch", "wall_seconds": 240.3953392226249}
+{"cpu_seconds": 240.719927537, "event": "candidate_and_diagnostics", "inputs": 2112, "records": 6336, "wall_origin": "shell_before_uv_launch", "wall_seconds": 242.95873382559512}
+{"cpu_seconds": 243.041745297, "event": "candidate_and_diagnostics", "inputs": 2144, "records": 6432, "wall_origin": "shell_before_uv_launch", "wall_seconds": 245.3008834006032}
+{"cpu_seconds": 245.263218894, "event": "candidate_and_diagnostics", "inputs": 2176, "records": 6528, "wall_origin": "shell_before_uv_launch", "wall_seconds": 247.541239957558}
+{"cpu_seconds": 247.42114387, "event": "candidate_and_diagnostics", "inputs": 2208, "records": 6624, "wall_origin": "shell_before_uv_launch", "wall_seconds": 249.71720240160357}
+{"cpu_seconds": 249.589707608, "event": "candidate_and_diagnostics", "inputs": 2240, "records": 6720, "wall_origin": "shell_before_uv_launch", "wall_seconds": 251.906918010558}
+{"cpu_seconds": 251.815390412, "event": "candidate_and_diagnostics", "inputs": 2272, "records": 6816, "wall_origin": "shell_before_uv_launch", "wall_seconds": 254.15301405766513}
+{"cpu_seconds": 254.127530397, "event": "candidate_and_diagnostics", "inputs": 2304, "records": 6912, "wall_origin": "shell_before_uv_launch", "wall_seconds": 256.4850596336182}
+{"cpu_seconds": 256.306346807, "event": "candidate_and_diagnostics", "inputs": 2336, "records": 7008, "wall_origin": "shell_before_uv_launch", "wall_seconds": 258.68306853156537}
+{"cpu_seconds": 258.456858001, "event": "candidate_and_diagnostics", "inputs": 2368, "records": 7104, "wall_origin": "shell_before_uv_launch", "wall_seconds": 260.8514746406581}
+{"cpu_seconds": 260.647229871, "event": "candidate_and_diagnostics", "inputs": 2400, "records": 7200, "wall_origin": "shell_before_uv_launch", "wall_seconds": 263.0620222915895}
+{"cpu_seconds": 262.964329124, "event": "candidate_and_diagnostics", "inputs": 2432, "records": 7296, "wall_origin": "shell_before_uv_launch", "wall_seconds": 265.397535233642}
+{"cpu_seconds": 265.313415169, "event": "candidate_and_diagnostics", "inputs": 2464, "records": 7392, "wall_origin": "shell_before_uv_launch", "wall_seconds": 267.7678496305598}
+{"cpu_seconds": 267.562863256, "event": "candidate_and_diagnostics", "inputs": 2496, "records": 7488, "wall_origin": "shell_before_uv_launch", "wall_seconds": 270.03532022156287}
+{"cpu_seconds": 270.012594689, "event": "candidate_and_diagnostics", "inputs": 2528, "records": 7584, "wall_origin": "shell_before_uv_launch", "wall_seconds": 272.50806392962113}
+{"cpu_seconds": 272.245890989, "event": "candidate_and_diagnostics", "inputs": 2560, "records": 7680, "wall_origin": "shell_before_uv_launch", "wall_seconds": 274.760582808638}
+{"cpu_seconds": 275.716571198, "event": "candidate_and_diagnostics", "inputs": 2592, "records": 7776, "wall_origin": "shell_before_uv_launch", "wall_seconds": 278.26359855756164}
+{"cpu_seconds": 278.861438109, "event": "candidate_and_diagnostics", "inputs": 2624, "records": 7872, "wall_origin": "shell_before_uv_launch", "wall_seconds": 281.4377148905769}
+{"cpu_seconds": 282.057838521, "event": "candidate_and_diagnostics", "inputs": 2656, "records": 7968, "wall_origin": "shell_before_uv_launch", "wall_seconds": 284.6631436665775}
+{"cpu_seconds": 285.234672702, "event": "candidate_and_diagnostics", "inputs": 2688, "records": 8064, "wall_origin": "shell_before_uv_launch", "wall_seconds": 287.866088261595}
+{"cpu_seconds": 288.440643156, "event": "candidate_and_diagnostics", "inputs": 2720, "records": 8160, "wall_origin": "shell_before_uv_launch", "wall_seconds": 291.1002002055757}
+{"cpu_seconds": 291.514183972, "event": "candidate_and_diagnostics", "inputs": 2752, "records": 8256, "wall_origin": "shell_before_uv_launch", "wall_seconds": 294.20116843958385}
+{"cpu_seconds": 295.065352087, "event": "candidate_and_diagnostics", "inputs": 2784, "records": 8352, "wall_origin": "shell_before_uv_launch", "wall_seconds": 297.7844112756429}
+{"cpu_seconds": 298.481153139, "event": "candidate_and_diagnostics", "inputs": 2816, "records": 8448, "wall_origin": "shell_before_uv_launch", "wall_seconds": 301.23226251557935}
+{"cpu_seconds": 301.906686784, "event": "candidate_and_diagnostics", "inputs": 2848, "records": 8544, "wall_origin": "shell_before_uv_launch", "wall_seconds": 304.690803717589}
+{"cpu_seconds": 304.380323201, "event": "candidate_and_diagnostics", "inputs": 2880, "records": 8640, "wall_origin": "shell_before_uv_launch", "wall_seconds": 307.1868566245539}
+{"cpu_seconds": 320.643604981, "event": "complete", "inputs": 2880, "records": 8640, "wall_origin": "shell_before_uv_launch", "wall_seconds": 323.76835057663266}
