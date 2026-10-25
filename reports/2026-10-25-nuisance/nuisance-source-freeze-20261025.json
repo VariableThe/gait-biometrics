@@ -1,0 +1,2096 @@
+{
+  "plan": {
+    "adaptation_to_inspected_stress": true,
+    "arms": [
+      "baseline",
+      "nuisance"
+    ],
+    "budget": {
+      "fits": 200,
+      "inner_scores": 160,
+      "outer_scores": 280
+    },
+    "canonical_source": "108a559bc1a83355dc85335e9f640786846f894a",
+    "conditions": [
+      "clean",
+      "rotation30",
+      "rotation90",
+      "gain09",
+      "gain11",
+      "noise01",
+      "noise05"
+    ],
+    "coverage": "exact source graphs/original exclusions and all541 assigned context records before ANY features/fits; abort whole study with persisted diagnostics on any invalid window or TRAIN RMS reference; no drop/impute/fallback",
+    "dimensions": {
+      "baseline": 362,
+      "nuisance": 362
+    },
+    "features": "both arms unchanged historical canonical362: equal-sign canonical336 plus original raw lag-spectrum26; no descriptor search",
+    "fit": "clean automatic identity-balanced WCCN C_B; nuisance C_A=C_B+V; original rows alone set mean/std/shrinkage; uncentered identity-balanced paired V with coefficient1, then existing eigenvalue floor/whitener",
+    "folds": [
+      {
+        "fold": 0,
+        "inner": [
+          {
+            "held_ids": [
+              9,
+              29,
+              27
+            ],
+            "train_ids": [
+              5,
+              13,
+              3,
+              1,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              13,
+              3
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              1,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              25,
+              24
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              5,
+              13,
+              3,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              19,
+              17
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24
+            ]
+          }
+        ],
+        "refit_ids": [
+          9,
+          29,
+          27,
+          5,
+          13,
+          3,
+          1,
+          25,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          7,
+          16,
+          11
+        ]
+      },
+      {
+        "fold": 1,
+        "inner": [
+          {
+            "held_ids": [
+              5,
+              13,
+              3
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              1,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              25,
+              24
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              5,
+              13,
+              3,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              19,
+              17
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24
+            ]
+          },
+          {
+            "held_ids": [
+              7,
+              16,
+              11
+            ],
+            "train_ids": [
+              5,
+              13,
+              3,
+              1,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          5,
+          13,
+          3,
+          1,
+          25,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          9,
+          29,
+          27
+        ]
+      },
+      {
+        "fold": 2,
+        "inner": [
+          {
+            "held_ids": [
+              1,
+              25,
+              24
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              29,
+              27,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              19,
+              17
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              29,
+              27,
+              1,
+              25,
+              24
+            ]
+          },
+          {
+            "held_ids": [
+              7,
+              16,
+              11
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              1,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              29,
+              27
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              1,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          9,
+          29,
+          27,
+          1,
+          25,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          5,
+          13,
+          3
+        ]
+      },
+      {
+        "fold": 3,
+        "inner": [
+          {
+            "held_ids": [
+              14,
+              19,
+              17
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              29,
+              27,
+              5,
+              13,
+              3
+            ]
+          },
+          {
+            "held_ids": [
+              7,
+              16,
+              11
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              5,
+              13,
+              3,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              29,
+              27
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              5,
+              13,
+              3,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              13,
+              3
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              29,
+              27,
+              14,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          9,
+          29,
+          27,
+          5,
+          13,
+          3,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          1,
+          25,
+          24
+        ]
+      },
+      {
+        "fold": 4,
+        "inner": [
+          {
+            "held_ids": [
+              7,
+              16,
+              11
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              29,
+              27
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              13,
+              3
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              29,
+              27,
+              1,
+              25,
+              24
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              25,
+              24
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              29,
+              27,
+              5,
+              13,
+              3
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          9,
+          29,
+          27,
+          5,
+          13,
+          3,
+          1,
+          25,
+          24
+        ],
+        "validation_ids": [
+          14,
+          19,
+          17
+        ]
+      },
+      {
+        "fold": 5,
+        "inner": [
+          {
+            "held_ids": [
+              1,
+              3,
+              5
+            ],
+            "train_ids": [
+              7,
+              9,
+              29,
+              27,
+              13,
+              25,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              7,
+              14,
+              19
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              5,
+              13,
+              3,
+              1,
+              25,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              17,
+              27
+            ],
+            "train_ids": [
+              7,
+              29,
+              5,
+              13,
+              3,
+              1,
+              25,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              13,
+              25,
+              29
+            ],
+            "train_ids": [
+              7,
+              9,
+              27,
+              5,
+              3,
+              1,
+              14,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          9,
+          29,
+          27,
+          5,
+          13,
+          3,
+          1,
+          25,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          11,
+          16,
+          24
+        ]
+      },
+      {
+        "fold": 6,
+        "inner": [
+          {
+            "held_ids": [
+              7,
+              14,
+              19
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              29,
+              27,
+              13,
+              25,
+              24,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              17,
+              27
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              29,
+              13,
+              25,
+              24,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              13,
+              25,
+              29
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              27,
+              24,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              11,
+              16,
+              24
+            ],
+            "train_ids": [
+              7,
+              9,
+              29,
+              27,
+              13,
+              25,
+              14,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          9,
+          29,
+          27,
+          13,
+          25,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          1,
+          3,
+          5
+        ]
+      },
+      {
+        "fold": 7,
+        "inner": [
+          {
+            "held_ids": [
+              9,
+              17,
+              27
+            ],
+            "train_ids": [
+              16,
+              11,
+              29,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24
+            ]
+          },
+          {
+            "held_ids": [
+              13,
+              25,
+              29
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              27,
+              5,
+              3,
+              1,
+              24,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              11,
+              16,
+              24
+            ],
+            "train_ids": [
+              9,
+              29,
+              27,
+              5,
+              13,
+              3,
+              1,
+              25,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              3,
+              5
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              29,
+              27,
+              13,
+              25,
+              24,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          16,
+          11,
+          9,
+          29,
+          27,
+          5,
+          13,
+          3,
+          1,
+          25,
+          24,
+          17
+        ],
+        "validation_ids": [
+          7,
+          14,
+          19
+        ]
+      },
+      {
+        "fold": 8,
+        "inner": [
+          {
+            "held_ids": [
+              13,
+              25,
+              29
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              5,
+              3,
+              1,
+              24,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              11,
+              16,
+              24
+            ],
+            "train_ids": [
+              7,
+              29,
+              5,
+              13,
+              3,
+              1,
+              25,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              3,
+              5
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              29,
+              13,
+              25,
+              24,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              7,
+              14,
+              19
+            ],
+            "train_ids": [
+              16,
+              11,
+              29,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          29,
+          5,
+          13,
+          3,
+          1,
+          25,
+          24,
+          14,
+          19
+        ],
+        "validation_ids": [
+          9,
+          17,
+          27
+        ]
+      },
+      {
+        "fold": 9,
+        "inner": [
+          {
+            "held_ids": [
+              11,
+              16,
+              24
+            ],
+            "train_ids": [
+              7,
+              9,
+              27,
+              5,
+              3,
+              1,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              3,
+              5
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              9,
+              27,
+              24,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              7,
+              14,
+              19
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              27,
+              5,
+              3,
+              1,
+              24,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              17,
+              27
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              5,
+              3,
+              1,
+              24,
+              14,
+              19
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          9,
+          27,
+          5,
+          3,
+          1,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          13,
+          25,
+          29
+        ]
+      },
+      {
+        "fold": 10,
+        "inner": [
+          {
+            "held_ids": [
+              1,
+              9,
+              13
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              29,
+              5,
+              3,
+              24,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              3,
+              7,
+              29
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              5,
+              13,
+              1,
+              24,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              16,
+              17,
+              24
+            ],
+            "train_ids": [
+              7,
+              11,
+              9,
+              29,
+              5,
+              13,
+              3,
+              1,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              11,
+              19
+            ],
+            "train_ids": [
+              7,
+              16,
+              9,
+              29,
+              13,
+              3,
+              1,
+              24,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          9,
+          29,
+          5,
+          13,
+          3,
+          1,
+          24,
+          19,
+          17
+        ],
+        "validation_ids": [
+          14,
+          25,
+          27
+        ]
+      },
+      {
+        "fold": 11,
+        "inner": [
+          {
+            "held_ids": [
+              3,
+              7,
+              29
+            ],
+            "train_ids": [
+              16,
+              11,
+              27,
+              5,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              16,
+              17,
+              24
+            ],
+            "train_ids": [
+              7,
+              11,
+              29,
+              27,
+              5,
+              3,
+              25,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              11,
+              19
+            ],
+            "train_ids": [
+              7,
+              16,
+              29,
+              27,
+              3,
+              25,
+              24,
+              14,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              25,
+              27
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              29,
+              5,
+              3,
+              24,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          29,
+          27,
+          5,
+          3,
+          25,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          1,
+          9,
+          13
+        ]
+      },
+      {
+        "fold": 12,
+        "inner": [
+          {
+            "held_ids": [
+              16,
+              17,
+              24
+            ],
+            "train_ids": [
+              11,
+              9,
+              27,
+              5,
+              13,
+              1,
+              25,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              11,
+              19
+            ],
+            "train_ids": [
+              16,
+              9,
+              27,
+              13,
+              1,
+              25,
+              24,
+              14,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              25,
+              27
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              5,
+              13,
+              1,
+              24,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              9,
+              13
+            ],
+            "train_ids": [
+              16,
+              11,
+              27,
+              5,
+              25,
+              24,
+              14,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          16,
+          11,
+          9,
+          27,
+          5,
+          13,
+          1,
+          25,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          3,
+          7,
+          29
+        ]
+      },
+      {
+        "fold": 13,
+        "inner": [
+          {
+            "held_ids": [
+              5,
+              11,
+              19
+            ],
+            "train_ids": [
+              7,
+              9,
+              29,
+              27,
+              13,
+              3,
+              1,
+              25,
+              14
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              25,
+              27
+            ],
+            "train_ids": [
+              7,
+              11,
+              9,
+              29,
+              5,
+              13,
+              3,
+              1,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              9,
+              13
+            ],
+            "train_ids": [
+              7,
+              11,
+              29,
+              27,
+              5,
+              3,
+              25,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              3,
+              7,
+              29
+            ],
+            "train_ids": [
+              11,
+              9,
+              27,
+              5,
+              13,
+              1,
+              25,
+              14,
+              19
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          11,
+          9,
+          29,
+          27,
+          5,
+          13,
+          3,
+          1,
+          25,
+          14,
+          19
+        ],
+        "validation_ids": [
+          16,
+          17,
+          24
+        ]
+      },
+      {
+        "fold": 14,
+        "inner": [
+          {
+            "held_ids": [
+              14,
+              25,
+              27
+            ],
+            "train_ids": [
+              7,
+              16,
+              9,
+              29,
+              13,
+              3,
+              1,
+              24,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              9,
+              13
+            ],
+            "train_ids": [
+              7,
+              16,
+              29,
+              27,
+              3,
+              25,
+              24,
+              14,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              3,
+              7,
+              29
+            ],
+            "train_ids": [
+              16,
+              9,
+              27,
+              13,
+              1,
+              25,
+              24,
+              14,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              16,
+              17,
+              24
+            ],
+            "train_ids": [
+              7,
+              9,
+              29,
+              27,
+              13,
+              3,
+              1,
+              25,
+              14
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          9,
+          29,
+          27,
+          13,
+          3,
+          1,
+          25,
+          24,
+          14,
+          17
+        ],
+        "validation_ids": [
+          5,
+          11,
+          19
+        ]
+      },
+      {
+        "fold": 15,
+        "inner": [
+          {
+            "held_ids": [
+              1,
+              3,
+              7
+            ],
+            "train_ids": [
+              16,
+              11,
+              29,
+              27,
+              5,
+              13,
+              24,
+              14,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              16,
+              27
+            ],
+            "train_ids": [
+              7,
+              11,
+              29,
+              5,
+              13,
+              3,
+              1,
+              24,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              13,
+              24
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              29,
+              27,
+              3,
+              1,
+              14,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              11,
+              17,
+              29
+            ],
+            "train_ids": [
+              7,
+              16,
+              27,
+              5,
+              13,
+              3,
+              1,
+              24,
+              14
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          29,
+          27,
+          5,
+          13,
+          3,
+          1,
+          24,
+          14,
+          17
+        ],
+        "validation_ids": [
+          9,
+          19,
+          25
+        ]
+      },
+      {
+        "fold": 16,
+        "inner": [
+          {
+            "held_ids": [
+              14,
+              16,
+              27
+            ],
+            "train_ids": [
+              11,
+              9,
+              29,
+              5,
+              13,
+              25,
+              24,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              13,
+              24
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              29,
+              27,
+              25,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              11,
+              17,
+              29
+            ],
+            "train_ids": [
+              16,
+              9,
+              27,
+              5,
+              13,
+              25,
+              24,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              19,
+              25
+            ],
+            "train_ids": [
+              16,
+              11,
+              29,
+              27,
+              5,
+              13,
+              24,
+              14,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          16,
+          11,
+          9,
+          29,
+          27,
+          5,
+          13,
+          25,
+          24,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          1,
+          3,
+          7
+        ]
+      },
+      {
+        "fold": 17,
+        "inner": [
+          {
+            "held_ids": [
+              5,
+              13,
+              24
+            ],
+            "train_ids": [
+              7,
+              11,
+              9,
+              29,
+              3,
+              1,
+              25,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              11,
+              17,
+              29
+            ],
+            "train_ids": [
+              7,
+              9,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              19,
+              25
+            ],
+            "train_ids": [
+              7,
+              11,
+              29,
+              5,
+              13,
+              3,
+              1,
+              24,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              3,
+              7
+            ],
+            "train_ids": [
+              11,
+              9,
+              29,
+              5,
+              13,
+              25,
+              24,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          11,
+          9,
+          29,
+          5,
+          13,
+          3,
+          1,
+          25,
+          24,
+          19,
+          17
+        ],
+        "validation_ids": [
+          14,
+          16,
+          27
+        ]
+      },
+      {
+        "fold": 18,
+        "inner": [
+          {
+            "held_ids": [
+              11,
+              17,
+              29
+            ],
+            "train_ids": [
+              7,
+              16,
+              9,
+              27,
+              3,
+              1,
+              25,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              9,
+              19,
+              25
+            ],
+            "train_ids": [
+              7,
+              16,
+              11,
+              29,
+              27,
+              3,
+              1,
+              14,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              3,
+              7
+            ],
+            "train_ids": [
+              16,
+              11,
+              9,
+              29,
+              27,
+              25,
+              14,
+              19,
+              17
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              16,
+              27
+            ],
+            "train_ids": [
+              7,
+              11,
+              9,
+              29,
+              3,
+              1,
+              25,
+              19,
+              17
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          11,
+          9,
+          29,
+          27,
+          3,
+          1,
+          25,
+          14,
+          19,
+          17
+        ],
+        "validation_ids": [
+          5,
+          13,
+          24
+        ]
+      },
+      {
+        "fold": 19,
+        "inner": [
+          {
+            "held_ids": [
+              9,
+              19,
+              25
+            ],
+            "train_ids": [
+              7,
+              16,
+              27,
+              5,
+              13,
+              3,
+              1,
+              24,
+              14
+            ]
+          },
+          {
+            "held_ids": [
+              1,
+              3,
+              7
+            ],
+            "train_ids": [
+              16,
+              9,
+              27,
+              5,
+              13,
+              25,
+              24,
+              14,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              14,
+              16,
+              27
+            ],
+            "train_ids": [
+              7,
+              9,
+              5,
+              13,
+              3,
+              1,
+              25,
+              24,
+              19
+            ]
+          },
+          {
+            "held_ids": [
+              5,
+              13,
+              24
+            ],
+            "train_ids": [
+              7,
+              16,
+              9,
+              27,
+              3,
+              1,
+              25,
+              14,
+              19
+            ]
+          }
+        ],
+        "refit_ids": [
+          7,
+          16,
+          9,
+          27,
+          5,
+          13,
+          3,
+          1,
+          25,
+          24,
+          14,
+          19
+        ],
+        "validation_ids": [
+          11,
+          17,
+          29
+        ]
+      }
+    ],
+    "geometry_contexts": {
+      "clean_dev": 1,
+      "outer_validation": 140,
+      "total": 541,
+      "training_views": 400
+    },
+    "geometry_guards": {
+      "eigengap_ratio_strictly_above": 1e-06,
+      "frozen_before_dev": true,
+      "gravity_ratio_strictly_above": 1e-06,
+      "horizontal_energy_ratio_strictly_above": 1e-12
+    },
+    "inspected_evidence_head": "1c861bfc2104b204c7262d931d8cffa19cc6e676",
+    "interpretation": "mathematical adaptation, not paper reproduction; exploratory dependent DEV folds adapting to inspected stress, not independent confirmation or deployment; augmentation need not preserve labels; prior nominated canonical is not a deployment adapter; no population FAR guarantee",
+    "invalid_train_scale": "record own nine/twelve TRAIN IDs, raw diagnostic RMS and failed triads; materialize independent clean/rotation/gain contexts; retain undefined TRAIN/validation noise contexts as blocked_by_invalid_train_scale with original keys/source hash, false validity, NaN geometry and no transformed-window hash; persist development.json before abort",
+    "original_calibration_and_test": "never opened",
+    "origins": {
+      "canonical_representation_geometry": "scripts/canonical_orientation_study.py",
+      "folds_graphs": "scripts/crossfit_threshold_study.py",
+      "metric": "models/nuisance_metric.py",
+      "scoring_stress": "scripts/covariance_robustness_study.py",
+      "selection": "engine/robustness_selection.py",
+      "source_coverage_runtime": "scripts/claimant_normalization_study.py"
+    },
+    "paper_basis": [
+      "https://www.isca-archive.org/interspeech_2006/hatch06_interspeech.pdf",
+      "https://arxiv.org/html/1706.00527v2"
+    ],
+    "payload_allowlist": [
+      7,
+      16,
+      11,
+      9,
+      29,
+      27,
+      5,
+      13,
+      3,
+      1,
+      25,
+      24,
+      14,
+      19,
+      17
+    ],
+    "prior_dev_inspection": true,
+    "prior_stress_inspection": true,
+    "prior_test_inspection": true,
+    "protocol": "santos_dev_canonical362_nuisance_covariance_v1",
+    "replay": "no fits; source/runtime guards before archive; all diagnostics lossless; deterministic TRAIN algebra and C+V eigensystem/floor/projection;440 score replays atol=rtol=1e-6 with exact metadata, decisions, cached ranking/counts, pool thresholds and selection",
+    "scorer": "raw mean_multi, equal mean/two-medoid enrollment blend",
+    "selection": {
+      "clean": "mean FAR<=baseline and<=1%; bad folds<=baseline; FRR<=baseline; pooled rejects<=baseline; >=10/15 person means no worse; no person >1 additional reject or new all-reject; mean exact EER<=baseline",
+      "implementation": "engine.robustness_selection.summarize_nuisance_study (sole authority)",
+      "objective": "mean FRR across gain09,gain11,noise01 improves>=.05; none of these conditions worse; >=10/15 person mean stress no worse; max person regression<=.05",
+      "safety": "every condition FAR<=1%, bad folds<=baseline, each claimant false-accept count<=baseline; both rotations' decisions identical to own clean; noise05 reported, excluded from improvement objective but included in FAR gates"
+    },
+    "threshold": "policy C: four nine-TRAIN clean held-triple score sets pooled for empirical FAR<=1%; twelve-TRAIN refit with frozen cutoff",
+    "training_transform": {
+      "arithmetic": "source float32 -> float64 -> source float32 for each view",
+      "coefficient": 1,
+      "evaluation_only_metadata_reused": false,
+      "gain": [
+        0.9,
+        1.1
+      ],
+      "gain_scope": "all six raw coordinates, including acceleration DC",
+      "keys": "original subject/day/trial/start strings; no positional/reset keys",
+      "new_independent_data": false,
+      "noise_fraction": 0.01,
+      "noise_pair": "X + .01*s*Z and X - .01*s*Z independently from original float64 X before either float32 cast",
+      "noise_seed": 20261026,
+      "rng": "PCG64(int(SHA256(canonical JSON ['imu-evaluation-stress-v1',seed,['str',key]]),16))",
+      "scale": "existing training_scale(data, own TRAIN IDs); dynamic triad RMS repeated across xyz",
+      "scope": "each model's own nine/twelve TRAIN identities, both days, original rows only",
+      "version": "canonical362-train-paired-nuisance-v1",
+      "view_order": [
+        "gain09",
+        "gain11",
+        "noise_plus",
+        "noise_minus"
+      ]
+    },
+    "validation_stress": "inherited seven conditions; day2 only, enrollment bit-identical; seed20261025; own twelve-TRAIN dynamic triad RMS; frozen clean cutoff"
+  },
+  "python": "3.14.8",
+  "source_commit": "4c0b840226e55fba69058487c2baab1ad688a9da",
+  "sources": {
+    "data/imu_perturbations.py": "743ab06e59ac37283a72ca051489fcef1fb329151826c1f9837a691a53a81027",
+    "data/santos.py": "303eca6fa8d4440c7642c3370659c01769bc49e702cbb025e3a069ab28543974",
+    "docs/canonical_orientation_study.md": "ca0fb054426cda84c70a101afb8bb14bef6b000f0d5dcea246f22b759e674dc2",
+    "docs/claimant_normalization.md": "a1aeeea0122665ac90e841a06ef00a3d7713f521e3afec51fd4d6dbf8c48588e",
+    "docs/covariance_robustness_study.md": "0c989b08e65d28fccc746dc914b869337c2bf878c7c0e27ce0b25069beca8762",
+    "docs/crossfit_threshold_study.md": "32a62dd9855113c163d5d4745fdce28f7cf58f31e168135b4669643bf2643eff",
+    "docs/gait_canonical.md": "3901a61cfead6d404d3b74bda53a2bfe6961a987c52d6a03ef5697e8e9c547bf",
+    "docs/imu_perturbations.md": "c745b2dd3b9b82d06cf8076413543522cc7c96ed7250b5cd9649e2ce5021d79f",
+    "docs/lag_covariance.md": "4b801d709c323b9786aeb6e7e5e2d6465a1a0f1fb1ab41e5b7994d6ed08ddb3e",
+    "docs/mentor_backend_study.md": "cf0a167d561f75e7dd952cd415b53e60dc9aff038da9b3723339d4a598c8b63a",
+    "docs/nuisance_covariance_study.md": "b79be6b6b3645873431b9264d6389dc523e5f4f858157883fa0781d8cd74f77a",
+    "docs/nuisance_metric.md": "6292fd88ddf7524dadb62a138b45f4ee2130a39bee4f6e501a5f7de699d24fc7",
+    "docs/robustness_selection.md": "9d1baad4c4f6a8e71bf1578482459eab618bb8b6159b6c128c927a97ed3814c5",
+    "docs/tail_calibration.md": "ca63bead8a535a48a28dbc76ed6167298dced70f1f9eb891ede5b0b7b0dbe5df",
+    "engine/calibration_selection.py": "d3714e5dfd72ed5d71569ee1e4fa080e7e5e0a6cd4c58f93f43a03fe0817e116",
+    "engine/claimant_normalization.py": "ce8321d44967fc3e77ac11bb4a60cbb14f87d8981388738249beb1cdc473e0ad",
+    "engine/cohort_normalization.py": "8472ee81ac89ffcc9d96064604c9e8e736afe0e054f6eab7e556236f80f01484",
+    "engine/robustness_selection.py": "8dad4116c7372e0f822511f82e61e35cca450ae25261ef1d6b0715c5e567cc0d",
+    "engine/secure_enrollment.py": "b2e1cb912e14796dbeca1b4ddc613c60c7705b00767e6a5e7c2e84adc7b06de2",
+    "engine/tail_calibration.py": "48eb0df4ec56fe8e580c9cd9a27584ced49e68d8d938da0bf7a56a408f1c025b",
+    "engine/template_scoring.py": "920cf6533b3571966145af0b9f5ea3dcd52070454ff3dee7994c26e0b2fa89db",
+    "models/gait_canonical.py": "2b0f80a336f466e9ce2ff4afef2f2ceec788e146f24bce3fe8f41b1fa3c33fd7",
+    "models/gait_features.py": "219e107f516fe2a72aceb7071962f33bdb21faf65f624fc39e93b39e549cd572",
+    "models/gait_invariants.py": "af80475c65189b550b666e91f751caf64fe5fba2716c4af498489e1fae04c79f",
+    "models/gait_metric.py": "966f2c19aa80f1c64b0686806b800211432c8b09b9204234b5c6db8fefd37cd5",
+    "models/lag_covariance.py": "19a9db37e6173124b229889263f1210f6eccad3fab050ea3cf887f4159fc7088",
+    "models/nuisance_metric.py": "a86aa8b4c3f7d55e7306ec38959c03a6e6c61199cd5114503ee0707a55a7b459",
+    "models/session_robust.py": "c7472a18c236bd9288ec0fb3bd62c9fd91d07dbdedd58f69b13d1967690cdb4a",
+    "scripts/canonical_orientation_study.py": "9bea155ac589ab3b6f94910ba4429f7ae65284dd2478e8b78a3b9e31ec64e164",
+    "scripts/claimant_normalization_study.py": "50a9fb52d6c38c7cd5edb5a8b405e2af81019245cb986c1862c6a41f12bd767b",
+    "scripts/covariance_robustness_study.py": "840a17e4dc2eabb3d900f6c4939be6597165e504d6fa4f19165814e0dd8873aa",
+    "scripts/cross_day_verification.py": "e8f50a8f2b7be385fbf1c0671e8bc23f97ce68b3b6b03c8c54ee288a16eb5386",
+    "scripts/crossfit_threshold_study.py": "e71bc89d4253b94f59bf292800ec8f46b3161161e01ad86eb2eb402048d9bc2c",
+    "scripts/mentor_backend_study.py": "bd90879eb72ce405b972baa58ed97e46e22a1e2eabcbc3f9a4ec9f2edb4ddcf8",
+    "scripts/multisensor_study.py": "50d071749c10f2ab9ce1804842cae7c1cd5c31c01bfbf54b362c4c410456ffd8",
+    "scripts/nuisance_covariance_study.py": "7d42589d9c4e70199dcdfe1bf4cb96b5fb87a7395bf19ff46a33b3f392dc6891",
+    "scripts/secure_operating_study.py": "0346e14edfc2083fbf9ddd5f18cba61b618b9ecad25a53bd7ea85175df6713f6",
+    "tests/test_calibration_selection.py": "91ee436614a0dc781bb979aa6d629632d54a93e41faeb6420b7c8e3ea8a0f4d7",
+    "tests/test_canonical_orientation_study.py": "cb7f8a5d6d11eabf2a62112bc149e3aa2af5a235c1e8232cb085296a7fb26500",
+    "tests/test_claimant_normalization.py": "82da29d5f3fe4fc0a9ca74cbbee92364a54d59a050e40810011f24e1450cd57e",
+    "tests/test_claimant_normalization_study.py": "651056cb596840c674217c920badc3fb4c7460374d9254b50843544e5ef8559c",
+    "tests/test_covariance_robustness_study.py": "93a575ed79e99f30df1e5bb4e58dc44a45c2976fac02c82b58f8ae3ac53c02cf",
+    "tests/test_crossfit_threshold_study.py": "507236f2435d664a125e904b9dd996c0f90f4558a841e053f4570e36074eb546",
+    "tests/test_gait_canonical.py": "95d633dbf5c0b8889cea769f9f21f98bde3686b6bf5094e67266cad4448393c4",
+    "tests/test_imu_perturbations.py": "aa29812594f1a655c6e0b28b643fd290195b1674b672a5d895d55b6ebf90b61f",
+    "tests/test_lag_covariance.py": "91253929f7a70a41287703b21c76cb02032f22ac2d2959d085d71bd02e85ee3e",
+    "tests/test_nuisance_covariance_study.py": "4e62ce487758b7b07a7f98ab4bd345a3b1f325577cef2288e58264935a32223f",
+    "tests/test_nuisance_metric.py": "a02534efeb0f6d48bc956d752d971fd0b09a7ce0722eb8c90262b1ce691ae049",
+    "tests/test_robustness_selection.py": "bab2c47a5acea23c1a7e041c0673c7435eb108026f7ae64c8aab37a8b7cea1a9",
+    "tests/test_tail_calibration.py": "4080f738a5b5190c65df5832fa180b64f3c19557311e76f5c16e6c425ba00d7f"
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

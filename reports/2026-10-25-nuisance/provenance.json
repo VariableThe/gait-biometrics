@@ -1,0 +1,11 @@
+{
+  "fits": 200,
+  "full_numeric_artifacts": 1201,
+  "full_states": "Original local artifacts/nuisance-covariance-v1; 200 model/diagnostic states and 541 geometry arrays are not copied into Git. Full strict replay requires that archive or registered reproduction.",
+  "geometry_contexts": 541,
+  "origin": "https://github.com/VariableThe/gait-biometrics",
+  "original_calib_test_loaded": false,
+  "public_artifacts": 460,
+  "score_sets": 440,
+  "source_commit": "4c0b840226e55fba69058487c2baab1ad688a9da"
+}

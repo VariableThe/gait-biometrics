@@ -1,0 +1,23 @@
+	Command being timed: "env OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 CUDA_VISIBLE_DEVICES= PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python ../.venv/bin/python python -B -m scripts.nuisance_covariance_study --stage verify --archive-path ../datasets/santos/santos-v7.zip --out-root ../artifacts/nuisance-covariance-v1"
+	User time (seconds): 328.59
+	System time (seconds): 0.37
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:32.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 327216
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 97509
+	Voluntary context switches: 30
+	Involuntary context switches: 4136
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 200
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
