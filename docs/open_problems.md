@@ -68,6 +68,8 @@ graph. No cycle DEV fit or authentication threshold change is implied.
 
 The [joint-repeat comparison](../reports/2026-10-25-joint-repeat/README.md) resolves the stipulated synthetic half-period lag using gyro evidence, with missing boundaries and noise-only finite outputs retained. All 8,640 records and complete numeric arrays replay. This does not change the authentication nominee. A separately specified N446 linear, endpoint-exclusive waveform addendum is being prepared; it must pass its own synthetic gates before a DEV registration can be prepared. Matched support, source-row perturbations and complete failed-claim denominators remain required.
 
+The [N446 waveform addendum](../reports/2026-10-25-native-waveform/README.md) is now **stopped**: four of 960 required nondegenerate fixtures have no admissible pair despite correct lag selection. Its fixed all-960 gate fails; no duration adjustment, fallback, longer window or repaired rerun is allowed under this registration. Both portable numeric replays retain STOP. The next separately proposed comparison uses the unchanged canonical descriptor and source-matched support without repeat segmentation; it is preparation only.
+
 ## Limits that software cannot remove
 
 The anonymous legacy WISDM CSVs have no identity mapping; the authentic v1 loader

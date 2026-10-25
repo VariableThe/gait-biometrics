@@ -1,0 +1,17 @@
+{
+  "completion_anchors_unchanged": {
+    "artifact_index.json": "de67865dd49bc63105d37e4677e66c3bdd58ae938675b91508839a900836282d",
+    "freeze.json": "ff133f674597377062eaafdfba9cc25e150f2c3ff4ef7f8ca9918b1c6dad772d",
+    "gates.json": "31875ebf32a1d422f13657fea439900d4a197e3f4df89d0e856b627d840f240d",
+    "report.json": "0281ba2b18504ad23be3cf09bcbec03321d1c59325029906c248de8036028dfc",
+    "sources.json": "3ea528c0a691771793140b963dd29b44546e0e7324abebafa3b9e7bcedab0ad0"
+  },
+  "external_verification_timing": "not instrumented; no performance claim",
+  "status": "saved_full_replay_passed_with_registered_gate_failure",
+  "verification_log_sha256": "6954eb07525b6f2ca50f970fa7b3c61968b035315839c12908f674b08db19ffb",
+  "verified_result": {
+    "all_gates_pass": false,
+    "native_feasibility_claim": false,
+    "status": "verified"
+  }
+}

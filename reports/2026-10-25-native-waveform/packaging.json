@@ -1,0 +1,9 @@
+{
+  "cpu_seconds": 13.157692121,
+  "exact_npz_npy_member_bytes": true,
+  "npz_bytes": 86655858,
+  "npz_sha256": "5780711ad5d9f59051883dc87bf24f680150d8a95600ec4fee87599d3a373abd",
+  "wall_seconds": 13.30206855700817,
+  "xz_bytes": 15194716,
+  "xz_sha256": "1f4d6750a600d7a7952f253a621b52208d157cbea5f88d489a8b31c24e9df9ee"
+}

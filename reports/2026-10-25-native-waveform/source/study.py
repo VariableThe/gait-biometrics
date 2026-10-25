@@ -1,0 +1,136 @@
+#!/usr/bin/env python3
+"""Prepare/freeze/ONE execute/saved-evidence verify. Implementer runs preparation only."""
+
+# Stage-FIRST grammar is checked using only the built-in sys module. Keep in sync with run.sh.
+import sys
+
+if __name__ == "__main__":
+    _argv = sys.argv[1:]
+    if _argv in (["-h"], ["--help"]):
+        print(
+            "usage: study.py {prepare|check-preparation|freeze|execute|selftest|verify [--replay-correlations]}"
+        )
+        raise SystemExit(0)
+    if not (
+        (
+            len(_argv) == 1
+            and _argv[0]
+            in (
+                "prepare",
+                "check-preparation",
+                "freeze",
+                "execute",
+                "selftest",
+                "verify",
+            )
+        )
+        or _argv == ["verify", "--replay-correlations"]
+    ):
+        sys.stderr.write(
+            "stage must come first; --replay-correlations is accepted only after verify\n"
+        )
+        raise SystemExit(2)
+
+
+# Guard helpers use only sys and builtin file operations; no stdlib/local imports.
+def _process_identity(pid):
+    with open("/proc/" + str(pid) + "/stat") as handle:
+        stat = handle.read(8192)
+    head, tail = stat.rsplit(") ", 1)
+    fields = tail.split()
+    return int(head.split(" ", 1)[0]), int(fields[1]), fields[19], fields[0]
+
+
+def _attempt_text(route, pid, starttime):
+    return (
+        '{"automatic_retry":false,"cpu_budget_seconds":600,"launcher_pid":'
+        + str(pid)
+        + ',"launcher_starttime_ticks":"'
+        + starttime
+        + '","route":"'
+        + route
+        + '","schema":2,"status":"exclusive_attempt_consumed","wall_budget_seconds":900}\n'
+    )
+
+
+def _live_ancestor(pid, starttime, worker):
+    cursor, seen = worker[1], {worker[0]}
+    for _ in range(128):
+        if cursor <= 0 or cursor in seen:
+            break
+        seen.add(cursor)
+        current = _process_identity(cursor)
+        if current[3] in ("Z", "X", "x"):
+            break
+        if current[0] == pid:
+            if current[2] == starttime:
+                return
+            break
+        cursor = current[1]
+    raise RuntimeError(
+        "Shell reservation requires the same live launcher ancestor/starttime"
+    )
+
+
+# Valid execute reserves and consumes ONE worker before ANY further Python imports.
+_STAGE = sys.argv[1] if __name__ == "__main__" and len(sys.argv) > 1 else ""
+if _STAGE == "execute":
+    _reservation_root = __file__.rsplit("/", 1)[0] if "/" in __file__ else "."
+    _shell_token = sys._xoptions.get("joint_run_reserved")
+    _marker_path = _reservation_root + "/attempt.started.json"
+    if _shell_token is None:
+        with open(_marker_path, "x") as _attempt:
+            _worker = _process_identity("self")
+            _expected_marker = _attempt_text("direct", _worker[0], _worker[2])
+            _attempt.write(_expected_marker)
+    else:
+        # Shell handoff is explicit interpreter state, never inferred from a freely set env var.
+        _parts = _shell_token.split(":") if type(_shell_token) is str else []
+        if len(_parts) != 2 or not all(
+            p.isascii() and p.isdecimal() and p[0] != "0" for p in _parts
+        ):
+            raise RuntimeError("Invalid shell reservation token")
+        _launcher_pid, _launcher_start = int(_parts[0]), _parts[1]
+        _expected_marker = _attempt_text("shell", _launcher_pid, _launcher_start)
+        with open(_marker_path) as _attempt:
+            if _attempt.read() != _expected_marker:
+                raise RuntimeError("Shell reservation marker missing or mismatched")
+        _worker = _process_identity("self")
+        _live_ancestor(_launcher_pid, _launcher_start, _worker)
+    with open(_reservation_root + "/worker.started.json", "x") as _receipt:
+        _receipt.write(
+            '{"attempt":'
+            + _expected_marker.strip()
+            + ',"schema":1,"status":"exclusive_worker_started","worker_pid":'
+            + str(_worker[0])
+            + ',"worker_starttime_ticks":"'
+            + _worker[2]
+            + '"}\n'
+        )
+    if _shell_token is not None:
+        _live_ancestor(_launcher_pid, _launcher_start, _worker)
+
+import json
+import os
+import time
+from pathlib import Path
+
+_ROOT = Path(__file__).resolve().parent
+if _STAGE == "execute":
+    if _ROOT != Path(_reservation_root).resolve():
+        raise RuntimeError("Execute via a source symlink is unsupported")
+    # Bound scientific import/startup too. Default signals terminate and preserve the reservation.
+    import resource
+    import signal
+
+    resource.setrlimit(resource.RLIMIT_CPU, (599, 600))
+    _launch_elapsed = max(
+        0.0, time.time() - float(os.environ.get("JOINT_RUN_LAUNCH_EPOCH", time.time()))
+    )
+    signal.setitimer(signal.ITIMER_REAL, max(0.001, 900 - _launch_elapsed))
+
+
+from driver import main
+
+if __name__ == "__main__":
+    main(_STAGE)
