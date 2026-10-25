@@ -1,0 +1,2416 @@
+{
+  "coverage": {
+    "columns": 362,
+    "conditions": [
+      "clean",
+      "gain09",
+      "gain11",
+      "noise01",
+      "noise05"
+    ],
+    "disjoint_feature_block_columns": {
+      "axis_amplitude": 88,
+      "axis_lag_correlation": 48,
+      "axis_spectrum": 72,
+      "invariant_amplitude": 62,
+      "invariant_centered_lag_correlation": 12,
+      "invariant_covariance_fractions": 6,
+      "invariant_lag_cosine": 12,
+      "invariant_spectra": 36,
+      "lag_log_eigenvalues": 24,
+      "lag_log_trace": 2
+    },
+    "dropped_or_imputed": 0,
+    "expected_rows": 10,
+    "input_rows_per_condition": 2,
+    "returned_rows": 10,
+    "valid_rows": 10
+  },
+  "evidence_head": "1c861bfc2104b204c7262d931d8cffa19cc6e676",
+  "failed_or_unsupported_hypotheses": [
+    "Pure shared positive gain rotates an otherwise identifiable PCA frame: contradicted mathematically and checked numerically here; gain changes amplitude/log-energy features instead.",
+    "Every valid canonical row has well-conditioned lag covariance: contradicted by valid rank-2 lag-stack fixtures. Frame guards check gravity/horizontal geometry, not lag-spectrum rank or spectral stability.",
+    "The newer .2-shrunk matrix logarithm is the canonical362 lag block: false by source composition. It cannot explain canonical362 errors.",
+    "All noise sensitivity must be frame instability or eigenvalue logs: unsupported; held-frame and full-rank measurements are recorded and axis spectra/differences have separate sensitivity mechanisms.",
+    "A large scalar WCCN gain necessarily changes cosine scores: false; isotropic scaling cancels in L2 normalization. Actual directional amplification cannot be determined without the frozen metric state and DEV perturbation vectors."
+  ],
+  "fixture_spec": {
+    "analytic_dynamic_rms_native_per_triad": [
+      0.6999523793325753,
+      9.414439264590678
+    ],
+    "definition": "fixed trigonometric expressions in fixtures(); never changed based on output",
+    "dynamic_rms_native_per_triad": [
+      0.6999523793325753,
+      9.414439264590678
+    ],
+    "fundamental_hz": 1.5625,
+    "native_units": [
+      "m/s^2",
+      "degrees/sec"
+    ],
+    "reference": "clean full-rank synthetic window, fixed across rows and noise levels; not actual TRAIN",
+    "samples": 256,
+    "sampling_rate_hz": 100
+  },
+  "frozen_source_commit": "108a559bc1a83355dc85335e9f640786846f894a",
+  "future_registered_DEV_only_diagnostics": [
+    {
+      "diagnostic": "Register a diagnostic-only paired replay with the existing frozen clean metric/threshold/enrollment: record delta f, (delta f/s)P, embedding norms and genuine-score shifts for amplitude, log-trace, and remaining blocks, separately and jointly. Keep every row/claim; compare to the analytic gain prediction; do not refit or promote a new candidate.",
+      "falsifier": "Gain mainly changes invariant shape columns, frames, or score shifts persist after diagnostic restoration of both amplitude and log-trace blocks to clean values (within numerical tolerances).",
+      "hypothesis": "Gain errors are mediated by amplitude/log-trace changes under a frozen metric, rather than PCA reorientation."
+    },
+    {
+      "diagnostic": "Before a future DEV-only run, register paired floor-crossing counts, spectral powers, canonical eigengaps and frame motion; raw versus standardized/projected block deltas; clean-metric block-restoration diagnostics for lag26, axis spectra/differences and remaining blocks. Preserve all rows and fixed scoring/thresholds; count abstentions explicitly; no stress-based selection or fitting.",
+      "falsifier": "Little real-DEV floor crossing/weak-spectrum activation occurs, those deltas project weakly, or restoring those blocks fails to recover genuine-score shifts. Large held-frame versus reestimated-frame differences would redirect attribution toward geometry.",
+      "hypothesis": "Noise score loss is partly mediated by low lag modes crossing the log floor and/or previously weak channel spectra, with learned metric amplification."
+    }
+  ],
+  "interpretation": "The user-supplied clean/gain/noise FAR/FRR values are reused-DEV observations, not causally explained by this source/synthetic probe. No raw archive/dataset, NPZ/large numerical artifacts, original CALIB/TEST data or results were opened. No real-data or synthetic metric fitting, dependencies, Git changes, production edits, or new biometric candidate.",
+  "invocation": "cd /home/sherlock/Code/github/VariableThe/gait-biometrics && OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 BLIS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 CUDA_VISIBLE_DEVICES='' PYTHONDONTWRITEBYTECODE=1 UV_OFFLINE=1 uv run --no-project --python ../.venv/bin/python python -B ../artifacts/noise-gain-diagnostic-r1/diagnose.py",
+  "mathematical_identities": [
+    "For positive shared gain g, frame pair B(gX)=B(X) and all three validity ratios are unchanged, up to roundoff; the internal numerical rescaling is undone for amplitudes.",
+    "Above inherited energy cutoffs, f(gX) has 150 amplitude coordinates multiplied by g, 210 shape/lag-eigenspectrum coordinates unchanged, and 2 log-trace coordinates shifted by 2 ln(g). Thus canonical362 is mathematically NOT gain invariant.",
+    "Lag26: G=Zc Zc^T/235, q_i=lambda_i(G/max(tr G,1e-8)), h_i=ln max(q_i,1e-8); append ln max(tr G,1e-8), separately per native triad. Positive gain cancels in q_i only above the trace floor. A floored q_i is flat until it crosses 1e-8, then dh/dq=1/q.",
+    "For independent time/axis white noise, E[G(X+noise)]=G(X)+sigma^2 K. K has diagonal 1; entries for different axes are zero; same-axis distinct lags separated by d have K_ij=-(L-d)/(L(L-1)) for d<L, L=236. Thus K=I+O(1/L). Approximate q_i'=(lambda_i+sigma^2)/(tr G+12 sigma^2) neglects overlapping-mean corrections. Finite-draw signal/noise cross terms remain.",
+    "If sigma=p*r for this same window and r^2=mean_axis_time(centered triad^2), then tr G approximately 12r^2 and a null q_i rises to about p^2/[12(1+p^2)]: 8.33e-6 at 1%, 2.08e-4 at 5%. This is not an actual TRAIN/probe scale estimate.",
+    "First differences of independent white noise have variance 2 sigma^2 per axis. A full-cycle sinusoid x=A sin(omega t) has Var(diff x)=2 A^2 sin^2(omega/2)=4 sin^2(omega/2) Var(x), ignoring the one-sample endpoint imbalance. Slow clean motion can make differences disproportionately noise sensitive.",
+    "For a zero centered channel, normalized spectral features are zero; arbitrarily small nonzero noise above total-power cutoff has a unit-sum random spectrum. Spectrum normalization can expose noise without a large absolute signal change. Entropy log guards alone do not establish amplification.",
+    "New full/log covariance extractor is NOT canonical362: S=.8 G/max(tr G,1e-8)+(.2/12)I; its eigenvalues are >=1/60, limiting log derivative to 60 with respect to S eigenvalues; it still appends the gain-sensitive log trace.",
+    "Fixed WCCN: z=((f-mu)/s)P, s_j=max(TRAIN std_j,1e-6), P=Q diag(max(lambda_i,max(1e-5 lambda_max,1e-6))^(-1/2))Q^T, e=z/||z||. delta z=(delta f/s)P; first-order delta e=delta z(I-e^T e)/||z||. Actual directional gain depends on s,P,z and perturbation alignment, not dimension count alone."
+  ],
+  "minimal_numeric_checks": {
+    "illustrative_metric": {
+      "amplitude_plus_shape_gain_cosine": 0.9993148337667671,
+      "clean": [
+        1.0,
+        0.0
+      ],
+      "cosine_fixed_projection": 0.7071067811865475,
+      "cosine_identity": 0.9999500037496877,
+      "cosine_isotropic_times100": 0.9999500037496876,
+      "label": "illustrative fixed manual 2D projection ONLY; no WCCN fit or saved metric loaded",
+      "perturbed": [
+        1.0,
+        0.01
+      ],
+      "projection_diagonal": [
+        1,
+        100
+      ]
+    },
+    "independent_lag_max_abs_error": 4.5972999274113135e-07,
+    "log_floor": -18.420680743952367,
+    "log_trace_gain09": -0.21072103131565256,
+    "log_trace_gain11": 0.19062035960864987,
+    "null_mode_1pct_expected_log_shift": 6.72533372718785,
+    "null_mode_5pct_expected_log_shift": 9.941812666857798
+  },
+  "raw_delta_ranking_limit": "Raw block L2 is descriptive and mixes native amplitudes, log coordinates, dimensionless quantities and Hz; neither WCCN-scaled importance nor causal attribution. RMS per coordinate is also reported. Held clean frames are an internal no-fit attribution diagnostic only.",
+  "regularized_covariance_comparison_only": {
+    "False": {
+      "gain09": {
+        "log_trace_shifts": [
+          [
+            -0.21072103131565223,
+            -0.21072103131565267
+          ],
+          [
+            -0.21072103131565267,
+            -0.21072103131565267
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          1.7997962819752633e-16,
+          2.8196163778458453e-16
+        ]
+      },
+      "gain11": {
+        "log_trace_shifts": [
+          [
+            0.19062035960865087,
+            0.19062035960864954
+          ],
+          [
+            0.19062035960865042,
+            0.19062035960865042
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          2.1058400770664096e-16,
+          2.067888275885201e-16
+        ]
+      },
+      "noise01": {
+        "log_trace_shifts": [
+          [
+            0.0003091510865598224,
+            0.00042194364771042103
+          ],
+          [
+            -0.00060611052125914,
+            -0.002094853155744758
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          0.0012731640901339322,
+          0.0011410297605405255
+        ]
+      },
+      "noise05": {
+        "log_trace_shifts": [
+          [
+            0.0036509118035681354,
+            0.003991564356720545
+          ],
+          [
+            -0.0006279776508999468,
+            -0.00765680871062191
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          0.006422525523515075,
+          0.006190041167346219
+        ]
+      },
+      "reference_max_abs_error": 4.440892098500626e-16,
+      "shape": [
+        2,
+        158
+      ]
+    },
+    "True": {
+      "gain09": {
+        "log_trace_shifts": [
+          [
+            -0.21072103131565223,
+            -0.21072103131565267
+          ],
+          [
+            -0.21072103131565267,
+            -0.21072103131565267
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          2.4627512247592093e-14,
+          2.178127424784878e-14
+        ]
+      },
+      "gain11": {
+        "log_trace_shifts": [
+          [
+            0.19062035960865087,
+            0.19062035960864954
+          ],
+          [
+            0.19062035960865042,
+            0.19062035960865042
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          2.8550156955898793e-14,
+          2.4435134571143768e-14
+        ]
+      },
+      "noise01": {
+        "log_trace_shifts": [
+          [
+            0.0003091510865598224,
+            0.00042194364771042103
+          ],
+          [
+            -0.00060611052125914,
+            -0.002094853155744758
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          0.014699473823236015,
+          0.009113303421327563
+        ]
+      },
+      "noise05": {
+        "log_trace_shifts": [
+          [
+            0.0036509118035681354,
+            0.003991564356720545
+          ],
+          [
+            -0.0006279776508999468,
+            -0.00765680871062191
+          ]
+        ],
+        "matrix_only_l2_per_row": [
+          0.07507489724508445,
+          0.07392662532710449
+        ]
+      },
+      "reference_max_abs_error": 8.317678878445139e-15,
+      "shape": [
+        2,
+        158
+      ]
+    }
+  },
+  "rows": [
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_amplitude",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 88,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 48,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 72,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 62,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 6,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 36,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 24,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 2,
+          "rms_per_coordinate": 0.0
+        }
+      ],
+      "canonical336_total_delta_l2": 0.0,
+      "clean_frame_held336_delta_l2": 0.0,
+      "condition": "clean",
+      "geometry": {
+        "eigengap_ratio": 0.841379497660438,
+        "frame_pair_frobenius_distance_to_clean": 0.0,
+        "gravity_ratio": 0.9924499464228332,
+        "horizontal_energy_ratio": 0.012337625706629916,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 4.241105280300417e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00015084326322883975,
+            0.0006169932551904382,
+            0.0014669718989288464,
+            0.0020673001602278594,
+            0.0022011207582681583,
+            0.0032038757029424526,
+            0.006267361250469497,
+            0.009919412426656973,
+            0.07082467651638233,
+            0.11961986251559384,
+            0.29973902423672455,
+            0.48392255801538586
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016787341277249738,
+          "svd_cov_eigen_max_abs_error": 3.3306690738754696e-16,
+          "trace": 5.820647975442238,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00030695216343859744,
+            0.0006717257515395502,
+            0.0021609958207199774,
+            0.0034314705240006773,
+            0.0036708277813688574,
+            0.0051218746260863505,
+            0.006250191763909214,
+            0.008656181587664017,
+            0.009655884845885518,
+            0.022538093502275196,
+            0.4133235556761188,
+            0.5242122459569942
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016912228397417545,
+          "svd_cov_eigen_max_abs_error": 5.551115123125783e-16,
+          "trace": 1055.451325743114,
+          "trace_floor_active": false
+        }
+      ],
+      "reestimated_vs_held_frame336_l2": 0.0,
+      "row_key": "synthetic/full_rank",
+      "spectrum": {
+        "axis_norm_below_1e_24": 0,
+        "axis_norm_total_power": [
+          12684.716517402423,
+          2012.091425477408,
+          3293.2372049668706,
+          2034439.4724795257,
+          886125.7505234767,
+          333968.1483241632,
+          2987.215523547767,
+          155943.89767415042
+        ],
+        "relative_top_two_power_gap": [
+          0.7469959428894742,
+          0.7471957181367925,
+          0.7470044081911564,
+          0.7471268981539285,
+          0.7470450937353423,
+          0.747076100676231,
+          0.7469900148624039,
+          0.5164901321217877
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 0.0,
+          "column": 0,
+          "delta": 0.0,
+          "name": "acc_fwd.mean",
+          "perturbed": 0.0
+        },
+        {
+          "clean": 1.0180186033248901,
+          "column": 1,
+          "delta": 0.0,
+          "name": "acc_fwd.std",
+          "perturbed": 1.0180186033248901
+        },
+        {
+          "clean": 1.0180186033248901,
+          "column": 2,
+          "delta": 0.0,
+          "name": "acc_fwd.rms",
+          "perturbed": 1.0180186033248901
+        },
+        {
+          "clean": -1.5717442035675049,
+          "column": 3,
+          "delta": 0.0,
+          "name": "acc_fwd.min",
+          "perturbed": -1.5717442035675049
+        },
+        {
+          "clean": 1.5717442035675049,
+          "column": 4,
+          "delta": 0.0,
+          "name": "acc_fwd.max",
+          "perturbed": 1.5717442035675049
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_amplitude",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 88,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 48,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 72,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 62,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 6,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 36,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 24,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 2,
+          "rms_per_coordinate": 0.0
+        }
+      ],
+      "canonical336_total_delta_l2": 0.0,
+      "clean_frame_held336_delta_l2": 0.0,
+      "condition": "clean",
+      "geometry": {
+        "eigengap_ratio": 1.0,
+        "frame_pair_frobenius_distance_to_clean": 0.0,
+        "gravity_ratio": 0.9936955684113581,
+        "horizontal_energy_ratio": 0.010094726380626758,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 2.558034921662511e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 10,
+          "normalized_eigenvalues": [
+            -1.6199952735121766e-16,
+            -1.0426665022478433e-16,
+            -5.628932520406802e-17,
+            -1.3233673187421378e-17,
+            -1.5064652903032812e-33,
+            0.0,
+            1.0847919567763051e-33,
+            2.7832816622366536e-17,
+            5.976266125591493e-17,
+            6.864981832560876e-17,
+            0.3989864169805425,
+            0.6010135830194573
+          ],
+          "rank": 2,
+          "regularized_matrix_min_eigenvalue": 0.016666666666666666,
+          "svd_cov_eigen_max_abs_error": 1.6199952735121766e-16,
+          "trace": 4.918944396103093,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 10,
+          "normalized_eigenvalues": [
+            -1.6911254363074128e-16,
+            -4.825824190823372e-17,
+            -3.391366645712466e-17,
+            -4.8097812169229235e-18,
+            -7.703719777548945e-33,
+            0.0,
+            6.842277657836021e-48,
+            2.563134950737168e-17,
+            8.664855733678616e-17,
+            1.4793429462430786e-16,
+            0.40601376141362333,
+            0.593986238586377
+          ],
+          "rank": 2,
+          "regularized_matrix_min_eigenvalue": 0.016666666666666666,
+          "svd_cov_eigen_max_abs_error": 2.220446049250313e-16,
+          "trace": 740.9226644400999,
+          "trace_floor_active": false
+        }
+      ],
+      "reestimated_vs_held_frame336_l2": 0.0,
+      "row_key": "synthetic/rank_deficient",
+      "spectrum": {
+        "axis_norm_below_1e_24": 2,
+        "axis_norm_total_power": [
+          11995.250268882117,
+          0.0,
+          2998.787156194411,
+          1982871.5073612018,
+          0.0,
+          299881.2567220531,
+          2998.786788018862,
+          178177.57365801858
+        ],
+        "relative_top_two_power_gap": [
+          0.7469470468034617,
+          0.0,
+          0.747141825486678,
+          0.7471418254866778,
+          0.0,
+          0.7469470468034617,
+          0.7470946938275548,
+          0.7470694476768162
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 0.0,
+          "column": 0,
+          "delta": 0.0,
+          "name": "acc_fwd.mean",
+          "perturbed": 0.0
+        },
+        {
+          "clean": 0.9899494647979736,
+          "column": 1,
+          "delta": 0.0,
+          "name": "acc_fwd.std",
+          "perturbed": 0.9899494647979736
+        },
+        {
+          "clean": 0.9899494647979736,
+          "column": 2,
+          "delta": 0.0,
+          "name": "acc_fwd.rms",
+          "perturbed": 0.9899494647979736
+        },
+        {
+          "clean": -1.399999976158142,
+          "column": 3,
+          "delta": 0.0,
+          "name": "acc_fwd.min",
+          "perturbed": -1.399999976158142
+        },
+        {
+          "clean": 1.399999976158142,
+          "column": 4,
+          "delta": 0.0,
+          "name": "acc_fwd.max",
+          "perturbed": 1.399999976158142
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_amplitude",
+          "l2": 8.714952218495911,
+          "max_abs": 2.485523223876953,
+          "n": 88,
+          "rms_per_coordinate": 0.9290170279941224
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 7.890418874743832,
+          "max_abs": 2.485523223876953,
+          "n": 62,
+          "rms_per_coordinate": 1.002084199177167
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.2980045186054916,
+          "max_abs": 0.21072101593017578,
+          "n": 2,
+          "rms_per_coordinate": 0.21072101593017578
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 48,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 72,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 6,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 36,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 24,
+          "rms_per_coordinate": 0.0
+        }
+      ],
+      "canonical336_total_delta_l2": 11.756236735859845,
+      "clean_frame_held336_delta_l2": 11.756236735859845,
+      "condition": "gain09",
+      "gain_identity_check": {
+        "actual_log_trace_shifts": [
+          -0.21072101593017578,
+          -0.21072101593017578
+        ],
+        "all362_max_abs_prediction_error": 1.3351440433240214e-06,
+        "expected_log_trace_shift": -0.21072103131565256,
+        "gain": 0.9,
+        "max_abs_amplitude_error": 1.3351440433240214e-06,
+        "max_abs_shape_delta": 0.0
+      },
+      "geometry": {
+        "eigengap_ratio": 0.841379497660438,
+        "frame_pair_frobenius_distance_to_clean": 2.23778957055597e-16,
+        "gravity_ratio": 0.9924499464228332,
+        "horizontal_energy_ratio": 0.012337625706629917,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 4.24110425001345e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00015084326322882413,
+            0.0006169932551904374,
+            0.0014669718989288516,
+            0.0020673001602276885,
+            0.0022011207582681,
+            0.0032038757029424036,
+            0.006267361250469505,
+            0.00991941242665699,
+            0.07082467651638231,
+            0.1196198625155939,
+            0.2997390242367249,
+            0.48392255801538575
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016787341277249727,
+          "svd_cov_eigen_max_abs_error": 6.106226635438361e-16,
+          "trace": 4.714724860108213,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.0003069521634385494,
+            0.0006717257515395455,
+            0.002160995820719916,
+            0.003431470524000587,
+            0.0036708277813687264,
+            0.0051218746260863176,
+            0.006250191763909197,
+            0.008656181587664097,
+            0.009655884845885573,
+            0.022538093502275133,
+            0.41332355567611845,
+            0.5242122459569938
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016912228397417507,
+          "svd_cov_eigen_max_abs_error": 4.440892098500626e-16,
+          "trace": 854.9155738519225,
+          "trace_floor_active": false
+        }
+      ],
+      "reestimated_vs_held_frame336_l2": 1.600086794917348e-16,
+      "row_key": "synthetic/full_rank",
+      "spectrum": {
+        "axis_norm_below_1e_24": 0,
+        "axis_norm_total_power": [
+          10274.620379095966,
+          1629.7940546367004,
+          2667.522136023166,
+          1647895.972708416,
+          717761.8579240165,
+          270514.2001425722,
+          2419.6445740736926,
+          126314.5571160619
+        ],
+        "relative_top_two_power_gap": [
+          0.7469959428894742,
+          0.7471957181367925,
+          0.7470044081911563,
+          0.7471268981539284,
+          0.7470450937353426,
+          0.7470761006762312,
+          0.7469900148624039,
+          0.5164901321217875
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 24.855234146118164,
+          "column": 186,
+          "delta": -2.485523223876953,
+          "name": "gyro_norm.max",
+          "perturbed": 22.36971092224121
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 276,
+          "delta": -2.485523223876953,
+          "name": "group1[3,4,5].norm.max",
+          "perturbed": 22.36971092224121
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 286,
+          "delta": -2.485523223876953,
+          "name": "group1[3,4,5].centered_norm.max",
+          "perturbed": 22.36971092224121
+        },
+        {
+          "clean": 21.420520782470703,
+          "column": 191,
+          "delta": -2.1420516967773438,
+          "name": "gyro_norm.q90",
+          "perturbed": 19.27846908569336
+        },
+        {
+          "clean": 21.420520782470703,
+          "column": 281,
+          "delta": -2.1420516967773438,
+          "name": "group1[3,4,5].norm.q90",
+          "perturbed": 19.27846908569336
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_amplitude",
+          "l2": 7.490790381731178,
+          "max_abs": 1.7999992370605469,
+          "n": 88,
+          "rms_per_coordinate": 0.7985209377274018
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 6.599964110556193,
+          "max_abs": 1.7999992370605469,
+          "n": 62,
+          "rms_per_coordinate": 0.8381962802373358
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.2980045186054916,
+          "max_abs": 0.21072101593017578,
+          "n": 2,
+          "rms_per_coordinate": 0.21072101593017578
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 48,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 72,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 6,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 36,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 24,
+          "rms_per_coordinate": 0.0
+        }
+      ],
+      "canonical336_total_delta_l2": 9.983559826217606,
+      "clean_frame_held336_delta_l2": 9.983559826217606,
+      "condition": "gain09",
+      "gain_identity_check": {
+        "actual_log_trace_shifts": [
+          -0.21072101593017578,
+          -0.21072101593017578
+        ],
+        "all362_max_abs_prediction_error": 7.629394538355427e-07,
+        "expected_log_trace_shift": -0.21072103131565256,
+        "gain": 0.9,
+        "max_abs_amplitude_error": 7.629394538355427e-07,
+        "max_abs_shape_delta": 0.0
+      },
+      "geometry": {
+        "eigengap_ratio": 1.0,
+        "frame_pair_frobenius_distance_to_clean": 6.824201671032929e-19,
+        "gravity_ratio": 0.9936955684113581,
+        "horizontal_energy_ratio": 0.010094726380626758,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 2.558034921662511e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 10,
+          "normalized_eigenvalues": [
+            -1.4949876593672077e-16,
+            -5.387992833148978e-17,
+            -2.1236253548457638e-17,
+            -3.271004005662603e-33,
+            0.0,
+            7.038604459370114e-33,
+            3.127451595911044e-17,
+            5.938813584788878e-17,
+            1.1854292916793404e-16,
+            2.658600686858817e-16,
+            0.3989864169805424,
+            0.6010135830194574
+          ],
+          "rank": 2,
+          "regularized_matrix_min_eigenvalue": 0.016666666666666666,
+          "svd_cov_eigen_max_abs_error": 2.658600686858787e-16,
+          "trace": 3.984344960843507,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 10,
+          "normalized_eigenvalues": [
+            -8.117961618395185e-17,
+            -4.0931818958936275e-17,
+            -1.942726861201318e-17,
+            -2.4523266268191556e-33,
+            0.0,
+            5.9671487753258596e-33,
+            1.1536816906590216e-17,
+            2.3180852381480547e-17,
+            1.1053117170704497e-16,
+            1.343087993171888e-16,
+            0.4060137614136233,
+            0.5939862385863768
+          ],
+          "rank": 2,
+          "regularized_matrix_min_eigenvalue": 0.016666666666666666,
+          "svd_cov_eigen_max_abs_error": 1.3430879931718863e-16,
+          "trace": 600.1473581964808,
+          "trace_floor_active": false
+        }
+      ],
+      "reestimated_vs_held_frame336_l2": 0.0,
+      "row_key": "synthetic/rank_deficient",
+      "spectrum": {
+        "axis_norm_below_1e_24": 2,
+        "axis_norm_total_power": [
+          9716.152717794517,
+          0.0,
+          2429.017596517472,
+          1606125.9209625733,
+          0.0,
+          242903.81794486297,
+          2429.0172982952786,
+          144323.83466299504
+        ],
+        "relative_top_two_power_gap": [
+          0.7469470468034617,
+          0.0,
+          0.7471418254866778,
+          0.747141825486678,
+          0.0,
+          0.7469470468034617,
+          0.7470946938275548,
+          0.7470694476768163
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": -18.0,
+          "column": 81,
+          "delta": 1.7999992370605469,
+          "name": "gyro_fwd.min",
+          "perturbed": -16.200000762939453
+        },
+        {
+          "clean": 18.0,
+          "column": 82,
+          "delta": -1.7999992370605469,
+          "name": "gyro_fwd.max",
+          "perturbed": 16.200000762939453
+        },
+        {
+          "clean": 18.0,
+          "column": 186,
+          "delta": -1.7999992370605469,
+          "name": "gyro_norm.max",
+          "perturbed": 16.200000762939453
+        },
+        {
+          "clean": 18.0,
+          "column": 276,
+          "delta": -1.7999992370605469,
+          "name": "group1[3,4,5].norm.max",
+          "perturbed": 16.200000762939453
+        },
+        {
+          "clean": 18.0,
+          "column": 286,
+          "delta": -1.7999992370605469,
+          "name": "group1[3,4,5].centered_norm.max",
+          "perturbed": 16.200000762939453
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_amplitude",
+          "l2": 8.714951830076613,
+          "max_abs": 2.485523223876953,
+          "n": 88,
+          "rms_per_coordinate": 0.9290169865884861
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 7.890418842551476,
+          "max_abs": 2.485523223876953,
+          "n": 62,
+          "rms_per_coordinate": 1.0020841950887338
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.26957798657144,
+          "max_abs": 0.19062042236328125,
+          "n": 2,
+          "rms_per_coordinate": 0.19062042236328125
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 48,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 72,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 6,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 36,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 24,
+          "rms_per_coordinate": 0.0
+        }
+      ],
+      "canonical336_total_delta_l2": 11.756236426316336,
+      "clean_frame_held336_delta_l2": 11.756236426316336,
+      "condition": "gain11",
+      "gain_identity_check": {
+        "actual_log_trace_shifts": [
+          0.19062042236328125,
+          0.19062042236328125
+        ],
+        "all362_max_abs_prediction_error": 1.3351440451003782e-06,
+        "expected_log_trace_shift": 0.19062035960864987,
+        "gain": 1.1,
+        "max_abs_amplitude_error": 1.3351440451003782e-06,
+        "max_abs_shape_delta": 0.0
+      },
+      "geometry": {
+        "eigengap_ratio": 0.841379497660438,
+        "frame_pair_frobenius_distance_to_clean": 2.288799239999562e-16,
+        "gravity_ratio": 0.9924499464228332,
+        "horizontal_energy_ratio": 0.012337625706629917,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 4.241105706626058e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00015084326322884612,
+            0.0006169932551904447,
+            0.0014669718989288494,
+            0.0020673001602278082,
+            0.0022011207582681527,
+            0.003203875702942332,
+            0.006267361250469469,
+            0.009919412426656971,
+            0.07082467651638234,
+            0.11961986251559392,
+            0.29973902423672477,
+            0.48392255801538586
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016787341277249745,
+          "svd_cov_eigen_max_abs_error": 4.996003610813204e-16,
+          "trace": 7.042984050285108,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.0003069521634385769,
+            0.0006717257515395188,
+            0.0021609958207199405,
+            0.0034314705240005993,
+            0.0036708277813687373,
+            0.00512187462608633,
+            0.006250191763909194,
+            0.008656181587664043,
+            0.009655884845885527,
+            0.022538093502275196,
+            0.4133235556761184,
+            0.5242122459569941
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016912228397417527,
+          "svd_cov_eigen_max_abs_error": 3.3306690738754696e-16,
+          "trace": 1277.0961041491685,
+          "trace_floor_active": false
+        }
+      ],
+      "reestimated_vs_held_frame336_l2": 7.142891201341586e-17,
+      "row_key": "synthetic/full_rank",
+      "spectrum": {
+        "axis_norm_below_1e_24": 0,
+        "axis_norm_total_power": [
+          15348.506986056937,
+          2434.630624827664,
+          3984.8170180099155,
+          2461671.7617002274,
+          1072212.1581334076,
+          404101.45947223756,
+          3614.530783492801,
+          188692.11618572212
+        ],
+        "relative_top_two_power_gap": [
+          0.7469959428894742,
+          0.7471957181367925,
+          0.7470044081911564,
+          0.7471268981539285,
+          0.7470450937353423,
+          0.747076100676231,
+          0.7469900148624039,
+          0.516490132121788
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 24.855234146118164,
+          "column": 186,
+          "delta": 2.485523223876953,
+          "name": "gyro_norm.max",
+          "perturbed": 27.340757369995117
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 276,
+          "delta": 2.485523223876953,
+          "name": "group1[3,4,5].norm.max",
+          "perturbed": 27.340757369995117
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 286,
+          "delta": 2.485523223876953,
+          "name": "group1[3,4,5].centered_norm.max",
+          "perturbed": 27.340757369995117
+        },
+        {
+          "clean": 21.420520782470703,
+          "column": 191,
+          "delta": 2.1420516967773438,
+          "name": "gyro_norm.q90",
+          "perturbed": 23.562572479248047
+        },
+        {
+          "clean": 21.420520782470703,
+          "column": 281,
+          "delta": 2.1420516967773438,
+          "name": "group1[3,4,5].norm.q90",
+          "perturbed": 23.562572479248047
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_amplitude",
+          "l2": 7.490791201528486,
+          "max_abs": 1.7999992370605469,
+          "n": 88,
+          "rms_per_coordinate": 0.7985210251180885
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 6.599966322833859,
+          "max_abs": 1.7999992370605469,
+          "n": 62,
+          "rms_per_coordinate": 0.8381965611968806
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.26957790227775613,
+          "max_abs": 0.19062042236328125,
+          "n": 2,
+          "rms_per_coordinate": 0.1906203627586458
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 48,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 72,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 6,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 12,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 36,
+          "rms_per_coordinate": 0.0
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.0,
+          "max_abs": 0.0,
+          "n": 24,
+          "rms_per_coordinate": 0.0
+        }
+      ],
+      "canonical336_total_delta_l2": 9.983561903821586,
+      "clean_frame_held336_delta_l2": 9.983561903821586,
+      "condition": "gain11",
+      "gain_identity_check": {
+        "actual_log_trace_shifts": [
+          0.1906203031539917,
+          0.19062042236328125
+        ],
+        "all362_max_abs_prediction_error": 1.5258789041183718e-06,
+        "expected_log_trace_shift": 0.19062035960864987,
+        "gain": 1.1,
+        "max_abs_amplitude_error": 1.5258789041183718e-06,
+        "max_abs_shape_delta": 0.0
+      },
+      "geometry": {
+        "eigengap_ratio": 1.0,
+        "frame_pair_frobenius_distance_to_clean": 7.840572132676133e-19,
+        "gravity_ratio": 0.9936955684113581,
+        "horizontal_energy_ratio": 0.010094726380626758,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 2.558034921662511e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 10,
+          "normalized_eigenvalues": [
+            -1.9822275601785935e-16,
+            -1.419908135108664e-16,
+            -7.920831879880191e-17,
+            -3.9736992829169086e-17,
+            -1.662975776963632e-17,
+            -6.45946451248995e-33,
+            0.0,
+            1.1852068356774226e-32,
+            3.900642457760258e-17,
+            1.0555845065440616e-16,
+            0.39898641698054266,
+            0.6010135830194577
+          ],
+          "rank": 2,
+          "regularized_matrix_min_eigenvalue": 0.016666666666666666,
+          "svd_cov_eigen_max_abs_error": 2.220446049250313e-16,
+          "trace": 5.951922719284743,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 10,
+          "normalized_eigenvalues": [
+            -4.314059736384008e-17,
+            -1.0157537582672616e-17,
+            0.0,
+            1.3477933436686566e-33,
+            3.8902637861255494e-32,
+            8.86115536575447e-18,
+            3.332637494630554e-17,
+            9.246511386365737e-17,
+            1.1641407764139916e-16,
+            2.1032511085293855e-16,
+            0.40601376141362316,
+            0.5939862385863768
+          ],
+          "rank": 2,
+          "regularized_matrix_min_eigenvalue": 0.016666666666666666,
+          "svd_cov_eigen_max_abs_error": 3.3306690738754696e-16,
+          "trace": 896.5164239725211,
+          "trace_floor_active": false
+        }
+      ],
+      "reestimated_vs_held_frame336_l2": 0.0,
+      "row_key": "synthetic/rank_deficient",
+      "spectrum": {
+        "axis_norm_below_1e_24": 2,
+        "axis_norm_total_power": [
+          14514.252825347365,
+          0.0,
+          3628.532458995235,
+          2399274.5239070547,
+          0.0,
+          362856.3206336842,
+          3628.532013502823,
+          215594.8641262025
+        ],
+        "relative_top_two_power_gap": [
+          0.7469470468034616,
+          0.0,
+          0.7471418254866778,
+          0.7471418254866778,
+          0.0,
+          0.7469470468034616,
+          0.7470946938275548,
+          0.7470694476768164
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": -18.0,
+          "column": 81,
+          "delta": -1.7999992370605469,
+          "name": "gyro_fwd.min",
+          "perturbed": -19.799999237060547
+        },
+        {
+          "clean": 18.0,
+          "column": 82,
+          "delta": 1.7999992370605469,
+          "name": "gyro_fwd.max",
+          "perturbed": 19.799999237060547
+        },
+        {
+          "clean": 18.0,
+          "column": 186,
+          "delta": 1.7999992370605469,
+          "name": "gyro_norm.max",
+          "perturbed": 19.799999237060547
+        },
+        {
+          "clean": 18.0,
+          "column": 276,
+          "delta": 1.7999992370605469,
+          "name": "group1[3,4,5].norm.max",
+          "perturbed": 19.799999237060547
+        },
+        {
+          "clean": 18.0,
+          "column": 286,
+          "delta": 1.7999992370605469,
+          "name": "group1[3,4,5].centered_norm.max",
+          "perturbed": 19.799999237060547
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "invariant_amplitude",
+          "l2": 0.6889560626641569,
+          "max_abs": 0.3809967041015625,
+          "n": 62,
+          "rms_per_coordinate": 0.08749750745589913
+        },
+        {
+          "block": "axis_amplitude",
+          "l2": 0.5974912210992259,
+          "max_abs": 0.3809967041015625,
+          "n": 88,
+          "rms_per_coordinate": 0.06369277817727169
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.0543140011968745,
+          "max_abs": 0.039531707763671875,
+          "n": 24,
+          "rms_per_coordinate": 0.011086799068438112
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.011160929685598356,
+          "max_abs": 0.00798940658569336,
+          "n": 72,
+          "rms_per_coordinate": 0.0013153281775054732
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.0063344649694781615,
+          "max_abs": 0.003912091255187988,
+          "n": 48,
+          "rms_per_coordinate": 0.0009143012638251177
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.005705487494053657,
+          "max_abs": 0.005269527435302734,
+          "n": 36,
+          "rms_per_coordinate": 0.0009509145823422761
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0014046186981334138,
+          "max_abs": 0.0007839798927307129,
+          "n": 12,
+          "rms_per_coordinate": 0.0004054784917380541
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.0011710173877084943,
+          "max_abs": 0.0008811354637145996,
+          "n": 6,
+          "rms_per_coordinate": 0.0004780658466354515
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0006991232932063491,
+          "max_abs": 0.0005595684051513672,
+          "n": 12,
+          "rms_per_coordinate": 0.00020181951076471167
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.0005231703907403844,
+          "max_abs": 0.0004220008850097656,
+          "n": 2,
+          "rms_per_coordinate": 0.0003699373310085415
+        }
+      ],
+      "canonical336_total_delta_l2": 0.9120621102570655,
+      "clean_frame_held336_delta_l2": 0.9119713834517275,
+      "condition": "noise01",
+      "geometry": {
+        "eigengap_ratio": 0.8413163811808899,
+        "frame_pair_frobenius_distance_to_clean": 0.0013381999197656016,
+        "gravity_ratio": 0.9924471581420552,
+        "horizontal_energy_ratio": 0.012342584827741043,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 3.8512556699288325e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.0001569257738551134,
+            0.0006150200541065379,
+            0.0014400613498277092,
+            0.00206590966218529,
+            0.0021716213986674696,
+            0.003213095745949276,
+            0.00629235900106697,
+            0.009939330253014377,
+            0.07076616810048691,
+            0.11976959680245426,
+            0.2998890944083696,
+            0.4836808174500164
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016792207285750756,
+          "svd_cov_eigen_max_abs_error": 3.885780586188048e-16,
+          "trace": 5.82244771326944,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.0003120356754711422,
+            0.0006643862092420619,
+            0.0021390305425100626,
+            0.003385841587890234,
+            0.0036312095337048844,
+            0.005102353642471914,
+            0.006239113683628885,
+            0.008641276701445665,
+            0.009631410272629022,
+            0.022510459868657726,
+            0.4132345981439687,
+            0.5245082841383796
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.01691629520704358,
+          "svd_cov_eigen_max_abs_error": 3.3306690738754696e-16,
+          "trace": 1055.8967606930935,
+          "trace_floor_active": false
+        }
+      ],
+      "noise_expected_covariance_approximation": [
+        {
+          "predicted_max_log_eigen_delta": 0.054198446246697785,
+          "predicted_normalized_min_eigenvalue": 0.00015924433998305718,
+          "sigma_squared": 4.899333333333334e-05
+        },
+        {
+          "predicted_max_log_eigen_delta": 0.026889427273850686,
+          "predicted_normalized_min_eigenvalue": 0.0003153179022176983,
+          "sigma_squared": 0.008863166666666667
+        }
+      ],
+      "noise_std_native_per_triad": [
+        0.006999523793325753,
+        0.09414439264590678
+      ],
+      "realized_noise_rms_native_per_triad": [
+        0.007159196831116032,
+        0.09236229650401136
+      ],
+      "reestimated_vs_held_frame336_l2": 0.021303185238643742,
+      "row_key": "synthetic/full_rank",
+      "spectrum": {
+        "axis_norm_below_1e_24": 0,
+        "axis_norm_total_power": [
+          12690.917361014694,
+          2012.1657809760254,
+          3293.1045498808385,
+          2036456.0635150776,
+          884363.4434668913,
+          333639.4559258246,
+          2987.62125090231,
+          155847.27716611297
+        ],
+        "relative_top_two_power_gap": [
+          0.7467373540716178,
+          0.7471000220808943,
+          0.7462540589868565,
+          0.7472481952698573,
+          0.746613476199435,
+          0.746012382106738,
+          0.7461652576361787,
+          0.5164556043457033
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 24.855234146118164,
+          "column": 186,
+          "delta": 0.3809967041015625,
+          "name": "gyro_norm.max",
+          "perturbed": 25.236230850219727
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 276,
+          "delta": 0.3809967041015625,
+          "name": "group1[3,4,5].norm.max",
+          "perturbed": 25.236230850219727
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 286,
+          "delta": 0.37152099609375,
+          "name": "group1[3,4,5].centered_norm.max",
+          "perturbed": 25.226755142211914
+        },
+        {
+          "clean": 0.6707944869995117,
+          "column": 295,
+          "delta": -0.3026975393295288,
+          "name": "group1[3,4,5].difference_norm.min",
+          "perturbed": 0.3680969476699829
+        },
+        {
+          "clean": -20.9312744140625,
+          "column": 81,
+          "delta": -0.19942092895507812,
+          "name": "gyro_fwd.min",
+          "perturbed": -21.130695343017578
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_spectrum",
+          "l2": 46.66650393856012,
+          "max_abs": 30.078125,
+          "n": 72,
+          "rms_per_coordinate": 5.499700231537432
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 31.125730581611734,
+          "max_abs": 7.346518516540527,
+          "n": 24,
+          "rms_per_coordinate": 6.353513149690886
+        },
+        {
+          "block": "axis_amplitude",
+          "l2": 0.6174798678554446,
+          "max_abs": 0.27994009852409363,
+          "n": 88,
+          "rms_per_coordinate": 0.06582357508097424
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 0.5573041320545777,
+          "max_abs": 0.3137863874435425,
+          "n": 62,
+          "rms_per_coordinate": 0.07077769554866231
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.21281004708887974,
+          "max_abs": 0.10932649672031403,
+          "n": 48,
+          "rms_per_coordinate": 0.030716484493255414
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.012497899920663637,
+          "max_abs": 0.009755373001098633,
+          "n": 36,
+          "rms_per_coordinate": 0.002082983320110606
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.002180690841751085,
+          "max_abs": 0.002094745635986328,
+          "n": 2,
+          "rms_per_coordinate": 0.0015419812818735926
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.0010761483112227963,
+          "max_abs": 0.0005914866924285889,
+          "n": 12,
+          "rms_per_coordinate": 0.0003106572585862213
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.001054324106245921,
+          "max_abs": 0.0007367432117462158,
+          "n": 6,
+          "rms_per_coordinate": 0.00043042601396973756
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.0008303691558400021,
+          "max_abs": 0.0006899833679199219,
+          "n": 12,
+          "rms_per_coordinate": 0.00023970692782549375
+        }
+      ],
+      "canonical336_total_delta_l2": 46.67440311780442,
+      "clean_frame_held336_delta_l2": 67.11356838402,
+      "condition": "noise01",
+      "geometry": {
+        "eigengap_ratio": 0.9999484312021273,
+        "frame_pair_frobenius_distance_to_clean": 0.0024819192579922673,
+        "gravity_ratio": 0.9937016440526707,
+        "horizontal_energy_ratio": 0.01009431559108959,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 4.2906238739703895e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            7.4831679465693825e-06,
+            7.76492445069487e-06,
+            7.988270508801421e-06,
+            8.656562141823413e-06,
+            1.0006312324419657e-05,
+            1.0117410313292391e-05,
+            1.0319132532437575e-05,
+            1.156029287178484e-05,
+            1.2839392991449174e-05,
+            1.3179964231644684e-05,
+            0.3988433589383701,
+            0.6010567256313165
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016672653201023922,
+          "svd_cov_eigen_max_abs_error": 3.3306690738754696e-16,
+          "trace": 4.915963875504817,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            7.3144197554277385e-06,
+            8.597757926970087e-06,
+            9.155869524935959e-06,
+            9.704795832126968e-06,
+            1.1467051797841587e-05,
+            1.2021726142881597e-05,
+            1.2912731549555704e-05,
+            1.4017013677128679e-05,
+            1.483437135597145e-05,
+            1.5507870134657804e-05,
+            0.4060198901525695,
+            0.5938645762397334
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.01667251820247101,
+          "svd_cov_eigen_max_abs_error": 4.440892098500626e-16,
+          "trace": 739.3721648598237,
+          "trace_floor_active": false
+        }
+      ],
+      "noise_expected_covariance_approximation": [
+        {
+          "predicted_max_log_eigen_delta": 6.903640952144277,
+          "predicted_normalized_min_eigenvalue": 9.958941253859988e-06,
+          "sigma_squared": 4.899333333333334e-05
+        },
+        {
+          "predicted_max_log_eigen_delta": 7.0867897862160145,
+          "predicted_normalized_min_eigenvalue": 1.1960620162158103e-05,
+          "sigma_squared": 0.008863166666666667
+        }
+      ],
+      "noise_std_native_per_triad": [
+        0.006999523793325753,
+        0.09414439264590678
+      ],
+      "realized_noise_rms_native_per_triad": [
+        0.007068327600169062,
+        0.0929149610294836
+      ],
+      "reestimated_vs_held_frame336_l2": 46.510981727592224,
+      "row_key": "synthetic/rank_deficient",
+      "spectrum": {
+        "axis_norm_below_1e_24": 0,
+        "axis_norm_total_power": [
+          11999.84349944951,
+          0.5883965605927985,
+          2991.1106203367717,
+          1976089.225252339,
+          109.08770397007206,
+          300175.3031349521,
+          2992.5268564612497,
+          176883.96728938934
+        ],
+        "relative_top_two_power_gap": [
+          0.7467405081929643,
+          0.10875578920766138,
+          0.7470731271089429,
+          0.7474034676604239,
+          0.07570883897260067,
+          0.745221617270029,
+          0.7469859720995716,
+          0.7469854097744535
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 0.0,
+          "column": 50,
+          "delta": 30.078125,
+          "name": "acc_lateral.dominant_hz",
+          "perturbed": 30.078125
+        },
+        {
+          "clean": 0.0,
+          "column": 51,
+          "delta": 25.524391174316406,
+          "name": "acc_lateral.centroid_hz",
+          "perturbed": 25.524391174316406
+        },
+        {
+          "clean": 0.0,
+          "column": 129,
+          "delta": 24.81399917602539,
+          "name": "gyro_lateral.centroid_hz",
+          "perturbed": 24.81399917602539
+        },
+        {
+          "clean": -18.42068099975586,
+          "column": 358,
+          "delta": 7.346518516540527,
+          "name": "lag_triad1.log_eigenvalue9",
+          "perturbed": -11.074162483215332
+        },
+        {
+          "clean": -18.42068099975586,
+          "column": 357,
+          "delta": 7.302117347717285,
+          "name": "lag_triad1.log_eigenvalue8",
+          "perturbed": -11.118563652038574
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "invariant_amplitude",
+          "l2": 3.2129336231927654,
+          "max_abs": 1.905832290649414,
+          "n": 62,
+          "rms_per_coordinate": 0.4080429781886635
+        },
+        {
+          "block": "axis_amplitude",
+          "l2": 2.9764600457966144,
+          "max_abs": 1.905832290649414,
+          "n": 88,
+          "rms_per_coordinate": 0.3172917069838456
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 0.9527804173065227,
+          "max_abs": 0.8076591491699219,
+          "n": 24,
+          "rms_per_coordinate": 0.19448548827641696
+        },
+        {
+          "block": "axis_spectrum",
+          "l2": 0.4184773692533878,
+          "max_abs": 0.3337826728820801,
+          "n": 72,
+          "rms_per_coordinate": 0.049318030928696216
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.3528287344590831,
+          "max_abs": 0.3337826728820801,
+          "n": 36,
+          "rms_per_coordinate": 0.058804789076513854
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.027426135867144468,
+          "max_abs": 0.011581957340240479,
+          "n": 48,
+          "rms_per_coordinate": 0.003958621731431777
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.008984589134992131,
+          "max_abs": 0.005215704441070557,
+          "n": 12,
+          "rms_per_coordinate": 0.002593627477822947
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.005409436120849078,
+          "max_abs": 0.003991603851318359,
+          "n": 2,
+          "rms_per_coordinate": 0.0038250489634478356
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.005276631030525841,
+          "max_abs": 0.00366896390914917,
+          "n": 6,
+          "rms_per_coordinate": 0.0021541755976207462
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.004759548821109457,
+          "max_abs": 0.003326416015625,
+          "n": 12,
+          "rms_per_coordinate": 0.0013739633965443555
+        }
+      ],
+      "canonical336_total_delta_l2": 4.41392701657084,
+      "clean_frame_held336_delta_l2": 4.419184955487412,
+      "condition": "noise05",
+      "geometry": {
+        "eigengap_ratio": 0.8401969006727605,
+        "frame_pair_frobenius_distance_to_clean": 0.0068504975164215545,
+        "gravity_ratio": 0.9924204164969854,
+        "horizontal_energy_ratio": 0.012383822690117811,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 2.151218074786243e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00033828881880064335,
+            0.0007778575289694024,
+            0.001501200418320779,
+            0.002169215164075674,
+            0.0022637381768546593,
+            0.003427063119453248,
+            0.0065737943605002494,
+            0.010158364101347142,
+            0.0705387896666958,
+            0.12027732880987592,
+            0.30005344482531043,
+            0.48192091500979606
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.01693729772170718,
+          "svd_cov_eigen_max_abs_error": 1.1102230246251565e-16,
+          "trace": 5.8419374872575816,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00046333602795800316,
+            0.0007734636067260989,
+            0.002183442603050865,
+            0.00333581897743115,
+            0.0036715095277347087,
+            0.005163698087424743,
+            0.006343192817717856,
+            0.008723704360437191,
+            0.009702571355688343,
+            0.022507199064069124,
+            0.4122756654249333,
+            0.5248563981468282
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.017037335489033068,
+          "svd_cov_eigen_max_abs_error": 2.220446049250313e-16,
+          "trace": 1059.672646867963,
+          "trace_floor_active": false
+        }
+      ],
+      "noise_expected_covariance_approximation": [
+        {
+          "predicted_max_log_eigen_delta": 0.8708686897450235,
+          "predicted_normalized_min_eigenvalue": 0.0003603623293126187,
+          "sigma_squared": 0.0012248333333333334
+        },
+        {
+          "predicted_max_log_eigen_delta": 0.518622081559946,
+          "predicted_normalized_min_eigenvalue": 0.0005155910938720525,
+          "sigma_squared": 0.2215791666666667
+        }
+      ],
+      "noise_std_native_per_triad": [
+        0.034997618966628764,
+        0.4707219632295339
+      ],
+      "realized_noise_rms_native_per_triad": [
+        0.03579598415558017,
+        0.4618114825200566
+      ],
+      "reestimated_vs_held_frame336_l2": 0.09799668245649783,
+      "row_key": "synthetic/full_rank",
+      "spectrum": {
+        "axis_norm_below_1e_24": 0,
+        "axis_norm_total_power": [
+          12728.54831456884,
+          2025.004662439185,
+          3303.7568020900535,
+          2046504.2636595406,
+          879674.7787856928,
+          334431.0673118092,
+          3000.493874916264,
+          157849.3684557776
+        ],
+        "relative_top_two_power_gap": [
+          0.745298977059695,
+          0.746635807860697,
+          0.7430388763888732,
+          0.7475777826413127,
+          0.7445902703730684,
+          0.741706715236625,
+          0.7425667734466612,
+          0.5172691083228477
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 24.855234146118164,
+          "column": 186,
+          "delta": 1.905832290649414,
+          "name": "gyro_norm.max",
+          "perturbed": 26.761066436767578
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 276,
+          "delta": 1.905832290649414,
+          "name": "group1[3,4,5].norm.max",
+          "perturbed": 26.761066436767578
+        },
+        {
+          "clean": 24.855234146118164,
+          "column": 286,
+          "delta": 1.8587379455566406,
+          "name": "group1[3,4,5].centered_norm.max",
+          "perturbed": 26.713972091674805
+        },
+        {
+          "clean": 3.814436674118042,
+          "column": 296,
+          "delta": 1.2508318424224854,
+          "name": "group1[3,4,5].difference_norm.max",
+          "perturbed": 5.065268516540527
+        },
+        {
+          "clean": -20.9312744140625,
+          "column": 81,
+          "delta": -0.9989566802978516,
+          "name": "gyro_fwd.min",
+          "perturbed": -21.93023109436035
+        }
+      ]
+    },
+    {
+      "block_ranking_by_raw_l2": [
+        {
+          "block": "axis_spectrum",
+          "l2": 46.65579961776891,
+          "max_abs": 30.078125,
+          "n": 72,
+          "rms_per_coordinate": 5.4984387152341885
+        },
+        {
+          "block": "lag_log_eigenvalues",
+          "l2": 45.527997121331175,
+          "max_abs": 10.570978164672852,
+          "n": 24,
+          "rms_per_coordinate": 9.293363496513564
+        },
+        {
+          "block": "axis_amplitude",
+          "l2": 3.160075286147422,
+          "max_abs": 1.3988431692123413,
+          "n": 88,
+          "rms_per_coordinate": 0.3368651573721455
+        },
+        {
+          "block": "invariant_amplitude",
+          "l2": 2.688854274371328,
+          "max_abs": 1.6424368619918823,
+          "n": 62,
+          "rms_per_coordinate": 0.34148483433016374
+        },
+        {
+          "block": "invariant_spectra",
+          "l2": 0.35395365437207327,
+          "max_abs": 0.3010587692260742,
+          "n": 36,
+          "rms_per_coordinate": 0.05899227572867888
+        },
+        {
+          "block": "axis_lag_correlation",
+          "l2": 0.21412553542432441,
+          "max_abs": 0.10778089612722397,
+          "n": 48,
+          "rms_per_coordinate": 0.030906358879401612
+        },
+        {
+          "block": "invariant_centered_lag_correlation",
+          "l2": 0.007890309097680405,
+          "max_abs": 0.0037620067596435547,
+          "n": 12,
+          "rms_per_coordinate": 0.0022777360407675675
+        },
+        {
+          "block": "lag_log_trace",
+          "l2": 0.007682760472582761,
+          "max_abs": 0.007657051086425781,
+          "n": 2,
+          "rms_per_coordinate": 0.005432532028395235
+        },
+        {
+          "block": "invariant_lag_cosine",
+          "l2": 0.005358488989261569,
+          "max_abs": 0.0035461783409118652,
+          "n": 12,
+          "rms_per_coordinate": 0.0015468625301999063
+        },
+        {
+          "block": "invariant_covariance_fractions",
+          "l2": 0.005230779558973923,
+          "max_abs": 0.0033265650272369385,
+          "n": 6,
+          "rms_per_coordinate": 0.002135456812744424
+        }
+      ],
+      "canonical336_total_delta_l2": 46.841764509485884,
+      "clean_frame_held336_delta_l2": 67.2364110567728,
+      "condition": "noise05",
+      "geometry": {
+        "eigengap_ratio": 0.998713301451267,
+        "frame_pair_frobenius_distance_to_clean": 0.012652815539753524,
+        "gravity_ratio": 0.9937106744942505,
+        "horizontal_energy_ratio": 0.01011247506382041,
+        "reason": "valid",
+        "valid": true
+      },
+      "independent_lag_max_abs_error": 4.5972999274113135e-07,
+      "lag_triads": [
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00018714844754101363,
+            0.00019406459922165028,
+            0.00019978546738929072,
+            0.00021635449322387622,
+            0.0002500972327366692,
+            0.00025288385569687634,
+            0.0002579833582865618,
+            0.00028894094685386306,
+            0.00032098898655474195,
+            0.0003295180713573603,
+            0.39751363339947954,
+            0.5999886011416588
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016816385424699477,
+          "svd_cov_eigen_max_abs_error": 3.3306690738754696e-16,
+          "trace": 4.91585637866077,
+          "trace_floor_active": false
+        },
+        {
+          "eigenvalues_at_or_below_1e_8": 0,
+          "normalized_eigenvalues": [
+            0.00018391474155045993,
+            0.00021611537068816017,
+            0.00023017572554518946,
+            0.0002439649635554051,
+            0.0002882835146116884,
+            0.0003022140555549603,
+            0.00032445621342850993,
+            0.00035234478475100847,
+            0.00037294074486501216,
+            0.0003898678626320725,
+            0.4051623203984963,
+            0.5919334016243207
+          ],
+          "rank": 12,
+          "regularized_matrix_min_eigenvalue": 0.016813798459907034,
+          "svd_cov_eigen_max_abs_error": 1.6653345369377348e-16,
+          "trace": 735.2712249351515,
+          "trace_floor_active": false
+        }
+      ],
+      "noise_expected_covariance_approximation": [
+        {
+          "predicted_max_log_eigen_delta": 10.119652707290784,
+          "predicted_normalized_min_eigenvalue": 0.0002482614739771144,
+          "sigma_squared": 0.0012248333333333334
+        },
+        {
+          "predicted_max_log_eigen_delta": 10.302226871712755,
+          "predicted_normalized_min_eigenvalue": 0.00029798903356881073,
+          "sigma_squared": 0.2215791666666667
+        }
+      ],
+      "noise_std_native_per_triad": [
+        0.034997618966628764,
+        0.4707219632295339
+      ],
+      "realized_noise_rms_native_per_triad": [
+        0.03534163800084528,
+        0.4645748051474181
+      ],
+      "reestimated_vs_held_frame336_l2": 46.51176176989547,
+      "row_key": "synthetic/rank_deficient",
+      "spectrum": {
+        "axis_norm_below_1e_24": 0,
+        "axis_norm_total_power": [
+          12030.655354663111,
+          14.683705191763853,
+          2973.185232499263,
+          1951092.3190909463,
+          2726.274753596072,
+          303670.7485296859,
+          2980.1284272662992,
+          173192.83895617747
+        ],
+        "relative_top_two_power_gap": [
+          0.7457605223232677,
+          0.10571927739176679,
+          0.7467842169235234,
+          0.7484566146590594,
+          0.10018282591102544,
+          0.7382232475483875,
+          0.7465600685776524,
+          0.7467600710519849
+        ]
+      },
+      "top_coordinates": [
+        {
+          "clean": 0.0,
+          "column": 50,
+          "delta": 30.078125,
+          "name": "acc_lateral.dominant_hz",
+          "perturbed": 30.078125
+        },
+        {
+          "clean": 0.0,
+          "column": 51,
+          "delta": 25.525053024291992,
+          "name": "acc_lateral.centroid_hz",
+          "perturbed": 25.525053024291992
+        },
+        {
+          "clean": 0.0,
+          "column": 129,
+          "delta": 24.789264678955078,
+          "name": "gyro_lateral.centroid_hz",
+          "perturbed": 24.789264678955078
+        },
+        {
+          "clean": -18.42068099975586,
+          "column": 358,
+          "delta": 10.570978164672852,
+          "name": "lag_triad1.log_eigenvalue9",
+          "perturbed": -7.849702835083008
+        },
+        {
+          "clean": -18.42068099975586,
+          "column": 357,
+          "delta": 10.52658987045288,
+          "name": "lag_triad1.log_eigenvalue8",
+          "perturbed": -7.8940911293029785
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "cuda_visible_devices": "",
+    "numpy": "2.5.4",
+    "offline": true,
+    "python": "3.14.8",
+    "seed": 20261025,
+    "threads": 1
+  },
+  "scope": "One bounded source and deterministic synthetic diagnosis; not a candidate, fit, biometric evaluation, or causal explanation of observed DEV errors.",
+  "source_locations": {
+    "actual_lag26": "models/session_robust.py:27-96",
+    "axis_features_and_floors": "models/gait_features.py:41-87; models/gait_canonical.py:212-232",
+    "composition": "scripts/canonical_orientation_study.py:114-129; scripts/mentor_backend_study.py:173-197",
+    "distinct_regularized_covariances": "models/lag_covariance.py:13-33,93-147; docs/lag_covariance.md",
+    "geometry_and_amplitude": "models/gait_canonical.py:122-209,235-286; docs/gait_canonical.md",
+    "invariant_features_and_floors": "models/gait_invariants.py:89-183",
+    "noise_reference_and_generation": "scripts/covariance_robustness_study.py:112-171; data/imu_perturbations.py:327-367",
+    "standardization_and_WCCN": "models/gait_metric.py:46-94,96-124"
+  },
+  "source_sha256": {
+    "data/imu_perturbations.py": "743ab06e59ac37283a72ca051489fcef1fb329151826c1f9837a691a53a81027",
+    "models/gait_canonical.py": "2b0f80a336f466e9ce2ff4afef2f2ceec788e146f24bce3fe8f41b1fa3c33fd7",
+    "models/gait_features.py": "219e107f516fe2a72aceb7071962f33bdb21faf65f624fc39e93b39e549cd572",
+    "models/gait_invariants.py": "af80475c65189b550b666e91f751caf64fe5fba2716c4af498489e1fae04c79f",
+    "models/gait_metric.py": "966f2c19aa80f1c64b0686806b800211432c8b09b9204234b5c6db8fefd37cd5",
+    "models/lag_covariance.py": "19a9db37e6173124b229889263f1210f6eccad3fab050ea3cf887f4159fc7088",
+    "models/session_robust.py": "c7472a18c236bd9288ec0fb3bd62c9fd91d07dbdedd58f69b13d1967690cdb4a",
+    "scripts/canonical_orientation_study.py": "9bea155ac589ab3b6f94910ba4429f7ae65284dd2478e8b78a3b9e31ec64e164",
+    "scripts/covariance_robustness_study.py": "840a17e4dc2eabb3d900f6c4939be6597165e504d6fa4f19165814e0dd8873aa",
+    "scripts/mentor_backend_study.py": "bd90879eb72ce405b972baa58ed97e46e22a1e2eabcbc3f9a4ec9f2edb4ddcf8",
+    "scripts/multisensor_study.py": "50d071749c10f2ab9ce1804842cae7c1cd5c31c01bfbf54b362c4c410456ffd8"
+  },
+  "synthetic_findings": {
+    "frame_note": "Noise frame-pair motion is small (Frobenius distance <0.013) in these fixtures; holding the clean frame still gives large deficient-row spectral changes. Small frame motion can also switch dominant-frequency bins in weak channels. These two fixtures do not exclude geometry sensitivity on other windows.",
+    "gain_prediction_max_abs_error": 1.5258789041183718e-06,
+    "gain_shape_max_abs_delta": 0.0,
+    "noise": [
+      {
+        "clean_lag_eigen_coordinates_at_floor": 0,
+        "clean_zero_power_axis_norm_channels": 0,
+        "condition": "noise01",
+        "max_lag_log_eigen_delta": 0.039531707763671875,
+        "noisy_lag_eigen_coordinates_at_floor": 0,
+        "noisy_zero_power_axis_norm_channels": 0,
+        "raw_top_three_blocks": [
+          "invariant_amplitude",
+          "axis_amplitude",
+          "lag_log_eigenvalues"
+        ],
+        "row_key": "synthetic/full_rank"
+      },
+      {
+        "clean_lag_eigen_coordinates_at_floor": 20,
+        "clean_zero_power_axis_norm_channels": 2,
+        "condition": "noise01",
+        "max_lag_log_eigen_delta": 7.346518516540527,
+        "noisy_lag_eigen_coordinates_at_floor": 0,
+        "noisy_zero_power_axis_norm_channels": 0,
+        "raw_top_three_blocks": [
+          "axis_spectrum",
+          "lag_log_eigenvalues",
+          "axis_amplitude"
+        ],
+        "row_key": "synthetic/rank_deficient"
+      },
+      {
+        "clean_lag_eigen_coordinates_at_floor": 0,
+        "clean_zero_power_axis_norm_channels": 0,
+        "condition": "noise05",
+        "max_lag_log_eigen_delta": 0.8076591491699219,
+        "noisy_lag_eigen_coordinates_at_floor": 0,
+        "noisy_zero_power_axis_norm_channels": 0,
+        "raw_top_three_blocks": [
+          "invariant_amplitude",
+          "axis_amplitude",
+          "lag_log_eigenvalues"
+        ],
+        "row_key": "synthetic/full_rank"
+      },
+      {
+        "clean_lag_eigen_coordinates_at_floor": 20,
+        "clean_zero_power_axis_norm_channels": 2,
+        "condition": "noise05",
+        "max_lag_log_eigen_delta": 10.570978164672852,
+        "noisy_lag_eigen_coordinates_at_floor": 0,
+        "noisy_zero_power_axis_norm_channels": 0,
+        "raw_top_three_blocks": [
+          "axis_spectrum",
+          "lag_log_eigenvalues",
+          "axis_amplitude"
+        ],
+        "row_key": "synthetic/rank_deficient"
+      }
+    ],
+    "trace_floor_crossings": 0
+  }
+}

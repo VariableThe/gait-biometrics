@@ -1,0 +1,2097 @@
+{
+  "eligible": [],
+  "failed_gates": [
+    "clean_far_no_worse_and_at_most_1pct",
+    "clean_frr_no_worse",
+    "clean_repeated_rejects_no_worse",
+    "clean_eer_no_worse",
+    "clean_each_claimant_false_accepts_no_worse",
+    "rotation30_each_claimant_false_accepts_no_worse",
+    "rotation90_each_claimant_false_accepts_no_worse",
+    "gain09_fold_tail_no_worse",
+    "gain09_each_claimant_false_accepts_no_worse",
+    "gain11_fold_tail_no_worse",
+    "gain11_each_claimant_false_accepts_no_worse",
+    "noise01_fold_tail_no_worse",
+    "noise01_each_claimant_false_accepts_no_worse"
+  ],
+  "gates": {
+    "clean_at_least_10_people_no_worse": true,
+    "clean_each_claimant_false_accepts_no_worse": false,
+    "clean_eer_no_worse": false,
+    "clean_far_at_most_1pct": true,
+    "clean_far_no_worse_and_at_most_1pct": false,
+    "clean_fold_tail_no_worse": true,
+    "clean_frr_no_worse": false,
+    "clean_no_new_completely_rejected_person": true,
+    "clean_no_person_more_than_one_extra_reject": true,
+    "clean_repeated_rejects_no_worse": false,
+    "gain09_each_claimant_false_accepts_no_worse": false,
+    "gain09_far_at_most_1pct": true,
+    "gain09_fold_tail_no_worse": false,
+    "gain11_each_claimant_false_accepts_no_worse": false,
+    "gain11_far_at_most_1pct": true,
+    "gain11_fold_tail_no_worse": false,
+    "noise01_each_claimant_false_accepts_no_worse": false,
+    "noise01_far_at_most_1pct": true,
+    "noise01_fold_tail_no_worse": false,
+    "noise05_each_claimant_false_accepts_no_worse": true,
+    "noise05_far_at_most_1pct": true,
+    "noise05_fold_tail_no_worse": true,
+    "robust_at_least_10_people_no_worse": true,
+    "robust_each_condition_frr_no_worse": true,
+    "robust_mean_frr_improves_at_least_5pp": true,
+    "robust_no_person_worsens_more_than_5pp": true,
+    "rotation30_each_claimant_false_accepts_no_worse": false,
+    "rotation30_far_at_most_1pct": true,
+    "rotation30_fold_tail_no_worse": true,
+    "rotation90_each_claimant_false_accepts_no_worse": false,
+    "rotation90_far_at_most_1pct": true,
+    "rotation90_fold_tail_no_worse": true,
+    "rotations_retain_clean_decisions": true
+  },
+  "interpretation": "exploratory reused DEV after stress and TEST inspection; dependent appearances, no population guarantee or independent confirmation",
+  "robust_improvement_exact": "15851/52200",
+  "robust_mean_frr_exact": {
+    "baseline": "23807/52200",
+    "nuisance": "221/1450"
+  },
+  "stress_used_for_selection": true,
+  "summaries": {
+    "baseline": {
+      "clean": {
+        "auc": 0.9624036860879905,
+        "auc_exact": "1618763/1682000",
+        "eer": 0.058764367816091956,
+        "eer_exact": "409/6960",
+        "far": 0.005,
+        "far_exact": "1/200",
+        "frr": 0.1478735632183908,
+        "frr_exact": "2573/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 0,
+          "19": 0,
+          "24": 5,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "13/40",
+          "14": "1/4",
+          "16": "0",
+          "17": "1/20",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "17/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "199/200",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/40"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "381/800",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 13,
+          "14": 10,
+          "16": 0,
+          "17": 2,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 17,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 6,
+        "repeated_false_rejects": 88,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      },
+      "gain09": {
+        "auc": 0.9613925221297397,
+        "auc_exact": "363839/378450",
+        "eer": 0.07129310344827586,
+        "eer_exact": "827/11600",
+        "far": 0.0,
+        "far_exact": "0",
+        "frr": 0.4520689655172414,
+        "frr_exact": "1311/2900",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 0,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 0
+        },
+        "per_person_frr_exact": {
+          "1": "11/40",
+          "11": "23/40",
+          "13": "13/20",
+          "14": "3/5",
+          "16": "3/10",
+          "17": "21/40",
+          "19": "1/2",
+          "24": "1/40",
+          "25": "1/5",
+          "27": "1/20",
+          "29": "5/8",
+          "3": "19/40",
+          "5": "19/20",
+          "7": "1/40",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "79/80",
+            "eer_exact": "1/20"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "789/800",
+            "eer_exact": "3/80"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "793/800",
+            "eer_exact": "1/40"
+          },
+          "5": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "23/50",
+            "eer_exact": "21/40"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 11,
+          "11": 23,
+          "13": 26,
+          "14": 24,
+          "16": 12,
+          "17": 21,
+          "19": 18,
+          "24": 1,
+          "25": 8,
+          "27": 2,
+          "29": 25,
+          "3": 19,
+          "5": 38,
+          "7": 1,
+          "9": 40
+        },
+        "repeated_false_accepts": 0,
+        "repeated_false_rejects": 269,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 0
+      },
+      "gain11": {
+        "auc": 0.9632954485400977,
+        "auc_exact": "29164733/30276000",
+        "eer": 0.06451149425287356,
+        "eer_exact": "449/6960",
+        "far": 0.0016666666666666668,
+        "far_exact": "1/600",
+        "frr": 0.39827586206896554,
+        "frr_exact": "231/580",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 2,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 0
+        },
+        "per_person_frr_exact": {
+          "1": "1/8",
+          "11": "7/20",
+          "13": "7/8",
+          "14": "23/40",
+          "16": "1/20",
+          "17": "1/40",
+          "19": "1/2",
+          "24": "1/5",
+          "25": "11/20",
+          "27": "1/40",
+          "29": "3/8",
+          "3": "1/2",
+          "5": "33/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "159/160",
+            "eer_exact": "1/80"
+          },
+          "13": {
+            "auc_exact": "787/800",
+            "eer_exact": "3/40"
+          },
+          "14": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/80"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "199/200",
+            "eer_exact": "1/20"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "101/200",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 5,
+          "11": 14,
+          "13": 35,
+          "14": 23,
+          "16": 2,
+          "17": 1,
+          "19": 18,
+          "24": 8,
+          "25": 22,
+          "27": 1,
+          "29": 15,
+          "3": 20,
+          "5": 33,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 2,
+        "repeated_false_rejects": 237,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 0
+      },
+      "noise01": {
+        "auc": 0.971749174263443,
+        "auc_exact": "14710339/15138000",
+        "eer": 0.07054597701149426,
+        "eer_exact": "491/6960",
+        "far": 0.0025,
+        "far_exact": "1/400",
+        "frr": 0.5178735632183908,
+        "frr_exact": "9011/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 0,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 3
+        },
+        "per_person_frr_exact": {
+          "1": "1/5",
+          "11": "31/40",
+          "13": "4/5",
+          "14": "3/5",
+          "16": "0",
+          "17": "7/40",
+          "19": "2/3",
+          "24": "7/20",
+          "25": "33/40",
+          "27": "1/10",
+          "29": "1/2",
+          "3": "7/10",
+          "5": "1",
+          "7": "3/40",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/40"
+          },
+          "11": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/80"
+          },
+          "13": {
+            "auc_exact": "769/800",
+            "eer_exact": "3/40"
+          },
+          "14": {
+            "auc_exact": "787/800",
+            "eer_exact": "1/20"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "151/160",
+            "eer_exact": "1/8"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/40"
+          },
+          "3": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/40"
+          },
+          "5": {
+            "auc_exact": "747/800",
+            "eer_exact": "3/20"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "69/80",
+            "eer_exact": "19/80"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 8,
+          "11": 31,
+          "13": 32,
+          "14": 24,
+          "16": 0,
+          "17": 7,
+          "19": 24,
+          "24": 14,
+          "25": 33,
+          "27": 4,
+          "29": 20,
+          "3": 28,
+          "5": 40,
+          "7": 3,
+          "9": 40
+        },
+        "repeated_false_accepts": 3,
+        "repeated_false_rejects": 308,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 1
+      },
+      "noise05": {
+        "auc": 0.6754219844100938,
+        "auc_exact": "5112269/7569000",
+        "eer": 0.3389942528735632,
+        "eer_exact": "11797/34800",
+        "far": 0.0,
+        "far_exact": "0",
+        "frr": 1.0,
+        "frr_exact": "1",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 0,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 0
+        },
+        "per_person_frr_exact": {
+          "1": "1",
+          "11": "1",
+          "13": "1",
+          "14": "1",
+          "16": "1",
+          "17": "1",
+          "19": "1",
+          "24": "1",
+          "25": "1",
+          "27": "1",
+          "29": "1",
+          "3": "1",
+          "5": "1",
+          "7": "1",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "99/200",
+            "eer_exact": "21/40"
+          },
+          "11": {
+            "auc_exact": "221/800",
+            "eer_exact": "7/10"
+          },
+          "13": {
+            "auc_exact": "3/8",
+            "eer_exact": "5/8"
+          },
+          "14": {
+            "auc_exact": "5/8",
+            "eer_exact": "3/8"
+          },
+          "16": {
+            "auc_exact": "619/800",
+            "eer_exact": "21/80"
+          },
+          "17": {
+            "auc_exact": "1/8",
+            "eer_exact": "7/8"
+          },
+          "19": {
+            "auc_exact": "7/8",
+            "eer_exact": "1/8"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "39/100",
+            "eer_exact": "49/80"
+          },
+          "27": {
+            "auc_exact": "503/800",
+            "eer_exact": "3/8"
+          },
+          "29": {
+            "auc_exact": "151/200",
+            "eer_exact": "9/40"
+          },
+          "3": {
+            "auc_exact": "7/8",
+            "eer_exact": "1/8"
+          },
+          "5": {
+            "auc_exact": "0",
+            "eer_exact": "1"
+          },
+          "7": {
+            "auc_exact": "3/800",
+            "eer_exact": "79/80"
+          },
+          "9": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "repeated_false_accepts": 0,
+        "repeated_false_rejects": 596,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 0
+      },
+      "rotation30": {
+        "auc": 0.9624036860879905,
+        "auc_exact": "1618763/1682000",
+        "eer": 0.058764367816091956,
+        "eer_exact": "409/6960",
+        "far": 0.005,
+        "far_exact": "1/200",
+        "frr": 0.1478735632183908,
+        "frr_exact": "2573/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 0,
+          "19": 0,
+          "24": 5,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "13/40",
+          "14": "1/4",
+          "16": "0",
+          "17": "1/20",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "17/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "199/200",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/40"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "381/800",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 13,
+          "14": 10,
+          "16": 0,
+          "17": 2,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 17,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 6,
+        "repeated_false_rejects": 88,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      },
+      "rotation90": {
+        "auc": 0.9624036860879905,
+        "auc_exact": "1618763/1682000",
+        "eer": 0.058764367816091956,
+        "eer_exact": "409/6960",
+        "far": 0.005,
+        "far_exact": "1/200",
+        "frr": 0.1478735632183908,
+        "frr_exact": "2573/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 0,
+          "19": 0,
+          "24": 5,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "13/40",
+          "14": "1/4",
+          "16": "0",
+          "17": "1/20",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "17/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "199/200",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/40"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "381/800",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 13,
+          "14": 10,
+          "16": 0,
+          "17": 2,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 17,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 6,
+        "repeated_false_rejects": 88,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      }
+    },
+    "nuisance": {
+      "clean": {
+        "auc": 0.9617667459373761,
+        "auc_exact": "194123/201840",
+        "eer": 0.060402298850574715,
+        "eer_exact": "1051/17400",
+        "far": 0.005833333333333334,
+        "far_exact": "7/1200",
+        "frr": 0.14959770114942528,
+        "frr_exact": "2603/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 5,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "7/20",
+          "14": "11/40",
+          "16": "0",
+          "17": "1/40",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "17/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "159/160",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/80"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "799/800",
+            "eer_exact": "1/80"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "371/800",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 14,
+          "14": 11,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 17,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 7,
+        "repeated_false_rejects": 89,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      },
+      "gain09": {
+        "auc": 0.9603603184040164,
+        "auc_exact": "29075869/30276000",
+        "eer": 0.058735632183908044,
+        "eer_exact": "511/8700",
+        "far": 0.005833333333333334,
+        "far_exact": "7/1200",
+        "frr": 0.15293103448275863,
+        "frr_exact": "887/5800",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 4,
+          "25": 1,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/20",
+          "13": "3/8",
+          "14": "11/40",
+          "16": "0",
+          "17": "1/40",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "17/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "159/160",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "799/800",
+            "eer_exact": "1/80"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "353/800",
+            "eer_exact": "21/40"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 2,
+          "13": 15,
+          "14": 11,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 17,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 7,
+        "repeated_false_rejects": 91,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      },
+      "gain11": {
+        "auc": 0.9632501651473114,
+        "auc_exact": "14581681/15138000",
+        "eer": 0.060402298850574715,
+        "eer_exact": "1051/17400",
+        "far": 0.005,
+        "far_exact": "1/200",
+        "frr": 0.15126436781609195,
+        "frr_exact": "329/2175",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 4,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "2/5",
+          "14": "1/4",
+          "16": "0",
+          "17": "1/40",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "1/10",
+          "5": "2/5",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "159/160",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "199/200",
+            "eer_exact": "1/40"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "799/800",
+            "eer_exact": "1/80"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "197/400",
+            "eer_exact": "39/80"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 16,
+          "14": 10,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 4,
+          "5": 16,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 6,
+        "repeated_false_rejects": 90,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      },
+      "noise01": {
+        "auc": 0.9603461817941604,
+        "auc_exact": "29075441/30276000",
+        "eer": 0.06551724137931035,
+        "eer_exact": "19/290",
+        "far": 0.005,
+        "far_exact": "1/200",
+        "frr": 0.15304597701149425,
+        "frr_exact": "2663/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 4,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "3/8",
+          "14": "11/40",
+          "16": "0",
+          "17": "1/40",
+          "19": "1/18",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "2/5",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "159/160",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/40"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "799/800",
+            "eer_exact": "1/80"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "363/800",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 15,
+          "14": 11,
+          "16": 0,
+          "17": 1,
+          "19": 2,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 16,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 6,
+        "repeated_false_rejects": 91,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      },
+      "noise05": {
+        "auc": 0.9450436649491346,
+        "auc_exact": "14306071/15138000",
+        "eer": 0.0957183908045977,
+        "eer_exact": "3331/34800",
+        "far": 0.0,
+        "far_exact": "0",
+        "frr": 1.0,
+        "frr_exact": "1",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 0,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 0
+        },
+        "per_person_frr_exact": {
+          "1": "1",
+          "11": "1",
+          "13": "1",
+          "14": "1",
+          "16": "1",
+          "17": "1",
+          "19": "1",
+          "24": "1",
+          "25": "1",
+          "27": "1",
+          "29": "1",
+          "3": "1",
+          "5": "1",
+          "7": "1",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "793/800",
+            "eer_exact": "1/80"
+          },
+          "13": {
+            "auc_exact": "197/200",
+            "eer_exact": "1/20"
+          },
+          "14": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "16": {
+            "auc_exact": "797/800",
+            "eer_exact": "1/80"
+          },
+          "17": {
+            "auc_exact": "793/800",
+            "eer_exact": "1/20"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "799/800",
+            "eer_exact": "1/80"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "197/200",
+            "eer_exact": "3/80"
+          },
+          "5": {
+            "auc_exact": "783/800",
+            "eer_exact": "3/40"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "297/800",
+            "eer_exact": "47/80"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "repeated_false_accepts": 0,
+        "repeated_false_rejects": 596,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 0
+      },
+      "rotation30": {
+        "auc": 0.9617667459373761,
+        "auc_exact": "194123/201840",
+        "eer": 0.060402298850574715,
+        "eer_exact": "1051/17400",
+        "far": 0.005833333333333334,
+        "far_exact": "7/1200",
+        "frr": 0.14959770114942528,
+        "frr_exact": "2603/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 5,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "7/20",
+          "14": "11/40",
+          "16": "0",
+          "17": "1/40",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "17/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "159/160",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/80"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "799/800",
+            "eer_exact": "1/80"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "371/800",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 14,
+          "14": 11,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 17,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 7,
+        "repeated_false_rejects": 89,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      },
+      "rotation90": {
+        "auc": 0.9617667459373761,
+        "auc_exact": "194123/201840",
+        "eer": 0.060402298850574715,
+        "eer_exact": "1051/17400",
+        "far": 0.005833333333333334,
+        "far_exact": "7/1200",
+        "frr": 0.14959770114942528,
+        "frr_exact": "2603/17400",
+        "per_claimant_repeated_false_accepts": {
+          "1": 0,
+          "11": 0,
+          "13": 0,
+          "14": 0,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 5,
+          "25": 0,
+          "27": 0,
+          "29": 0,
+          "3": 0,
+          "5": 0,
+          "7": 0,
+          "9": 1
+        },
+        "per_person_frr_exact": {
+          "1": "1/40",
+          "11": "1/40",
+          "13": "7/20",
+          "14": "11/40",
+          "16": "0",
+          "17": "1/40",
+          "19": "0",
+          "24": "0",
+          "25": "0",
+          "27": "0",
+          "29": "1/40",
+          "3": "3/40",
+          "5": "17/40",
+          "7": "0",
+          "9": "1"
+        },
+        "per_person_ranking_exact": {
+          "1": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "11": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "13": {
+            "auc_exact": "159/160",
+            "eer_exact": "1/40"
+          },
+          "14": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/80"
+          },
+          "16": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "17": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "19": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "24": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "25": {
+            "auc_exact": "399/400",
+            "eer_exact": "1/40"
+          },
+          "27": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "29": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "3": {
+            "auc_exact": "799/800",
+            "eer_exact": "1/80"
+          },
+          "5": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "7": {
+            "auc_exact": "1",
+            "eer_exact": "0"
+          },
+          "9": {
+            "auc_exact": "371/800",
+            "eer_exact": "1/2"
+          }
+        },
+        "per_person_repeated_genuine_claims": {
+          "1": 40,
+          "11": 40,
+          "13": 40,
+          "14": 40,
+          "16": 40,
+          "17": 40,
+          "19": 36,
+          "24": 40,
+          "25": 40,
+          "27": 40,
+          "29": 40,
+          "3": 40,
+          "5": 40,
+          "7": 40,
+          "9": 40
+        },
+        "per_person_repeated_rejects": {
+          "1": 1,
+          "11": 1,
+          "13": 14,
+          "14": 11,
+          "16": 0,
+          "17": 1,
+          "19": 0,
+          "24": 0,
+          "25": 0,
+          "27": 0,
+          "29": 1,
+          "3": 3,
+          "5": 17,
+          "7": 0,
+          "9": 40
+        },
+        "repeated_false_accepts": 7,
+        "repeated_false_rejects": 89,
+        "repeated_genuine_claims": 596,
+        "repeated_impostor_claims": 1192,
+        "splits_far_above_2pct": 2
+      }
+    }
+  },
+  "winner": "baseline"
+}

@@ -1,0 +1,12 @@
+{
+  "comparison": "new baseline versus frozen prior canonical362",
+  "counts": {
+    "inner": 80,
+    "models": 100,
+    "outer": 140
+  },
+  "exact_arrays_and_metadata": true,
+  "new_results_sha256": "bd1d782b3b7fd1bae0e84faa7c981d2fdbc8e0a7bd86688c7213b8ac94480e43",
+  "prior_results_sha256": "7652349f39141e9e38c81f18aed47eae2b8a3b3dd0cae4343e57684c62ab630e",
+  "verified": true
+}
