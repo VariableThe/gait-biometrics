@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/driver.py", line 296, in <module>
+    return {
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/driver.py", line 257, in main
+    )
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/driver.py", line 95, in prepare
+    changed[relative] = {
+    ^^^^^^^^^^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/selftests.py", line 808, in run
+    function()
+    ~~~~~~~~^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/selftests.py", line 780, in <lambda>
+    lambda: review_tests.copied_R(directory, metadata),
+            ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/review_tests.py", line 672, in copied_R
+    "original_result_inventory_digest",
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/review_tests.py", line 484, in case
+    result["R_gate_sha256"] = c.sha(root / "R-restore-gate.json")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/review_tests.py", line 17, in refuses
+    function()
+    ~~~~~~~~^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/review_tests.py", line 484, in <lambda>
+    result["R_gate_sha256"] = c.sha(root / "R-restore-gate.json")
+                            ^^^^^^^^^^^^^^^^^^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/worker.py", line 633, in verify
+    root = Path(root)
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/worker.py", line 634, in <genexpr>
+    c.check_index(root)
+        ~~~~~~~~~^^^^^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 209, in read
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 183, in decode
+    def bad(token):
+    ^^^^^^^^^^^^^
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 157, in typed
+    def typed(value):
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 157, in <genexpr>
+    def typed(value):
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 159, in typed
+    if kind is dict:
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 159, in <genexpr>
+    if kind is dict:
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 157, in typed
+    def typed(value):
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 157, in <genexpr>
+    def typed(value):
+    
+  File "/home/sherlock/Code/github/VariableThe/artifacts/full-support-canonical-v1/common.py", line 157, in typed
+    def typed(value):
+    
+KeyboardInterrupt

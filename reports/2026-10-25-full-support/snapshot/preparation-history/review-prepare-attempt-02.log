@@ -1,0 +1,34 @@
+synthetic R binding: complete invented bundle stored
+synthetic R binding: full fit-free worker.verify passed
+synthetic R binding refused: exact_review_two_field_shrinkage_0.1_to_0.9_and_zero_original_digest
+synthetic R binding refused: unused_shrinkage_alone
+synthetic R binding refused: model_mean
+synthetic R binding refused: model_scale
+synthetic R binding refused: model_projection
+synthetic R binding refused: model_training_subject_ids
+synthetic R binding refused: model_dtype
+synthetic R binding refused: model_shape
+synthetic R binding refused: original_digest_alone
+synthetic R binding refused: state_signed_zero_bits
+synthetic R binding refused: threshold_value
+synthetic R binding refused: threshold_type
+synthetic R binding refused: training_owner
+synthetic R binding refused: historical_training_metadata
+synthetic R binding refused: current_training_metadata
+synthetic R binding refused: model_assignment_mapping
+synthetic R binding refused: cache_assignment_mapping
+synthetic R binding refused: cache_metadata
+synthetic R binding refused: inner_metadata
+synthetic R binding refused: inner_labels
+synthetic R binding refused: inner_scores
+synthetic R binding refused: historical_outer_labels
+synthetic R binding refused: historical_outer_scores
+synthetic R binding refused: unused_historical_noise_cache
+synthetic R binding refused: historical_noise_scope
+synthetic R binding refused: copied_matched_R_clean_cache
+synthetic R binding refused: clean_gate_metadata
+synthetic R binding refused: missing_reference_binding
+synthetic R binding refused: reference_path_substitution
+synthetic R binding refused: original_result_inventory_digest
+preflight clean
+preflight fold00_noise05
