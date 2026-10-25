@@ -37,3 +37,7 @@ tests/test_verification_protocol.py
 tests/test_walking_gate.py
 tests/test_window_authentication.py
 tests/test_window_provenance.py
+models/gait_canonical.py
+tests/test_gait_canonical.py
+scripts/canonical_orientation_study.py
+tests/test_canonical_orientation_study.py
