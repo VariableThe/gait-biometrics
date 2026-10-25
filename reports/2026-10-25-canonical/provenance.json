@@ -1,0 +1,9 @@
+{
+  "fits": 300,
+  "geometry_contexts": 141,
+  "large_states": "Original local artifacts/canonical-orientation-v1; not all model states published in Git",
+  "origin": "https://github.com/VariableThe/gait-biometrics",
+  "original_calib_test_loaded": false,
+  "score_sets": 660,
+  "source_commit": "108a559bc1a83355dc85335e9f640786846f894a"
+}

@@ -27,6 +27,13 @@ rotation/noise substantially increases rejection; orientation/noise robustness
 remains a measurable research problem using existing data. Simulated recording
 resets demonstrate bounded expiry and preserve short-follow-up censoring.
 
+The [canonical orientation comparison](../reports/2026-10-25-canonical/README.md)
+nominates Canonical362 under the clean low-FAR gates and substantially reduces
+the measured constant-coordinate-rotation sensitivity. Mean EER worsens, five
+users have higher rejection, and gain/noise sensitivity remains unresolved.
+This is a DEV nomination; real phone relocation, time-varying orientation and
+single-window live thresholds remain unvalidated.
+
 ## Limits that software cannot remove
 
 The anonymous legacy WISDM CSVs have no identity mapping; the authentic v1 loader

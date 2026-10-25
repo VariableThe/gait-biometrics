@@ -10,6 +10,8 @@ The separate [DEV-only calibration follow-up](reports/2026-10-24-calibration/REA
 
 The [existing-data engineering follow-up](reports/2026-10-24-engineering/README.md) adds recoverable training, strict numeric/setup checks, raw-sample overlap exclusion, a source-bound walking gate, continuous decisions and censored takeover accounting, plus frozen environments and CPU CI. Walking-gate DEV balanced accuracy is 91.22%; it is not an authentication result. The registered claimant-normalization comparison retains raw scoring because normalized alternatives fail the promotion gates. [The remaining-problem register](docs/open_problems.md) distinguishes implemented software from claims needing fresh phone/session evidence.
 
+The [canonical orientation follow-up](reports/2026-10-25-canonical/README.md) nominates an IDNet-inspired descriptor plus lag spectrum: mean clean DEV FAR 0.836%→0.500% and FRR 15.126%→14.787%, with 10/15 people no worse. Its rejection stays 14.787% under the prescribed 30°/90° constant-coordinate rotations, versus 85.190%/99.500% for control. Mean EER worsens, five people have higher rejection, and noise/gain weaknesses remain. All 300 fits, 660 score sets and 141 geometry contexts replay; this exploratory result changes no TEST or deployment threshold.
+
 The [25 October robustness and simulation report](reports/2026-10-25-robustness/README.md) adds a registered 300-fit full/log-covariance comparison, 660 score replays and 297 timed synthetic policy replays. Neither new representation passes the clean DEV gates. Fixed-threshold sensor stresses expose substantial rotation/noise sensitivity; these synthetic results do not change the published TEST point or establish phone performance.
 
 ## Run immediately
