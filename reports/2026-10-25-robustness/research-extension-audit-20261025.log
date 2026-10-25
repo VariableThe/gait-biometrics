@@ -1,0 +1,2 @@
+warning: `uv audit` is experimental and may change without warning. Pass `--preview-features audit-command` to disable this warning.
+Found no known vulnerabilities and no adverse project statuses in 87 packages

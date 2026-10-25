@@ -1,0 +1,4902 @@
+[
+  {
+    "path": "fold00_control_inner0_model.npz",
+    "published": false,
+    "sha256": "4bd43673a1d695de8ef28d3709fae937f9048ad8ae13a2797ee70d3110fe395f"
+  },
+  {
+    "path": "fold00_control_inner1_model.npz",
+    "published": false,
+    "sha256": "092346504bd35337e83222fa105c42f5f3d65cf4974e436148cb363b21c833bf"
+  },
+  {
+    "path": "fold00_control_inner2_model.npz",
+    "published": false,
+    "sha256": "3e76b5af0563627ac761b1b707cf7d63196f0d7274543566df58b2d860891c50"
+  },
+  {
+    "path": "fold00_control_inner3_model.npz",
+    "published": false,
+    "sha256": "ded006abcb092a898e76b1fd5c4a74726c0c812d50987b216e082e50b4369e04"
+  },
+  {
+    "path": "fold00_control_refit_model.npz",
+    "published": false,
+    "sha256": "17f8386f580512a17e6218f9e355c750378cdf85461cec0d6164657681b6e62a"
+  },
+  {
+    "path": "fold00_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "c9fb4a6b56034a6d9c28fa87c7398c2ae0d26ba8942be61b81ad94956b5c6433"
+  },
+  {
+    "path": "fold00_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "969b8f1aab19c31419e7c51ab7b0b243bb1e45f8555365363576f9f737de2cac"
+  },
+  {
+    "path": "fold00_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "f2e3986be1902b7f62fd5d763ebca6402bd6e0bc83859ad1a641e17858980cde"
+  },
+  {
+    "path": "fold00_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "e9e84dbeb84ba57adb25c985d9e7cbda6e0a33ce46c0bb4b5e9d8216d359fbb3"
+  },
+  {
+    "path": "fold00_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "14932dce4d912740493d21bff89f375af1e973ede13b5bf3327944ac6216f9c9"
+  },
+  {
+    "path": "fold00_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "e4de86a23644601831276a40325e38b4d21a3bc48668f54846258e1efdcd6356"
+  },
+  {
+    "path": "fold00_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "14a6f89de3a13394a4f493b762a977454f3851da4b2fe9cf8421055f6676fc7e"
+  },
+  {
+    "path": "fold00_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "f4f66a182663997617954f69dc36af1cb712940dd457765aa514be9182034eb8"
+  },
+  {
+    "path": "fold00_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "a9ebed4de0d6fc527510d53d34cc5ae521ce9ddfe5c021c3e891e9ba7705b45a"
+  },
+  {
+    "path": "fold00_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "12a83fd9a84e060d693d57ecbcf9a9885f439c1150a6c2cfd59db01d818bbda1"
+  },
+  {
+    "path": "fold01_control_inner0_model.npz",
+    "published": false,
+    "sha256": "9925194ed34e09de6b4971dbe4604cf7e45af3c62c44dba0859f7e20003baafc"
+  },
+  {
+    "path": "fold01_control_inner1_model.npz",
+    "published": false,
+    "sha256": "ede64873cdce7e04414e78a7f4dc85bb6b1ede7b93432d5cdb6491f422e94023"
+  },
+  {
+    "path": "fold01_control_inner2_model.npz",
+    "published": false,
+    "sha256": "3dea41dc820c29c3cf8f85453db22daff4214524f17104034ce1aa31d5759946"
+  },
+  {
+    "path": "fold01_control_inner3_model.npz",
+    "published": false,
+    "sha256": "4bd43673a1d695de8ef28d3709fae937f9048ad8ae13a2797ee70d3110fe395f"
+  },
+  {
+    "path": "fold01_control_refit_model.npz",
+    "published": false,
+    "sha256": "b3c06eea7fb80b4393ee57f02c3bfd8ad480b8a80028e9afea7a9067036e9dc5"
+  },
+  {
+    "path": "fold01_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "e63782e1a28ea33766aa5a512c38360aa2c4e54bb0d9f591677b4bd9c0839235"
+  },
+  {
+    "path": "fold01_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "04397a8c05be3c1821d216ed7c084355d5d32fdfa33f84675f7ae41e951e14de"
+  },
+  {
+    "path": "fold01_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "6fd8ce3d9350e16298b4b36b1212910cd805a9be9f89874e3192f098f05159f0"
+  },
+  {
+    "path": "fold01_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "c9fb4a6b56034a6d9c28fa87c7398c2ae0d26ba8942be61b81ad94956b5c6433"
+  },
+  {
+    "path": "fold01_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "e72c61f070b7ea9382ffcdb78f2dd2c7c38f0da34b05f6dd4c1bcb2b09d25818"
+  },
+  {
+    "path": "fold01_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "c8f65ab124fab3c796081212fc7ed2a1eabe9efbf6714f0cefa803f3690e516b"
+  },
+  {
+    "path": "fold01_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "1f9e27225b5c77d9b5e43c4e78a8fe47ce66c6ecaf0ab954e5e2dd9cfe193ac8"
+  },
+  {
+    "path": "fold01_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "b61ad683f3d6e67377ffd60880ee3241cd76920bb398ca8c645268b6f76c17d7"
+  },
+  {
+    "path": "fold01_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "e4de86a23644601831276a40325e38b4d21a3bc48668f54846258e1efdcd6356"
+  },
+  {
+    "path": "fold01_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "324a3ab21b66601d55a9efe1a3a995a9c917efbdd94e0c244ef1790f53a71141"
+  },
+  {
+    "path": "fold02_control_inner0_model.npz",
+    "published": false,
+    "sha256": "6d1df2b4fd0f216577a41f57eef52f1465bb653375620db59dfe13b30397559b"
+  },
+  {
+    "path": "fold02_control_inner1_model.npz",
+    "published": false,
+    "sha256": "7211ea1477c283d94ab6edfb0a3bd8508dfc1742eb2a230e6c177990aede5ce9"
+  },
+  {
+    "path": "fold02_control_inner2_model.npz",
+    "published": false,
+    "sha256": "092346504bd35337e83222fa105c42f5f3d65cf4974e436148cb363b21c833bf"
+  },
+  {
+    "path": "fold02_control_inner3_model.npz",
+    "published": false,
+    "sha256": "9925194ed34e09de6b4971dbe4604cf7e45af3c62c44dba0859f7e20003baafc"
+  },
+  {
+    "path": "fold02_control_refit_model.npz",
+    "published": false,
+    "sha256": "dd18b984b7171c61feb27dbfbe154b8d3f744449fc88246ad03bc5297bfd0695"
+  },
+  {
+    "path": "fold02_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "1831d1d289cd12fb354cdd6a8b7f7d0900498378280c1eaacc0ff5b4832c6a63"
+  },
+  {
+    "path": "fold02_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "5e8555595cd56cf53b1927a4901940e6eb92819304d1b5869ee792011fec1fa2"
+  },
+  {
+    "path": "fold02_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "969b8f1aab19c31419e7c51ab7b0b243bb1e45f8555365363576f9f737de2cac"
+  },
+  {
+    "path": "fold02_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "e63782e1a28ea33766aa5a512c38360aa2c4e54bb0d9f591677b4bd9c0839235"
+  },
+  {
+    "path": "fold02_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "35c7d51027deb7eab016966fa50d28314111b4baa406790a25de8724138f76de"
+  },
+  {
+    "path": "fold02_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "777ae6c821e0575a0d8dcf3d533845ecf35aa2de12e769ad2b4b1c19655d6010"
+  },
+  {
+    "path": "fold02_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "f4293c154f6abfe277999fe86bb90e1588adc91197811aa81e34ae09299be549"
+  },
+  {
+    "path": "fold02_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "14a6f89de3a13394a4f493b762a977454f3851da4b2fe9cf8421055f6676fc7e"
+  },
+  {
+    "path": "fold02_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "c8f65ab124fab3c796081212fc7ed2a1eabe9efbf6714f0cefa803f3690e516b"
+  },
+  {
+    "path": "fold02_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "45c7299948e591bcccbb1559b4f834c2e62b4c94263185a375fb1dfa79321701"
+  },
+  {
+    "path": "fold03_control_inner0_model.npz",
+    "published": false,
+    "sha256": "284346e53c29efb58a5ce8d9b17c75b7bd505c18f5aeaa16e75d3098d3b6058e"
+  },
+  {
+    "path": "fold03_control_inner1_model.npz",
+    "published": false,
+    "sha256": "3e76b5af0563627ac761b1b707cf7d63196f0d7274543566df58b2d860891c50"
+  },
+  {
+    "path": "fold03_control_inner2_model.npz",
+    "published": false,
+    "sha256": "ede64873cdce7e04414e78a7f4dc85bb6b1ede7b93432d5cdb6491f422e94023"
+  },
+  {
+    "path": "fold03_control_inner3_model.npz",
+    "published": false,
+    "sha256": "6d1df2b4fd0f216577a41f57eef52f1465bb653375620db59dfe13b30397559b"
+  },
+  {
+    "path": "fold03_control_refit_model.npz",
+    "published": false,
+    "sha256": "fb1ad559cc40ec448e06d640a4734b2d05834a812f31150c80150ae49c60d9ed"
+  },
+  {
+    "path": "fold03_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "8bbd317c54b9fe6b96e81317aa4acd76ad36c1248247ac615d59ab5f55dda01f"
+  },
+  {
+    "path": "fold03_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "f2e3986be1902b7f62fd5d763ebca6402bd6e0bc83859ad1a641e17858980cde"
+  },
+  {
+    "path": "fold03_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "04397a8c05be3c1821d216ed7c084355d5d32fdfa33f84675f7ae41e951e14de"
+  },
+  {
+    "path": "fold03_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "1831d1d289cd12fb354cdd6a8b7f7d0900498378280c1eaacc0ff5b4832c6a63"
+  },
+  {
+    "path": "fold03_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "eb509980d6a05f4428c645394a27c128bae98b5e3173417b7a13bde91bf46e65"
+  },
+  {
+    "path": "fold03_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "05f4a599bedb771b2cd3a67513cdd87b498852db1fea25ced6e5087c803d9328"
+  },
+  {
+    "path": "fold03_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "f4f66a182663997617954f69dc36af1cb712940dd457765aa514be9182034eb8"
+  },
+  {
+    "path": "fold03_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "1f9e27225b5c77d9b5e43c4e78a8fe47ce66c6ecaf0ab954e5e2dd9cfe193ac8"
+  },
+  {
+    "path": "fold03_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "777ae6c821e0575a0d8dcf3d533845ecf35aa2de12e769ad2b4b1c19655d6010"
+  },
+  {
+    "path": "fold03_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "2ddcdf8acf84221b658918c2645d4b7d6d7d9edd567805bef110a858d3556d4e"
+  },
+  {
+    "path": "fold04_control_inner0_model.npz",
+    "published": false,
+    "sha256": "ded006abcb092a898e76b1fd5c4a74726c0c812d50987b216e082e50b4369e04"
+  },
+  {
+    "path": "fold04_control_inner1_model.npz",
+    "published": false,
+    "sha256": "3dea41dc820c29c3cf8f85453db22daff4214524f17104034ce1aa31d5759946"
+  },
+  {
+    "path": "fold04_control_inner2_model.npz",
+    "published": false,
+    "sha256": "7211ea1477c283d94ab6edfb0a3bd8508dfc1742eb2a230e6c177990aede5ce9"
+  },
+  {
+    "path": "fold04_control_inner3_model.npz",
+    "published": false,
+    "sha256": "284346e53c29efb58a5ce8d9b17c75b7bd505c18f5aeaa16e75d3098d3b6058e"
+  },
+  {
+    "path": "fold04_control_refit_model.npz",
+    "published": false,
+    "sha256": "d11fc763dfa6cb925d30d55023ae60028688ba41f4728edfecf4397e565aa734"
+  },
+  {
+    "path": "fold04_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "e9e84dbeb84ba57adb25c985d9e7cbda6e0a33ce46c0bb4b5e9d8216d359fbb3"
+  },
+  {
+    "path": "fold04_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "6fd8ce3d9350e16298b4b36b1212910cd805a9be9f89874e3192f098f05159f0"
+  },
+  {
+    "path": "fold04_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "5e8555595cd56cf53b1927a4901940e6eb92819304d1b5869ee792011fec1fa2"
+  },
+  {
+    "path": "fold04_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "8bbd317c54b9fe6b96e81317aa4acd76ad36c1248247ac615d59ab5f55dda01f"
+  },
+  {
+    "path": "fold04_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "ead9fc253f05744f3a872d53cf3f1a355948a7c2b8bf465ba0e2e72c7aba49a6"
+  },
+  {
+    "path": "fold04_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "a9ebed4de0d6fc527510d53d34cc5ae521ce9ddfe5c021c3e891e9ba7705b45a"
+  },
+  {
+    "path": "fold04_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "b61ad683f3d6e67377ffd60880ee3241cd76920bb398ca8c645268b6f76c17d7"
+  },
+  {
+    "path": "fold04_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "f4293c154f6abfe277999fe86bb90e1588adc91197811aa81e34ae09299be549"
+  },
+  {
+    "path": "fold04_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "05f4a599bedb771b2cd3a67513cdd87b498852db1fea25ced6e5087c803d9328"
+  },
+  {
+    "path": "fold04_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "a2a6dd3abb1d0a7c51bf5cfb368ef1aedb619df564de46d9492dd61e45cdaf06"
+  },
+  {
+    "path": "fold05_control_inner0_model.npz",
+    "published": false,
+    "sha256": "be17f92f1c9a3b8de9cb8f5b36ea0367f29b8481b9505bffb54289622e4b4743"
+  },
+  {
+    "path": "fold05_control_inner1_model.npz",
+    "published": false,
+    "sha256": "85fead59cbeae4c5347c0125cbac7c10294ee9a51dfee8ce2e9b1837047cf673"
+  },
+  {
+    "path": "fold05_control_inner2_model.npz",
+    "published": false,
+    "sha256": "87bfd7be40308570d09ca9722b1459fd883d64ed161c2f374b0f12349a386c73"
+  },
+  {
+    "path": "fold05_control_inner3_model.npz",
+    "published": false,
+    "sha256": "96f9ebaf1c880891478ca709d08a18f84aeb95144feea73ee8e3c256fbd463c7"
+  },
+  {
+    "path": "fold05_control_refit_model.npz",
+    "published": false,
+    "sha256": "9b5d673a20d26df35e00b2f7515d7271fd22098771886d400c417d8bfa34f047"
+  },
+  {
+    "path": "fold05_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "e60b3656a2e594ead16bb507067582306fa628fe2e74d1f7f93f1658de1b62e8"
+  },
+  {
+    "path": "fold05_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "0f9ba3c49042f38a58973b65da97eb494da9248f4b0224cf3e860f5221dc654e"
+  },
+  {
+    "path": "fold05_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "de218f4cab605a57253aab165ec4a85d9d964b2f59618ae9c3d87e7079275cd0"
+  },
+  {
+    "path": "fold05_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "6640f98c6758b5470ee7c1cb750135996d3d668b66ec9332a1f385ec9da0bd5c"
+  },
+  {
+    "path": "fold05_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "5b16ba6e4241559bfc90e8c45dc84c0f48faa022cca1ce2b9c35fc2e42b4c97e"
+  },
+  {
+    "path": "fold05_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "31c4bad76cfa092d5731f67837c0983c95d18497ef580c7756db2025b6ab49c7"
+  },
+  {
+    "path": "fold05_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "bb9d125a2db573a0e66ea24d9ba25f28076f1690f373ed6bcb30d8240be7e5c1"
+  },
+  {
+    "path": "fold05_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "d9cba17928f3898231f26f2d031b571326cabb352e4a1185a43b6b3eacc95c2b"
+  },
+  {
+    "path": "fold05_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "564371a45bc4d37cd2d5bd7fbf98585e1a2b530f890b95316b1ea1a758c1a8d6"
+  },
+  {
+    "path": "fold05_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "626de8113a0c0ee9857cb9d887cfe53548445bb4993b55750b62e911fb828479"
+  },
+  {
+    "path": "fold06_control_inner0_model.npz",
+    "published": false,
+    "sha256": "66a0199f188fb6e488820c1b867d054f325e894e529d078faecde764730e7706"
+  },
+  {
+    "path": "fold06_control_inner1_model.npz",
+    "published": false,
+    "sha256": "a94bee872d57ba6fcd61b818e9f1e036d589019d08a5b2b142d440db2ce6ec89"
+  },
+  {
+    "path": "fold06_control_inner2_model.npz",
+    "published": false,
+    "sha256": "7d007218581441bf0dbff366c0b6d4683fd34dce85ee23d2dc0cb090e483156e"
+  },
+  {
+    "path": "fold06_control_inner3_model.npz",
+    "published": false,
+    "sha256": "be17f92f1c9a3b8de9cb8f5b36ea0367f29b8481b9505bffb54289622e4b4743"
+  },
+  {
+    "path": "fold06_control_refit_model.npz",
+    "published": false,
+    "sha256": "5783283da2240d1a0329a46118a95db3b0ea4d6ee0034f9058d48014a9b32b6b"
+  },
+  {
+    "path": "fold06_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "c05101f20a67424b7fca1404239faff2e27fd9580b63b6ffaa6e3989f10c8f30"
+  },
+  {
+    "path": "fold06_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "2f171c617b81766503013cc49f0b2ccd803f1b25aa77b6a5ccb349a59189c23b"
+  },
+  {
+    "path": "fold06_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "5d5ae36841c4afbc9f11802229ae20292e22157fd309b771c7e81f4addc2a883"
+  },
+  {
+    "path": "fold06_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "e60b3656a2e594ead16bb507067582306fa628fe2e74d1f7f93f1658de1b62e8"
+  },
+  {
+    "path": "fold06_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "c6bde5bd8c9c77af91d8d83606d3f6f365a5c6735875a25ec5fb184efb062394"
+  },
+  {
+    "path": "fold06_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "8d42d672c41d6bf319e8c7190b27c4f1fe6fc728e2478af520f48dd990454361"
+  },
+  {
+    "path": "fold06_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "5d58e7d0500e5c7ac9bcd348dcf53fde86cfda5eea871aa494ed1abaab843614"
+  },
+  {
+    "path": "fold06_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "a47b2e9466fe9a7c028ecad98944a0fdf7b7d6adf5397309a773063e1e162642"
+  },
+  {
+    "path": "fold06_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "31c4bad76cfa092d5731f67837c0983c95d18497ef580c7756db2025b6ab49c7"
+  },
+  {
+    "path": "fold06_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "dca352b2d69b800b0065d31faa07242e52ee32a653230161cdbf4bb5db304059"
+  },
+  {
+    "path": "fold07_control_inner0_model.npz",
+    "published": false,
+    "sha256": "b4c84678f5215ec6efea181ec5f4c3da3eeef558c53c1054c9a913b7e3c8f0d2"
+  },
+  {
+    "path": "fold07_control_inner1_model.npz",
+    "published": false,
+    "sha256": "aa35debc5f588a40100027cbc2b103dd071260498ca85d1633cac1fe781b41c4"
+  },
+  {
+    "path": "fold07_control_inner2_model.npz",
+    "published": false,
+    "sha256": "85fead59cbeae4c5347c0125cbac7c10294ee9a51dfee8ce2e9b1837047cf673"
+  },
+  {
+    "path": "fold07_control_inner3_model.npz",
+    "published": false,
+    "sha256": "66a0199f188fb6e488820c1b867d054f325e894e529d078faecde764730e7706"
+  },
+  {
+    "path": "fold07_control_refit_model.npz",
+    "published": false,
+    "sha256": "4eb720295834875c0faeae6439084ddff4922e8a1d15b66792e52abfb5ef02ca"
+  },
+  {
+    "path": "fold07_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "b752022b29eb55db0fd744307c712a724f27532f8e4b8f76ea2a49367c43554a"
+  },
+  {
+    "path": "fold07_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "9f91801bec0c126f62a3bd3c5137403178319202b825cf6b7bbfc3131d6419d7"
+  },
+  {
+    "path": "fold07_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "0f9ba3c49042f38a58973b65da97eb494da9248f4b0224cf3e860f5221dc654e"
+  },
+  {
+    "path": "fold07_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "c05101f20a67424b7fca1404239faff2e27fd9580b63b6ffaa6e3989f10c8f30"
+  },
+  {
+    "path": "fold07_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "bb421c126a282f084092a9028563bfe6d9107b74e100cee6f08507eefa563625"
+  },
+  {
+    "path": "fold07_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "215b8c4c40bf46f604a2262d85314f94baf7f7cc6831a3943c20ac08ac11a86e"
+  },
+  {
+    "path": "fold07_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "949d5880ef9d04003405743ce1db009ea95a27f5fede5e85654f710d776d43db"
+  },
+  {
+    "path": "fold07_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "bb9d125a2db573a0e66ea24d9ba25f28076f1690f373ed6bcb30d8240be7e5c1"
+  },
+  {
+    "path": "fold07_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "8d42d672c41d6bf319e8c7190b27c4f1fe6fc728e2478af520f48dd990454361"
+  },
+  {
+    "path": "fold07_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "52e12a12a72f710e1520615805863261ba5285ec4b1f034cd7642958e2b4d78b"
+  },
+  {
+    "path": "fold08_control_inner0_model.npz",
+    "published": false,
+    "sha256": "1969c9f8ec6252a1d4b850cf6870e7c82906ec90011004904599283ea481e42c"
+  },
+  {
+    "path": "fold08_control_inner1_model.npz",
+    "published": false,
+    "sha256": "87bfd7be40308570d09ca9722b1459fd883d64ed161c2f374b0f12349a386c73"
+  },
+  {
+    "path": "fold08_control_inner2_model.npz",
+    "published": false,
+    "sha256": "a94bee872d57ba6fcd61b818e9f1e036d589019d08a5b2b142d440db2ce6ec89"
+  },
+  {
+    "path": "fold08_control_inner3_model.npz",
+    "published": false,
+    "sha256": "b4c84678f5215ec6efea181ec5f4c3da3eeef558c53c1054c9a913b7e3c8f0d2"
+  },
+  {
+    "path": "fold08_control_refit_model.npz",
+    "published": false,
+    "sha256": "896209d0df6f3c75c786af11518a4dc161af97be9645a36ac6893b8a1e0fba0e"
+  },
+  {
+    "path": "fold08_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "f71da2b07f7d739eee67bbaaa4f799a8700629864488783ba84b8dd3851a9e44"
+  },
+  {
+    "path": "fold08_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "de218f4cab605a57253aab165ec4a85d9d964b2f59618ae9c3d87e7079275cd0"
+  },
+  {
+    "path": "fold08_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "2f171c617b81766503013cc49f0b2ccd803f1b25aa77b6a5ccb349a59189c23b"
+  },
+  {
+    "path": "fold08_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "b752022b29eb55db0fd744307c712a724f27532f8e4b8f76ea2a49367c43554a"
+  },
+  {
+    "path": "fold08_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "26f56a9afe1b75d6088ff73e1ee017d539fe5831ce3b44d168167b1cfbc6d52c"
+  },
+  {
+    "path": "fold08_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "3581f8bdad04e97bd50b3a1b9bde32586b9122855bbec4c1bf27350196bb02e2"
+  },
+  {
+    "path": "fold08_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "d9cba17928f3898231f26f2d031b571326cabb352e4a1185a43b6b3eacc95c2b"
+  },
+  {
+    "path": "fold08_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "5d58e7d0500e5c7ac9bcd348dcf53fde86cfda5eea871aa494ed1abaab843614"
+  },
+  {
+    "path": "fold08_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "215b8c4c40bf46f604a2262d85314f94baf7f7cc6831a3943c20ac08ac11a86e"
+  },
+  {
+    "path": "fold08_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "beb6623ce57ded6c91ff8560d4a5af16ec4c339a270dfcbacb1fe5eead11d8dd"
+  },
+  {
+    "path": "fold09_control_inner0_model.npz",
+    "published": false,
+    "sha256": "96f9ebaf1c880891478ca709d08a18f84aeb95144feea73ee8e3c256fbd463c7"
+  },
+  {
+    "path": "fold09_control_inner1_model.npz",
+    "published": false,
+    "sha256": "7d007218581441bf0dbff366c0b6d4683fd34dce85ee23d2dc0cb090e483156e"
+  },
+  {
+    "path": "fold09_control_inner2_model.npz",
+    "published": false,
+    "sha256": "aa35debc5f588a40100027cbc2b103dd071260498ca85d1633cac1fe781b41c4"
+  },
+  {
+    "path": "fold09_control_inner3_model.npz",
+    "published": false,
+    "sha256": "1969c9f8ec6252a1d4b850cf6870e7c82906ec90011004904599283ea481e42c"
+  },
+  {
+    "path": "fold09_control_refit_model.npz",
+    "published": false,
+    "sha256": "a346df3685b424416d1d95a758b6e7230a35e5a25208cebd9293a5fb480e148e"
+  },
+  {
+    "path": "fold09_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "6640f98c6758b5470ee7c1cb750135996d3d668b66ec9332a1f385ec9da0bd5c"
+  },
+  {
+    "path": "fold09_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "5d5ae36841c4afbc9f11802229ae20292e22157fd309b771c7e81f4addc2a883"
+  },
+  {
+    "path": "fold09_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "9f91801bec0c126f62a3bd3c5137403178319202b825cf6b7bbfc3131d6419d7"
+  },
+  {
+    "path": "fold09_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "f71da2b07f7d739eee67bbaaa4f799a8700629864488783ba84b8dd3851a9e44"
+  },
+  {
+    "path": "fold09_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "a93716fb424d14f9f7ba77db7a6a2009e38e900a602cd71c09797a39acc4ca9a"
+  },
+  {
+    "path": "fold09_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "564371a45bc4d37cd2d5bd7fbf98585e1a2b530f890b95316b1ea1a758c1a8d6"
+  },
+  {
+    "path": "fold09_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "a47b2e9466fe9a7c028ecad98944a0fdf7b7d6adf5397309a773063e1e162642"
+  },
+  {
+    "path": "fold09_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "949d5880ef9d04003405743ce1db009ea95a27f5fede5e85654f710d776d43db"
+  },
+  {
+    "path": "fold09_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "3581f8bdad04e97bd50b3a1b9bde32586b9122855bbec4c1bf27350196bb02e2"
+  },
+  {
+    "path": "fold09_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "fdb1db5d8e6ca2c4637d155e7222aa3ceb91f6bb8fbab301f326b7011d01f18e"
+  },
+  {
+    "path": "fold10_control_inner0_model.npz",
+    "published": false,
+    "sha256": "e448b47a7ab88543edd3eef446a78b1306ebec6b7594373c293a24e0310aad7d"
+  },
+  {
+    "path": "fold10_control_inner1_model.npz",
+    "published": false,
+    "sha256": "40fb94ccacaac70cdc63b2e67018ac316528aeb0217b874d89e86b147d7a95d0"
+  },
+  {
+    "path": "fold10_control_inner2_model.npz",
+    "published": false,
+    "sha256": "3c81222e308a0f934c95cee972e6b50c68d6285bc66e3b18a3a0133642688640"
+  },
+  {
+    "path": "fold10_control_inner3_model.npz",
+    "published": false,
+    "sha256": "e4f346312636e08dadfee0a59e0082f09edba9150c5633cfdb4c71651abf63ac"
+  },
+  {
+    "path": "fold10_control_refit_model.npz",
+    "published": false,
+    "sha256": "9fb768a52b9356db77641321acd4eee38f6b43965bca9c27b4ca5448e44a107e"
+  },
+  {
+    "path": "fold10_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "798b87ffa16da0b79b23cebff8862823f9acbebebc1ea733b99380bfa1f4d369"
+  },
+  {
+    "path": "fold10_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "bde8f0f5a215a4df1440e05831940ef9958b37726e65f9bdff1722d3a8c8dd27"
+  },
+  {
+    "path": "fold10_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "71aa26bb44b34cb6955dd63d1546f3873d164a6db3e492a4785ebc0cf791bea7"
+  },
+  {
+    "path": "fold10_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "035f1893e5c125131fb568263f1c8536f904e3affabc87d80fdbac6e968a2846"
+  },
+  {
+    "path": "fold10_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "c8189e71f0915dad997b67318cc2a26350b406d96047ff2e15b62c91c8b62907"
+  },
+  {
+    "path": "fold10_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "05514be963ffd0b6c90772dc4102a636a253f6e527877e1fc9cf63e8039efadb"
+  },
+  {
+    "path": "fold10_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "9e4257f48baa43994dbce5fafe973b122006ae185f88cc16ef3eec190c9dafdc"
+  },
+  {
+    "path": "fold10_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "7be13b6f18942c20baeae43e9c9484434c748c124d1e324cb288547945161b5e"
+  },
+  {
+    "path": "fold10_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "2a8b1c0fa74725bb0f947089f8c9b4b5fb10b5dba853041cf44b619bc2ff4818"
+  },
+  {
+    "path": "fold10_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "55e68b4cdcf1b40adbb0f13f7bb0ad1e9fb22a03a7ab8c4167fe957daf4c1bf1"
+  },
+  {
+    "path": "fold11_control_inner0_model.npz",
+    "published": false,
+    "sha256": "32cf789bec1725a19c196de98ea5994963c9dfe37c608899a8bb6d584115816b"
+  },
+  {
+    "path": "fold11_control_inner1_model.npz",
+    "published": false,
+    "sha256": "62665d3de95bb08aab43233e7139137a17223ba804cfcd105803c60c0ac57720"
+  },
+  {
+    "path": "fold11_control_inner2_model.npz",
+    "published": false,
+    "sha256": "9fd15825c5b7d6045461eb6bc8955d6fadffb6976cf9c24472b649beddbea638"
+  },
+  {
+    "path": "fold11_control_inner3_model.npz",
+    "published": false,
+    "sha256": "e448b47a7ab88543edd3eef446a78b1306ebec6b7594373c293a24e0310aad7d"
+  },
+  {
+    "path": "fold11_control_refit_model.npz",
+    "published": false,
+    "sha256": "6b2887a7a9ccdb8757440d0eadbb14ed6e18f759176bd47ae746305798e71e76"
+  },
+  {
+    "path": "fold11_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "f18fc5beffe264dc2de7a4a555cdd7035228e90ba6e52aa5a6d973b72baff776"
+  },
+  {
+    "path": "fold11_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "b125a8d6438332676d86b3acf6bee6fee655cb9fc962dd9531cd19223db4240f"
+  },
+  {
+    "path": "fold11_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "18b5907eafa96a80620efa7a9b5a45d42b410a5c2417d4b223efea000cec9d31"
+  },
+  {
+    "path": "fold11_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "798b87ffa16da0b79b23cebff8862823f9acbebebc1ea733b99380bfa1f4d369"
+  },
+  {
+    "path": "fold11_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "4dbdbf611cb4e80993319a0fc0d7cef3e75c88827e69d61fd13125f11adb97c8"
+  },
+  {
+    "path": "fold11_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "eb0c204a9400214b3e75be927fc3214b9bee2dfc41a55b7a1ca4aa18b0ce065f"
+  },
+  {
+    "path": "fold11_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "6599f06cba9ad21aed4806756d16fb9538b4775838be66cce2b086551af1b541"
+  },
+  {
+    "path": "fold11_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "6ba90e120f6aee82fd199a0e51db15d25715f4c352e7b78ee6812fa5fe0f3d06"
+  },
+  {
+    "path": "fold11_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "05514be963ffd0b6c90772dc4102a636a253f6e527877e1fc9cf63e8039efadb"
+  },
+  {
+    "path": "fold11_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "bc6f5e60cc28d0ad3fc2617717efa29d51215007c83c2eb0043f52b780070714"
+  },
+  {
+    "path": "fold12_control_inner0_model.npz",
+    "published": false,
+    "sha256": "62497da311e713fa962ca992384047e535c79e6c70fb0c187a07ba93303d2b3d"
+  },
+  {
+    "path": "fold12_control_inner1_model.npz",
+    "published": false,
+    "sha256": "34561994945aa5dc65761fd12fe18bf2b478cc27508f8c45ab56dd3689881c5a"
+  },
+  {
+    "path": "fold12_control_inner2_model.npz",
+    "published": false,
+    "sha256": "40fb94ccacaac70cdc63b2e67018ac316528aeb0217b874d89e86b147d7a95d0"
+  },
+  {
+    "path": "fold12_control_inner3_model.npz",
+    "published": false,
+    "sha256": "32cf789bec1725a19c196de98ea5994963c9dfe37c608899a8bb6d584115816b"
+  },
+  {
+    "path": "fold12_control_refit_model.npz",
+    "published": false,
+    "sha256": "cc127268fe2cec9d581dc55dddf2926f2c36f4cc56ee3e5b2b24099647bef1c5"
+  },
+  {
+    "path": "fold12_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "676413aab69d4aeae6513bc48e3f69b81e57409848836169b044f239b8e45f63"
+  },
+  {
+    "path": "fold12_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "50d0d2cfce952a41bfe4ad4b615ec283908ba8571139ef2d1c0e217bb9c23865"
+  },
+  {
+    "path": "fold12_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "bde8f0f5a215a4df1440e05831940ef9958b37726e65f9bdff1722d3a8c8dd27"
+  },
+  {
+    "path": "fold12_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "f18fc5beffe264dc2de7a4a555cdd7035228e90ba6e52aa5a6d973b72baff776"
+  },
+  {
+    "path": "fold12_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "47a599b48d3cc8488e5e3f8e080f8245cb5738c5a5ed9f567c5c80260ff33604"
+  },
+  {
+    "path": "fold12_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "286b52c19d1b108bca3e79952da57f70cdb29bef5a4e95dbdf444e1e83785335"
+  },
+  {
+    "path": "fold12_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "f6a0cabde9dbdad679e2856bc8516975a528e8235a273f2a51b19c24b5fd6f5e"
+  },
+  {
+    "path": "fold12_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "9e4257f48baa43994dbce5fafe973b122006ae185f88cc16ef3eec190c9dafdc"
+  },
+  {
+    "path": "fold12_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "eb0c204a9400214b3e75be927fc3214b9bee2dfc41a55b7a1ca4aa18b0ce065f"
+  },
+  {
+    "path": "fold12_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "29c26c4f2adcfb17f6b84118be6a2547cbdb7d3045ed3c0a1b0d435dd801f3e7"
+  },
+  {
+    "path": "fold13_control_inner0_model.npz",
+    "published": false,
+    "sha256": "603c29fee966f3b11360c85268f36abbcf6c9ceba6b6546c9ea95d46911e1cb6"
+  },
+  {
+    "path": "fold13_control_inner1_model.npz",
+    "published": false,
+    "sha256": "3c81222e308a0f934c95cee972e6b50c68d6285bc66e3b18a3a0133642688640"
+  },
+  {
+    "path": "fold13_control_inner2_model.npz",
+    "published": false,
+    "sha256": "62665d3de95bb08aab43233e7139137a17223ba804cfcd105803c60c0ac57720"
+  },
+  {
+    "path": "fold13_control_inner3_model.npz",
+    "published": false,
+    "sha256": "62497da311e713fa962ca992384047e535c79e6c70fb0c187a07ba93303d2b3d"
+  },
+  {
+    "path": "fold13_control_refit_model.npz",
+    "published": false,
+    "sha256": "b6ffa664e072b6cfc9c20e04b672a721e15a9faa95b58c785f57cac42868e7a1"
+  },
+  {
+    "path": "fold13_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "223e6b7e514e33fde3a3fc93c2ea990ad056c7277c4af464e7e0211f40effb93"
+  },
+  {
+    "path": "fold13_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "71aa26bb44b34cb6955dd63d1546f3873d164a6db3e492a4785ebc0cf791bea7"
+  },
+  {
+    "path": "fold13_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "b125a8d6438332676d86b3acf6bee6fee655cb9fc962dd9531cd19223db4240f"
+  },
+  {
+    "path": "fold13_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "676413aab69d4aeae6513bc48e3f69b81e57409848836169b044f239b8e45f63"
+  },
+  {
+    "path": "fold13_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "a07a53c6bb5a963f60bb4d5e09030d136d982d4b7bc9aada354f8ce80ef98cd2"
+  },
+  {
+    "path": "fold13_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "ac5e77203fec33bf3eec4b71705779c792f184b378d86382a167a157ad75aba8"
+  },
+  {
+    "path": "fold13_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "7be13b6f18942c20baeae43e9c9484434c748c124d1e324cb288547945161b5e"
+  },
+  {
+    "path": "fold13_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "6599f06cba9ad21aed4806756d16fb9538b4775838be66cce2b086551af1b541"
+  },
+  {
+    "path": "fold13_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "286b52c19d1b108bca3e79952da57f70cdb29bef5a4e95dbdf444e1e83785335"
+  },
+  {
+    "path": "fold13_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "bda4fb8fb73ea9562c0fe5642d96fe6a542a739e725ee08e9e93d73ac69d348c"
+  },
+  {
+    "path": "fold14_control_inner0_model.npz",
+    "published": false,
+    "sha256": "e4f346312636e08dadfee0a59e0082f09edba9150c5633cfdb4c71651abf63ac"
+  },
+  {
+    "path": "fold14_control_inner1_model.npz",
+    "published": false,
+    "sha256": "9fd15825c5b7d6045461eb6bc8955d6fadffb6976cf9c24472b649beddbea638"
+  },
+  {
+    "path": "fold14_control_inner2_model.npz",
+    "published": false,
+    "sha256": "34561994945aa5dc65761fd12fe18bf2b478cc27508f8c45ab56dd3689881c5a"
+  },
+  {
+    "path": "fold14_control_inner3_model.npz",
+    "published": false,
+    "sha256": "603c29fee966f3b11360c85268f36abbcf6c9ceba6b6546c9ea95d46911e1cb6"
+  },
+  {
+    "path": "fold14_control_refit_model.npz",
+    "published": false,
+    "sha256": "4e882b2fc382d4c7e6ae29674c4afeed09e8b8d3832606254396c4362983cc9a"
+  },
+  {
+    "path": "fold14_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "035f1893e5c125131fb568263f1c8536f904e3affabc87d80fdbac6e968a2846"
+  },
+  {
+    "path": "fold14_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "18b5907eafa96a80620efa7a9b5a45d42b410a5c2417d4b223efea000cec9d31"
+  },
+  {
+    "path": "fold14_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "50d0d2cfce952a41bfe4ad4b615ec283908ba8571139ef2d1c0e217bb9c23865"
+  },
+  {
+    "path": "fold14_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "223e6b7e514e33fde3a3fc93c2ea990ad056c7277c4af464e7e0211f40effb93"
+  },
+  {
+    "path": "fold14_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "7c05cb28263bd99e8dd5cf5d6c603e728b576e0e0610faef438e8dabc43f2773"
+  },
+  {
+    "path": "fold14_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "2a8b1c0fa74725bb0f947089f8c9b4b5fb10b5dba853041cf44b619bc2ff4818"
+  },
+  {
+    "path": "fold14_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "6ba90e120f6aee82fd199a0e51db15d25715f4c352e7b78ee6812fa5fe0f3d06"
+  },
+  {
+    "path": "fold14_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "f6a0cabde9dbdad679e2856bc8516975a528e8235a273f2a51b19c24b5fd6f5e"
+  },
+  {
+    "path": "fold14_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "ac5e77203fec33bf3eec4b71705779c792f184b378d86382a167a157ad75aba8"
+  },
+  {
+    "path": "fold14_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "e39fe2fc2eb694b5b9b8facc7ee76c08e0c7e4d4c571a88a2fdbc34ad284bcd7"
+  },
+  {
+    "path": "fold15_control_inner0_model.npz",
+    "published": false,
+    "sha256": "2c09f761f4a9e2143374963bac30c8b91b9998c04ffebfb59f123600a1eb3c4a"
+  },
+  {
+    "path": "fold15_control_inner1_model.npz",
+    "published": false,
+    "sha256": "b5528b4d97935a1b072f845301a7f8a4637299f274927c9c5d4c297fac1a8205"
+  },
+  {
+    "path": "fold15_control_inner2_model.npz",
+    "published": false,
+    "sha256": "3a5c6e4b7a2b5dd88942d46d624a288725f610b82ce7e02bcb4f971a7241c98f"
+  },
+  {
+    "path": "fold15_control_inner3_model.npz",
+    "published": false,
+    "sha256": "e55527e50d129334b2a01cf8d4c64f113a3dda42cacaac554cd3c5321529ab13"
+  },
+  {
+    "path": "fold15_control_refit_model.npz",
+    "published": false,
+    "sha256": "09d727968f1fcdb38b09509f18e5c4ecdd0198eaae02fb788c068a4b6f689057"
+  },
+  {
+    "path": "fold15_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "d08782a7d199013421cde030dd4b256f034f86da8f64b1b802837195d77d7f8d"
+  },
+  {
+    "path": "fold15_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "cea8bea203fabb5330dfc441fd8089c645b4f3c83fc3431568a165d9166dc531"
+  },
+  {
+    "path": "fold15_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "deb1bec7fe758d6f500eabb6dd048624c8e10891fb1eb9563e8abe940d77c9b3"
+  },
+  {
+    "path": "fold15_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "39da0f6982f1d20535912466a705fa2e13b6b7fdc3c3a277b1faa2cca5c9a995"
+  },
+  {
+    "path": "fold15_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "a9d7342d4a8a6ddd4ea819ab52f36eae576d96ee18507d2100bae20e68f684f5"
+  },
+  {
+    "path": "fold15_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "498908c9672b6a6ade679b201c4e5e023cd98e2a96614256230167fe0b168fde"
+  },
+  {
+    "path": "fold15_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "f73bc8d33f6eee3d785a762b0a6e1041e93a942a030874b7d3cc84e32eff0437"
+  },
+  {
+    "path": "fold15_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "232edf675887634785dac042de4dee58de0876684ccd3ecdb634dd58cd96ace5"
+  },
+  {
+    "path": "fold15_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "e2d38939ec9347d43c34296a818d70a26ea670b06960212c9f87dfe8bd6d1ec4"
+  },
+  {
+    "path": "fold15_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "2d0a7806516d078009ee4e2a04fc73f9fa09b4d523f53ab735b015a728a815a3"
+  },
+  {
+    "path": "fold16_control_inner0_model.npz",
+    "published": false,
+    "sha256": "f683ab47e691cfc348b67cb6fa5b7918ce0c5e9826998be74aa598528d6e71d8"
+  },
+  {
+    "path": "fold16_control_inner1_model.npz",
+    "published": false,
+    "sha256": "44c04bf62229a60fd23108b02c4171d4c5d42ff1a787f3bcb2e9977e0dd95755"
+  },
+  {
+    "path": "fold16_control_inner2_model.npz",
+    "published": false,
+    "sha256": "d8f634ded1833a73ea86585917f3075c6151c83bfb3d1d03b430408e071f7bb4"
+  },
+  {
+    "path": "fold16_control_inner3_model.npz",
+    "published": false,
+    "sha256": "2c09f761f4a9e2143374963bac30c8b91b9998c04ffebfb59f123600a1eb3c4a"
+  },
+  {
+    "path": "fold16_control_refit_model.npz",
+    "published": false,
+    "sha256": "ba6b82c3cf8c33f7ca69f4fcae66453bc61c4ddbed67a7775b999e7b47538e84"
+  },
+  {
+    "path": "fold16_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "f6faeba551dcc5afdaef6a45149a3c8603b228b711da2cd7c58ada51b4d2206c"
+  },
+  {
+    "path": "fold16_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "b0fc484b521d7fc6afbb87497b44a734b7de290229b704b510d0780960fb8aae"
+  },
+  {
+    "path": "fold16_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "ece82f6f9db7b0cb1d519e309eabbe947d204eb31dc5bdc9b68bd7caefbdf033"
+  },
+  {
+    "path": "fold16_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "d08782a7d199013421cde030dd4b256f034f86da8f64b1b802837195d77d7f8d"
+  },
+  {
+    "path": "fold16_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "bd10afdba6bd41eda3a452fc093fb5f5e230bbec07f860d107a852e2a157ba24"
+  },
+  {
+    "path": "fold16_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "4890029be673193dd469a0163b56d2b792026a731c18dce6b072663308e88492"
+  },
+  {
+    "path": "fold16_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "b6a3ea238316afa61f0c225ee7b7338a6d230c96e4068e942d19ca62b1da4d6b"
+  },
+  {
+    "path": "fold16_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "a8e173ee2c99ebc03f46da45c167386ecbe7d480ea4f4e695a45033e769d4519"
+  },
+  {
+    "path": "fold16_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "498908c9672b6a6ade679b201c4e5e023cd98e2a96614256230167fe0b168fde"
+  },
+  {
+    "path": "fold16_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "6e056aafb7098bba5e7b531d9286ff9f43691c0c9ac40633a7c15bbc9ded3880"
+  },
+  {
+    "path": "fold17_control_inner0_model.npz",
+    "published": false,
+    "sha256": "d147cff074deefba161c662d7295b795aec3ef0bc0288a69aa9c491e0a8a1e43"
+  },
+  {
+    "path": "fold17_control_inner1_model.npz",
+    "published": false,
+    "sha256": "09b0696ff60e6e12e8eb9c42f61562dd7a17b06d23398663f50b3347920a1417"
+  },
+  {
+    "path": "fold17_control_inner2_model.npz",
+    "published": false,
+    "sha256": "b5528b4d97935a1b072f845301a7f8a4637299f274927c9c5d4c297fac1a8205"
+  },
+  {
+    "path": "fold17_control_inner3_model.npz",
+    "published": false,
+    "sha256": "f683ab47e691cfc348b67cb6fa5b7918ce0c5e9826998be74aa598528d6e71d8"
+  },
+  {
+    "path": "fold17_control_refit_model.npz",
+    "published": false,
+    "sha256": "567f0a1e6c1d0f09158fbbea0fd68d41934ec864810d290e875f38b7e4a2827d"
+  },
+  {
+    "path": "fold17_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "74c6dde60e4b5e6928094c0e228af3d3c050aebc307dbe8274ea3c1ef82e8890"
+  },
+  {
+    "path": "fold17_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "376294e5600df0a81e135cd539e5361b8d1c604d694f94dc624c656a5a9803cf"
+  },
+  {
+    "path": "fold17_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "cea8bea203fabb5330dfc441fd8089c645b4f3c83fc3431568a165d9166dc531"
+  },
+  {
+    "path": "fold17_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "f6faeba551dcc5afdaef6a45149a3c8603b228b711da2cd7c58ada51b4d2206c"
+  },
+  {
+    "path": "fold17_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "ccad5aec288e7652339551b1d6869a4f09567fc67677a4a1b8e0a52f137e9b0d"
+  },
+  {
+    "path": "fold17_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "6d190736e49d2fdb1340e701bd7a42754cd532a3ea559ef0f2d431b863dd29ea"
+  },
+  {
+    "path": "fold17_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "aa380c39b504d11794799b7cdf0bd18068add0f2cd55f846602ad600247abb28"
+  },
+  {
+    "path": "fold17_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "f73bc8d33f6eee3d785a762b0a6e1041e93a942a030874b7d3cc84e32eff0437"
+  },
+  {
+    "path": "fold17_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "4890029be673193dd469a0163b56d2b792026a731c18dce6b072663308e88492"
+  },
+  {
+    "path": "fold17_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "5e0559268f0f36479b523ab14307ae4105c32793bcb696ecc44d490d0f8567f6"
+  },
+  {
+    "path": "fold18_control_inner0_model.npz",
+    "published": false,
+    "sha256": "51420db2f19a9f903ede554ee8fbf3c95daf3c6a96437a03e5e3dfefdeeb9581"
+  },
+  {
+    "path": "fold18_control_inner1_model.npz",
+    "published": false,
+    "sha256": "3a5c6e4b7a2b5dd88942d46d624a288725f610b82ce7e02bcb4f971a7241c98f"
+  },
+  {
+    "path": "fold18_control_inner2_model.npz",
+    "published": false,
+    "sha256": "44c04bf62229a60fd23108b02c4171d4c5d42ff1a787f3bcb2e9977e0dd95755"
+  },
+  {
+    "path": "fold18_control_inner3_model.npz",
+    "published": false,
+    "sha256": "d147cff074deefba161c662d7295b795aec3ef0bc0288a69aa9c491e0a8a1e43"
+  },
+  {
+    "path": "fold18_control_refit_model.npz",
+    "published": false,
+    "sha256": "52e4548da7c844be51d40c58d3e330ed81f320279261ea5dd8237916ae7c67df"
+  },
+  {
+    "path": "fold18_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "4548b61da82b9570a9cc8da56a0dddca664f526bdb50c4bc4c73267c972a1aee"
+  },
+  {
+    "path": "fold18_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "deb1bec7fe758d6f500eabb6dd048624c8e10891fb1eb9563e8abe940d77c9b3"
+  },
+  {
+    "path": "fold18_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "b0fc484b521d7fc6afbb87497b44a734b7de290229b704b510d0780960fb8aae"
+  },
+  {
+    "path": "fold18_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "74c6dde60e4b5e6928094c0e228af3d3c050aebc307dbe8274ea3c1ef82e8890"
+  },
+  {
+    "path": "fold18_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "d6776999b2c5afe7f0d05055bfb658739660fcb47fb5e8767f61c63e920f5845"
+  },
+  {
+    "path": "fold18_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "5c521568bff843f04d1c3173663b32def1efc97dcc75d3843349a52ad4124c57"
+  },
+  {
+    "path": "fold18_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "232edf675887634785dac042de4dee58de0876684ccd3ecdb634dd58cd96ace5"
+  },
+  {
+    "path": "fold18_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "b6a3ea238316afa61f0c225ee7b7338a6d230c96e4068e942d19ca62b1da4d6b"
+  },
+  {
+    "path": "fold18_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "6d190736e49d2fdb1340e701bd7a42754cd532a3ea559ef0f2d431b863dd29ea"
+  },
+  {
+    "path": "fold18_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "87b22e00b0286e5e010bcf3b82e0c6e4243078a2a238234fdb61536718168092"
+  },
+  {
+    "path": "fold19_control_inner0_model.npz",
+    "published": false,
+    "sha256": "e55527e50d129334b2a01cf8d4c64f113a3dda42cacaac554cd3c5321529ab13"
+  },
+  {
+    "path": "fold19_control_inner1_model.npz",
+    "published": false,
+    "sha256": "d8f634ded1833a73ea86585917f3075c6151c83bfb3d1d03b430408e071f7bb4"
+  },
+  {
+    "path": "fold19_control_inner2_model.npz",
+    "published": false,
+    "sha256": "09b0696ff60e6e12e8eb9c42f61562dd7a17b06d23398663f50b3347920a1417"
+  },
+  {
+    "path": "fold19_control_inner3_model.npz",
+    "published": false,
+    "sha256": "51420db2f19a9f903ede554ee8fbf3c95daf3c6a96437a03e5e3dfefdeeb9581"
+  },
+  {
+    "path": "fold19_control_refit_model.npz",
+    "published": false,
+    "sha256": "5ebc909f9760ff37abbb2f9de37625c23e693809be06965eb499f8540057ea85"
+  },
+  {
+    "path": "fold19_full_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "39da0f6982f1d20535912466a705fa2e13b6b7fdc3c3a277b1faa2cca5c9a995"
+  },
+  {
+    "path": "fold19_full_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "ece82f6f9db7b0cb1d519e309eabbe947d204eb31dc5bdc9b68bd7caefbdf033"
+  },
+  {
+    "path": "fold19_full_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "376294e5600df0a81e135cd539e5361b8d1c604d694f94dc624c656a5a9803cf"
+  },
+  {
+    "path": "fold19_full_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "4548b61da82b9570a9cc8da56a0dddca664f526bdb50c4bc4c73267c972a1aee"
+  },
+  {
+    "path": "fold19_full_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "060a90990326addefb58cbe66cb890d7432448bf2240bff1ceccddf91a55e844"
+  },
+  {
+    "path": "fold19_log_covariance_inner0_model.npz",
+    "published": false,
+    "sha256": "e2d38939ec9347d43c34296a818d70a26ea670b06960212c9f87dfe8bd6d1ec4"
+  },
+  {
+    "path": "fold19_log_covariance_inner1_model.npz",
+    "published": false,
+    "sha256": "a8e173ee2c99ebc03f46da45c167386ecbe7d480ea4f4e695a45033e769d4519"
+  },
+  {
+    "path": "fold19_log_covariance_inner2_model.npz",
+    "published": false,
+    "sha256": "aa380c39b504d11794799b7cdf0bd18068add0f2cd55f846602ad600247abb28"
+  },
+  {
+    "path": "fold19_log_covariance_inner3_model.npz",
+    "published": false,
+    "sha256": "5c521568bff843f04d1c3173663b32def1efc97dcc75d3843349a52ad4124c57"
+  },
+  {
+    "path": "fold19_log_covariance_refit_model.npz",
+    "published": false,
+    "sha256": "2f4036b2e967ea6c645c68f482b75ecc629efa97d7d172b5bb8e6746a22cdc23"
+  },
+  {
+    "path": "fold00_control_inner0.npz",
+    "published": true,
+    "sha256": "c14700b4ee79efd62839feeb01d360c92b8568725f566fa2655be5fccbaaf1ce"
+  },
+  {
+    "path": "fold00_control_inner1.npz",
+    "published": true,
+    "sha256": "99905efa36f5c5b00b16c0da25264fb996d20876f88ef450507dd0bfa59f9d4e"
+  },
+  {
+    "path": "fold00_control_inner2.npz",
+    "published": true,
+    "sha256": "f4b8d97ff0cf1bf77c6046b344df12bd55ec01c2b5d2cc48042a47b9cc3916e7"
+  },
+  {
+    "path": "fold00_control_inner3.npz",
+    "published": true,
+    "sha256": "36245e2418689e15f887d740f8ee6b3cb4bd8d7d8b24cd5fddd5ecf0ea560875"
+  },
+  {
+    "path": "fold00_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "56aecd7cfb4f27e8e73cb497b82e1e3f0d93ebb6164f214c33922401ed101ee3"
+  },
+  {
+    "path": "fold00_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "a979e19ee96685c3b762bd4f230e9a61ec1fe1a028adc3db198a6e3dd8e425ea"
+  },
+  {
+    "path": "fold00_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "371a76779352fd60aeec538e763a3f62637342ab59e42e621b34b4b9de2a8aa0"
+  },
+  {
+    "path": "fold00_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "a52bac6e5f2887db37db960c1cb064bf977101dce40e28342735cf7ab446e1f4"
+  },
+  {
+    "path": "fold00_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "eb0ae6d1b01273d19f271cc0c6260572c48b0e6db17e73f9ea48f60878c94a72"
+  },
+  {
+    "path": "fold00_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "928271cf0aab4b6c3efceebdb5fbe37367572e2723bd71c2cf1ad30d2113a66c"
+  },
+  {
+    "path": "fold00_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "5f11a317f36536e26d48f173a6d36f499680862f507f18efbb312eb8af66f850"
+  },
+  {
+    "path": "fold00_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "fef6a93c78efe78722b0ca6521f57a3b8c8b79f52b2ab2287f250475889c610d"
+  },
+  {
+    "path": "fold01_control_inner0.npz",
+    "published": true,
+    "sha256": "7d2294ec01b9169c80c4d939bc135c752ce640fa31d50ed9243ca80bbca16b57"
+  },
+  {
+    "path": "fold01_control_inner1.npz",
+    "published": true,
+    "sha256": "f87a1c461a069a9e33d9bb264d766cf64a858785e6abf7071c065270bba0c72f"
+  },
+  {
+    "path": "fold01_control_inner2.npz",
+    "published": true,
+    "sha256": "7c449ed215fec7977d9ad9a109d60bc0e837fb056525c5f9fab5426ea4381d04"
+  },
+  {
+    "path": "fold01_control_inner3.npz",
+    "published": true,
+    "sha256": "c3b1cee6adb89ec44364ee07ef9375659fe2367d21882491545009358c2ee346"
+  },
+  {
+    "path": "fold01_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "0f86898cf6541d4e75d0f35aaff6e6ae90e0fbf2d9fb92622ed8a30c78d5d5f5"
+  },
+  {
+    "path": "fold01_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "acd2c9fe99d791861780857ec605ce3a877af2b2549c7b4f22a7e56af87d01f6"
+  },
+  {
+    "path": "fold01_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "b30e408bb987a7383f93bad9de84b38575615ff35f174ae8234263e04afcee8c"
+  },
+  {
+    "path": "fold01_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "99f0115d594714925890768dacb019708770016f536d191790ba0cc0b2de997e"
+  },
+  {
+    "path": "fold01_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "234adf7328e7a6696461e09c24b9b5fcef97e1dd082186c2838b3683ca7b2e87"
+  },
+  {
+    "path": "fold01_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "595a73f206f40a07ccebbb3c42f8fefb6d41f4a861bb1555d60de5c6c3b96758"
+  },
+  {
+    "path": "fold01_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "d0d64222cb01eb4c4a8c04f4edaa41528a08df82f282b8a30b7292db65e29137"
+  },
+  {
+    "path": "fold01_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "e0ad25d8d04ff95851893944061ccee57cf13976d6f90a02e628d24b26c90d23"
+  },
+  {
+    "path": "fold02_control_inner0.npz",
+    "published": true,
+    "sha256": "043981f18147f5ac9246d98aaca2fd709f26193a08bcbf652154b64a5905e372"
+  },
+  {
+    "path": "fold02_control_inner1.npz",
+    "published": true,
+    "sha256": "676fc7968f3cba74f86dd1d8338a38ec0ef81e3810c8084a87d5fd0c683b8a96"
+  },
+  {
+    "path": "fold02_control_inner2.npz",
+    "published": true,
+    "sha256": "31ac13baa2d09eeb745685ecc5e7828b78b0138a77481fe347b999b676aa862b"
+  },
+  {
+    "path": "fold02_control_inner3.npz",
+    "published": true,
+    "sha256": "481131e5f16991341863dd068463a29ee8264ed1e947e15367dd6bae42bd859a"
+  },
+  {
+    "path": "fold02_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "2dfbf12aa69c315a9d95404918fadef82d81b11b229d1a44e2a4a0ea01231fc5"
+  },
+  {
+    "path": "fold02_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "c5238f463f0691cd009a45be626c77979f1340c17d1f6efd7ff748e4adbc061b"
+  },
+  {
+    "path": "fold02_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "596252d2b122c6210c062d8b543481110cecc0869aa9f2d187d38dc282cf4980"
+  },
+  {
+    "path": "fold02_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "a4ce75bf8ffcb9f79a69740899036a2179cde10c936692dcf972aa60a4a3547d"
+  },
+  {
+    "path": "fold02_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "3ec8edd0bc490ec3491be591c36dd71031eed3d806cc6fa4b007b297cbbca560"
+  },
+  {
+    "path": "fold02_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "f9a9f94f43ee9e5bd7afa6fdbdd02cd935468ef51aa0b95211b004e07f76a103"
+  },
+  {
+    "path": "fold02_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "48051d2f763a8505e36cba8b0a931bdbac8181a56e975fe90e7e54acd60bdb97"
+  },
+  {
+    "path": "fold02_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "283b19725d94fa195003e067ef0f3fd38519c2ab7823df205be87d91bb5027e1"
+  },
+  {
+    "path": "fold03_control_inner0.npz",
+    "published": true,
+    "sha256": "ad392db8c8ae4d64bb2000cb77ee5f2dc8eecf8833a2cf17825a2b8902c462b8"
+  },
+  {
+    "path": "fold03_control_inner1.npz",
+    "published": true,
+    "sha256": "bc44c47c0e6c906eb61d01ef93d9000650c602fe3f3d9451f8086f256482922c"
+  },
+  {
+    "path": "fold03_control_inner2.npz",
+    "published": true,
+    "sha256": "03c1d24bd9884dde8e693faac160cfb37a58c28b804335eb8eda8802584b1c9d"
+  },
+  {
+    "path": "fold03_control_inner3.npz",
+    "published": true,
+    "sha256": "a136b709dd90eccc56b03b50872538ae10aa5d2e30e80a609734ae557b09a6bf"
+  },
+  {
+    "path": "fold03_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "123c33105017976d0d945e36b3edc4384329e28da9dd6ecbb0833524be20b240"
+  },
+  {
+    "path": "fold03_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "6bd99c6324effe18de9eb019852815c868ad7d2fab400c3f3e5d84924eef195a"
+  },
+  {
+    "path": "fold03_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "8d5a19ac08e5edcd97ba08cf64a3096f105045c8c21215c54425a1fb596de758"
+  },
+  {
+    "path": "fold03_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "b1dbaff365677347861ef11bc95e5f079093ffb3e91f9981ae5ab8ddfd578817"
+  },
+  {
+    "path": "fold03_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "7af86128c28d43950a1650288df00a53cf427ac255ee84713674071b72fdc482"
+  },
+  {
+    "path": "fold03_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "ab9991e2e428749604cdc1369c02434c50a738447eb448698fae12678e22ca3a"
+  },
+  {
+    "path": "fold03_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "542b14ffc9420370cbc7599f06f0abb6bf1c0638dbeedf16eab21885ae887dc1"
+  },
+  {
+    "path": "fold03_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "0a1cf4ac57a1983ad6effb1c24bc8df1022bc879f76be7f129d8a0f430355d4f"
+  },
+  {
+    "path": "fold04_control_inner0.npz",
+    "published": true,
+    "sha256": "6cbce186c4dbd4ed96de840d9f392b392b1a9f9e6a21c35e790f92650a67ac74"
+  },
+  {
+    "path": "fold04_control_inner1.npz",
+    "published": true,
+    "sha256": "9da531547f994fc820a8b1728f0ba85e50dc683c69fb194908666bab37ea8fe2"
+  },
+  {
+    "path": "fold04_control_inner2.npz",
+    "published": true,
+    "sha256": "04c3147375cd6bfb09daab9411db3ea28060133813ae0316de490b10458f9384"
+  },
+  {
+    "path": "fold04_control_inner3.npz",
+    "published": true,
+    "sha256": "3f3ae385033657f9cad0d0fa8d15f37cf7c13da31325d4d3fda52570ca8fa91e"
+  },
+  {
+    "path": "fold04_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "811e7c44150cf850a9ec844c3ff6f2b1ec7cf77f555562b8ec9fdcd19bba599b"
+  },
+  {
+    "path": "fold04_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "cbc2fe189f6511108a38bd07bfd252681279bff2137b4d1f37ffd13db64eb41f"
+  },
+  {
+    "path": "fold04_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "3a36524059394bcbe9070cdf9088f7868875ce9ebdd1d9890fceb9f5f6d5b835"
+  },
+  {
+    "path": "fold04_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "38f0b727efb6d9945f0d980fd2f4159e768df976555341e65738c279909a2179"
+  },
+  {
+    "path": "fold04_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "4c260835692b8527ade11332d36bccd1b3435f4ed5af166dd763743414578e70"
+  },
+  {
+    "path": "fold04_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "0dfd8a0374f06fc107db5e82560485abb65cd31d55fc75f7155d98c0d3b8ba8f"
+  },
+  {
+    "path": "fold04_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "675bc0ff4dbeb52ec5ac03a73caa88b6fda9b2de9c8933e9dd638b821b3f75f4"
+  },
+  {
+    "path": "fold04_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "daa1428b3a6361c2e05893a294cc13ac20b8dfed6299c3270031856514b280cd"
+  },
+  {
+    "path": "fold05_control_inner0.npz",
+    "published": true,
+    "sha256": "a9a0f5f4366cc02ebe840fe2ffbee1ed3ffa160eb3795f394dc01e66c07578d5"
+  },
+  {
+    "path": "fold05_control_inner1.npz",
+    "published": true,
+    "sha256": "0e3f527a91d5dfecfbfed17a78cf2ac33ac3dd10c0ef819818a76842e70aab3d"
+  },
+  {
+    "path": "fold05_control_inner2.npz",
+    "published": true,
+    "sha256": "c16eb636c50ee1ce0c4a45cad8f99119d61f6be1e0abb9f629cd0381f006e3e6"
+  },
+  {
+    "path": "fold05_control_inner3.npz",
+    "published": true,
+    "sha256": "4adb44b7fb54e27aef85ed13184f940f1df7b2819833c10978352bf7d1118f1c"
+  },
+  {
+    "path": "fold05_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "ea52d9605c8eed65393ea409205ac3d4a746dedd43a2b4303d12884cd0fb3c61"
+  },
+  {
+    "path": "fold05_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "e187352e72b03c65e48b49c15d2478a5069fa10f8e324222737d454640dfccfa"
+  },
+  {
+    "path": "fold05_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "dedb2a58b974a06f2fd350902f9db8506b2c2a8ae8384701cd19cb117f6e8faa"
+  },
+  {
+    "path": "fold05_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "1958aecdfd00c5775ca13aa4d0b4a5c85f74e72de24f505a58bd832091997102"
+  },
+  {
+    "path": "fold05_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "0d27b54f890d4b448e45f175925763814e1c1ee37473e647c00711fb7f5251c8"
+  },
+  {
+    "path": "fold05_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "e093f8b24c1ec5e5971ed3da5241e103c57929f7533a01d03b2d351894e4d15d"
+  },
+  {
+    "path": "fold05_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "2b3f8996474baaf05ca16b93f17fa2d622dc84ad9730d010f014fc885d80ef02"
+  },
+  {
+    "path": "fold05_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "eed7de339fe385b330d6f472aa0f2eac9de5715a0eff909e8d6e822396f8756a"
+  },
+  {
+    "path": "fold06_control_inner0.npz",
+    "published": true,
+    "sha256": "f16c89071c0a9d167b5159cec3508a14d8d0706769bf8ea526f1feb902288d04"
+  },
+  {
+    "path": "fold06_control_inner1.npz",
+    "published": true,
+    "sha256": "6c7779bd376b78ca331c033d6efa136d40b35859aa970c4ee06e3cb71f2986a2"
+  },
+  {
+    "path": "fold06_control_inner2.npz",
+    "published": true,
+    "sha256": "0ab514389a566ab7ab94188df3c9ac83c1fe60a31a7957a48cf07e020be4e0ca"
+  },
+  {
+    "path": "fold06_control_inner3.npz",
+    "published": true,
+    "sha256": "67191dc3c7f0004f02adc67156b8e472dd68b409c419f1b326479f02934eb5f7"
+  },
+  {
+    "path": "fold06_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "c56b247d40d959eb8157794ff828a74f57e5a4cf78596fa51f663151e6101c46"
+  },
+  {
+    "path": "fold06_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "a6feec6d055000e214dd7ce53f35e31f9880b655cf36b97a16a6d88061467c81"
+  },
+  {
+    "path": "fold06_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "9adb3e6b26c2e6605be3b7c5920e0a9d4690de083903d47f62aed3da49766496"
+  },
+  {
+    "path": "fold06_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "715bd058a267f5c1860e035695b41a466dfb0c2710f69de13474b5d21648b47a"
+  },
+  {
+    "path": "fold06_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "e2ecdb7a8869e6fdb4da498b5238c916e22903303583f230a9cb82eed79ee1f7"
+  },
+  {
+    "path": "fold06_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "63384267dd5a0a0cc8459f1dd1d2578c513c34db6f1c31717422c3d7261de571"
+  },
+  {
+    "path": "fold06_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "38638828e1664f6e2aa94c7555d66563eeb39a98b64a6ee84bea29d0e26413ad"
+  },
+  {
+    "path": "fold06_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "d88661da4532f3c626f54f25a835e5e38e1fc597c0254310a35039c441992c96"
+  },
+  {
+    "path": "fold07_control_inner0.npz",
+    "published": true,
+    "sha256": "4bed771e213713268b973407a10dbc3ebacaef95cb946daaca891611231ec096"
+  },
+  {
+    "path": "fold07_control_inner1.npz",
+    "published": true,
+    "sha256": "b240832c00739461fde175275c5a46152e530aa5b954873ea0478dd60df6dd66"
+  },
+  {
+    "path": "fold07_control_inner2.npz",
+    "published": true,
+    "sha256": "1aa8b5caf6379a66b2a9039f46aaff946e2a52d35eb2b65d4277cd6e426f303e"
+  },
+  {
+    "path": "fold07_control_inner3.npz",
+    "published": true,
+    "sha256": "9ba4a519247beff01d4c7ddd40d5230097c68d3965ed9e6c2652d2205be87bae"
+  },
+  {
+    "path": "fold07_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "2ca0a41efe799dfa21501e2a32c7305330e480d566d3eda918acab3f8005ae90"
+  },
+  {
+    "path": "fold07_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "c4f05583edd444761d90e6bc5433364e2e2bb53cc8d8db0d3660c9ac08637322"
+  },
+  {
+    "path": "fold07_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "9701377e704212e36bb7ea69d26705ce6d6e37a34828c5e316b456ab3dda2d4d"
+  },
+  {
+    "path": "fold07_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "5cc4feaa844484d40beda09a2d67d5655a27ccbc272682de3e48a153b2ae17c3"
+  },
+  {
+    "path": "fold07_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "74342660f1f56c6dcb85f39d1b5d991c67864d9049ad55c33b4a428996863527"
+  },
+  {
+    "path": "fold07_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "d34980e56c32bf4ddbd108db4b41af9b693b0e10efa5c1e7e5a722caec2d180a"
+  },
+  {
+    "path": "fold07_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "d7d6013850d5f79fa653d3f52aa44f9aced148883577321640232899fb4c2d12"
+  },
+  {
+    "path": "fold07_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "fb744ea5f6bac7f0f635331c9d15ca6f4da5057701086ed09b9b68aef9a846c5"
+  },
+  {
+    "path": "fold08_control_inner0.npz",
+    "published": true,
+    "sha256": "841d6e8b1e1ce0d930ff1f2f3662efcdda8f3b2d618a3fcef50a27ae06007f2b"
+  },
+  {
+    "path": "fold08_control_inner1.npz",
+    "published": true,
+    "sha256": "40bd795aeb683638143c872e695a8630f7de4ed65b7e3aafb49ca22c6d6be963"
+  },
+  {
+    "path": "fold08_control_inner2.npz",
+    "published": true,
+    "sha256": "1f9478e52efe62acbeeeb4d414da7b4e1705dd5fcbddbd729fa6e2171abf4ac5"
+  },
+  {
+    "path": "fold08_control_inner3.npz",
+    "published": true,
+    "sha256": "68c6c728fd570cb7093283d58e1965793b7e990e3ef26f50a37eff6782e1c5bb"
+  },
+  {
+    "path": "fold08_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "66a0a0ba086a587db1b5eb3dbd654e15db7fdcc3a513b3b032ae78508a2e976c"
+  },
+  {
+    "path": "fold08_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "1daef3e0fed012db3df80f75fad671efb4d2532960d1cad20e8fbe469aafecb8"
+  },
+  {
+    "path": "fold08_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "5e58190c2e61e84697b8eb8bedc6d58f4d219b4ad5f9e7777d8db22ad3ed609c"
+  },
+  {
+    "path": "fold08_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "850f5a48e844fb1e517ca3229b5d9ba93c04553fd1fa4e435f5f50339470a711"
+  },
+  {
+    "path": "fold08_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "d42e87d6b9e798318f70c9bb133c66d4519f94527eccc91f59658ce8fbb05239"
+  },
+  {
+    "path": "fold08_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "7c69cc1bb9009e3ce40f3452b86ebe725c5ca8a9b9a74b02455b40042f16ea2c"
+  },
+  {
+    "path": "fold08_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "490f6f74aba61869e118245c22b2337fb457da8c4a7dbe6a78513198dc1be8e8"
+  },
+  {
+    "path": "fold08_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "162853e7fb0ac1ed6da360e84c0e816278cfb346e55a81318e24049bf4e13487"
+  },
+  {
+    "path": "fold09_control_inner0.npz",
+    "published": true,
+    "sha256": "402f58644a35b9e20d589521d1fd0ff419fbd481f5eb68a5fb0c8b973b19ab42"
+  },
+  {
+    "path": "fold09_control_inner1.npz",
+    "published": true,
+    "sha256": "2dc44b3d06be7b24cc28fd58b76a9e0662a1e040edc036b7d4d3d062d03c61bb"
+  },
+  {
+    "path": "fold09_control_inner2.npz",
+    "published": true,
+    "sha256": "993afe1fd35633bec1c0b7e4133bbe2e531b87e8e7d2950de7dfd60e93754d7c"
+  },
+  {
+    "path": "fold09_control_inner3.npz",
+    "published": true,
+    "sha256": "db3389c3fc99134fe09a2445b9f8c94d0f7dfc777839fb3e36c8433ab9bf35ae"
+  },
+  {
+    "path": "fold09_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "7779896a65974a5aa0dbe5e580a378bdb68aeebfd88eeb90e4da65525769b38e"
+  },
+  {
+    "path": "fold09_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "79274c17252dc1bbcc432771095c76c4f7d7401dc0e39c50dd2b39299f3b671a"
+  },
+  {
+    "path": "fold09_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "95c67505258cd7eb679c82a556708c81fe1910780e3c9c914ab9cc8161a19d42"
+  },
+  {
+    "path": "fold09_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "147c88738e40afdf188f83f912c5372faec16bc651881e4fc0421b8a6f98112f"
+  },
+  {
+    "path": "fold09_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "ef1e7b4a963bd5ac8e3eaf30437c8b02fff48088cc6fd7da1bb8dd86aab44cdd"
+  },
+  {
+    "path": "fold09_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "00e3e50834b09b2f3060044e273844567a177a4477cf2fcae7b777f7101e81b2"
+  },
+  {
+    "path": "fold09_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "ef4f15604a1b421d5803fe21d32d29e1e7ce9c3c6d33c966fe81f5da0014e81f"
+  },
+  {
+    "path": "fold09_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "4c1fb4cdac122b5f0b7371b91396d0b9a90c1b712d6150df34bae45b604df676"
+  },
+  {
+    "path": "fold10_control_inner0.npz",
+    "published": true,
+    "sha256": "5e6c4d5cefbb606c522c82d55d40b6e72091629e03cb4cf2e4a85c982c548f8f"
+  },
+  {
+    "path": "fold10_control_inner1.npz",
+    "published": true,
+    "sha256": "6064a55e44036e9ff8fa2b75af989cc232f6526dd5b2d228acdd703527553ed8"
+  },
+  {
+    "path": "fold10_control_inner2.npz",
+    "published": true,
+    "sha256": "63ad41ae39d7ba33db3c864cb4e62afe946b0612303f876405a59aabea0f5531"
+  },
+  {
+    "path": "fold10_control_inner3.npz",
+    "published": true,
+    "sha256": "387ba3bcd5d1860271b4a2bd5554705bc53f4f606dffc5b032943c2ff4535d30"
+  },
+  {
+    "path": "fold10_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "9270e7813dfbdbf96c556bdff75baa5f194f83608be7ed47d9128df047bcb6b7"
+  },
+  {
+    "path": "fold10_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "b284d22fb41e1c1d8b733652cdade4f834838ae51d3250d6195de20084b3b85d"
+  },
+  {
+    "path": "fold10_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "9a550b90ad0730e0db5dc8aae610d04ed765d5ee6ef76d3e1cbd343995695123"
+  },
+  {
+    "path": "fold10_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "07a5e18f7315c1a029dd0d4001f5c75a61af563e80b55176616cf88e576f7a20"
+  },
+  {
+    "path": "fold10_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "0981e7516f91a2ef4b27ca482426f7aa9f11514a3048436d6fa4b27e2efbd16a"
+  },
+  {
+    "path": "fold10_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "02516ab5483533f6d074fe48a0690af336fc78d0161dd1f8dae8704a2c61ac35"
+  },
+  {
+    "path": "fold10_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "d2ef5f6931016d3aadab221b00ca97ad62af53d754de25191de9ab428d10aaca"
+  },
+  {
+    "path": "fold10_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "08c1f7317f1019188c176c6cf4a4161242cc045041225d31621e19d4a4e8b7e0"
+  },
+  {
+    "path": "fold11_control_inner0.npz",
+    "published": true,
+    "sha256": "5fe2d07b5cbaff03b5b5dda0a8adfa3fb514bdacfca982c9a82d065cd7025c04"
+  },
+  {
+    "path": "fold11_control_inner1.npz",
+    "published": true,
+    "sha256": "6aa2524160ed4a3eaaa1908f807707e293c513c1708cc9bbabba351ed4601ca9"
+  },
+  {
+    "path": "fold11_control_inner2.npz",
+    "published": true,
+    "sha256": "aff45a4bc369ba7c4456b2e71030ad1ee106904eab6a32164be8b429b42d8836"
+  },
+  {
+    "path": "fold11_control_inner3.npz",
+    "published": true,
+    "sha256": "965ed2741c7bd0f655009bd55abcaa3e0c8e3690b5cd009ce9b1ee8018ba5e36"
+  },
+  {
+    "path": "fold11_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "5b87d0ca81aefb942bfdeb8062f6c8f3827c549c7d3906bfdad7e4e0edfe8b49"
+  },
+  {
+    "path": "fold11_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "5fc30e02e110c8e567c0c5d9223684f002db163e4ce3b97e53b7a4d05810e8cc"
+  },
+  {
+    "path": "fold11_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "0e8f668d6d4ce40c0ff24819bd7057ba0a02822052867bc320fd26f4b4485be8"
+  },
+  {
+    "path": "fold11_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "fa4c6129752f9d46688ce850953eea3ea0134d9b848dbfd02e6abb79f760445b"
+  },
+  {
+    "path": "fold11_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "a8a9ff68e6cc5e080e02a250b6c8d2fb7f754bf50814bd8094bcc53abe29a047"
+  },
+  {
+    "path": "fold11_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "338b778082d538677ba46b6c95466a0a3fed6a65a062ac88791d9588fb6763ee"
+  },
+  {
+    "path": "fold11_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "7f69318769fbe0a3cc0874f7146bb91f40d0f260e4f8ee13c0fbcd8a8056bd14"
+  },
+  {
+    "path": "fold11_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "8bcb12d7c62823e939e6f78cde96343e7bf75887e518c8173cbbdbf0bda70322"
+  },
+  {
+    "path": "fold12_control_inner0.npz",
+    "published": true,
+    "sha256": "646d824ecddda4921c4c57ef56dda092bf1c7cc38fa0bfd5559262f4fd6172ea"
+  },
+  {
+    "path": "fold12_control_inner1.npz",
+    "published": true,
+    "sha256": "e82ca2d724687027c2fd5dc7d0d65bd0f2b5e0703564a9df93c93a162b5dc924"
+  },
+  {
+    "path": "fold12_control_inner2.npz",
+    "published": true,
+    "sha256": "1ec949771cf7ca47f150c7d37566a75c3a8efc528981cb1a1acc61fa7c90aede"
+  },
+  {
+    "path": "fold12_control_inner3.npz",
+    "published": true,
+    "sha256": "a3b0241ec12073be581cdff31610ccaa4364ba6dcb7db6adf779267025237e74"
+  },
+  {
+    "path": "fold12_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "9d1b3b04f861681140d29415884b1cc28673d01da172e9f31d3bb06d3377772d"
+  },
+  {
+    "path": "fold12_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "cae58b8e8691fd47afbd52f9517ba9130ef747c48837faf7c928fd88a0e6a107"
+  },
+  {
+    "path": "fold12_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "1e4fe34ae2543b55e90a7a71fdb039ac03abe84aaeae7daa4be4d75887acea52"
+  },
+  {
+    "path": "fold12_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "d263853d22f452b22a8cae19cc2059793efc6af3bc6b92f0172f9d8ccb5b41b3"
+  },
+  {
+    "path": "fold12_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "5cb5e428dce659cd6ddc62a71687d09c73da2d0d3aa4689dd0bd23df89c1b368"
+  },
+  {
+    "path": "fold12_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "0d0339be1e1ff01b890f5ff7d1fc0655379aefb0d3c580f5ceb2c5c428cb36ca"
+  },
+  {
+    "path": "fold12_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "3343f7a78861d54657faca6104bcf6602bcaf1eb99dfb7b70f49ba128e6ae161"
+  },
+  {
+    "path": "fold12_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "91406af36b895520a387c8c3147975794794015577aa6792f2a24621ea8a6196"
+  },
+  {
+    "path": "fold13_control_inner0.npz",
+    "published": true,
+    "sha256": "5de52ec6c6bf2ff3c279617bc4862481b0e6221d957f16de8ba794b94abee36a"
+  },
+  {
+    "path": "fold13_control_inner1.npz",
+    "published": true,
+    "sha256": "75ef025c19316f327c536b29e02ca6c859939300b25e64d51e6700a5d8957d01"
+  },
+  {
+    "path": "fold13_control_inner2.npz",
+    "published": true,
+    "sha256": "59a94a901eb7145b4225f7a4da5d2f3a5ec550ead09f2657b9bd13512bb87fd0"
+  },
+  {
+    "path": "fold13_control_inner3.npz",
+    "published": true,
+    "sha256": "cc5d05d73f937b746750b2f8ccfd5fc550199af7c5437f524770fc650f8ca5d8"
+  },
+  {
+    "path": "fold13_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "d7cd13c9cb604c3857cc131abbefb8b12197c36013cecfaa0721b5bf1bf64e8b"
+  },
+  {
+    "path": "fold13_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "9d2891f8dd93ecf39ec5efe43ec553c8269007f088fa8c576b062059d329f582"
+  },
+  {
+    "path": "fold13_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "f7e641b06e323d3e8faf13efffa1f1fe2edfee46d1d10b6a1eb7e6e0be97cfb8"
+  },
+  {
+    "path": "fold13_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "ad24872cfa8bf1f81a0f9cb2eaf9017a6aef3b7965f15e08a5be81bd358c6b20"
+  },
+  {
+    "path": "fold13_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "91fec1e97a5552e1aaaeb584c0bdc711fe8ea1d651ebe3309dff0cb40fa91de3"
+  },
+  {
+    "path": "fold13_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "ab35fcaa0334a33bf473065ac2e0970195be7e15676485e929d928ec0b77861c"
+  },
+  {
+    "path": "fold13_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "83b46f8e993e38852e00dc9ee90d2f9686f29d38ce26118d31578b9c59a203eb"
+  },
+  {
+    "path": "fold13_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "74b3020255752f923b58b454ccc0bf0bc9d3931525b53c164a479f3a715eedf3"
+  },
+  {
+    "path": "fold14_control_inner0.npz",
+    "published": true,
+    "sha256": "8c38740526c5641ef0ff7253fe65fdc5cf91e770cf3070ce80b54927697bdad6"
+  },
+  {
+    "path": "fold14_control_inner1.npz",
+    "published": true,
+    "sha256": "91df55d48268d05df9ea17c75e73d4e226d11aab574d2deff066e806a489ec55"
+  },
+  {
+    "path": "fold14_control_inner2.npz",
+    "published": true,
+    "sha256": "8d7c1c05fed957add5ca926c0e2be6f075ad9501eaa3d0814e3ef9149d02d15a"
+  },
+  {
+    "path": "fold14_control_inner3.npz",
+    "published": true,
+    "sha256": "e4685d0e04d2519f1d862bb8bd17293677367c59128f9f30df3aff2a0455f161"
+  },
+  {
+    "path": "fold14_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "3dcfa21959c6da0b6555d57a87a5b7ce74fc2e3c509dcbe33ced21d616e5fadc"
+  },
+  {
+    "path": "fold14_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "37d8c824615f7bf6406d7bd5b05a0359a3ea900613055619d6d22d1d12399371"
+  },
+  {
+    "path": "fold14_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "d9c8ca4e5ee3397fa7266fff67c4ea08e1dc53cab979ad6f4c187731be38cc14"
+  },
+  {
+    "path": "fold14_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "22a737c3f11ce52fd0d4a92fb85fc7cfcf9b3ec22c475605c55f58b1d7a2f299"
+  },
+  {
+    "path": "fold14_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "e83b91e666bd9e6d2c8e453d4acfb7f581e3f9a5c4dc303dc535ce6e31807f73"
+  },
+  {
+    "path": "fold14_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "93a63103f8a94541dce7d19559aafa8d651a0a2c5f18833e8b35321da77f5c4d"
+  },
+  {
+    "path": "fold14_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "3df1bfab1e5515cb5745c287a22a06c7678579348c734aac6b5042da441791fc"
+  },
+  {
+    "path": "fold14_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "e409e1fc3a403f7b004e8b543e3312a4a595630787750ec0b94a948a82d32046"
+  },
+  {
+    "path": "fold15_control_inner0.npz",
+    "published": true,
+    "sha256": "c62e4a5c7d74dfcf447ff1a9079411cfbfb83f016b0fac7b47198f0593b48cd3"
+  },
+  {
+    "path": "fold15_control_inner1.npz",
+    "published": true,
+    "sha256": "41f68406a791cfb52676568f2d4cabd0a5421e148c94762573a1c3bc0489c06a"
+  },
+  {
+    "path": "fold15_control_inner2.npz",
+    "published": true,
+    "sha256": "321527088a54a1528b5bc4751bd52104f8ad1b4deb43b0c543ac143486a745ed"
+  },
+  {
+    "path": "fold15_control_inner3.npz",
+    "published": true,
+    "sha256": "cac3a581214c24884d0972b0f6f7e30f1c426e48343d5e9a3e3c22544e216bbf"
+  },
+  {
+    "path": "fold15_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "7510c2018d232f266ef3f311746941bbf981b6d14185b134759b97b966624232"
+  },
+  {
+    "path": "fold15_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "5406aae72927c480d2fd129a1079919285f0ead4f5e5cc5895a50c140eee8993"
+  },
+  {
+    "path": "fold15_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "b99218d1dc1c4b7e2b3802bcf880fbb6991275acbf1a6e11b37417cbecd3ed9c"
+  },
+  {
+    "path": "fold15_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "216a4c97b1a1920f2ed2dc4a4f6e42ead715a1aaeb891cfbf39e1331f66428ec"
+  },
+  {
+    "path": "fold15_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "f658965732213b4458e2dfb5b72bf78311f61c8ded644b560279c12e83d0bb21"
+  },
+  {
+    "path": "fold15_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "6052ac426f7ae13f246feb6675e3f5fb6fd69863c1ab86aa9ecaeec2ec797716"
+  },
+  {
+    "path": "fold15_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "ef251687085522626425abab8cffb9fb60167ff245058a853c7780160b11d31b"
+  },
+  {
+    "path": "fold15_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "b5426380ae35d4073215f2fe6dffc4be84d6a69de8a86d36043fd8c9add48990"
+  },
+  {
+    "path": "fold16_control_inner0.npz",
+    "published": true,
+    "sha256": "35e61aeae2fd60f970d9813439cda2f158bc7b04c091395ae332501b637c16e6"
+  },
+  {
+    "path": "fold16_control_inner1.npz",
+    "published": true,
+    "sha256": "1aa713c759572c7ac0c9c75ae119064be30da28f587e91ff44c427ea990bfea6"
+  },
+  {
+    "path": "fold16_control_inner2.npz",
+    "published": true,
+    "sha256": "c5616f0df6f7852e618efaba0b9e4878f9010572bf5b0f6f190890ad2c18c21f"
+  },
+  {
+    "path": "fold16_control_inner3.npz",
+    "published": true,
+    "sha256": "0dc8aaeed02d015f059784d0c1f933d12acf30fbd53727df0d6223610012214e"
+  },
+  {
+    "path": "fold16_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "e98316806a7a00fa47e1461df54d87a638a19914176d8ef749dae5e5c60c8c45"
+  },
+  {
+    "path": "fold16_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "f1a64424671b947769b4c82eec8d349b4fd1440b60b529953c51749864a2241b"
+  },
+  {
+    "path": "fold16_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "73b882fb908a8865532504ec8778528985362d91e055050f50b69f42c8dcc4aa"
+  },
+  {
+    "path": "fold16_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "12535d20b362342b71bfe5edb176e725bdd548e2cd739c39753198e737f05801"
+  },
+  {
+    "path": "fold16_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "34a5bce78fb5eea6173d4ad4eccd543366d52b2da13c3e9ea6104514c8f822a6"
+  },
+  {
+    "path": "fold16_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "fc479ab4c499487a6db72f276b8f2ea4f51fb677d2640e2083ac83648c42848d"
+  },
+  {
+    "path": "fold16_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "b6451e33f5f519918e223258c015681b64e0615cb713cebf8c0deae2197a3712"
+  },
+  {
+    "path": "fold16_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "f69b0792fae2633d7abeef549b0bbdd6f376b04bd3dbf75fe8cac162f305b2d6"
+  },
+  {
+    "path": "fold17_control_inner0.npz",
+    "published": true,
+    "sha256": "8abeef1c3395bd2ff9974f609cf44f1b4c34a17333dcd4b640b3cf2655a89120"
+  },
+  {
+    "path": "fold17_control_inner1.npz",
+    "published": true,
+    "sha256": "df8566ce3a5692793e59ebc0490fec3c3aaee6c4cc2e451f69d5b1849b8258a0"
+  },
+  {
+    "path": "fold17_control_inner2.npz",
+    "published": true,
+    "sha256": "6dcd1f5b6e2649be40eeb119cdff5086a0ac02821c1ab26d0c69b0984ecd287d"
+  },
+  {
+    "path": "fold17_control_inner3.npz",
+    "published": true,
+    "sha256": "9ecf86fe11cc817492cb19360802692aa028c226fc7af3efee951a1ac7eea03a"
+  },
+  {
+    "path": "fold17_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "5b13d7a989bf6178e93666315ce1767738bd149acd668f995cca2017d61d493d"
+  },
+  {
+    "path": "fold17_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "5497268f0b7c79ad352e4ff21f68b1b0e36bc8482dc757520330c5f24d3a04ca"
+  },
+  {
+    "path": "fold17_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "433ecbeaae1b0e2a8f3b0467cbca8d5bf489a808e83c0c22fb65d695b06a17ab"
+  },
+  {
+    "path": "fold17_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "b1ffdb9eec6df9fb4e0d9d5ab3a888447a7066e94972f070bda115fe2aa0f544"
+  },
+  {
+    "path": "fold17_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "15fce6df5661bd014e758a5ad3e6cb6b65f53028b1dc057774553e5044406851"
+  },
+  {
+    "path": "fold17_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "581e03243f3d8077aae84ec921bbe18fcd873eacd93a3794e6f8bcc06e34a61d"
+  },
+  {
+    "path": "fold17_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "fe10c8847a9ebc5deee56fddfdc8b38999159cfe577b5dadc3ab6472630590e4"
+  },
+  {
+    "path": "fold17_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "2f41f03c8fb324ee279fcdbd70c5320c5ce6ea350c8e539f78806782bf2743ac"
+  },
+  {
+    "path": "fold18_control_inner0.npz",
+    "published": true,
+    "sha256": "a6287b2dd2e0c6590c8f397e00e8e1505a03576b37b74f154a21c01d67ef14da"
+  },
+  {
+    "path": "fold18_control_inner1.npz",
+    "published": true,
+    "sha256": "d103ab004cd58703c4bed071f111d4660d0e3209073cc3c3b0fce4a10f3d0b08"
+  },
+  {
+    "path": "fold18_control_inner2.npz",
+    "published": true,
+    "sha256": "f30a5bc2a2c4a700fb46fdae79788f8777c4076e323993c0df9e6f6948f69613"
+  },
+  {
+    "path": "fold18_control_inner3.npz",
+    "published": true,
+    "sha256": "e6cc7ffda921f7489e1af7726497f036747a1fb5fda1879db4e9d01abc2db20b"
+  },
+  {
+    "path": "fold18_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "cd49d5f6dfb92d3ddc3c5fdff8b1c0306ee6533383c692553a5673695f00ecc6"
+  },
+  {
+    "path": "fold18_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "a3dba7bda75a0a8c5047ffce66b689e3434d5d8daacbc75a61235ecb70c3e1ce"
+  },
+  {
+    "path": "fold18_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "7d14f97fd95995e33de339925d307cc002613ca8bb631c95d205b276392f1a34"
+  },
+  {
+    "path": "fold18_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "51919d5a3f9e7e0d7e37103125415110c2030e6533853c9bf0dc5fcc1e02662f"
+  },
+  {
+    "path": "fold18_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "0d7f3884de477c171a1640a99bcd69382df2f45613189474b4eae6464d1c3a79"
+  },
+  {
+    "path": "fold18_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "cfc1595fa5285d8726187194944419d3975dd208ff3b735fc0a12d4b1e4ac7b7"
+  },
+  {
+    "path": "fold18_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "0614e6943e62c2e5265f6ef46ed89d67bf13ef6be42ea384af1eeffd60f91077"
+  },
+  {
+    "path": "fold18_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "3970c54d794c7aa1b750677a68450ff368adeffef2d78d8125f432efd21fc30b"
+  },
+  {
+    "path": "fold19_control_inner0.npz",
+    "published": true,
+    "sha256": "5ba402bda91c4c50514bb4982a3c60dbd007b53ed91c9bfc682ed6dbb595e1e0"
+  },
+  {
+    "path": "fold19_control_inner1.npz",
+    "published": true,
+    "sha256": "9c3c141668afc439945b0675baea0baaaa3322c434dfe220bc4eedc14cff2e6d"
+  },
+  {
+    "path": "fold19_control_inner2.npz",
+    "published": true,
+    "sha256": "290f9362db290cb88c67539cb0addf4ed8133e1f866d7dba93ea9831d678bc92"
+  },
+  {
+    "path": "fold19_control_inner3.npz",
+    "published": true,
+    "sha256": "96a74980f4280d63bc99747cccfc47b89156f6896f1609215d1131a5c469ca00"
+  },
+  {
+    "path": "fold19_full_covariance_inner0.npz",
+    "published": true,
+    "sha256": "3f93fdb57d1e0c1c9890c39ec87262ef8fff0d314f14e7008da00534d505ef68"
+  },
+  {
+    "path": "fold19_full_covariance_inner1.npz",
+    "published": true,
+    "sha256": "95c229024c44708224e2cd02a174aee1de5bb530d3c18e9c2683f04c871d5514"
+  },
+  {
+    "path": "fold19_full_covariance_inner2.npz",
+    "published": true,
+    "sha256": "74d4babd5ce6a283c05270535468475260cc0d89b2072b6d2be68219ba921089"
+  },
+  {
+    "path": "fold19_full_covariance_inner3.npz",
+    "published": true,
+    "sha256": "c8afd4621682c1f30ccf9fee16100fa57649312181b32fa4d57f060f951eada1"
+  },
+  {
+    "path": "fold19_log_covariance_inner0.npz",
+    "published": true,
+    "sha256": "7bc42dd22ac24301e0954462b944e30dbbe012c697b4e58f54b6ca9a899a978e"
+  },
+  {
+    "path": "fold19_log_covariance_inner1.npz",
+    "published": true,
+    "sha256": "cfa1c9f0701e5a3bdecd149fafd1de49646a6b58ae09b7c027dfcf08cb60e33e"
+  },
+  {
+    "path": "fold19_log_covariance_inner2.npz",
+    "published": true,
+    "sha256": "c087d51ae2005c835d8a9af094561044eb836d8e5b69e1c1c967b2046415bd75"
+  },
+  {
+    "path": "fold19_log_covariance_inner3.npz",
+    "published": true,
+    "sha256": "6fe111cf82ac2e7fe1a1cde5b319cfefadf047a936382dccab295a0b0d9ac4e3"
+  },
+  {
+    "path": "fold00_control_refit_clean.npz",
+    "published": true,
+    "sha256": "67e0d438652ad545345fabb6263e6c2179782349ee9f02f727285db0873724f4"
+  },
+  {
+    "path": "fold00_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "03e4aa26a2eda3160b5df0808aaca4cfa54f7fe9ed6972b9291b75fc9f7b3213"
+  },
+  {
+    "path": "fold00_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "22046655981048b7a14ad183681eb2505406da1ef2f0d1fa10afdfe1843ef89b"
+  },
+  {
+    "path": "fold00_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "4bb6f89deb63a01a7b0cac14fa76d68cc9f0962ebb20e6158533d25281e11e9d"
+  },
+  {
+    "path": "fold00_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "507ed6bcebf672825863c887d5512d70f34f4d8bbeafb0d50559c473d8f51ddd"
+  },
+  {
+    "path": "fold00_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "2481e4b60cf8b4bf77cd17806ce6d3c537cc57941d6038a1c848e0c220263b67"
+  },
+  {
+    "path": "fold00_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "ddf4c5307aa89fd2b0c5895ade7d5467ba6645d7dce10fa5f695ebe2c1c1cff0"
+  },
+  {
+    "path": "fold00_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "400450fd82c61ffc603cae9f541674d37e0954eaa3ae4b33300ff9414ee4b4a3"
+  },
+  {
+    "path": "fold00_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "50667656620d0353cee5484bbcedc3b1874a8189c921d6dc2bfe8a394f6e5387"
+  },
+  {
+    "path": "fold00_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "5a765e142a84bc411a47a98e1c4f5fa2d4617cb94de736b363468d6b97f7f564"
+  },
+  {
+    "path": "fold00_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "2ee1c5ee88f1321f3aa74f73a02dbb6f69a70049a79a6bc57ebdc15c5ba9cfe5"
+  },
+  {
+    "path": "fold00_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "ac5683526715e40665d3c5183c2904950d11c4e024e4bba84cb52f8de1c16da3"
+  },
+  {
+    "path": "fold00_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "edc0be81c5fd0fb3021b9493a65646b6a4a94ffefad0ec7c01f28d1248b2a2c2"
+  },
+  {
+    "path": "fold00_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "979b653478258b7e2ec1cfa5d9998f6484e2da623b97f74662b8569564a7f9c1"
+  },
+  {
+    "path": "fold00_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "1b71762b05b27ea8678ea13fd3e36dc632a0ab4c887e0a4bd7a3eed49f466a11"
+  },
+  {
+    "path": "fold00_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "39ee1e8139ca4dba4b59ea742e22898b0eb209ee451517be6054289eec553967"
+  },
+  {
+    "path": "fold00_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "35b113fc8ef9a04f2eddfd404dba76ed833a7d9177901d4edd5864065f63fb55"
+  },
+  {
+    "path": "fold00_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "de382cb5a7f74a81bd0674e9aa535f018e535ce668d650c8db6bec179ca9cb5d"
+  },
+  {
+    "path": "fold00_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "c908ace0d8eac6431e80442b1b45a4b727253f4573b9206523a77c69a1456646"
+  },
+  {
+    "path": "fold00_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "bf64125f78345d2ea9da5a7580002d3dabae6930330159f6c7b9830f96a58487"
+  },
+  {
+    "path": "fold00_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "b1131b50dcf472d6e951aee6282a4f25c7e9feee3fa27ca7e30c4de6eac41906"
+  },
+  {
+    "path": "fold01_control_refit_clean.npz",
+    "published": true,
+    "sha256": "b6771f300afb7788f7d5cecfa92b72c78e8fe6fb598b76d89f75a1180082a3c0"
+  },
+  {
+    "path": "fold01_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "9a6a2a35e86c11578ed94e8d516456304aebffe4894e65cc2e3bed54fa878e59"
+  },
+  {
+    "path": "fold01_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "ba8673b96995f101fa8cc513e251beb9e522fb1d0d5a997e0d3b5fee1743da28"
+  },
+  {
+    "path": "fold01_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "04a6eeabc0a45856e6381e4474cbdf8f3ae409997255a546260271bfd2950d2c"
+  },
+  {
+    "path": "fold01_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "e722445af996225419e5923598ce517c7c0bf848dcc829304461098e1500f6f6"
+  },
+  {
+    "path": "fold01_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "eb1aa5a69406ad43b1314fb31545c7b0d9418e2fb721f0a259938060d2141246"
+  },
+  {
+    "path": "fold01_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "5a40c011eb3d358e42b4bc725179c2da4248501bb2c36176877e20ceb95ed3c7"
+  },
+  {
+    "path": "fold01_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "9ef342c53335352c88b53d3da0990e64229b428e960b13121bb72828b83a2580"
+  },
+  {
+    "path": "fold01_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "23ef05809af04f5bd518416ae04f17fa15b38d42f381cb0fd8b90fef5f429290"
+  },
+  {
+    "path": "fold01_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "5a7063ff7afe9b317077ac99cd78823b7c4ea1ea63f859f253c77d5d68fd614d"
+  },
+  {
+    "path": "fold01_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "fced5288ce3b0005f967f4d4ccf5cd4f9fd5de4e808b1aa90d00447c4f91195c"
+  },
+  {
+    "path": "fold01_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "72afd868417efdd80a88d23d9f37d39afa4adade8a17ffe766f02258237faa13"
+  },
+  {
+    "path": "fold01_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "ee8480a8a98857ca7e2ef18d7cc484a5146a91df60e685e47f1d5f1be8e01a36"
+  },
+  {
+    "path": "fold01_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "da69cc448b355c017cb8fcef617de9ffd7fef0a2eb57712c91f04e0a2573ebb4"
+  },
+  {
+    "path": "fold01_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "f3f2e7f57aa7fd8743a19c0c093a2265d159a2174d255d8fb28e26aba1e7dd4b"
+  },
+  {
+    "path": "fold01_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "6677cf59c41bebdb13122bca9abbe1827f971502708c687d2fbbac0f0ebc8da6"
+  },
+  {
+    "path": "fold01_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "2ed593090a7dad112ef6ee1828d8319924ea1dccc763d340fe850653bfff5401"
+  },
+  {
+    "path": "fold01_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "416ac5750622bc8e7a4bb8a38a793191d452a525166a600af6a2c9d6e1e878f8"
+  },
+  {
+    "path": "fold01_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "c86e321d24d7c5cbd9bd9cfe6b4d79731068fd6f46d2ff2810f8cfe0787a11e3"
+  },
+  {
+    "path": "fold01_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "f8eaf972d965b8529bbd0cab75fc598a6f278662e0d3ace97b4e048208cf16f0"
+  },
+  {
+    "path": "fold01_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "8c4b14844e67fcf18f51369bbba866d7a51b1822ef2841ed37fe893815425698"
+  },
+  {
+    "path": "fold02_control_refit_clean.npz",
+    "published": true,
+    "sha256": "8160f88173ce30a8aed3c2ff32d699a62a9d5347d86ddac5cf3f5a0edc516e38"
+  },
+  {
+    "path": "fold02_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "9736e2e2a9fbd63e9a8455f78422a7583eaa4e2d1c03100cbc333ae85074ac24"
+  },
+  {
+    "path": "fold02_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "132f71f9261554abad9640707960dec7d62b0f064093d16f7ee5c7842d81a1d7"
+  },
+  {
+    "path": "fold02_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "1a640d1d3caff44c8d49eb74c913b215e4050500ba132214f716f08ad4267422"
+  },
+  {
+    "path": "fold02_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "1670239acbc0985966be94da85ce871308ee569ce15fd40f1952a51c25c79f11"
+  },
+  {
+    "path": "fold02_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "4ea5c7385eb6b6d41e446683c479eca074bc2d0a9e2dc3ec3897efe56821bd02"
+  },
+  {
+    "path": "fold02_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "0943c4f4c70f192035c220a85587f6f0e904674c7b0273ac1e6689212f1bf798"
+  },
+  {
+    "path": "fold02_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "0f55d0ca810112ada6323ccc200519e5b1b16271594aa4dd03c2004316e1f48c"
+  },
+  {
+    "path": "fold02_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "7b568e8493b30cc41cb8b3f4262fe8626c29e0add5595b705766225c59d6533e"
+  },
+  {
+    "path": "fold02_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "8b0329b9561371bc826bf4a959bf180926a99fcac8986ffa9cb4dbb69a69a8ab"
+  },
+  {
+    "path": "fold02_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "52a0342c09b5bfbbb96a5124979e5589ca5c06c5bc41135b8073c936d604cf91"
+  },
+  {
+    "path": "fold02_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "01b226e0fe54093c8e7c40ec3f96554ece43a1d5c08afba7e5a8cc48d181f985"
+  },
+  {
+    "path": "fold02_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "94032b64ef316fc36e7626e95b9bace7c371ef9a3e12ef74501f7df98be9783e"
+  },
+  {
+    "path": "fold02_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "09835c437df7bf5e2a5eebb6f2f5cd2e53d5453cd0e12392be86f4793a7f412c"
+  },
+  {
+    "path": "fold02_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "3a7a47af5558f13648b4a2d8cc89a57b70376679fbabdbddcf6bcde09e6da337"
+  },
+  {
+    "path": "fold02_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "ac920668195d44c8deaea9be82034bb50c8150e1048b161f6754ae30352534f5"
+  },
+  {
+    "path": "fold02_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "daf5746d6809bce1e5343f5f956001af311b6583abea34b6f489fcd1e530c44c"
+  },
+  {
+    "path": "fold02_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "e258f1cacefb99406e3201716f75c50f0d3d8a4033768b9d1c7d387fe02b2101"
+  },
+  {
+    "path": "fold02_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "714d5cb49cae3fe9bff3c559b9b804dc6d5d56964bff8c9c1d03fa0b2ca43e7b"
+  },
+  {
+    "path": "fold02_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "d80b5c18e7e4e753d91220c2aaab739ad4c4a994c8bb1b9746dc659cf31fe2a8"
+  },
+  {
+    "path": "fold02_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "cd86ddebd5ea2567db54c90ebbceae9e85f1f7764a3e11748c476f2c2ae1d58e"
+  },
+  {
+    "path": "fold03_control_refit_clean.npz",
+    "published": true,
+    "sha256": "5c623a5d862798c2acd142454ec454488d00c758080b6b614ee0c7be9eb7db8b"
+  },
+  {
+    "path": "fold03_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "4b3add15b3821fc3b51ac681f04b5e8229cf499b6d7c1b704e44792362400f69"
+  },
+  {
+    "path": "fold03_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "344a2375eea1562f7abd5e3efc1186fa6448d9869584e05e9372bef03184345b"
+  },
+  {
+    "path": "fold03_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "90c9a6bd8763078c57e4743921bcbdec226b4473eadae84237c4c146a5d60529"
+  },
+  {
+    "path": "fold03_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "f84a90e464b0bf3d2201793558ecf56c8cde7a0e60597018deba7ba06b0827f4"
+  },
+  {
+    "path": "fold03_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "ab594866d6ff84d1075b5307c4aa6e80ddcc53bc0c154259fb8f54d533b5a264"
+  },
+  {
+    "path": "fold03_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "673bdfb1357bc2e09417fca5e8cadff2e3735715afdd6c8e2f441daf190def95"
+  },
+  {
+    "path": "fold03_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "69ea79715d6e2d5059fb8c6732f6dc2b6f9f6724cd19ee7410efdff98633b711"
+  },
+  {
+    "path": "fold03_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "1d10dc21f4621f2401838f1671dc705990c11ece647bbc2b51f81b81b4a2e429"
+  },
+  {
+    "path": "fold03_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "5e1c16d28d1d616bd6865edf1de5a2a1186e398729e9856d569408b617488c81"
+  },
+  {
+    "path": "fold03_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "267bdcecbb9d81529895420216b421fe90fc56540753288f79572014bc22ebaf"
+  },
+  {
+    "path": "fold03_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "6c2c396e4f4fcfa671cd6af1f6cc6acf606d56c4fae001e88974e48beb0d5257"
+  },
+  {
+    "path": "fold03_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "501f6ca9e8adce54c1bb7a5fed59fb0fdb914562df9cc0215810fef8899348ec"
+  },
+  {
+    "path": "fold03_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "f125b49bc5692f009d092b454c86b7849ec9fb2523cf2ca779172cab2660db2a"
+  },
+  {
+    "path": "fold03_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "f9e7231fad20fc611381304edd5725098e5fde1be9b483289d626b45409bb25d"
+  },
+  {
+    "path": "fold03_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "4780b66708f7da6f74cca56389e1b3db42fd69fd38ffe49d32ff80b02dc18243"
+  },
+  {
+    "path": "fold03_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "bea05714891e75cc5b40f5c5d47c96ebf2af87ce168a3700201e5b8a6bb7f032"
+  },
+  {
+    "path": "fold03_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "2019a657ede71a8516d0984d14be27c6a0540370847c3cdafca8f4ad17a62698"
+  },
+  {
+    "path": "fold03_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "6b3375d25bd115b46495eec379aed5e7ce4b1297c2e1d1124117b982d84ec6fb"
+  },
+  {
+    "path": "fold03_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "489e3b66fa8eea732535edfba03b5f1dffe912d468af3458ea573bc037dfeec1"
+  },
+  {
+    "path": "fold03_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "01d894898018a3a33ddb088209bc7298437ba23615adef6df829e2decc97e792"
+  },
+  {
+    "path": "fold04_control_refit_clean.npz",
+    "published": true,
+    "sha256": "09288a9f955ef437f942232a0d26214a5983ccbb4a5d9664abe16525998d828c"
+  },
+  {
+    "path": "fold04_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "828dbf175accb0bee75eb45bfc9bc2fbac77827f540b0bcfea4186ee8d2846f5"
+  },
+  {
+    "path": "fold04_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "ea253a81e5f039153448c3ddfe16a803bc0e7a7c6c28187d434be0b4c8cf4414"
+  },
+  {
+    "path": "fold04_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "155dd4d9a38e7222c1d4a04bb4bed91415ffa1fd14a728f91bcad9a5b9cf7cc2"
+  },
+  {
+    "path": "fold04_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "58e4b84066f8b96f70083cb1d96a1a1e5971b3983d9712a48f83d2fa4f4ad9b2"
+  },
+  {
+    "path": "fold04_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "ed39dddf43164b0818e21b45259ab7883174582906695649e92b352850693768"
+  },
+  {
+    "path": "fold04_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "4dcda9df773a01ede947624e82c15ada1175f722745884fa8253dc3324194e76"
+  },
+  {
+    "path": "fold04_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "08e0987f1c5889041a7f9956a086d28cd2b4411dea77f5a177aece225eae475e"
+  },
+  {
+    "path": "fold04_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "502a50634f34655dea7a043bb3f65345be024f476678bb7797b61bde8eb846f2"
+  },
+  {
+    "path": "fold04_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "9273004a5d41ae1bcfea16e32c120a9e92b1f1e28c6c8ce7978fb9fa0332de26"
+  },
+  {
+    "path": "fold04_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "0a272a9958807b10c544987cd17b76178bf8b62a95d9433d4eefa9f368b0bd72"
+  },
+  {
+    "path": "fold04_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "d8f4b4a8efc95b43c6d6d908fb6dd5b8345775549ced8c4de6f48e7c5ff66c5c"
+  },
+  {
+    "path": "fold04_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "844b4573a814043e5504db86490ec65938787e165c06916d3024da9ca0a5632f"
+  },
+  {
+    "path": "fold04_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "eaa6bfeea876ecd7b2bbb8f92243a6162c9dbd0e086e22ee698bec946cb5311e"
+  },
+  {
+    "path": "fold04_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "3d8fb5b959ec296aac50aac3d4f25c79cdb75504597554bd8359b4f2f871d4a3"
+  },
+  {
+    "path": "fold04_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "2d2694926715ac0c7861bb8aff3367ff43c90809ff98dd577b46a11585d5bc80"
+  },
+  {
+    "path": "fold04_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "a0f7cde238f7162dbf4862e032181089028e20a3b2bd9d8c754cd8a5e28d8d32"
+  },
+  {
+    "path": "fold04_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "719662a6c0e5582320ae893957471a7085018931bbeabacf7ef87b4222d0bfde"
+  },
+  {
+    "path": "fold04_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "1527dfb8abca7d2d1903bb9469d513efb0d660d5e1e5e4adf8fc1373ae9fdd67"
+  },
+  {
+    "path": "fold04_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "200a5f5cb6ae28d0ee606daef90291b848c7288bb1a9b69dab296cb3c788a453"
+  },
+  {
+    "path": "fold04_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "d18b9c33b2671b10f0c9e1dd05a15da09495e4fb6edde2dc84fbfc125de7b1c1"
+  },
+  {
+    "path": "fold05_control_refit_clean.npz",
+    "published": true,
+    "sha256": "6c0b76d5290f51a16166aa3781995d70bd24133993d22849d3c3a071662d5da9"
+  },
+  {
+    "path": "fold05_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "81dc87f6469dbb00dcec913ae8f3d3f16936a1b02e31f65461002add74c64298"
+  },
+  {
+    "path": "fold05_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "7d8ec0b8b6fa68c8b810b21dc1adc541b9393e564fd1951545db4686df56f611"
+  },
+  {
+    "path": "fold05_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "52dae7a2fcbcd4089e4fbc10603d0da7e3e2e2a49853f83594a4066ea6bd133c"
+  },
+  {
+    "path": "fold05_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "9fd241611732e5a0c6b900a4635a0cf426aef3f799d4beb0a85a75d4c1038051"
+  },
+  {
+    "path": "fold05_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "a54d9b086d79d8e5957bd5fe1a8f23b430dc0cee6b54724c4de1850caa4b01de"
+  },
+  {
+    "path": "fold05_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "923ad214004cad127001cc0acdc6d5ee40cf1e9b90234c0be32cea3b6e7b5eb0"
+  },
+  {
+    "path": "fold05_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "ac64971973f4c64f0509cab7359b92825feb0e3906ed75854a8f3a89cca0ff8f"
+  },
+  {
+    "path": "fold05_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "7f9480f6b198ce4d1c679012f827bce72f4ef7d255836aac2812f3d4157fc63b"
+  },
+  {
+    "path": "fold05_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "9f94a2a02d427871166e7b3f2e8d241fab5d78c156dc0ca1a05fcd0196b92df9"
+  },
+  {
+    "path": "fold05_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "7810fb9f3ba50306bfc2be2b625bb65b834e7ec619daeca9113be3c337972bed"
+  },
+  {
+    "path": "fold05_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "f415bcf6a1278c374baa0ef34604cfe860dc37a71587ad00c28c3384da8e13d4"
+  },
+  {
+    "path": "fold05_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "aaa3cfa905c3702a09a3378596d537a02ee474ed14a2541be1c9c98139be25de"
+  },
+  {
+    "path": "fold05_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "902e6039907db13acbb83c178ae14ea70c59f91e69adca71d21eb28faeef082d"
+  },
+  {
+    "path": "fold05_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "5c6142cd22232923ec3b93f7b21e9900182a2a4af926ce0d80340f0d20318f3b"
+  },
+  {
+    "path": "fold05_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "737a104bee0c0406631fa82566da1a9918fe0300b9dc21a1a5ffd0badccdb9c4"
+  },
+  {
+    "path": "fold05_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "110d6e73c65b7476a549eba2d98b31e1370e0d9e13058aad0553ed8e6f65ed27"
+  },
+  {
+    "path": "fold05_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "2f94adb91993429959fda361301caad1df388b2022bac7773e6c5b2b2825b378"
+  },
+  {
+    "path": "fold05_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "009c064dcbbdbb456d5caa4e73f294deaa77154bfb1b4d1bb13521f452b8b33c"
+  },
+  {
+    "path": "fold05_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "8ec49500b829ffeefd61fb74022a91e72c333de2ab052385038a5f7dd67db36c"
+  },
+  {
+    "path": "fold05_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "96b6679ceab07711083b593038074e5f64c7dc64e35be2f5d019129b49c76780"
+  },
+  {
+    "path": "fold06_control_refit_clean.npz",
+    "published": true,
+    "sha256": "3db0d81a62662fa783a0f8abe6c1551a29848c60307b3b69e8001bb8361dcccd"
+  },
+  {
+    "path": "fold06_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "c1e163964c181a969ab8db7f802fbe026a71bb43893034989c2eddfdd83e999c"
+  },
+  {
+    "path": "fold06_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "d25421012f6d9eaef4bb8d13fcd855c0cb1b9e7b62f4874bf4a77dc275f16594"
+  },
+  {
+    "path": "fold06_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "67f64ef751715f98272efd3d2cd1e260ae2496b8c4b687823c3f0773d813934c"
+  },
+  {
+    "path": "fold06_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "2a1798a3b59dd07c1245afcaf655ad306592b003d14364f3724a922311a132e8"
+  },
+  {
+    "path": "fold06_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "2e9f3b7a4a0749e87ffb1bf2ce0e600e7a2f25fc789d26ef198604e1b9e4b933"
+  },
+  {
+    "path": "fold06_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "8b00f6be1420660b7f4a2ae01af7b604ca132591dd93a8bda81e0dd66fb5cd99"
+  },
+  {
+    "path": "fold06_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "c69a538d5a0fda2ea7dbc878cb7b0e65de7ed5c9b9dbe20251d4194a28e633fa"
+  },
+  {
+    "path": "fold06_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "45536ca8efe53b56caa1aad058312a8c35b4eab7a780b32b73b10b3968c28d0c"
+  },
+  {
+    "path": "fold06_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "f355125cd1f6c69063a55c5605930f8692e79970d9c42fb7c3b2b9264fc1c10e"
+  },
+  {
+    "path": "fold06_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "0a5d034cb57f029a178cadec32e6bccaaad6189c7335fec757ee5e010930fc6f"
+  },
+  {
+    "path": "fold06_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "24f09b1c6de777fca518aabf99046874821fa1aa2d3c25aab8d21cefc8f27eed"
+  },
+  {
+    "path": "fold06_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "70df7330e4ff478bb2b6a40bf9c5488ce7521a27139149235737b16f22671a09"
+  },
+  {
+    "path": "fold06_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "36449c05df3739bf2051c8e6d60838178061922d8f50a991ef8da9db5832efbf"
+  },
+  {
+    "path": "fold06_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "d7b82b6d9208b686be47f8f0ba431190935b0e4a1f03294f07ef0060aab5b4d1"
+  },
+  {
+    "path": "fold06_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "39e5ab430e02eba1bbb2a3d19b3d83305cdf9804fd9b6f663e1060d983ab879a"
+  },
+  {
+    "path": "fold06_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "215b4c530e9457a33e4ad9218ba943577b696ce396a31d25edc9711d83f158ce"
+  },
+  {
+    "path": "fold06_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "4c178c59786ee7c9eedaa60ea80a07b4267226a1381b4e36afe4bbd92a07581f"
+  },
+  {
+    "path": "fold06_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "239688074f34b907abdee328a87f327909d5470c7dd19dfdbce467a0e5b65484"
+  },
+  {
+    "path": "fold06_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "1c20e684d4f51c0ad6e574b17589bb79f6828e60268a73d5ab6cdf2ac8ab2c7d"
+  },
+  {
+    "path": "fold06_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "af8806c4b4e16acbab51727b1eccbcba5a58e65105b1a674abd7042ff134138a"
+  },
+  {
+    "path": "fold07_control_refit_clean.npz",
+    "published": true,
+    "sha256": "f0a8b07ca3d07d381e5ac771f1b3daa566e3528a112be2dee99b07922eaa7c6e"
+  },
+  {
+    "path": "fold07_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "30a80a833ce62496a4f90844c6d50b5b9736428afc7f5fcf3d93309beb56339e"
+  },
+  {
+    "path": "fold07_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "5f4a3824b5b3b8acfd80ae3675411fff596cbb9e7300c7d7aa0f89c16f3f8a41"
+  },
+  {
+    "path": "fold07_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "29562763b8ef2b87d6e994579eb895e0f975d4bc79dc614219698c7a25eca7c5"
+  },
+  {
+    "path": "fold07_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "fe95e8612b021ff4f5bd401f6b8498767be40d87ee02c7ed1e64d406013a1840"
+  },
+  {
+    "path": "fold07_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "b01a692009b8f365e9c7da5c24b64e06d3f713fa4171cb27c84fab33804d0a70"
+  },
+  {
+    "path": "fold07_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "aefb56aab2431da01c4dbe835d7608d6772a455f3c5e80959418dff8e3d28bcf"
+  },
+  {
+    "path": "fold07_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "736aae76fa211264256ee1711578ff672f9a294fb432d69911be858bdb1eb957"
+  },
+  {
+    "path": "fold07_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "33735c81c26f96b9019f137f3c148dd762007d31c8cc9fbcec733de78b024bd0"
+  },
+  {
+    "path": "fold07_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "aa5f0574c920805d3335b24a37421b80024e129ce8dc8f140b95e54df6d73517"
+  },
+  {
+    "path": "fold07_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "c35b536084b3837bc7949df1a481f91c4af9b1ec6d0903d3e2962a00e5bca5a4"
+  },
+  {
+    "path": "fold07_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "a8e0beafad673aeeb4539d25c49c61c8108828cf63f5dcf2d9f7d27d2f10a300"
+  },
+  {
+    "path": "fold07_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "02fcac76e6682de4c42cd4ceacdb14235cc9b3ea071248a118e3b18d7b0fc2c9"
+  },
+  {
+    "path": "fold07_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "62bf39fdd567bb3d4d85e815edd1b228cac1581e09fc9201d82f0dd97cc18a1e"
+  },
+  {
+    "path": "fold07_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "10026ecb80104a4f0e797324f85748896154235d34f50a678cb435d8ec5ed5e0"
+  },
+  {
+    "path": "fold07_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "89e3db82419a76810e7b178993ba395dd1336ffc00d9dbcc99ea2726710e0c38"
+  },
+  {
+    "path": "fold07_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "2f2482cd814cb1b4998512fecf2171c4ff88501421a91c58c27bcc2bf7d45bc3"
+  },
+  {
+    "path": "fold07_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "5e5bfd54e8ce965d9732e94344105e056a42bd9846b5652e71bea947a6f7501b"
+  },
+  {
+    "path": "fold07_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "dde164a60918452604ba2106c9f8339f8fb27ccaf02cd8fc66e568c81e817d59"
+  },
+  {
+    "path": "fold07_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "52b1207287a3bff19ffde017ff2f20f414404617be494c0edf7565ed04ffae85"
+  },
+  {
+    "path": "fold07_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "beeefcea4de8eb3e8ca86b97dd559902d364073f2959eb0578413871d56f69cc"
+  },
+  {
+    "path": "fold08_control_refit_clean.npz",
+    "published": true,
+    "sha256": "72276d6b27a50e1b64a5f4fe35d3abdde2b4483ece659be4afb9fecf49bd62be"
+  },
+  {
+    "path": "fold08_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "d635e08dc97d4953e92d4caa5fc6fe054fc8b0efee0b7b81ba09b63aa8e8ef42"
+  },
+  {
+    "path": "fold08_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "b0c042355022ebe5ccb087141b0ababa2620c1af73329361cfc62965e5ef3792"
+  },
+  {
+    "path": "fold08_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "55137f80a47d57b2507588b669b6308176c12f750744040be4f98f1bf6059560"
+  },
+  {
+    "path": "fold08_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "480cd198dead87455d1561cc70c45845847afa98c073cdd911bd3ed124a47a0d"
+  },
+  {
+    "path": "fold08_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "e2661a089e45f8dbb16b32a97f0425d345e065960df2e19ba2443af32cbc932b"
+  },
+  {
+    "path": "fold08_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "d822ac2cc2b0ab56953d472ba84964887bdebd8608cf0460cc6503610fda4c71"
+  },
+  {
+    "path": "fold08_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "544357ab1c5d11704a221c630652b6f353b2271f6c0f879ffa26f60969fd9f0d"
+  },
+  {
+    "path": "fold08_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "cd847048b6b005cfe7316a2c5f112fa6d2ac616ddeaa938f459309ad31e8d086"
+  },
+  {
+    "path": "fold08_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "406e7464577ade844430cf6fc4d409987e574940ae1b5f4a2b46367a6368d6be"
+  },
+  {
+    "path": "fold08_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "0e2420c600ae6760f2acd4a725fc61d87022b23c9f7bdc2efff156fdb9feceef"
+  },
+  {
+    "path": "fold08_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "dd5b8786517d288273d0f88c43c819b98e630b6969f44c48179863c8c6d367ce"
+  },
+  {
+    "path": "fold08_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "656010fa4a2d2aa765eb2c344978a915aef497be00fda6df14c6944142249c00"
+  },
+  {
+    "path": "fold08_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "95eeb8a259c729c83f21609101e6534f5a7dcbf5d88ef106ccca32d959373865"
+  },
+  {
+    "path": "fold08_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "044aadb5cff801963a2bd1e25149267ef7a3a99fea907df12a966bee98fc83db"
+  },
+  {
+    "path": "fold08_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "8190499f82c6fbee434f976cf3495ebe293d60dafd7c648d52cf14d622ac3971"
+  },
+  {
+    "path": "fold08_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "fae4dae93135a5c046cae5767821912aedc5d07cc6f048ab10c99cbc72e3af41"
+  },
+  {
+    "path": "fold08_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "384fcd8eda751027e1e804fc5d1d71505c72bb8208db9c360696aaf6598f8aa6"
+  },
+  {
+    "path": "fold08_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "a2f372cbe6934015fb9a583c8aef737dafff9ed7ff697a0794fe5a0544e99270"
+  },
+  {
+    "path": "fold08_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "db9f540532823e4eeeccde6fae394cc85ae871d30ed1fd052699b3a77206472c"
+  },
+  {
+    "path": "fold08_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "f6d0ef4d5812f94230c51066b62b338f208789affcd9a4da913e68713675f4ec"
+  },
+  {
+    "path": "fold09_control_refit_clean.npz",
+    "published": true,
+    "sha256": "09f648fa089dffc5723c62ca9a9759197e40ebe40c746621ea1ce05e716f47a5"
+  },
+  {
+    "path": "fold09_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "826f1b606e4fdd3142a00858faf68f6f0b2bac688840bcc0c617b9712646b43e"
+  },
+  {
+    "path": "fold09_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "e41a733969ebeb9619fb617847d09d1f4875bdddc1143a4d3c7c08b693ee3e33"
+  },
+  {
+    "path": "fold09_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "ebcc57e100e076eba11055b407c26f2720c20f8964395f8b53a26cb08f728eb9"
+  },
+  {
+    "path": "fold09_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "579222bfacc3e03d12ce79a7a6b33f220d7090c130df8a34cb3fb8db3a65f553"
+  },
+  {
+    "path": "fold09_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "553cb80f297b26fa2a6d9779b4d9915381a9c8b7796911b742fed9d30c2ae221"
+  },
+  {
+    "path": "fold09_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "2d23ef8b80b6596368d1fe64e444b02def0b49274d59c480922992da7145ce9e"
+  },
+  {
+    "path": "fold09_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "2e910728d6ccf08f6bdca77d6b4d2dc0fcccfeaae5dbc4a36b4fb9106dc081a5"
+  },
+  {
+    "path": "fold09_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "306b0a1b8209548d0d4917a28828df61dd15d0513b9b66f6b78cbf1efca8ec87"
+  },
+  {
+    "path": "fold09_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "d9b0f7323833036d419ab00a6ba072e7dc69a281f8043976188774f2ca4202b7"
+  },
+  {
+    "path": "fold09_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "177a77c161736d906ba50b5441198ab9962c7f2335c5f7af3a695ef75acd8512"
+  },
+  {
+    "path": "fold09_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "bbb1de2f2d9d2d69228983e2371cc576879bce3a53d3275dc87cc14c90318146"
+  },
+  {
+    "path": "fold09_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "b7d73025604a1089f3d4264239227ec6b916e47dbc4d4918138fe837d9bc995b"
+  },
+  {
+    "path": "fold09_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "eb9fb9f4730d874e7dbc8560d545b4eab128026f5c458d78e3f91bee51c7f809"
+  },
+  {
+    "path": "fold09_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "6ca3ad5624fa45cd847209d2af373e9bcdf98aeeca7d408d85de02917e6b3546"
+  },
+  {
+    "path": "fold09_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "8914c18fd7a17dbaee66e0edbc3be004bba7b1aefe5fc02976b85ff14e6d87bc"
+  },
+  {
+    "path": "fold09_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "1574c4109d1bdcac928aad8ca3c4962aa9e15e468250af3f2b7945adb99fb512"
+  },
+  {
+    "path": "fold09_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "3e5eab9475fed088dce1d41375f0cb1d24eddaa691bc620b027a67fdf914f66c"
+  },
+  {
+    "path": "fold09_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "07e1eb613bcd3f87a5bd5e0dd0db03fb0b1ec8b6645cf4987e0a1c990a27f31f"
+  },
+  {
+    "path": "fold09_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "09af5cc7da9d1ee42123aa50cb516fbe6e668da43ab53c5d94608b9c23ec93c7"
+  },
+  {
+    "path": "fold09_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "f0b8de0c41daf11c571be1726bdbaca05c716bf1252db70706e6fc63d662eee6"
+  },
+  {
+    "path": "fold10_control_refit_clean.npz",
+    "published": true,
+    "sha256": "04adc0c171eec178915952368292c1cdbc65ff64f639fb278cf0f18083624432"
+  },
+  {
+    "path": "fold10_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "dfdb359e1da0eb1754a52eba4106be51f31703950d530e0ef476b5823d86bb27"
+  },
+  {
+    "path": "fold10_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "3051e74c2ab7127921eacf9452fef5df42a0f31213b5f27d8ecd581e2f4300d9"
+  },
+  {
+    "path": "fold10_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "11632f7d1868905d3a9c42906413f76fb5588175f64e5fef0872466f2be53795"
+  },
+  {
+    "path": "fold10_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "465eedfdbfcf22c3c9f9a195b8b40a4108f1b7de014804f0beb3cfe5d32ddfe6"
+  },
+  {
+    "path": "fold10_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "d918c18c8b8c548e0f3b3f35038b62c6608cf1f9451a4368572662ca9aa2ab4f"
+  },
+  {
+    "path": "fold10_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "357c7dd7b3dee9d9363a043c4354a9da4d2c352bfd5c06d71f0bcc4db6041d2e"
+  },
+  {
+    "path": "fold10_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "70d74872aa224fcc6405a49a638e1fc8b4c34798a776e653fd01b4ab4afe70b7"
+  },
+  {
+    "path": "fold10_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "2a51723da1fa4c3e46d67530240d7021cc974225b1b9d2e1d9b0fa2ccde8dfdb"
+  },
+  {
+    "path": "fold10_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "ebc54d2f037e3998d44decf98d9702159dad94fc161849d80bac735ffb54618b"
+  },
+  {
+    "path": "fold10_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "f2308437468f4df3ad4ce782539af5274804a88003e79022734bbbab57db4f5d"
+  },
+  {
+    "path": "fold10_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "2bfae3eb829ec2a9ec8c332fe3cd7fc0240f11eb1201bee3d696b84afc81486e"
+  },
+  {
+    "path": "fold10_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "b4d1b4b9c4ed4b2d1983cad0f791955b024c2d02af36d427962c67169bbca2a4"
+  },
+  {
+    "path": "fold10_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "ff674623afa16943112f4f7c999dbdd0a9e217463a1b262d12aee7e4f5b8e6b4"
+  },
+  {
+    "path": "fold10_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "0295af632970635fc87578a1fbf24d60784101156b59c4fce1d07bea3c12f3b3"
+  },
+  {
+    "path": "fold10_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "63b2181a4e792ee6dcb2de199646823ed9db406f79afeb62832b0468ee8df123"
+  },
+  {
+    "path": "fold10_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "f03aa3fca5a145381423d2d53a0b0579e4bc52a24a4d3d005cae49a9e9876531"
+  },
+  {
+    "path": "fold10_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "b703f942a7737c48d56f44e10accd23be0e3ae81842f274d3c6e93c3b5d52a8c"
+  },
+  {
+    "path": "fold10_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "24c1950f998ed3960db9f76b17f7530080b86a6893278bbbde6317fab6fe9637"
+  },
+  {
+    "path": "fold10_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "a0fafd13ca369faba8c01b92713bc2cbaf1fd26513a279bd1d526f7372f334f8"
+  },
+  {
+    "path": "fold10_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "17bbbb616a0f73ccddd30295a599fd5f49712340b801db28a3eff0b0186f22dd"
+  },
+  {
+    "path": "fold11_control_refit_clean.npz",
+    "published": true,
+    "sha256": "393d253bde154fbf4b8a1c5aeb96e39a8bfb9943f49584713d517e7a06e43b4b"
+  },
+  {
+    "path": "fold11_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "80d962787f339d36f439a79c9f38bae3feeb84d1fa832647e4e97cf00d543913"
+  },
+  {
+    "path": "fold11_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "4585f4b6749f711c39b18e51fb43bf0e7e067356c96021fa560c2970a82d612a"
+  },
+  {
+    "path": "fold11_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "67dc6a75e0947e754ddcc57b6eaf262d91375c0e18d8bee7a4a620784e654ff9"
+  },
+  {
+    "path": "fold11_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "2b08202c0f86c78d76b572e8f5fe18a096072de760043c14b8bbe566f253b1b2"
+  },
+  {
+    "path": "fold11_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "93c3f4e404c731a5721c992034816e3ff5631680247a32b2652557f4e3802faa"
+  },
+  {
+    "path": "fold11_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "ec2c3bba30c3fe777af74f97bb46ac3c448011405b54e2d0ad816ae5b55e20d9"
+  },
+  {
+    "path": "fold11_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "7991e020bd97c9d7625759a042d376a6536505aed80e93912a1582025e43030a"
+  },
+  {
+    "path": "fold11_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "4762eb20f203639b2ea711d5d0ef68e43b99f3f66357efc7d01e2fc3dbfee100"
+  },
+  {
+    "path": "fold11_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "da3f3c809d4b02eaa2572f9728b94ea315f7793b34f4c9aa753fced71509fc83"
+  },
+  {
+    "path": "fold11_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "47b41098e607e90133fe68268332842ac3cfe082eb2b557d71073088c1d7c37a"
+  },
+  {
+    "path": "fold11_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "ca6447c923ce9d6c4b0dc815847a062fe880c79ee057840e8dc1483df5abbbdb"
+  },
+  {
+    "path": "fold11_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "57e1f271c10c5e763ffca38a578c8ee4c9ee44524959f10c1d72c56dd3742dea"
+  },
+  {
+    "path": "fold11_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "06aa8ae50483fe410f95b6034a7868b14acad4633773289ef825d7b6d5b99c0c"
+  },
+  {
+    "path": "fold11_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "aa6c61bc5cbfcc6f9ab610be0b1df8be5f60f83387b76a1b0ed34aa7f3f79c1c"
+  },
+  {
+    "path": "fold11_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "538186305cea18cb981010865f04088ceed929cce4781ff04e845262776eb927"
+  },
+  {
+    "path": "fold11_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "eaf237ca84586909cbd4c57106ba8deb3f9dae868dce886059224959a152704f"
+  },
+  {
+    "path": "fold11_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "da914f293fc47f7f367f4b69edf8a7fc972796899e385eee49d8a3fc5fdb2b10"
+  },
+  {
+    "path": "fold11_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "bda9ddbf0a655550bae0ee9f4179d087882f264f420f4f72771f8ad066e73fa7"
+  },
+  {
+    "path": "fold11_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "3258d0546fd7f74b6f09cfaa086758810f8c19ace40d2fba7bd2f3e0dca65412"
+  },
+  {
+    "path": "fold11_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "a9e8b02b38de19dc16f2d9b2c2a6b1b332f4bb46fc2ae18e7cd92030733b548c"
+  },
+  {
+    "path": "fold12_control_refit_clean.npz",
+    "published": true,
+    "sha256": "41d41c38d6635cbc770b84d09da82428e77eaaf521319b397b4d520c6c6ae554"
+  },
+  {
+    "path": "fold12_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "0951979d371816b211e43c015910992a84fabed56ab0cf3431b739372c822bc7"
+  },
+  {
+    "path": "fold12_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "34a69681f50ea61dddc812fffb0fb78dfc7dee1b6c62aa2ba5d3e0df691a7219"
+  },
+  {
+    "path": "fold12_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "63f9f56c1e06876be2e164d972626fdf3bba3b9dc5e497c2020a1be0857c5f60"
+  },
+  {
+    "path": "fold12_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "d3dc544142c07a9b5c6848046150f7a4fcf83d00988a1d8117e3ae413a99406b"
+  },
+  {
+    "path": "fold12_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "2a2f967c8c7e55efb2b20b03f279a29e5b2e98e1c446e8916d33cd6eba5ecbf8"
+  },
+  {
+    "path": "fold12_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "c57ae5b0d78f2525838787c9e581621687619d400f9163488e3956cf2c4b279a"
+  },
+  {
+    "path": "fold12_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "34ab56cf82d1e463f8dfa8dbca794598d5b9f093c05874d9007df245af58c3eb"
+  },
+  {
+    "path": "fold12_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "38f6ff693480e3b9f80881a16ae90dbb7352f8ef0cef994b5671b73124f1cc26"
+  },
+  {
+    "path": "fold12_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "a3eff42fdd02d275d462dcfdb6b508c43105d4fbe830ae23cf1e8f4e82a8cd37"
+  },
+  {
+    "path": "fold12_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "ccfb8059ae0ca326be22a51ac17cfb0b0e6fd9ede6e31f7304a508a1dcbf54f9"
+  },
+  {
+    "path": "fold12_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "13fba1310a062eefb454690221053b727d7473d718ad98f824d9c4cf090eef1c"
+  },
+  {
+    "path": "fold12_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "80ad50ed01c6051addb8d5852a12e377cdd5591c2a315b4b66b9f772842b3b17"
+  },
+  {
+    "path": "fold12_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "2f265a66933fa52d75e02406d13ead7ba377cec6b5855d07cf8feb22125691c3"
+  },
+  {
+    "path": "fold12_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "63309a1ed1928d1c766f37e9797797283430716a35bbcf72fd58c9f30c33bf50"
+  },
+  {
+    "path": "fold12_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "b641f4a70fb1ee25dc5a7e2a0ef981661a3215f498036ef627da598c5b743c8a"
+  },
+  {
+    "path": "fold12_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "7804f3194791329fc5ae8397a7b8a0fea2e9e813ea57f8cf4f92e4732f4ac265"
+  },
+  {
+    "path": "fold12_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "3f772f913c16d72c8ac28d35200dae72763154335f8f8706f25c16ba24a9713a"
+  },
+  {
+    "path": "fold12_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "ad67b32d0652a84b42205813b62f849875cc743399727512601c750524b86114"
+  },
+  {
+    "path": "fold12_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "c1707888fefee430444820b81077a73df25bf4ee2ae6b3a6543da38c33f49544"
+  },
+  {
+    "path": "fold12_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "2b2a6dd2a7f901c440a68a9a1232ce9c8bbd003177553124241c80d2d9de41d6"
+  },
+  {
+    "path": "fold13_control_refit_clean.npz",
+    "published": true,
+    "sha256": "b2d5e52e2ec870a09c29ee4afc90de3229cba35cb8b3c46826b63dfca1d63868"
+  },
+  {
+    "path": "fold13_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "f8bbc83c92aaea979831565befd9b72bbdd08f2bab20b789cf5e1c54b041967d"
+  },
+  {
+    "path": "fold13_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "a091a3dbd8a9d3f01a5bf42e6f6567e465d2fc05bdce6132c28d51ce1f709c37"
+  },
+  {
+    "path": "fold13_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "e6b26f813192e18eadbf45d625c9b3aea824fb7bd2960c6b047f0db55820bdb2"
+  },
+  {
+    "path": "fold13_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "f69dfd2734a31a1d634ca07dfb81937c14f2c280c6b093a78b3e1f6039bcd77b"
+  },
+  {
+    "path": "fold13_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "0052a19120ed0071105a983c71f955ca5e660731fa3f0dea7b13d75d5a1dc04f"
+  },
+  {
+    "path": "fold13_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "d52d2118735a2aa5d082fc8f32dbcf50f6f171e7aef10be709af052cca2e22c7"
+  },
+  {
+    "path": "fold13_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "3ba6e4a9451d210a1645338bec7b66c65c10010c3065363a60e546853864c95e"
+  },
+  {
+    "path": "fold13_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "b501ad319ba50b512c08489abfb7958ff78a2f686e1fac14c21f8030f1631ca4"
+  },
+  {
+    "path": "fold13_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "adadc4cf24ba4fa60aabcf67703950067c6b86ba2f310b3aed9a2c4fa28201e1"
+  },
+  {
+    "path": "fold13_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "aaff0e054947f7668d425f3fe657c51d3e1cce968bc0bff724a56150d3c4d913"
+  },
+  {
+    "path": "fold13_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "9218e2d04f0c73fdeb0b19037a8a1429b33305770e2b0c744e065a5f16c3a182"
+  },
+  {
+    "path": "fold13_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "d491c186a4f1f42c61e277233f93caf172b446876057dd2aa2006857ba26a824"
+  },
+  {
+    "path": "fold13_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "793f599e0d5964caebab966e0ec5cc474de64a64f91c6d0ba695e80c12fdb130"
+  },
+  {
+    "path": "fold13_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "5f2dfad5c3333cae8418bf93416c8aa3e176f82d44ff402a77716daa08ef52b1"
+  },
+  {
+    "path": "fold13_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "b26dd12feb7eac51a83f58d844698047677f47f1d3637ae44afe0f2c2081017a"
+  },
+  {
+    "path": "fold13_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "eff4dceead567a6693b3079fab65f78394a0b1a44fbb9cdacc6f845fa1352ede"
+  },
+  {
+    "path": "fold13_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "094c5b05b82834423580021234e424864538153fdda2ecac908041f38625328b"
+  },
+  {
+    "path": "fold13_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "48b8d8b3453dc3f4f5b301926c9bb6340f72f6b7da74b71e04664b2af35a60d2"
+  },
+  {
+    "path": "fold13_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "ac1a6246c0605f0c53d2bc619487a0b7d71a7028578b8f125f7656852746ce90"
+  },
+  {
+    "path": "fold13_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "8aef63731c154b06e86552efa18f1228dbba37dd49be259970d5b7a2c82810cb"
+  },
+  {
+    "path": "fold14_control_refit_clean.npz",
+    "published": true,
+    "sha256": "dcb656a300f33c323aca223c2a7ddb5755beb359e8a46af67f527f9c2adf32e3"
+  },
+  {
+    "path": "fold14_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "4e691c13b68b76a8655ff9f1926cf515c31ecda3229770441ae09d2095839f61"
+  },
+  {
+    "path": "fold14_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "65c01471a8e67349723e7ebe3666a38e8e3f16351bbfbdd62ebdec1a5d3a21b4"
+  },
+  {
+    "path": "fold14_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "6c543ecb7867560e110bfa3ab2d5d882b92f9ea5cdb6bc747788626272e9fccf"
+  },
+  {
+    "path": "fold14_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "6cc7d3ac494b7a989468c697af780735178b536cb8fb7cb368783a3905869fdd"
+  },
+  {
+    "path": "fold14_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "832e3caa0966cd84d4712bf1a8a9b086b2f6007dc8e0c3aa36ddd233ea1abbce"
+  },
+  {
+    "path": "fold14_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "a0eead288b53c783a9a861a283d50960a041c6d1bbdbb300b8af8e1a05199c1d"
+  },
+  {
+    "path": "fold14_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "12a1b378d34b4fea88e559d8c651a7e86a4112267a3537c18aee5cd869beb2e7"
+  },
+  {
+    "path": "fold14_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "056da48e1f495aeaebdafce367b623a315e6ed2711d123f28401c729cf39b2fd"
+  },
+  {
+    "path": "fold14_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "20968c73d4c7ca90d6a74bdb7844f5eef377cc98aaea8971b6f457ef20ba967b"
+  },
+  {
+    "path": "fold14_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "c88ac5afb764ef2461012d0afeb6aaa4ace5a5bafe317ae5687a4c73213728ed"
+  },
+  {
+    "path": "fold14_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "17ab541448eac2218e6f664564843915109675c0008b2017dd220d0d9cb7b748"
+  },
+  {
+    "path": "fold14_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "ca5cf9527e68454b6cc7c2f62642d266d1bf4dca48890bb80e559ae926a2e1e6"
+  },
+  {
+    "path": "fold14_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "8ae79a01a3de63e11ee39e69d203148c5a2a29d6306945c5dd7d366074ec85fc"
+  },
+  {
+    "path": "fold14_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "ea6dab49f10490ca0698dd5278d171cd309be0a34658bf2366c9eb6f89134a5d"
+  },
+  {
+    "path": "fold14_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "43136d2b075237c44e8c9ace77c7df778be6b1dc9f0bdbdc30ca496acedb7b52"
+  },
+  {
+    "path": "fold14_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "f93f0cdb3882759bdd6af12f1a9fd60c3511f7f54bee764816226b9a2d9a3060"
+  },
+  {
+    "path": "fold14_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "625107e62e0763198b5359279cc97d3a4f1f982b28ee62a239cb8af1988adb46"
+  },
+  {
+    "path": "fold14_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "1f1000eafd4123b4c132f876ac5119f1efae6390663be28d6ab0a86413bc6134"
+  },
+  {
+    "path": "fold14_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "c90b507ba1c01138a3b0f9f056e518d28f966eb89b9aef8274cfdf159f886901"
+  },
+  {
+    "path": "fold14_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "c6337a8a540e5d6399a1478867ac9f3820f8da223ba19dedcc0aa4348d35c8c8"
+  },
+  {
+    "path": "fold15_control_refit_clean.npz",
+    "published": true,
+    "sha256": "9b1d36710cdb6497426a473271cfa2ae6836a5fac23a8a4a412eb5b85d6e5040"
+  },
+  {
+    "path": "fold15_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "f08827d8e06c4bd79976e1c01f3677156935b8e9ae2b1eee3619d6675e5730c0"
+  },
+  {
+    "path": "fold15_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "b7ea7d41512f741965331168149675c841fb15afd7d3b07cda85805374f86a6a"
+  },
+  {
+    "path": "fold15_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "ed7bf5a6a048c10cfa3e3e972d2d58787ca8e4423e064b839e27304b3418bcb9"
+  },
+  {
+    "path": "fold15_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "8eff6ed436bf48ea8f5f45b6a3ee48bc83c1e4b3779d8521120717503d96093b"
+  },
+  {
+    "path": "fold15_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "3d0755e82f664accc1c2500cfb2456513a9dd09b3e5c76eb9b4622cda3e06407"
+  },
+  {
+    "path": "fold15_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "0e6c284306b342ee69a58335657a5c4f684b90e86d84a5fff9d8e56da1f58797"
+  },
+  {
+    "path": "fold15_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "2ada607f83e96d3627017602bfaf29adc81a4ad3e72be84afeefc8cf01bb8dfa"
+  },
+  {
+    "path": "fold15_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "225e997527cc1b0a8f8e2daef2d9462344e785b8dfd3811f4db06a9f1c13e3f0"
+  },
+  {
+    "path": "fold15_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "6357f085910d2485297e23b4ea27911a5c92346d09c9870c1721bfa4f44065f9"
+  },
+  {
+    "path": "fold15_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "3add65ef5431542da8cc34a9fc9b8c8ea130e426190a3f89b4bfa4af286b803b"
+  },
+  {
+    "path": "fold15_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "85778a612aafa5f25df81a01ee7d8f57494b857daf987df70949df9e22d02166"
+  },
+  {
+    "path": "fold15_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "2d2bf13a20ff6837b9f489749a112ba6a760c11d1edcb1e3dafb7f2d2069738a"
+  },
+  {
+    "path": "fold15_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "a115718fcb1caf0c3d2cd2eab9411e3ae204cdbadb2ba11bf3bcdb75c97ab7e1"
+  },
+  {
+    "path": "fold15_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "08ba580d82f751b00bb5ec8fea7e9067722f154f55af05f3663f0ae025fa6f2a"
+  },
+  {
+    "path": "fold15_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "06d06694919f1d290e5d85f66ecde2ad0a1279770cff4fd4bfc3e0dc2f04c920"
+  },
+  {
+    "path": "fold15_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "661d09090ad8dc7818af9386f1fd688ba2d4cd3ac9d602396c576cebdf730a35"
+  },
+  {
+    "path": "fold15_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "da49c15f16631b18d5d49802f159893aaa02140918bcded9c9bb42e99f77efd7"
+  },
+  {
+    "path": "fold15_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "4c5d1779ee3ad88754ac506295dc31e96dce162aeb9ee1c66def48eeee3c5618"
+  },
+  {
+    "path": "fold15_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "56297308543ebd7c6cd5a24e3de4adf313a115ddf818a28ca6f4e43eb902b8e2"
+  },
+  {
+    "path": "fold15_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "3e2e3b137ae36931ccab23a468a7218120a0986b48537351da31ff8c291b66e9"
+  },
+  {
+    "path": "fold16_control_refit_clean.npz",
+    "published": true,
+    "sha256": "3b666aca192aa9633aecccc789849b5fc010fa316b431e4e23d4b3e1b24e9a96"
+  },
+  {
+    "path": "fold16_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "3568dd59c1e123d6e31a8c4d160b3d0aa072d47669f0546c9af2322c5d2c36de"
+  },
+  {
+    "path": "fold16_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "42c32e0202b25c348b6eb6dede352b1f60789d4e7a7baa79fb21b5971b88be0a"
+  },
+  {
+    "path": "fold16_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "d9785b62ecfdecb33141de4c8621c325db4e72d5c9979df0746364a6cd79480f"
+  },
+  {
+    "path": "fold16_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "c1fe10c34975a594ec8304feedbfd318f8baa969cc3170f4fed8365179101cd3"
+  },
+  {
+    "path": "fold16_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "383cbcfdb96b663d7234415fcb425c73a90f4e76a4c70fd2045088dc6b498cf0"
+  },
+  {
+    "path": "fold16_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "5429a405fecd8b96faf6d951245b3a76918173e9bd4af382c32f40029681a4fb"
+  },
+  {
+    "path": "fold16_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "f304fd389515a3e01ecc33bec07e0a8e2d5a42f9c3b2b6b0358e7b7b307425ee"
+  },
+  {
+    "path": "fold16_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "937fffdda9a84ac975b854878296b646d53a9bff2b0cd783b0ef5bc6ce441f3e"
+  },
+  {
+    "path": "fold16_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "6e99390bbddd083a4a1fcf0e4edb46d3400c8a467f22fcf2f9c5e6a668498619"
+  },
+  {
+    "path": "fold16_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "6ca1973b5d355533b789acb4c643cd8246138a92c16ef0d3d09a2f4b61ca5832"
+  },
+  {
+    "path": "fold16_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "310f9502c4f5fb40e734bdbddde7d02dc6b9bd0b2947fe3a29347f50ae59662b"
+  },
+  {
+    "path": "fold16_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "99fd057a100992211a8006ee2e3e89856a798944c180d56028663d18feafbc26"
+  },
+  {
+    "path": "fold16_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "5f4bd3bb502ee6c7ce92edf6d75229232b1256e09b1f61f12b80a7663b5ec987"
+  },
+  {
+    "path": "fold16_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "9cbf3e266f9431283008b0f57adb0d8567f8e9568827d4d7b146d7f19d165498"
+  },
+  {
+    "path": "fold16_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "6c1c120bf20c22581d1374d6829996c5118652e892e1131206e8d7580c2cabad"
+  },
+  {
+    "path": "fold16_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "137f31be2a2f9636914773d7dbe9972197c4f6cb3884d96e5ca51251d79f2941"
+  },
+  {
+    "path": "fold16_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "5f659d33c40fac9e8b1ef8985ffd64558e097effc9259ba23f37f7de1c3c9d35"
+  },
+  {
+    "path": "fold16_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "e2d0525b4a50c851f75ecfd1a60e64d602e33ed18d26993e3afa802398bc3fe8"
+  },
+  {
+    "path": "fold16_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "98d368949c9b6befa1d733433ea8a531734140212ac270c7169fdd7f28f4664c"
+  },
+  {
+    "path": "fold16_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "c3d852f92af44aa74b85b5f3ce766e06876158a9b0734b5a786d5076a7a09c57"
+  },
+  {
+    "path": "fold17_control_refit_clean.npz",
+    "published": true,
+    "sha256": "6ed9a6c4757ea6289eaf62562751645f9e596ef299b4e4874f79638a60496c4e"
+  },
+  {
+    "path": "fold17_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "4aed9ae06be8924c6b0e6291b593b060139324527f249d0b99600abc04fbee17"
+  },
+  {
+    "path": "fold17_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "90aaf02e8dac1bc1216246103a468e5503e63c867319e09f2886f744d729b9f2"
+  },
+  {
+    "path": "fold17_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "cab9ef29f09a909b84b62100f69224d2648c33fe197ecae8b277c6f6165a4253"
+  },
+  {
+    "path": "fold17_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "f325988297403b235305e67531398dec99bf5b0e9c9ef57326ecee6687df1322"
+  },
+  {
+    "path": "fold17_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "a6d46980e462226c1c561a51dfae201f1e7e6b81db37364e95d0a92ea1863cf6"
+  },
+  {
+    "path": "fold17_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "3fedda09bdf84e208449024e6c786e6faf339caf62dd4d95ca78a2ca17a658bc"
+  },
+  {
+    "path": "fold17_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "886f8f59d47a4d261555e6c4d988a2d62102ea336c17d317738ed44d0a3f014f"
+  },
+  {
+    "path": "fold17_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "20b371c55b1a7f1bbd13b438381a4b4486ddca8b6ab27f1df04f3a24f238f173"
+  },
+  {
+    "path": "fold17_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "5af21b717cc8a6f3b6d2bc985c04a0318f170f5010908b0430d2950416a61162"
+  },
+  {
+    "path": "fold17_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "23a65e0fbb9eaac2ccf6104d7de298fa7362f592028e95c7255018171372395d"
+  },
+  {
+    "path": "fold17_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "f6592c276af8ef0a6ae5d52a258e18ab902b3f3347de058931dadf97c3818204"
+  },
+  {
+    "path": "fold17_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "6cb2a8b6cadb5bf34a425bbdcc4fdb56e56df719001ba88a0a6a37b1097c5058"
+  },
+  {
+    "path": "fold17_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "919c47a2cb2545d38850fb90bdef06c06d917e98ce6d3ebd617c9e707b257cc2"
+  },
+  {
+    "path": "fold17_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "28ee9c6011ec62ea1f17984584ced12818cced4a4b983cea543bfc9f7d09a88c"
+  },
+  {
+    "path": "fold17_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "cbf0b491c2512e02c93aacb459010914046801e17a31db78283168ede3441a3b"
+  },
+  {
+    "path": "fold17_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "65e50020132af645d4eb54abbdd4bac32b6112409c53bde024fbc7afddf9ad67"
+  },
+  {
+    "path": "fold17_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "904004186be1f964eee5e407416411077f4b59d022011b87a68bc34f7128f6ed"
+  },
+  {
+    "path": "fold17_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "4f3f8980238babdb5eb535af6d40241da63680ab2ab0d84fd112252cd26865d2"
+  },
+  {
+    "path": "fold17_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "deaadd18d7fa538588856be23753edca298870dd2bd18a3381026caf29d4e0e3"
+  },
+  {
+    "path": "fold17_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "30d50bf10d4d31fc8053b7d693bd884425a6b36070734dfbfe002851fdf90ab9"
+  },
+  {
+    "path": "fold18_control_refit_clean.npz",
+    "published": true,
+    "sha256": "c6ee86073c86a4fbc91823b0aebec70918850977286f7f291695ac216ec3635b"
+  },
+  {
+    "path": "fold18_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "f3c7a1f89081ffb56b4ce2a9da4212b0548b3336edd1ec561d878700f9d870bc"
+  },
+  {
+    "path": "fold18_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "e315f1d59b169ddd882f01d1fcfe67b2190d008f8377352292668f3d47f5e40d"
+  },
+  {
+    "path": "fold18_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "34d4d2ff574ea3b677c2785c75ea7d7224e7c62f7e105b8dfbfc571a16ed576c"
+  },
+  {
+    "path": "fold18_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "fd7c1a0e1fd4cc5646d7fdc2a822b22fbfbaafbc4c0ea0d874722ba195d1ecf1"
+  },
+  {
+    "path": "fold18_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "9cf0abbc99b9f2a27784a9687910b03343e8686c6b24fa26c2601d2b6b3ffa75"
+  },
+  {
+    "path": "fold18_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "a84b7b568a9e48b67daac8163c581b80b4bb0057ef9aa61c1de43ddedb793c53"
+  },
+  {
+    "path": "fold18_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "81c02437ab0495a851523d2388798e8d070bb0f57eded3de538685fec3e498ea"
+  },
+  {
+    "path": "fold18_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "6c13129b07e2a1ead75de1b4e5b0af3497892f4f649d7af4cba6f17fec89c666"
+  },
+  {
+    "path": "fold18_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "59c5aa5306bba2ae23c5c6e9e7a586b19fd7efed8524babbbfc051cc0f18d13a"
+  },
+  {
+    "path": "fold18_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "11392dac0d6c2b6bff628ef854bd42974c448db92cbf85d8c663317ae0124945"
+  },
+  {
+    "path": "fold18_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "a9ad4596ba66fe8f91eba7549c635fc57d37c8792cb0de1a2e8acc92a87bbd3f"
+  },
+  {
+    "path": "fold18_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "199eb36b920e43ad4b666ecfd9b096770a0036ca5a87e030d9f8977df0d387f6"
+  },
+  {
+    "path": "fold18_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "fa79c860e9d2be284c4e5b6c24d548c085897cd8953d3a07d4ecd684b6509275"
+  },
+  {
+    "path": "fold18_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "2f990496464953c91215b0a00f8ff0f0a0909d46f2976486a19d6db59a9ffb41"
+  },
+  {
+    "path": "fold18_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "6a2db0ae56ffde238a6cd904edad65027d352a62992d5f2d0b3bb1bca9bfafab"
+  },
+  {
+    "path": "fold18_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "bd58b1212a388b25bb5c6e188cef4cb63ecdfe8e321b93162f8c7fe235f0311f"
+  },
+  {
+    "path": "fold18_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "37d3eefba61bbfd8434d704950834dd4d8731bafe3b9266e08275aa4c8773b5f"
+  },
+  {
+    "path": "fold18_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "ab9eab2fb42f878af8264983883e2e9a04bbb168f35f9a5edfd0b1850385aad0"
+  },
+  {
+    "path": "fold18_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "d6ba5e994181160247dc653fec0ba8f2ef2d330e36f2ce121190e4fc51ca87ed"
+  },
+  {
+    "path": "fold18_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "c99bc913d4e1a3cc2f86333e0f4436f8864d531b194536ad97f37278937e5dc0"
+  },
+  {
+    "path": "fold19_control_refit_clean.npz",
+    "published": true,
+    "sha256": "6c2448f1b3e31ade46b0c6e8134b43ea5cda4cd9346b6620378478bf17ee67ff"
+  },
+  {
+    "path": "fold19_control_refit_rotation30.npz",
+    "published": true,
+    "sha256": "c15de1b2b36c851559df9255948b09aef8489988b82cd690779b920d2d7bc093"
+  },
+  {
+    "path": "fold19_control_refit_rotation90.npz",
+    "published": true,
+    "sha256": "0e07f2ddc15d8cf3778901c11ace99f258c09f1f622785803e5e493a6239541b"
+  },
+  {
+    "path": "fold19_control_refit_gain09.npz",
+    "published": true,
+    "sha256": "2e280de9f4a0ff081f9472ce33738a629d088184aaf27c83cab5fb6c98e10454"
+  },
+  {
+    "path": "fold19_control_refit_gain11.npz",
+    "published": true,
+    "sha256": "494ca1232416eef6f18705a09d5c6dbb5615050a3ef3c6bd664d75cdfc272e20"
+  },
+  {
+    "path": "fold19_control_refit_noise01.npz",
+    "published": true,
+    "sha256": "b57a15b07830835b336a603758a7aa988e737a8ba83d940c02a2033170b99cd7"
+  },
+  {
+    "path": "fold19_control_refit_noise05.npz",
+    "published": true,
+    "sha256": "dfc6e69255ba932ed7a18886a75a0f8e49a326d429551b258c68a605f692e90f"
+  },
+  {
+    "path": "fold19_full_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "a9cf94282b663c5973bc6ad9a744f2007029d5eca796ba3ed8d6b07b84bc8caa"
+  },
+  {
+    "path": "fold19_full_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "d5ffff449e3f2b58eb2b01a14ae79963b3044670e117079ebda5b22de627a0fa"
+  },
+  {
+    "path": "fold19_full_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "97fe767c5a20c19ea4b25eb108d3a090213e2cd29b1561dd187a0bd6c58c2148"
+  },
+  {
+    "path": "fold19_full_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "584ba3ee5e823c186e4aaed4aacd170de82c3d602cbee8623540f667ce4cf792"
+  },
+  {
+    "path": "fold19_full_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "09303b04abea4dd67bd2a7709efa3c7de92c045e2d77beb2bfb38335a3123f1b"
+  },
+  {
+    "path": "fold19_full_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "21d9592ff06279af2530b77b5ceaa8917dc16f3c643ae65d64d120cd403a32dd"
+  },
+  {
+    "path": "fold19_full_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "398b946b8971f1ee3f86b86eeec8ae1a4cf4ecb05d4a0d714ad3caf708d3103b"
+  },
+  {
+    "path": "fold19_log_covariance_refit_clean.npz",
+    "published": true,
+    "sha256": "7840cd1dd44441d313437f08ae611c6d0e719fe2da1d51258dbbfa6cbfe32cbd"
+  },
+  {
+    "path": "fold19_log_covariance_refit_rotation30.npz",
+    "published": true,
+    "sha256": "b38fccf86723d170c178e89f7a21ccb7d4e6c6489ab94741b74dfacff01dfdd0"
+  },
+  {
+    "path": "fold19_log_covariance_refit_rotation90.npz",
+    "published": true,
+    "sha256": "da3cc8a967a9eb214e9374dcb2125c373e6f449540ab337f5ec39dae513cdc07"
+  },
+  {
+    "path": "fold19_log_covariance_refit_gain09.npz",
+    "published": true,
+    "sha256": "cc14dc7e71f7c2b3d13d237212ab980bb3fae705d796a9c4b0e542e489d39219"
+  },
+  {
+    "path": "fold19_log_covariance_refit_gain11.npz",
+    "published": true,
+    "sha256": "90e3ccb7b26d9fc1f9f66c31e5ff2dde9a11b2211b9351cd99a0e497c0604324"
+  },
+  {
+    "path": "fold19_log_covariance_refit_noise01.npz",
+    "published": true,
+    "sha256": "1f420a041b38453c0676b374275a6c7756bc1aabe01178647de4ce4fdbdc74a6"
+  },
+  {
+    "path": "fold19_log_covariance_refit_noise05.npz",
+    "published": true,
+    "sha256": "c957852bf7cce1f65032890f0014f2f95cba074323521c64ea728a5b39a36fc5"
+  },
+  {
+    "path": "thresholds_00.json",
+    "published": true,
+    "sha256": "c8504b47f57c1d693c36a30e3f188d9e02aa27228d7854e6628927d6214c60a0"
+  },
+  {
+    "path": "thresholds_01.json",
+    "published": true,
+    "sha256": "4e79015d9e8201e2a781b29d0945fb1ab4e404b07de4e4c151f1bd144c581fba"
+  },
+  {
+    "path": "thresholds_02.json",
+    "published": true,
+    "sha256": "7e2005486df205a08806eeff05a360b74996114ee2cfc37f05530b85a56e1370"
+  },
+  {
+    "path": "thresholds_03.json",
+    "published": true,
+    "sha256": "5eab096fa38cd50b6aa0b1bddf7c6072d68a51e35ef931205a7a67891cba2574"
+  },
+  {
+    "path": "thresholds_04.json",
+    "published": true,
+    "sha256": "9ab4d618f8a4e8853448095ee73284beda9d40806ac99a4df90dd139cab4020c"
+  },
+  {
+    "path": "thresholds_05.json",
+    "published": true,
+    "sha256": "a847935e8497e35a258cd381e2433eae7808e70b561f4233059cc76df373fe32"
+  },
+  {
+    "path": "thresholds_06.json",
+    "published": true,
+    "sha256": "cd712d9879cd671ab69614931ed502952c34d4dce4d772a4b697d40e1a6211d5"
+  },
+  {
+    "path": "thresholds_07.json",
+    "published": true,
+    "sha256": "2bdf835668037be3c9913a95fa820f2dcbcf52d60afe70c1da73fe087886e936"
+  },
+  {
+    "path": "thresholds_08.json",
+    "published": true,
+    "sha256": "859431cde55330f931a4bcb7242a814d2f79573f2719c701cf41bf3b9ed3327b"
+  },
+  {
+    "path": "thresholds_09.json",
+    "published": true,
+    "sha256": "2bafb0e7f0652b44cbd5fc48ccd5569ccd2314cb0d8471885cebae29ed3ef213"
+  },
+  {
+    "path": "thresholds_10.json",
+    "published": true,
+    "sha256": "7c6d80082693a01081cb2c8c684e5a511bc8cd9351d0f5d55c6da9923d7a0108"
+  },
+  {
+    "path": "thresholds_11.json",
+    "published": true,
+    "sha256": "00c82fd69b2c9e75232a42a557d63c0b8915d84aed09f2ba6f30787a7d4e7fc9"
+  },
+  {
+    "path": "thresholds_12.json",
+    "published": true,
+    "sha256": "d00c0bcb1d249ba58572eeb514d18fa172fafb5914aee21013c2cf5cb6f65b4d"
+  },
+  {
+    "path": "thresholds_13.json",
+    "published": true,
+    "sha256": "86845739d00c73854fd0f60873092711d63ac99dccb3d8239e32964d5e5734cc"
+  },
+  {
+    "path": "thresholds_14.json",
+    "published": true,
+    "sha256": "28c65ec7aeec1b29db86e60ddfdb5f5913d9e4274fa26d3546df088ac7d427b2"
+  },
+  {
+    "path": "thresholds_15.json",
+    "published": true,
+    "sha256": "7818ddf1ba673838e6df0750008a5550a8291b53a8886d7eaed2d7083d8b6d36"
+  },
+  {
+    "path": "thresholds_16.json",
+    "published": true,
+    "sha256": "0b8137ef5a2c5696998c7f317c02ef401434878b754490003ee86406a716fdef"
+  },
+  {
+    "path": "thresholds_17.json",
+    "published": true,
+    "sha256": "30889eaf85136c06b8077bb850147f437ef8cebd775aa704cf3a50e6398b4b56"
+  },
+  {
+    "path": "thresholds_18.json",
+    "published": true,
+    "sha256": "d67f5308f4ca3a30b6504920e61bc360053e69ecbb72a7c6d63ee7487ad4dff5"
+  },
+  {
+    "path": "thresholds_19.json",
+    "published": true,
+    "sha256": "7d5d34668741deb04f4254657d0574666a7ea8e6c46858a7b5ada4a1c15665a9"
+  }
+]
